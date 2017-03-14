@@ -7,6 +7,13 @@
     </url>
     
     <url>
+        <loc>http://zhangshenghao.win/about/</loc>
+        <lastmod>2017-03-14T17:12:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>http://zhangshenghao.win/tags/</loc>
         <lastmod>2017-03-14T08:49:16.000Z</lastmod>
         <changefreq>weekly</changefreq>

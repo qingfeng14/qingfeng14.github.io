@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>青枫别苑</title>
+  <subtitle>盛豪的个人小站&lt;br/&gt;Coding  &amp;&amp; Reading</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://zhangshenghao.win/"/>
+  <updated>2017-03-14T08:51:27.000Z</updated>
+  <id>http://zhangshenghao.win/</id>
+  
+  <author>
+    <name>张盛豪</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>密码学第一次作业相关知识点</title>
+    <link href="http://zhangshenghao.win/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>http://zhangshenghao.win/2017/03/14/密码学第一次作业相关知识点/</id>
+    <published>2017-03-14T07:23:12.000Z</published>
+    <updated>2017-03-14T08:51:27.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Description：移位密码，凯撒密码，置换密码&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="密码学" scheme="http://zhangshenghao.win/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+      <category term="大三下" scheme="http://zhangshenghao.win/tags/%E5%A4%A7%E4%B8%89%E4%B8%8B/"/>
+    
+      <category term="课程" scheme="http://zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="密码学" scheme="http://zhangshenghao.win/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+      <category term="作业" scheme="http://zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码学第一次作业</title>
+    <link href="http://zhangshenghao.win/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A/"/>
+    <id>http://zhangshenghao.win/2017/03/14/密码学第一次作业/</id>
+    <published>2017-03-14T07:23:05.000Z</published>
+    <updated>2017-03-14T08:47:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;密码学原理与实践（第二版）&lt;br&gt;p32 1.5  1.16  1.21  1.26  1.29  1.30&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="密码学" scheme="http://zhangshenghao.win/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+      <category term="大三下" scheme="http://zhangshenghao.win/tags/%E5%A4%A7%E4%B8%89%E4%B8%8B/"/>
+    
+      <category term="课程" scheme="http://zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="密码学" scheme="http://zhangshenghao.win/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+      <category term="作业" scheme="http://zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搜索引擎性能评价</title>
+    <link href="http://zhangshenghao.win/2017/03/14/%5B%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%5D%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/"/>
+    <id>http://zhangshenghao.win/2017/03/14/[搜索引擎]性能评价/</id>
+    <published>2017-03-14T05:32:59.000Z</published>
+    <updated>2017-03-14T08:46:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;搜索引擎性能评价的目的&quot;&gt;&lt;a href=&quot;#搜索引擎性能评价的目的&quot; class=&quot;headerlink&quot; title=&quot;搜索引擎性能评价的目的&quot;&gt;&lt;/a&gt;搜索引擎性能评价的目的&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;对用户而言： 信息获取渠道&lt;/li&gt;
+&lt;li&gt;对搜索引擎广告商而言&lt;/li&gt;
+&lt;li&gt;对搜索技术研究人员而言&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="搜索引擎" scheme="http://zhangshenghao.win/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+    
+      <category term="搜索引擎" scheme="http://zhangshenghao.win/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="大三下" scheme="http://zhangshenghao.win/tags/%E5%A4%A7%E4%B8%89%E4%B8%8B/"/>
+    
+      <category term="课程" scheme="http://zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://zhangshenghao.win/2017/03/14/hello-world/"/>
+    <id>http://zhangshenghao.win/2017/03/14/hello-world/</id>
+    <published>2017-03-14T02:48:48.000Z</published>
+    <updated>2017-03-14T07:23:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

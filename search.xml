@@ -3,28 +3,35 @@
   
     
     <entry>
-      <title><![CDATA[密码学第一次作业相关知识点]]></title>
-      <url>%2F2017%2F03%2F14%2F%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+      <title><![CDATA[[计算机系统结构]指令系统]]></title>
+      <url>%2F2017%2F03%2F15%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[[密码学]古典密码]]></title>
+      <url>%2F2017%2F03%2F14%2F%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%2F</url>
       <content type="text"><![CDATA[Description：移位密码，凯撒密码，置换密码 移位密码：加密:ci= (pi+K) mod 26解密:pi= (ci-K) mod 26 123密钥：整数， 1≤K ≤25 (26个英文字母)加密：明文P中的每个字母被它之后的第K个字母替代解密：密文C中的每个字母被它之前的第K个字母替代 凯撒密码1当 K=3时，该密码体制成为凯撒密码(Caesar Cipher) 在古罗马的战争(公元前54年)中使用]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[密码学第一次作业]]></title>
-      <url>%2F2017%2F03%2F14%2F%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A%2F</url>
-      <content type="text"><![CDATA[密码学原理与实践（第二版）p32 1.5 1.16 1.21 1.26 1.29 1.30 密码学第一次作业1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD解：移位密码的加解密方法为：12加密：明文P中的每个字母被它之后的第K个字母替代解密：密文C中的每个字母被它之前的第K个字母替代 为了方便使用python编程完成遍历： 1234567import syspassword='BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD'password = password.replace(' ','')for i in range(0,26): for word in password: sys.stdout.write(chr(((ord(word) + i) - 65)%26 + 97)) sys.stdout.write('\n') 输出结果为： 12345678910111213141516171819202122232425260 beeakfydjxuqyhyjiqryhtyjiqfbqduyjiikfuhcqd1 addzjexciwtpxgxihpqxgsxihpeapctxihhjetgbpc2 zccyidwbhvsowfwhgopwfrwhgodzobswhggidsfaob3 ybbxhcvagurnvevgfnoveqvgfncynarvgffhcrezna4 xaawgbuzftqmudufemnudpufembxmzqufeegbqdymz5 wzzvfatyespltctedlmtcotedlawlypteddfapcxly6 vyyuezsxdroksbsdcklsbnsdckzvkxosdccezobwkx7 uxxtdyrwcqnjrarcbjkramrcbjyujwnrcbbdynavjw8 twwscxqvbpmiqzqbaijqzlqbaixtivmqbaacxmzuiv9 svvrbwpuaolhpypazhipykpazhwshulpazzbwlythu10 ruuqavotznkgoxozyghoxjozygvrgtkozyyavkxsgt11 qttpzunsymjfnwnyxfgnwinyxfuqfsjnyxxzujwrfs12 pssoytmrxliemvmxwefmvhmxwetperimxwwytivqer13 orrnxslqwkhdlulwvdeluglwvdsodqhlwvvxshupdq14 nqqmwrkpvjgcktkvucdktfkvucrncpgkvuuwrgtocp15 mpplvqjouifbjsjutbcjsejutbqmbofjuttvqfsnbo16 lookupintheairitsabirditsaplaneitssuperman17 knnjtohmsgdzhqhsrzahqchsrzokzmdhsrrtodqlzm18 jmmisnglrfcygpgrqyzgpbgrqynjylcgrqqsncpkyl19 illhrmfkqebxfofqpxyfoafqpxmixkbfqpprmbojxk20 hkkgqlejpdawenepowxenzepowlhwjaepooqlaniwj21 gjjfpkdioczvdmdonvwdmydonvkgvizdonnpkzmhvi22 fiieojchnbyuclcnmuvclxcnmujfuhycnmmojylguh23 ehhdnibgmaxtbkbmltubkwbmltietgxbmllnixkftg24 dggcmhaflzwsajalkstajvalkshdsfwalkkmhwjesf25 cffblgzekyvrzizkjrsziuzkjrgcrevzkjjlgvidre 查看输出的26条结果，发现lookup in the air its a bird its a plane its superman是其中有意义的语句，相应秘钥为K=16]]></content>
+      <title><![CDATA[[密码学]-Exercise1]]></title>
+      <url>%2F2017%2F03%2F14%2F%E5%AF%86%E7%A0%81%E5%AD%A6-Exercise1%2F</url>
+      <content type="text"><![CDATA[密码学原理与实践（第二版）p32 1.5 1.16 1.21 1.26 1.29 1.30 1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD解：移位密码的加解密方法为：12加密：明文P中的每个字母被它之后的第K个字母替代解密：密文C中的每个字母被它之前的第K个字母替代 为了方便使用python编程完成遍历： 1234567import syspassword='BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD'password = password.replace(' ','')for i in range(0,26): for word in password: sys.stdout.write(chr(((ord(word) + i) - 65)%26 + 97)) sys.stdout.write('\n') 输出结果为： 12345678910111213141516171819202122232425260 beeakfydjxuqyhyjiqryhtyjiqfbqduyjiikfuhcqd1 addzjexciwtpxgxihpqxgsxihpeapctxihhjetgbpc2 zccyidwbhvsowfwhgopwfrwhgodzobswhggidsfaob3 ybbxhcvagurnvevgfnoveqvgfncynarvgffhcrezna4 xaawgbuzftqmudufemnudpufembxmzqufeegbqdymz5 wzzvfatyespltctedlmtcotedlawlypteddfapcxly6 vyyuezsxdroksbsdcklsbnsdckzvkxosdccezobwkx7 uxxtdyrwcqnjrarcbjkramrcbjyujwnrcbbdynavjw8 twwscxqvbpmiqzqbaijqzlqbaixtivmqbaacxmzuiv9 svvrbwpuaolhpypazhipykpazhwshulpazzbwlythu10 ruuqavotznkgoxozyghoxjozygvrgtkozyyavkxsgt11 qttpzunsymjfnwnyxfgnwinyxfuqfsjnyxxzujwrfs12 pssoytmrxliemvmxwefmvhmxwetperimxwwytivqer13 orrnxslqwkhdlulwvdeluglwvdsodqhlwvvxshupdq14 nqqmwrkpvjgcktkvucdktfkvucrncpgkvuuwrgtocp15 mpplvqjouifbjsjutbcjsejutbqmbofjuttvqfsnbo16 lookupintheairitsabirditsaplaneitssuperman17 knnjtohmsgdzhqhsrzahqchsrzokzmdhsrrtodqlzm18 jmmisnglrfcygpgrqyzgpbgrqynjylcgrqqsncpkyl19 illhrmfkqebxfofqpxyfoafqpxmixkbfqpprmbojxk20 hkkgqlejpdawenepowxenzepowlhwjaepooqlaniwj21 gjjfpkdioczvdmdonvwdmydonvkgvizdonnpkzmhvi22 fiieojchnbyuclcnmuvclxcnmujfuhycnmmojylguh23 ehhdnibgmaxtbkbmltubkwbmltietgxbmllnixkftg24 dggcmhaflzwsajalkstajvalkshdsfwalkkmhwjesf25 cffblgzekyvrzizkjrsziuzkjrgcrevzkjjlgvidre 查看输出的26条结果，发现lookup in the air its a bird its a plane its superman是其中有意义的语句，相应秘钥为K=16]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[搜索引擎性能评价]]></title>
-      <url>%2F2017%2F03%2F14%2F%5B%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%5D%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%2F</url>
+      <url>%2F2017%2F03%2F14%2F%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%2F</url>
       <content type="text"><![CDATA[搜索引擎性能评价的目的 对用户而言： 信息获取渠道 对搜索引擎广告商而言 对搜索技术研究人员而言 对搜索引擎服务提供者 从较差查询样例中学习 链接锚本重定向问题 清华美院 团、派 搜索引擎性能评价流程1.1 搜索引擎性能评价的对象网络服务提供商的属性市场占用率、 网络信息检索工具属性网络数据环境、用户群体 搜索引擎运行效果 响应时间 耗费的硬件资源 是否满足用户的信息需求 用户获取信息耗费的时间成本？ 根据用户的需求调整响应时间和查询质量？ 1.2 搜索引擎性能评价的Cranfield体系 黑箱评价方式：给定标准输入情况下，看系统输出与标准输出的差异 输入:语料库，查询样例、相关性标注 优势：复用性（一次标注，多次使用） 语料库采集 数据抓取子系统性能评价 性能评价语料库采集]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
+      <title><![CDATA[Hello Hexo]]></title>
       <url>%2F2017%2F03%2F14%2Fhello-world%2F</url>
       <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
     </entry>

@@ -2,22 +2,22 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://zhangshenghao.win/post-sitemap.xml</loc>
+        <loc>http://blog.zhangshenghao.win/post-sitemap.xml</loc>
         <lastmod>2017-03-14T08:51:27.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://zhangshenghao.win/page-sitemap.xml</loc>
+        <loc>http://blog.zhangshenghao.win/page-sitemap.xml</loc>
         <lastmod>2017-03-14T17:12:58.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://zhangshenghao.win/category-sitemap.xml</loc>
+        <loc>http://blog.zhangshenghao.win/category-sitemap.xml</loc>
         <lastmod>2017-03-14T08:46:23.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://zhangshenghao.win/tag-sitemap.xml</loc>
+        <loc>http://blog.zhangshenghao.win/tag-sitemap.xml</loc>
         <lastmod>2017-03-14T08:46:23.000Z</lastmod>
     </sitemap>
 

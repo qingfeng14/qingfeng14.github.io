@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>青枫别苑</title>
-  <subtitle>盛豪的个人小站&lt;br/&gt;Coding  &amp;&amp; Reading</subtitle>
+  <subtitle>盛豪的个人博客&lt;br/&gt;Coding  &amp;&amp; Reading</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangshenghao.win/"/>

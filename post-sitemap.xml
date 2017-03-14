@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://blog.zhangshenghao.win/2017/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</loc>
+        <lastmod>2017-03-14T19:28:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.zhangshenghao.win/2017/03/14/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/</loc>
+        <lastmod>2017-03-14T19:26:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://blog.zhangshenghao.win/2017/03/14/hello-world/</loc>
         <lastmod>2017-03-14T18:01:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,22 +41,6 @@
     <url>
         <loc>http://blog.zhangshenghao.win/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6-Exercise1/</loc>
         <lastmod>2017-03-14T18:01:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://blog.zhangshenghao.win/2017/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</loc>
-        <lastmod>2017-03-14T17:57:31.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://blog.zhangshenghao.win/2017/03/14/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/</loc>
-        <lastmod>2017-03-14T17:57:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

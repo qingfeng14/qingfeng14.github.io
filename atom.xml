@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zhangshenghao.win/"/>
-  <updated>2017-03-14T17:57:31.000Z</updated>
+  <updated>2017-03-14T19:28:11.000Z</updated>
   <id>http://blog.zhangshenghao.win/</id>
   
   <author>
@@ -20,9 +20,11 @@
     <link href="http://blog.zhangshenghao.win/2017/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"/>
     <id>http://blog.zhangshenghao.win/2017/03/15/计算机系统结构-指令系统/</id>
     <published>2017-03-14T17:56:33.000Z</published>
-    <updated>2017-03-14T17:57:31.000Z</updated>
+    <updated>2017-03-14T19:28:11.000Z</updated>
     
     <summary type="html">
+    
+      &lt;p&gt;指令系统，内存映射，大端小端&lt;/p&gt;
     
     </summary>
     
@@ -75,18 +77,18 @@
     
       <category term="密码学" scheme="http://blog.zhangshenghao.win/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
-      <category term="课程" scheme="http://blog.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
       <category term="作业" scheme="http://blog.zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+      <category term="课程" scheme="http://blog.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title>搜索引擎性能评价</title>
+    <title>[搜索引擎]性能评价</title>
     <link href="http://blog.zhangshenghao.win/2017/03/14/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/"/>
     <id>http://blog.zhangshenghao.win/2017/03/14/搜索引擎-性能评价/</id>
     <published>2017-03-14T05:32:59.000Z</published>
-    <updated>2017-03-14T17:57:27.000Z</updated>
+    <updated>2017-03-14T19:26:37.000Z</updated>
     
     <summary type="html">
     

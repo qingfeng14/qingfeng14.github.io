@@ -1,209 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   
-  
     
     <entry>
       <title><![CDATA[linux/Mac 常用命令]]></title>
-      <url>https://qingfeng14.github.io/2017/03/15/linux-Mac-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<h1 id="使用pandoc将markdown输出为pdf"><a href="#使用pandoc将markdown输出为pdf" class="headerlink" title="使用pandoc将markdown输出为pdf"></a>使用pandoc将markdown输出为pdf</h1><p><a href="http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html" target="_blank" rel="external">pandoc的安装与配置</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=xelatex</div><div class="line"></div><div class="line"><span class="comment"># 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex</span></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex</div><div class="line"><span class="comment"># tips：可以将该路径加入$PATH</span></div><div class="line"></div><div class="line"><span class="comment"># 指定中英文字体</span></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --latex-engine=xelatex -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> -V geometry:margin=1<span class="keyword">in</span> hello-world.md -o output.pdf</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>PDF with numbered sections and a custom LaTeX header</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pandoc -N --template=mytemplate.tex --variable mainfont=<span class="string">"Palatino"</span> --variable sansfont=<span class="string">"Helvetica"</span> --variable monofont=<span class="string">"Menlo"</span> --variable fontsize=12pt --variable version=1.17.2 MANUAL.txt --latex-engine=xelatex --toc -o example14.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> hello-world.md  -o example14.pdf</div></pre></td></tr></table></figure>
-<h1 id="Unix-Linux-系统下修改环境变量"><a href="#Unix-Linux-系统下修改环境变量" class="headerlink" title="Unix/Linux 系统下修改环境变量"></a>Unix/Linux 系统下修改环境变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo vi .bash_profile</div><div class="line"><span class="comment"># 添加需要增加的环境变量</span></div><div class="line">PATH=<span class="variable">$PATH</span>:/Library/TeX/texbin/</div></pre></td></tr></table></figure>
-<p>然后重新启动terminal即可</p>
-<h1 id="sublime-快捷键插入自定义字符串"><a href="#sublime-快捷键插入自定义字符串" class="headerlink" title="sublime 快捷键插入自定义字符串"></a>sublime 快捷键插入自定义字符串</h1><p>Preference-&gt; Key Bingding-&gt; 修改user settings</p>
-<p>在其中加入自定义快捷键</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123; "keys": ["alt+r"],</div><div class="line">      "command": "insert_snippet",</div><div class="line">      "args": &#123;</div><div class="line">        "contents": "&lt;font color=red&gt;$&#123;1:&#125;$SELECTION&lt;/font&gt;$&#123;0&#125;"</div><div class="line">      &#125;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure>
-<font color="red">其中光标所在位置为<code>${1:}$SELECTION</code>所在地</font>]]></content>
-      
-        
+      <url>%2F2017%2F03%2F15%2Flinux-Mac-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+      <content type="text"><![CDATA[使用pandoc将markdown输出为pdfpandoc的安装与配置 123456789pandoc hello-world.md -o out.pdf --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf --latex-engine=/Library/TeX/texbin/xelatex# tips：可以将该路径加入$PATH# 指定中英文字体pandoc -N -s --toc --smart --latex-engine=xelatex -V CJKmainfont='Kai' -V mainfont='Monaco' -V geometry:margin=1in hello-world.md -o output.pdf PDF with numbered sections and a custom LaTeX header 123pandoc -N --template=mytemplate.tex --variable mainfont="Palatino" --variable sansfont="Helvetica" --variable monofont="Menlo" --variable fontsize=12pt --variable version=1.17.2 MANUAL.txt --latex-engine=xelatex --toc -o example14.pdfpandoc -N -s --toc --smart -V CJKmainfont='Kai' -V mainfont='Monaco' --variable sansfont="Monaco" --variable monofont="Monaco" --variable fontsize=26pt --latex-engine=xelatex -V geometry:margin=1in hello-world.md -o example14.pdf Unix/Linux 系统下修改环境变量123sudo vi .bash_profile# 添加需要增加的环境变量PATH=$PATH:/Library/TeX/texbin/ 然后重新启动terminal即可 sublime 快捷键插入自定义字符串Preference-&gt; Key Bingding-&gt; 修改user settings 在其中加入自定义快捷键 123456&#123; "keys": ["alt+r"], "command": "insert_snippet", "args": &#123; "contents": "&lt;font color=red&gt;$&#123;1:&#125;$SELECTION&lt;/font&gt;$&#123;0&#125;" &#125; &#125;, 其中光标所在位置为${1:}$SELECTION所在地]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[[计算机系统结构]指令系统]]></title>
-      <url>https://qingfeng14.github.io/2017/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</url>
-      <content type="html"><![CDATA[<p>指令系统，寻址方式，内存映射，大端小端</p>
-<a id="more"></a>
-<p>$$\sum_{i=1}^n a_i=0$$</p>
-<h1 id="计算机系统的性能评价"><a href="#计算机系统的性能评价" class="headerlink" title="计算机系统的性能评价"></a>计算机系统的性能评价</h1><h2 id="时钟频率"><a href="#时钟频率" class="headerlink" title="时钟频率"></a>时钟频率</h2><h2 id="指令执行速度"><a href="#指令执行速度" class="headerlink" title="指令执行速度"></a>指令执行速度</h2><blockquote>
-<p>一种经典的表示运算速度的方法</p>
-</blockquote>
-<p>MIPS(Million Instructions Per Second), GIPS, TIPS</p>
-<p>$$MIPS = \frac{指令条数}{执行时间\times 10^6} = \frac{Fz}{CPI} = IPC \times Fz$$</p>
-<p>其中: </p>
-<ul>
-<li>Fz为处理机的工作主频</li>
-<li>CPI(Cycles Per Instruction)为<font color="red">每条指令所需的平均时钟周期数</font></li>
-<li>IPC(Instruction Per Cycle)为每个时钟周期平均执行的指令条数</li>
-</ul>
-<h2 id="平均速度"><a href="#平均速度" class="headerlink" title="平均速度"></a>平均速度</h2><h2 id="核心程序法"><a href="#核心程序法" class="headerlink" title="核心程序法"></a>核心程序法</h2><h2 id="峰值速度"><a href="#峰值速度" class="headerlink" title="峰值速度"></a>峰值速度</h2>]]></content>
-      
-        <categories>
-            
-            <category> 系统结构 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 课程 </tag>
-            
-            <tag> 系统结构 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F03%2F15%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%2F</url>
+      <content type="text"><![CDATA[指令系统，寻址方式，内存映射，大端小端，哈夫曼编码， $$\sum_{i=1}^n a_i=0$$ 计算机系统的性能评价时钟频率指令执行速度 一种经典的表示运算速度的方法 MIPS(Million Instructions Per Second), GIPS, TIPS $$MIPS = \frac{指令条数}{执行时间\times 10^6} = \frac{Fz}{CPI} = IPC \times Fz$$ 其中: Fz为处理机的工作主频 CPI(Cycles Per Instruction)为每条指令所需的平均时钟周期数 IPC(Instruction Per Cycle)为每个时钟周期平均执行的指令条数 平均速度核心程序法峰值速度]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[[密码学]古典密码]]></title>
-      <url>https://qingfeng14.github.io/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/</url>
-      <content type="html"><![CDATA[<p>Description：移位密码，凯撒密码，置换密码</p>
-<a id="more"></a>
-<h3 id="移位密码："><a href="#移位密码：" class="headerlink" title="移位密码："></a>移位密码：</h3><p>加密:ci= (pi+K) mod 26<br>解密:pi= (ci-K) mod 26</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">密钥：整数， 1≤K ≤25 (26个英文字母)</div><div class="line">加密：明文P中的每个字母被它之后的第K个字母替代</div><div class="line">解密：密文C中的每个字母被它之前的第K个字母替代</div></pre></td></tr></table></figure>
-<h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">当 K=3时，该密码体制成为凯撒密码(Caesar Cipher) 在古罗马的战争(公元前54年)中使用</div></pre></td></tr></table></figure>]]></content>
-      
-        <categories>
-            
-            <category> 密码学 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 密码学 </tag>
-            
-            <tag> 课程 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F03%2F14%2F%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%2F</url>
+      <content type="text"><![CDATA[Description：移位密码，凯撒密码，置换密码 移位密码：加密:ci= (pi+K) mod 26解密:pi= (ci-K) mod 26 123密钥：整数， 1≤K ≤25 (26个英文字母)加密：明文P中的每个字母被它之后的第K个字母替代解密：密文C中的每个字母被它之前的第K个字母替代 凯撒密码1当 K=3时，该密码体制成为凯撒密码(Caesar Cipher) 在古罗马的战争(公元前54年)中使用]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[[密码学]-Exercise1]]></title>
-      <url>https://qingfeng14.github.io/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6-Exercise1/</url>
-      <content type="html"><![CDATA[<p>密码学原理与实践（第二版）<br>p32 1.5  1.16  1.21  1.26  1.29  1.30</p>
-<a id="more"></a>
-<h3 id="1-5-使用穷尽密钥搜索方法破译如下利用移位密码加密的密文-BEEAK-FYDJX-UQYHY-JIQRY-HTYJI-QFBQD-UYJII-KFUHC-QD"><a href="#1-5-使用穷尽密钥搜索方法破译如下利用移位密码加密的密文-BEEAK-FYDJX-UQYHY-JIQRY-HTYJI-QFBQD-UYJII-KFUHC-QD" class="headerlink" title="1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD"></a>1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD</h3><p>解：移位密码的加解密方法为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">加密：明文P中的每个字母被它之后的第K个字母替代</div><div class="line">解密：密文C中的每个字母被它之前的第K个字母替代</div></pre></td></tr></table></figure></p>
-<p>为了方便使用python编程完成遍历：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">password=<span class="string">'BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD'</span></div><div class="line">password = password.replace(<span class="string">' '</span>,<span class="string">''</span>)</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">26</span>):</div><div class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> password:</div><div class="line">            sys.stdout.write(chr(((ord(word) + i) - <span class="number">65</span>)%<span class="number">26</span> + <span class="number">97</span>))</div><div class="line">    sys.stdout.write(<span class="string">'\n'</span>)</div></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">0 beeakfydjxuqyhyjiqryhtyjiqfbqduyjiikfuhcqd</div><div class="line">1 addzjexciwtpxgxihpqxgsxihpeapctxihhjetgbpc</div><div class="line">2 zccyidwbhvsowfwhgopwfrwhgodzobswhggidsfaob</div><div class="line">3 ybbxhcvagurnvevgfnoveqvgfncynarvgffhcrezna</div><div class="line">4 xaawgbuzftqmudufemnudpufembxmzqufeegbqdymz</div><div class="line">5 wzzvfatyespltctedlmtcotedlawlypteddfapcxly</div><div class="line">6 vyyuezsxdroksbsdcklsbnsdckzvkxosdccezobwkx</div><div class="line">7 uxxtdyrwcqnjrarcbjkramrcbjyujwnrcbbdynavjw</div><div class="line">8 twwscxqvbpmiqzqbaijqzlqbaixtivmqbaacxmzuiv</div><div class="line">9 svvrbwpuaolhpypazhipykpazhwshulpazzbwlythu</div><div class="line">10 ruuqavotznkgoxozyghoxjozygvrgtkozyyavkxsgt</div><div class="line">11 qttpzunsymjfnwnyxfgnwinyxfuqfsjnyxxzujwrfs</div><div class="line">12 pssoytmrxliemvmxwefmvhmxwetperimxwwytivqer</div><div class="line">13 orrnxslqwkhdlulwvdeluglwvdsodqhlwvvxshupdq</div><div class="line">14 nqqmwrkpvjgcktkvucdktfkvucrncpgkvuuwrgtocp</div><div class="line">15 mpplvqjouifbjsjutbcjsejutbqmbofjuttvqfsnbo</div><div class="line">16 lookupintheairitsabirditsaplaneitssuperman</div><div class="line">17 knnjtohmsgdzhqhsrzahqchsrzokzmdhsrrtodqlzm</div><div class="line">18 jmmisnglrfcygpgrqyzgpbgrqynjylcgrqqsncpkyl</div><div class="line">19 illhrmfkqebxfofqpxyfoafqpxmixkbfqpprmbojxk</div><div class="line">20 hkkgqlejpdawenepowxenzepowlhwjaepooqlaniwj</div><div class="line">21 gjjfpkdioczvdmdonvwdmydonvkgvizdonnpkzmhvi</div><div class="line">22 fiieojchnbyuclcnmuvclxcnmujfuhycnmmojylguh</div><div class="line">23 ehhdnibgmaxtbkbmltubkwbmltietgxbmllnixkftg</div><div class="line">24 dggcmhaflzwsajalkstajvalkshdsfwalkkmhwjesf</div><div class="line">25 cffblgzekyvrzizkjrsziuzkjrgcrevzkjjlgvidre</div></pre></td></tr></table></figure>
-<p>查看输出的26条结果，发现<code>lookup in the air its a bird its a plane its superman</code>是其中有意义的语句，相应秘钥为K=16</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 密码学 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 密码学 </tag>
-            
-            <tag> 作业 </tag>
-            
-            <tag> 课程 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F03%2F14%2F%E5%AF%86%E7%A0%81%E5%AD%A6-Exercise1%2F</url>
+      <content type="text"><![CDATA[密码学原理与实践（第二版）p32 1.5 1.16 1.21 1.26 1.29 1.30 1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD解：移位密码的加解密方法为：12加密：明文P中的每个字母被它之后的第K个字母替代解密：密文C中的每个字母被它之前的第K个字母替代 为了方便使用python编程完成遍历： 1234567import syspassword='BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD'password = password.replace(' ','')for i in range(0,26): for word in password: sys.stdout.write(chr(((ord(word) + i) - 65)%26 + 97)) sys.stdout.write('\n') 输出结果为： 12345678910111213141516171819202122232425260 beeakfydjxuqyhyjiqryhtyjiqfbqduyjiikfuhcqd1 addzjexciwtpxgxihpqxgsxihpeapctxihhjetgbpc2 zccyidwbhvsowfwhgopwfrwhgodzobswhggidsfaob3 ybbxhcvagurnvevgfnoveqvgfncynarvgffhcrezna4 xaawgbuzftqmudufemnudpufembxmzqufeegbqdymz5 wzzvfatyespltctedlmtcotedlawlypteddfapcxly6 vyyuezsxdroksbsdcklsbnsdckzvkxosdccezobwkx7 uxxtdyrwcqnjrarcbjkramrcbjyujwnrcbbdynavjw8 twwscxqvbpmiqzqbaijqzlqbaixtivmqbaacxmzuiv9 svvrbwpuaolhpypazhipykpazhwshulpazzbwlythu10 ruuqavotznkgoxozyghoxjozygvrgtkozyyavkxsgt11 qttpzunsymjfnwnyxfgnwinyxfuqfsjnyxxzujwrfs12 pssoytmrxliemvmxwefmvhmxwetperimxwwytivqer13 orrnxslqwkhdlulwvdeluglwvdsodqhlwvvxshupdq14 nqqmwrkpvjgcktkvucdktfkvucrncpgkvuuwrgtocp15 mpplvqjouifbjsjutbcjsejutbqmbofjuttvqfsnbo16 lookupintheairitsabirditsaplaneitssuperman17 knnjtohmsgdzhqhsrzahqchsrzokzmdhsrrtodqlzm18 jmmisnglrfcygpgrqyzgpbgrqynjylcgrqqsncpkyl19 illhrmfkqebxfofqpxyfoafqpxmixkbfqpprmbojxk20 hkkgqlejpdawenepowxenzepowlhwjaepooqlaniwj21 gjjfpkdioczvdmdonvwdmydonvkgvizdonnpkzmhvi22 fiieojchnbyuclcnmuvclxcnmujfuhycnmmojylguh23 ehhdnibgmaxtbkbmltubkwbmltietgxbmllnixkftg24 dggcmhaflzwsajalkstajvalkshdsfwalkkmhwjesf25 cffblgzekyvrzizkjrsziuzkjrgcrevzkjjlgvidre 查看输出的26条结果，发现lookup in the air its a bird its a plane its superman是其中有意义的语句，相应秘钥为K=16]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[[搜索引擎]性能评价]]></title>
-      <url>https://qingfeng14.github.io/2017/03/14/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/</url>
-      <content type="html"><![CDATA[<h1 id="搜索引擎性能评价的目的"><a href="#搜索引擎性能评价的目的" class="headerlink" title="搜索引擎性能评价的目的"></a>搜索引擎性能评价的目的</h1><ul>
-<li>对用户而言： 信息获取渠道</li>
-<li>对搜索引擎广告商而言</li>
-<li>对搜索技术研究人员而言</li>
-</ul>
-<a id="more"></a>
-<h2 id="对搜索引擎服务提供者"><a href="#对搜索引擎服务提供者" class="headerlink" title="对搜索引擎服务提供者"></a>对搜索引擎服务提供者</h2><ul>
-<li>从较差查询样例中学习<ul>
-<li>链接锚本重定向问题</li>
-<li>清华美院</li>
-<li>团、派</li>
-</ul>
-</li>
-</ul>
-<h2 id="搜索引擎性能评价流程"><a href="#搜索引擎性能评价流程" class="headerlink" title="搜索引擎性能评价流程"></a>搜索引擎性能评价流程</h2><h3 id="1-1-搜索引擎性能评价的对象"><a href="#1-1-搜索引擎性能评价的对象" class="headerlink" title="1.1 搜索引擎性能评价的对象"></a>1.1 搜索引擎性能评价的对象</h3><h4 id="网络服务提供商的属性"><a href="#网络服务提供商的属性" class="headerlink" title="网络服务提供商的属性"></a>网络服务提供商的属性</h4><p>市场占用率、</p>
-<h4 id="网络信息检索工具属性"><a href="#网络信息检索工具属性" class="headerlink" title="网络信息检索工具属性"></a>网络信息检索工具属性</h4><p>网络数据环境、用户群体</p>
-<p><strong>搜索引擎运行效果</strong><br>    响应时间<br>    耗费的硬件资源<br>    是否满足用户的信息需求<br>    用户获取信息耗费的时间成本？</p>
-<blockquote>
-<p>根据用户的需求调整响应时间和查询质量？</p>
-</blockquote>
-<h3 id="1-2-搜索引擎性能评价的Cranfield体系"><a href="#1-2-搜索引擎性能评价的Cranfield体系" class="headerlink" title="1.2 搜索引擎性能评价的Cranfield体系"></a>1.2 搜索引擎性能评价的Cranfield体系</h3><blockquote>
-<p>黑箱评价方式：给定标准输入情况下，看系统输出与标准输出的差异</p>
-</blockquote>
-<p>输入:语料库，查询样例、相关性标注</p>
-<p>优势：复用性（一次标注，多次使用）</p>
-<p><strong>语料库采集</strong><br>    数据抓取子系统性能评价</p>
-<h2 id="性能评价语料库采集"><a href="#性能评价语料库采集" class="headerlink" title="性能评价语料库采集"></a>性能评价语料库采集</h2>]]></content>
-      
-        <categories>
-            
-            <category> 搜索引擎 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 课程 </tag>
-            
-            <tag> 搜索引擎 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F03%2F14%2F%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%2F</url>
+      <content type="text"><![CDATA[搜索引擎性能评价的目的 对用户而言： 信息获取渠道 对搜索引擎广告商而言 对搜索技术研究人员而言 对搜索引擎服务提供者 从较差查询样例中学习 链接锚本重定向问题 清华美院 团、派 搜索引擎性能评价流程1.1 搜索引擎性能评价的对象网络服务提供商的属性市场占用率、 网络信息检索工具属性网络数据环境、用户群体 搜索引擎运行效果 响应时间 耗费的硬件资源 是否满足用户的信息需求 用户获取信息耗费的时间成本？ 根据用户的需求调整响应时间和查询质量？ 1.2 搜索引擎性能评价的Cranfield体系 黑箱评价方式：给定标准输入情况下，看系统输出与标准输出的差异 输入:语料库，查询样例、相关性标注 优势：复用性（一次标注，多次使用） 语料库采集 数据抓取子系统性能评价 性能评价语料库采集]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[Hello Hexo]]></title>
-      <url>https://qingfeng14.github.io/2017/03/14/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<h3 id="mathjax"><a href="#mathjax" class="headerlink" title="mathjax"></a><a href="http://catx.me/2014/03/09/hexo-mathjax-plugin/" target="_blank" rel="external">mathjax</a></h3><p>在blog文件夹中执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo math install</div></pre></td></tr></table></figure>
-<p>在<code>_config.yml</code>文件中添加：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">plugins:</span></div><div class="line"><span class="bullet">-</span> <span class="string">hexo-math</span></div></pre></td></tr></table></figure>
-<p>使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Simple inline $a = b + c$.</div></pre></td></tr></table></figure>
-<p>效果：</p>
-<p>Simple inline $a = b + c$.</p>
-<p>MathJax Block:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$$\frac&#123;\partial u&#125;&#123;\partial t&#125;</div><div class="line">= h^2 \left( \frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +</div><div class="line">\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +</div><div class="line">\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;\right)$$</div></pre></td></tr></table></figure>
-<p>效果：<br>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$<br>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> 教程 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F03%2F14%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy mathjax在blog文件夹中执行： 1$ hexo math install 在_config.yml文件中添加： 12plugins:- hexo-math 使用 1Simple inline $a = b + c$. 效果： Simple inline $a = b + c$. MathJax Block: 1234$$\frac&#123;\partial u&#125;&#123;\partial t&#125;= h^2 \left( \frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;\right)$$ 效果：$$\frac{\partial u}{\partial t}= h^2 \left( \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} +\frac{\partial^2 u}{\partial z^2}\right)$$More info: Deployment]]></content>
     </entry>
+
     
   
   

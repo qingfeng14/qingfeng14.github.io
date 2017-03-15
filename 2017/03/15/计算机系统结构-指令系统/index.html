@@ -89,16 +89,16 @@
 
 
 
-<meta name="description" content="指令系统，寻址方式，内存映射，大端小端">
+<meta name="description" content="指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[计算机系统结构]指令系统">
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/15/计算机系统结构-指令系统/index.html">
 <meta property="og:site_name" content="青枫别苑">
-<meta property="og:description" content="指令系统，寻址方式，内存映射，大端小端">
-<meta property="og:updated_time" content="2017-03-15T07:35:12.000Z">
+<meta property="og:description" content="指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，">
+<meta property="og:updated_time" content="2017-03-15T11:07:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[计算机系统结构]指令系统">
-<meta name="twitter:description" content="指令系统，寻址方式，内存映射，大端小端">
+<meta name="twitter:description" content="指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，">
 
 
 
@@ -272,22 +272,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocapitalize="off" autocomplete="off" autocorrect="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -426,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  146
+                  151
                 </span>
               
 
@@ -461,7 +465,7 @@
       
 
       
-        <p>指令系统，寻址方式，内存映射，大端小端</p>
+        <p>指令系统，寻址方式，内存映射，大端小端，哈夫曼编码， </p>
 <a id="more"></a>
 <p>$$\sum_{i=1}^n a_i=0$$</p>
 <h1 id="计算机系统的性能评价"><a href="#计算机系统的性能评价" class="headerlink" title="计算机系统的性能评价"></a>计算机系统的性能评价</h1><h2 id="时钟频率"><a href="#时钟频率" class="headerlink" title="时钟频率"></a>时钟频率</h2><h2 id="指令执行速度"><a href="#指令执行速度" class="headerlink" title="指令执行速度"></a>指令执行速度</h2><blockquote>
@@ -1192,6 +1196,19 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
   
 
   
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
 
 
   

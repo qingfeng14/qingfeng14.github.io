@@ -93,11 +93,11 @@
 123456789pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engine=/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux/Mac 常用命令">
-<meta property="og:url" content="http://blog.zhangshenghao.win/2017/03/15/linux-Mac-常用命令/index.html">
+<meta property="og:url" content="https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
 123456789pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engine=/">
-<meta property="og:updated_time" content="2017-03-15T06:31:09.000Z">
+<meta property="og:updated_time" content="2017-03-15T07:44:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux/Mac 常用命令">
 <meta name="twitter:description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
@@ -129,13 +129,14 @@
 
 
 
-  <link rel="canonical" href="http://blog.zhangshenghao.win/2017/03/15/linux-Mac-常用命令/"/>
+  <link rel="canonical" href="https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/"/>
 
 
 
 
 
   <title> linux/Mac 常用命令 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+   
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -318,7 +319,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.zhangshenghao.win/2017/03/15/linux-Mac-常用命令/">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="青枫">
@@ -406,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  213
+                  272
                 </span>
               
 
@@ -441,13 +442,17 @@
       
 
       
-        <h3 id="使用pandoc将markdown输出为pdf"><a href="#使用pandoc将markdown输出为pdf" class="headerlink" title="使用pandoc将markdown输出为pdf"></a>使用pandoc将markdown输出为pdf</h3><p><a href="http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html" target="_blank" rel="external">pandoc的安装与配置</a></p>
+        <h1 id="使用pandoc将markdown输出为pdf"><a href="#使用pandoc将markdown输出为pdf" class="headerlink" title="使用pandoc将markdown输出为pdf"></a>使用pandoc将markdown输出为pdf</h1><p><a href="http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html" target="_blank" rel="external">pandoc的安装与配置</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=xelatex</div><div class="line"></div><div class="line"><span class="comment"># 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex</span></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex</div><div class="line"><span class="comment"># tips：可以将该路径加入$PATH</span></div><div class="line"></div><div class="line"><span class="comment"># 指定中英文字体</span></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --latex-engine=xelatex -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> -V geometry:margin=1<span class="keyword">in</span> hello-world.md -o output.pdf</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>PDF with numbered sections and a custom LaTeX header</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pandoc -N --template=mytemplate.tex --variable mainfont=<span class="string">"Palatino"</span> --variable sansfont=<span class="string">"Helvetica"</span> --variable monofont=<span class="string">"Menlo"</span> --variable fontsize=12pt --variable version=1.17.2 MANUAL.txt --latex-engine=xelatex --toc -o example14.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> hello-world.md  -o example14.pdf</div></pre></td></tr></table></figure>
-<h3 id="Unix-Linux-系统下修改环境变量"><a href="#Unix-Linux-系统下修改环境变量" class="headerlink" title="Unix/Linux 系统下修改环境变量"></a>Unix/Linux 系统下修改环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo vi .bash_profile</div><div class="line"><span class="comment"># 添加需要增加的环境变量</span></div><div class="line">PATH=<span class="variable">$PATH</span>:/Library/TeX/texbin/</div></pre></td></tr></table></figure>
+<h1 id="Unix-Linux-系统下修改环境变量"><a href="#Unix-Linux-系统下修改环境变量" class="headerlink" title="Unix/Linux 系统下修改环境变量"></a>Unix/Linux 系统下修改环境变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo vi .bash_profile</div><div class="line"><span class="comment"># 添加需要增加的环境变量</span></div><div class="line">PATH=<span class="variable">$PATH</span>:/Library/TeX/texbin/</div></pre></td></tr></table></figure>
 <p>然后重新启动terminal即可</p>
-
+<h1 id="sublime-快捷键插入自定义字符串"><a href="#sublime-快捷键插入自定义字符串" class="headerlink" title="sublime 快捷键插入自定义字符串"></a>sublime 快捷键插入自定义字符串</h1><p>Preference-&gt; Key Bingding-&gt; 修改user settings</p>
+<p>在其中加入自定义快捷键</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123; "keys": ["alt+r"],</div><div class="line">      "command": "insert_snippet",</div><div class="line">      "args": &#123;</div><div class="line">        "contents": "&lt;font color=red&gt;$&#123;1:&#125;$SELECTION&lt;/font&gt;$&#123;0&#125;"</div><div class="line">      &#125;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure>
+<font color="red">其中光标所在位置为<code>${1:}$SELECTION</code>所在地</font>
       
     </div>
 
@@ -496,7 +501,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://blog.zhangshenghao.win/2017/03/15/linux-Mac-常用命令/" title="linux/Mac 常用命令">http://blog.zhangshenghao.win/2017/03/15/linux-Mac-常用命令/</a>
+      <a href="https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/" title="linux/Mac 常用命令">https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -557,7 +562,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2017/03/15/linux-Mac-常用命令/"
-           data-title="linux/Mac 常用命令" data-url="http://blog.zhangshenghao.win/2017/03/15/linux-Mac-常用命令/">
+           data-title="linux/Mac 常用命令" data-url="https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/">
       </div>
     
   </div>
@@ -718,7 +723,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用pandoc将markdown输出为pdf"><span class="nav-number">1.</span> <span class="nav-text">使用pandoc将markdown输出为pdf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unix-Linux-系统下修改环境变量"><span class="nav-number">2.</span> <span class="nav-text">Unix/Linux 系统下修改环境变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用pandoc将markdown输出为pdf"><span class="nav-number">1.</span> <span class="nav-text">使用pandoc将markdown输出为pdf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Linux-系统下修改环境变量"><span class="nav-number">2.</span> <span class="nav-text">Unix/Linux 系统下修改环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime-快捷键插入自定义字符串"><span class="nav-number">3.</span> <span class="nav-text">sublime 快捷键插入自定义字符串</span></a></li></ol></div>
             
 
           </div>
@@ -753,12 +758,34 @@
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
+
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
 </div>
+
+<br/>
+
+
+<div class="powered-by">
+Contact Me @ <a href="https://www.zhihu.com/people/alex-zhangch/activities" target="_blank" title="知乎">知乎</a>
+</div>
+
+<div class="powered-by">
+<a href="https://github.com/qingfeng14" target="_blank" title="GitHUb">GitHub</a>
+</div>
+
+<div class="powered-by">
+<a href="http://weibo.com/qingfeng14" target="_blank" title="微博">微博</a>
+</div>
+
+<div class="theme-info">
+ <a href="mailto:zhangshenghao1995@163.com?subject=用户意见" target="_blank" title="邮箱">邮箱</a>
+
+</div>
+
 
 
         
@@ -1122,7 +1149,22 @@
         showTime(Counter);
       }
     });
-  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+<style type="text/css"> 
+  p{ 
+  text-indent: 2em; 
+  } 
+</style><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -1140,15 +1182,6 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-
-
-
-  
-
-  
-
-
-  
 
 </body>
 </html>

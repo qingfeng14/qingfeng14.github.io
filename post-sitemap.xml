@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://blog.zhangshenghao.win</loc>
+        <loc>https://qingfeng14.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>http://blog.zhangshenghao.win/2017/03/15/linux-Mac-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2017-03-15T06:31:09.000Z</lastmod>
+        <loc>https://qingfeng14.github.io/2017/03/15/linux-Mac-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2017-03-15T07:44:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://blog.zhangshenghao.win/2017/03/14/hello-world/</loc>
-        <lastmod>2017-03-15T06:11:39.000Z</lastmod>
+        <loc>https://qingfeng14.github.io/2017/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</loc>
+        <lastmod>2017-03-15T07:35:12.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://blog.zhangshenghao.win/2017/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</loc>
-        <lastmod>2017-03-15T03:13:10.000Z</lastmod>
+        <loc>https://qingfeng14.github.io/2017/03/14/hello-world/</loc>
+        <lastmod>2017-03-15T07:29:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://blog.zhangshenghao.win/2017/03/14/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/</loc>
+        <loc>https://qingfeng14.github.io/2017/03/14/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/</loc>
         <lastmod>2017-03-14T19:26:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -39,7 +39,7 @@
     </url>
 
     <url>
-        <loc>http://blog.zhangshenghao.win/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/</loc>
+        <loc>https://qingfeng14.github.io/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/</loc>
         <lastmod>2017-03-14T18:01:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -47,7 +47,7 @@
     </url>
 
     <url>
-        <loc>http://blog.zhangshenghao.win/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6-Exercise1/</loc>
+        <loc>https://qingfeng14.github.io/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6-Exercise1/</loc>
         <lastmod>2017-03-14T18:01:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

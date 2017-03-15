@@ -71,7 +71,14 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo,教程," />
+<!-->
+
+  <meta name="keywords" content="Hexo,mathjax,Next" />
+
+<-->
+
+
+  <meta name="keywords" content="Hexo,mathjax,Next," />
 
 
 
@@ -95,7 +102,7 @@
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/14/hello-world/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2017-03-15T07:29:58.000Z">
+<meta property="og:updated_time" content="2017-03-15T15:32:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Hexo">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
@@ -430,7 +437,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  183
+                  274
                 </span>
               
 
@@ -446,7 +453,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -474,6 +481,7 @@
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 <h3 id="mathjax"><a href="#mathjax" class="headerlink" title="mathjax"></a><a href="http://catx.me/2014/03/09/hexo-mathjax-plugin/" target="_blank" rel="external">mathjax</a></h3><p>在blog文件夹中执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo math install</div></pre></td></tr></table></figure>
 <p>在<code>_config.yml</code>文件中添加：</p>
@@ -484,8 +492,9 @@
 <p>Simple inline $a = b + c$.</p>
 <p>MathJax Block:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$$\frac&#123;\partial u&#125;&#123;\partial t&#125;</div><div class="line">= h^2 \left( \frac&#123;\partial^2 u&#125;&#123;\partial x^2&#125; +</div><div class="line">\frac&#123;\partial^2 u&#125;&#123;\partial y^2&#125; +</div><div class="line">\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;\right)$$</div></pre></td></tr></table></figure>
-<p>效果：<br>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$<br>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+<p>效果：<br>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$</p>
+<h3 id="为Hexo-Next博客添加关键词功能"><a href="#为Hexo-Next博客添加关键词功能" class="headerlink" title="为Hexo Next博客添加关键词功能"></a><a href="http://blog.csdn.net/vickyway/article/details/49762439" target="_blank" rel="external">为Hexo Next博客添加关键词功能</a></h3><p>修改文件：themes\next\layout_partials\head.swig<br>修改内容：35行左右，将原来的设置ketwords的代码覆盖即可</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if page.keywords and page.keywords.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for key in page.keywords %&#125;&#123;&#123; key &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif page.tags and page.tags.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for tag in page.tags %&#125;&#123;&#123; tag.name &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif theme.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; theme.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -764,7 +773,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.0.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.0.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.0.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.0.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathjax"><span class="nav-number">1.0.5.</span> <span class="nav-text">mathjax</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.0.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.0.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.0.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.0.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathjax"><span class="nav-number">1.0.5.</span> <span class="nav-text">mathjax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为Hexo-Next博客添加关键词功能"><span class="nav-number">1.0.6.</span> <span class="nav-text">为Hexo Next博客添加关键词功能</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

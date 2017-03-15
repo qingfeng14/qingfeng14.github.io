@@ -14,13 +14,6 @@
     </url>
 
     <url>
-        <loc>http://blog.zhangshenghao.win/categories/Hexo/</loc>
-        <lastmod>2017-03-14T18:01:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://blog.zhangshenghao.win/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</loc>
         <lastmod>2017-03-14T19:26:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -29,7 +22,14 @@
 
     <url>
         <loc>http://blog.zhangshenghao.win/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/</loc>
-        <lastmod>2017-03-14T19:28:11.000Z</lastmod>
+        <lastmod>2017-03-15T03:13:10.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.zhangshenghao.win/categories/Hexo/</loc>
+        <lastmod>2017-03-15T06:11:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

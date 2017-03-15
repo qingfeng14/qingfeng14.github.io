@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -89,16 +89,16 @@
 
 
 
-<meta name="description" content="指令系统，内存映射，大端小端">
+<meta name="description" content="指令系统，寻址方式，内存映射，大端小端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[计算机系统结构]指令系统">
 <meta property="og:url" content="http://blog.zhangshenghao.win/2017/03/15/计算机系统结构-指令系统/index.html">
 <meta property="og:site_name" content="青枫别苑">
-<meta property="og:description" content="指令系统，内存映射，大端小端">
-<meta property="og:updated_time" content="2017-03-14T19:28:11.000Z">
+<meta property="og:description" content="指令系统，寻址方式，内存映射，大端小端">
+<meta property="og:updated_time" content="2017-03-15T03:13:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[计算机系统结构]指令系统">
-<meta name="twitter:description" content="指令系统，内存映射，大端小端">
+<meta name="twitter:description" content="指令系统，寻址方式，内存映射，大端小端">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title> [计算机系统结构]指令系统 | 青枫别苑 </title>
+  <title> [计算机系统结构]指令系统 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +143,7 @@
 
 
 
-  <script type="text/javascript">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -425,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  12
+                  22
                 </span>
               
 
@@ -460,8 +460,10 @@
       
 
       
-        <p>指令系统，内存映射，大端小端</p>
+        <p>指令系统，寻址方式，内存映射，大端小端</p>
 <a id="more"></a>
+<p>$$\sum_{i=1}^n a_i=0$$</p>
+
       
     </div>
 
@@ -551,6 +553,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/03/15/linux-Mac-常用命令/" rel="prev" title="linux/Mac 常用命令">
+                linux/Mac 常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -619,7 +625,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1013,8 +1019,6 @@
 
 
   
-  
-
 
   
 
@@ -1121,7 +1125,24 @@
         showTime(Counter);
       }
     });
-  </script>
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 

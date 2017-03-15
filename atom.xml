@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.zhangshenghao.win/"/>
-  <updated>2017-03-14T19:28:11.000Z</updated>
+  <updated>2017-03-15T06:31:09.000Z</updated>
   <id>http://blog.zhangshenghao.win/</id>
   
   <author>
@@ -16,15 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>linux/Mac 常用命令</title>
+    <link href="http://blog.zhangshenghao.win/2017/03/15/linux-Mac-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.zhangshenghao.win/2017/03/15/linux-Mac-常用命令/</id>
+    <published>2017-03-15T04:39:38.000Z</published>
+    <updated>2017-03-15T06:31:09.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;使用pandoc将markdown输出为pdf&quot;&gt;&lt;a href=&quot;#使用pandoc将markdown输出为pdf&quot; class=&quot;headerlink&quot; title=&quot;使用pandoc将markdown输出为pdf&quot;&gt;&lt;/a&gt;使用pandoc将markdown
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>[计算机系统结构]指令系统</title>
     <link href="http://blog.zhangshenghao.win/2017/03/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"/>
     <id>http://blog.zhangshenghao.win/2017/03/15/计算机系统结构-指令系统/</id>
     <published>2017-03-14T17:56:33.000Z</published>
-    <updated>2017-03-14T19:28:11.000Z</updated>
+    <updated>2017-03-15T03:13:10.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;指令系统，内存映射，大端小端&lt;/p&gt;
+      &lt;p&gt;指令系统，寻址方式，内存映射，大端小端&lt;/p&gt;
     
     </summary>
     
@@ -77,9 +93,9 @@
     
       <category term="密码学" scheme="http://blog.zhangshenghao.win/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
-      <category term="作业" scheme="http://blog.zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
-    
       <category term="课程" scheme="http://blog.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="作业" scheme="http://blog.zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
     
   </entry>
   
@@ -114,7 +130,7 @@
     <link href="http://blog.zhangshenghao.win/2017/03/14/hello-world/"/>
     <id>http://blog.zhangshenghao.win/2017/03/14/hello-world/</id>
     <published>2017-03-14T02:48:48.000Z</published>
-    <updated>2017-03-14T18:01:55.000Z</updated>
+    <updated>2017-03-15T06:11:39.000Z</updated>
     
     <summary type="html">
     

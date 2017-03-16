@@ -469,11 +469,11 @@
       
         <p>密码学原理与实践（第二版）<br>p32 1.5  1.16  1.21  1.26  1.29  1.30</p>
 <a id="more"></a>
-<h3 id="1-5-使用穷尽密钥搜索方法破译如下利用移位密码加密的密文-BEEAK-FYDJX-UQYHY-JIQRY-HTYJI-QFBQD-UYJII-KFUHC-QD"><a href="#1-5-使用穷尽密钥搜索方法破译如下利用移位密码加密的密文-BEEAK-FYDJX-UQYHY-JIQRY-HTYJI-QFBQD-UYJII-KFUHC-QD" class="headerlink" title="1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD"></a>1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD</h3><p>解：移位密码的加解密方法为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">加密：明文P中的每个字母被它之后的第K个字母替代</div><div class="line">解密：密文C中的每个字母被它之前的第K个字母替代</div></pre></td></tr></table></figure></p>
+<h3 id="1-5-使用穷尽密钥搜索方法破译如下利用移位密码加密的密文-BEEAK-FYDJX-UQYHY-JIQRY-HTYJI-QFBQD-UYJII-KFUHC-QD"><a href="#1-5-使用穷尽密钥搜索方法破译如下利用移位密码加密的密文-BEEAK-FYDJX-UQYHY-JIQRY-HTYJI-QFBQD-UYJII-KFUHC-QD" class="headerlink" title="1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD"></a>1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD</h3><p>解：移位密码的加解密方法为：<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">加密：明文P中的每个字母被它之后的第<span class="keyword">K</span>个字母替代</div><div class="line">解密：密文<span class="keyword">C</span>中的每个字母被它之前的第<span class="keyword">K</span>个字母替代</div></pre></td></tr></table></figure></p>
 <p>为了方便使用python编程完成遍历：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">password=<span class="string">'BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD'</span></div><div class="line">password = password.replace(<span class="string">' '</span>,<span class="string">''</span>)</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">26</span>):</div><div class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> password:</div><div class="line">            sys.stdout.write(chr(((ord(word) + i) - <span class="number">65</span>)%<span class="number">26</span> + <span class="number">97</span>))</div><div class="line">    sys.stdout.write(<span class="string">'\n'</span>)</div></pre></td></tr></table></figure>
 <p>输出结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">0 beeakfydjxuqyhyjiqryhtyjiqfbqduyjiikfuhcqd</div><div class="line">1 addzjexciwtpxgxihpqxgsxihpeapctxihhjetgbpc</div><div class="line">2 zccyidwbhvsowfwhgopwfrwhgodzobswhggidsfaob</div><div class="line">3 ybbxhcvagurnvevgfnoveqvgfncynarvgffhcrezna</div><div class="line">4 xaawgbuzftqmudufemnudpufembxmzqufeegbqdymz</div><div class="line">5 wzzvfatyespltctedlmtcotedlawlypteddfapcxly</div><div class="line">6 vyyuezsxdroksbsdcklsbnsdckzvkxosdccezobwkx</div><div class="line">7 uxxtdyrwcqnjrarcbjkramrcbjyujwnrcbbdynavjw</div><div class="line">8 twwscxqvbpmiqzqbaijqzlqbaixtivmqbaacxmzuiv</div><div class="line">9 svvrbwpuaolhpypazhipykpazhwshulpazzbwlythu</div><div class="line">10 ruuqavotznkgoxozyghoxjozygvrgtkozyyavkxsgt</div><div class="line">11 qttpzunsymjfnwnyxfgnwinyxfuqfsjnyxxzujwrfs</div><div class="line">12 pssoytmrxliemvmxwefmvhmxwetperimxwwytivqer</div><div class="line">13 orrnxslqwkhdlulwvdeluglwvdsodqhlwvvxshupdq</div><div class="line">14 nqqmwrkpvjgcktkvucdktfkvucrncpgkvuuwrgtocp</div><div class="line">15 mpplvqjouifbjsjutbcjsejutbqmbofjuttvqfsnbo</div><div class="line">16 lookupintheairitsabirditsaplaneitssuperman</div><div class="line">17 knnjtohmsgdzhqhsrzahqchsrzokzmdhsrrtodqlzm</div><div class="line">18 jmmisnglrfcygpgrqyzgpbgrqynjylcgrqqsncpkyl</div><div class="line">19 illhrmfkqebxfofqpxyfoafqpxmixkbfqpprmbojxk</div><div class="line">20 hkkgqlejpdawenepowxenzepowlhwjaepooqlaniwj</div><div class="line">21 gjjfpkdioczvdmdonvwdmydonvkgvizdonnpkzmhvi</div><div class="line">22 fiieojchnbyuclcnmuvclxcnmujfuhycnmmojylguh</div><div class="line">23 ehhdnibgmaxtbkbmltubkwbmltietgxbmllnixkftg</div><div class="line">24 dggcmhaflzwsajalkstajvalkshdsfwalkkmhwjesf</div><div class="line">25 cffblgzekyvrzizkjrsziuzkjrgcrevzkjjlgvidre</div></pre></td></tr></table></figure>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">0 </span>beeakfydjxuqyhyjiqryhtyjiqfbqduyjiikfuhcqd</div><div class="line"><span class="symbol">1 </span>addzjexciwtpxgxihpqxgsxihpeapctxihhjetgbpc</div><div class="line"><span class="symbol">2 </span>zccyidwbhvsowfwhgopwfrwhgodzobswhggidsfaob</div><div class="line"><span class="symbol">3 </span>ybbxhcvagurnvevgfnoveqvgfncynarvgffhcrezna</div><div class="line"><span class="symbol">4 </span>xaawgbuzftqmudufemnudpufembxmzqufeegbqdymz</div><div class="line"><span class="symbol">5 </span>wzzvfatyespltctedlmtcotedlawlypteddfapcxly</div><div class="line"><span class="symbol">6 </span>vyyuezsxdroksbsdcklsbnsdckzvkxosdccezobwkx</div><div class="line"><span class="symbol">7 </span>uxxtdyrwcqnjrarcbjkramrcbjyujwnrcbbdynavjw</div><div class="line"><span class="symbol">8 </span>twwscxqvbpmiqzqbaijqzlqbaixtivmqbaacxmzuiv</div><div class="line"><span class="symbol">9 </span>svvrbwpuaolhpypazhipykpazhwshulpazzbwlythu</div><div class="line"><span class="symbol">10 </span>ruuqavotznkgoxozyghoxjozygvrgtkozyyavkxsgt</div><div class="line"><span class="symbol">11 </span>qttpzunsymjfnwnyxfgnwinyxfuqfsjnyxxzujwrfs</div><div class="line"><span class="symbol">12 </span>pssoytmrxliemvmxwefmvhmxwetperimxwwytivqer</div><div class="line"><span class="symbol">13 </span>orrnxslqwkhdlulwvdeluglwvdsodqhlwvvxshupdq</div><div class="line"><span class="symbol">14 </span>nqqmwrkpvjgcktkvucdktfkvucrncpgkvuuwrgtocp</div><div class="line"><span class="symbol">15 </span>mpplvqjouifbjsjutbcjsejutbqmbofjuttvqfsnbo</div><div class="line"><span class="symbol">16 </span>lookupintheairitsabirditsaplaneitssuperman</div><div class="line"><span class="symbol">17 </span>knnjtohmsgdzhqhsrzahqchsrzokzmdhsrrtodqlzm</div><div class="line"><span class="symbol">18 </span>jmmisnglrfcygpgrqyzgpbgrqynjylcgrqqsncpkyl</div><div class="line"><span class="symbol">19 </span>illhrmfkqebxfofqpxyfoafqpxmixkbfqpprmbojxk</div><div class="line"><span class="symbol">20 </span>hkkgqlejpdawenepowxenzepowlhwjaepooqlaniwj</div><div class="line"><span class="symbol">21 </span>gjjfpkdioczvdmdonvwdmydonvkgvizdonnpkzmhvi</div><div class="line"><span class="symbol">22 </span>fiieojchnbyuclcnmuvclxcnmujfuhycnmmojylguh</div><div class="line"><span class="symbol">23 </span>ehhdnibgmaxtbkbmltubkwbmltietgxbmllnixkftg</div><div class="line"><span class="symbol">24 </span>dggcmhaflzwsajalkstajvalkshdsfwalkkmhwjesf</div><div class="line"><span class="symbol">25 </span>cffblgzekyvrzizkjrsziuzkjrgcrevzkjjlgvidre</div></pre></td></tr></table></figure>
 <p>查看输出的26条结果，发现<code>lookup in the air its a bird its a plane its superman</code>是其中有意义的语句，相应秘钥为K=16</p>
 
       
@@ -648,7 +648,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -659,7 +659,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -670,7 +670,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1079,17 +1079,7 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
   
 
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
-
-
-
-  
-
-<style type="text/css"> 
-  p{ 
-  text-indent: 2em; 
-  } 
-</style><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -1107,6 +1097,11 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
+
+
+  
+
 
 </body>
 </html>

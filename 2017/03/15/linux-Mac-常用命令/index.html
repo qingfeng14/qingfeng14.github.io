@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="记录,终端," />
 
 
 
@@ -92,18 +92,18 @@
 
 
 <meta name="description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
-123456789pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engine=/">
+1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux/Mac 常用命令">
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
-123456789pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engine=/">
-<meta property="og:updated_time" content="2017-03-15T15:47:42.000Z">
+1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engi">
+<meta property="og:updated_time" content="2017-03-16T12:48:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux/Mac 常用命令">
 <meta name="twitter:description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
-123456789pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engine=/">
+1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engi">
 
 
 
@@ -372,6 +372,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux、Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux、Mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -413,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  272
+                  452
                 </span>
               
 
@@ -429,7 +451,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -449,8 +471,10 @@
 
       
         <h1 id="使用pandoc将markdown输出为pdf"><a href="#使用pandoc将markdown输出为pdf" class="headerlink" title="使用pandoc将markdown输出为pdf"></a>使用pandoc将markdown输出为pdf</h1><p><a href="http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html" target="_blank" rel="external">pandoc的安装与配置</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=xelatex</div><div class="line"></div><div class="line"><span class="comment"># 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex</span></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex</div><div class="line"><span class="comment"># tips：可以将该路径加入$PATH</span></div><div class="line"></div><div class="line"><span class="comment"># 指定中英文字体</span></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --latex-engine=xelatex -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> -V geometry:margin=1<span class="keyword">in</span> hello-world.md -o output.pdf</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=xelatex</div><div class="line"></div><div class="line"><span class="comment"># 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex</span></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex</div><div class="line"><span class="comment"># tips：可以将该路径加入$PATH</span></div><div class="line"></div><div class="line"><span class="comment"># 指定中英文字体</span></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --latex-engine=xelatex -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> -V geometry:margin=1<span class="keyword">in</span> hello-world.md -o output.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> IPv6协议转发实验.md  -o example14.pdf</div></pre></td></tr></table></figure>
 <a id="more"></a>
+<p>Mac 下的中文字体集</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">宋体仿宋 STFangsong</div><div class="line">宋体黑体 STHei</div><div class="line">宋体简体 Songti <span class="keyword">SC</span></div><div class="line">        PingFang <span class="keyword">SC</span></div><div class="line">        LingWai <span class="keyword">SC</span></div><div class="line">        LiSong <span class="keyword">Pro</span></div><div class="line">        LiHei <span class="keyword">Pro</span></div><div class="line">        Libian <span class="keyword">SC</span></div><div class="line">        Lantinghei TC</div><div class="line">        Kaiti <span class="keyword">SC</span></div></pre></td></tr></table></figure>
 <p>PDF with numbered sections and a custom LaTeX header</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pandoc -N --template=mytemplate.tex --variable mainfont=<span class="string">"Palatino"</span> --variable sansfont=<span class="string">"Helvetica"</span> --variable monofont=<span class="string">"Menlo"</span> --variable fontsize=12pt --variable version=1.17.2 MANUAL.txt --latex-engine=xelatex --toc -o example14.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> hello-world.md  -o example14.pdf</div></pre></td></tr></table></figure>
 <h1 id="Unix-Linux-系统下修改环境变量"><a href="#Unix-Linux-系统下修改环境变量" class="headerlink" title="Unix/Linux 系统下修改环境变量"></a>Unix/Linux 系统下修改环境变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo vi .bash_profile</div><div class="line"><span class="comment"># 添加需要增加的环境变量</span></div><div class="line">PATH=<span class="variable">$PATH</span>:/Library/TeX/texbin/</div></pre></td></tr></table></figure>
@@ -459,6 +483,9 @@
 <p>在其中加入自定义快捷键</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123; "keys": ["alt+r"],</div><div class="line">      "command": "insert_snippet",</div><div class="line">      "args": &#123;</div><div class="line">        "contents": "&lt;font color=red&gt;$&#123;1:&#125;$SELECTION&lt;/font&gt;$&#123;0&#125;"</div><div class="line">      &#125;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure>
 <font color="red">其中光标所在位置为<code>${1:}$SELECTION</code>所在地</font>
+
+<h1 id="树莓派开机自启动脚本"><a href="#树莓派开机自启动脚本" class="headerlink" title="树莓派开机自启动脚本"></a>树莓派开机自启动脚本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment">### BEGIN INIT INFO</span></div><div class="line"><span class="comment"># Provides:          auto_start</span></div><div class="line"><span class="comment"># Required-Start:    $remote_fs</span></div><div class="line"><span class="comment"># Required-Stop:     $remote_fs</span></div><div class="line"><span class="comment"># Default-Start:     2 3 4 5</span></div><div class="line"><span class="comment"># Default-Stop:      0 1 6</span></div><div class="line"><span class="comment"># Short-Description: Start or stop the HTTP Proxy.</span></div><div class="line"><span class="comment">### END INIT INFO</span></div><div class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></div><div class="line">    start)</div><div class="line">        <span class="comment"># svnserve -d -r /home/pi/svn_repository</span></div><div class="line">        python /home/pi/Documents/tips/auto_login.py</div><div class="line">        python /home/pi/Documents/tips/start_note.py</div><div class="line">        python /home/pi/Documents/tips/baidu_weather.py</div><div class="line">        php5 /home/pi/Documents/tips/bind_dns/bind.php pi</div><div class="line">        php5 /home/pi/Documents/tips/bind_dns/bind.php survey</div><div class="line">        ;;</div><div class="line">    stop)</div><div class="line">        killall svnserve</div><div class="line">        ;;</div><div class="line">*)</div><div class="line"><span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$0</span> (start|stop)"</span></div><div class="line">;;</div><div class="line"><span class="keyword">esac</span></div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -521,6 +548,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/记录/" rel="tag"># 记录</a>
+          
+            <a href="/tags/终端/" rel="tag"># 终端</a>
+          
+        </div>
+      
 
       
         
@@ -539,6 +574,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/16/IPv6协议转发实验/" rel="prev" title="IPv6协议转发实验">
+                IPv6协议转发实验 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -617,7 +656,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -628,7 +667,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -639,7 +678,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -729,7 +768,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用pandoc将markdown输出为pdf"><span class="nav-number">1.</span> <span class="nav-text">使用pandoc将markdown输出为pdf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Linux-系统下修改环境变量"><span class="nav-number">2.</span> <span class="nav-text">Unix/Linux 系统下修改环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime-快捷键插入自定义字符串"><span class="nav-number">3.</span> <span class="nav-text">sublime 快捷键插入自定义字符串</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用pandoc将markdown输出为pdf"><span class="nav-number">1.</span> <span class="nav-text">使用pandoc将markdown输出为pdf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Linux-系统下修改环境变量"><span class="nav-number">2.</span> <span class="nav-text">Unix/Linux 系统下修改环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime-快捷键插入自定义字符串"><span class="nav-number">3.</span> <span class="nav-text">sublime 快捷键插入自定义字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树莓派开机自启动脚本"><span class="nav-number">4.</span> <span class="nav-text">树莓派开机自启动脚本</span></a></li></ol></div>
             
 
           </div>
@@ -1048,17 +1087,7 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
   
 
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
-
-
-
-  
-
-<style type="text/css"> 
-  p{ 
-  text-indent: 2em; 
-  } 
-</style><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -1076,6 +1105,11 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
+
+
+  
+
 
 </body>
 </html>

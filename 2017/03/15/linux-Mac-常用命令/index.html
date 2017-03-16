@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
 1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engi">
-<meta property="og:updated_time" content="2017-03-16T12:48:53.000Z">
+<meta property="og:updated_time" content="2017-03-16T16:00:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux/Mac 常用命令">
 <meta name="twitter:description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  452
+                  1,085
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  5
                 </span>
               
             </div>
@@ -485,7 +485,18 @@
 <font color="red">其中光标所在位置为<code>${1:}$SELECTION</code>所在地</font>
 
 <h1 id="树莓派开机自启动脚本"><a href="#树莓派开机自启动脚本" class="headerlink" title="树莓派开机自启动脚本"></a>树莓派开机自启动脚本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment">### BEGIN INIT INFO</span></div><div class="line"><span class="comment"># Provides:          auto_start</span></div><div class="line"><span class="comment"># Required-Start:    $remote_fs</span></div><div class="line"><span class="comment"># Required-Stop:     $remote_fs</span></div><div class="line"><span class="comment"># Default-Start:     2 3 4 5</span></div><div class="line"><span class="comment"># Default-Stop:      0 1 6</span></div><div class="line"><span class="comment"># Short-Description: Start or stop the HTTP Proxy.</span></div><div class="line"><span class="comment">### END INIT INFO</span></div><div class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></div><div class="line">    start)</div><div class="line">        <span class="comment"># svnserve -d -r /home/pi/svn_repository</span></div><div class="line">        python /home/pi/Documents/tips/auto_login.py</div><div class="line">        python /home/pi/Documents/tips/start_note.py</div><div class="line">        python /home/pi/Documents/tips/baidu_weather.py</div><div class="line">        php5 /home/pi/Documents/tips/bind_dns/bind.php pi</div><div class="line">        php5 /home/pi/Documents/tips/bind_dns/bind.php survey</div><div class="line">        ;;</div><div class="line">    stop)</div><div class="line">        killall svnserve</div><div class="line">        ;;</div><div class="line">*)</div><div class="line"><span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$0</span> (start|stop)"</span></div><div class="line">;;</div><div class="line"><span class="keyword">esac</span></div></pre></td></tr></table></figure>
-
+<p>注：本意是想写一个可以开机自启动的脚本，脚本的目的是登录校园网，然后将本机的IP地址更新到自己的域名中，向linux机器添加开机自启动脚本的方法为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 在/etc/init.d/文件夹下添加新的启动脚本，格式参考上面，注意需要加入BEGIN INIT INFO那一段注释，否则在加入启动项时会出现LSB不存在的error</span></div><div class="line"></div><div class="line">sudo chmod +x 775 name</div><div class="line"><span class="comment"># 给脚本足够运行权限</span></div><div class="line">sudo update-rc.d name defaults 95</div><div class="line"><span class="comment"># 将自启动脚本name添加到自启动表项中，启动顺序为95，注意，需要使用网络的脚本顺序要大于90</span></div><div class="line">sudo update-rc.d <span class="_">-f</span> name remove</div><div class="line"><span class="comment"># 移除自启动项name</span></div></pre></td></tr></table></figure>
+<p>这样既可开机自启动该脚本了</p>
+<p>但是在实际运行中发现并不能实现自动的登录以及域名解析的更新，分析了之后发现该脚本启动时间太早，机器还没有分到ip地址，无法完成网络请求，于是将该脚本加入到了<code>/etc/rc.local</code>自启动脚本中，linux系统的脚本启动顺序为：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta-keyword">/etc/</span>init.d/ init.d目录包含许多系统各种服务的启动和停止脚本。</div><div class="line"></div><div class="line"><span class="meta-keyword">/etc/</span>rc.local 脚本是在系统初始化级别脚本运行之后再执行的，因此可以安全地在里面添加你想在系统启动之后执行的脚本。</div></pre></td></tr></table></figure>
+<p>在rc.local文件中，exit 0之前加入我们的启动脚本</p>
+<p>为了保证可以联网，我们在脚本中设置了一个死循环，重复登录直到登录成功</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        f = urllib2.urlopen(url, post_data)</div><div class="line">        <span class="comment"># 这里完成了向登录页面发送登录POST请求的操作，只有这一步成功完成之后才能进行下一步的绑定域名脚本的执行，如果尚未分配到ip则会进入异常处理等待5秒继续尝试登录</span></div><div class="line">        content = f.read()</div><div class="line">        <span class="comment"># print content</span></div><div class="line">        result=urllib.urlopen(<span class="string">'http://baidu.com'</span>).read()</div><div class="line">        <span class="keyword">print</span> result</div><div class="line">        <span class="keyword">print</span> os.popen(<span class="string">'sh /home/pi/Documents/bind.sh'</span>).read()</div><div class="line">        <span class="comment"># 在python中执行shell脚本的方法，这个函数可以输出脚本的输出信息</span></div><div class="line">        <span class="keyword">print</span> <span class="string">"Network is Ready!"</span></div><div class="line">        <span class="keyword">break</span></div><div class="line">    <span class="keyword">except</span> Exception , e:</div><div class="line">        <span class="keyword">print</span> e</div><div class="line">        <span class="keyword">print</span> <span class="string">"Network is not ready,Sleep 5s..."</span></div><div class="line">        time.sleep(<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<h1 id="python-调用命令行"><a href="#python-调用命令行" class="headerlink" title="python 调用命令行"></a>python 调用命令行</h1><p>os.popen这种调用方法可以输出脚本的输出信息,推荐使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.popen(<span class="string">'sh /home/pi/Documents/bind.sh'</span>).read()</div></pre></td></tr></table></figure>
+<p>os.system 会输出一些奇怪的东西</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.system(<span class="string">"echo \"Hello World\""</span>)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -768,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用pandoc将markdown输出为pdf"><span class="nav-number">1.</span> <span class="nav-text">使用pandoc将markdown输出为pdf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Linux-系统下修改环境变量"><span class="nav-number">2.</span> <span class="nav-text">Unix/Linux 系统下修改环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime-快捷键插入自定义字符串"><span class="nav-number">3.</span> <span class="nav-text">sublime 快捷键插入自定义字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树莓派开机自启动脚本"><span class="nav-number">4.</span> <span class="nav-text">树莓派开机自启动脚本</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用pandoc将markdown输出为pdf"><span class="nav-number">1.</span> <span class="nav-text">使用pandoc将markdown输出为pdf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Linux-系统下修改环境变量"><span class="nav-number">2.</span> <span class="nav-text">Unix/Linux 系统下修改环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime-快捷键插入自定义字符串"><span class="nav-number">3.</span> <span class="nav-text">sublime 快捷键插入自定义字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树莓派开机自启动脚本"><span class="nav-number">4.</span> <span class="nav-text">树莓派开机自启动脚本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-调用命令行"><span class="nav-number">5.</span> <span class="nav-text">python 调用命令行</span></a></li></ol></div>
             
 
           </div>

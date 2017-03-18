@@ -92,18 +92,18 @@
 
 
 <meta name="description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
-1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engi">
+1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-en">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux/Mac 常用命令">
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
-1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engi">
-<meta property="og:updated_time" content="2017-03-16T16:00:04.000Z">
+1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-en">
+<meta property="og:updated_time" content="2017-03-17T11:38:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux/Mac 常用命令">
 <meta name="twitter:description" content="使用pandoc将markdown输出为pdfpandoc的安装与配置
-1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-engi">
+1234567891011pandoc hello-world.md -o out.pdf  --latex-engine=xelatex# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTexpandoc hello-world.md -o out.pdf  --latex-en">
 
 
 
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,085
+                  1,115
                 </span>
               
 
@@ -470,7 +470,9 @@
       
 
       
-        <h1 id="使用pandoc将markdown输出为pdf"><a href="#使用pandoc将markdown输出为pdf" class="headerlink" title="使用pandoc将markdown输出为pdf"></a>使用pandoc将markdown输出为pdf</h1><p><a href="http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html" target="_blank" rel="external">pandoc的安装与配置</a></p>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27836035&auto=0&height=66"></iframe>
+
+<h1 id="使用pandoc将markdown输出为pdf"><a href="#使用pandoc将markdown输出为pdf" class="headerlink" title="使用pandoc将markdown输出为pdf"></a>使用pandoc将markdown输出为pdf</h1><p><a href="http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html" target="_blank" rel="external">pandoc的安装与配置</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=xelatex</div><div class="line"></div><div class="line"><span class="comment"># 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex</span></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex</div><div class="line"><span class="comment"># tips：可以将该路径加入$PATH</span></div><div class="line"></div><div class="line"><span class="comment"># 指定中英文字体</span></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --latex-engine=xelatex -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> -V geometry:margin=1<span class="keyword">in</span> hello-world.md -o output.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> IPv6协议转发实验.md  -o example14.pdf</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>Mac 下的中文字体集</p>
@@ -497,6 +499,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.popen(<span class="string">'sh /home/pi/Documents/bind.sh'</span>).read()</div></pre></td></tr></table></figure>
 <p>os.system 会输出一些奇怪的东西</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.system(<span class="string">"echo \"Hello World\""</span>)</div></pre></td></tr></table></figure>
+<h1 id="查看应用安装位置"><a href="#查看应用安装位置" class="headerlink" title="查看应用安装位置"></a>查看应用安装位置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看运行文件所在处</span></div><div class="line"><span class="built_in">which</span> hexo</div><div class="line"></div><div class="line"><span class="comment"># 查看应用安装位置</span></div><div class="line">whereis hexo</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -667,7 +670,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -689,7 +692,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -779,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用pandoc将markdown输出为pdf"><span class="nav-number">1.</span> <span class="nav-text">使用pandoc将markdown输出为pdf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Linux-系统下修改环境变量"><span class="nav-number">2.</span> <span class="nav-text">Unix/Linux 系统下修改环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime-快捷键插入自定义字符串"><span class="nav-number">3.</span> <span class="nav-text">sublime 快捷键插入自定义字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树莓派开机自启动脚本"><span class="nav-number">4.</span> <span class="nav-text">树莓派开机自启动脚本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-调用命令行"><span class="nav-number">5.</span> <span class="nav-text">python 调用命令行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用pandoc将markdown输出为pdf"><span class="nav-number">1.</span> <span class="nav-text">使用pandoc将markdown输出为pdf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unix-Linux-系统下修改环境变量"><span class="nav-number">2.</span> <span class="nav-text">Unix/Linux 系统下修改环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime-快捷键插入自定义字符串"><span class="nav-number">3.</span> <span class="nav-text">sublime 快捷键插入自定义字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树莓派开机自启动脚本"><span class="nav-number">4.</span> <span class="nav-text">树莓派开机自启动脚本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-调用命令行"><span class="nav-number">5.</span> <span class="nav-text">python 调用命令行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看应用安装位置"><span class="nav-number">6.</span> <span class="nav-text">查看应用安装位置</span></a></li></ol></div>
             
 
           </div>

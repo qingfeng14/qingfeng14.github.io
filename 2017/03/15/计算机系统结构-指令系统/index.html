@@ -400,7 +400,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/15/计算机系统结构-指令系统/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/15/计算机系统结构-指令系统/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/15/计算机系统结构-指令系统/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -469,19 +469,25 @@
       
         <p>指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，单地址指令，两地址指令</p>
 <a id="more"></a>
-<p>$$\sum_{i=1}^n a_i=0$$</p>
-<h1 id="计算机系统的性能评价"><a href="#计算机系统的性能评价" class="headerlink" title="计算机系统的性能评价"></a>计算机系统的性能评价</h1><h2 id="时钟频率"><a href="#时钟频率" class="headerlink" title="时钟频率"></a>时钟频率</h2><h2 id="指令执行速度"><a href="#指令执行速度" class="headerlink" title="指令执行速度"></a>指令执行速度</h2><blockquote>
+<p><span class="math display">\[\sum_{i=1}^n a_i=0\]</span></p>
+<h1 id="计算机系统的性能评价">计算机系统的性能评价</h1>
+<h2 id="时钟频率">时钟频率</h2>
+<h2 id="指令执行速度">指令执行速度</h2>
+<blockquote>
 <p>一种经典的表示运算速度的方法</p>
 </blockquote>
 <p>MIPS(Million Instructions Per Second), GIPS, TIPS</p>
-<p>$$MIPS = \frac{指令条数}{执行时间\times 10^6} = \frac{Fz}{CPI} = IPC \times Fz$$</p>
-<p>其中: </p>
+<p><span class="math display">\[MIPS = \frac{指令条数}{执行时间\times 10^6} = \frac{Fz}{CPI} = IPC \times Fz\]</span></p>
+<p>其中:</p>
 <ul>
 <li>Fz为处理机的工作主频</li>
 <li>CPI(Cycles Per Instruction)为<font color="red">每条指令所需的平均时钟周期数</font></li>
 <li>IPC(Instruction Per Cycle)为每个时钟周期平均执行的指令条数</li>
 </ul>
-<h2 id="平均速度"><a href="#平均速度" class="headerlink" title="平均速度"></a>平均速度</h2><h2 id="核心程序法"><a href="#核心程序法" class="headerlink" title="核心程序法"></a>核心程序法</h2><h2 id="峰值速度"><a href="#峰值速度" class="headerlink" title="峰值速度"></a>峰值速度</h2>
+<h2 id="平均速度">平均速度</h2>
+<h2 id="核心程序法">核心程序法</h2>
+<h2 id="峰值速度">峰值速度</h2>
+
       
     </div>
 
@@ -595,15 +601,15 @@
           </div>
           
 
-  <p>热评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/15/计算机系统结构-指令系统/"
-           data-title="[计算机系统结构]指令系统" data-url="https://qingfeng14.github.io/2017/03/15/计算机系统结构-指令系统/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -652,7 +658,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -663,7 +669,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -674,7 +680,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -919,32 +925,38 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"qingfeng14"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+
+    <script type="text/javascript">
+      var disqus_shortname = 'qingfeng';
+      var disqus_identifier = '2017/03/15/计算机系统结构-指令系统/';
+
+      var disqus_title = "[计算机系统结构]指令系统";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
-
-
-
 
 
 

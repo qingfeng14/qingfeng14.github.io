@@ -97,7 +97,7 @@
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/18/搜索引擎性能评价实验/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="实验步骤">
-<meta property="og:updated_time" content="2017-03-18T03:39:08.000Z">
+<meta property="og:updated_time" content="2017-03-19T05:27:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搜索引擎性能评价实验">
 <meta name="twitter:description" content="实验步骤">
@@ -400,7 +400,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/18/搜索引擎性能评价实验/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/18/搜索引擎性能评价实验/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/18/搜索引擎性能评价实验/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  392
+                  702
                 </span>
               
 
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -467,17 +467,39 @@
       
 
       
-        <h1 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h1><a id="more"></a>
-<ol>
+        <h1 id="实验步骤">实验步骤</h1>
+<a id="more"></a>
+<ol style="list-style-type: decimal">
 <li>自由分组， 至多2人一组</li>
-<li>构建查询样例集合：利用网络资源(<a href="http://top.baidu.com/" target="_blank" rel="external">http://top.baidu.com/</a>; <a href="http://top.sogou.com/等" target="_blank" rel="external">http://top.sogou.com/等</a>)<br>和个人使用经验构建查询样例集合，查询样例集合需覆盖不同查询热门程度（ 冷门/热门） 和各种类型的用户查询需求（ 导航类/信息类/事务类），样例集合的规模为10个查询，各类比例为2:5:3， 并根据个人经验，撰写每个查询样例的信息需求内容。</li>
-<li>构建Pooling：学生根据其构建的查询样例集合，抓取常用的三个中文搜索引擎(百度、360好搜、<br>搜狗)对这部分查询词的查询结果，每个搜索引擎抓取查询结果的前十位结果，并利用这些结果<br>构建Pooling。</li>
-<li>构建相关性标注集合：根据步骤2中撰写好的信息需求，对Pooling里的结果进行标注，标注为<br>“ 答案” 和“ 非答案” 两类即可。</li>
-<li>根据标注结果，依据<font color="red">MAP，P@10，MRR</font>等评价指标对各个搜索引擎的查询性能进行评价，并对<br>搜索引擎满足不同信息需求的情况加以比较，每人各自撰写实验报告。</li>
+<li>构建查询样例集合：利用网络资源(http://top.baidu.com/; http://top.sogou.com/等) 和个人使用经验构建查询样例集合，查询样例集合需覆盖不同查询热门程度（ 冷门/热门） 和各种类型的用户查询需求（ 导航类/信息类/事务类），样例集合的规模为10个查询，各类比例为2:5:3， 并根据个人经验，撰写每个查询样例的信息需求内容。</li>
+<li>构建Pooling：学生根据其构建的查询样例集合，抓取常用的三个中文搜索引擎(百度、360好搜、 搜狗)对这部分查询词的查询结果，每个搜索引擎抓取查询结果的前十位结果，并利用这些结果 构建Pooling。</li>
+<li>构建相关性标注集合：根据步骤2中撰写好的信息需求，对Pooling里的结果进行标注，标注为 “ 答案” 和“ 非答案” 两类即可。</li>
+<li>根据标注结果，依据<font color="red">MAP，P@10，MRR</font>等评价指标对各个搜索引擎的查询性能进行评价，并对 搜索引擎满足不同信息需求的情况加以比较，每人各自撰写实验报告。</li>
 <li>扩展内容：可以尝试对搜索引擎处理非中文查询、有错别字查询等情况的不同策略进行分析、比较。</li>
 </ol>
-<h1 id="查询样例集合创建"><a href="#查询样例集合创建" class="headerlink" title="查询样例集合创建"></a>查询样例集合创建</h1><h2 id="导航类"><a href="#导航类" class="headerlink" title="导航类"></a>导航类</h2><h2 id="信息类"><a href="#信息类" class="headerlink" title="信息类"></a>信息类</h2><p>萨德入韩(热门)</p>
-<h2 id="事务类"><a href="#事务类" class="headerlink" title="事务类"></a>事务类</h2>
+<h1 id="查询样例集合创建">查询样例集合创建</h1>
+<h2 id="导航类">导航类</h2>
+<p>清华自主招生简章(热门)，河海大学主页(冷门)</p>
+<h2 id="信息类">信息类</h2>
+<p>萨德(热门), 美对朝忍耐到尽头(热门)，红薯 地瓜（冷门），青铜器制作流程（冷门）, 烟草学专业(冷门)</p>
+<h2 id="事务类">事务类</h2>
+<p>NBA直播(热门)， 金刚狼3下载（热门），张家界联想笔记本维修（冷门）</p>
+<h1 id="查询样例信息需求">查询样例信息需求</h1>
+<ul>
+<li>清华自主招生简章: 查询最新清华大学自主招生简章</li>
+<li>河海大学主页：找到河海大学的校园主页</li>
+<li>萨德：关于萨德的最新新闻，以及事件经历</li>
+<li>美对朝忍耐到尽头：相关的新闻</li>
+<li>红薯 地瓜：红薯与地瓜是否是同一种事物，各地有什么区别</li>
+<li>青铜器制作流程：直接给出青铜器的制作方法</li>
+<li>烟草学专业：查询专业简介，需要给出专业学习内容，就业方向，相关学校</li>
+<li>NBA直播：最新NBA赛事直播，比分情况，赛况解说等</li>
+<li>金刚狼3下载：给出电影的下载链接或者在线观看链接</li>
+<li>张家界联想笔记本维修：给出维修点，联系方式等</li>
+</ul>
+<h1 id="构建pooling">构建pooling</h1>
+<p>针对三个搜索引擎分别抓取对应搜索数据，并进行标记</p>
+
       
     </div>
 
@@ -569,6 +591,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/03/18/机器学习实验-朴素贝叶斯分类器/" rel="prev" title="机器学习实验-朴素贝叶斯分类器">
+                机器学习实验-朴素贝叶斯分类器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -589,15 +615,15 @@
           </div>
           
 
-  <p>热评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/18/搜索引擎性能评价实验/"
-           data-title="搜索引擎性能评价实验" data-url="https://qingfeng14.github.io/2017/03/18/搜索引擎性能评价实验/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -646,7 +672,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -657,7 +683,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -668,7 +694,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -758,7 +784,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验步骤"><span class="nav-number">1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询样例集合创建"><span class="nav-number">2.</span> <span class="nav-text">查询样例集合创建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导航类"><span class="nav-number">2.1.</span> <span class="nav-text">导航类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息类"><span class="nav-number">2.2.</span> <span class="nav-text">信息类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务类"><span class="nav-number">2.3.</span> <span class="nav-text">事务类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验步骤"><span class="nav-number">1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询样例集合创建"><span class="nav-number">2.</span> <span class="nav-text">查询样例集合创建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导航类"><span class="nav-number">2.1.</span> <span class="nav-text">导航类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息类"><span class="nav-number">2.2.</span> <span class="nav-text">信息类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务类"><span class="nav-number">2.3.</span> <span class="nav-text">事务类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询样例信息需求"><span class="nav-number">3.</span> <span class="nav-text">查询样例信息需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构建pooling"><span class="nav-number">4.</span> <span class="nav-text">构建pooling</span></a></li></ol></div>
             
 
           </div>
@@ -913,32 +939,38 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"qingfeng14"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+
+    <script type="text/javascript">
+      var disqus_shortname = 'qingfeng';
+      var disqus_identifier = '2017/03/18/搜索引擎性能评价实验/';
+
+      var disqus_title = "搜索引擎性能评价实验";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
-
-
-
 
 
 

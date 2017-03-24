@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[ucore_lab]]></title>
+      <url>%2F2017%2F03%2F23%2Fucore-lab%2F</url>
+      <content type="text"><![CDATA[ucore_lab 实验中一些重要结构体参数的含义 Page结构体 每个Page描述了一个物理页 12345678910111213141516/* * * struct Page - Page descriptor structures. Each Page describes one * physical page. In kern/mm/pmm.h, you can find lots of useful functions * that convert Page to other data types, such as phyical address. * */struct Page &#123; int ref; // page frame&apos;s reference counter // 页帧的reference uint32_t flags; // array of flags that describe the status of the page frame // 描述页帧的标记位， unsigned int unsigned int property; // the num of free block, used in first fit pm manager // 空闲块的数量， 用于first fit算法 list_entry_t page_link; // free list link // page_link&#125;; set_bit, clear_bit宏 123456set_bit(int nr,void *addr)；// 将addr中第nr位的值置为1 返回addr原第nr为的值，即0或者1clear_bit(int nr,void *addr)；// 将addr中第nr位的值置为0 返回addr原第nr为的值的反码test_bit(int nr, volatile void *addr) // 改为是否为1， 是1返回1，是0返回0 123456#define SetPageReserved(page) set_bit(PG_reserved, &amp;((page)-&gt;flags))#define ClearPageReserved(page) clear_bit(PG_reserved, &amp;((page)-&gt;flags))#define PageReserved(page) test_bit(PG_reserved, &amp;((page)-&gt;flags))#define SetPageProperty(page) set_bit(PG_property, &amp;((page)-&gt;flags))#define ClearPageProperty(page) clear_bit(PG_property, &amp;((page)-&gt;flags))#define PageProperty(page) test_bit(PG_property, &amp;((page)-&gt;flags)) 12#define PG_reserved 0 // if this bit=1: the Page is reserved for kernel, cannot be used in alloc/free_pages; otherwise, this bit=0 #define PG_property 1 // if this bit=1: the Page is the head page of a free memory block(contains some continuous_addrress pages), and can be used in alloc_pages; if this bit=0: if the Page is the the head page of a free memory block, then this Page and the memory block is alloced. Or this Page isn't the head page. 12// convert list entry to page#define le2page(le, member) to_struct((le), struct Page, member)]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[数值分析]]></title>
       <url>%2F2017%2F03%2F21%2F%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%2F</url>
       <content type="text"><![CDATA[设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程. \[y1 = C^{-1}b\] \[y2 = y1 + Ab\] \[y_3 = 2(Ay_2) + y_2\] \[ x = B^{-1}y_3\]]]></content>

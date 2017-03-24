@@ -323,6 +323,197 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/23/ucore-lab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/23/ucore-lab/" itemprop="url">
+                  ucore_lab
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T22:23:44+08:00">
+                2017-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/23/ucore-lab/" class="leancloud_visitors" data-flag-title="ucore_lab">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  351
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="ucore_lab-实验中一些重要结构体参数的含义">ucore_lab 实验中一些重要结构体参数的含义</h1>
+<h2 id="page结构体">Page结构体</h2>
+<p>每个Page描述了一个物理页</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/* *</div><div class="line"> * struct Page - Page descriptor structures. Each Page describes one</div><div class="line"> * physical page. In kern/mm/pmm.h, you can find lots of useful functions</div><div class="line"> * that convert Page to other data types, such as phyical address.</div><div class="line"> * */</div><div class="line">struct Page &#123;</div><div class="line">    int ref;                        // page frame&apos;s reference counter</div><div class="line">    // 页帧的reference</div><div class="line">    uint32_t flags;                 // array of flags that describe the status </div><div class="line">    of the page frame</div><div class="line">    // 描述页帧的标记位， unsigned int</div><div class="line">    unsigned int property;          // the num of free block, used in first fit pm manager</div><div class="line">    // 空闲块的数量， 用于first fit算法</div><div class="line">    list_entry_t page_link;         // free list link</div><div class="line">    // page_link</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/23/ucore-lab/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/21/数值分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -398,16 +589,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/21/数值分析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/21/数值分析/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -472,11 +653,14 @@
 
       
         
-          
-            <p>设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算<span class="math inline">\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\)</span>, 请给出一个合理、高效率的算法流程.</p>
-<p><span class="math display">\[y1 = C^{-1}b\]</span> <span class="math display">\[y2 = y1 + Ab\]</span> <span class="math display">\[y_3 = 2(Ay_2) + y_2\]</span> <span class="math display">\[ x = B^{-1}y_3\]</span></p>
-
-          
+          <p>设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算<span class="math inline">\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\)</span>, 请给出一个合理、高效率的算法流程.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/21/数值分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -592,16 +776,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/19/机器学习-朴素贝叶斯/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/19/机器学习-朴素贝叶斯/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -793,16 +967,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/18/机器学习实验-朴素贝叶斯分类器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/18/机器学习实验-朴素贝叶斯分类器/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -999,16 +1163,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/18/搜索引擎性能评价实验/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/18/搜索引擎性能评价实验/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1196,16 +1350,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/16/CCF2016/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/16/CCF2016/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1396,16 +1540,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/16/IPv6协议转发实验/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/16/IPv6协议转发实验/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1601,16 +1735,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/15/linux-Mac-常用命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/15/linux-Mac-常用命令/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1803,16 +1927,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/15/计算机系统结构-指令系统/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/15/计算机系统结构-指令系统/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -2001,16 +2115,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/14/密码学-古典密码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/14/密码学-古典密码/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -2115,204 +2219,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/14/密码学-Exercise1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="青枫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青枫别苑">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/14/密码学-Exercise1/" itemprop="url">
-                  [密码学]-Exercise1
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T15:23:05+08:00">
-                2017-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/密码学/" itemprop="url" rel="index">
-                    <span itemprop="name">密码学</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/14/密码学-Exercise1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/14/密码学-Exercise1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/03/14/密码学-Exercise1/" class="leancloud_visitors" data-flag-title="[密码学]-Exercise1">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  241
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>密码学原理与实践（第二版） p32 1.5 1.16 1.21 1.26 1.29 1.30</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/14/密码学-Exercise1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2362,7 +2268,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2373,7 +2279,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2384,7 +2290,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2613,34 +2519,32 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
   
 
-    <script type="text/javascript">
-      var disqus_shortname = 'qingfeng';
-      var disqus_identifier = 'index.html';
-
-      var disqus_title = "";
 
 
-      function run_disqus_script(disqus_script) {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
 
-      run_disqus_script('count.js');
+	
 
-      
 
-    </script>
+
+
+
   
 
 
 
 
 
+  
+    
+
+    
+  
 
 
+
+
+
+  
 
 
 

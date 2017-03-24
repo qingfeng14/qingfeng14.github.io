@@ -91,19 +91,16 @@
 
 
 
-<meta name="description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.
-\[y1 = C^{-1}b\] \[y2 = y1 + Ab\] \[y_3 = 2(Ay_2) + y_2\] \[ x = B^{-1}y_3\]">
+<meta name="description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数值分析">
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/21/数值分析/index.html">
 <meta property="og:site_name" content="青枫别苑">
-<meta property="og:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.
-\[y1 = C^{-1}b\] \[y2 = y1 + Ab\] \[y_3 = 2(Ay_2) + y_2\] \[ x = B^{-1}y_3\]">
-<meta property="og:updated_time" content="2017-03-21T02:32:45.000Z">
+<meta property="og:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
+<meta property="og:updated_time" content="2017-03-23T15:36:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数值分析">
-<meta name="twitter:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.
-\[y1 = C^{-1}b\] \[y2 = y1 + Ab\] \[y_3 = 2(Ay_2) + y_2\] \[ x = B^{-1}y_3\]">
+<meta name="twitter:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
 
 
 
@@ -397,16 +394,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/21/数值分析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/21/数值分析/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -471,6 +458,7 @@
 
       
         <p>设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算<span class="math inline">\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\)</span>, 请给出一个合理、高效率的算法流程.</p>
+<a id="more"></a>
 <p><span class="math display">\[y1 = C^{-1}b\]</span> <span class="math display">\[y2 = y1 + Ab\]</span> <span class="math display">\[y_3 = 2(Ay_2) + y_2\]</span> <span class="math display">\[ x = B^{-1}y_3\]</span></p>
 
       
@@ -562,6 +550,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/03/23/ucore-lab/" rel="prev" title="ucore_lab">
+                ucore_lab <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -586,12 +578,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -630,7 +617,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -641,7 +628,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -652,7 +639,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -885,41 +872,36 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
   
 
-    <script type="text/javascript">
-      var disqus_shortname = 'qingfeng';
-      var disqus_identifier = '2017/03/21/数值分析/';
-
-      var disqus_title = "数值分析";
 
 
-      function run_disqus_script(disqus_script) {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
 
-      run_disqus_script('count.js');
+	
 
-      
-        var disqus_config = function () {
-            this.page.url = disqus_url;
-            this.page.identifier = disqus_identifier;
-            this.page.title = disqus_title;
-        };
-        run_disqus_script('embed.js');
-      
 
-    </script>
+
+
+
   
 
 
 
 
 
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128349"></script>
+      <!-- UY END -->
+    
+  
 
 
+
+
+
+  
 
 
 

@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="操作系统,ucore_lab," />
+  <meta name="keywords" content="实验,机器学习,朴素贝叶斯," />
 
 
 
@@ -91,25 +91,30 @@
 
 
 
-<meta name="description" content="ucore_lab 实验中一些重要结构体参数的含义
-Page结构体
-每个Page描述了一个物理页
-12345678910111213141516/* * * struct Page - Page descriptor structures. Each Page describes one * physical page. In kern/mm/pmm.h, you can find lots of">
+<meta name="description" content="朴素贝叶斯原理
+youryion数据挖掘指导
+朴素贝叶斯法属于一种分类方法，基于特征条件独立假设学习输入输出的联合概率分布，以此为模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。
+简单有效，是一种常用的机器学习方法.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ucore_lab">
-<meta property="og:url" content="https://qingfeng14.github.io/2017/03/23/ucore-lab/index.html">
+<meta property="og:title" content="机器学习-朴素贝叶斯">
+<meta property="og:url" content="https://qingfeng14.github.io/2017/03/19/机器学习/机器学习-朴素贝叶斯/index.html">
 <meta property="og:site_name" content="青枫别苑">
-<meta property="og:description" content="ucore_lab 实验中一些重要结构体参数的含义
-Page结构体
-每个Page描述了一个物理页
-12345678910111213141516/* * * struct Page - Page descriptor structures. Each Page describes one * physical page. In kern/mm/pmm.h, you can find lots of">
-<meta property="og:updated_time" content="2017-03-23T17:03:16.000Z">
+<meta property="og:description" content="朴素贝叶斯原理
+youryion数据挖掘指导
+朴素贝叶斯法属于一种分类方法，基于特征条件独立假设学习输入输出的联合概率分布，以此为模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。
+简单有效，是一种常用的机器学习方法.">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3H2A1k1M0B0G0e1Y2z0J/Image%202017-03-19%20at%201.16.18%20下午.png">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/1e1r1i0J2l2T1V332H2C/Image%202017-03-19%20at%201.36.53%20下午.png">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3B1d3L1A2D42390u3c2g/Image%202017-03-19%20at%201.38.11%20下午.png">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/2E3p06433b2e241u0i1d/Image%202017-03-19%20at%201.41.19%20下午.png">
+<meta property="og:updated_time" content="2017-03-19T06:02:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ucore_lab">
-<meta name="twitter:description" content="ucore_lab 实验中一些重要结构体参数的含义
-Page结构体
-每个Page描述了一个物理页
-12345678910111213141516/* * * struct Page - Page descriptor structures. Each Page describes one * physical page. In kern/mm/pmm.h, you can find lots of">
+<meta name="twitter:title" content="机器学习-朴素贝叶斯">
+<meta name="twitter:description" content="朴素贝叶斯原理
+youryion数据挖掘指导
+朴素贝叶斯法属于一种分类方法，基于特征条件独立假设学习输入输出的联合概率分布，以此为模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。
+简单有效，是一种常用的机器学习方法.">
+<meta name="twitter:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3H2A1k1M0B0G0e1Y2z0J/Image%202017-03-19%20at%201.16.18%20下午.png">
 
 
 
@@ -137,13 +142,13 @@ Page结构体
 
 
 
-  <link rel="canonical" href="https://qingfeng14.github.io/2017/03/23/ucore-lab/"/>
+  <link rel="canonical" href="https://qingfeng14.github.io/2017/03/19/机器学习/机器学习-朴素贝叶斯/"/>
 
 
 
 
 
-  <title> ucore_lab | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 机器学习-朴素贝叶斯 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
    
 </head>
 
@@ -331,7 +336,7 @@ Page结构体
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/23/ucore-lab/">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/19/机器学习/机器学习-朴素贝叶斯/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="青枫">
@@ -352,7 +357,7 @@ Page结构体
             
             
               
-                ucore_lab
+                机器学习-朴素贝叶斯
               
             
           </h1>
@@ -367,8 +372,8 @@ Page结构体
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T22:23:44+08:00">
-                2017-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-19T00:55:11+08:00">
+                2017-03-19
               </time>
             
 
@@ -390,8 +395,8 @@ Page结构体
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
                   </a>
                 </span>
 
@@ -407,7 +412,7 @@ Page结构体
 
           
           
-             <span id="/2017/03/23/ucore-lab/" class="leancloud_visitors" data-flag-title="ucore_lab">
+             <span id="/2017/03/19/机器学习/机器学习-朴素贝叶斯/" class="leancloud_visitors" data-flag-title="机器学习-朴素贝叶斯">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -431,7 +436,7 @@ Page结构体
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  351
+                  274
                 </span>
               
 
@@ -447,7 +452,7 @@ Page结构体
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -466,16 +471,46 @@ Page结构体
       
 
       
-        <h1 id="ucore_lab-实验中一些重要结构体参数的含义">ucore_lab 实验中一些重要结构体参数的含义</h1>
-<h2 id="page结构体">Page结构体</h2>
-<p>每个Page描述了一个物理页</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/* *</div><div class="line"> * struct Page - Page descriptor structures. Each Page describes one</div><div class="line"> * physical page. In kern/mm/pmm.h, you can find lots of useful functions</div><div class="line"> * that convert Page to other data types, such as phyical address.</div><div class="line"> * */</div><div class="line">struct Page &#123;</div><div class="line">    int ref;                        // page frame&apos;s reference counter</div><div class="line">    // 页帧的reference</div><div class="line">    uint32_t flags;                 // array of flags that describe the status </div><div class="line">    of the page frame</div><div class="line">    // 描述页帧的标记位， unsigned int</div><div class="line">    unsigned int property;          // the num of free block, used in first fit pm manager</div><div class="line">    // 空闲块的数量， 用于first fit算法</div><div class="line">    list_entry_t page_link;         // free list link</div><div class="line">    // page_link</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+        <h1 id="朴素贝叶斯原理">朴素贝叶斯原理</h1>
+<p><a href="https://github.com/yourtion/DataminingGuideBook" target="_blank" rel="external">youryion数据挖掘指导</a></p>
+<p>朴素贝叶斯法属于一种分类方法，基于<font color="red">特征条件独立假设</font>学习<font color="red">输入输出的联合概率分布</font>，以此为模型，对于给定的输入x，利用贝叶斯定理求出<font color="red">后验概率最大的输出y。</font></p>
+<p>简单有效，是一种常用的机器学习方法.</p>
 <a id="more"></a>
-<h1 id="set_bit-clear_bit宏">set_bit, clear_bit宏</h1>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">set_bit(<span class="keyword">int</span> nr,<span class="keyword">void</span> *addr)；</div><div class="line"><span class="comment">// 将addr中第nr位的值置为1 返回addr原第nr为的值，即0或者1</span></div><div class="line">clear_bit(<span class="keyword">int</span> nr,<span class="keyword">void</span> *addr)；</div><div class="line"><span class="comment">// 将addr中第nr位的值置为0 返回addr原第nr为的值的反码</span></div><div class="line">test_bit(<span class="keyword">int</span> nr, <span class="keyword">volatile</span> <span class="keyword">void</span> *addr) </div><div class="line"><span class="comment">// 改为是否为1， 是1返回1，是0返回0</span></div></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SetPageReserved(page)       set_bit(PG_reserved, &amp;((page)-&gt;flags))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ClearPageReserved(page)     clear_bit(PG_reserved, &amp;((page)-&gt;flags))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PageReserved(page)          test_bit(PG_reserved, &amp;((page)-&gt;flags))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SetPageProperty(page)       set_bit(PG_property, &amp;((page)-&gt;flags))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ClearPageProperty(page)     clear_bit(PG_property, &amp;((page)-&gt;flags))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PageProperty(page)          test_bit(PG_property, &amp;((page)-&gt;flags))</span></div></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PG_reserved                 0       <span class="comment">// if this bit=1: the Page is reserved for kernel, cannot be used in alloc/free_pages; otherwise, this bit=0 </span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PG_property                 1       <span class="comment">// if this bit=1: the Page is the head page of a free memory block(contains some continuous_addrress pages), and can be used in alloc_pages; if this bit=0: if the Page is the the head page of a free memory block, then this Page and the memory block is alloced. Or this Page isn't the head page.</span></span></div></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// convert list entry to page</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> le2page(le, member)            to_struct((le), struct Page, member)</span></div></pre></td></tr></table></figure>
+<ul>
+<li>设输入空间 <span class="math inline">\(X \subseteq R^n\)</span>为n维向量的集合</li>
+<li>输出空间为类标记集合 <span class="math inline">\(Y=c_1, c_2,\cdots,c_k\)</span></li>
+<li>X是定义在<font color="red">输入空间</font>上的随机变量</li>
+<li>Y是定义在输出空间上的随机变量</li>
+<li>P(X,Y)是X和Y的联合概率分布</li>
+<li><span class="math inline">\(T = (x_1, y_1), (x_2, y_2), \cdots, (x_N, y_N)\)</span>是由P(X,Y)<font color="red">独立同分布</font>产生的训练集</li>
+</ul>
+<h1 id="贝叶斯法则">贝叶斯法则</h1>
+<p>条件概率</p>
+<p>条件概率表示为P（A|B），读作“在B条件下A的概率”。</p>
+<p>若只有两个事件A，B，那么 <span class="math display">\[P(A|B) = \frac{P(AB)}{P(B)}\]</span></p>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/3H2A1k1M0B0G0e1Y2z0J/Image%202017-03-19%20at%201.16.18%20下午.png" alt="贝叶斯法则">
+<p class="caption">贝叶斯法则</p>
+</div>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/1e1r1i0J2l2T1V332H2C/Image%202017-03-19%20at%201.36.53%20下午.png">
+
+</div>
+<p>引入独立性假设</p>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/3B1d3L1A2D42390u3c2g/Image%202017-03-19%20at%201.38.11%20下午.png">
+
+</div>
+<p>得到朴素贝叶斯分类器</p>
+<div class="figure">
+<embed src="https://d3uepj124s5rcx.cloudfront.net/items/2I3E2O0P2k2O2B1L2I3P/Image%202017-03-19%20at%201.39.01%20下午.png?v=ed93793c">
+
+</div>
+<p>拉普拉斯平滑</p>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/2E3p06433b2e241u0i1d/Image%202017-03-19%20at%201.41.19%20下午.png">
+
+</div>
 
       
     </div>
@@ -525,7 +560,7 @@ Page结构体
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://qingfeng14.github.io/2017/03/23/ucore-lab/" title="ucore_lab">https://qingfeng14.github.io/2017/03/23/ucore-lab/</a>
+      <a href="https://qingfeng14.github.io/2017/03/19/机器学习/机器学习-朴素贝叶斯/" title="机器学习-朴素贝叶斯">https://qingfeng14.github.io/2017/03/19/机器学习/机器学习-朴素贝叶斯/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -541,9 +576,11 @@ Page结构体
       
         <div class="post-tags">
           
-            <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
+            <a href="/tags/实验/" rel="tag"># 实验</a>
           
-            <a href="/tags/ucore-lab/" rel="tag"># ucore_lab</a>
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/朴素贝叶斯/" rel="tag"># 朴素贝叶斯</a>
           
         </div>
       
@@ -556,8 +593,8 @@ Page结构体
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/21/数值分析/" rel="next" title="数值分析">
-                <i class="fa fa-chevron-left"></i> 数值分析
+              <a href="/2017/03/18/机器学习/机器学习实验-朴素贝叶斯分类器/" rel="next" title="机器学习实验-朴素贝叶斯分类器">
+                <i class="fa fa-chevron-left"></i> 机器学习实验-朴素贝叶斯分类器
               </a>
             
           </div>
@@ -565,6 +602,10 @@ Page结构体
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/21/数值分析/" rel="prev" title="数值分析">
+                数值分析 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -638,7 +679,7 @@ Page结构体
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -660,7 +701,7 @@ Page结构体
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -750,7 +791,7 @@ Page结构体
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ucore_lab-实验中一些重要结构体参数的含义"><span class="nav-number">1.</span> <span class="nav-text">ucore_lab 实验中一些重要结构体参数的含义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#page结构体"><span class="nav-number">1.1.</span> <span class="nav-text">Page结构体</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#set_bit-clear_bit宏"><span class="nav-number">2.</span> <span class="nav-text">set_bit, clear_bit宏</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#朴素贝叶斯原理"><span class="nav-number">1.</span> <span class="nav-text">朴素贝叶斯原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝叶斯法则"><span class="nav-number">2.</span> <span class="nav-text">贝叶斯法则</span></a></li></ol></div>
             
 
           </div>

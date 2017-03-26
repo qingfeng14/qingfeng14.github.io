@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="指令系统,寻址方式,内存映射,大端小端,哈夫曼编码,单地址指令,两地址指令," />
+  <meta name="keywords" content="课程,搜索引擎,实验," />
 
 
 
@@ -91,16 +91,16 @@
 
 
 
-<meta name="description" content="指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，单地址指令，两地址指令">
+<meta name="description" content="实验步骤">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[计算机系统结构]指令系统">
-<meta property="og:url" content="https://qingfeng14.github.io/2017/03/15/计算机系统结构-指令系统/index.html">
+<meta property="og:title" content="搜索引擎性能评价实验">
+<meta property="og:url" content="https://qingfeng14.github.io/2017/03/18/搜索引擎/搜索引擎性能评价实验/index.html">
 <meta property="og:site_name" content="青枫别苑">
-<meta property="og:description" content="指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，单地址指令，两地址指令">
-<meta property="og:updated_time" content="2017-03-15T15:33:42.000Z">
+<meta property="og:description" content="实验步骤">
+<meta property="og:updated_time" content="2017-03-19T05:27:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[计算机系统结构]指令系统">
-<meta name="twitter:description" content="指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，单地址指令，两地址指令">
+<meta name="twitter:title" content="搜索引擎性能评价实验">
+<meta name="twitter:description" content="实验步骤">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://qingfeng14.github.io/2017/03/15/计算机系统结构-指令系统/"/>
+  <link rel="canonical" href="https://qingfeng14.github.io/2017/03/18/搜索引擎/搜索引擎性能评价实验/"/>
 
 
 
 
 
-  <title> [计算机系统结构]指令系统 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 搜索引擎性能评价实验 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
    
 </head>
 
@@ -322,7 +322,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/15/计算机系统结构-指令系统/">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/18/搜索引擎/搜索引擎性能评价实验/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="青枫">
@@ -343,7 +343,7 @@
             
             
               
-                [计算机系统结构]指令系统
+                搜索引擎性能评价实验
               
             
           </h1>
@@ -358,8 +358,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T01:56:33+08:00">
-                2017-03-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-18T01:13:13+08:00">
+                2017-03-18
               </time>
             
 
@@ -381,8 +381,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统结构/" itemprop="url" rel="index">
-                    <span itemprop="name">系统结构</span>
+                  <a href="/categories/搜索引擎/" itemprop="url" rel="index">
+                    <span itemprop="name">搜索引擎</span>
                   </a>
                 </span>
 
@@ -398,7 +398,7 @@
 
           
           
-             <span id="/2017/03/15/计算机系统结构-指令系统/" class="leancloud_visitors" data-flag-title="[计算机系统结构]指令系统">
+             <span id="/2017/03/18/搜索引擎/搜索引擎性能评价实验/" class="leancloud_visitors" data-flag-title="搜索引擎性能评价实验">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  161
+                  702
                 </span>
               
 
@@ -438,7 +438,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -457,26 +457,38 @@
       
 
       
-        <p>指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，单地址指令，两地址指令</p>
+        <h1 id="实验步骤">实验步骤</h1>
 <a id="more"></a>
-<p><span class="math display">\[\sum_{i=1}^n a_i=0\]</span></p>
-<h1 id="计算机系统的性能评价">计算机系统的性能评价</h1>
-<h2 id="时钟频率">时钟频率</h2>
-<h2 id="指令执行速度">指令执行速度</h2>
-<blockquote>
-<p>一种经典的表示运算速度的方法</p>
-</blockquote>
-<p>MIPS(Million Instructions Per Second), GIPS, TIPS</p>
-<p><span class="math display">\[MIPS = \frac{指令条数}{执行时间\times 10^6} = \frac{Fz}{CPI} = IPC \times Fz\]</span></p>
-<p>其中:</p>
+<ol style="list-style-type: decimal">
+<li>自由分组， 至多2人一组</li>
+<li>构建查询样例集合：利用网络资源(http://top.baidu.com/; http://top.sogou.com/等) 和个人使用经验构建查询样例集合，查询样例集合需覆盖不同查询热门程度（ 冷门/热门） 和各种类型的用户查询需求（ 导航类/信息类/事务类），样例集合的规模为10个查询，各类比例为2:5:3， 并根据个人经验，撰写每个查询样例的信息需求内容。</li>
+<li>构建Pooling：学生根据其构建的查询样例集合，抓取常用的三个中文搜索引擎(百度、360好搜、 搜狗)对这部分查询词的查询结果，每个搜索引擎抓取查询结果的前十位结果，并利用这些结果 构建Pooling。</li>
+<li>构建相关性标注集合：根据步骤2中撰写好的信息需求，对Pooling里的结果进行标注，标注为 “ 答案” 和“ 非答案” 两类即可。</li>
+<li>根据标注结果，依据<font color="red">MAP，P@10，MRR</font>等评价指标对各个搜索引擎的查询性能进行评价，并对 搜索引擎满足不同信息需求的情况加以比较，每人各自撰写实验报告。</li>
+<li>扩展内容：可以尝试对搜索引擎处理非中文查询、有错别字查询等情况的不同策略进行分析、比较。</li>
+</ol>
+<h1 id="查询样例集合创建">查询样例集合创建</h1>
+<h2 id="导航类">导航类</h2>
+<p>清华自主招生简章(热门)，河海大学主页(冷门)</p>
+<h2 id="信息类">信息类</h2>
+<p>萨德(热门), 美对朝忍耐到尽头(热门)，红薯 地瓜（冷门），青铜器制作流程（冷门）, 烟草学专业(冷门)</p>
+<h2 id="事务类">事务类</h2>
+<p>NBA直播(热门)， 金刚狼3下载（热门），张家界联想笔记本维修（冷门）</p>
+<h1 id="查询样例信息需求">查询样例信息需求</h1>
 <ul>
-<li>Fz为处理机的工作主频</li>
-<li>CPI(Cycles Per Instruction)为<font color="red">每条指令所需的平均时钟周期数</font></li>
-<li>IPC(Instruction Per Cycle)为每个时钟周期平均执行的指令条数</li>
+<li>清华自主招生简章: 查询最新清华大学自主招生简章</li>
+<li>河海大学主页：找到河海大学的校园主页</li>
+<li>萨德：关于萨德的最新新闻，以及事件经历</li>
+<li>美对朝忍耐到尽头：相关的新闻</li>
+<li>红薯 地瓜：红薯与地瓜是否是同一种事物，各地有什么区别</li>
+<li>青铜器制作流程：直接给出青铜器的制作方法</li>
+<li>烟草学专业：查询专业简介，需要给出专业学习内容，就业方向，相关学校</li>
+<li>NBA直播：最新NBA赛事直播，比分情况，赛况解说等</li>
+<li>金刚狼3下载：给出电影的下载链接或者在线观看链接</li>
+<li>张家界联想笔记本维修：给出维修点，联系方式等</li>
 </ul>
-<h2 id="平均速度">平均速度</h2>
-<h2 id="核心程序法">核心程序法</h2>
-<h2 id="峰值速度">峰值速度</h2>
+<h1 id="构建pooling">构建pooling</h1>
+<p>针对三个搜索引擎分别抓取对应搜索数据，并进行标记</p>
 
       
     </div>
@@ -526,7 +538,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://qingfeng14.github.io/2017/03/15/计算机系统结构-指令系统/" title="[计算机系统结构]指令系统">https://qingfeng14.github.io/2017/03/15/计算机系统结构-指令系统/</a>
+      <a href="https://qingfeng14.github.io/2017/03/18/搜索引擎/搜索引擎性能评价实验/" title="搜索引擎性能评价实验">https://qingfeng14.github.io/2017/03/18/搜索引擎/搜索引擎性能评价实验/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -544,7 +556,9 @@
           
             <a href="/tags/课程/" rel="tag"># 课程</a>
           
-            <a href="/tags/系统结构/" rel="tag"># 系统结构</a>
+            <a href="/tags/搜索引擎/" rel="tag"># 搜索引擎</a>
+          
+            <a href="/tags/实验/" rel="tag"># 实验</a>
           
         </div>
       
@@ -557,8 +571,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/14/密码学-古典密码/" rel="next" title="[密码学]古典密码">
-                <i class="fa fa-chevron-left"></i> [密码学]古典密码
+              <a href="/2017/03/16/算法/CCF2016/" rel="next" title="CCF2016">
+                <i class="fa fa-chevron-left"></i> CCF2016
               </a>
             
           </div>
@@ -567,8 +581,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/15/linux-Mac-常用命令/" rel="prev" title="Linux/Mac 常用命令">
-                Linux/Mac 常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/18/机器学习/机器学习实验-朴素贝叶斯分类器/" rel="prev" title="机器学习实验-朴素贝叶斯分类器">
+                机器学习实验-朴素贝叶斯分类器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -643,7 +657,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -665,7 +679,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -755,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机系统的性能评价"><span class="nav-number">1.</span> <span class="nav-text">计算机系统的性能评价</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟频率"><span class="nav-number">1.1.</span> <span class="nav-text">时钟频率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令执行速度"><span class="nav-number">1.2.</span> <span class="nav-text">指令执行速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平均速度"><span class="nav-number">1.3.</span> <span class="nav-text">平均速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心程序法"><span class="nav-number">1.4.</span> <span class="nav-text">核心程序法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#峰值速度"><span class="nav-number">1.5.</span> <span class="nav-text">峰值速度</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验步骤"><span class="nav-number">1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询样例集合创建"><span class="nav-number">2.</span> <span class="nav-text">查询样例集合创建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导航类"><span class="nav-number">2.1.</span> <span class="nav-text">导航类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息类"><span class="nav-number">2.2.</span> <span class="nav-text">信息类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务类"><span class="nav-number">2.3.</span> <span class="nav-text">事务类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询样例信息需求"><span class="nav-number">3.</span> <span class="nav-text">查询样例信息需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构建pooling"><span class="nav-number">4.</span> <span class="nav-text">构建pooling</span></a></li></ol></div>
             
 
           </div>

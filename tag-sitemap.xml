@@ -2,13 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/</loc>
-        <lastmod>2017-03-14T18:01:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://qingfeng14.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
         <lastmod>2017-03-14T18:01:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -79,20 +72,6 @@
     </url>
 
     <url>
-        <loc>https://qingfeng14.github.io/tags/%E8%AE%B0%E5%BD%95/</loc>
-        <lastmod>2017-03-21T03:44:01.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://qingfeng14.github.io/tags/%E7%BB%88%E7%AB%AF/</loc>
-        <lastmod>2017-03-21T03:44:01.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/</loc>
         <lastmod>2017-03-22T09:54:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,13 +93,6 @@
     </url>
 
     <url>
-        <loc>https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/</loc>
-        <lastmod>2017-03-23T15:36:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://qingfeng14.github.io/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/</loc>
         <lastmod>2017-03-23T15:36:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -128,15 +100,50 @@
     </url>
 
     <url>
-        <loc>https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-        <lastmod>2017-03-23T17:03:16.000Z</lastmod>
+        <loc>https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/</loc>
+        <lastmod>2017-03-23T15:36:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://qingfeng14.github.io/tags/ucore-lab/</loc>
-        <lastmod>2017-03-23T17:03:16.000Z</lastmod>
+        <lastmod>2017-03-24T13:45:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qingfeng14.github.io/tags/%E8%AE%B0%E5%BD%95/</loc>
+        <lastmod>2017-03-25T03:15:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qingfeng14.github.io/tags/%E7%BB%88%E7%AB%AF/</loc>
+        <lastmod>2017-03-25T03:15:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qingfeng14.github.io/tags/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/</loc>
+        <lastmod>2017-03-25T11:41:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/</loc>
+        <lastmod>2017-03-26T04:13:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+        <lastmod>2017-03-26T04:13:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -323,6 +323,416 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/26/系统结构/计算机系统结构-层次存储/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/26/系统结构/计算机系统结构-层次存储/" itemprop="url">
+                  [计算机系统结构]指令系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T13:42:18+08:00">
+                2017-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/系统结构/" itemprop="url" rel="index">
+                    <span itemprop="name">系统结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/26/系统结构/计算机系统结构-层次存储/" class="leancloud_visitors" data-flag-title="[计算机系统结构]指令系统">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  886
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>程序访问的局部性原理：时间局部性，空间局部性</p>
+<h2 id="存储系统的多级层次结构">存储系统的多级层次结构</h2>
+<p>CPU-&gt;M1-&gt;M2–。。。。。。.&gt;Mn</p>
+<p>在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集</p>
+<p>CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据</p>
+<h2 id="存储系统性能参数">存储系统性能参数</h2>
+<h3 id="存储容量s">存储容量S</h3>
+<p>一般来说，整个存储系统的存储容量即为最后一级存储器的容量，eg:cache + 主存的存储系统容量为主存容量</p>
+<h3 id="存储系统的平均每位价格c">存储系统的平均每位价格C</h3>
+<h3 id="命中率h">命中率H</h3>
+<p>CPU 访问该存储系统时，在M1中找到所需信息的概率</p>
+<h3 id="平均访存时间t_a">平均访存时间<span class="math inline">\(T_A\)</span></h3>
+<p>命中时间 不命中开销：访一级时间 + 数据传送时间</p>
+<h2 id="三级存储系统cache-主存-磁盘">三级存储系统：Cache + 主存 + 磁盘</h2>
+<ul>
+<li>cache-主存层次：为了弥补主存速度的不足，一般是硬件完成的，对应用程序员和系统程序员是透明的</li>
+<li>主存-辅存层次：为了弥补主存容量的不足，常被用于实现虚拟存储器，向编程人员提供用不完的程序空间，主要由软件完成</li>
+</ul>
+<h2 id="存储层次的四个问题">存储层次的四个问题</h2>
+<ul>
+<li>映像规则</li>
+<li>查找算法</li>
+<li>替换算法</li>
+<li>写策略</li>
+</ul>
+<h1 id="cache">Cache</h1>
+<h2 id="cache-基本结构及原理">cache 基本结构及原理</h2>
+<p>cache是按块管理的，cache和主存均被分成大小相同的块，信息以块为单位调入cache中</p>
+<p>主存地址： 块地址（块号） | 块内偏移</p>
+<p>主存地址寄存器–》主存-Cache地址转换部件</p>
+<p>–》 命中，Cache块地址，根据偏移在Cache存储体中查到对应的数据指令送给CPU</p>
+<p>-》 未命中，访主存储器，调入Cache（是否需要替换），送给CPU，或者直接送给CPU提高效率</p>
+<h2 id="cache-映像规则">Cache 映像规则</h2>
+<h3 id="全相联映射">全相联映射</h3>
+<p>主存中的人意块可以放到Cache中的任意一个位置 ### 直接映射 主存中每一块只能放到Cache中的唯一一个位置，对应关系依次循环分配 主存的第i块（块地址为i）映射到Cache的第j块 <span class="math display">\[j = i mod M\]</span> M为Cache的快数， 若<span class="math inline">\(M = 2^m\)</span>，则j实际上是i的低m位（注意是块地址的低m位），可用这m位去进行选择（索引）</p>
+<h3 id="组相连映像">组相连映像</h3>
+<p>Cache被分为若干组，每个组由若干块组成，主存中每一个块可以放到Cache中唯一一个组的任意一个位置。组的选择通常采用<font color="red">位选择方法</font></p>
+<p>对于主存中的第i个块，若它映射到Cache中的组号为j，则 <span class="math display">\[j = i mdo G\]</span> G为Cache的组数，当<span class="math inline">\(G=2^g\)</span>时，k为块号i的低g位，这里的低g位称为索引</p>
+<p>如果每组有n 个块，则称该映像规则为n路组相联</p>
+<p>n值越大，Cache的空间利用率就越高，块冲突的概率就越低</p>
+<h2 id="查找方法">查找方法</h2>
+<p>Cache中设置有一个目录表，每一个Cache块在该表中均有唯一的一项，用于指出当前该块存放的信息是哪个主存块的（一般有多个主存块映射到该Cache块，它实际上记录了该主存块的块地址的高位部分，称为标识），每个主存块能唯一地由其标识来确定</p>
+<p>主存地址： 标识 | 索引 | 块内偏移 ____块地址__</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/26/系统结构-作业3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/26/系统结构-作业3/" itemprop="url">
+                  系统结构-作业3
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T12:35:28+08:00">
+                2017-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/系统结构/" itemprop="url" rel="index">
+                    <span itemprop="name">系统结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/26/系统结构-作业3/" class="leancloud_visitors" data-flag-title="系统结构-作业3">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  69
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>设有一个“Cache-主存”层次。 Cache 为 4 块，主存为 8 块，试分别对于以下 三种情况，画出其映像关系示意图，并计算访存地址为 5 时的索引。（ 1）：全相 连；（ 2）：组相连。每组两块；（ 3）：直接映像。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/25/操作系统/操作系统-页面置换算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -473,195 +883,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/25/操作系统/操作系统-页面置换算法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/24/操作系统/OS-lec9-exercise/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="青枫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青枫别苑">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/24/操作系统/OS-lec9-exercise/" itemprop="url">
-                  OS-lec9-exercise
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T21:53:35+08:00">
-                2017-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/03/24/操作系统/OS-lec9-exercise/" class="leancloud_visitors" data-flag-title="OS-lec9-exercise">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  1,734
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  7
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="lec9-练习题">Lec9 练习题</h1>
-<h3 id="物理页帧数量为3且初始时没有对应的虚拟页虚拟页访问序列为01201303103请问采用最优置换算法的缺页次数为4">1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）</h3>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/24/操作系统/OS-lec9-exercise/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2035,198 +2256,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="青枫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青枫别苑">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/15/linux-Mac-常用命令/" itemprop="url">
-                  Linux/Mac 常用命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T12:39:38+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux、Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux、Mac</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/03/15/linux-Mac-常用命令/" class="leancloud_visitors" data-flag-title="Linux/Mac 常用命令">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  1,360
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=27836035&amp;auto=0&amp;height=66">
-</iframe>
-<h1 id="使用pandoc将markdown输出为pdf">使用pandoc将markdown输出为pdf</h1>
-<p><a href="http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html">pandoc的安装与配置</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=xelatex</div><div class="line"></div><div class="line"><span class="comment"># 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex</span></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex</div><div class="line"><span class="comment"># tips：可以将该路径加入$PATH</span></div><div class="line"></div><div class="line"><span class="comment"># 指定中英文字体</span></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --latex-engine=xelatex -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> -V geometry:margin=1<span class="keyword">in</span> hello-world.md -o output.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> IPv6协议转发实验.md  -o example14.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --template default.latex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> 搜索引擎性能评价实验.md  -o 搜索引擎性能评价实验.pdf</div><div class="line"></div><div class="line"><span class="comment"># 有代码高亮</span></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --template default.latex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf --listings -H code.latex</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --template default.latex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H code.latex linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --template default.latex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H code.latex 机器学习实验-朴素贝叶斯分类器.md -o 朴素贝叶斯.pdf</div><div class="line"></div><div class="line">pandoc <span class="_">-s</span>  --smart --template default.latex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H code.latex OS-lec9-exercise.md -o lec9.pdf</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/15/linux-Mac-常用命令/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2276,7 +2305,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

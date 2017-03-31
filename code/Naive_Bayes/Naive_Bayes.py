@@ -145,8 +145,9 @@ class NBC:
             elif ans[0] < ans[1]:
                 if answers == '>50K':
                     accurate += 1
-
-        print "准确率:", '\t\t\t', float(accurate) / float(count)
+        acc = float(accurate) / float(count)
+        print "准确率:", '\t\t\t', acc
+        return acc
 
 
 def get_cols_name(ignores):
@@ -185,8 +186,9 @@ def begin(train_per, test_per, ignore):
                        train_per=train_per, before_test=before_test,
                        after_test=after_test, test_per=test_per, ignore=ignore)
     c = NBC(train_data=after_train, cols_names=cols_name)
-    c.test(test_data=after_test, cols_names=cols_name)
+    acc = c.test(test_data=after_test, cols_names=cols_name)
     print '\n'
+    return acc
 
 
 if __name__ == '__main__':

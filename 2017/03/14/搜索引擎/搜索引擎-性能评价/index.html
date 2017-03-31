@@ -105,7 +105,7 @@
 对用户而言： 信息获取渠道
 对搜索引擎广告商而言
 对搜索技术研究人员而言">
-<meta property="og:updated_time" content="2017-03-18T14:53:16.000Z">
+<meta property="og:updated_time" content="2017-03-29T10:56:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[搜索引擎]性能评价">
 <meta name="twitter:description" content="搜索引擎性能评价的目的
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,348
+                  2,419
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5
+                  9
                 </span>
               
             </div>
@@ -537,6 +537,37 @@
 <p>前10个结果（85%）</p>
 <h4 id="搜索引擎用户信息需求的差异性">搜索引擎用户信息需求的差异性</h4>
 <p>• 导航类信息需求的用户仅关注特定检索目标 • 信息类信息需求的用户关注全面而权威的信息 • 事务类信息需求的用户关注自己的任务是否可以顺利完成。</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>指标</strong></th>
+<th><strong>适用</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RR</td>
+<td>导航类</td>
+<td>用户在找到搜索目标前需要浏览多少结果</td>
+</tr>
+<tr class="even">
+<td>P@N</td>
+<td>信息类</td>
+<td>结果列表中多大比例信息能够满足用户需求？</td>
+</tr>
+<tr class="odd">
+<td>MAP</td>
+<td></td>
+<td>反映系统在全部相关文档上性能的单值指标。系统检索出来的相关文档越靠前(rank 越高)，MAP就应该越高</td>
+</tr>
+<tr class="even">
+<td>前n位成功率</td>
+<td>事务类</td>
+<td>用户是否能够利用给出的结果完成自己所关注的事务</td>
+</tr>
+</tbody>
+</table>
 <h3 id="首位相关结果倒数reciprocal-rank">首位相关结果倒数(Reciprocal Rank)</h3>
 <p><span class="math display">\[RR = \frac{1}{Rank(1)}\]</span></p>
 <p>适用于导航类型的查询信息需求（ 用户在找到搜索目标前需要浏览多少结果？ ）</p>
@@ -548,11 +579,24 @@
 <ul>
 <li>NDCG@N: • Normalized Discounted Cumulative Gain • 对结果进行多级相关性标注时适用 • ERR: Expected Reciprocal Rank • Supported by Yahoo! and Google • 可以获取用户行为数据时适用 • B-pref: Binary preference • 相关性标注不完整时适用</li>
 </ul>
+<p>P@N的计算方法</p>
+<p>P@N本身是Precision<span class="citation">@N的简称</span>，指的是对特定的查询，考虑位置因素，检测前N条结果的准确率。例如对单次搜索的结果中前5篇，如果有4篇为相关文档，则P@5 = 4/5 = 0.8 。</p>
+<p>测试通常会使用一个查询集合（按照前文所述方法构造），包含若干条不同的查询词，在实际使用P@N进行评估时，通常使用所有查询的P@N数据，计算算术平均值，用来评判该系统的整体搜索结果质量。</p>
+<p>N的选取</p>
+<p>对用户来说，通常只关注搜索结果最前若干条结果，因此通常搜索引擎的效果评估只关注前5、或者前3结果，所以我们常用的N取值为P@3或P<span class="citation">@5等</span>。</p>
+<p>对一些特定类型的查询应用，如寻址类的查询（Navigational Search），由于目标结果极为明确，因此在评估时，会选择N=1（即使用P@1）。举个例子来说，搜索“新浪网”、或“新浪首页”，如果首条结果不是 新浪网（url：www.sina.com.cn），则直接判该次查询精度不满足需求，即P@1=0</p>
 <h2 id="mrr-平均倒数排序">MRR 平均倒数排序</h2>
-<p>MRR是平均排序倒数（Mean Reciprocal Rank）的简称，MRR方法主要用于寻址类检索（Navigational Search）或问答类检索（Question Answering），这些检索方法只需要一个相关文档，对召回率不敏感，而是更关注搜索引擎检索到的相关文档是否排在结果列表的前面。<font color="red">MRR方法首先计算每一个查询的第一个相关文档位置的倒数，然后将所有倒数值求平均。</font></p>
+<p>MRR是平均排序倒数（Mean Reciprocal Rank）的简称，MRR方法主要用于寻址类检索（Navigational Search）或问答类检索（Question Answering），这些检索方法只需要一个相关文档，对召回率不敏感，而是更关注搜索引擎检索到的相关文档是否排在结果列表的前面。</p>
+<p><font color="red">MRR方法首先计算每一个查询的第一个相关文档位置的倒数，然后将所有倒数值求平均。</font></p>
+<p>MRR</p>
+<p>上述的P@N方法，易于计算和理解。但细心的读者一定会发现问题，就是在前N结果中，排序第1位和第N位的结果，对准确率的影响是一样的。但实际情况是，搜索引擎的评价是和排序位置极为相关的。即排第一的结果错误，和第10位的结果错误，其严重程度有天壤之别。因此在评价系统中，需要引入位置这个因素。</p>
+<p>MRR是平均排序倒数（Mean Reciprocal Rank）的简称，MRR方法主要用于寻址类检索（Navigational Search）或问答类检索（Question Answering），这些检索方法只需要一个相关文档，对召回率不敏感，而是更关注搜索引擎检索到的相关文档是否排在结果列表的前面。MRR方法首先计算每一个查询的第一个相关文档位置的倒数，然后将所有倒数值求平均。例如一个包含三个查询词的测试集，前5结果分别为：</p>
+<p>查询一结果：1.AN 2.AR 3.AN 4.AN 5.AR 查询二结果：1.AN 2.AR 3.AR 4.AR 5.AN 查询三结果：1.AR 2.AN 3.AN 4.AN 5.AR 其中AN表示不相关结果，AR表示相关结果。那么第一个查询的排序倒数（Reciprocal Rank）RR1 = 1/2=0.5 ；第二个结果RR2 = 1/2 = 0.5 ； 注意倒数的值不变，即使查询二获得的相关结果更多。同理，RR3= 1/1 = 1。 对于这个测试集合，最终MRR=（RR1+RR2+RR3）/ 3 = 0.67</p>
+<p>然而对大部分检索应用来说，只有一条结果无法满足需求，对这种情况，需要更合适的方法来计算效果，其中最常用的是下述MAP方法。</p>
 <h2 id="map">MAP</h2>
 <p>MAP方法是Mean Average Precison，即平均准确率法的简称。其定义是求每个相关文档检索出后的准确率的平均值（即Average Precision）的算术平均值（Mean）。这里对准确率求了两次平均，因此称为Mean Average Precision。（注：没叫Average Average Precision一是因为难听，二是因为无法区分两次平均的意义）</p>
 <p>MAP 是反映系统在全部相关文档上性能的单值指标。系统检索出来的相关文档越靠前(rank 越高)，MAP就应该越高。如果系统没有返回相关文档，则准确率默认为0。</p>
+<p>MAP:全称mean average precision(平均准确率)。mAP是为解决P，R，F-measure的单点值局限性的，同时考虑了检索效果的排名情况。 计算如下： 假设有两个主题，主题1有4个相关网页，主题2有5个相关网页。某系统对于主题1检索出4个相关网页，其rank分别为1, 2, 4, 7；对于主题2检索出3个相关网页，其rank分别为1,3,5。对于主题1，平均准确率为(1/1+2/2+3/4+4/7)/4=0.83。对于主题 2，平均准确率为(1/1+2/3+3/5+0+0)/5=0.45。则MAP=(0.83+0.45)/2=0.64。”</p>
 
       
     </div>
@@ -719,7 +763,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -730,7 +774,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -741,7 +785,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -896,7 +940,10 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 <div class="theme-info">
  <a href="mailto:zhangshenghao1995@163.com?subject=用户意见" target="_blank" title="邮箱">邮箱</a>
 
+
+
 </div>
+
         
 
         

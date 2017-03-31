@@ -97,7 +97,7 @@
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/21/数值分析/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
-<meta property="og:updated_time" content="2017-03-23T15:36:35.000Z">
+<meta property="og:updated_time" content="2017-03-30T15:37:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数值分析">
 <meta name="twitter:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  54
+                  161
                 </span>
               
 
@@ -460,6 +460,7 @@
         <p>设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算<span class="math inline">\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\)</span>, 请给出一个合理、高效率的算法流程.</p>
 <a id="more"></a>
 <p><span class="math display">\[y1 = C^{-1}b\]</span> <span class="math display">\[y2 = y1 + Ab\]</span> <span class="math display">\[y_3 = 2(Ay_2) + y_2\]</span> <span class="math display">\[ x = B^{-1}y_3\]</span></p>
+<p>如果A的每个对角元的绝对值都比所在行的非对角元的绝对值的和要大,即 <span class="math display">\[|a_{ii}|&gt;sum{j!=i}|a_{ij}|\]</span> 对所有的i成立,那么称A是<font color="red">（行）严格对角占优阵</font>. 如果A’是行严格对角占优阵,那么称A是<font color="red">列严格对角占优阵</font>. 习惯上如果不指明哪种类型的话就认为是行对角占优.</p>
 
       
     </div>
@@ -617,7 +618,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -628,7 +629,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -639,7 +640,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -778,7 +779,10 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 <div class="theme-info">
  <a href="mailto:zhangshenghao1995@163.com?subject=用户意见" target="_blank" title="邮箱">邮箱</a>
 
+
+
 </div>
+
         
 
         

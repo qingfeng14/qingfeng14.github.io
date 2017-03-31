@@ -200,8 +200,29 @@ def test_Crossvalidation():
     begin(train_per=train_per, test_per=test_per, ignore=ignore)
 
 
-if __name__ == '__main__':
+def test_random_size():
+    ignore = [2, 4, 7, 13, 9, 8, 12]
+    train_per = 0.05
+    test_per = 0.0
+    config.if_random = True
+    acc = 0.0
+    for i in xrange(5):
+        acc += begin(train_per=train_per, test_per=test_per, ignore=ignore)
 
+    print "0.05: ", acc/5.0
+
+    acc = 0.0
+    train_per = 1.0
+    for i in xrange(5):
+        acc += begin(train_per=train_per, test_per=test_per, ignore=ignore)
+
+    print "1.0: ", acc/5.0
+
+    config.if_random = False
+
+
+if __name__ == '__main__':
+    """
     # 测试集规模影响
     test_size()
 
@@ -229,3 +250,8 @@ if __name__ == '__main__':
 
     print '在训练集中加入一定的测试集数据'
     test_Crossvalidation()
+
+    """
+    test_random_size()
+
+

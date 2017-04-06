@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qingfeng14.github.io/"/>
-  <updated>2017-03-30T06:28:04.000Z</updated>
+  <updated>2017-04-06T13:14:22.000Z</updated>
   <id>https://qingfeng14.github.io/</id>
   
   <author>
@@ -16,11 +16,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>操作系统复习笔记</title>
+    <link href="https://qingfeng14.github.io/2017/04/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://qingfeng14.github.io/2017/04/05/操作系统复习笔记/</id>
+    <published>2017-04-05T07:13:25.000Z</published>
+    <updated>2017-04-06T13:14:22.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;关于x86启动后执行的第一条指令及其地址&quot;&gt;关于x86启动后执行的第一条指令及其地址&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://piazza.com/class/i5j09fnsl7k5x0?cid=770&quot;&gt;piazza&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。&lt;/p&gt;
+&lt;p&gt;2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = selector&amp;lt;&amp;lt;4，但是，机器刚启动的时候，selector=F000, base=FFFF0000！直到跳转指令以后才变成normally~&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机系统结构作业4</title>
+    <link href="https://qingfeng14.github.io/2017/04/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A4/"/>
+    <id>https://qingfeng14.github.io/2017/04/05/计算机系统结构作业4/</id>
+    <published>2017-04-04T16:00:00.000Z</published>
+    <updated>2017-04-06T09:16:11.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有一个4-way组相连Cache， Cache大小为16K字节(4K字), Cache块大小为16字节, 执行以下程序：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="系统结构" scheme="https://qingfeng14.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="系统结构" scheme="https://qingfeng14.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务器配置相关问题</title>
+    <link href="https://qingfeng14.github.io/2017/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+    <id>https://qingfeng14.github.io/2017/03/31/服务器/服务器配置/</id>
+    <published>2017-03-31T15:14:15.000Z</published>
+    <updated>2017-03-31T16:27:54.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;服务器配置相关记录&quot;&gt;服务器配置相关记录&lt;/h1&gt;
+&lt;h2 id=&quot;apache的反向代理&quot;&gt;Apache的反向代理&lt;/h2&gt;
+&lt;p&gt;首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。&lt;/p&gt;
+&lt;p&gt;如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_proxy_http.so&lt;/p&gt;
+&lt;p&gt;有的服务器该配置文件为, &lt;code&gt;/etc/apache2/apache2.conf&lt;/code&gt;
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://qingfeng14.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="终端" scheme="https://qingfeng14.github.io/tags/%E7%BB%88%E7%AB%AF/"/>
+    
+      <category term="服务器" scheme="https://qingfeng14.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[计算机系统结构]指令系统</title>
     <link href="https://qingfeng14.github.io/2017/03/26/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E5%B1%82%E6%AC%A1%E5%AD%98%E5%82%A8/"/>
     <id>https://qingfeng14.github.io/2017/03/26/系统结构/计算机系统结构-层次存储/</id>
     <published>2017-03-26T05:42:18.000Z</published>
-    <updated>2017-03-30T06:28:04.000Z</updated>
+    <updated>2017-04-05T05:26:15.000Z</updated>
     
     <summary type="html">
     
@@ -100,7 +167,7 @@
     <link href="https://qingfeng14.github.io/2017/03/21/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
     <id>https://qingfeng14.github.io/2017/03/21/数值分析/</id>
     <published>2017-03-21T02:06:03.000Z</published>
-    <updated>2017-03-30T15:37:32.000Z</updated>
+    <updated>2017-03-31T17:48:54.000Z</updated>
     
     <summary type="html">
     
@@ -258,7 +325,7 @@
     <link href="https://qingfeng14.github.io/2017/03/15/linux-Mac-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/</id>
     <published>2017-03-15T04:39:38.000Z</published>
-    <updated>2017-03-31T03:18:39.000Z</updated>
+    <updated>2017-04-04T13:25:28.000Z</updated>
     
     <summary type="html">
     
@@ -266,7 +333,7 @@
 &lt;/iframe&gt;
 &lt;h1 id=&quot;使用pandoc将markdown输出为pdf&quot;&gt;使用pandoc将markdown输出为pdf&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html&quot;&gt;pandoc的安装与配置&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc hello-world.md -o out.pdf  --latex-engine=xelatex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# tips：可以将该路径加入$PATH&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 指定中英文字体&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --latex-engine=xelatex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Kai&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; hello-world.md -o output.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; IPv6协议转发实验.md  -o example14.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.latex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; 搜索引擎性能评价实验.md  -o 搜索引擎性能评价实验.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 有代码高亮&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.latex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf --listings -H code.latex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.latex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.latex linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.latex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.latex 机器学习实验-朴素贝叶斯分类器.md -o 朴素贝叶斯.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;  --smart --template default.latex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.latex OS-lec9-exercise.md -o lec9.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;  --smart --template ../default.latex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.latex OS-lec9-exercise.md -o lec9.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; -N --toc --smart --template ../default.latex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.latex 搜索引擎性能评价实验.md -o 实验报告.docx&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc hello-world.md -o out.pdf  --latex-engine=xelatex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -D latex &amp;gt; mytemplate.tex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# tips：可以将该路径加入$PATH&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 指定中英文字体&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --latex-engine=xelatex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Kai&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; hello-world.md -o output.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; IPv6协议转发实验.md  -o example14.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; 搜索引擎性能评价实验.md  -o 搜索引擎性能评价实验.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 有代码高亮&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf --listings -H code.tex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.tex linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.tex 机器学习实验-朴素贝叶斯分类器.md -o 朴素贝叶斯.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;  --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.tex OS-lec9-exercise.md -o lec9.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;  --smart --template ../default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.tex 密码学-Exercise1.md -o out.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; -N --toc --smart --template ../default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.tex 搜索引擎性能评价实验.md -o 实验报告.docx&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; -N --toc --smart --template ../default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.tex 感想.md -o 艺术考察报告.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; -N --toc --smart --template mytemplate.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.tex 感想.md -o 艺术考察报告.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; -N --toc --smart  -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.tex 感想.md -o 艺术考察报告.pdf&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -306,7 +373,7 @@
     <link href="https://qingfeng14.github.io/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/"/>
     <id>https://qingfeng14.github.io/2017/03/14/密码学/密码学-古典密码/</id>
     <published>2017-03-14T07:23:12.000Z</published>
-    <updated>2017-03-14T18:01:19.000Z</updated>
+    <updated>2017-04-06T03:23:40.000Z</updated>
     
     <summary type="html">
     
@@ -324,11 +391,11 @@
   </entry>
   
   <entry>
-    <title>[密码学]-Exercise1</title>
+    <title>现代密码学作业1</title>
     <link href="https://qingfeng14.github.io/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%AF%86%E7%A0%81%E5%AD%A6-Exercise1/"/>
     <id>https://qingfeng14.github.io/2017/03/14/密码学/密码学-Exercise1/</id>
     <published>2017-03-14T07:23:05.000Z</published>
-    <updated>2017-03-31T04:27:29.000Z</updated>
+    <updated>2017-04-06T03:32:48.000Z</updated>
     
     <summary type="html">
     
@@ -379,7 +446,7 @@
     <link href="https://qingfeng14.github.io/2017/03/14/hello-world/"/>
     <id>https://qingfeng14.github.io/2017/03/14/hello-world/</id>
     <published>2017-03-14T02:48:48.000Z</published>
-    <updated>2017-03-19T06:17:29.000Z</updated>
+    <updated>2017-04-04T16:41:46.000Z</updated>
     
     <summary type="html">
     

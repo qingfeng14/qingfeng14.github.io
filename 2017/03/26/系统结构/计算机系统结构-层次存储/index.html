@@ -105,7 +105,7 @@ CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数
 CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn
 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集
 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
-<meta property="og:updated_time" content="2017-03-30T06:28:04.000Z">
+<meta property="og:updated_time" content="2017-04-05T05:26:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[计算机系统结构]指令系统">
 <meta name="twitter:description" content="程序访问的局部性原理：时间局部性，空间局部性
@@ -434,7 +434,7 @@ CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,207
+                  1,285
                 </span>
               
 
@@ -450,7 +450,7 @@ CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -527,8 +527,12 @@ CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数
 <p class="caption">张晨曦</p>
 </div>
 <ol style="list-style-type: decimal">
-<li>按写分配法：写失效时，先把所写单元所在的块调入 Cache，然后再进行写入。这与读失效类似。这种方法也称为写时取方法。 　　(2) 不按写分配法：写失效时，直接写入下一级存储器而不将相应的块调入 Cache。这种方法也称为绕写法。</li>
+<li><p>按写分配法：写失效时，先把所写单元所在的块调入 Cache，然后再进行写入。这与读失效类似。这种方法也称为写时取方法。</p></li>
+<li><p>不按写分配法：写失效时，直接写入下一级存储器而不将相应的块调入 Cache。这种方法也称为绕写法。</p></li>
 </ol>
+<h1 id="写策略">写策略</h1>
+<p>写Cache时何时更新主存中的内容</p>
+<p>写直达法： 执行写操作时，不仅把数据写入Cache中对应的块，还把数据写入下一级存储器 写回法： 拷回法，只把数据写回cache，Cache块被替换时写回下一级存储器</p>
 
       
     </div>
@@ -619,6 +623,10 @@ CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/03/31/服务器/服务器配置/" rel="prev" title="服务器配置相关问题">
+                服务器配置相关问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -691,7 +699,7 @@ CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -702,7 +710,7 @@ CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -713,7 +721,7 @@ CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -803,7 +811,7 @@ CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储系统的多级层次结构"><span class="nav-number">1.</span> <span class="nav-text">存储系统的多级层次结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储系统性能参数"><span class="nav-number">2.</span> <span class="nav-text">存储系统性能参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#存储容量s"><span class="nav-number">2.1.</span> <span class="nav-text">存储容量S</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储系统的平均每位价格c"><span class="nav-number">2.2.</span> <span class="nav-text">存储系统的平均每位价格C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命中率h"><span class="nav-number">2.3.</span> <span class="nav-text">命中率H</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均访存时间t_a"><span class="nav-number">2.4.</span> <span class="nav-text">平均访存时间\(T_A\)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三级存储系统cache-主存-磁盘"><span class="nav-number">3.</span> <span class="nav-text">三级存储系统：Cache + 主存 + 磁盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储层次的四个问题"><span class="nav-number">4.</span> <span class="nav-text">存储层次的四个问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cache"><span class="nav-number"></span> <span class="nav-text">Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cache-基本结构及原理"><span class="nav-number">1.</span> <span class="nav-text">cache 基本结构及原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cache-映像规则"><span class="nav-number">2.</span> <span class="nav-text">Cache 映像规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全相联映射"><span class="nav-number">2.1.</span> <span class="nav-text">全相联映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组相连映像"><span class="nav-number">2.2.</span> <span class="nav-text">组相连映像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找方法"><span class="nav-number">3.</span> <span class="nav-text">查找方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经典的cpu性能公式"><span class="nav-number"></span> <span class="nav-text">经典的CPU性能公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写分配法"><span class="nav-number"></span> <span class="nav-text">写分配法</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储系统的多级层次结构"><span class="nav-number">1.</span> <span class="nav-text">存储系统的多级层次结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储系统性能参数"><span class="nav-number">2.</span> <span class="nav-text">存储系统性能参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#存储容量s"><span class="nav-number">2.1.</span> <span class="nav-text">存储容量S</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储系统的平均每位价格c"><span class="nav-number">2.2.</span> <span class="nav-text">存储系统的平均每位价格C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命中率h"><span class="nav-number">2.3.</span> <span class="nav-text">命中率H</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均访存时间t_a"><span class="nav-number">2.4.</span> <span class="nav-text">平均访存时间\(T_A\)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三级存储系统cache-主存-磁盘"><span class="nav-number">3.</span> <span class="nav-text">三级存储系统：Cache + 主存 + 磁盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储层次的四个问题"><span class="nav-number">4.</span> <span class="nav-text">存储层次的四个问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cache"><span class="nav-number"></span> <span class="nav-text">Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cache-基本结构及原理"><span class="nav-number">1.</span> <span class="nav-text">cache 基本结构及原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cache-映像规则"><span class="nav-number">2.</span> <span class="nav-text">Cache 映像规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全相联映射"><span class="nav-number">2.1.</span> <span class="nav-text">全相联映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组相连映像"><span class="nav-number">2.2.</span> <span class="nav-text">组相连映像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找方法"><span class="nav-number">3.</span> <span class="nav-text">查找方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经典的cpu性能公式"><span class="nav-number"></span> <span class="nav-text">经典的CPU性能公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写分配法"><span class="nav-number"></span> <span class="nav-text">写分配法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写策略"><span class="nav-number"></span> <span class="nav-text">写策略</span></a></div>
             
 
           </div>

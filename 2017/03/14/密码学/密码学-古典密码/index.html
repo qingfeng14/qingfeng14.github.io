@@ -97,10 +97,13 @@
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/14/密码学/密码学-古典密码/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="Description：移位密码，凯撒密码，置换密码">
-<meta property="og:updated_time" content="2017-03-14T18:01:19.000Z">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vigenère_square_shading.svg">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/2Y1i0a0J0S323417003Q/Image%202017-04-06%20at%2011.22.17%20上午.png">
+<meta property="og:updated_time" content="2017-04-06T03:23:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[密码学]古典密码">
 <meta name="twitter:description" content="Description：移位密码，凯撒密码，置换密码">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vigenère_square_shading.svg">
 
 
 
@@ -422,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  126
+                  681
                 </span>
               
 
@@ -438,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -459,11 +462,48 @@
       
         <p>Description：移位密码，凯撒密码，置换密码</p>
 <a id="more"></a>
-<h3 id="移位密码">移位密码：</h3>
+<h1 id="移位密码">移位密码：</h1>
 <p>加密:ci= (pi+K) mod 26 解密:pi= (ci-K) mod 26</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">密钥：整数， 1≤K ≤25 (26个英文字母)</div><div class="line">加密：明文P中的每个字母被它之后的第K个字母替代</div><div class="line">解密：密文C中的每个字母被它之前的第K个字母替代</div></pre></td></tr></table></figure>
-<h3 id="凯撒密码">凯撒密码</h3>
+<h1 id="凯撒密码">凯撒密码</h1>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">当 K=3时，该密码体制成为凯撒密码(Caesar Cipher) 在古罗马的战争(公元前54年)中使用</div></pre></td></tr></table></figure>
+<h1 id="置换密码-lecture-2">置换密码 Lecture 2</h1>
+<ul>
+<li>置换密码（ Permutation Cipher）：保持明文的所有字母不变，只是利用置换打乱了明 文字母的位置和次序；对明文字符的位置进行重新排列的一种密码。</li>
+<li>也称易位密码、换位密码、移位密码</li>
+<li>m = n, 把明文每m个分割，然后按照<span class="math inline">\(\pi(x)\)</span>的对应关系，调整明文顺序，形成密文，解密时反向进行即可</li>
+</ul>
+<h1 id="代换密码-lecture-2">代换密码 Lecture 2</h1>
+<p>密钥K是所有的26个数字0,1,2…,25的一个置换， 即 – 加密： <span class="math inline">\(c_i=S(p_i)\)</span> – 解密： <span class="math inline">\(p_i=S^{-1}(c_i)\)</span></p>
+<p>安全性分析：暴力搜索所有的密钥不可行 <span class="math display">\[26! = 4*10^{26} = 2^{88.4}\]</span> (公元前一千年内)</p>
+<p>元9世界， 阿拉伯科学家al-Kindi发明代换密码频率分析， 分析单个英文字母出现频率，两个连续字母出现的概率</p>
+<h2 id="代换密码频率分析步骤">代换密码频率分析步骤</h2>
+<ol style="list-style-type: decimal">
+<li>统计密文单词频率，与英文字母表中字母频率进行比较</li>
+<li></li>
+</ol>
+<h1 id="维吉尼亚密码">维吉尼亚密码</h1>
+<h2 id="加密">加密</h2>
+<p>掩盖了加密后的字母统计概率（多表替换）</p>
+<p>使用多个移位密码(shift cipher)</p>
+<div class="figure">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vigenère_square_shading.svg" alt="维吉尼亚密码">
+<p class="caption">维吉尼亚密码</p>
+</div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">明文: A T T A C K A T D A W N</div><div class="line">密钥: L E M O N L E M O N L E</div><div class="line">密文: L X F O PV E F R N H R</div></pre></td></tr></table></figure>
+<h2 id="解密">解密；</h2>
+<h3 id="分析方法">分析方法</h3>
+<p>– 密钥空间大小为26m，若m很大，使用计算机穷尽密钥搜索也需要很长时间 – 寻找密钥长度，将问题变成简单的移位密码</p>
+<h3 id="如何寻找m">如何寻找m ？</h3>
+<p>– 两种方法 • Kasiski测试法， 1863 • 重合指数法分析， 1920</p>
+<h2 id="kasiski-test-卡西斯基测试">Kasiski test（ 卡西斯基测试）</h2>
+<p>– 基于以下事实 • 两段相同的明文段将被加密成相同的密文段，则他们的<font color="red">位置间距为m的倍数</font> – 算法 • 搜索长度至少为3的相同的密文段 • 记下离起始密码段的距离d1,d2,d3… • 则m整除gcd(d1,d2,d3…)</p>
+<h2 id="重合指数法-index-of-coincidence">重合指数法（ Index of coincidence）</h2>
+<p>– 定义：设x=x1x2x3…,xn是一条长度为n的串， x的重合指数Ic(x)定义为x中两个随机元素相同的 概率</p>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/2Y1i0a0J0S323417003Q/Image%202017-04-06%20at%2011.22.17%20上午.png" alt="重合指数法">
+<p class="caption">重合指数法</p>
+</div>
 
       
     </div>
@@ -544,8 +584,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/14/密码学/密码学-Exercise1/" rel="next" title="[密码学]-Exercise1">
-                <i class="fa fa-chevron-left"></i> [密码学]-Exercise1
+              <a href="/2017/03/14/密码学/密码学-Exercise1/" rel="next" title="现代密码学作业1">
+                <i class="fa fa-chevron-left"></i> 现代密码学作业1
               </a>
             
           </div>
@@ -630,7 +670,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -641,7 +681,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -652,7 +692,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -742,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#移位密码"><span class="nav-number">1.</span> <span class="nav-text">移位密码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凯撒密码"><span class="nav-number">2.</span> <span class="nav-text">凯撒密码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#移位密码"><span class="nav-number">1.</span> <span class="nav-text">移位密码：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#凯撒密码"><span class="nav-number">2.</span> <span class="nav-text">凯撒密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#置换密码-lecture-2"><span class="nav-number">3.</span> <span class="nav-text">置换密码 Lecture 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代换密码-lecture-2"><span class="nav-number">4.</span> <span class="nav-text">代换密码 Lecture 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代换密码频率分析步骤"><span class="nav-number">4.1.</span> <span class="nav-text">代换密码频率分析步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#维吉尼亚密码"><span class="nav-number">5.</span> <span class="nav-text">维吉尼亚密码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加密"><span class="nav-number">5.1.</span> <span class="nav-text">加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解密"><span class="nav-number">5.2.</span> <span class="nav-text">解密；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析方法"><span class="nav-number">5.2.1.</span> <span class="nav-text">分析方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何寻找m"><span class="nav-number">5.2.2.</span> <span class="nav-text">如何寻找m ？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kasiski-test-卡西斯基测试"><span class="nav-number">5.3.</span> <span class="nav-text">Kasiski test（ 卡西斯基测试）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重合指数法-index-of-coincidence"><span class="nav-number">5.4.</span> <span class="nav-text">重合指数法（ Index of coincidence）</span></a></li></ol></li></ol></div>
             
 
           </div>

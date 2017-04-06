@@ -97,7 +97,7 @@
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/14/hello-world/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2017-03-19T06:17:29.000Z">
+<meta property="og:updated_time" content="2017-04-04T16:41:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Hexo">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  486
+                  489
                 </span>
               
 
@@ -499,7 +499,7 @@
 \frac{\partial^2 u}{\partial y^2} +
 \frac{\partial^2 u}{\partial z^2}\right)\]</span></p>
 <h3 id="为hexo-next博客添加关键词功能"><a href="http://blog.csdn.net/vickyway/article/details/49762439" target="_blank" rel="external">为Hexo Next博客添加关键词功能</a></h3>
-<p>修改文件：themes_partials.swig</p>
+<p>修改文件：<code>themes\next\layout_partials\head.swig</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if page.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; page.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif page.tags and page.tags.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for tag in page.tags %&#125;&#123;&#123; tag.name &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif theme.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; theme.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
 <p>修改内容：35行左右，将原来的设置ketwords的代码覆盖即可</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if page.keywords and page.keywords.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for key in page.keywords %&#125;&#123;&#123; key &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif page.tags and page.tags.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for tag in page.tags %&#125;&#123;&#123; tag.name &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif theme.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; theme.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
@@ -665,7 +665,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -676,7 +676,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -687,7 +687,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

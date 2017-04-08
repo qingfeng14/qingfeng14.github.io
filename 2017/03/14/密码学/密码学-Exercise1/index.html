@@ -92,25 +92,19 @@
 
 
 <meta name="description" content="1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD
-解：移位密码的加解密方法为： 12加密：明文P中的每个字母被它之后的第K个字母替代解密：密文C中的每个字母被它之前的第K个字母替代
-为了方便使用python编程完成遍历：
-12345678import syspassword = &apos;BE">
+解：移位密码的加解密方法为：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="现代密码学作业1">
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/14/密码学/密码学-Exercise1/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD
-解：移位密码的加解密方法为： 12加密：明文P中的每个字母被它之后的第K个字母替代解密：密文C中的每个字母被它之前的第K个字母替代
-为了方便使用python编程完成遍历：
-12345678import syspassword = &apos;BE">
+解：移位密码的加解密方法为：">
 <meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/0g3w1i1x1t452H0a0i0a/Image%202017-04-07%20at%209.57.15%20下午.png">
-<meta property="og:updated_time" content="2017-04-07T15:14:14.000Z">
+<meta property="og:updated_time" content="2017-04-08T11:52:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="现代密码学作业1">
 <meta name="twitter:description" content="1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD
-解：移位密码的加解密方法为： 12加密：明文P中的每个字母被它之后的第K个字母替代解密：密文C中的每个字母被它之前的第K个字母替代
-为了方便使用python编程完成遍历：
-12345678import syspassword = &apos;BE">
+解：移位密码的加解密方法为：">
 <meta name="twitter:image" content="https://d3uepj124s5rcx.cloudfront.net/items/0g3w1i1x1t452H0a0i0a/Image%202017-04-07%20at%209.57.15%20下午.png">
 
 
@@ -285,26 +279,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -468,9 +458,10 @@
       
 
       
-        <a id="more"></a>
-<h3 id="使用穷尽密钥搜索方法破译如下利用移位密码加密的密文-beeak-fydjx-uqyhy-jiqry-htyji-qfbqd-uyjii-kfuhc-qd">1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD</h3>
-<p>解：移位密码的加解密方法为： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">加密：明文P中的每个字母被它之后的第K个字母替代</div><div class="line">解密：密文C中的每个字母被它之前的第K个字母替代</div></pre></td></tr></table></figure></p>
+        <h3 id="使用穷尽密钥搜索方法破译如下利用移位密码加密的密文-beeak-fydjx-uqyhy-jiqry-htyji-qfbqd-uyjii-kfuhc-qd">1.5 使用穷尽密钥搜索方法破译如下利用移位密码加密的密文 BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD</h3>
+<p>解：移位密码的加解密方法为：</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">加密：明文P中的每个字母被它之后的第K个字母替代</div><div class="line">解密：密文C中的每个字母被它之前的第K个字母替代</div></pre></td></tr></table></figure>
 <p>为了方便使用python编程完成遍历：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">password = <span class="string">'BEEAK FYDJX UQYHY JIQRY HTYJI QFBQD UYJII KFUHC QD'</span></div><div class="line">password = password.replace(<span class="string">' '</span>, <span class="string">''</span>)</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">26</span>):</div><div class="line">    <span class="keyword">print</span> i, <span class="string">"\t"</span>,</div><div class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> password:</div><div class="line">        sys.stdout.write(chr(((ord(word) - i) - (<span class="number">65</span><span class="number">-26</span>)) % <span class="number">26</span> + <span class="number">97</span>))</div><div class="line">    sys.stdout.write(<span class="string">'\n'</span>)</div></pre></td></tr></table></figure>
 <p>输出结果为：</p>
@@ -1086,6 +1077,132 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
 
   
 
@@ -1194,25 +1311,7 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
         showTime(Counter);
       }
     });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -1231,6 +1330,11 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
 
+
+
+  
+
+  
 
 
   

@@ -70,15 +70,22 @@
     </url>
 
     <url>
-        <loc>https://qingfeng14.github.io/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/</loc>
-        <lastmod>2017-04-08T13:47:26.000Z</lastmod>
+        <loc>https://qingfeng14.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+        <lastmod>2017-04-10T06:05:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://qingfeng14.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-        <lastmod>2017-04-10T05:29:33.000Z</lastmod>
+        <loc>https://qingfeng14.github.io/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/</loc>
+        <lastmod>2017-04-10T06:05:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qingfeng14.github.io/categories/Others/</loc>
+        <lastmod>2017-04-11T16:43:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

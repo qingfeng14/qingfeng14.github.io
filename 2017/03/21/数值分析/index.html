@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="课程,数值分析," />
+  <meta name="keywords" content="数值分析,课程," />
 
 
 
@@ -97,7 +97,7 @@
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/21/数值分析/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
-<meta property="og:updated_time" content="2017-04-08T13:47:26.000Z">
+<meta property="og:updated_time" content="2017-04-10T06:05:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数值分析">
 <meta name="twitter:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,430
+                  1,524
                 </span>
               
 
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5
+                  6
                 </span>
               
             </div>
@@ -477,6 +477,12 @@
 <p><span class="math inline">\((\mathbf{A}-\lambda \mathbf{I}) \mathbf{x}=0\)</span> 根据线性方程组理论，为了使这个方程有非零解，矩阵</p>
 <p><span class="math inline">\(\mathbf{A}-\lambda \mathbf{I}\)</span>的行列式必须是零：</p>
 <p><span class="math display">\[\det(\mathbf{A}-\lambda \mathbf{I}) = 0\]</span> 按照行列式的展开定义，上面式子的左端是一个关于 <span class="math inline">\(\lambda\)</span> 的多项式，称为特征多项式。这个多项式的系数只和 <span class="math inline">\(\mathbf{A}\)</span>有关。在这个例子中，可以计算这个特征多项式： <span class="math display">\[\det\!\left(\begin{bmatrix}1 &amp; 0\\ -\frac{1}{2} &amp; 1\end{bmatrix} - \lambda\begin{bmatrix}1 &amp; 0\\ 0 &amp; 1\end{bmatrix} \right)=(1-\lambda)^2\]</span> 在这种情况下特征多项式的方程变成 <span class="math display">\[(1-\lambda)^2 = 0\]</span>它的唯一的解是： <span class="math inline">\(\lambda=1\)</span>。这就是矩阵 <span class="math inline">\(\mathbf{A}\)</span>的特征值。 找到特征值 <span class="math inline">\(\lambda=1\)</span>后，就可以找出 <span class="math display">\[(\mathbf{A}-\lambda \mathbf{I}) \mathbf{x}=0\]</span> 的非零解，也就是特征向量了。在例子中： <span class="math display">\[\begin{bmatrix}1-\lambda &amp; 0\\ -\frac{1}{2} &amp; 1-\lambda \end{bmatrix}\begin{bmatrix}x_1\\ x_2\end{bmatrix}=0\]</span> 将<span class="math inline">\(\lambda=1\)</span>代入，就有 <span class="math display">\[\begin{bmatrix}0 &amp; 0\\ -\frac{1}{2} &amp; 0 \end{bmatrix}\begin{bmatrix}x_1\\ x_2\end{bmatrix}=0\]</span> 解这个新矩阵方程，得到如下形式的解： <span class="math display">\[\mathbf{x} = \begin{bmatrix}0\\ c\end{bmatrix}\]</span> 这里的c是任意非零常量。因此，矩阵<span class="math inline">\(\mathbf{A}\)</span>的特征向量就是所有竖直方向的向量（比如图中红色箭头代表的向量）。</p>
+<h1 id="正定矩阵的判定">正定矩阵的判定</h1>
+<ul>
+<li>判定定理1：对称阵A为正定的充分必要条件是：A的特征值全为正。</li>
+<li>判定定理2：对称阵A为正定的充分必要条件是：A的各阶顺序主子式都为正。</li>
+<li>判定定理3：任意阵A为正定的充分必要条件是：A合同于单位阵。</li>
+</ul>
 
       
     </div>
@@ -542,9 +548,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/课程/" rel="tag"># 课程</a>
-          
             <a href="/tags/数值分析/" rel="tag"># 数值分析</a>
+          
+            <a href="/tags/课程/" rel="tag"># 课程</a>
           
         </div>
       
@@ -643,7 +649,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -654,7 +660,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -755,7 +761,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵特征值的几何意义"><span class="nav-number">1.</span> <span class="nav-text">矩阵特征值的几何意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征值及特征向量定义"><span class="nav-number">2.</span> <span class="nav-text">特征值及特征向量定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征值-来自维基百科的解释"><span class="nav-number">3.</span> <span class="nav-text">特征值 来自维基百科的解释</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵特征值的几何意义"><span class="nav-number">1.</span> <span class="nav-text">矩阵特征值的几何意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征值及特征向量定义"><span class="nav-number">2.</span> <span class="nav-text">特征值及特征向量定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征值-来自维基百科的解释"><span class="nav-number">3.</span> <span class="nav-text">特征值 来自维基百科的解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正定矩阵的判定"><span class="nav-number">4.</span> <span class="nav-text">正定矩阵的判定</span></a></li></ol></div>
             
 
           </div>

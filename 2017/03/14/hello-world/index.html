@@ -69,8 +69,39 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
 
+<script type="text/javascript"> 
+loopy() 
+function loopy() { 
+    if(''){
+        while(true) {
+            var pass = prompt("输入正确密码才能查看!");
+            if(pass) {
+                // 点击的确定
+                var ss = sha1(pass)
+                // alert(ss);
+                if(ss == '') {
+                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
+                    break;
+                }
+                else {
+                    alert("密码错误！");
+                }
+            }
+            else if(pass == "") {
+                // 用户没有输入
+            }
+            else {
+                // 点击取消
+                history.back()
 
+            }
+        }
+    }
+} 
+</script> 
 
 
   <meta name="keywords" content="Hexo,mathjax,Next," />
@@ -97,7 +128,7 @@
 <meta property="og:url" content="https://qingfeng14.github.io/2017/03/14/hello-world/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2017-04-04T16:41:46.000Z">
+<meta property="og:updated_time" content="2017-04-11T17:54:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Hexo">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
@@ -418,7 +449,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  489
+                  625
                 </span>
               
 
@@ -434,7 +465,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -499,6 +530,9 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if page.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; page.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif page.tags and page.tags.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for tag in page.tags %&#125;&#123;&#123; tag.name &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif theme.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; theme.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
 <p>修改内容：35行左右，将原来的设置ketwords的代码覆盖即可</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if page.keywords and page.keywords.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for key in page.keywords %&#125;&#123;&#123; key &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif page.tags and page.tags.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for tag in page.tags %&#125;&#123;&#123; tag.name &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif theme.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; theme.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
+<h1 id="hexo-中设置访问密码">hexo 中设置访问密码</h1>
+<p>在<code>themes-&gt;next-&gt;layout-&gt;_partials-&gt;head.swig</code>中的meta标签之后添加js代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js&quot;&gt;&lt;/script&gt;  </div><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">loopy() </div><div class="line">function loopy() &#123; </div><div class="line">    if(&apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">        while(true) &#123;</div><div class="line">            var pass = prompt(&quot;输入正确密码才能查看!&quot;);</div><div class="line">            if(pass) &#123;</div><div class="line">                // 点击的确定</div><div class="line">                var ss = sha1(pass)</div><div class="line">                // alert(ss);</div><div class="line">                if(ss == &apos;&#123;&#123; page.password &#125;&#125;&apos;) &#123;</div><div class="line">                    alert(&quot;欢迎进入我的博客！Contact me at zhangshenghao1995@163.com&quot;);</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">                else &#123;</div><div class="line">                    alert(&quot;密码错误！&quot;);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            else if(pass == &quot;&quot;) &#123;</div><div class="line">                // 用户没有输入</div><div class="line">            &#125;</div><div class="line">            else &#123;</div><div class="line">                // 点击取消</div><div class="line">                history.back()</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125; </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -777,7 +811,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#quick-start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-new-post"><span class="nav-number">1.0.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run-server"><span class="nav-number">1.0.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generate-static-files"><span class="nav-number">1.0.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deploy-to-remote-sites"><span class="nav-number">1.0.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#草稿"><span class="nav-number">1.0.5.</span> <span class="nav-text">草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathjax"><span class="nav-number">1.0.6.</span> <span class="nav-text">MathJax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为hexo-next博客添加关键词功能"><span class="nav-number">1.0.7.</span> <span class="nav-text">为Hexo Next博客添加关键词功能</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#quick-start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-new-post"><span class="nav-number">1.0.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run-server"><span class="nav-number">1.0.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generate-static-files"><span class="nav-number">1.0.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deploy-to-remote-sites"><span class="nav-number">1.0.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#草稿"><span class="nav-number">1.0.5.</span> <span class="nav-text">草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathjax"><span class="nav-number">1.0.6.</span> <span class="nav-text">MathJax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为hexo-next博客添加关键词功能"><span class="nav-number">1.0.7.</span> <span class="nav-text">为Hexo Next博客添加关键词功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-中设置访问密码"><span class="nav-number">2.</span> <span class="nav-text">hexo 中设置访问密码</span></a></li></ol></div>
             
 
           </div>

@@ -69,8 +69,39 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
 
+<script type="text/javascript"> 
+loopy() 
+function loopy() { 
+    if('01c6023dacda00474e342dc0ba449ac06eaf44c7'){
+        while(true) {
+            var pass = prompt("输入正确密码才能查看!");
+            if(pass) {
+                // 点击的确定
+                var ss = sha1(pass)
+                // alert(ss);
+                if(ss == '01c6023dacda00474e342dc0ba449ac06eaf44c7') {
+                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
+                    break;
+                }
+                else {
+                    alert("密码错误！");
+                }
+            }
+            else if(pass == "") {
+                // 用户没有输入
+            }
+            else {
+                // 点击取消
+                history.back()
 
+            }
+        }
+    }
+} 
+</script> 
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -91,43 +122,13 @@
 
 
 
-<meta name="description" content="loopy() 
-function loopy() { 
-var sWord =&quot;&quot; 
-while (sWord != &quot;123&quot;) {//初始密码123 
-sWord = prompt(&quot;输入正确密码才能登陆!&quot;) 
-} 
-alert(&quot;AH…欢迎光临！&quot;) 
-} 
-
-哈哈哈">
 <meta property="og:type" content="article">
 <meta property="og:title" content="赛事说明">
 <meta property="og:url" content="https://qingfeng14.github.io/2017/04/12/赛事说明/index.html">
 <meta property="og:site_name" content="青枫别苑">
-<meta property="og:description" content="loopy() 
-function loopy() { 
-var sWord =&quot;&quot; 
-while (sWord != &quot;123&quot;) {//初始密码123 
-sWord = prompt(&quot;输入正确密码才能登陆!&quot;) 
-} 
-alert(&quot;AH…欢迎光临！&quot;) 
-} 
-
-哈哈哈">
-<meta property="og:updated_time" content="2017-04-11T16:43:52.000Z">
+<meta property="og:updated_time" content="2017-04-11T17:54:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="赛事说明">
-<meta name="twitter:description" content="loopy() 
-function loopy() { 
-var sWord =&quot;&quot; 
-while (sWord != &quot;123&quot;) {//初始密码123 
-sWord = prompt(&quot;输入正确密码才能登陆!&quot;) 
-} 
-alert(&quot;AH…欢迎光临！&quot;) 
-} 
-
-哈哈哈">
 
 
 
@@ -445,7 +446,7 @@ alert(&quot;AH…欢迎光临！&quot;)
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  3
+                  0
                 </span>
               
 
@@ -481,17 +482,6 @@ alert(&quot;AH…欢迎光临！&quot;)
 
       
         <a id="more"></a>
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-var sWord ="" 
-while (sWord != "123") {//初始密码123 
-sWord = prompt("输入正确密码才能登陆!") 
-} 
-alert("AH…欢迎光临！") 
-} 
-</script>
-<p>哈哈哈</p>
 
       
     </div>

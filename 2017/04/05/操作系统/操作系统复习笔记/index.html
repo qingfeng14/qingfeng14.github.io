@@ -69,8 +69,39 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
 
+<script type="text/javascript"> 
+loopy() 
+function loopy() { 
+    if(''){
+        while(true) {
+            var pass = prompt("输入正确密码才能查看!");
+            if(pass) {
+                // 点击的确定
+                var ss = sha1(pass)
+                // alert(ss);
+                if(ss == '') {
+                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
+                    break;
+                }
+                else {
+                    alert("密码错误！");
+                }
+            }
+            else if(pass == "") {
+                // 用户没有输入
+            }
+            else {
+                // 点击取消
+                history.back()
 
+            }
+        }
+    }
+} 
+</script> 
 
 
   <meta name="keywords" content="课程,操作系统,复习," />
@@ -105,7 +136,7 @@ piazza
 2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = se">
 <meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/1Y1s3A2p1f1u1n0l2D2c/Image%202017-04-05%20at%208.33.32%20下午.png">
 <meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/2F061T0g091x3M0Q1q0T/Image%202017-04-05%20at%208.35.16%20下午.png">
-<meta property="og:updated_time" content="2017-04-07T07:40:38.000Z">
+<meta property="og:updated_time" content="2017-04-11T17:31:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统复习笔记">
 <meta name="twitter:description" content="关于x86启动后执行的第一条指令及其地址

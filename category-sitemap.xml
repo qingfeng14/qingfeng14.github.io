@@ -42,13 +42,6 @@
     </url>
 
     <url>
-        <loc>https://qingfeng14.github.io/categories/Linux%E3%80%81Mac/</loc>
-        <lastmod>2017-04-07T08:01:52.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://qingfeng14.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
         <lastmod>2017-04-08T11:52:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -84,8 +77,15 @@
     </url>
 
     <url>
+        <loc>https://qingfeng14.github.io/categories/Linux%E3%80%81Mac/</loc>
+        <lastmod>2017-04-13T18:17:10.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://qingfeng14.github.io/categories/Others/</loc>
-        <lastmod>2017-04-13T14:38:54.000Z</lastmod>
+        <lastmod>2017-04-13T18:56:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

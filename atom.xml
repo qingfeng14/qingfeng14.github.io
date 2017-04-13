@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qingfeng14.github.io/"/>
-  <updated>2017-04-12T02:42:00.000Z</updated>
+  <updated>2017-04-13T14:38:54.000Z</updated>
   <id>https://qingfeng14.github.io/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Search_Results</title>
+    <link href="https://qingfeng14.github.io/2017/04/13/Search-Results/"/>
+    <id>https://qingfeng14.github.io/2017/04/13/Search-Results/</id>
+    <published>2017-04-13T14:10:46.000Z</published>
+    <updated>2017-04-13T14:38:54.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;说明重要必看&quot;&gt;说明【重要，必看】&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;论文引用一定要注明出处，一般分文中引用和文末引用，具体&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Others" scheme="https://qingfeng14.github.io/categories/Others/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>安卓开发记录</title>
+    <link href="https://qingfeng14.github.io/2017/04/12/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
+    <id>https://qingfeng14.github.io/2017/04/12/安卓开发记录/</id>
+    <published>2017-04-12T04:52:09.000Z</published>
+    <updated>2017-04-12T07:53:39.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;安卓中用户权限设置&quot;&gt;安卓中用户权限设置&lt;/h1&gt;
+&lt;p&gt;位置：&lt;code&gt;AndroidManifest.xml&lt;/code&gt; 在package之后， Application 之前&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://qingfeng14.github.io/tags/Android/"/>
+    
+      <category term="4over6" scheme="https://qingfeng14.github.io/tags/4over6/"/>
+    
+      <category term="网络" scheme="https://qingfeng14.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>赛事说明</title>

@@ -125,6 +125,52 @@
   </entry>
   
   <entry>
+    <title>计算机系统结构作业4</title>
+    <link href="https://qingfeng14.github.io/2017/04/05/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A4/"/>
+    <id>https://qingfeng14.github.io/2017/04/05/系统结构/计算机系统结构作业4/</id>
+    <published>2017-04-04T16:00:00.000Z</published>
+    <updated>2017-04-13T19:05:13.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有一个4-way组相连Cache， Cache大小为16K字节(4K字), Cache块大小为16字节, 执行以下程序：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="系统结构" scheme="https://qingfeng14.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="系统结构" scheme="https://qingfeng14.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lec12练习</title>
+    <link href="https://qingfeng14.github.io/2017/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec12%E7%BB%83%E4%B9%A0/"/>
+    <id>https://qingfeng14.github.io/2017/04/03/操作系统/Lec12练习/</id>
+    <published>2017-04-03T12:45:33.000Z</published>
+    <updated>2017-04-04T16:38:14.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1（不用回答）理解 孤儿进程和僵死进程的含义 http://www.cnblogs.com/xiehongfeng100/p/4619913.html http://www.cnblogs.com/Anker/p/3271773.html https://piazza.com/class/i5j09fnsl7k5x0?cid=753&lt;/p&gt;
+&lt;p&gt;孤儿进程：一个父进程退出、但其仍在运行的孤儿进程。孤儿进程将被init进程（进程号为1）所收养，并由init进程对它们完成状态收集工作。&lt;/p&gt;
+&lt;p&gt;僵尸进程：一个已经终止、但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>服务器配置相关问题</title>
     <link href="https://qingfeng14.github.io/2017/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
     <id>https://qingfeng14.github.io/2017/03/31/服务器/服务器配置/</id>
@@ -147,6 +193,29 @@
       <category term="终端" scheme="https://qingfeng14.github.io/tags/%E7%BB%88%E7%AB%AF/"/>
     
       <category term="服务器" scheme="https://qingfeng14.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lec10_lec11练习题</title>
+    <link href="https://qingfeng14.github.io/2017/03/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lec10-lec11/"/>
+    <id>https://qingfeng14.github.io/2017/03/29/操作系统/lec10-lec11/</id>
+    <published>2017-03-29T12:31:17.000Z</published>
+    <updated>2017-04-13T19:05:09.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;以lab3为例说明虚拟页与磁盘后备页面的对应关系是什么&quot;&gt;1 以lab3为例，说明虚拟页与磁盘后备页面的对应关系是什么？&lt;/h3&gt;
+&lt;p&gt;物理内存+磁盘空间 构成了虚拟存储通过虚拟页式存储机制提供给用户更大的逻辑空间，虚拟内存页有可能在物理内存中，也可能在磁盘后备页面中，这种调整是通过页面置换算法进行对应的换入换出的。
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -206,6 +275,29 @@
   </entry>
   
   <entry>
+    <title>OS-lec9-exercise</title>
+    <link href="https://qingfeng14.github.io/2017/03/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS-lec9-exercise/"/>
+    <id>https://qingfeng14.github.io/2017/03/24/操作系统/OS-lec9-exercise/</id>
+    <published>2017-03-24T13:53:35.000Z</published>
+    <updated>2017-04-13T19:04:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;lec9-练习题&quot;&gt;Lec9 练习题&lt;/h1&gt;
+&lt;h3 id=&quot;物理页帧数量为3且初始时没有对应的虚拟页虚拟页访问序列为01201303103请问采用最优置换算法的缺页次数为4&quot;&gt;1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ucore_lab</title>
     <link href="https://qingfeng14.github.io/2017/03/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/ucore-lab/"/>
     <id>https://qingfeng14.github.io/2017/03/23/操作系统/ucore-lab/</id>
@@ -253,6 +345,24 @@
   </entry>
   
   <entry>
+    <title>lec8 SPOC思考题</title>
+    <link href="https://qingfeng14.github.io/2017/03/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lec8-SPOC%E6%80%9D%E8%80%83%E9%A2%98/"/>
+    <id>https://qingfeng14.github.io/2017/03/21/操作系统/lec8-SPOC思考题/</id>
+    <published>2017-03-20T16:00:00.000Z</published>
+    <updated>2017-04-13T19:05:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;内存访问局部性的应用程序例子&quot;&gt;内存访问局部性的应用程序例子&lt;/h1&gt;
+&lt;p&gt;(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。&lt;/p&gt;
+&lt;figure class=&quot;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>机器学习-朴素贝叶斯</title>
     <link href="https://qingfeng14.github.io/2017/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
     <id>https://qingfeng14.github.io/2017/03/19/机器学习/机器学习-朴素贝叶斯/</id>
@@ -284,7 +394,7 @@
     <link href="https://qingfeng14.github.io/2017/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/"/>
     <id>https://qingfeng14.github.io/2017/03/18/机器学习/机器学习实验-朴素贝叶斯分类器/</id>
     <published>2017-03-18T15:01:28.000Z</published>
-    <updated>2017-03-22T09:54:43.000Z</updated>
+    <updated>2017-04-13T19:04:07.000Z</updated>
     
     <summary type="html">
     
@@ -315,7 +425,7 @@
     <link href="https://qingfeng14.github.io/2017/03/18/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E5%AE%9E%E9%AA%8C/"/>
     <id>https://qingfeng14.github.io/2017/03/18/搜索引擎/搜索引擎性能评价实验/</id>
     <published>2017-03-17T17:13:13.000Z</published>
-    <updated>2017-03-29T12:34:50.000Z</updated>
+    <updated>2017-04-13T19:04:22.000Z</updated>
     
     <summary type="html">
     
@@ -363,7 +473,7 @@
     <link href="https://qingfeng14.github.io/2017/03/16/%E7%BD%91%E7%BB%9C/IPv6%E5%8D%8F%E8%AE%AE%E8%BD%AC%E5%8F%91%E5%AE%9E%E9%AA%8C/"/>
     <id>https://qingfeng14.github.io/2017/03/16/网络/IPv6协议转发实验/</id>
     <published>2017-03-16T07:51:39.000Z</published>
-    <updated>2017-03-19T05:28:03.000Z</updated>
+    <updated>2017-04-13T19:03:52.000Z</updated>
     
     <summary type="html">
     
@@ -385,125 +495,6 @@
       <category term="IPv6" scheme="https://qingfeng14.github.io/tags/IPv6/"/>
     
       <category term="清华NetRiver实验" scheme="https://qingfeng14.github.io/tags/%E6%B8%85%E5%8D%8ENetRiver%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux/Mac 常用命令</title>
-    <link href="https://qingfeng14.github.io/2017/03/15/linux-Mac-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/</id>
-    <published>2017-03-15T04:39:38.000Z</published>
-    <updated>2017-04-13T18:17:10.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;amp;id=27836035&amp;amp;auto=0&amp;amp;height=66&quot;&gt;
-&lt;/iframe&gt;
-&lt;h1 id=&quot;使用pandoc将markdown输出为pdf&quot;&gt;使用pandoc将markdown输出为pdf&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html&quot;&gt;pandoc的安装与配置&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc hello-world.md -o out.pdf  --latex-engine=xelatex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -D latex &amp;gt; mytemplate.tex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# tips：可以将该路径加入$PATH&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 指定中英文字体&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --latex-engine=xelatex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Kai&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; hello-world.md -o output.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; IPv6协议转发实验.md  -o example14.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; 搜索引擎性能评价实验.md  -o 搜索引擎性能评价实验.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 有代码高亮&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf --listings -H code.tex&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.tex linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc -N &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; --toc --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.tex 机器学习实验-朴素贝叶斯分类器.md -o 朴素贝叶斯.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;  --smart --template default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.tex OS-lec9-exercise.md -o lec9.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt;  --smart --template ../default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.tex 密码学-Exercise1.md -o out.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; -N --toc --smart --template ../default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.tex 搜索引擎性能评价实验.md -o 实验报告.docx&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; -N --toc --smart --template ../default.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.tex 感想.md -o 艺术考察报告.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; -N --toc --smart --template mytemplate.tex -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H ../code.tex 感想.md -o 艺术考察报告.pdf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pandoc &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; -N --toc --smart  -V CJKmainfont=&lt;span class=&quot;string&quot;&gt;&#39;Songti SC&#39;&lt;/span&gt; -V mainfont=&lt;span class=&quot;string&quot;&gt;&#39;Monaco&#39;&lt;/span&gt; --variable sansfont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --variable monofont=&lt;span class=&quot;string&quot;&gt;&quot;Monaco&quot;&lt;/span&gt; --latex-engine=xelatex -V geometry:margin=1&lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;  --listings -H code.tex 感想.md -o 艺术考察报告.pdf&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Linux、Mac" scheme="https://qingfeng14.github.io/categories/Linux%E3%80%81Mac/"/>
-    
-    
-      <category term="记录" scheme="https://qingfeng14.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-      <category term="终端" scheme="https://qingfeng14.github.io/tags/%E7%BB%88%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[计算机系统结构]指令系统</title>
-    <link href="https://qingfeng14.github.io/2017/03/15/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://qingfeng14.github.io/2017/03/15/系统结构/计算机系统结构-指令系统/</id>
-    <published>2017-03-14T17:56:33.000Z</published>
-    <updated>2017-03-30T10:29:48.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，单地址指令，两地址指令&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="系统结构" scheme="https://qingfeng14.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="系统结构" scheme="https://qingfeng14.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[密码学]古典密码</title>
-    <link href="https://qingfeng14.github.io/2017/03/14/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/"/>
-    <id>https://qingfeng14.github.io/2017/03/14/密码学/密码学-古典密码/</id>
-    <published>2017-03-14T07:23:12.000Z</published>
-    <updated>2017-04-06T03:23:40.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Description：移位密码，凯撒密码，置换密码&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="密码学" scheme="https://qingfeng14.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-    
-      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="密码学" scheme="https://qingfeng14.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[搜索引擎]性能评价</title>
-    <link href="https://qingfeng14.github.io/2017/03/14/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/"/>
-    <id>https://qingfeng14.github.io/2017/03/14/搜索引擎/搜索引擎-性能评价/</id>
-    <published>2017-03-14T05:32:59.000Z</published>
-    <updated>2017-03-29T10:56:40.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;搜索引擎性能评价的目的&quot;&gt;搜索引擎性能评价的目的&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;对用户而言： 信息获取渠道&lt;/li&gt;
-&lt;li&gt;对搜索引擎广告商而言&lt;/li&gt;
-&lt;li&gt;对搜索技术研究人员而言&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="搜索引擎" scheme="https://qingfeng14.github.io/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-    
-      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="搜索引擎" scheme="https://qingfeng14.github.io/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello Hexo</title>
-    <link href="https://qingfeng14.github.io/2017/03/14/hello-world/"/>
-    <id>https://qingfeng14.github.io/2017/03/14/hello-world/</id>
-    <published>2017-03-14T02:48:48.000Z</published>
-    <updated>2017-04-11T17:54:50.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://qingfeng14.github.io/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="https://qingfeng14.github.io/tags/Hexo/"/>
-    
-      <category term="教程" scheme="https://qingfeng14.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

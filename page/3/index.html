@@ -350,6 +350,955 @@ function loopy() {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/15/linux-Mac-常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/15/linux-Mac-常用命令/" itemprop="url">
+                  Linux/Mac 常用命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T12:39:38+08:00">
+                2017-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux、Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux、Mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/15/linux-Mac-常用命令/" class="leancloud_visitors" data-flag-title="Linux/Mac 常用命令">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,672
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=27836035&amp;auto=0&amp;height=66">
+</iframe>
+<h1 id="使用pandoc将markdown输出为pdf">使用pandoc将markdown输出为pdf</h1>
+<p><a href="http://yijiebuyi.com/blog/17e31502e8a6229a18971a2499f0e72b.html">pandoc的安装与配置</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=xelatex</div><div class="line"></div><div class="line">pandoc -D latex &gt; mytemplate.tex</div><div class="line"></div><div class="line"><span class="comment"># 如果提示pandoc无法找到插件xelatex（支持输出中文），则下载Tex，BasicTex</span></div><div class="line">pandoc hello-world.md -o out.pdf  --latex-engine=/Library/TeX/texbin/xelatex</div><div class="line"><span class="comment"># tips：可以将该路径加入$PATH</span></div><div class="line"></div><div class="line"><span class="comment"># 指定中英文字体</span></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --latex-engine=xelatex -V CJKmainfont=<span class="string">'Kai'</span> -V mainfont=<span class="string">'Monaco'</span> -V geometry:margin=1<span class="keyword">in</span> hello-world.md -o output.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --variable fontsize=26pt  --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> IPv6协议转发实验.md  -o example14.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --template default.tex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> 搜索引擎性能评价实验.md  -o 搜索引擎性能评价实验.pdf</div><div class="line"></div><div class="line"><span class="comment"># 有代码高亮</span></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --template default.tex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span> linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf --listings -H code.tex</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --template default.tex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H code.tex linux-Mac-常用命令.md  -o 搜索引擎性能评价实验.pdf</div><div class="line"></div><div class="line">pandoc -N <span class="_">-s</span> --toc --smart --template default.tex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H code.tex 机器学习实验-朴素贝叶斯分类器.md -o 朴素贝叶斯.pdf</div><div class="line"></div><div class="line">pandoc <span class="_">-s</span>  --smart --template default.tex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H code.tex OS-lec9-exercise.md -o lec9.pdf</div><div class="line"></div><div class="line"></div><div class="line">pandoc <span class="_">-s</span>  --smart --template ../default.tex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H ../code.tex 密码学-Exercise1.md -o out.pdf</div><div class="line"></div><div class="line">pandoc <span class="_">-s</span> -N --toc --smart --template ../default.tex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H ../code.tex 搜索引擎性能评价实验.md -o 实验报告.docx</div><div class="line"></div><div class="line">pandoc <span class="_">-s</span> -N --toc --smart --template ../default.tex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H ../code.tex 感想.md -o 艺术考察报告.pdf</div><div class="line"></div><div class="line">pandoc <span class="_">-s</span> -N --toc --smart --template mytemplate.tex -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H ../code.tex 感想.md -o 艺术考察报告.pdf</div><div class="line"></div><div class="line">pandoc <span class="_">-s</span> -N --toc --smart  -V CJKmainfont=<span class="string">'Songti SC'</span> -V mainfont=<span class="string">'Monaco'</span> --variable sansfont=<span class="string">"Monaco"</span> --variable monofont=<span class="string">"Monaco"</span> --latex-engine=xelatex -V geometry:margin=1<span class="keyword">in</span>  --listings -H code.tex 感想.md -o 艺术考察报告.pdf</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/15/linux-Mac-常用命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/15/系统结构/计算机系统结构-指令系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/15/系统结构/计算机系统结构-指令系统/" itemprop="url">
+                  [计算机系统结构]指令系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T01:56:33+08:00">
+                2017-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/系统结构/" itemprop="url" rel="index">
+                    <span itemprop="name">系统结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/15/系统结构/计算机系统结构-指令系统/" class="leancloud_visitors" data-flag-title="[计算机系统结构]指令系统">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  161
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，单地址指令，两地址指令</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/15/系统结构/计算机系统结构-指令系统/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/14/密码学/密码学-古典密码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/14/密码学/密码学-古典密码/" itemprop="url">
+                  [密码学]古典密码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T15:23:12+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/密码学/" itemprop="url" rel="index">
+                    <span itemprop="name">密码学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/14/密码学/密码学-古典密码/" class="leancloud_visitors" data-flag-title="[密码学]古典密码">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  681
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Description：移位密码，凯撒密码，置换密码</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/14/密码学/密码学-古典密码/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/14/搜索引擎/搜索引擎-性能评价/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/14/搜索引擎/搜索引擎-性能评价/" itemprop="url">
+                  [搜索引擎]性能评价
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T13:32:59+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/搜索引擎/" itemprop="url" rel="index">
+                    <span itemprop="name">搜索引擎</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/14/搜索引擎/搜索引擎-性能评价/" class="leancloud_visitors" data-flag-title="[搜索引擎]性能评价">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,419
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="搜索引擎性能评价的目的">搜索引擎性能评价的目的</h1>
+<ul>
+<li>对用户而言： 信息获取渠道</li>
+<li>对搜索引擎广告商而言</li>
+<li>对搜索技术研究人员而言</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/14/搜索引擎/搜索引擎-性能评价/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/14/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/14/hello-world/" itemprop="url">
+                  Hello Hexo
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T10:48:48+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/14/hello-world/" class="leancloud_visitors" data-flag-title="Hello Hexo">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  625
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/14/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/14/密码学/密码学-Exercise1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -579,7 +1528,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

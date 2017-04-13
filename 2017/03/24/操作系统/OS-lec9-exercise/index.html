@@ -1,0 +1,1493 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
+
+<script type="text/javascript"> 
+loopy() 
+function loopy() { 
+    if('ee8d8728f435fd550f83852aabab5234ce1da528'){
+        while(true) {
+            var pass = prompt("输入正确密码才能查看!");
+            if(pass) {
+                // 点击的确定
+                var ss = sha1(pass)
+                // alert(ss);
+                if(ss == 'ee8d8728f435fd550f83852aabab5234ce1da528') {
+                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
+                    break;
+                }
+                else {
+                    alert("密码错误！");
+                }
+            }
+            else if(pass == "") {
+                // 用户没有输入
+            }
+            else {
+                // 点击取消
+                // history.go(-1)
+
+            }
+        }
+    }
+} 
+</script> 
+
+
+  <meta name="keywords" content="作业,操作系统," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="青枫别苑" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Lec9 练习题
+1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OS-lec9-exercise">
+<meta property="og:url" content="https://qingfeng14.github.io/2017/03/24/操作系统/OS-lec9-exercise/index.html">
+<meta property="og:site_name" content="青枫别苑">
+<meta property="og:description" content="Lec9 练习题
+1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3n3e2V071X1b2e2A3y2J/Image%202017-03-25%20at%207.12.52%20下午.png">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/2U2t0i1d2N0C3q1x1E3K/Image%202017-03-25%20at%207.13.20%20下午.png">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3V1s390F1Z251f3T3V0z/Image%202017-03-25%20at%2010.03.39%20下午.png">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3v0M0W3c3u340S2M0V0h/Image%202017-03-25%20at%2010.04.57%20下午.png">
+<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3m0B3F3Z0O2G2v2Q0d36/Image%202017-03-25%20at%2010.01.57%20下午.png">
+<meta property="og:updated_time" content="2017-04-13T19:04:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OS-lec9-exercise">
+<meta name="twitter:description" content="Lec9 练习题
+1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）">
+<meta name="twitter:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3n3e2V071X1b2e2A3y2J/Image%202017-03-25%20at%207.12.52%20下午.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'OP8LUUS2MV',
+      apiKey: '7aae391e117d5b22f8d4e63407fc967f',
+      indexName: 'indexName',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qingfeng14.github.io/2017/03/24/操作系统/OS-lec9-exercise/"/>
+
+
+
+
+
+  <title> OS-lec9-exercise | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+   
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1b340ab7aa1a6c88726e5b5f596b4d2a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">青枫别苑</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">盛豪的个人博客<br/>Coding  && Reading</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/24/操作系统/OS-lec9-exercise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                OS-lec9-exercise
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T21:53:35+08:00">
+                2017-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/24/操作系统/OS-lec9-exercise/" class="leancloud_visitors" data-flag-title="OS-lec9-exercise">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,734
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="lec9-练习题">Lec9 练习题</h1>
+<h3 id="物理页帧数量为3且初始时没有对应的虚拟页虚拟页访问序列为01201303103请问采用最优置换算法的缺页次数为4">1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）</h3>
+<a id="more"></a>
+<p>最优置换算法：置换未来最长时间不访问的页面。</p>
+<table>
+<thead>
+<tr class="header">
+<th>时间</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>物理页帧</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>缺页?</td>
+<td>缺页</td>
+<td>缺页</td>
+<td>缺页</td>
+<td></td>
+<td></td>
+<td>缺页</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>2-&gt;3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>缺页次数为4次</p>
+<h3 id="物理页帧数量为3且初始时没有对应的虚拟页虚拟页访问序列为01201303103请问采用fifo置换算法的缺页次数为6">2. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用FIFO置换算法的缺页次数为（6）</h3>
+<table>
+<thead>
+<tr class="header">
+<th>时间</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>物理页帧</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>缺页?</td>
+<td>缺页</td>
+<td>缺页</td>
+<td>缺页</td>
+<td></td>
+<td></td>
+<td>缺页</td>
+<td>缺页</td>
+<td></td>
+<td>缺页</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0-&gt;3</td>
+<td>1-&gt;0</td>
+<td></td>
+<td>2-&gt;1</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>缺页6次</p>
+<h3 id="物理页帧数量为4且初始时没有对应的虚拟页虚拟页访问序列为032013431032134请问采用clock置换算法用1个bit表示存在时间的缺页次数为9">3.物理页帧数量为4，且初始时没有对应的虚拟页。虚拟页访问序列为0,3,2,0,1,3,4,3,1,0,3,2,1,3,4，请问采用CLOCK置换算法（用1个bit表示存在时间）的缺页次数为（9）</h3>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/3n3e2V071X1b2e2A3y2J/Image%202017-03-25%20at%207.12.52%20下午.png" alt="题3Clock算法1">
+<p class="caption">题3Clock算法1</p>
+</div>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/2U2t0i1d2N0C3q1x1E3K/Image%202017-03-25%20at%207.13.20%20下午.png" alt="题3Clock算法2">
+<p class="caption">题3Clock算法2</p>
+</div>
+<p>缺页次数9</p>
+<h3 id="物理页帧数量为4且初始时没有对应的虚拟页虚拟页访问序列为032013431032134请问采用clock置换算法用2个关联bit表示存在时间可以表示4的缺页次数为">4. 物理页帧数量为4，且初始时没有对应的虚拟页。虚拟页访问序列为0,3,2,0,1,3,4,3,1,0,3,2,1,3,4，请问采用CLOCK置换算法（用2个关联，bit表示存在时间,可以表示4,）的缺页次数为（）</h3>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/3V1s390F1Z251f3T3V0z/Image%202017-03-25%20at%2010.03.39%20下午.png" alt="题4-1">
+<p class="caption">题4-1</p>
+</div>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/3v0M0W3c3u340S2M0V0h/Image%202017-03-25%20at%2010.04.57%20下午.png" alt="题4-2">
+<p class="caption">题4-2</p>
+</div>
+<p>缺页次数为8</p>
+<h3 id="spoc根据你的学号-mod-4的结果值确定选择四种页面置换算法0lru置换算法1改进的clock页置换算法2工作集页置换算法3缺页率置换算法中的一种来设计一个应用程序可基于pythonruby-c-clisp等模拟实现并给出测试用例和测试结果请参考如python代码或独自实现">5.（spoc）根据你的学号 mod 4的结果值，确定选择四种页面置换算法（0：LRU置换算法，1:改进的clock页置换算法，2：工作集页置换算法，3：缺页率置换算法）中的一种来设计一个应用程序（可基于python,ruby, C, C++，LISP等）模拟实现，并给出测试用例和测试结果。请参考如python代码或独自实现。</h3>
+<p>工作集页置换算法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding: utf-8</span></div><div class="line"><span class="comment"># ! /usr/bin/env python</span></div><div class="line"></div><div class="line"><span class="comment"># 工作集页面置换算法</span></div><div class="line"></div><div class="line"><span class="comment"># 访存页面链表</span></div><div class="line">work_list = []</div><div class="line"><span class="comment"># 工作集</span></div><div class="line">work_set = set(work_list)</div><div class="line"><span class="comment"># 窗口大小</span></div><div class="line">t = <span class="number">4</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">access</span><span class="params">(page)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    访问页面函数,针对每一个页,进行工作集的更新,访存链表的更新,页面置换</div><div class="line">    :param page:</div><div class="line">    :return:</div><div class="line">    """</div><div class="line">    <span class="keyword">global</span> work_set</div><div class="line">    <span class="keyword">global</span> work_list</div><div class="line">    <span class="comment"># 是否出现页缺失</span></div><div class="line">    miss = <span class="keyword">False</span></div><div class="line">    <span class="keyword">if</span> page <span class="keyword">in</span> work_set:</div><div class="line">        <span class="comment"># 当前页面在工作集中,表示命中</span></div><div class="line">        <span class="keyword">print</span> <span class="string">"命中页面"</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        miss = <span class="keyword">True</span></div><div class="line">        <span class="keyword">print</span> <span class="string">"页缺失"</span></div><div class="line">    work_list.append(page)</div><div class="line">    <span class="comment"># 删除第一个页面</span></div><div class="line">    first = work_list[<span class="number">0</span>]</div><div class="line">    <span class="keyword">if</span> len(work_list) &gt; t:</div><div class="line">        <span class="comment"># 已经超出工作集,去除列表首页</span></div><div class="line">        <span class="keyword">del</span> work_list[<span class="number">0</span>]</div><div class="line">    work_set = set(work_list)</div><div class="line">    <span class="keyword">if</span> first <span class="keyword">not</span> <span class="keyword">in</span> work_set:</div><div class="line">        <span class="keyword">print</span> <span class="string">'page %s 换出'</span> % first</div><div class="line">    <span class="keyword">if</span> miss:</div><div class="line">        <span class="keyword">print</span> <span class="string">"page %s 换入"</span> % page</div><div class="line">    <span class="keyword">print</span> <span class="string">"当前访存链表:"</span>, work_list</div><div class="line">    <span class="keyword">print</span> <span class="string">"当前工作集:"</span>, work_set</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">access_pages</span><span class="params">(pages, input_work_list)</span>:</span></div><div class="line">    <span class="keyword">global</span> work_set</div><div class="line">    <span class="keyword">global</span> work_list</div><div class="line">    work_list = input_work_list</div><div class="line">    work_set = set(input_work_list)</div><div class="line">    <span class="keyword">print</span> <span class="string">"页面访问顺序为:"</span>, pages</div><div class="line">    <span class="keyword">print</span> <span class="string">"初始工作集:"</span>, work_set</div><div class="line">    <span class="keyword">print</span> <span class="string">"初始访问列表:"</span>, work_list</div><div class="line">    pages = pages.split(<span class="string">','</span>)</div><div class="line">    count = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> pages:</div><div class="line">        count += <span class="number">1</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'Page '</span>, count, i,</div><div class="line">        access(i)</div><div class="line">        <span class="keyword">print</span> <span class="string">''</span></div><div class="line">    <span class="comment"># 访问完成之后清空</span></div><div class="line">    work_list = []</div><div class="line">    work_set = set(work_list)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">"这是一个工作集置换算法的简单实现"</span></div><div class="line"></div><div class="line">    log = <span class="string">'''</span></div><div class="line">    t = 4</div><div class="line">    test_pages = "c,c,d,b,c,e,c,e,a,d"</div><div class="line">    test_work_str = "e,d,a"</div><div class="line">    '''</div><div class="line"></div><div class="line">    <span class="keyword">print</span> <span class="string">"课件中测试集:"</span>, log</div><div class="line">    t = input(<span class="string">"窗口大小t="</span>)</div><div class="line">    <span class="keyword">assert</span> (int(t) &gt; <span class="number">0</span>)</div><div class="line">    <span class="comment"># 访问页面顺序</span></div><div class="line">    test_pages = raw_input(<span class="string">'测试页面顺序(以,隔开,如e,d,a,c,c) test_pages='</span>)</div><div class="line">    test_work_str = raw_input(<span class="string">'此前访问的t个页面顺序为(如e,d,a)test_work_str='</span>)</div><div class="line">    test_work_list = test_work_str.split(<span class="string">','</span>)</div><div class="line">    <span class="keyword">print</span> test_work_list</div><div class="line">    <span class="keyword">assert</span> (len(test_work_list) &lt;= t)</div><div class="line">    <span class="comment"># test_pages = "e,d,a,c,c,d,b,c,e,c,e,a,d"</span></div><div class="line">    access_pages(test_pages, test_work_list)</div></pre></td></tr></table></figure>
+<p>测试用例使用课本中的访问顺序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">页面访问顺序为: c,c,d,b,c,e,c,e,a,d</div><div class="line">初始工作集: set([&apos;a&apos;, &apos;e&apos;, &apos;d&apos;])</div><div class="line">初始访问列表: [&apos;e&apos;, &apos;d&apos;, &apos;a&apos;]</div><div class="line">Page  1 c 页缺失</div><div class="line">page c 换入</div><div class="line">当前访存链表: [&apos;e&apos;, &apos;d&apos;, &apos;a&apos;, &apos;c&apos;]</div><div class="line">当前工作集: set([&apos;a&apos;, &apos;c&apos;, &apos;e&apos;, &apos;d&apos;])</div><div class="line"></div><div class="line">Page  2 c 命中页面</div><div class="line">page e 换出</div><div class="line">当前访存链表: [&apos;d&apos;, &apos;a&apos;, &apos;c&apos;, &apos;c&apos;]</div><div class="line">当前工作集: set([&apos;a&apos;, &apos;c&apos;, &apos;d&apos;])</div><div class="line"></div><div class="line">Page  3 d 命中页面</div><div class="line">当前访存链表: [&apos;a&apos;, &apos;c&apos;, &apos;c&apos;, &apos;d&apos;]</div><div class="line">当前工作集: set([&apos;a&apos;, &apos;c&apos;, &apos;d&apos;])</div><div class="line"></div><div class="line">Page  4 b 页缺失</div><div class="line">page a 换出</div><div class="line">page b 换入</div><div class="line">当前访存链表: [&apos;c&apos;, &apos;c&apos;, &apos;d&apos;, &apos;b&apos;]</div><div class="line">当前工作集: set([&apos;c&apos;, &apos;b&apos;, &apos;d&apos;])</div><div class="line"></div><div class="line">Page  5 c 命中页面</div><div class="line">当前访存链表: [&apos;c&apos;, &apos;d&apos;, &apos;b&apos;, &apos;c&apos;]</div><div class="line">当前工作集: set([&apos;c&apos;, &apos;b&apos;, &apos;d&apos;])</div><div class="line"></div><div class="line">Page  6 e 页缺失</div><div class="line">page e 换入</div><div class="line">当前访存链表: [&apos;d&apos;, &apos;b&apos;, &apos;c&apos;, &apos;e&apos;]</div><div class="line">当前工作集: set([&apos;c&apos;, &apos;b&apos;, &apos;e&apos;, &apos;d&apos;])</div><div class="line"></div><div class="line">Page  7 c 命中页面</div><div class="line">page d 换出</div><div class="line">当前访存链表: [&apos;b&apos;, &apos;c&apos;, &apos;e&apos;, &apos;c&apos;]</div><div class="line">当前工作集: set([&apos;c&apos;, &apos;b&apos;, &apos;e&apos;])</div><div class="line"></div><div class="line">Page  8 e 命中页面</div><div class="line">page b 换出</div><div class="line">当前访存链表: [&apos;c&apos;, &apos;e&apos;, &apos;c&apos;, &apos;e&apos;]</div><div class="line">当前工作集: set([&apos;c&apos;, &apos;e&apos;])</div><div class="line"></div><div class="line">Page  9 a 页缺失</div><div class="line">page a 换入</div><div class="line">当前访存链表: [&apos;e&apos;, &apos;c&apos;, &apos;e&apos;, &apos;a&apos;]</div><div class="line">当前工作集: set([&apos;a&apos;, &apos;c&apos;, &apos;e&apos;])</div><div class="line"></div><div class="line">Page  10 d 页缺失</div><div class="line">page d 换入</div><div class="line">当前访存链表: [&apos;c&apos;, &apos;e&apos;, &apos;a&apos;, &apos;d&apos;]</div><div class="line">当前工作集: set([&apos;a&apos;, &apos;c&apos;, &apos;e&apos;, &apos;d&apos;])</div></pre></td></tr></table></figure>
+<h3 id="请判断optlrufifoclock和lfu等各页面置换算法是否存在belady现象如果存在给出实例如果不存在给出证明">6. 请判断OPT、LRU、FIFO、Clock和LFU等各页面置换算法是否存在Belady现象？如果存在，给出实例；如果不存在，给出证明。</h3>
+<h4 id="fifo存在belady现象例子">FIFO：存在Belady现象，例子</h4>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/3m0B3F3Z0O2G2v2Q0d36/Image%202017-03-25%20at%2010.01.57%20下午.png" alt="FIFO算法">
+<p class="caption">FIFO算法</p>
+</div>
+<p>物理页面增加，缺失数次数反而升高，出现了Belady现象</p>
+<h4 id="lru不存在belady现象">LRU:不存在Belady现象</h4>
+<p>证明：对于确定的页面访问序列PagesList,设其分配的物理页面数为n， 当访问PagesList[i]页面时发生了缺页(易知i&gt;n)，即页面PagesList[i]不在页面i-n到i-1这n个页面中，进而发生了缺页异常，而加大n至n1, PagesList[i]有可能在i-n1 至 i-1这n1个页面中，也可能不在，前者此时不会发生缺页异常，后者仍然会发生，但无论如何，分配的物理页面数增加时，其缺页数可能持平，也可能减少，但不可能增加。</p>
+<h4 id="opt不存在belady现象">OPT:不存在Belady现象</h4>
+<p>最优置换算法置换出未来最长时间不访问的页面，这就意味着分配物理页数目为n时，置换一次页面之后，至少n次访问不会出现缺页，而n增大时，可以将缺页继续向后推迟，进而n增大时缺页数不可能会反而增加</p>
+<h4 id="lfuclock不存在belady现象">LFU,Clock:不存在Belady现象</h4>
+<p>实际上，堆栈式页面置换算法都不会产生Belady现象，LRU,OPT，LFU,Clock均属于堆栈式页面置换算法，在堆栈式页面置换算法中，页面优先级的分配是独立于页面帧数的，对于堆栈式页面置换算法，分配的物理页面帧数增加时可以使得其缺页数减少，而FIFO这类算法，其替换页面的优先级决定于其分配的物理页面帧数，因此在这种情况下可能会出现Belady现象，而堆栈式算法则不会出现这样的状况。</p>
+<p>参考资料:</p>
+<ul>
+<li><a href="http://www.eecs.berkeley.edu/Pubs/TechRpts/1987/CSD-87-358.pdf" target="_blank" rel="external">Efficient (stack) algorithms for analysis of write-back and sector memories</a> [http://www.eecs.berkeley.edu/Pubs/TechRpts/1987/CSD-87-358.pdf section 1.3]</li>
+<li><a href="http://cseweb.ucsd.edu/classes/sp02/cse120_B/stack.html" target="_blank" rel="external">Principles of Computer Operating Systemm Stack Page Replacement Policies</a> [http://cseweb.ucsd.edu/classes/sp02/cse120_B/stack.html]</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>打赏</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat-pay.png" alt="青枫 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/ali-pay.jpg" alt="青枫 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      青枫
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://qingfeng14.github.io/2017/03/24/操作系统/OS-lec9-exercise/" title="OS-lec9-exercise">https://qingfeng14.github.io/2017/03/24/操作系统/OS-lec9-exercise/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/作业/" rel="tag"># 作业</a>
+          
+            <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/23/操作系统/ucore-lab/" rel="next" title="ucore_lab">
+                <i class="fa fa-chevron-left"></i> ucore_lab
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/25/操作系统/操作系统-页面置换算法/" rel="prev" title="操作系统-页面置换算法">
+                操作系统-页面置换算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="青枫" />
+          <p class="site-author-name" itemprop="name">青枫</p>
+           
+              <p class="site-description motion-element" itemprop="description">学习的一些记录,阅读的一些记录</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qingfeng14" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/qingfeng.alex" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/qingfeng14" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/alex-zhangch/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-user-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=95180074" target="_blank" title="网易云">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  网易云
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lec9-练习题"><span class="nav-number">1.</span> <span class="nav-text">Lec9 练习题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#物理页帧数量为3且初始时没有对应的虚拟页虚拟页访问序列为01201303103请问采用最优置换算法的缺页次数为4"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物理页帧数量为3且初始时没有对应的虚拟页虚拟页访问序列为01201303103请问采用fifo置换算法的缺页次数为6"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用FIFO置换算法的缺页次数为（6）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物理页帧数量为4且初始时没有对应的虚拟页虚拟页访问序列为032013431032134请问采用clock置换算法用1个bit表示存在时间的缺页次数为9"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.物理页帧数量为4，且初始时没有对应的虚拟页。虚拟页访问序列为0,3,2,0,1,3,4,3,1,0,3,2,1,3,4，请问采用CLOCK置换算法（用1个bit表示存在时间）的缺页次数为（9）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物理页帧数量为4且初始时没有对应的虚拟页虚拟页访问序列为032013431032134请问采用clock置换算法用2个关联bit表示存在时间可以表示4的缺页次数为"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. 物理页帧数量为4，且初始时没有对应的虚拟页。虚拟页访问序列为0,3,2,0,1,3,4,3,1,0,3,2,1,3,4，请问采用CLOCK置换算法（用2个关联，bit表示存在时间,可以表示4,）的缺页次数为（）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spoc根据你的学号-mod-4的结果值确定选择四种页面置换算法0lru置换算法1改进的clock页置换算法2工作集页置换算法3缺页率置换算法中的一种来设计一个应用程序可基于pythonruby-c-clisp等模拟实现并给出测试用例和测试结果请参考如python代码或独自实现"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.（spoc）根据你的学号 mod 4的结果值，确定选择四种页面置换算法（0：LRU置换算法，1:改进的clock页置换算法，2：工作集页置换算法，3：缺页率置换算法）中的一种来设计一个应用程序（可基于python,ruby, C, C++，LISP等）模拟实现，并给出测试用例和测试结果。请参考如python代码或独自实现。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请判断optlrufifoclock和lfu等各页面置换算法是否存在belady现象如果存在给出实例如果不存在给出证明"><span class="nav-number">1.0.6.</span> <span class="nav-text">6. 请判断OPT、LRU、FIFO、Clock和LFU等各页面置换算法是否存在Belady现象？如果存在，给出实例；如果不存在，给出证明。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#fifo存在belady现象例子"><span class="nav-number">1.0.6.1.</span> <span class="nav-text">FIFO：存在Belady现象，例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lru不存在belady现象"><span class="nav-number">1.0.6.2.</span> <span class="nav-text">LRU:不存在Belady现象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#opt不存在belady现象"><span class="nav-number">1.0.6.3.</span> <span class="nav-text">OPT:不存在Belady现象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lfuclock不存在belady现象"><span class="nav-number">1.0.6.4.</span> <span class="nav-text">LFU,Clock:不存在Belady现象</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">青枫</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+<br/>
+
+
+
+
+
+
+<div class="powered-by">
+Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" target="_blank" title="知乎">知乎</a>
+</div>
+
+<div class="powered-by">
+<a href="https://github.com/qingfeng14" target="_blank" title="GitHUb">GitHub</a>
+</div>
+
+<div class="powered-by">
+<a href="http://weibo.com/qingfeng14" target="_blank" title="微博">微博</a>
+</div>
+
+<div class="theme-info">
+ <a href="mailto:zhangshenghao1995@163.com?subject=用户意见" target="_blank" title="邮箱">邮箱</a>
+
+
+
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128349"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("VtTcivvjyRHmU2GlrgFshvUm-gzGzoHsz", "Ls6YjvYF6PU5qtBlLt7DpMnr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+  
+
+
+  
+
+
+</body>
+</html>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qingfeng14.github.io/"/>
-  <updated>2017-04-13T18:49:38.000Z</updated>
+  <updated>2017-04-14T17:00:29.000Z</updated>
   <id>https://qingfeng14.github.io/</id>
   
   <author>
@@ -16,11 +16,69 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>categories</title>
-    <link href="https://qingfeng14.github.io/2017/04/13/categories/"/>
-    <id>https://qingfeng14.github.io/2017/04/13/categories/</id>
+    <title>第二章大纲</title>
+    <link href="https://qingfeng14.github.io/2017/04/14/Second-List/"/>
+    <id>https://qingfeng14.github.io/2017/04/14/Second-List/</id>
+    <published>2017-04-14T14:16:51.000Z</published>
+    <updated>2017-04-14T17:00:29.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第二章 行业产品（或服务）市场的吸引力分析
+    
+    </summary>
+    
+      <category term="Others" scheme="https://qingfeng14.github.io/categories/Others/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Second_Pages</title>
+    <link href="https://qingfeng14.github.io/2017/04/14/Second-Pages/"/>
+    <id>https://qingfeng14.github.io/2017/04/14/Second-Pages/</id>
+    <published>2017-04-14T14:16:45.000Z</published>
+    <updated>2017-04-14T16:59:44.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第二章 行业产品（或服务）市场的吸引力分析 文献记录&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Others" scheme="https://qingfeng14.github.io/categories/Others/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Lec13_Lec14</title>
+    <link href="https://qingfeng14.github.io/2017/04/14/Lec13-Lec14/"/>
+    <id>https://qingfeng14.github.io/2017/04/14/Lec13-Lec14/</id>
+    <published>2017-04-14T06:47:56.000Z</published>
+    <updated>2017-04-14T06:52:10.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;(spoc) 理解用户进程的生命周期。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一章大纲</title>
+    <link href="https://qingfeng14.github.io/2017/04/13/First-List/"/>
+    <id>https://qingfeng14.github.io/2017/04/13/First-List/</id>
     <published>2017-04-13T15:44:11.000Z</published>
-    <updated>2017-04-13T18:49:38.000Z</updated>
+    <updated>2017-04-14T14:19:55.000Z</updated>
     
     <summary type="html">
     
@@ -34,11 +92,11 @@
   </entry>
   
   <entry>
-    <title>Search_Results</title>
-    <link href="https://qingfeng14.github.io/2017/04/13/Search-Results/"/>
-    <id>https://qingfeng14.github.io/2017/04/13/Search-Results/</id>
+    <title>第一章文献</title>
+    <link href="https://qingfeng14.github.io/2017/04/13/First-Pages/"/>
+    <id>https://qingfeng14.github.io/2017/04/13/First-Pages/</id>
     <published>2017-04-13T14:10:46.000Z</published>
-    <updated>2017-04-13T18:56:27.000Z</updated>
+    <updated>2017-04-14T14:16:23.000Z</updated>
     
     <summary type="html">
     
@@ -116,9 +174,9 @@
       <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
       <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
     
       <category term="复习" scheme="https://qingfeng14.github.io/tags/%E5%A4%8D%E4%B9%A0/"/>
     
@@ -164,9 +222,9 @@
       <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
-    
       <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
     
   </entry>
   
@@ -213,9 +271,9 @@
       <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
-    
       <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
     
   </entry>
   
@@ -291,9 +349,9 @@
       <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
-    
       <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
     
   </entry>
   
@@ -417,84 +475,6 @@
       <category term="机器学习" scheme="https://qingfeng14.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="朴素贝叶斯" scheme="https://qingfeng14.github.io/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搜索引擎性能评价实验</title>
-    <link href="https://qingfeng14.github.io/2017/03/18/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://qingfeng14.github.io/2017/03/18/搜索引擎/搜索引擎性能评价实验/</id>
-    <published>2017-03-17T17:13:13.000Z</published>
-    <updated>2017-04-13T19:04:22.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;实验步骤&quot;&gt;实验步骤&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="搜索引擎" scheme="https://qingfeng14.github.io/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-    
-      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="搜索引擎" scheme="https://qingfeng14.github.io/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-      <category term="实验" scheme="https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CCF2016</title>
-    <link href="https://qingfeng14.github.io/2017/03/16/%E7%AE%97%E6%B3%95/CCF2016/"/>
-    <id>https://qingfeng14.github.io/2017/03/16/算法/CCF2016/</id>
-    <published>2017-03-16T09:26:56.000Z</published>
-    <updated>2017-03-17T11:50:21.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2016年CCF真题练习&lt;/p&gt;
-&lt;p&gt;Mac 下C++的编译&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;gcc -o target  source.cpp  -lstdc++&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="CCF" scheme="https://qingfeng14.github.io/categories/CCF/"/>
-    
-    
-      <category term="CCF" scheme="https://qingfeng14.github.io/tags/CCF/"/>
-    
-      <category term="算法" scheme="https://qingfeng14.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IPv6协议转发实验</title>
-    <link href="https://qingfeng14.github.io/2017/03/16/%E7%BD%91%E7%BB%9C/IPv6%E5%8D%8F%E8%AE%AE%E8%BD%AC%E5%8F%91%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://qingfeng14.github.io/2017/03/16/网络/IPv6协议转发实验/</id>
-    <published>2017-03-16T07:51:39.000Z</published>
-    <updated>2017-04-13T19:03:52.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;style type=&quot;text/css&quot;&gt; 
-  p{ 
-  text-indent: 2em; 
-  } 
-&lt;/style&gt;
-&lt;h1 id=&quot;实验目的&quot;&gt;实验目的&lt;/h1&gt;
-&lt;p&gt;通过前面的实验，我们已经深入了解了 IPv6 协议的&lt;font color=red&gt;分组接收和发送处理&lt;/font&gt;流程。本实验需要将实验模块的角色定位从通信两端的主机转移到作为&lt;font color=red&gt;中间节点的路由器&lt;/font&gt;上，在 IPv6 分组收发处理的基础上，实现分组的路由转发功能。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="计算机网络" scheme="https://qingfeng14.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="网络" scheme="https://qingfeng14.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="IPv6" scheme="https://qingfeng14.github.io/tags/IPv6/"/>
-    
-      <category term="清华NetRiver实验" scheme="https://qingfeng14.github.io/tags/%E6%B8%85%E5%8D%8ENetRiver%E5%AE%9E%E9%AA%8C/"/>
     
   </entry>
   

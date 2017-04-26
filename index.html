@@ -350,7 +350,7 @@ function loopy() {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/14/Second-List/">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/23/CRC_report/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="青枫">
@@ -372,8 +372,8 @@ function loopy() {
             
               
                 
-                <a class="post-title-link" href="/2017/04/14/Second-List/" itemprop="url">
-                  第二章大纲
+                <a class="post-title-link" href="/2017/04/23/CRC_report/" itemprop="url">
+                  实验 1 Cache 替换策略设计与分析
                 </a>
               
             
@@ -389,8 +389,8 @@ function loopy() {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-14T22:16:51+08:00">
-                2017-04-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-23T00:00:00+08:00">
+                2017-04-23
               </time>
             
 
@@ -400,28 +400,6 @@ function loopy() {
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Others/" itemprop="url" rel="index">
-                    <span itemprop="name">Others</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -429,7 +407,7 @@ function loopy() {
 
           
           
-             <span id="/2017/04/14/Second-List/" class="leancloud_visitors" data-flag-title="第二章大纲">
+             <span id="/2017/04/23/CRC_report/" class="leancloud_visitors" data-flag-title="实验 1 Cache 替换策略设计与分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -453,7 +431,999 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  673
+                  1,671
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="实验目的">实验目的</h1>
+<ul>
+<li>深入理解各种不同的 Cache 替换策略</li>
+<li>理解学习不同替换策略对程序运行性能的影响</li>
+<li>动手实现自己的 Cache 替换策略</li>
+</ul>
+<h1 id="实验要求">实验要求</h1>
+<ul>
+<li>理解学习 LRU 及其它已经提出的 Cache 替换策略</li>
+<li>在提供的模拟器上实现自己设计的 Cache 替换策略</li>
+<li>通过 benchmark 测试比较不同的 Cache 替换策略</li>
+<li>在实验报告中简要说明不同 Cache 替换策略的核心思想和算法</li>
+<li>在实验报告中说明自己是怎样对不同的 Cache 替换策略进行测试的</li>
+<li>在实验报告中分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</li>
+</ul>
+<h1 id="已有替换策略分析">已有替换策略分析</h1>
+<p>常见的Cache替换策略有LRU，FIFO, LFU等，本次实验基于MK Qureshi于2007年的Adaptive insertion policies for high performance caching一文提出的LRU Insertion Policy算法进行的实现。</p>
+<p>在该文中，作者指出，当程序重用工作集大于可用Cache时或者其存储访问具有低局部相关性时，Cache替换策略中最常用的LRU策略表现出十分低下的命中率。大量新替换入Cache的行对命中率的贡献为零，而原本可能命中的行则由于长期不被访问而替换出Cache。针对这种情况，该文提出了以下一些改进策略：</p>
+<ul>
+<li>LRU Insertion Policy (LIP) 。该策略将所有替换入Cache的行置于LRU端。相对于传统策略将所有替换入的行置于MRU端，LIP使一部分行得以驻留于Cache中，其驻留时间能比Cache本身容量更长。LIP策略能够很好地应对Thrashing，尤其对于循环访问内存的程序其性能近似于OPT策略。</li>
+<li>Bimodal Insertion Policy (BIP)。BIP策略是对LIP的加强和改进，新换入的行会小概率地被置于MRU端。BIP可以很好地响应Working Set的切换，并保持一定的命中率。</li>
+<li>Dynamic Insertion Policy (DIP) 能动态地在LRU和BIP间切换，选择其中命中率较高的策略执行后续指令。DIP对于LRU-friendly的程序块使用LRU策略，对于LRU-averse的程序块使用DIP策略，以求通用效率。对于1MB16路L2 Cache，DIP策略较LRU降低21%的失配率。</li>
+</ul>
+<p>LIP和BIP两种策略对于LRU-friendly（高局部性）的程序，性能均不佳。</p>
+<h1 id="我实现的替换策略">我实现的替换策略</h1>
+<p>考虑到实现难度，本次实验我实现了MK Qureshi提出的三个算法中的第一个LIP算法，具体的实现为：</p>
+<ul>
+<li>当访存命中时，将命中的Cache块放到对应栈的LRU端，其他块依次移位</li>
+<li>当Cache缺失时，替换策略与LRU一致，这时需要将新换入的Cache块放到对应栈的MRU端</li>
+</ul>
+<h2 id="具体实现">具体实现</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这个函数是根据实现的Cache替换策略函数                                         </span></div><div class="line">INT32  CACHE_REPLACEMENT_STATE::Get_LIP_Victim( UINT32 setIndex )&#123;</div><div class="line">    <span class="comment">// Get pointer to replacement state of current set</span></div><div class="line">    LINE_REPLACEMENT_STATE *replSet = repl[ setIndex ];</div><div class="line"></div><div class="line">    INT32   lipWay   = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="comment">// Search for victim whose stack position is assoc-1</span></div><div class="line">    <span class="comment">// 被替换的块策略与LRU一致，选择栈底被替换出去</span></div><div class="line">    <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>( replSet[way].LRUstackposition == (assoc<span class="number">-1</span>) ) </div><div class="line">        &#123;</div><div class="line">            lipWay = way;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// return lru way</span></div><div class="line">    <span class="keyword">return</span> lipWay;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// This function implements the LIP update routine for the traditional        //</span></div><div class="line"><span class="comment">// LIP replacement policy. The arguments to the function are the physical     //</span></div><div class="line"><span class="comment">// way and set index.                                                         </span></div><div class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateLIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</div><div class="line">&#123;</div><div class="line">    <span class="comment">// Determine current LRU stack position</span></div><div class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</div><div class="line"></div><div class="line">    <span class="comment">// 如果hit</span></div><div class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></div><div class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></div><div class="line">    <span class="keyword">if</span> (cacheHit) &#123;</div><div class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </div><div class="line">            &#123;</div><div class="line">                repl[setIndex][way].LRUstackposition++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</div><div class="line">    &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="替换策略测试">替换策略测试</h1>
+<h2 id="测试方法">测试方法</h2>
+<p>本次实验中将29个测试程序分别采用LRU,LIP算法进行了测试，测试时的Cache设置为 <code>UL3:1024:64:16</code></p>
+<p>即</p>
+<ul>
+<li>实验在第3级Cache上进行，统一存储指令和数据，</li>
+<li>Cache 大小为 1024KB</li>
+<li>Cache 行大小为 64B</li>
+<li>16路组相连</li>
+</ul>
+<p>在测试时我利用shell脚本自带的<code>time</code>命令输出其运行时间(取real time结果)以此代表程序运行时间，此外，我还采用了CPI,缺失率作为其评价指标</p>
+<h2 id="分析不同替换策略下程序的运行时间cache-命中率受到的影响">分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</h2>
+<table style="width:96%;">
+<colgroup>
+<col width="8%">
+<col width="12%">
+<col width="8%">
+<col width="8%">
+<col width="12%">
+<col width="8%">
+<col width="8%">
+<col width="12%">
+<col width="8%">
+<col width="8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"><strong>程序</strong></th>
+<th align="right"><strong>LRU_time</strong></th>
+<th align="right"><strong>LIP_time</strong></th>
+<th align="right"><strong>less_time</strong></th>
+<th align="right"><strong>LRU_CPI</strong></th>
+<th align="right"><strong>LIP_CPI</strong></th>
+<th align="right"><strong>Less_cpi</strong></th>
+<th align="right"><strong>LRU_miss</strong></th>
+<th align="right"><strong>LIP_miss</strong></th>
+<th align="right"><strong>less miss</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">perlbench</td>
+<td align="right">17.070</td>
+<td align="right">16.420</td>
+<td align="right">LIP</td>
+<td align="right">0.642823</td>
+<td align="right">0.669326</td>
+<td align="right">LRU</td>
+<td align="right">40.7952</td>
+<td align="right">44.9668</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">bzip2</td>
+<td align="right">123.840</td>
+<td align="right">120.870</td>
+<td align="right">LIP</td>
+<td align="right">0.554642</td>
+<td align="right">0.571873</td>
+<td align="right">LRU</td>
+<td align="right">61.7369</td>
+<td align="right">55.3261</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="odd">
+<td align="right">gcc</td>
+<td align="right">134.380</td>
+<td align="right">130.780</td>
+<td align="right">LIP</td>
+<td align="right">0.614864</td>
+<td align="right">0.575939</td>
+<td align="right">LIP</td>
+<td align="right">42.7521</td>
+<td align="right">38.5965</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="even">
+<td align="right">bwaves</td>
+<td align="right">118.230</td>
+<td align="right">117.520</td>
+<td align="right">LIP</td>
+<td align="right">0.253088</td>
+<td align="right">0.253088</td>
+<td align="right">=</td>
+<td align="right">99.6634</td>
+<td align="right">99.6634</td>
+<td align="right">=</td>
+</tr>
+<tr class="odd">
+<td align="right">gamess</td>
+<td align="right">133.080</td>
+<td align="right">135.110</td>
+<td align="right">LRU</td>
+<td align="right">0.30022</td>
+<td align="right">0.312251</td>
+<td align="right">LRU</td>
+<td align="right">26.3204</td>
+<td align="right">92.0923</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">mcf</td>
+<td align="right">163.610</td>
+<td align="right">153.580</td>
+<td align="right">LIP</td>
+<td align="right">2.55358</td>
+<td align="right">2.04087</td>
+<td align="right">LIP</td>
+<td align="right">75.676</td>
+<td align="right">59.7033</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="odd">
+<td align="right">milc</td>
+<td align="right">148.670</td>
+<td align="right">144.780</td>
+<td align="right">LIP</td>
+<td align="right">1.14939</td>
+<td align="right">1.1807</td>
+<td align="right">LRU</td>
+<td align="right">77.0164</td>
+<td align="right">79.3471</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">zeusmp</td>
+<td align="right">148.800</td>
+<td align="right">133.400</td>
+<td align="right">LIP</td>
+<td align="right">0.451633</td>
+<td align="right">0.452046</td>
+<td align="right">LRU</td>
+<td align="right">80.81</td>
+<td align="right">82.492</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">gromacs</td>
+<td align="right">143.230</td>
+<td align="right">153.090</td>
+<td align="right">LRU</td>
+<td align="right">0.607769</td>
+<td align="right">0.664129</td>
+<td align="right">LRU</td>
+<td align="right">71.1979</td>
+<td align="right">89.1534</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">cactusADM</td>
+<td align="right">133.370</td>
+<td align="right">130.880</td>
+<td align="right">LIP</td>
+<td align="right">0.44249</td>
+<td align="right">0.378492</td>
+<td align="right">LIP</td>
+<td align="right">76.1164</td>
+<td align="right">63.7024</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="odd">
+<td align="right">leslie3d</td>
+<td align="right">133.210</td>
+<td align="right">133.850</td>
+<td align="right">LRU</td>
+<td align="right">1.50626</td>
+<td align="right">1.4344</td>
+<td align="right">LIP</td>
+<td align="right">84.0284</td>
+<td align="right">79.7774</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="even">
+<td align="right">namd</td>
+<td align="right">112.000</td>
+<td align="right">111.370</td>
+<td align="right">LIP</td>
+<td align="right">0.273795</td>
+<td align="right">0.273797</td>
+<td align="right">LRU</td>
+<td align="right">66.2603</td>
+<td align="right">66.2661</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">gobmk</td>
+<td align="right">127.020</td>
+<td align="right">127.540</td>
+<td align="right">LRU</td>
+<td align="right">0.383876</td>
+<td align="right">0.388093</td>
+<td align="right">LRU</td>
+<td align="right">14.919</td>
+<td align="right">15.5215</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">dealII</td>
+<td align="right">130.630</td>
+<td align="right">131.960</td>
+<td align="right">LRU</td>
+<td align="right">0.463916</td>
+<td align="right">0.446134</td>
+<td align="right">LIP</td>
+<td align="right">45.0892</td>
+<td align="right">47.2678</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">soplex</td>
+<td align="right">72.310</td>
+<td align="right">75.080</td>
+<td align="right">LRU</td>
+<td align="right">0.356909</td>
+<td align="right">0.431378</td>
+<td align="right">LRU</td>
+<td align="right">15.2011</td>
+<td align="right">35.9993</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">povray</td>
+<td align="right">134.860</td>
+<td align="right">134.040</td>
+<td align="right">LIP</td>
+<td align="right">0.360431</td>
+<td align="right">0.360387</td>
+<td align="right">LIP</td>
+<td align="right">39.9258</td>
+<td align="right">39.7901</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="odd">
+<td align="right">calculix</td>
+<td align="right">130.460</td>
+<td align="right">127.370</td>
+<td align="right">LIP</td>
+<td align="right">0.321346</td>
+<td align="right">0.359601</td>
+<td align="right">LRU</td>
+<td align="right">34.05</td>
+<td align="right">53.1214</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">hmmer</td>
+<td align="right">133.820</td>
+<td align="right">135.260</td>
+<td align="right">LRU</td>
+<td align="right">0.258513</td>
+<td align="right">0.258513</td>
+<td align="right">=</td>
+<td align="right">71.4736</td>
+<td align="right">71.4868</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">sjeng</td>
+<td align="right">129.020</td>
+<td align="right">134.210</td>
+<td align="right">LRU</td>
+<td align="right">0.323006</td>
+<td align="right">0.322841</td>
+<td align="right">LIP</td>
+<td align="right">93.5415</td>
+<td align="right">93.3249</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="even">
+<td align="right">GemsFDTD</td>
+<td align="right">153.820</td>
+<td align="right">171.260</td>
+<td align="right">LRU</td>
+<td align="right">0.368143</td>
+<td align="right">0.368143</td>
+<td align="right">=</td>
+<td align="right">84.1525</td>
+<td align="right">84.1525</td>
+<td align="right">=</td>
+</tr>
+<tr class="odd">
+<td align="right">libquantum</td>
+<td align="right">147.090</td>
+<td align="right">132.630</td>
+<td align="right">LIP</td>
+<td align="right">0.272749</td>
+<td align="right">0.272749</td>
+<td align="right">=</td>
+<td align="right">100.0</td>
+<td align="right">100.0</td>
+<td align="right">=</td>
+</tr>
+<tr class="even">
+<td align="right">h264ref</td>
+<td align="right">137.550</td>
+<td align="right">129.450</td>
+<td align="right">LIP</td>
+<td align="right">0.28787</td>
+<td align="right">0.292871</td>
+<td align="right">LRU</td>
+<td align="right">70.0086</td>
+<td align="right">72.4714</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">tonto</td>
+<td align="right">122.590</td>
+<td align="right">122.090</td>
+<td align="right">LIP</td>
+<td align="right">0.347856</td>
+<td align="right">0.34803</td>
+<td align="right">LRU</td>
+<td align="right">78.8694</td>
+<td align="right">79.2837</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">lbm</td>
+<td align="right">175.980</td>
+<td align="right">175.560</td>
+<td align="right">LIP</td>
+<td align="right">1.15379</td>
+<td align="right">1.15439</td>
+<td align="right">LRU</td>
+<td align="right">99.9725</td>
+<td align="right">99.7331</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="odd">
+<td align="right">omnetpp</td>
+<td align="right">156.400</td>
+<td align="right">150.580</td>
+<td align="right">LIP</td>
+<td align="right">0.41278</td>
+<td align="right">0.412729</td>
+<td align="right">LIP</td>
+<td align="right">59.4443</td>
+<td align="right">59.2859</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="even">
+<td align="right">astar</td>
+<td align="right">161.890</td>
+<td align="right">152.050</td>
+<td align="right">LIP</td>
+<td align="right">0.267647</td>
+<td align="right">0.267647</td>
+<td align="right">=</td>
+<td align="right">5.84718</td>
+<td align="right">5.84718</td>
+<td align="right">=</td>
+</tr>
+<tr class="odd">
+<td align="right">sphinx3</td>
+<td align="right">148.620</td>
+<td align="right">145.960</td>
+<td align="right">LIP</td>
+<td align="right">0.445644</td>
+<td align="right">0.445645</td>
+<td align="right">LRU</td>
+<td align="right">97.156</td>
+<td align="right">97.1648</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">xalancbmk</td>
+<td align="right">163.490</td>
+<td align="right">155.190</td>
+<td align="right">LIP</td>
+<td align="right">0.414993</td>
+<td align="right">0.411322</td>
+<td align="right">LIP</td>
+<td align="right">66.2759</td>
+<td align="right">63.1589</td>
+<td align="right">LIP</td>
+</tr>
+<tr class="odd">
+<td align="right">specrand</td>
+<td align="right">90.180</td>
+<td align="right">89.100</td>
+<td align="right">LIP</td>
+<td align="right">0.336211</td>
+<td align="right">0.336348</td>
+<td align="right">LRU</td>
+<td align="right">95.9373</td>
+<td align="right">97.6647</td>
+<td align="right">LRU</td>
+</tr>
+</tbody>
+</table>
+<h3 id="两种算法表现统计">两种算法表现统计</h3>
+<p>CPI值: LRU算法15次更小, LIP算法9次更小</p>
+<p>运行时间:LRU算法9次更小, LIP算法20次更小</p>
+<p>缺失率: LRU算法15次更小, LIP算法10次更小</p>
+<h3 id="结果分析">结果分析</h3>
+<p>由统计结果分析，大概一半的测试程序中，LRU的算法的缺失率和CPI指标比LIP算法更优，但是仍然有不少测试样例显示LIP算法表现更好，而这些程序即是前文所说的局部相关性不是特别高的情况，而LIP算法的运行时间明显更优。</p>
+<p>由此可以分析，通常来说，程序的局部性更强时LRU算法表现会比较好，当程序的局部性表现有较大波动时，LIP一类改进算法会表现更好（即缺失率会降低），实际上，DIP算法的动态调节表现应该是最好的，不过出于实现难度本次实验没有进行实现。</p>
+<h1 id="附件">附件：</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">## 算法文件</div><div class="line">replacement_state.cpp</div><div class="line">replacement_state.h</div><div class="line"></div><div class="line">## 实验数据</div><div class="line">results/</div><div class="line">├── get_time.py                 // 通过运行数据提取运行结果表格记录</div><div class="line">├── log_all.txt                 // 分别使用LRU算法和LIP算法运行29个测试程序的输出结果</div><div class="line">├── name.txt</div><div class="line">├── run.sh                      // 运行脚本，在CRC/项目根目录下运行即可</div><div class="line">├── runs                        // 解压后的测试结果</div><div class="line">│   ├── LIP_GemsFDTD.stats</div><div class="line">│   ├── LIP_astar.stats</div><div class="line">│   ├── LIP_bwaves.stats</div><div class="line">│   ├── LIP_bzip2.stats</div><div class="line">|   ......</div><div class="line">|</div><div class="line">└── time_log.txt                // 每个程序的运行时间记录</div><div class="line">----</div></pre></td></tr></table></figure>
+<h1 id="参考文献">参考文献</h1>
+<p>[1] Moinuddin K. Qureshi , Aamer Jaleel , Yale N. Patt , Simon C. Steely , Joel Emer, Adaptive insertion policies for high performance caching, Proceedings of the 34th annual international symposium on Computer architecture(ISCA), June 09-13, 2007, San Diego, California, USA</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/22/操作系统/lec16-exe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/22/操作系统/lec16-exe/" itemprop="url">
+                  lec16_exe
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T23:52:11+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/22/操作系统/lec16-exe/" class="leancloud_visitors" data-flag-title="lec16_exe">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  796
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="请描述stride调度算法的目标思路和算法设计要求写出伪代码并分析stride调度算法只采用整数运算是如何避免stride计算溢出问题的">请描述stride调度算法的目标，思路和算法设计（要求写出伪代码），并分析stride调度算法只采用整数运算是如何避免stride计算溢出问题的。</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/22/操作系统/lec16-exe/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/19/操作系统/Lec15练习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/19/操作系统/Lec15练习/" itemprop="url">
+                  Lec15练习
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T23:09:05+08:00">
+                2017-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/19/操作系统/Lec15练习/" class="leancloud_visitors" data-flag-title="Lec15练习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  230
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="请证明短进程优先算法具有最小平均周转时间">请证明短进程优先算法具有最小平均周转时间。</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/操作系统/Lec15练习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/19/图片搜索实验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/19/图片搜索实验/" itemprop="url">
+                  图片搜索实验
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T14:57:55+08:00">
+                2017-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/搜索引擎/" itemprop="url" rel="index">
+                    <span itemprop="name">搜索引擎</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/19/图片搜索实验/" class="leancloud_visitors" data-flag-title="图片搜索实验">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  527
                 </span>
               
 
@@ -489,10 +1459,10 @@ function loopy() {
 
       
         
-          <p>第二章 行业产品（或服务）市场的吸引力分析
+          <h1 id="基本任务">基本任务</h1>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/14/Second-List/#more" rel="contents">
+            <a class="btn" href="/2017/04/19/图片搜索实验/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -538,7 +1508,7 @@ function loopy() {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/14/Second-Pages/">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/14/操作系统/Lec13-Lec14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="青枫">
@@ -560,195 +1530,7 @@ function loopy() {
             
               
                 
-                <a class="post-title-link" href="/2017/04/14/Second-Pages/" itemprop="url">
-                  Second_Pages
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-14T22:16:45+08:00">
-                2017-04-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Others/" itemprop="url" rel="index">
-                    <span itemprop="name">Others</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/14/Second-Pages/" class="leancloud_visitors" data-flag-title="Second_Pages">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  3,790
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  14
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>第二章 行业产品（或服务）市场的吸引力分析 文献记录</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/14/Second-Pages/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/14/Lec13-Lec14/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="青枫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青枫别苑">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/14/Lec13-Lec14/" itemprop="url">
+                <a class="post-title-link" href="/2017/04/14/操作系统/Lec13-Lec14/" itemprop="url">
                   Lec13_Lec14
                 </a>
               
@@ -805,7 +1587,7 @@ function loopy() {
 
           
           
-             <span id="/2017/04/14/Lec13-Lec14/" class="leancloud_visitors" data-flag-title="Lec13_Lec14">
+             <span id="/2017/04/14/操作系统/Lec13-Lec14/" class="leancloud_visitors" data-flag-title="Lec13_Lec14">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -829,195 +1611,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  284
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>(spoc) 理解用户进程的生命周期。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/14/Lec13-Lec14/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/13/First-List/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="青枫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青枫别苑">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/13/First-List/" itemprop="url">
-                  第一章大纲
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T23:44:11+08:00">
-                2017-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Others/" itemprop="url" rel="index">
-                    <span itemprop="name">Others</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/13/First-List/" class="leancloud_visitors" data-flag-title="第一章大纲">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  699
+                  486
                 </span>
               
 
@@ -1053,202 +1647,10 @@ function loopy() {
 
       
         
-          <h1 id="第一节-广告设计与制作行业概况">第一节 广告设计与制作行业概况</h1>
+          <p>(spoc) 理解用户进程的生命周期。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/13/First-List/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/13/First-Pages/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="青枫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青枫别苑">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/13/First-Pages/" itemprop="url">
-                  第一章文献
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T22:10:46+08:00">
-                2017-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Others/" itemprop="url" rel="index">
-                    <span itemprop="name">Others</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/13/First-Pages/" class="leancloud_visitors" data-flag-title="第一章文献">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  3,452
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  12
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="说明重要必看">说明【重要，必看】</h1>
-<ul>
-<li>论文引用一定要注明出处，一般分文中引用和文末引用，具体请参考APA相关规范</li>
-<li>本文档记录的格式为： 文献标题，参考引用格式，文章内容概要</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/13/First-Pages/#more" rel="contents">
+            <a class="btn" href="/2017/04/14/操作系统/Lec13-Lec14/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1375,7 +1777,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  754
+                  899
                 </span>
               
 
@@ -1391,7 +1793,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -1411,212 +1813,10 @@ function loopy() {
 
       
         
-          
-            <h1 id="安卓中用户权限设置">安卓中用户权限设置</h1>
-<p>位置：<code>AndroidManifest.xml</code> 在package之后， Application 之前</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--用户权限--&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_WIFI_STATE"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!--VPN 权限--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.BIND_VPN_SERVICE"</span> /&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="android中intent机制">Android中Intent机制</h1>
-<h2 id="作用">作用</h2>
-<ul>
-<li>启动 Activity： Activity 表示应用中的一个屏幕。通过将 Intent 传递给 startActivity()，您可以启动新的 Activity 实例。Intent 描述了要启动的 Activity，并携带了任何必要的数据。 如果您希望在 Activity 完成后收到结果，请调用 startActivityForResult()。在 Activity 的 onActivityResult() 回调中，您的 Activity 将结果作为单独的 Intent 对象接收。如需了解详细信息，请参阅 Activity 指南。</li>
-<li>启动服务： Service 是一个不使用用户界面而在后台执行操作的组件。通过将 Intent 传递给 startService()，您可以启动服务执行一次性操作（例如，下载文件）。Intent 描述了要启动的服务，并携带了任何必要的数据。 如果服务旨在使用客户端-服务器接口，则通过将 Intent 传递给 bindService()，您可以从其他组件绑定到此服务。如需了解详细信息，请参阅服务指南。</li>
-<li>传递广播： 广播是任何应用均可接收的消息。系统将针对系统事件（例如：系统启动或设备开始充电时）传递各种广播。通过将 Intent 传递给 sendBroadcast()、sendOrderedBroadcast() 或 sendStickyBroadcast()，您可以将广播传递给其他应用。</li>
-</ul>
-<h2 id="intent-结构">Intent 结构</h2>
-<ul>
-<li>action – 想要实施的动作，例: ACTION_VIEW, ACTION_EDIT, ACTION_MAIN, etc.</li>
-<li>data – 具体的数据，一般由以Uri表示，例：通讯录中的某条记录，会以Uri来表示</li>
-<li>category – 为实施的动作添加的额外信息，即Intent组件的种类信息，一个Intent对象可以有任意个category，例：CATEGORY_LAUNCHER 意味着，它应该在启动器中作为顶级应用而存在</li>
-<li>type – 显示指定Intent的数据类型（MIME类型 - 多用途互联网邮件扩展，Multipurpose Internet Mail Extensions），例：一个组件是可以显示图片数据的而不能播放声音文件。很多情况下，data类型可在URI中找到，比如content:开头的URI，表明数据由设备上的content provider提供。但是通过设置这个属性，可以强制采用显式指定的类型而不再进行推导 MIME类型有两种：单个记录格式、多个记录格式</li>
-<li>component – 指定Intent的目标组件的类名称。通常 Android会根据Intent 中包含的其它属性的信息，比如action、data/type、category进行查找，最终找到一个与之匹配的目标组件。但是，如果 component这个属性有指定的话，将直接使用它指定的组件，而不再执行上述查找过程。指定了这个属性以后，Intent的其它所有属性都是可选的，例如：Intent it = new Intent(Activity.Main.this, Activity2.class); startActivity(it);</li>
-<li>extras – 附加信息，例如：it.putExtras(bundle) - 使用Bundle来传递数据；</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/12/赛事说明/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="青枫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青枫别苑">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/12/赛事说明/" itemprop="url">
-                  赛事说明
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T00:18:24+08:00">
-                2017-04-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Others/" itemprop="url" rel="index">
-                    <span itemprop="name">Others</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/12/赛事说明/" class="leancloud_visitors" data-flag-title="赛事说明">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  1,676
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>行业-专业-就业人才需求分析大赛</p>
+          <h1 id="安卓中用户权限设置">安卓中用户权限设置</h1>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/12/赛事说明/#more" rel="contents">
+            <a class="btn" href="/2017/04/12/安卓开发记录/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1853,194 +2053,6 @@ function loopy() {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/05/系统结构/计算机系统结构作业4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="青枫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青枫别苑">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/05/系统结构/计算机系统结构作业4/" itemprop="url">
-                  计算机系统结构作业4
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-05T00:00:00+08:00">
-                2017-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统结构/" itemprop="url" rel="index">
-                    <span itemprop="name">系统结构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/05/系统结构/计算机系统结构作业4/" class="leancloud_visitors" data-flag-title="计算机系统结构作业4">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  519
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>有一个4-way组相连Cache， Cache大小为16K字节(4K字), Cache块大小为16字节, 执行以下程序：</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/05/系统结构/计算机系统结构作业4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/03/操作系统/Lec12练习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2222,6 +2234,387 @@ function loopy() {
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/31/服务器/服务器配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/31/服务器/服务器配置/" itemprop="url">
+                  服务器配置相关问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T23:14:15+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务器/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/31/服务器/服务器配置/" class="leancloud_visitors" data-flag-title="服务器配置相关问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  914
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="服务器配置相关记录">服务器配置相关记录</h1>
+<h2 id="apache的反向代理">Apache的反向代理</h2>
+<p>首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。</p>
+<p>如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_proxy_http.so</p>
+<p>有的服务器该配置文件为, <code>/etc/apache2/apache2.conf</code>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/31/服务器/服务器配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/03/29/操作系统/lec10-lec11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/29/操作系统/lec10-lec11/" itemprop="url">
+                  lec10_lec11练习题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T20:31:17+08:00">
+                2017-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/29/操作系统/lec10-lec11/" class="leancloud_visitors" data-flag-title="lec10_lec11练习题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  479
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="以lab3为例说明虚拟页与磁盘后备页面的对应关系是什么">1 以lab3为例，说明虚拟页与磁盘后备页面的对应关系是什么？</h3>
+<p>物理内存+磁盘空间 构成了虚拟存储通过虚拟页式存储机制提供给用户更大的逻辑空间，虚拟内存页有可能在物理内存中，也可能在磁盘后备页面中，这种调整是通过页面置换算法进行对应的换入换出的。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/29/操作系统/lec10-lec11/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -2271,7 +2664,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2293,7 +2686,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

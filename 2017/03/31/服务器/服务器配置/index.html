@@ -134,7 +134,7 @@ Apache的反向代理
 Apache的反向代理
 首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。
 如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_">
-<meta property="og:updated_time" content="2017-04-10T06:05:15.000Z">
+<meta property="og:updated_time" content="2017-04-15T11:59:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器配置相关问题">
 <meta name="twitter:description" content="服务器配置相关记录
@@ -458,7 +458,7 @@ Apache的反向代理
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  824
+                  914
                 </span>
               
 
@@ -474,7 +474,7 @@ Apache的反向代理
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -523,6 +523,12 @@ Apache的反向代理
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line">&lt;VirtualHost _default_:443&gt;</div><div class="line">        ServerAdmin zhangshenghao1995@163.com</div><div class="line"></div><div class="line">        DocumentRoot /var/www/html/qingfeng14.github.io/</div><div class="line"></div><div class="line">        ErrorLog $&#123;APACHE_LOG_DIR&#125;/error.log</div><div class="line">        CustomLog $&#123;APACHE_LOG_DIR&#125;/access.log combined</div><div class="line"></div><div class="line">        #   SSL Engine Switch:</div><div class="line">        #   Enable/Disable SSL for this virtual host.</div><div class="line">        SSLEngine on</div><div class="line"></div><div class="line">        #   A self-signed (snakeoil) certificate can be created by installing</div><div class="line">        #   the ssl-cert package. See</div><div class="line">        #   /usr/share/doc/apache2/README.Debian.gz for more info.</div><div class="line">        #   If both key and certificate are stored in the same file, only the</div><div class="line">        #   SSLCertificateFile directive is needed.</div><div class="line">        SSLCertificateFile  /etc/letsencrypt/live/zhangshenghao.win/fullchain.pem</div><div class="line">        SSLCertificateKeyFile /etc/letsencrypt/live/zhangshenghao.win/privkey.pem</div><div class="line"></div><div class="line">        &lt;FilesMatch &quot;\.(cgi|shtml|phtml|php)$&quot;&gt;</div><div class="line">                SSLOptions +StdEnvVars</div><div class="line">        &lt;/FilesMatch&gt;</div><div class="line">        &lt;Directory /usr/lib/cgi-bin&gt;</div><div class="line">                SSLOptions +StdEnvVars</div><div class="line">        &lt;/Directory&gt;</div><div class="line"></div><div class="line">        BrowserMatch &quot;MSIE [2-6]&quot; \</div><div class="line">                nokeepalive ssl-unclean-shutdown \</div><div class="line">                downgrade-1.0 force-response-1.0</div><div class="line">        # MSIE 7 and newer should be able to use keepalive</div><div class="line">        BrowserMatch &quot;MSIE [17-9]&quot; ssl-unclean-shutdown</div><div class="line"></div><div class="line">        ServerName zhangshenghao.win</div><div class="line">    &lt;/VirtualHost&gt;</div><div class="line"></div><div class="line">    &lt;VirtualHost _default_:443&gt;</div><div class="line">        ServerAdmin zhangshenghao1995@163.com</div><div class="line"></div><div class="line">        DocumentRoot /var/www/html/qingfeng14.github.io/</div><div class="line"></div><div class="line">        ErrorLog $&#123;APACHE_LOG_DIR&#125;/error.log</div><div class="line">        CustomLog $&#123;APACHE_LOG_DIR&#125;/access.log combined</div><div class="line"></div><div class="line">        #   SSL Engine Switch:</div><div class="line">        #   Enable/Disable SSL for this virtual host.</div><div class="line">        SSLEngine on</div><div class="line"></div><div class="line">        #   A self-signed (snakeoil) certificate can be created by installing</div><div class="line">        #   the ssl-cert package. See</div><div class="line">        #   /usr/share/doc/apache2/README.Debian.gz for more info.</div><div class="line">        #   If both key and certificate are stored in the same file, only the</div><div class="line">        #   SSLCertificateFile directive is needed.</div><div class="line">        SSLCertificateFile  /etc/letsencrypt/live/blog.zhangshenghao.win/fullchain.pem</div><div class="line">        SSLCertificateKeyFile /etc/letsencrypt/live/blog.zhangshenghao.win/privkey.pem</div><div class="line"></div><div class="line">        &lt;FilesMatch &quot;\.(cgi|shtml|phtml|php)$&quot;&gt;</div><div class="line">                SSLOptions +StdEnvVars</div><div class="line">        &lt;/FilesMatch&gt;</div><div class="line">        &lt;Directory /usr/lib/cgi-bin&gt;</div><div class="line">                SSLOptions +StdEnvVars</div><div class="line">        &lt;/Directory&gt;</div><div class="line"></div><div class="line">        BrowserMatch &quot;MSIE [2-6]&quot; \</div><div class="line">                nokeepalive ssl-unclean-shutdown \</div><div class="line">                downgrade-1.0 force-response-1.0</div><div class="line">        # MSIE 7 and newer should be able to use keepalive</div><div class="line">        BrowserMatch &quot;MSIE [17-9]&quot; ssl-unclean-shutdown</div><div class="line"></div><div class="line">        ServerName blog.zhangshenghao.win</div><div class="line">    &lt;/VirtualHost&gt;</div></pre></td></tr></table></figure>
 <h2 id="http-重定向至-http">http 重定向至 http</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">RewriteEngine On</div><div class="line">RewriteRule ^ https://%&#123;SERVER_NAME&#125;%&#123;REQUEST_URI&#125; [END,NE,R=permanent]</div></pre></td></tr></table></figure>
+<h1 id="squid-代理服务器">squid 代理服务器</h1>
+<h2 id="问题">问题</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ERROR</div><div class="line"></div><div class="line">The requested URL could not be retrieved</div><div class="line"></div><div class="line">The following error was encountered while trying to retrieve the URL: http://www.cnki.net/</div><div class="line"></div><div class="line">Access Denied.</div><div class="line"></div><div class="line">Access control configuration prevents your request from being allowed at this time. Please contact your service provider if you feel this is incorrect.</div><div class="line"></div><div class="line">Your cache administrator is webmaster.</div></pre></td></tr></table></figure>
+<h2 id="解决-添加dns解析">解决: 添加DNS解析</h2>
+<p><code>sudo vi /etc/resolv.conf</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Generated by resolvconf</div><div class="line">domain zhangshenghao.win</div><div class="line">nameserver 166.111.68.130</div><div class="line">nameserver 8.8.8.8</div><div class="line">nameserver 127.0.0.1</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -689,7 +695,7 @@ Apache的反向代理
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -711,7 +717,7 @@ Apache的反向代理
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -801,7 +807,7 @@ Apache的反向代理
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器配置相关记录"><span class="nav-number">1.</span> <span class="nav-text">服务器配置相关记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#apache的反向代理"><span class="nav-number">1.1.</span> <span class="nav-text">Apache的反向代理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开启https-代理"><span class="nav-number">2.</span> <span class="nav-text">开启HTTPS 代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lets-encrypt"><span class="nav-number">3.</span> <span class="nav-text">let’s encrypt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http-重定向至-http"><span class="nav-number">3.1.</span> <span class="nav-text">http 重定向至 http</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器配置相关记录"><span class="nav-number">1.</span> <span class="nav-text">服务器配置相关记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#apache的反向代理"><span class="nav-number">1.1.</span> <span class="nav-text">Apache的反向代理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开启https-代理"><span class="nav-number">2.</span> <span class="nav-text">开启HTTPS 代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lets-encrypt"><span class="nav-number">3.</span> <span class="nav-text">let’s encrypt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http-重定向至-http"><span class="nav-number">3.1.</span> <span class="nav-text">http 重定向至 http</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#squid-代理服务器"><span class="nav-number">4.</span> <span class="nav-text">squid 代理服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">4.1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决-添加dns解析"><span class="nav-number">4.2.</span> <span class="nav-text">解决: 添加DNS解析</span></a></li></ol></li></ol></div>
             
 
           </div>

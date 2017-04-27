@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qingfeng14.github.io/"/>
-  <updated>2017-04-26T16:57:55.000Z</updated>
+  <updated>2017-04-27T12:24:26.000Z</updated>
   <id>https://qingfeng14.github.io/</id>
   
   <author>
@@ -16,11 +16,53 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Lec17</title>
+    <link href="https://qingfeng14.github.io/2017/04/26/Lec17/"/>
+    <id>https://qingfeng14.github.io/2017/04/26/Lec17/</id>
+    <published>2017-04-25T16:00:00.000Z</published>
+    <updated>2017-04-27T12:24:26.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1 在报告中通过枚举和分类方法或反证法说明Peterson算法的正确性。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于广告专业需求分析的报告书</title>
+    <link href="https://qingfeng14.github.io/2017/04/24/ignore_%E6%8A%A5%E5%91%8A%E4%B9%A6/"/>
+    <id>https://qingfeng14.github.io/2017/04/24/ignore_报告书/</id>
+    <published>2017-04-24T15:42:40.000Z</published>
+    <updated>2017-04-27T09:46:42.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;引言&quot;&gt;引言&lt;/h1&gt;
+&lt;h2 id=&quot;摘要&quot;&gt;摘要&lt;/h2&gt;
+&lt;p&gt;为贯彻落实党的十八大提出的“要做好以高校毕业生为重点的青年就业工作，推动实现更高质量就业”的精神,我们小组参加了学院组织的“行业-专业-就业（岗位）”人才需求分析大赛，并形成了本报告。本文梳理了
+    
+    </summary>
+    
+      <category term="Others" scheme="https://qingfeng14.github.io/categories/Others/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>实验 1 Cache 替换策略设计与分析</title>
     <link href="https://qingfeng14.github.io/2017/04/23/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/CRC_report/"/>
     <id>https://qingfeng14.github.io/2017/04/23/系统结构/CRC_report/</id>
     <published>2017-04-22T16:00:00.000Z</published>
-    <updated>2017-04-26T16:57:55.000Z</updated>
+    <updated>2017-04-27T12:25:59.000Z</updated>
     
     <summary type="html">
     
@@ -96,9 +138,9 @@
       <category term="搜索引擎" scheme="https://qingfeng14.github.io/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
     
     
-      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
       <category term="搜索引擎" scheme="https://qingfeng14.github.io/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
     
       <category term="实验" scheme="https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
     
@@ -270,9 +312,9 @@
       <category term="系统结构" scheme="https://qingfeng14.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="系统结构" scheme="https://qingfeng14.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
-    
       <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="系统结构" scheme="https://qingfeng14.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -448,54 +490,6 @@
       <category term="机器学习" scheme="https://qingfeng14.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="朴素贝叶斯" scheme="https://qingfeng14.github.io/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搜索引擎性能评价实验</title>
-    <link href="https://qingfeng14.github.io/2017/03/18/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://qingfeng14.github.io/2017/03/18/搜索引擎/搜索引擎性能评价实验/</id>
-    <published>2017-03-17T17:13:13.000Z</published>
-    <updated>2017-04-13T19:04:22.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;实验步骤&quot;&gt;实验步骤&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="搜索引擎" scheme="https://qingfeng14.github.io/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-    
-      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="搜索引擎" scheme="https://qingfeng14.github.io/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-      <category term="实验" scheme="https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CCF2016</title>
-    <link href="https://qingfeng14.github.io/2017/03/16/%E7%AE%97%E6%B3%95/CCF2016/"/>
-    <id>https://qingfeng14.github.io/2017/03/16/算法/CCF2016/</id>
-    <published>2017-03-16T09:26:56.000Z</published>
-    <updated>2017-03-17T11:50:21.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2016年CCF真题练习&lt;/p&gt;
-&lt;p&gt;Mac 下C++的编译&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;gcc -o target  source.cpp  -lstdc++&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="CCF" scheme="https://qingfeng14.github.io/categories/CCF/"/>
-    
-    
-      <category term="CCF" scheme="https://qingfeng14.github.io/tags/CCF/"/>
-    
-      <category term="算法" scheme="https://qingfeng14.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

@@ -129,14 +129,14 @@ function loopy() {
 动手实现自己的 Cache 替换策略">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实验 1 Cache 替换策略设计与分析">
-<meta property="og:url" content="https://qingfeng14.github.io/2017/04/23/系统结构/CRC_report/index.html">
+<meta property="og:url" content="https://qingfeng14.github.io/2017/04/23/CRC_report/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="实验目的
 
 深入理解各种不同的 Cache 替换策略
 理解学习不同替换策略对程序运行性能的影响
 动手实现自己的 Cache 替换策略">
-<meta property="og:updated_time" content="2017-04-27T12:25:59.000Z">
+<meta property="og:updated_time" content="2017-04-27T14:38:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实验 1 Cache 替换策略设计与分析">
 <meta name="twitter:description" content="实验目的
@@ -171,7 +171,7 @@ function loopy() {
 
 
 
-  <link rel="canonical" href="https://qingfeng14.github.io/2017/04/23/系统结构/CRC_report/"/>
+  <link rel="canonical" href="https://qingfeng14.github.io/2017/04/23/CRC_report/"/>
 
 
 
@@ -361,7 +361,7 @@ function loopy() {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/23/系统结构/CRC_report/">
+    <link itemprop="mainEntityOfPage" href="https://qingfeng14.github.io/2017/04/23/CRC_report/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="青枫">
@@ -415,7 +415,7 @@ function loopy() {
 
           
           
-             <span id="/2017/04/23/系统结构/CRC_report/" class="leancloud_visitors" data-flag-title="实验 1 Cache 替换策略设计与分析">
+             <span id="/2017/04/23/CRC_report/" class="leancloud_visitors" data-flag-title="实验 1 Cache 替换策略设计与分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -439,7 +439,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,671
+                  2,385
                 </span>
               
 
@@ -455,7 +455,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  7
+                  10
                 </span>
               
             </div>
@@ -505,8 +505,9 @@ function loopy() {
 <li>当访存命中时，将命中的Cache块放到对应栈的LRU端，其他块依次移位</li>
 <li>当Cache缺失时，替换策略与LRU一致，这时需要将新换入的Cache块放到对应栈的MRU端</li>
 </ul>
+<p>在实际的实验过程中发现，LIP算法并没有很明显的改进LRU算法，约有<span class="math inline">\(\frac{1}{3}\)</span>的测试样例中LIP算法表现更好，<span class="math inline">\(1/2\)</span>的测试样例中LRU算法表现更好，由此，我采用了一个稍大概率值使得其一部分情况下采用LRU算法，一部分情况下采用LIP算法，考虑到LRU算法在大多数情况下表现较好，这里的概率值设置得稍大一些，置为了30%,即对于新换入的Cache块，有30%的概率会被放置在LRU端，有70%的概率会被置于MRU端</p>
 <h2 id="具体实现">具体实现</h2>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这个函数是根据实现的Cache替换策略函数                                         </span></div><div class="line">INT32  CACHE_REPLACEMENT_STATE::Get_LIP_Victim( UINT32 setIndex )&#123;</div><div class="line">    <span class="comment">// Get pointer to replacement state of current set</span></div><div class="line">    LINE_REPLACEMENT_STATE *replSet = repl[ setIndex ];</div><div class="line"></div><div class="line">    INT32   lipWay   = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="comment">// Search for victim whose stack position is assoc-1</span></div><div class="line">    <span class="comment">// 被替换的块策略与LRU一致，选择栈底被替换出去</span></div><div class="line">    <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>( replSet[way].LRUstackposition == (assoc<span class="number">-1</span>) ) </div><div class="line">        &#123;</div><div class="line">            lipWay = way;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// return lru way</span></div><div class="line">    <span class="keyword">return</span> lipWay;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// This function implements the LIP update routine for the traditional        //</span></div><div class="line"><span class="comment">// LIP replacement policy. The arguments to the function are the physical     //</span></div><div class="line"><span class="comment">// way and set index.                                                         </span></div><div class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateLIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</div><div class="line">&#123;</div><div class="line">    <span class="comment">// Determine current LRU stack position</span></div><div class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</div><div class="line"></div><div class="line">    <span class="comment">// 如果hit</span></div><div class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></div><div class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></div><div class="line">    <span class="keyword">if</span> (cacheHit) &#123;</div><div class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </div><div class="line">            &#123;</div><div class="line">                repl[setIndex][way].LRUstackposition++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</div><div class="line">    &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这个函数是根据实现的Cache替换策略函数                                         </span></div><div class="line">INT32  CACHE_REPLACEMENT_STATE::Get_LIP_Victim( UINT32 setIndex )&#123;</div><div class="line">    <span class="comment">// Get pointer to replacement state of current set</span></div><div class="line">    LINE_REPLACEMENT_STATE *replSet = repl[ setIndex ];</div><div class="line"></div><div class="line">    INT32   lipWay   = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="comment">// Search for victim whose stack position is assoc-1</span></div><div class="line">    <span class="comment">// 被替换的块策略与LRU一致，选择栈底被替换出去</span></div><div class="line">    <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>( replSet[way].LRUstackposition == (assoc<span class="number">-1</span>) ) </div><div class="line">        &#123;</div><div class="line">            lipWay = way;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// return lru way</span></div><div class="line">    <span class="keyword">return</span> lipWay;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// This function implements the LIP update routine for the traditional        //</span></div><div class="line"><span class="comment">// LIP replacement policy. The arguments to the function are the physical     //</span></div><div class="line"><span class="comment">// way and set index.                                                         </span></div><div class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateLIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</div><div class="line">&#123;</div><div class="line">    <span class="comment">// Determine current LRU stack position</span></div><div class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</div><div class="line"></div><div class="line">    <span class="comment">// 如果hit</span></div><div class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></div><div class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></div><div class="line">    <span class="keyword">if</span> (cacheHit) &#123;</div><div class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </div><div class="line">            &#123;</div><div class="line">                repl[setIndex][way].LRUstackposition++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</div><div class="line">    &#125;   </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateBIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</div><div class="line">&#123;</div><div class="line">    <span class="comment">// Determine current LRU stack position</span></div><div class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</div><div class="line"></div><div class="line">    <span class="comment">// 如果hit</span></div><div class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></div><div class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></div><div class="line">    <span class="keyword">if</span> (cacheHit || (rand()%<span class="number">100</span> &lt; probability)) &#123;</div><div class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </div><div class="line">            &#123;</div><div class="line">                repl[setIndex][way].LRUstackposition++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="替换策略测试">替换策略测试</h1>
 <h2 id="测试方法">测试方法</h2>
 <p>本次实验中将29个测试程序分别采用LRU,LIP算法进行了测试，测试时的Cache设置为 <code>UL3:1024:64:16</code></p>
@@ -519,6 +520,7 @@ function loopy() {
 </ul>
 <p>在测试时我利用shell脚本自带的<code>time</code>命令输出其运行时间(取real time结果)以此代表程序运行时间，此外，我还采用了CPI,缺失率作为其评价指标</p>
 <h2 id="分析不同替换策略下程序的运行时间cache-命中率受到的影响">分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</h2>
+<h3 id="lru和lip算法比较">LRU和LIP算法比较</h3>
 <table style="width:96%;">
 <colgroup>
 <col width="8%">
@@ -897,15 +899,404 @@ function loopy() {
 </tr>
 </tbody>
 </table>
-<h3 id="两种算法表现统计">两种算法表现统计</h3>
-<p>CPI值: LRU算法15次更小, LIP算法9次更小</p>
-<p>运行时间:LRU算法9次更小, LIP算法20次更小</p>
-<p>缺失率: LRU算法15次更小, LIP算法10次更小</p>
+<h3 id="lru和bip算法比较">LRU和BIP算法比较</h3>
+<table style="width:96%;">
+<colgroup>
+<col width="8%">
+<col width="12%">
+<col width="8%">
+<col width="8%">
+<col width="12%">
+<col width="8%">
+<col width="8%">
+<col width="12%">
+<col width="8%">
+<col width="8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"><strong>程序</strong></th>
+<th align="right"><strong>LRU_time</strong></th>
+<th align="right"><strong>BIP_time</strong></th>
+<th align="right"><strong>less_time</strong></th>
+<th align="right"><strong>LRU_CPI</strong></th>
+<th align="right"><strong>BIP_CPI</strong></th>
+<th align="right"><strong>Less_cpi</strong></th>
+<th align="right"><strong>LRU_miss</strong></th>
+<th align="right"><strong>BIP_miss</strong></th>
+<th align="right"><strong>less miss</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">perlbench</td>
+<td align="right">17.070</td>
+<td align="right">17.490</td>
+<td align="right">LRU</td>
+<td align="right">0.642823</td>
+<td align="right">0.653642</td>
+<td align="right">LRU</td>
+<td align="right">40.7952</td>
+<td align="right">42.4235</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">bzip2</td>
+<td align="right">123.840</td>
+<td align="right">144.210</td>
+<td align="right">LRU</td>
+<td align="right">0.554642</td>
+<td align="right">0.570891</td>
+<td align="right">LRU</td>
+<td align="right">61.7369</td>
+<td align="right">59.0281</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="odd">
+<td align="right">gcc</td>
+<td align="right">134.380</td>
+<td align="right">167.270</td>
+<td align="right">LRU</td>
+<td align="right">0.614864</td>
+<td align="right">0.575685</td>
+<td align="right">BIP</td>
+<td align="right">42.7521</td>
+<td align="right">37.0908</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="even">
+<td align="right">bwaves</td>
+<td align="right">118.230</td>
+<td align="right">152.430</td>
+<td align="right">LRU</td>
+<td align="right">0.253088</td>
+<td align="right">0.253088</td>
+<td align="right">=</td>
+<td align="right">99.6634</td>
+<td align="right">99.6634</td>
+<td align="right">=</td>
+</tr>
+<tr class="odd">
+<td align="right">gamess</td>
+<td align="right">133.080</td>
+<td align="right">159.270</td>
+<td align="right">LRU</td>
+<td align="right">0.30022</td>
+<td align="right">0.304011</td>
+<td align="right">LRU</td>
+<td align="right">26.3204</td>
+<td align="right">30.4442</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">mcf</td>
+<td align="right">163.610</td>
+<td align="right">182.510</td>
+<td align="right">LRU</td>
+<td align="right">2.55358</td>
+<td align="right">2.27179</td>
+<td align="right">BIP</td>
+<td align="right">75.676</td>
+<td align="right">67.9679</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="odd">
+<td align="right">milc</td>
+<td align="right">148.670</td>
+<td align="right">137.590</td>
+<td align="right">BIP</td>
+<td align="right">1.14939</td>
+<td align="right">1.14853</td>
+<td align="right">BIP</td>
+<td align="right">77.0164</td>
+<td align="right">76.2688</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="even">
+<td align="right">zeusmp</td>
+<td align="right">148.800</td>
+<td align="right">127.220</td>
+<td align="right">BIP</td>
+<td align="right">0.451633</td>
+<td align="right">0.451496</td>
+<td align="right">BIP</td>
+<td align="right">80.81</td>
+<td align="right">81.883</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">gromacs</td>
+<td align="right">143.230</td>
+<td align="right">148.100</td>
+<td align="right">LRU</td>
+<td align="right">0.607769</td>
+<td align="right">0.625808</td>
+<td align="right">LRU</td>
+<td align="right">71.1979</td>
+<td align="right">74.1585</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">cactusADM</td>
+<td align="right">133.370</td>
+<td align="right">141.210</td>
+<td align="right">LRU</td>
+<td align="right">0.44249</td>
+<td align="right">0.368551</td>
+<td align="right">BIP</td>
+<td align="right">76.1164</td>
+<td align="right">62.9769</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="odd">
+<td align="right">leslie3d</td>
+<td align="right">133.210</td>
+<td align="right">147.700</td>
+<td align="right">LRU</td>
+<td align="right">1.50626</td>
+<td align="right">1.44446</td>
+<td align="right">BIP</td>
+<td align="right">84.0284</td>
+<td align="right">73.9532</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="even">
+<td align="right">namd</td>
+<td align="right">112.000</td>
+<td align="right">122.800</td>
+<td align="right">LRU</td>
+<td align="right">0.273795</td>
+<td align="right">0.273801</td>
+<td align="right">LRU</td>
+<td align="right">66.2603</td>
+<td align="right">66.2719</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">gobmk</td>
+<td align="right">127.020</td>
+<td align="right">144.260</td>
+<td align="right">LRU</td>
+<td align="right">0.383876</td>
+<td align="right">0.384353</td>
+<td align="right">LRU</td>
+<td align="right">14.919</td>
+<td align="right">14.2733</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="even">
+<td align="right">dealII</td>
+<td align="right">130.630</td>
+<td align="right">143.810</td>
+<td align="right">LRU</td>
+<td align="right">0.463916</td>
+<td align="right">0.42624</td>
+<td align="right">BIP</td>
+<td align="right">45.0892</td>
+<td align="right">35.1431</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="odd">
+<td align="right">soplex</td>
+<td align="right">72.310</td>
+<td align="right">79.220</td>
+<td align="right">LRU</td>
+<td align="right">0.356909</td>
+<td align="right">0.366633</td>
+<td align="right">LRU</td>
+<td align="right">15.2011</td>
+<td align="right">17.9177</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">povray</td>
+<td align="right">134.860</td>
+<td align="right">165.980</td>
+<td align="right">LRU</td>
+<td align="right">0.360431</td>
+<td align="right">0.360417</td>
+<td align="right">BIP</td>
+<td align="right">39.9258</td>
+<td align="right">39.858</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="odd">
+<td align="right">calculix</td>
+<td align="right">130.460</td>
+<td align="right">145.710</td>
+<td align="right">LRU</td>
+<td align="right">0.321346</td>
+<td align="right">0.332007</td>
+<td align="right">LRU</td>
+<td align="right">34.05</td>
+<td align="right">39.1968</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">hmmer</td>
+<td align="right">133.820</td>
+<td align="right">157.060</td>
+<td align="right">LRU</td>
+<td align="right">0.258513</td>
+<td align="right">0.258513</td>
+<td align="right">=</td>
+<td align="right">71.4736</td>
+<td align="right">71.4868</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">sjeng</td>
+<td align="right">129.020</td>
+<td align="right">166.850</td>
+<td align="right">LRU</td>
+<td align="right">0.323006</td>
+<td align="right">0.322882</td>
+<td align="right">BIP</td>
+<td align="right">93.5415</td>
+<td align="right">93.359</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="even">
+<td align="right">GemsFDTD</td>
+<td align="right">153.820</td>
+<td align="right">169.420</td>
+<td align="right">LRU</td>
+<td align="right">0.368143</td>
+<td align="right">0.368143</td>
+<td align="right">=</td>
+<td align="right">84.1525</td>
+<td align="right">84.1525</td>
+<td align="right">=</td>
+</tr>
+<tr class="odd">
+<td align="right">libquantum</td>
+<td align="right">147.090</td>
+<td align="right">138.730</td>
+<td align="right">BIP</td>
+<td align="right">0.272749</td>
+<td align="right">0.272749</td>
+<td align="right">=</td>
+<td align="right">100.0</td>
+<td align="right">100.0</td>
+<td align="right">=</td>
+</tr>
+<tr class="even">
+<td align="right">h264ref</td>
+<td align="right">137.550</td>
+<td align="right">138.360</td>
+<td align="right">LRU</td>
+<td align="right">0.28787</td>
+<td align="right">0.289044</td>
+<td align="right">LRU</td>
+<td align="right">70.0086</td>
+<td align="right">70.8777</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">tonto</td>
+<td align="right">122.590</td>
+<td align="right">143.870</td>
+<td align="right">LRU</td>
+<td align="right">0.347856</td>
+<td align="right">0.347883</td>
+<td align="right">LRU</td>
+<td align="right">78.8694</td>
+<td align="right">78.898</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">lbm</td>
+<td align="right">175.980</td>
+<td align="right">149.190</td>
+<td align="right">BIP</td>
+<td align="right">1.15379</td>
+<td align="right">1.15361</td>
+<td align="right">BIP</td>
+<td align="right">99.9725</td>
+<td align="right">99.9688</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="odd">
+<td align="right">omnetpp</td>
+<td align="right">156.400</td>
+<td align="right">161.910</td>
+<td align="right">LRU</td>
+<td align="right">0.41278</td>
+<td align="right">0.412755</td>
+<td align="right">BIP</td>
+<td align="right">59.4443</td>
+<td align="right">59.3624</td>
+<td align="right">BIP</td>
+</tr>
+<tr class="even">
+<td align="right">astar</td>
+<td align="right">161.890</td>
+<td align="right">156.370</td>
+<td align="right">BIP</td>
+<td align="right">0.267647</td>
+<td align="right">0.267647</td>
+<td align="right">=</td>
+<td align="right">5.84718</td>
+<td align="right">5.84718</td>
+<td align="right">=</td>
+</tr>
+<tr class="odd">
+<td align="right">sphinx3</td>
+<td align="right">148.620</td>
+<td align="right">136.150</td>
+<td align="right">BIP</td>
+<td align="right">0.445644</td>
+<td align="right">0.44566</td>
+<td align="right">LRU</td>
+<td align="right">97.156</td>
+<td align="right">97.2443</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="even">
+<td align="right">xalancbmk</td>
+<td align="right">163.490</td>
+<td align="right">142.850</td>
+<td align="right">BIP</td>
+<td align="right">0.414993</td>
+<td align="right">0.421033</td>
+<td align="right">LRU</td>
+<td align="right">66.2759</td>
+<td align="right">67.5348</td>
+<td align="right">LRU</td>
+</tr>
+<tr class="odd">
+<td align="right">specrand</td>
+<td align="right">90.180</td>
+<td align="right">85.870</td>
+<td align="right">BIP</td>
+<td align="right">0.336211</td>
+<td align="right">0.336235</td>
+<td align="right">LRU</td>
+<td align="right">95.9373</td>
+<td align="right">96.1932</td>
+<td align="right">LRU</td>
+</tr>
+</tbody>
+</table>
+<h3 id="算法表现统计">算法表现统计</h3>
+<h4 id="lru与lip算法">LRU与LIP算法</h4>
+<ul>
+<li><p>CPI值: LRU算法15次更小, LIP算法9次更小</p></li>
+<li><p>运行时间:LRU算法9次更小, LIP算法20次更小</p></li>
+<li><p>缺失率: LRU算法15次更小, LIP算法10次更小</p></li>
+</ul>
+<h4 id="lru与bip算法">LRU与BIP算法</h4>
+<ul>
+<li><p>CPI值: LRU算法13次更小, BIP算法11次更小</p></li>
+<li><p>运行时间:LRU算法21次更小, BIP算法8次更小</p></li>
+<li><p>缺失率: LRU算法13次更小, BIP算法12次更小</p></li>
+</ul>
 <h3 id="结果分析">结果分析</h3>
 <p>由统计结果分析，大概一半的测试程序中，LRU的算法的缺失率和CPI指标比LIP算法更优，但是仍然有不少测试样例显示LIP算法表现更好，而这些程序即是前文所说的局部相关性不是特别高的情况，而LIP算法的运行时间明显更优。</p>
+<p>新加入的第三种策略（类似于BIP算法）在缺失率上的表现较LIP稍好一些（运行时间偏慢应该是因为在其中做了取随机数和取模的运算操作），其表现与LRU表现不分上下，可以看做是LRU算法和LIP算法的一个综合，可以看出不同的算法对程序局部性的适应度是有区别的，而测试程序的局部性好坏也极大地影响着其缺失率，在实际的操作中综合LIP和LRU算法应该是比较好的。根据测试结果推测，当概率值设置为50%时BIP算法表现可能会优于LRU算法</p>
 <p>由此可以分析，通常来说，程序的局部性更强时LRU算法表现会比较好，当程序的局部性表现有较大波动时，LIP一类改进算法会表现更好（即缺失率会降低），实际上，DIP算法的动态调节表现应该是最好的，不过出于实现难度本次实验没有进行实现。</p>
 <h1 id="附件">附件：</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">## 算法文件</div><div class="line">replacement_state.cpp</div><div class="line">replacement_state.h</div><div class="line"></div><div class="line">## 实验数据</div><div class="line">results/</div><div class="line">├── get_time.py                 // 通过运行数据提取运行结果表格记录</div><div class="line">├── log_all.txt                 // 分别使用LRU算法和LIP算法运行29个测试程序的输出结果</div><div class="line">├── name.txt</div><div class="line">├── run.sh                      // 运行脚本，在CRC/项目根目录下运行即可</div><div class="line">├── runs                        // 解压后的测试结果</div><div class="line">│   ├── LIP_GemsFDTD.stats</div><div class="line">│   ├── LIP_astar.stats</div><div class="line">│   ├── LIP_bwaves.stats</div><div class="line">│   ├── LIP_bzip2.stats</div><div class="line">|   ......</div><div class="line">|</div><div class="line">└── time_log.txt                // 每个程序的运行时间记录</div><div class="line">----</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">## 算法文件</div><div class="line">replacement_state.cpp</div><div class="line">replacement_state.h</div><div class="line"></div><div class="line">## 实验数据</div><div class="line">results/</div><div class="line">├── get_time.py                 // 通过运行数据提取运行结果表格记录</div><div class="line">├── time_bip.txt                // 算法3的运行时间结果</div><div class="line">├── log_all.txt                 // 分别使用LRU算法和LIP算法运行29个测试程序的输出结果</div><div class="line">├── bip_log.txt                 // 算法3的运行记录</div><div class="line">├── name.txt</div><div class="line">├── run.sh                      // 运行脚本，在CRC/项目根目录下运行即可</div><div class="line">├── runs                        // 解压后的测试结果</div><div class="line">│   ├── LIP_GemsFDTD.stats</div><div class="line">│   ├── LIP_astar.stats</div><div class="line">│   ├── LIP_bwaves.stats</div><div class="line">│   ├── LIP_bzip2.stats</div><div class="line">|   ......</div><div class="line">|</div><div class="line">└── time_log.txt                // 每个程序的运行时间记录</div><div class="line">----</div></pre></td></tr></table></figure>
 <h1 id="参考文献">参考文献</h1>
 <p>[1] Moinuddin K. Qureshi , Aamer Jaleel , Yale N. Patt , Simon C. Steely , Joel Emer, Adaptive insertion policies for high performance caching, Proceedings of the 34th annual international symposium on Computer architecture(ISCA), June 09-13, 2007, San Diego, California, USA</p>
 
@@ -957,7 +1348,7 @@ function loopy() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://qingfeng14.github.io/2017/04/23/系统结构/CRC_report/" title="实验 1 Cache 替换策略设计与分析">https://qingfeng14.github.io/2017/04/23/系统结构/CRC_report/</a>
+      <a href="https://qingfeng14.github.io/2017/04/23/CRC_report/" title="实验 1 Cache 替换策略设计与分析">https://qingfeng14.github.io/2017/04/23/CRC_report/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -1066,7 +1457,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1088,7 +1479,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1178,7 +1569,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验要求"><span class="nav-number">2.</span> <span class="nav-text">实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#已有替换策略分析"><span class="nav-number">3.</span> <span class="nav-text">已有替换策略分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我实现的替换策略"><span class="nav-number">4.</span> <span class="nav-text">我实现的替换策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体实现"><span class="nav-number">4.1.</span> <span class="nav-text">具体实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#替换策略测试"><span class="nav-number">5.</span> <span class="nav-text">替换策略测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试方法"><span class="nav-number">5.1.</span> <span class="nav-text">测试方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析不同替换策略下程序的运行时间cache-命中率受到的影响"><span class="nav-number">5.2.</span> <span class="nav-text">分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两种算法表现统计"><span class="nav-number">5.2.1.</span> <span class="nav-text">两种算法表现统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">5.2.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附件"><span class="nav-number">6.</span> <span class="nav-text">附件：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验要求"><span class="nav-number">2.</span> <span class="nav-text">实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#已有替换策略分析"><span class="nav-number">3.</span> <span class="nav-text">已有替换策略分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我实现的替换策略"><span class="nav-number">4.</span> <span class="nav-text">我实现的替换策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体实现"><span class="nav-number">4.1.</span> <span class="nav-text">具体实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#替换策略测试"><span class="nav-number">5.</span> <span class="nav-text">替换策略测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试方法"><span class="nav-number">5.1.</span> <span class="nav-text">测试方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析不同替换策略下程序的运行时间cache-命中率受到的影响"><span class="nav-number">5.2.</span> <span class="nav-text">分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lru和lip算法比较"><span class="nav-number">5.2.1.</span> <span class="nav-text">LRU和LIP算法比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lru和bip算法比较"><span class="nav-number">5.2.2.</span> <span class="nav-text">LRU和BIP算法比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法表现统计"><span class="nav-number">5.2.3.</span> <span class="nav-text">算法表现统计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lru与lip算法"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">LRU与LIP算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lru与bip算法"><span class="nav-number">5.2.3.2.</span> <span class="nav-text">LRU与BIP算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">5.2.4.</span> <span class="nav-text">结果分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附件"><span class="nav-number">6.</span> <span class="nav-text">附件：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>

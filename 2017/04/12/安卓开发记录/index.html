@@ -128,7 +128,7 @@ function loopy() {
 <meta property="og:url" content="https://qingfeng14.github.io/2017/04/12/安卓开发记录/index.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="安卓中用户权限设置">
-<meta property="og:updated_time" content="2017-04-20T16:15:51.000Z">
+<meta property="og:updated_time" content="2017-05-10T11:31:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安卓开发记录">
 <meta name="twitter:description" content="安卓中用户权限设置">
@@ -427,7 +427,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  899
+                  1,372
                 </span>
               
 
@@ -443,7 +443,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -484,6 +484,34 @@ function loopy() {
 </ul>
 <h2 id="暂存">暂存</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">int send_request_ip(int server_socket, JNIEnv *env, jobject obj, jclass cls) &#123;</div><div class="line">    LOGD(&quot;请求ip地址&quot;);</div><div class="line"></div><div class="line">    // 发送成功</div><div class="line"></div><div class="line">    responseIPv4(&quot;166.111.68.250 255.255.255.0 233.233.233&quot;, env, obj, cls);</div><div class="line"></div><div class="line">    return 0;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">int responseIPv4(string ipv4, JNIEnv *env, jobject obj, jclass cls) &#123;</div><div class="line"></div><div class="line">    LOGD(ipv4);</div><div class="line"></div><div class="line">    //2 寻找class里面的方法</div><div class="line">    //   jmethodID   (*GetMethodID)(JNIEnv*, jclass, const char*, const char*);</div><div class="line">    jmethodID method1 = (*env)-&gt;GetMethodID(env,cls,&quot;responseIPv4&quot;,&quot;(Ljava/lang/String;)I&quot;);</div><div class="line">    if(method1==0)&#123;</div><div class="line">        LOGD(&quot;find method1 error&quot;);</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    LOGD(&quot;find method1 &quot;);</div><div class="line">    //3 .调用这个方法</div><div class="line">    //    void        (*CallVoidMethod)(JNIEnv*, jobject, jmethodID, ...);</div><div class="line">    (*env)-&gt;CallVoidMethod(env,obj,method1);</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">JNIEXPORT jint JNICALL</div><div class="line">Java_com_example_ipv4_1over_1ipv6_MyVpnService_startVpn(JNIEnv *env, jobject instance) &#123;</div><div class="line"></div><div class="line">    // TODO</div><div class="line"></div><div class="line">    /*</div><div class="line">     * 开启VPN服务</div><div class="line">     * */</div><div class="line"></div><div class="line">    // c调用java函数</div><div class="line">    jclass cls;</div><div class="line">    cls = env-&gt;GetObjectClass(instance);</div><div class="line">    if(cls != NULL) &#123;</div><div class="line">        send_request_ip(0, env, instance, cls);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return 0;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="service机制">Service机制</h1>
+<p>启动服务时依次执行onCreate，onStartCommand，onStart；如果在系统显示调用stopService和stopSelf之前终止服务，service再次重启，onStartCommand会被调用，重启服务时依次执行onStartCommand，onStart。无论何时，都会先调用onStartCommand()，在调用onStart()。</p>
+<h2 id="onstartcommand返回值">onStartCommand返回值</h2>
+<p>onStartComand使用时，返回的是一个(int)整形。<br>
+这个整形可以有四个返回值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">start_sticky、start_no_sticky、START_REDELIVER_INTENT、START_STICKY_COMPATIBILITY</div></pre></td></tr></table></figure>
+<p>它们的含义分别是：</p>
+<ul>
+<li>START_STICKY：如果service进程被kill掉，保留service的状态为开始状态，但不保留递送的intent对象。随后系统会尝试重新创建service，由于服务状态为开始状态，所以创建服务后一定会调用onStartCommand(Intent,int,int)方法。如果在此期间没有任何启动命令被传递到service，那么参数Intent将为null。<br>
+</li>
+<li>START_NOT_STICKY：“非粘性的”。使用这个返回值时，如果在执行完onStartCommand后，服务被异常kill掉，系统不会自动重启该服务<br>
+</li>
+<li>START_REDELIVER_INTENT：重传Intent。使用这个返回值时，如果在执行完onStartCommand后，服务被异常kill掉，系统会自动重启该服务，并将Intent的值传入。<br>
+</li>
+<li>START_STICKY_COMPATIBILITY：START_STICKY的兼容版本，但不保证服务被kill后一定能重启。</li>
+</ul>
+<p>onStartComand参数flags含义</p>
+<p>flags表示启动服务的方式：</p>
+<p>Additional data about this start request. Currently either 0, START_FLAG_REDELIVERY, or START_FLAG_RETRY.</p>
+<p>START_FLAG_REDELIVERY：如果你实现onStartCommand()来安排异步工作或者在另一个线程中工作, 那么你可能需要使用START_FLAG_REDELIVERY来让系统重新发送一个intent。这样如果你的服务在处理它的时候被Kill掉, Intent不会丢失.<br>
+START_FLAG_RETRY：表示服务之前被设为START_STICKY，则会被传入这个标记。</p>
+<h1 id="显示">显示</h1>
+<h2 id="隐藏gone">隐藏（GONE）</h2>
+<p>XML文件：android:visibility=“gone”</p>
+<p>Java代码：view.setVisibility(View.GONE);</p>
+<h1 id="错误">错误</h1>
+<p>05-10 19:28:45.915 24188-24188/com.example.ipv4_over_ipv6 A/libc: Fatal signal 5 (SIGTRAP), code 1 in tid 24188 (.ipv4_over_ipv6)</p>
+<p>c函数未返回</p>
 
       
     </div>
@@ -652,7 +680,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -663,7 +691,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -674,7 +702,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -764,7 +792,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安卓中用户权限设置"><span class="nav-number">1.</span> <span class="nav-text">安卓中用户权限设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android中intent机制"><span class="nav-number">2.</span> <span class="nav-text">Android中Intent机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">2.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intent-结构"><span class="nav-number">2.2.</span> <span class="nav-text">Intent 结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂存"><span class="nav-number">2.3.</span> <span class="nav-text">暂存</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安卓中用户权限设置"><span class="nav-number">1.</span> <span class="nav-text">安卓中用户权限设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android中intent机制"><span class="nav-number">2.</span> <span class="nav-text">Android中Intent机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">2.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intent-结构"><span class="nav-number">2.2.</span> <span class="nav-text">Intent 结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂存"><span class="nav-number">2.3.</span> <span class="nav-text">暂存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#service机制"><span class="nav-number">3.</span> <span class="nav-text">Service机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#onstartcommand返回值"><span class="nav-number">3.1.</span> <span class="nav-text">onStartCommand返回值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示"><span class="nav-number">4.</span> <span class="nav-text">显示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏gone"><span class="nav-number">4.1.</span> <span class="nav-text">隐藏（GONE）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误"><span class="nav-number">5.</span> <span class="nav-text">错误</span></a></li></ol></div>
             
 
           </div>

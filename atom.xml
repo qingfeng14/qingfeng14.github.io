@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qingfeng14.github.io/"/>
-  <updated>2017-05-05T19:19:57.000Z</updated>
+  <updated>2017-05-28T06:11:50.000Z</updated>
   <id>https://qingfeng14.github.io/</id>
   
   <author>
@@ -16,11 +16,177 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>密码学第三次大作业</title>
+    <link href="https://qingfeng14.github.io/2017/05/23/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%A4%A7%E4%BD%9C%E4%B8%9A/"/>
+    <id>https://qingfeng14.github.io/2017/05/23/密码学第三次大作业/</id>
+    <published>2017-05-23T07:49:05.000Z</published>
+    <updated>2017-05-28T06:11:50.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;查阅文献搞清楚滑动窗口方法montgomery模乘运算原理&quot;&gt;查阅文献，搞清楚滑动窗口方法+Montgomery模乘运算原理&lt;/h1&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ipv4 over Ipv6隧道协议实验客户端报告</title>
+    <link href="https://qingfeng14.github.io/2017/05/23/4over6%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/"/>
+    <id>https://qingfeng14.github.io/2017/05/23/4over6实验报告/</id>
+    <published>2017-05-22T16:00:00.000Z</published>
+    <updated>2017-05-25T02:35:48.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;实验目的&quot;&gt;实验目的&lt;/h1&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>密码学实验2</title>
+    <link href="https://qingfeng14.github.io/2017/05/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%9E%E9%AA%8C2/"/>
+    <id>https://qingfeng14.github.io/2017/05/09/密码学实验2/</id>
+    <published>2017-05-08T17:26:08.000Z</published>
+    <updated>2017-05-13T12:02:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;接口函数&quot;&gt;接口函数&lt;/h1&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数值分析实验</title>
+    <link href="https://qingfeng14.github.io/2017/05/09/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/"/>
+    <id>https://qingfeng14.github.io/2017/05/09/数值分析实验/</id>
+    <published>2017-05-08T16:00:00.000Z</published>
+    <updated>2017-05-30T05:25:17.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;实验一-1.3&quot;&gt;实验一 1.3&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="数值分析" scheme="https://qingfeng14.github.io/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="实验" scheme="https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
+    
+      <category term="数值分析" scheme="https://qingfeng14.github.io/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>链接结构分析实验</title>
+    <link href="https://qingfeng14.github.io/2017/05/07/%E9%93%BE%E6%8E%A5%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/"/>
+    <id>https://qingfeng14.github.io/2017/05/07/链接结构分析实验/</id>
+    <published>2017-05-06T16:00:00.000Z</published>
+    <updated>2017-05-21T16:17:41.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;实验内容&quot;&gt;实验内容&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="搜索引擎" scheme="https://qingfeng14.github.io/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+    
+      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="搜索引擎" scheme="https://qingfeng14.github.io/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="实验" scheme="https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lec19</title>
+    <link href="https://qingfeng14.github.io/2017/05/07/Lec19/"/>
+    <id>https://qingfeng14.github.io/2017/05/07/Lec19/</id>
+    <published>2017-05-06T16:00:00.000Z</published>
+    <updated>2017-05-25T02:36:25.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ol start=&quot;36&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;保管员问题&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>校园搜索引擎</title>
+    <link href="https://qingfeng14.github.io/2017/05/07/%E6%A0%A1%E5%9B%AD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    <id>https://qingfeng14.github.io/2017/05/07/校园搜索引擎/</id>
+    <published>2017-05-06T16:00:00.000Z</published>
+    <updated>2017-05-25T02:35:35.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;内容&quot;&gt;内容&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="搜索引擎" scheme="https://qingfeng14.github.io/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+    
+      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="搜索引擎" scheme="https://qingfeng14.github.io/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="实验" scheme="https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>集成学习知识点</title>
+    <link href="https://qingfeng14.github.io/2017/05/06/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>https://qingfeng14.github.io/2017/05/06/集成学习知识点/</id>
+    <published>2017-05-06T06:29:55.000Z</published>
+    <updated>2017-05-07T12:59:16.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;两个概念&quot;&gt;两个概念&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://qingfeng14.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="实验" scheme="https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
+    
+      <category term="机器学习" scheme="https://qingfeng14.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="集成学习" scheme="https://qingfeng14.github.io/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Bagging" scheme="https://qingfeng14.github.io/tags/Bagging/"/>
+    
+      <category term="Boosting" scheme="https://qingfeng14.github.io/tags/Boosting/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机器学习实验二-集成学习</title>
     <link href="https://qingfeng14.github.io/2017/05/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C/"/>
     <id>https://qingfeng14.github.io/2017/05/06/机器学习/集成学习实验/</id>
     <published>2017-05-05T18:27:19.000Z</published>
-    <updated>2017-05-05T19:19:57.000Z</updated>
+    <updated>2017-05-07T15:42:05.000Z</updated>
     
     <summary type="html">
     
@@ -179,7 +345,7 @@
     <link href="https://qingfeng14.github.io/2017/04/12/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
     <id>https://qingfeng14.github.io/2017/04/12/安卓开发记录/</id>
     <published>2017-04-12T04:52:09.000Z</published>
-    <updated>2017-04-20T16:15:51.000Z</updated>
+    <updated>2017-05-10T11:31:42.000Z</updated>
     
     <summary type="html">
     
@@ -252,7 +418,7 @@
     <link href="https://qingfeng14.github.io/2017/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
     <id>https://qingfeng14.github.io/2017/03/31/服务器/服务器配置/</id>
     <published>2017-03-31T15:14:15.000Z</published>
-    <updated>2017-04-15T11:59:19.000Z</updated>
+    <updated>2017-05-30T05:31:22.000Z</updated>
     
     <summary type="html">
     
@@ -293,207 +459,6 @@
       <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
       <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[计算机系统结构]指令系统</title>
-    <link href="https://qingfeng14.github.io/2017/03/26/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E5%B1%82%E6%AC%A1%E5%AD%98%E5%82%A8/"/>
-    <id>https://qingfeng14.github.io/2017/03/26/系统结构/计算机系统结构-层次存储/</id>
-    <published>2017-03-26T05:42:18.000Z</published>
-    <updated>2017-04-05T05:26:15.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;程序访问的局部性原理：时间局部性，空间局部性&lt;/p&gt;
-&lt;h2 id=&quot;存储系统的多级层次结构&quot;&gt;存储系统的多级层次结构&lt;/h2&gt;
-&lt;p&gt;CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn&lt;/p&gt;
-&lt;p&gt;在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集&lt;/p&gt;
-&lt;p&gt;CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="系统结构" scheme="https://qingfeng14.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="系统结构" scheme="https://qingfeng14.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统-页面置换算法</title>
-    <link href="https://qingfeng14.github.io/2017/03/25/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/"/>
-    <id>https://qingfeng14.github.io/2017/03/25/操作系统/操作系统-页面置换算法/</id>
-    <published>2017-03-25T02:27:05.000Z</published>
-    <updated>2017-03-25T11:41:18.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;置换算法的功能和目标&quot;&gt;置换算法的功能和目标&lt;/h1&gt;
-&lt;h2 id=&quot;功能&quot;&gt;功能&lt;/h2&gt;
-&lt;p&gt;当出现&lt;font color=red&gt;缺页异常&lt;/font&gt;，需调入新页面而内存已满时，&lt;font color=red&gt;置换算法选择被置换的物理页面&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&quot;设计目标&quot;&gt;设计目标&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;尽可能减少页面的调入调出次数&lt;/li&gt;
-&lt;li&gt;把未来不再访问或短期内不访问的页面调出&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="页面置换算法" scheme="https://qingfeng14.github.io/tags/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OS-lec9-exercise</title>
-    <link href="https://qingfeng14.github.io/2017/03/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS-lec9-exercise/"/>
-    <id>https://qingfeng14.github.io/2017/03/24/操作系统/OS-lec9-exercise/</id>
-    <published>2017-03-24T13:53:35.000Z</published>
-    <updated>2017-04-13T19:04:53.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;lec9-练习题&quot;&gt;Lec9 练习题&lt;/h1&gt;
-&lt;h3 id=&quot;物理页帧数量为3且初始时没有对应的虚拟页虚拟页访问序列为01201303103请问采用最优置换算法的缺页次数为4&quot;&gt;1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="作业" scheme="https://qingfeng14.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ucore_lab</title>
-    <link href="https://qingfeng14.github.io/2017/03/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/ucore-lab/"/>
-    <id>https://qingfeng14.github.io/2017/03/23/操作系统/ucore-lab/</id>
-    <published>2017-03-23T14:23:44.000Z</published>
-    <updated>2017-03-24T13:45:53.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;ucore_lab-实验中一些重要结构体参数的含义&quot;&gt;ucore_lab 实验中一些重要结构体参数的含义&lt;/h1&gt;
-&lt;h2 id=&quot;page结构体&quot;&gt;Page结构体&lt;/h2&gt;
-&lt;p&gt;每个Page描述了一个物理页&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/* *&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; * struct Page - Page descriptor structures. Each Page describes one&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; * physical page. In kern/mm/pmm.h, you can find lots of useful functions&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; * that convert Page to other data types, such as phyical address.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; * */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;struct Page &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    int ref;                        // page frame&amp;apos;s reference counter&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    // 页帧的reference&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    uint32_t flags;                 // array of flags that describe the status &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    of the page frame&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    // 描述页帧的标记位， unsigned int&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    unsigned int property;          // the num of free block, used in first fit pm manager&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    // 空闲块的数量， 用于first fit算法&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    list_entry_t page_link;         // free list link&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    // page_link&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="操作系统" scheme="https://qingfeng14.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://qingfeng14.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="ucore_lab" scheme="https://qingfeng14.github.io/tags/ucore-lab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数值分析</title>
-    <link href="https://qingfeng14.github.io/2017/03/21/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-    <id>https://qingfeng14.github.io/2017/03/21/数值分析/</id>
-    <published>2017-03-21T02:06:03.000Z</published>
-    <updated>2017-04-10T06:05:38.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算&lt;span class=&quot;math inline&quot;&gt;\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\)&lt;/span&gt;, 请给出一个合理、高效率的算法流程.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数值分析" scheme="https://qingfeng14.github.io/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="课程" scheme="https://qingfeng14.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="数值分析" scheme="https://qingfeng14.github.io/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>lec8 SPOC思考题</title>
-    <link href="https://qingfeng14.github.io/2017/03/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lec8-SPOC%E6%80%9D%E8%80%83%E9%A2%98/"/>
-    <id>https://qingfeng14.github.io/2017/03/21/操作系统/lec8-SPOC思考题/</id>
-    <published>2017-03-20T16:00:00.000Z</published>
-    <updated>2017-04-13T19:05:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;内存访问局部性的应用程序例子&quot;&gt;内存访问局部性的应用程序例子&lt;/h1&gt;
-&lt;p&gt;(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。&lt;/p&gt;
-&lt;figure class=&quot;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习-朴素贝叶斯</title>
-    <link href="https://qingfeng14.github.io/2017/03/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    <id>https://qingfeng14.github.io/2017/03/19/机器学习/机器学习-朴素贝叶斯/</id>
-    <published>2017-03-18T16:55:11.000Z</published>
-    <updated>2017-03-19T06:02:18.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;朴素贝叶斯原理&quot;&gt;朴素贝叶斯原理&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/yourtion/DataminingGuideBook&quot;&gt;youryion数据挖掘指导&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;朴素贝叶斯法属于一种分类方法，基于&lt;font color=red&gt;特征条件独立假设&lt;/font&gt;学习&lt;font color=red&gt;输入输出的联合概率分布&lt;/font&gt;，以此为模型，对于给定的输入x，利用贝叶斯定理求出&lt;font color=red&gt;后验概率最大的输出y。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;简单有效，是一种常用的机器学习方法.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://qingfeng14.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="实验" scheme="https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-      <category term="机器学习" scheme="https://qingfeng14.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="朴素贝叶斯" scheme="https://qingfeng14.github.io/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习实验-朴素贝叶斯分类器</title>
-    <link href="https://qingfeng14.github.io/2017/03/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/"/>
-    <id>https://qingfeng14.github.io/2017/03/18/机器学习/机器学习实验-朴素贝叶斯分类器/</id>
-    <published>2017-03-18T15:01:28.000Z</published>
-    <updated>2017-04-13T19:04:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;提示个人联系方式及代码简要说明运行方式在readme.md文件中&quot;&gt;提示：个人联系方式及代码简要说明、运行方式在README.md文件中&lt;/h1&gt;
-&lt;h1 id=&quot;实验目的&quot;&gt;实验目的&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;在真实数据集上实现朴素贝叶斯分类器，并验证其分类效果&lt;/li&gt;
-&lt;li&gt;了解如何在测试数据集上实现一个机器学习算法&lt;/li&gt;
-&lt;li&gt;了解如何评价分类效果&lt;/li&gt;
-&lt;li&gt;了解如果分析实验结果&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://qingfeng14.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="实验" scheme="https://qingfeng14.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-      <category term="机器学习" scheme="https://qingfeng14.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="朴素贝叶斯" scheme="https://qingfeng14.github.io/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
     
   </entry>
   

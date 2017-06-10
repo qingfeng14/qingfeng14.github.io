@@ -10,5 +10,7 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
+Disallow: /code/
+Disallow: /lib/
 Sitemap: https://www.zhangshenghao.win/sitemap.xml
 Sitemap: https://www.zhangshenghao.win/baidusitemap.xml

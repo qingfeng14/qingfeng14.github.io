@@ -185,8 +185,17 @@ function loopy() {
 
 
 
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100831019-1', 'auto');
+  ga('send', 'pageview');
+</script>
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
+
+  <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -439,6 +448,16 @@ function loopy() {
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/06/03/校园搜索引擎/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -699,8 +718,8 @@ function loopy() {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/23/4over6实验报告/" rel="next" title="Ipv4 over Ipv6隧道协议实验客户端报告">
-                <i class="fa fa-chevron-left"></i> Ipv4 over Ipv6隧道协议实验客户端报告
+              <a href="/2017/05/23/密码学第三次大作业/" rel="next" title="密码学第三次大作业">
+                <i class="fa fa-chevron-left"></i> 密码学第三次大作业
               </a>
             
           </div>
@@ -737,7 +756,7 @@ function loopy() {
           
   <div class="comments" id="comments">
     
-      <div id="uyan_frame"></div>
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     
   </div>
 
@@ -1069,27 +1088,21 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
-
-
-
-
-
-  
     
-
-    
-      <!-- UY BEGIN -->
-      <div id="uyan_frame"></div>
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128349"></script>
-      <!-- UY END -->
-    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "d5c03ba471cf40c0b5831477b3e52b64",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
 
 
 
 
-
-  
 
 
 

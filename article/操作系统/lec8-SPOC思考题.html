@@ -1,0 +1,1329 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="NulX213KadbLZpcPLeskKULRWdztIKtoHsRG8-LgfWE" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
+
+<script type="text/javascript"> 
+loopy() 
+function loopy() { 
+    if('01c6023dacda00474e342dc0ba449ac06eaf44c7'){
+        while(true) {
+            var pass = prompt("输入正确密码才能查看!");
+            if(pass) {
+                // 点击的确定
+                var ss = sha1(pass)
+                // alert(ss);
+                if(ss == '01c6023dacda00474e342dc0ba449ac06eaf44c7') {
+                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
+                    break;
+                }
+                else {
+                    alert("密码错误！");
+                }
+            }
+            else if(pass == "") {
+                // 用户没有输入
+            }
+            else {
+                // 点击取消
+                // history.go(-1)
+
+            }
+        }
+    }
+} 
+</script> 
+
+
+  <meta name="keywords" content="青枫，博客，Coding" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="青枫别苑" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="内存访问局部性的应用程序例子
+(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。
+123456789101112#include &amp;lt;stdio.h&amp;gt;#define NUM 1024#define COUNT 10int A[NUM][NUM];void main (void) &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="lec8 SPOC思考题">
+<meta property="og:url" content="https://www.zhangshenghao.win/article/操作系统/lec8-SPOC思考题.html">
+<meta property="og:site_name" content="青枫别苑">
+<meta property="og:description" content="内存访问局部性的应用程序例子
+(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。
+123456789101112#include &amp;lt;stdio.h&amp;gt;#define NUM 1024#define COUNT 10int A[NUM][NUM];void main (void) &amp;#123;">
+<meta property="og:updated_time" content="2017-05-30T06:01:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="lec8 SPOC思考题">
+<meta name="twitter:description" content="内存访问局部性的应用程序例子
+(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。
+123456789101112#include &amp;lt;stdio.h&amp;gt;#define NUM 1024#define COUNT 10int A[NUM][NUM];void main (void) &amp;#123;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'OP8LUUS2MV',
+      apiKey: '7aae391e117d5b22f8d4e63407fc967f',
+      indexName: 'indexName',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.zhangshenghao.win/article/操作系统/lec8-SPOC思考题.html"/>
+
+
+
+
+
+  <title> lec8 SPOC思考题 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+   
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100831019-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c804d99384f9668e17adfe738b5e74f3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">青枫别苑</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">张盛豪的个人博客<br/>Coding  && Reading</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://www.zhangshenghao.win/article/操作系统/lec8-SPOC思考题.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                lec8 SPOC思考题
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T00:00:00+08:00">
+                2017-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/article/操作系统/lec8-SPOC思考题.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/article/操作系统/lec8-SPOC思考题.html" class="leancloud_visitors" data-flag-title="lec8 SPOC思考题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,703
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="内存访问局部性的应用程序例子">内存访问局部性的应用程序例子</h1>
+<p>(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 1024</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> COUNT 10</span></div><div class="line"><span class="keyword">int</span> A[NUM][NUM];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> i,j,k;</div><div class="line">  <span class="keyword">for</span> (k = <span class="number">0</span>; k&lt;COUNT; k++)</div><div class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; NUM; i++)</div><div class="line">  <span class="keyword">for</span> (j = <span class="number">0</span>; j  &lt; NUM; j++)</div><div class="line">      A[i][j] = i+j;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%d count computing over!\n"</span>,i*j*k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以用下的命令来编译和运行此程序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gcc -O0 -o goodlocality goodlocality.c</div><div class="line">time ./goodlocality</div></pre></td></tr></table></figure>
+<p>可以看到其执行时间。</p>
+<p>执行该段代码，输出的执行时间为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">real    0m0.045s</div><div class="line">user    0m0.043s</div><div class="line">sys     0m0.002s</div></pre></td></tr></table></figure>
+<p>将i、j顺序调换，更改数组访问时间之后</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 1024</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> COUNT 10</span></div><div class="line"><span class="keyword">int</span> A[NUM][NUM];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> i,j,k;</div><div class="line">  <span class="keyword">for</span> (k = <span class="number">0</span>; k&lt;COUNT; k++)</div><div class="line">  <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; NUM; j++)</div><div class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; NUM; i++)</div><div class="line">      A[i][j] = i+j;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%d count computing over!\n"</span>,i*j*k);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="number">10485760</span> count computing over!</div><div class="line"></div><div class="line">real    <span class="number">0</span>m0<span class="number">.266</span>s</div><div class="line">user    <span class="number">0</span>m0<span class="number">.251</span>s</div><div class="line">sys     <span class="number">0</span>m0<span class="number">.014</span>s</div></pre></td></tr></table></figure>
+<p>更换ij顺序之后，局部性较差，执行时间也就相应较长，因为数组在存储器中是按照行顺序的存储的，而CPU提取cache中数据时会将其相邻位置数据载入，缺页的加载也是以页为单位的载入，因此，行扫描时数据缺失的情况会更少，执行时间会更短。</p>
+<h1 id="缺页异常嵌套">缺页异常嵌套</h1>
+<p>（1）缺页异常可用于虚拟内存管理中。如果在中断服务例程中进行缺页异常的处理时，再次出现缺页异常，这时计算机系统（软件或硬件）会如何处理？请给出你的合理设计和解释。</p>
+<p>参考条目：</p>
+<ol style="list-style-type: decimal">
+<li><a href="http://www.lenky.info/archives/2012/04/1479" target="_blank" rel="external">Lenky @ Double Fault &amp; Triple Fault</a> [http://www.lenky.info/archives/2012/04/1479]</li>
+<li><a href="https://en.wikipedia.org/wiki/Double_fault" target="_blank" rel="external">Wiki Double_fault</a> [https://en.wikipedia.org/wiki/Double_fault]</li>
+<li><a href="https://en.wikipedia.org/wiki/Triple_fault" target="_blank" rel="external">Wiki Triple_fault</a> [https://en.wikipedia.org/wiki/Triple_fault]</li>
+</ol>
+<p>解答: 在中断服务例程中进行缺页异常处理时，系统处于内核态，此时如果再次出现缺页异常，也就意味着内核出现了问题，（这种现象称为Double Fault）,由参考条目1中的提示可知，在x86中，发生Double Fault的情况有以下几种：</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>First Exception</strong></th>
+<th><strong>Second Exception</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>Benign</td>
+<td>Contributory</td>
+<td>Page Fault</td>
+</tr>
+<tr class="even">
+<td>Benign</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>Contributory</td>
+<td>x</td>
+<td>Double Fault</td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>Page Fault</td>
+<td>x</td>
+<td>Double Fault</td>
+<td>Double Fault</td>
+</tr>
+</tbody>
+</table>
+<p>在遇到Double Fault时，操作系统无法对这种异常进行恢复，但会收集相关的信息，关闭对应的程序和服务，而如果此时处理Double Fault异常的函数也出现了异常，则会进一步发生Triple Fault，这时CPU只能进行机器的重启。</p>
+<h1 id="缺页中断次数计算">缺页中断次数计算</h1>
+<p>（2）如果80386机器的一条机器指令(指字长4个字节)，其功能是把一个32位字的数据装入寄存器，指令本身包含了要装入的字所在的32位地址。这个过程最多会引起几次缺页中断？</p>
+<blockquote>
+<p>提示：内存中的指令和数据的地址需要考虑地址对齐和不对齐两种情况。需要考虑页目录表项invalid、页表项invalid、TLB缺失等是否会产生中断？</p>
+</blockquote>
+<p>解答：指令字长4字节，在极端情况下有可能恰好在两个相邻页的中间，进而取指令时会引发两次缺页中断，而数据也是4字节，与之相似，最多可引发两次缺页中断，从而这个过程最多可引起4次缺页中断。</p>
+<p>补充：在x86中，TLB缺失是由硬件进行处理的，不会触发中断，而页表是常驻内存的，不会触发中断，例如，对于二级页表来说，页目录项为invalid时，其对应的页表实际上并不存在，当实际需要时动态进行分配，但是并不会产生异常。页表项为invalid时，其页表中存储了其在磁盘中的索引,或者该映射既没有在内存中，也没有在硬盘上，但是这些都不会产生缺页中断。</p>
+<h1 id="虚拟页式存储的地址转换">虚拟页式存储的地址转换</h1>
+<p>（3）(spoc) 有一台假想的计算机，页大小（page size）为32 Bytes，支持8KB的虚拟地址空间（virtual address space）,有4KB的物理内存空间（physical memory），采用二级页表，一个页目录项（page directory entry ，PDE）大小为1 Byte,一个页表项（page-table entries PTEs）大小为1 Byte，1个页目录表大小为32 Bytes，1个页表大小为32 Bytes。页目录基址寄存器（page directory base register，PDBR）保存了页目录表的物理地址（按页对齐）。</p>
+<p>PTE格式（8 bit） : <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">VALID | PFN6 ... PFN0</div></pre></td></tr></table></figure></p>
+<p>PDE格式（8 bit） : <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">VALID | PT6 ... PT0</div></pre></td></tr></table></figure></p>
+<p>其 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">VALID==1表示，表示映射存在；VALID==0表示，表示内存映射不存在（有两种情况：a.对应的物理页帧swap out在硬盘上；b.既没有在内存中，页没有在硬盘上，这时页帧号为0x7F）。</div><div class="line">PFN6..0:页帧号或外存中的后备页号</div><div class="line">PT6..0:页表的物理基址&gt;&gt;5</div></pre></td></tr></table></figure></p>
+<p>已经建立好了1个页目录表和8个页表，且页目录表的index为0~7的页目录项分别对应了这8个页表。</p>
+<p>在<a href="./04-1-spoc-memdiskdata.md">物理内存模拟数据文件</a>中，给出了4KB物理内存空间和4KBdisk空间的值，PDBR的值。</p>
+<p>请手工计算后回答下列虚地址是否有合法对应的物理内存，请给出对应的pde index, pde contents, pte index, pte contents，the value of addr in phy page OR disk sector。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1) Virtual Address 6653:</div><div class="line">2) Virtual Address 1c13:</div><div class="line">3) Virtual Address 6890:</div><div class="line">4) Virtual Address 0af6:</div><div class="line">5) Virtual Address 1e6f:</div></pre></td></tr></table></figure></p>
+<p>解答：根据 <code>04-1-spoc-memdiskdata.md</code>物理内存模拟数据文件， PDBR 值为 0xd80, 对应页号为0x6c, 8KB的虚拟地址空间需要13bit编址， 4KB物理地址需要12bit编址，一级页表中页目录项需要5bit定位，二级页表中页表项需要5bit定位，页内偏移用5bit编址，页帧号用7bit编址</p>
+<p>题目中给出的是16bit虚拟地址，其中14-10位页目录项的index， 9-5位为页表项的index， 4-0位为页内偏移</p>
+<ol style="list-style-type: decimal">
+<li>Virtual Address 6653:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">0 110_01 10_010 1_0011</div><div class="line"> 	--&gt; pde index: 0x19(11001) pde contents: (valid 0x0, pt 0x7f)</div><div class="line">	--&gt; Fault (page directory entry not valid)</div></pre></td></tr></table></figure>
+<p>2)Virtual Address 1c13:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">0001 1100 0001 0011</div><div class="line">0 001_11 00_000 1_0011</div><div class="line">--&gt; pde index:0x07  pde contents:(0xbd, 1 011 1101, valid 1, pfn 0x3d)</div><div class="line">  --&gt; pte index:0x00, 页号0x3d  pte contents:(valid 1, pfn 0x76)</div><div class="line">    --&gt; Page 76 ,To Physical Address 0xed3(0 1110 1101 0011) --&gt; Value: 02</div></pre></td></tr></table></figure>
+<p>3)Virtual Address 6890:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0110 1000 1001 0000</div><div class="line">0 110_10 00_100 1_0000</div><div class="line">--&gt; pde index:0x1a  pde contents:(valid 0, pfn 0x7f)</div><div class="line">--&gt; Fault (page directory entry not valid)</div></pre></td></tr></table></figure>
+<p>4)Virtual Address 0af6:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">0000 1010 1111 0110</div><div class="line">0 000_10 10_111 1_0110</div><div class="line">--&gt; pde index:0x02  pde contents:(0xa1(1 010 0001), valid 1, pfn 0x21)</div><div class="line">  --&gt; pte index:0x17 页号0x21  pte contents:(valid 0, pfn 0x7f)</div><div class="line">    --&gt; Fault (page directory entry not valid)</div></pre></td></tr></table></figure>
+<p>5)Virtual Address 1e6f:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> 0 001_11 10_011 0_1111</div><div class="line"> --&gt; pde index:0x7  pde contents:(0xbd, valid 1, pfn 0x3d)</div><div class="line">   --&gt; pte index:0x13, 页号0x3d  pte contents:(0x16, valid 0, pfn 0x16)</div><div class="line">--&gt; To Disk Sector Address 0x2cf (0010 1100 1111) --&gt; Value: 1c</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>打赏</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat-pay.png" alt="青枫 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/ali-pay.jpg" alt="青枫 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      青枫
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhangshenghao.win//article/操作系统/lec8-SPOC思考题.html" title="lec8 SPOC思考题">https://www.zhangshenghao.win//article/操作系统/lec8-SPOC思考题.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/机器学习/机器学习-朴素贝叶斯.html" rel="next" title="机器学习-朴素贝叶斯">
+                <i class="fa fa-chevron-left"></i> 机器学习-朴素贝叶斯
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/数值分析.html" rel="prev" title="数值分析">
+                数值分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="青枫" />
+          <p class="site-author-name" itemprop="name">青枫</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qingfeng14" target="_blank" title="GitHub" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/qingfeng.alex" target="_blank" title="Facebook" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/qingfeng14" target="_blank" title="微博" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/alex-zhangch/activities" target="_blank" title="知乎" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-user-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=95180074" target="_blank" title="网易云" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  网易云
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内存访问局部性的应用程序例子"><span class="nav-number">1.</span> <span class="nav-text">内存访问局部性的应用程序例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缺页异常嵌套"><span class="nav-number">2.</span> <span class="nav-text">缺页异常嵌套</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缺页中断次数计算"><span class="nav-number">3.</span> <span class="nav-text">缺页中断次数计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟页式存储的地址转换"><span class="nav-number">4.</span> <span class="nav-text">虚拟页式存储的地址转换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">青枫</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+<br/>
+
+
+
+
+
+
+<div class="powered-by">
+Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" target="_blank" title="知乎" rel="external nofollow">知乎</a>
+</div>
+
+<div class="powered-by">
+<a href="https://github.com/qingfeng14" target="_blank" title="GitHUb" rel="external nofollow">GitHub</a>
+</div>
+
+<div class="powered-by">
+<a href="http://weibo.com/qingfeng14" target="_blank" title="微博" rel="external nofollow">微博</a>
+</div>
+
+<div class="theme-info">
+ <a href="mailto:zhangshenghao1995@163.com?subject=用户意见" target="_blank" title="邮箱" rel="external nofollow">邮箱</a>
+
+
+
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "d5c03ba471cf40c0b5831477b3e52b64",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("VtTcivvjyRHmU2GlrgFshvUm-gzGzoHsz", "Ls6YjvYF6PU5qtBlLt7DpMnr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+</body>
+</html>

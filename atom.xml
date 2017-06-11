@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.zhangshenghao.win/"/>
-  <updated>2017-06-09T20:21:23.000Z</updated>
+  <updated>2017-06-11T12:38:40.000Z</updated>
   <id>https://www.zhangshenghao.win/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>系统结构第二次实验:设计实现 Tomasulo 调度算法</title>
-    <link href="https://www.zhangshenghao.win/2017/06/07/Tomasulo%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
-    <id>https://www.zhangshenghao.win/2017/06/07/Tomasulo调度算法/</id>
+    <link href="https://www.zhangshenghao.win/Tomasulo%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95.html"/>
+    <id>https://www.zhangshenghao.win/Tomasulo调度算法.html</id>
     <published>2017-06-06T16:00:00.000Z</published>
-    <updated>2017-06-09T20:21:23.000Z</updated>
+    <updated>2017-06-11T12:38:40.000Z</updated>
     
     <summary type="html">
     
@@ -33,8 +33,8 @@
   
   <entry>
     <title>校园搜索引擎</title>
-    <link href="https://www.zhangshenghao.win/2017/06/03/%E6%A0%A1%E5%9B%AD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    <id>https://www.zhangshenghao.win/2017/06/03/校园搜索引擎/</id>
+    <link href="https://www.zhangshenghao.win/%E6%A0%A1%E5%9B%AD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.html"/>
+    <id>https://www.zhangshenghao.win/校园搜索引擎.html</id>
     <published>2017-06-02T16:00:00.000Z</published>
     <updated>2017-06-04T14:26:28.000Z</updated>
     
@@ -57,8 +57,8 @@
   
   <entry>
     <title>Ipv4 over Ipv6隧道协议实验客户端报告</title>
-    <link href="https://www.zhangshenghao.win/2017/05/23/4over6%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/"/>
-    <id>https://www.zhangshenghao.win/2017/05/23/4over6实验报告/</id>
+    <link href="https://www.zhangshenghao.win/4over6%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.html"/>
+    <id>https://www.zhangshenghao.win/4over6实验报告.html</id>
     <published>2017-05-22T16:00:00.000Z</published>
     <updated>2017-05-30T05:57:23.000Z</updated>
     
@@ -75,8 +75,8 @@
   
   <entry>
     <title>密码学第三次大作业-第二题</title>
-    <link href="https://www.zhangshenghao.win/2017/05/23/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%A4%A7%E4%BD%9C%E4%B8%9A/"/>
-    <id>https://www.zhangshenghao.win/2017/05/23/密码学第三次大作业/</id>
+    <link href="https://www.zhangshenghao.win/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%A4%A7%E4%BD%9C%E4%B8%9A.html"/>
+    <id>https://www.zhangshenghao.win/密码学第三次大作业.html</id>
     <published>2017-05-22T16:00:00.000Z</published>
     <updated>2017-06-10T17:52:10.000Z</updated>
     
@@ -95,8 +95,8 @@
   
   <entry>
     <title>密码学实验2</title>
-    <link href="https://www.zhangshenghao.win/2017/05/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%9E%E9%AA%8C2/"/>
-    <id>https://www.zhangshenghao.win/2017/05/09/密码学实验2/</id>
+    <link href="https://www.zhangshenghao.win/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%9E%E9%AA%8C2.html"/>
+    <id>https://www.zhangshenghao.win/密码学实验2.html</id>
     <published>2017-05-08T17:26:08.000Z</published>
     <updated>2017-05-30T05:59:36.000Z</updated>
     
@@ -115,8 +115,8 @@
   
   <entry>
     <title>数值分析实验</title>
-    <link href="https://www.zhangshenghao.win/2017/05/09/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://www.zhangshenghao.win/2017/05/09/数值分析实验/</id>
+    <link href="https://www.zhangshenghao.win/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C.html"/>
+    <id>https://www.zhangshenghao.win/数值分析实验.html</id>
     <published>2017-05-08T16:00:00.000Z</published>
     <updated>2017-06-05T09:49:50.000Z</updated>
     
@@ -139,8 +139,8 @@
   
   <entry>
     <title>Lec19</title>
-    <link href="https://www.zhangshenghao.win/2017/05/07/Lec19/"/>
-    <id>https://www.zhangshenghao.win/2017/05/07/Lec19/</id>
+    <link href="https://www.zhangshenghao.win/Lec19.html"/>
+    <id>https://www.zhangshenghao.win/Lec19.html</id>
     <published>2017-05-06T16:00:00.000Z</published>
     <updated>2017-05-30T05:57:39.000Z</updated>
     
@@ -157,8 +157,8 @@
   
   <entry>
     <title>链接结构分析实验</title>
-    <link href="https://www.zhangshenghao.win/2017/05/07/%E9%93%BE%E6%8E%A5%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://www.zhangshenghao.win/2017/05/07/链接结构分析实验/</id>
+    <link href="https://www.zhangshenghao.win/%E9%93%BE%E6%8E%A5%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C.html"/>
+    <id>https://www.zhangshenghao.win/链接结构分析实验.html</id>
     <published>2017-05-06T16:00:00.000Z</published>
     <updated>2017-05-30T05:56:51.000Z</updated>
     
@@ -181,8 +181,8 @@
   
   <entry>
     <title>集成学习知识点</title>
-    <link href="https://www.zhangshenghao.win/2017/05/06/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    <id>https://www.zhangshenghao.win/2017/05/06/集成学习知识点/</id>
+    <link href="https://www.zhangshenghao.win/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9.html"/>
+    <id>https://www.zhangshenghao.win/集成学习知识点.html</id>
     <published>2017-05-06T06:29:55.000Z</published>
     <updated>2017-05-30T05:57:00.000Z</updated>
     
@@ -209,8 +209,8 @@
   
   <entry>
     <title>机器学习实验二-集成学习</title>
-    <link href="https://www.zhangshenghao.win/2017/05/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://www.zhangshenghao.win/2017/05/06/机器学习/集成学习实验/</id>
+    <link href="https://www.zhangshenghao.win/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C.html"/>
+    <id>https://www.zhangshenghao.win/机器学习/集成学习实验.html</id>
     <published>2017-05-05T18:27:19.000Z</published>
     <updated>2017-05-30T06:01:45.000Z</updated>
     
@@ -233,8 +233,8 @@
   
   <entry>
     <title>Lec17</title>
-    <link href="https://www.zhangshenghao.win/2017/04/26/Lec17/"/>
-    <id>https://www.zhangshenghao.win/2017/04/26/Lec17/</id>
+    <link href="https://www.zhangshenghao.win/Lec17.html"/>
+    <id>https://www.zhangshenghao.win/Lec17.html</id>
     <published>2017-04-25T16:00:00.000Z</published>
     <updated>2017-05-30T05:57:36.000Z</updated>
     
@@ -255,8 +255,8 @@
   
   <entry>
     <title>实验 1 Cache 替换策略设计与分析</title>
-    <link href="https://www.zhangshenghao.win/2017/04/23/CRC_report/"/>
-    <id>https://www.zhangshenghao.win/2017/04/23/CRC_report/</id>
+    <link href="https://www.zhangshenghao.win/CRC_report.html"/>
+    <id>https://www.zhangshenghao.win/CRC_report.html</id>
     <published>2017-04-22T16:00:00.000Z</published>
     <updated>2017-04-27T14:38:40.000Z</updated>
     
@@ -276,8 +276,8 @@
   
   <entry>
     <title>lec16_exe</title>
-    <link href="https://www.zhangshenghao.win/2017/04/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lec16-exe/"/>
-    <id>https://www.zhangshenghao.win/2017/04/22/操作系统/lec16-exe/</id>
+    <link href="https://www.zhangshenghao.win/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lec16-exe.html"/>
+    <id>https://www.zhangshenghao.win/操作系统/lec16-exe.html</id>
     <published>2017-04-22T15:52:11.000Z</published>
     <updated>2017-05-30T06:01:06.000Z</updated>
     
@@ -298,8 +298,8 @@
   
   <entry>
     <title>Lec15练习</title>
-    <link href="https://www.zhangshenghao.win/2017/04/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec15%E7%BB%83%E4%B9%A0/"/>
-    <id>https://www.zhangshenghao.win/2017/04/19/操作系统/Lec15练习/</id>
+    <link href="https://www.zhangshenghao.win/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec15%E7%BB%83%E4%B9%A0.html"/>
+    <id>https://www.zhangshenghao.win/操作系统/Lec15练习.html</id>
     <published>2017-04-19T15:09:05.000Z</published>
     <updated>2017-05-30T06:01:03.000Z</updated>
     
@@ -320,10 +320,10 @@
   
   <entry>
     <title>图片搜索实验</title>
-    <link href="https://www.zhangshenghao.win/2017/04/19/%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://www.zhangshenghao.win/2017/04/19/图片搜索实验/</id>
+    <link href="https://www.zhangshenghao.win/%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2%E5%AE%9E%E9%AA%8C.html"/>
+    <id>https://www.zhangshenghao.win/图片搜索实验.html</id>
     <published>2017-04-19T06:57:55.000Z</published>
-    <updated>2017-05-30T05:55:44.000Z</updated>
+    <updated>2017-06-11T12:38:15.000Z</updated>
     
     <summary type="html">
     
@@ -346,8 +346,8 @@
   
   <entry>
     <title>Lec13_Lec14</title>
-    <link href="https://www.zhangshenghao.win/2017/04/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec13-Lec14/"/>
-    <id>https://www.zhangshenghao.win/2017/04/14/操作系统/Lec13-Lec14/</id>
+    <link href="https://www.zhangshenghao.win/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec13-Lec14.html"/>
+    <id>https://www.zhangshenghao.win/操作系统/Lec13-Lec14.html</id>
     <published>2017-04-14T06:47:56.000Z</published>
     <updated>2017-05-30T06:01:00.000Z</updated>
     
@@ -368,8 +368,8 @@
   
   <entry>
     <title>安卓开发记录</title>
-    <link href="https://www.zhangshenghao.win/2017/04/12/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
-    <id>https://www.zhangshenghao.win/2017/04/12/安卓开发记录/</id>
+    <link href="https://www.zhangshenghao.win/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95.html"/>
+    <id>https://www.zhangshenghao.win/安卓开发记录.html</id>
     <published>2017-04-12T04:52:09.000Z</published>
     <updated>2017-05-30T05:59:41.000Z</updated>
     
@@ -390,8 +390,8 @@
   
   <entry>
     <title>操作系统复习笔记</title>
-    <link href="https://www.zhangshenghao.win/2017/04/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.zhangshenghao.win/2017/04/05/操作系统/操作系统复习笔记/</id>
+    <link href="https://www.zhangshenghao.win/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://www.zhangshenghao.win/操作系统/操作系统复习笔记.html</id>
     <published>2017-04-05T07:13:25.000Z</published>
     <updated>2017-04-11T17:31:26.000Z</updated>
     
@@ -417,8 +417,8 @@
   
   <entry>
     <title>Lec12练习</title>
-    <link href="https://www.zhangshenghao.win/2017/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec12%E7%BB%83%E4%B9%A0/"/>
-    <id>https://www.zhangshenghao.win/2017/04/03/操作系统/Lec12练习/</id>
+    <link href="https://www.zhangshenghao.win/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec12%E7%BB%83%E4%B9%A0.html"/>
+    <id>https://www.zhangshenghao.win/操作系统/Lec12练习.html</id>
     <published>2017-04-03T12:45:33.000Z</published>
     <updated>2017-04-04T16:38:14.000Z</updated>
     
@@ -441,8 +441,8 @@
   
   <entry>
     <title>服务器配置相关问题</title>
-    <link href="https://www.zhangshenghao.win/2017/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
-    <id>https://www.zhangshenghao.win/2017/03/31/服务器/服务器配置/</id>
+    <link href="https://www.zhangshenghao.win/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE.html"/>
+    <id>https://www.zhangshenghao.win/服务器/服务器配置.html</id>
     <published>2017-03-31T15:14:15.000Z</published>
     <updated>2017-05-30T06:01:33.000Z</updated>
     

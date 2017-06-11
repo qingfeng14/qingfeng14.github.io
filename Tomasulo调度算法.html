@@ -1,0 +1,1556 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="NulX213KadbLZpcPLeskKULRWdztIKtoHsRG8-LgfWE" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
+
+<script type="text/javascript"> 
+loopy() 
+function loopy() { 
+    if(''){
+        while(true) {
+            var pass = prompt("输入正确密码才能查看!");
+            if(pass) {
+                // 点击的确定
+                var ss = sha1(pass)
+                // alert(ss);
+                if(ss == '') {
+                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
+                    break;
+                }
+                else {
+                    alert("密码错误！");
+                }
+            }
+            else if(pass == "") {
+                // 用户没有输入
+            }
+            else {
+                // 点击取消
+                // history.go(-1)
+
+            }
+        }
+    }
+} 
+</script> 
+
+
+  <meta name="keywords" content="Tomasulo,计算机系统结构," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="青枫别苑" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="实验原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统结构第二次实验:设计实现 Tomasulo 调度算法">
+<meta property="og:url" content="https://www.zhangshenghao.win/Tomasulo调度算法.html">
+<meta property="og:site_name" content="青枫别苑">
+<meta property="og:description" content="实验原理">
+<meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3t1H2k1Q0h280n0w123W/Image%202017-06-08%20at%203.50.36%20下午.png">
+<meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3u1M2r3r3I1H0F1c272a/Image%202017-06-08%20at%204.13.39%20下午.png">
+<meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/1r1M2k1P2O3U0z2N1m3s/Image%202017-06-08%20at%204.35.34%20下午.png">
+<meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/2t37031X3A0w220T2h2e/Image%202017-06-08%20at%204.41.45%20下午.png">
+<meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/1L3502012X2X2r093S3g/Image%202017-06-08%20at%204.46.20%20下午.png">
+<meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/2g262o34373W1I0K3K3O/Image%202017-06-08%20at%204.47.55%20下午.png">
+<meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/0E322Q2S3m2X3q3a1I3Y/Image%202017-06-08%20at%204.49.28%20下午.png">
+<meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/1F2y0r3J380n1n3H1J43/Image%202017-06-08%20at%204.57.42%20下午.png">
+<meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/373S3F0825212C2H3m2c/Image%202017-06-08%20at%204.56.12%20下午.png">
+<meta property="og:updated_time" content="2017-06-11T12:38:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="系统结构第二次实验:设计实现 Tomasulo 调度算法">
+<meta name="twitter:description" content="实验原理">
+<meta name="twitter:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3t1H2k1Q0h280n0w123W/Image%202017-06-08%20at%203.50.36%20下午.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'OP8LUUS2MV',
+      apiKey: '7aae391e117d5b22f8d4e63407fc967f',
+      indexName: 'indexName',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.zhangshenghao.win/Tomasulo调度算法.html"/>
+
+
+
+
+
+  <title> 系统结构第二次实验:设计实现 Tomasulo 调度算法 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+   
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100831019-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c804d99384f9668e17adfe738b5e74f3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">青枫别苑</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">张盛豪的个人博客<br/>Coding  && Reading</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://www.zhangshenghao.win/Tomasulo调度算法.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="青枫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青枫别苑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                系统结构第二次实验:设计实现 Tomasulo 调度算法
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T00:00:00+08:00">
+                2017-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/Tomasulo调度算法.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/Tomasulo调度算法.html" class="leancloud_visitors" data-flag-title="系统结构第二次实验:设计实现 Tomasulo 调度算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3,987
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="实验原理">实验原理</h1>
+<a id="more"></a>
+<p>Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。</p>
+<p>假设浮点处理部件结构如下图所示。浮点处理部件从取指单元接收指令，存入浮点操作队列。浮点操作队列每拍最多发射1条指令给浮点加法器或浮点乘除法器。 浮点处理部件包含一个浮点加法器和一个浮点乘除法器。浮点加法器为两段流水线，输入端有三个保留站A1、A2、A3，浮点乘除法器为六段流水线，输入端有两个保留站M1，M2。当任意一个保留站中的两个源操作数到齐后，如果对应的操作部件空闲，可以把两个操作数立即送到浮点操作部件中执行。Load Buffer和Store Buffer各缓存三条访存操作。</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3t1H2k1Q0h280n0w123W/Image%202017-06-08%20at%203.50.36%20下午.png">
+
+</div>
+<h1 id="实现要求">实现要求</h1>
+<p>设计实现 Tomasulo 算法模拟器，要求：</p>
+<ul>
+<li><p>Tomasulo 算法模拟器能够执行浮点加、减、乘、除运算及 LOAD 和 STORE 操作。为了保持一致性，我们小组采用了【教科书上的指令格式】</p>
+<table>
+<thead>
+<tr class="header">
+<th>指令格式</th>
+<th>指令说明</th>
+<th>指令执行周期</th>
+<th>保留站/缓冲队列项数</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ADDD F1,F2,F3</td>
+<td>F1,F2,F3为浮点寄存器，寄存器至少支持F0~F10</td>
+<td>2个周期</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>SUBD F1,F2,F3</td>
+<td>同上</td>
+<td>2个周期</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>MULD F1,F2,F3</td>
+<td>同上</td>
+<td>10个周期</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>DIVD F1,F2,F3</td>
+<td>同上</td>
+<td>40个周期</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>LD F1, NUM, R1</td>
+<td>F1为寄存器，NUM 为偏移量，R1为基地址</td>
+<td>2个周期</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>ST F1, NUM, R1</td>
+<td>同上</td>
+<td>2个周期</td>
+<td>3</td>
+</tr>
+</tbody>
+</table></li>
+<li>支持单步执行及连续执行(n 条指令)，实时显示算法的运行状况，包括各条指令的运行状态、各寄存器以及内存的值、保留站(Reservation Stations)状态、Load Buffer 和 Store Buffer 缓存的值等;</li>
+<li>程序执行完毕后，能够显示指令执行周期数等信息;</li>
+<li>为了简化设计，建议模拟器 供编辑内存值功能，以便实现数据输入;浮点除法可不做除 0 判断;</li>
+<li>能够以文本方式输入指令序列。</li>
+<li><p>显示界面自由设计，下图仅供参考:</p></li>
+</ul>
+<h1 id="完成内容">完成内容</h1>
+<ul>
+<li>能够以文件方式导入指令</li>
+<li>能够以文本框编辑方式编辑指令</li>
+<li>能够设置FU,RU寄存器的初始值</li>
+<li>能够编辑内存值</li>
+<li>能够设置实时显示内存内容的起始内存地址（5个）</li>
+<li>支持单步和多步连续执行</li>
+<li>程序执行完毕后，能够显示指令执行周期数等信息</li>
+</ul>
+<h1 id="实现设计思路">实现设计思路</h1>
+<h2 id="后台-算法框架和基本流程">后台 算法框架和基本流程</h2>
+<h3 id="模拟环境">模拟环境:</h3>
+<p>我们用一次循环来代表一次始终周期,每次循环始终加一.</p>
+<p>对于每个时钟周期(一个节拍),一条指令最多只能被执行发射,执行,或者写入中的一种操作(若所需运算数据未就绪,所需运算器件未就绪均会阻塞).即对于一条需要2个周期来执行运算的加法指令,共需要至少1+2+1=4个周期,其运算结果才会被写入目的寄存器.</p>
+<p>我们将Load/Store缓冲区和保留站统一处理,即缓冲区和保留站均有Qi,Qj,Vi,Vj,A等数据信息.对于Load保留站,其Qi始终为0,即Vi始终就绪,Vj为计算所得的地址;对于Store缓冲区,其Vi为所要存储的数据,Vj为通过整数寄存器计算所得的地址.</p>
+<h3 id="算法流程">算法流程:</h3>
+<p>系统在完成初始化后，会将指令按给定的序列加入指令队列,即在UI界面点击开始后,程序会根据给定的指令序列自动初始化指定队列。接下来,对于每一个时钟周期会进行如下操作</p>
+<p>(1)发射指令</p>
+<p>对于位于指令队列队首的指令，我们先寻找其对应的空闲保留站，若存在，则发射该指令到对应的保留站，更新该保留站的数据信息(包括busy,Vi,Vj,Qi,Qj,A),并更新要写入寄存器的状态.若不存在空闲站,则队首指令将无法流出，该指令会停留在队首等待下个周期。当指令队列清空时,说明所有指令已经流出,不再发射指令.</p>
+<p>(2)执行流水线</p>
+<p>我们共提供了三条流水线分别处理访存(根据课件认为是一个2段流水线,每段1周期)、加减法、乘除法指令，每条流水线有自己的流水段和相应的各段周期。每条位于保留站的指令必须在其所需数据均准备好才能进入对应的流水线进行执行.(对于Load指令来说,所需数据为整型寄存器所表示的基址,对于Store指令来说,所需数据出了基址还有要存储的数据)</p>
+<p>指令进入流水线后,我们通过如下两个过程来模拟流水线运行流程:</p>
+<ol style="list-style-type: decimal">
+<li>新指令进入流水线 当保留站中缓存的指令要进入对应的流水线时必须满足两个条件：一,流水线当前进行的运算能够执行该指令（即乘法指令要进入乘除法器的流水线时，必须保证没有除法指令在执行，我们认为加减法和访存不需要改变运算器的功能逻辑,因此加法和减法进入加法器流水线以及访存指令进入访存流水线时没有该要求）;二,对应流水线首段空闲,即流水线首段没有指令在占用。</li>
+<li>更新流水线上各个段的指令 对于每个段的指令，我们会递减其需要的执行周期。当剩余周期为0时，说明该段运算完成，需要进入下一流水段继续运算，此时若下一流水段空闲，则直接进入下一流水段,否则阻塞等待直到其空闲为止，在此期间会持续占用原有流水段。若当前完成段为流水线最后一段，则进行结果运算，并记录结果到对应的保留站，等待写入(对于Store指令我们在此时更新相应的内存)同时释放对流水段的占有。</li>
+</ol>
+<p>(3)写入数据：</p>
+<p>对于每条完成的指令(除了Store指令)，我们会将其结果写入对应的寄存器并更新相应的订阅的保留站的等待数据。我们假设总线在一个周期内可以完成多次数据传输，即对于同一个周期内要进行多条指令的写回时，我们按照顺序将其结果更新到对应的位置，Tomasulo算法保证了该过程不会触发数据相关的错误。</p>
+<h3 id="算法状态显示">算法状态显示:</h3>
+<p>在指令的每个时期(发射,执行完毕,写回完毕)完成后，我们会记录对应指令的完成时间，并更新到前台。 在完成每个周期的操作后,我们将保留站和寄存器以及指令的执行信息更新到前台，以供观察。</p>
+<h3 id="主要数据结构">主要数据结构:</h3>
+<p>我们通过4个主要的数据结构来执行该算法.</p>
+<ol style="list-style-type: decimal">
+<li>寄存器class Register:维护了寄存器的数据和状态信息Qi</li>
+<li>指令class Inst: 维护了指令的操作码,操作数,目的地址,指令的运行状态,指令发射,运算完毕,写回的时间</li>
+<li>保留站class ReservationStation: 保留站是关键的数据结构,它维护了保留站的基本数据信息(op,busy,vj,vk,qj,qk,A,result).此外还维护了便于观察保留站状态的各种数据:
+<ol style="list-style-type: decimal">
+<li>execover//保留站所缓存的指令是否已经运算完成</li>
+<li>status//保留栈所缓存指令的状态,包括(发射,等待数据,等待运算器相应的流水段空闲,正在运算,运算完毕,保留站空闲)</li>
+<li>times: 所缓存的指令还需要在运算器运算的总周期数(不包括等待流水段的时间)</li>
+</ol></li>
+<li>流水线模拟器class Pipeline: 流水线模拟器维护了各个流水段需要的运行周期,各个流水段正在运行的指令和其所需的剩余的运算时间.我们设计实现的流水线有以下性质:
+<ol style="list-style-type: decimal">
+<li>对于n段流水线,最多同时支持n条指令在其中运行</li>
+<li>当第i条指令完成第k段流水段运算后,若第i-1条指令还占据第k+1段流水段,则第i条指令会阻塞并持续占用第k段流水段.</li>
+<li>当第i条指令未完成第k段流水段运算时,其不会受其他段指令的影响,即第i+1条指令或者i-1条指令阻塞时,第i条指令能继续进行第k段的运算.</li>
+<li>流水线支持功能切换,即可以切换流水段数量和每段的周期数,以此支持乘除法周期数不一致的要求.但功能切换必须在流水线中所有指令全部流出时才能进行.即若一条除法指令想进入流水线,必须在流水线处理完所有的乘法运算后切换成除法模式后才能进入.</li>
+<li>对于系统默认的参数,我们将访存处理和加法减法处理设计为了2段流水线,每段1周期. 对于乘法为6段流水线.分别为1,1,2,4,1,1周期. 对于除法为6,6,6,6,6,10周期(参数可以在代码中重新自由设置,如设置为Firgure.A31所示的流水线)</li>
+</ol></li>
+</ol>
+<h2 id="前端">前端</h2>
+<p>程序运行时主窗口如下图所示</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3u1M2r3r3I1H0F1c272a/Image%202017-06-08%20at%204.13.39%20下午.png" alt="程序主界面">
+<p class="caption">程序主界面</p>
+</div>
+<p>如【图 程序主界面】所示，前端的实现中界面采用<code>GridBagLayout()</code>布局模式，顶部是10个操作按钮，点击即可完成对应的设置和执行功能。</p>
+<p>其下方依次是指令队列状态展示区，当前周期展示区，内存展示区，保留站状态信息，浮点寄存器状态信息，整型寄存器展示区。</p>
+<p>下面一次展示其各个部分的运行方式</p>
+<h3 id="从文件导入指令">从文件导入指令</h3>
+<p>点击【导入指令文件】按钮，即可进入指令文件选择界面，点击open按钮，默认打开当前工作目录，选择示例代码文件<code>example.txt</code>,点击导入即可导入指令，指令队列展示区会做出对应的更新。</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1r1M2k1P2O3U0z2N1m3s/Image%202017-06-08%20at%204.35.34%20下午.png" alt="从文件导入指令">
+<p class="caption">从文件导入指令</p>
+</div>
+<h3 id="文本框方式编辑指令">文本框方式编辑指令</h3>
+<p>点击【编辑指令】按钮，即可进入指令编辑界面。指令编辑完成后点击确认即可导入编辑的指令，指令队列展示区会做出对应的更新。</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2t37031X3A0w220T2h2e/Image%202017-06-08%20at%204.41.45%20下午.png" alt="文本框方式编辑指令">
+<p class="caption">文本框方式编辑指令</p>
+</div>
+<h3 id="设置内存">设置内存</h3>
+<p>点击【内存赋值】按钮，即可进入内存编辑界面，在第一个框中输入内存地址(0~4096), 第二个输入框中输入内存值，点击赋值按钮，若输入合法则会更新对应地址处内存。点击关闭按钮退出内存编辑界面。</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1L3502012X2X2r093S3g/Image%202017-06-08%20at%204.46.20%20下午.png" alt="设置内存">
+<p class="caption">设置内存</p>
+</div>
+<h3 id="设置内存显示">设置内存显示</h3>
+<p>点击【内存显示】按钮，即可设置内存展示的起始地址(0~4091),输入合法时点击确认即可更新内存展示区。</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2g262o34373W1I0K3K3O/Image%202017-06-08%20at%204.47.55%20下午.png" alt="内存显示设置">
+<p class="caption">内存显示设置</p>
+</div>
+<h3 id="多步执行设置">多步执行设置</h3>
+<p>点击【步数设置】按钮，即可进行多步运行步数设置。</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0E322Q2S3m2X3q3a1I3Y/Image%202017-06-08%20at%204.49.28%20下午.png" alt="步长设置">
+<p class="caption">步长设置</p>
+</div>
+<h3 id="寄存器设置">寄存器设置</h3>
+<p>点击【设置寄存器】按钮，即可进入寄存器设置界面，页面中可进行FU0~FU10, RU0~RU10，共22个寄存器的初始值的设置，设置完成后点击保存若输入合法即可完成更改，输入不合法时保持当前值。</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1F2y0r3J380n1n3H1J43/Image%202017-06-08%20at%204.57.42%20下午.png" alt="寄存器设置">
+<p class="caption">寄存器设置</p>
+</div>
+<h3 id="程序运行">程序运行</h3>
+<p>初始或点击【重置】按钮时是初始状态，此时可进行指令的导入，编辑，内存赋值，寄存器赋值，步长设置，内存显示设置等功能，点击执行后，即进入执行状态，此时部分设置按钮不可点击，即不可再进行更改指令，设置内存，设置寄存器等操作。此时若点击【步进】按钮，程序则会运行一步，点击执行n步（n可点击【步数设置】按钮进行设置）即可执行多步（n步）, 每一次步进都会更新对应部件状态展示区，程序运行结束后则不可继续点击【步进】，【执行n步】按钮。</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/373S3F0825212C2H3m2c/Image%202017-06-08%20at%204.56.12%20下午.png" alt="运行效果图">
+<p class="caption">运行效果图</p>
+</div>
+<h1 id="程序运行说明">程序运行说明：</h1>
+<p>在项目根目录下运行<code>sh run.sh</code>即可，或者在在命令行中输入如下编译运行指令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir bin</div><div class="line">javac <span class="_">-d</span> bin/ src/com/company/UI.java src/com/company/Main.java</div><div class="line">java -cp bin/ com.company.UI</div></pre></td></tr></table></figure>
+<h1 id="项目文件说明">项目文件说明</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── README.md                               运行说明</div><div class="line">├── Report.md                               实验报告(MD版)</div><div class="line">├── Tomasulo调度算法实验报告.pdf                实验报告PDF版</div><div class="line">├── example_book.txt                        教科书中的示例</div><div class="line">├── example_阻塞等待指令序列.txt              会在流水线各个段发生阻塞等待指令序列     </div><div class="line">├── example_RAW相关的ST指令序列.txt            有 RAW 相关的 ST 指令序列</div><div class="line">├── run.sh              项目编译运行脚本</div><div class="line">└── src</div><div class="line">    └── com</div><div class="line">        └── company</div><div class="line">            ├── Main.java   后台代码</div><div class="line">            └── UI.java     前端代码</div></pre></td></tr></table></figure>
+<h1 id="运行实例">运行实例</h1>
+<h2 id="对于课件中所给的样例指令序列">对于课件中所给的样例指令序列:</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">LD F6, 34, R2</div><div class="line">LD F2, 45, R3</div><div class="line">MULD F0, F2, F4</div><div class="line">SUBD F8, F6, F2</div><div class="line">DIVD F10, F0, F6</div><div class="line">ADDD F6, F8, F2</div></pre></td></tr></table></figure>
+<p>我们得到的指令队列状态与课件中相同:</p>
+<table>
+<thead>
+<tr class="header">
+<th>指令</th>
+<th>发射指令时间</th>
+<th>执行完成时间</th>
+<th>写入结果时间</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LD F6,34,R2</td>
+<td>1</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>LD F2,45,R3</td>
+<td>2</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>MULD F0,F2,F4</td>
+<td>3</td>
+<td>15</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>SUBD F8,F6,F2</td>
+<td>4</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>DIVD F10,F0,F6</td>
+<td>5</td>
+<td>56</td>
+<td>57</td>
+</tr>
+<tr class="even">
+<td>ADDD F6,F8,F2</td>
+<td>6</td>
+<td>10</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p>运行结束需要57个周期与课件一致</p>
+<h2 id="对于有raw相关的st指令序列">对于有RAW相关的ST指令序列:</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ST F1,0,R2</div><div class="line">MULD F0, F2, F4</div><div class="line">ST F0,4,R0</div></pre></td></tr></table></figure>
+<p>也能得到正确结果:</p>
+<table>
+<thead>
+<tr class="header">
+<th>指令</th>
+<th>发射指令时间</th>
+<th>执行完成时间</th>
+<th>写入结果时间</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ST F1,0,R2</td>
+<td>1</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>MULD F0,F2,F4</td>
+<td>2</td>
+<td>12</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>ST F0,4,R0</td>
+<td>3</td>
+<td>15</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+<h2 id="对于会在流水线各个段发生阻塞等待指令序列">对于会在流水线各个段发生阻塞等待指令序列:</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">DIVD F6, F0, F4</div><div class="line">MULD F2, F1, F5</div><div class="line">MULD F0, F6, F4</div><div class="line">SUBD F8, F6, F2</div><div class="line">DIVD F10, F0, F6</div><div class="line">ADDD F6, F8, F2</div></pre></td></tr></table></figure>
+<p>我们也能得到正确的结果:</p>
+<table>
+<thead>
+<tr class="header">
+<th>指令</th>
+<th>发射指令时间</th>
+<th>执行完成时间</th>
+<th>写入结果时间</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DIVD F6,F0,F4</td>
+<td>1</td>
+<td>41</td>
+<td>42</td>
+</tr>
+<tr class="even">
+<td>MULD F2,F1,F5</td>
+<td>2</td>
+<td>51</td>
+<td>52</td>
+</tr>
+<tr class="odd">
+<td>MULD F0,F6,F4</td>
+<td>43</td>
+<td>55</td>
+<td>56</td>
+</tr>
+<tr class="even">
+<td>SUBD F8,F6,F2</td>
+<td>44</td>
+<td>54</td>
+<td>55</td>
+</tr>
+<tr class="odd">
+<td>DIVD F10,F0,F6</td>
+<td>53</td>
+<td>96</td>
+<td>97</td>
+</tr>
+<tr class="even">
+<td>ADDD F6,F8,F2</td>
+<td>54</td>
+<td>57</td>
+<td>58</td>
+</tr>
+</tbody>
+</table>
+<p>在该例子中前三条指令间存在结构冲突,由于除法在流水线中执行时,新来的乘法指令必须等待除法指令完成才能进入流水线,因此乘法指令完成时的时钟周期为51(42进入首段,51完成最后一段).</p>
+<p>另外由于保留站占满,第三条乘法指令等到43周期才被发射.</p>
+<p>对于第三条乘法指令,由于乘法流水线各个段的运行周期为(1,1,2,4,1,1),第三条指令会在第三段完成后阻塞等待2个时钟周期,以等待第二条乘法指令完成第4段,因此第三条乘法指令的执行完成时间为55(44进入,55完成,共用12个周期,比第二条慢了2(慢2周期进入)+2(期间等待2周期)=4个周期而不是2个周期,在第48,49会看到对应的保留站状态为WAIT_ALU意为等待处理器)</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>打赏</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat-pay.png" alt="青枫 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/ali-pay.jpg" alt="青枫 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      青枫
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhangshenghao.win/Tomasulo调度算法.html" title="系统结构第二次实验:设计实现 Tomasulo 调度算法">https://www.zhangshenghao.win/Tomasulo调度算法.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/校园搜索引擎.html" rel="next" title="校园搜索引擎">
+                <i class="fa fa-chevron-left"></i> 校园搜索引擎
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="青枫" />
+          <p class="site-author-name" itemprop="name">青枫</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/qingfeng14" target="_blank" title="GitHub" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/qingfeng.alex" target="_blank" title="Facebook" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/qingfeng14" target="_blank" title="微博" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/alex-zhangch/activities" target="_blank" title="知乎" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-user-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=95180074" target="_blank" title="网易云" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  网易云
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验原理"><span class="nav-number">1.</span> <span class="nav-text">实验原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现要求"><span class="nav-number">2.</span> <span class="nav-text">实现要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完成内容"><span class="nav-number">3.</span> <span class="nav-text">完成内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现设计思路"><span class="nav-number">4.</span> <span class="nav-text">实现设计思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#后台-算法框架和基本流程"><span class="nav-number">4.1.</span> <span class="nav-text">后台 算法框架和基本流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟环境"><span class="nav-number">4.1.1.</span> <span class="nav-text">模拟环境:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法流程"><span class="nav-number">4.1.2.</span> <span class="nav-text">算法流程:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法状态显示"><span class="nav-number">4.1.3.</span> <span class="nav-text">算法状态显示:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要数据结构"><span class="nav-number">4.1.4.</span> <span class="nav-text">主要数据结构:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端"><span class="nav-number">4.2.</span> <span class="nav-text">前端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从文件导入指令"><span class="nav-number">4.2.1.</span> <span class="nav-text">从文件导入指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本框方式编辑指令"><span class="nav-number">4.2.2.</span> <span class="nav-text">文本框方式编辑指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置内存"><span class="nav-number">4.2.3.</span> <span class="nav-text">设置内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置内存显示"><span class="nav-number">4.2.4.</span> <span class="nav-text">设置内存显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多步执行设置"><span class="nav-number">4.2.5.</span> <span class="nav-text">多步执行设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寄存器设置"><span class="nav-number">4.2.6.</span> <span class="nav-text">寄存器设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序运行"><span class="nav-number">4.2.7.</span> <span class="nav-text">程序运行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序运行说明"><span class="nav-number">5.</span> <span class="nav-text">程序运行说明：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目文件说明"><span class="nav-number">6.</span> <span class="nav-text">项目文件说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行实例"><span class="nav-number">7.</span> <span class="nav-text">运行实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对于课件中所给的样例指令序列"><span class="nav-number">7.1.</span> <span class="nav-text">对于课件中所给的样例指令序列:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对于有raw相关的st指令序列"><span class="nav-number">7.2.</span> <span class="nav-text">对于有RAW相关的ST指令序列:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对于会在流水线各个段发生阻塞等待指令序列"><span class="nav-number">7.3.</span> <span class="nav-text">对于会在流水线各个段发生阻塞等待指令序列:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">青枫</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+<br/>
+
+
+
+
+
+
+<div class="powered-by">
+Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" target="_blank" title="知乎" rel="external nofollow">知乎</a>
+</div>
+
+<div class="powered-by">
+<a href="https://github.com/qingfeng14" target="_blank" title="GitHUb" rel="external nofollow">GitHub</a>
+</div>
+
+<div class="powered-by">
+<a href="http://weibo.com/qingfeng14" target="_blank" title="微博" rel="external nofollow">微博</a>
+</div>
+
+<div class="theme-info">
+ <a href="mailto:zhangshenghao1995@163.com?subject=用户意见" target="_blank" title="邮箱" rel="external nofollow">邮箱</a>
+
+
+
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "d5c03ba471cf40c0b5831477b3e52b64",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("VtTcivvjyRHmU2GlrgFshvUm-gzGzoHsz", "Ls6YjvYF6PU5qtBlLt7DpMnr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+</body>
+</html>

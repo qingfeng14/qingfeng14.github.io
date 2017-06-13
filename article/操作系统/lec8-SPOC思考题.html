@@ -124,22 +124,16 @@ function loopy() {
 
 
 
-<meta name="description" content="内存访问局部性的应用程序例子
-(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。
-123456789101112#include &amp;lt;stdio.h&amp;gt;#define NUM 1024#define COUNT 10int A[NUM][NUM];void main (void) &amp;#123;">
+<meta name="description" content="内存访问局部性的应用程序例子 (1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。 123456789101112#include &amp;lt;stdio.h&amp;gt;#define NUM 1024#define COUNT 10int A[NUM][NUM];void main (void) &amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lec8 SPOC思考题">
 <meta property="og:url" content="https://www.zhangshenghao.win/article/操作系统/lec8-SPOC思考题.html">
 <meta property="og:site_name" content="青枫别苑">
-<meta property="og:description" content="内存访问局部性的应用程序例子
-(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。
-123456789101112#include &amp;lt;stdio.h&amp;gt;#define NUM 1024#define COUNT 10int A[NUM][NUM];void main (void) &amp;#123;">
-<meta property="og:updated_time" content="2017-05-30T06:01:10.000Z">
+<meta property="og:description" content="内存访问局部性的应用程序例子 (1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。 123456789101112#include &amp;lt;stdio.h&amp;gt;#define NUM 1024#define COUNT 10int A[NUM][NUM];void main (void) &amp;#123;">
+<meta property="og:updated_time" content="2017-06-13T15:05:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lec8 SPOC思考题">
-<meta name="twitter:description" content="内存访问局部性的应用程序例子
-(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。
-123456789101112#include &amp;lt;stdio.h&amp;gt;#define NUM 1024#define COUNT 10int A[NUM][NUM];void main (void) &amp;#123;">
+<meta name="twitter:description" content="内存访问局部性的应用程序例子 (1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。 123456789101112#include &amp;lt;stdio.h&amp;gt;#define NUM 1024#define COUNT 10int A[NUM][NUM];void main (void) &amp;#123;">
 
 
 
@@ -502,6 +496,7 @@ function loopy() {
         <h1 id="内存访问局部性的应用程序例子">内存访问局部性的应用程序例子</h1>
 <p>(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 1024</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> COUNT 10</span></div><div class="line"><span class="keyword">int</span> A[NUM][NUM];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> i,j,k;</div><div class="line">  <span class="keyword">for</span> (k = <span class="number">0</span>; k&lt;COUNT; k++)</div><div class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; NUM; i++)</div><div class="line">  <span class="keyword">for</span> (j = <span class="number">0</span>; j  &lt; NUM; j++)</div><div class="line">      A[i][j] = i+j;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%d count computing over!\n"</span>,i*j*k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>可以用下的命令来编译和运行此程序：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gcc -O0 -o goodlocality goodlocality.c</div><div class="line">time ./goodlocality</div></pre></td></tr></table></figure>
 <p>可以看到其执行时间。</p>

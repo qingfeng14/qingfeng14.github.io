@@ -125,12 +125,13 @@ function loopy() {
 
 
 <meta name="description" content="安卓中用户权限设置">
+<meta name="keywords" content="Android,4over6,网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安卓开发记录">
 <meta property="og:url" content="https://www.zhangshenghao.win/article/安卓开发记录.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="安卓中用户权限设置">
-<meta property="og:updated_time" content="2017-05-30T05:59:41.000Z">
+<meta property="og:updated_time" content="2017-06-13T14:58:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安卓开发记录">
 <meta name="twitter:description" content="安卓中用户权限设置">
@@ -458,7 +459,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,372
+                  1,217
                 </span>
               
 
@@ -474,7 +475,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  6
+                  5
                 </span>
               
             </div>
@@ -496,7 +497,7 @@ function loopy() {
         <h1 id="安卓中用户权限设置">安卓中用户权限设置</h1>
 <a id="more"></a>
 <p>位置：<code>AndroidManifest.xml</code> 在package之后， Application 之前</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--用户权限--&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_WIFI_STATE"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!--VPN 权限--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.BIND_VPN_SERVICE"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--用户权限--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_WIFI_STATE"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!--VPN 权限--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.BIND_VPN_SERVICE"</span> /&gt;</span></div></pre></td></tr></table></figure>
 <h1 id="android中intent机制">Android中Intent机制</h1>
 <h2 id="作用">作用</h2>
 <ul>
@@ -513,8 +514,6 @@ function loopy() {
 <li>component – 指定Intent的目标组件的类名称。通常 Android会根据Intent 中包含的其它属性的信息，比如action、data/type、category进行查找，最终找到一个与之匹配的目标组件。但是，如果 component这个属性有指定的话，将直接使用它指定的组件，而不再执行上述查找过程。指定了这个属性以后，Intent的其它所有属性都是可选的，例如：Intent it = new Intent(Activity.Main.this, Activity2.class); startActivity(it);</li>
 <li>extras – 附加信息，例如：it.putExtras(bundle) - 使用Bundle来传递数据；</li>
 </ul>
-<h2 id="暂存">暂存</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">int send_request_ip(int server_socket, JNIEnv *env, jobject obj, jclass cls) &#123;</div><div class="line">    LOGD(&quot;请求ip地址&quot;);</div><div class="line"></div><div class="line">    // 发送成功</div><div class="line"></div><div class="line">    responseIPv4(&quot;166.111.68.250 255.255.255.0 233.233.233&quot;, env, obj, cls);</div><div class="line"></div><div class="line">    return 0;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">int responseIPv4(string ipv4, JNIEnv *env, jobject obj, jclass cls) &#123;</div><div class="line"></div><div class="line">    LOGD(ipv4);</div><div class="line"></div><div class="line">    //2 寻找class里面的方法</div><div class="line">    //   jmethodID   (*GetMethodID)(JNIEnv*, jclass, const char*, const char*);</div><div class="line">    jmethodID method1 = (*env)-&gt;GetMethodID(env,cls,&quot;responseIPv4&quot;,&quot;(Ljava/lang/String;)I&quot;);</div><div class="line">    if(method1==0)&#123;</div><div class="line">        LOGD(&quot;find method1 error&quot;);</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    LOGD(&quot;find method1 &quot;);</div><div class="line">    //3 .调用这个方法</div><div class="line">    //    void        (*CallVoidMethod)(JNIEnv*, jobject, jmethodID, ...);</div><div class="line">    (*env)-&gt;CallVoidMethod(env,obj,method1);</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">JNIEXPORT jint JNICALL</div><div class="line">Java_com_example_ipv4_1over_1ipv6_MyVpnService_startVpn(JNIEnv *env, jobject instance) &#123;</div><div class="line"></div><div class="line">    // TODO</div><div class="line"></div><div class="line">    /*</div><div class="line">     * 开启VPN服务</div><div class="line">     * */</div><div class="line"></div><div class="line">    // c调用java函数</div><div class="line">    jclass cls;</div><div class="line">    cls = env-&gt;GetObjectClass(instance);</div><div class="line">    if(cls != NULL) &#123;</div><div class="line">        send_request_ip(0, env, instance, cls);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return 0;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="service机制">Service机制</h1>
 <p>启动服务时依次执行onCreate，onStartCommand，onStart；如果在系统显示调用stopService和stopSelf之前终止服务，service再次重启，onStartCommand会被调用，重启服务时依次执行onStartCommand，onStart。无论何时，都会先调用onStartCommand()，在调用onStart()。</p>
 <h2 id="onstartcommand返回值">onStartCommand返回值</h2>
@@ -541,8 +540,8 @@ START_FLAG_RETRY：表示服务之前被设为START_STICKY，则会被传入这�
 <p>XML文件：android:visibility=“gone”</p>
 <p>Java代码：view.setVisibility(View.GONE);</p>
 <h1 id="错误">错误</h1>
-<p>05-10 19:28:45.915 24188-24188/com.example.ipv4_over_ipv6 A/libc: Fatal signal 5 (SIGTRAP), code 1 in tid 24188 (.ipv4_over_ipv6)</p>
-<p>c函数未返回</p>
+<p>A/libc: Fatal signal 5 (SIGTRAP), code 1 in tid 24188</p>
+<p>JNI 中 c 函数未返回</p>
 
       
     </div>
@@ -823,7 +822,7 @@ START_FLAG_RETRY：表示服务之前被设为START_STICKY，则会被传入这�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安卓中用户权限设置"><span class="nav-number">1.</span> <span class="nav-text">安卓中用户权限设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android中intent机制"><span class="nav-number">2.</span> <span class="nav-text">Android中Intent机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">2.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intent-结构"><span class="nav-number">2.2.</span> <span class="nav-text">Intent 结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂存"><span class="nav-number">2.3.</span> <span class="nav-text">暂存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#service机制"><span class="nav-number">3.</span> <span class="nav-text">Service机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#onstartcommand返回值"><span class="nav-number">3.1.</span> <span class="nav-text">onStartCommand返回值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示"><span class="nav-number">4.</span> <span class="nav-text">显示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏gone"><span class="nav-number">4.1.</span> <span class="nav-text">隐藏（GONE）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误"><span class="nav-number">5.</span> <span class="nav-text">错误</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安卓中用户权限设置"><span class="nav-number">1.</span> <span class="nav-text">安卓中用户权限设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android中intent机制"><span class="nav-number">2.</span> <span class="nav-text">Android中Intent机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">2.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intent-结构"><span class="nav-number">2.2.</span> <span class="nav-text">Intent 结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#service机制"><span class="nav-number">3.</span> <span class="nav-text">Service机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#onstartcommand返回值"><span class="nav-number">3.1.</span> <span class="nav-text">onStartCommand返回值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示"><span class="nav-number">4.</span> <span class="nav-text">显示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏gone"><span class="nav-number">4.1.</span> <span class="nav-text">隐藏（GONE）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误"><span class="nav-number">5.</span> <span class="nav-text">错误</span></a></li></ol></div>
             
 
           </div>

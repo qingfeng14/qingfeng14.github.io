@@ -394,7 +394,7 @@ function loopy() {
               
                 
                 <a class="post-title-link" href="/article/Lec17.html" itemprop="url">
-                  Lec17
+                  Lec17 Peterson算法
                 </a>
               
             
@@ -450,7 +450,7 @@ function loopy() {
 
           
           
-             <span id="/article/Lec17.html" class="leancloud_visitors" data-flag-title="Lec17">
+             <span id="/article/Lec17.html" class="leancloud_visitors" data-flag-title="Lec17 Peterson算法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1246,6 +1246,14 @@ function loopy() {
       
         
           <h1 id="基本任务">基本任务</h1>
+<h2 id="查找资料跑通流程">查找资料，跑通流程</h2>
+<h3 id="部署方法">【部署方法】</h3>
+<ul>
+<li>使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹</li>
+<li>将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到<code>Tomcat_ROOT/bin/</code>目录下） 此外，由于我在<code>ImageIndexer.java</code>中修改了图片存放位置，因此一定要重新运行<code>ImageIndexer.java</code>生成forIndex文件并拷贝过去才行（也可直接拷贝提交的forIndex文件）</li>
+<li>将图片解压至<code>/Tomcat_ROOT/webapps/ROOT/pictures/</code>下，</li>
+<li>访问 <code>http://localhost:8080/ImageSearch/imagesearch.jsp</code> 即可进行搜索显示</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/图片搜索实验.html#more" rel="contents">
@@ -1563,7 +1571,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,372
+                  1,217
                 </span>
               
 
@@ -1579,7 +1587,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  6
+                  5
                 </span>
               
             </div>
@@ -1788,7 +1796,7 @@ function loopy() {
       
         
           <h1 id="关于x86启动后执行的第一条指令及其地址">关于x86启动后执行的第一条指令及其地址</h1>
-<p><a href="https://piazza.com/class/i5j09fnsl7k5x0?cid=770">piazza</a></p>
+<p><a href="https://piazza.com/class/i5j09fnsl7k5x0?cid=770" target="_blank" rel="external">piazza</a></p>
 <p>1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。</p>
 <p>2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = selector&lt;&lt;4，但是，机器刚启动的时候，selector=F000, base=FFFF0000！直到跳转指令以后才变成normally~</p>
           <!--noindex-->

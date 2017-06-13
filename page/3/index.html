@@ -893,7 +893,7 @@ function loopy() {
         
           <h1 id="置换算法的功能和目标">置换算法的功能和目标</h1>
 <h2 id="功能">功能</h2>
-<p>当出现<font color=red>缺页异常</font>，需调入新页面而内存已满时，<font color=red>置换算法选择被置换的物理页面</font></p>
+<p>当出现<font color="red">缺页异常</font>，需调入新页面而内存已满时，<font color="red">置换算法选择被置换的物理页面</font></p>
 <h2 id="设计目标">设计目标</h2>
 <ul>
 <li>尽可能减少页面的调入调出次数</li>
@@ -1632,11 +1632,9 @@ function loopy() {
 
       
         
-          
-          内存访问局部性的应用程序例子
-(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。
-123456789101112#include &lt;stdio.h&gt;#define NUM 1024#defin
-          ...
+          <h1 id="内存访问局部性的应用程序例子">内存访问局部性的应用程序例子</h1>
+<p>(1)(w4l2)下面是一个体现内存访问局部性好的简单应用程序例子，请参考，在linux中写一个简单应用程序，体现内存局部性差，并给出其执行时间。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 1024</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> COUNT 10</span></div><div class="line"><span class="keyword">int</span> A[NUM][NUM];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> i,j,k;</div><div class="line">  <span class="keyword">for</span> (k = <span class="number">0</span>; k&lt;COUNT; k++)</div><div class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; NUM; i++)</div><div class="line">  <span class="keyword">for</span> (j = <span class="number">0</span>; j  &lt; NUM; j++)</div><div class="line">      A[i][j] = i+j;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%d count computing over!\n"</span>,i*j*k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/操作系统/lec8-SPOC思考题.html#more" rel="contents">
@@ -1825,8 +1823,8 @@ function loopy() {
       
         
           <h1 id="朴素贝叶斯原理">朴素贝叶斯原理</h1>
-<p><a href="https://github.com/yourtion/DataminingGuideBook">youryion数据挖掘指导</a></p>
-<p>朴素贝叶斯法属于一种分类方法，基于<font color=red>特征条件独立假设</font>学习<font color=red>输入输出的联合概率分布</font>，以此为模型，对于给定的输入x，利用贝叶斯定理求出<font color=red>后验概率最大的输出y。</font></p>
+<p><a href="https://github.com/yourtion/DataminingGuideBook" target="_blank" rel="external">youryion数据挖掘指导</a></p>
+<p>朴素贝叶斯法属于一种分类方法，基于<font color="red">特征条件独立假设</font>学习<font color="red">输入输出的联合概率分布</font>，以此为模型，对于给定的输入x，利用贝叶斯定理求出<font color="red">后验概率最大的输出y。</font></p>
 <p>简单有效，是一种常用的机器学习方法.</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -2211,6 +2209,13 @@ function loopy() {
       
         
           <h1 id="实验步骤">实验步骤</h1>
+<ol style="list-style-type: decimal">
+<li>自由分组， 至多2人一组</li>
+<li>构建查询样例集合：利用网络资源(http://top.baidu.com/; http://top.sogou.com/等) 和个人使用经验构建查询样例集合，查询样例集合需覆盖不同查询热门程度（ 冷门/热门） 和各种类型的用户查询需求（ 导航类/信息类/事务类），样例集合的规模为10个查询，各类比例为2:5:3， 并根据个人经验，撰写每个查询样例的信息需求内容。</li>
+<li>构建Pooling：学生根据其构建的查询样例集合，抓取常用的三个中文搜索引擎(百度、360好搜、 搜狗)对这部分查询词的查询结果，每个搜索引擎抓取查询结果的前十位结果，并利用这些结果 构建Pooling。</li>
+<li>构建相关性标注集合：根据步骤2中撰写好的信息需求，对Pooling里的结果进行标注，标注为 “ 答案” 和“ 非答案” 两类即可。</li>
+<li>根据标注结果，依据<font color="red">MAP，P@10，MRR</font>等评价指标对各个搜索引擎的查询性能进行评价，并对 搜索引擎满足不同信息需求的情况加以比较，每人各自撰写实验报告。</li>
+</ol>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/搜索引擎/搜索引擎性能评价实验.html#more" rel="contents">

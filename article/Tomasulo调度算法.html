@@ -124,12 +124,13 @@ function loopy() {
 
 
 
-<meta name="description" content="实验原理">
+<meta name="description" content="实验原理 Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。">
+<meta name="keywords" content="Tomasulo,计算机系统结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系统结构第二次实验:设计实现 Tomasulo 调度算法">
 <meta property="og:url" content="https://www.zhangshenghao.win/article/Tomasulo调度算法.html">
 <meta property="og:site_name" content="青枫别苑">
-<meta property="og:description" content="实验原理">
+<meta property="og:description" content="实验原理 Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3t1H2k1Q0h280n0w123W/Image%202017-06-08%20at%203.50.36%20下午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3u1M2r3r3I1H0F1c272a/Image%202017-06-08%20at%204.13.39%20下午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/1r1M2k1P2O3U0z2N1m3s/Image%202017-06-08%20at%204.35.34%20下午.png">
@@ -139,10 +140,10 @@ function loopy() {
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/0E322Q2S3m2X3q3a1I3Y/Image%202017-06-08%20at%204.49.28%20下午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/1F2y0r3J380n1n3H1J43/Image%202017-06-08%20at%204.57.42%20下午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/373S3F0825212C2H3m2c/Image%202017-06-08%20at%204.56.12%20下午.png">
-<meta property="og:updated_time" content="2017-06-11T12:38:40.000Z">
+<meta property="og:updated_time" content="2017-06-13T15:03:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统结构第二次实验:设计实现 Tomasulo 调度算法">
-<meta name="twitter:description" content="实验原理">
+<meta name="twitter:description" content="实验原理 Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。">
 <meta name="twitter:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3t1H2k1Q0h280n0w123W/Image%202017-06-08%20at%203.50.36%20下午.png">
 
 
@@ -504,8 +505,8 @@ function loopy() {
 
       
         <h1 id="实验原理">实验原理</h1>
-<a id="more"></a>
 <p>Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。</p>
+<a id="more"></a>
 <p>假设浮点处理部件结构如下图所示。浮点处理部件从取指单元接收指令，存入浮点操作队列。浮点操作队列每拍最多发射1条指令给浮点加法器或浮点乘除法器。 浮点处理部件包含一个浮点加法器和一个浮点乘除法器。浮点加法器为两段流水线，输入端有三个保留站A1、A2、A3，浮点乘除法器为六段流水线，输入端有两个保留站M1，M2。当任意一个保留站中的两个源操作数到齐后，如果对应的操作部件空闲，可以把两个操作数立即送到浮点操作部件中执行。Load Buffer和Store Buffer各缓存三条访存操作。</p>
 <div class="figure">
 <img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3t1H2k1Q0h280n0w123W/Image%202017-06-08%20at%203.50.36%20下午.png">

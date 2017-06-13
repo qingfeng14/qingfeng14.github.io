@@ -124,22 +124,23 @@ function loopy() {
 
 
 
-<meta name="description" content="基本任务">
+<meta name="description" content="基本任务 查找资料，跑通流程 【部署方法】  使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹 将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到Tomcat_ROOT/bin/目录下） 此外，由于我在ImageIndexer.java中修改了图片存放位置，因此一定要重新运行ImageIndexer.jav">
+<meta name="keywords" content="搜索引擎,Lucene,MyEclipse,BM25">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图片搜索实验">
 <meta property="og:url" content="https://www.zhangshenghao.win/article/图片搜索实验.html">
 <meta property="og:site_name" content="青枫别苑">
-<meta property="og:description" content="基本任务">
+<meta property="og:description" content="基本任务 查找资料，跑通流程 【部署方法】  使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹 将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到Tomcat_ROOT/bin/目录下） 此外，由于我在ImageIndexer.java中修改了图片存放位置，因此一定要重新运行ImageIndexer.jav">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/432O083r3y473z0b2a0V/Image%202017-04-29%20at%202.27.09%20上午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3J46260C1Z3b2F19072L/Image%202017-04-29%20at%201.19.26%20上午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/1m0P3Y3I3R2N0V461C3V/Image%202017-04-29%20at%201.43.23%20上午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/2g3j2D1r0Y1O1b043q08/Image%202017-04-29%20at%201.37.56%20上午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/2g1O3u2B0a2n2d3c1T2h/Image%202017-04-29%20at%201.39.53%20上午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/2g3j2D1r0Y1O1b043q08/Image%202017-04-29%20at%201.37.56%20上午.png">
-<meta property="og:updated_time" content="2017-06-11T12:38:15.000Z">
+<meta property="og:updated_time" content="2017-06-13T15:05:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片搜索实验">
-<meta name="twitter:description" content="基本任务">
+<meta name="twitter:description" content="基本任务 查找资料，跑通流程 【部署方法】  使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹 将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到Tomcat_ROOT/bin/目录下） 此外，由于我在ImageIndexer.java中修改了图片存放位置，因此一定要重新运行ImageIndexer.jav">
 <meta name="twitter:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/432O083r3y473z0b2a0V/Image%202017-04-29%20at%202.27.09%20上午.png">
 
 
@@ -523,7 +524,6 @@ function loopy() {
 
       
         <h1 id="基本任务">基本任务</h1>
-<a id="more"></a>
 <h2 id="查找资料跑通流程">查找资料，跑通流程</h2>
 <h3 id="部署方法">【部署方法】</h3>
 <ul>
@@ -532,6 +532,7 @@ function loopy() {
 <li>将图片解压至<code>/Tomcat_ROOT/webapps/ROOT/pictures/</code>下，</li>
 <li>访问 <code>http://localhost:8080/ImageSearch/imagesearch.jsp</code> 即可进行搜索显示</li>
 </ul>
+<a id="more"></a>
 <h2 id="根据imageindexer中对sogou图片分类目录的索引对sogou图片搜索热门查询对应图片建立索引">根据ImageIndexer中对Sogou图片分类目录的索引，对Sogou图片搜索热门查询对应图片建立索引</h2>
 <p>首先运行 <code>Encode_gbk_to_utf8.java</code>将gbk编码的threeMonth.xml转换为utf-8编码格式，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;pic id=&quot;278535&quot; query=&quot;西藏&quot; total_click=&quot;6977&quot; click=&quot;14&quot; pic_url=&quot;http://travel.bjhotel.cn/tour/Article/UploadFiles/200803/2008030608595904.jpg&quot; page_url=&quot;http://travel.bjhotel.cn/tour/Article/fsyj/xz&quot; locate=&quot;pictures/threeMonth/西藏/274863.jpg&quot; /&gt;</div></pre></td></tr></table></figure>
@@ -670,9 +671,9 @@ function loopy() {
       
         <div class="post-tags">
           
-            <a href="/tags/课程/" rel="tag"># 课程</a>
-          
             <a href="/tags/搜索引擎/" rel="tag"># 搜索引擎</a>
+          
+            <a href="/tags/课程/" rel="tag"># 课程</a>
           
             <a href="/tags/实验/" rel="tag"># 实验</a>
           

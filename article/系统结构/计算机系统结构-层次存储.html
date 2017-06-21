@@ -106,7 +106,7 @@ function loopy() {
 </script> 
 
 
-  <meta name="keywords" content="课程,系统结构," />
+  <meta name="keywords" content="系统结构,课程," />
 
 
 
@@ -125,15 +125,15 @@ function loopy() {
 
 
 <meta name="description" content="程序访问的局部性原理：时间局部性，空间局部性 存储系统的多级层次结构 CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
-<meta name="keywords" content="课程,系统结构">
+<meta name="keywords" content="系统结构,课程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[计算机系统结构]指令系统">
+<meta property="og:title" content="[计算机系统结构]层次存储">
 <meta property="og:url" content="https://www.zhangshenghao.win/article/系统结构/计算机系统结构-层次存储.html">
 <meta property="og:site_name" content="青枫别苑">
 <meta property="og:description" content="程序访问的局部性原理：时间局部性，空间局部性 存储系统的多级层次结构 CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
-<meta property="og:updated_time" content="2017-04-05T05:26:15.000Z">
+<meta property="og:updated_time" content="2017-06-16T17:52:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[计算机系统结构]指令系统">
+<meta name="twitter:title" content="[计算机系统结构]层次存储">
 <meta name="twitter:description" content="程序访问的局部性原理：时间局部性，空间局部性 存储系统的多级层次结构 CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
 
 
@@ -168,7 +168,7 @@ function loopy() {
 
 
 
-  <title> [计算机系统结构]指令系统 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> [计算机系统结构]层次存储 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
    
 </head>
 
@@ -392,7 +392,7 @@ function loopy() {
             
             
               
-                [计算机系统结构]指令系统
+                [计算机系统结构]层次存储
               
             
           </h2>
@@ -457,7 +457,7 @@ function loopy() {
 
           
           
-             <span id="/article/系统结构/计算机系统结构-层次存储.html" class="leancloud_visitors" data-flag-title="[计算机系统结构]指令系统">
+             <span id="/article/系统结构/计算机系统结构-层次存储.html" class="leancloud_visitors" data-flag-title="[计算机系统结构]层次存储">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -579,7 +579,10 @@ function loopy() {
 </ol>
 <h1 id="写策略">写策略</h1>
 <p>写Cache时何时更新主存中的内容</p>
-<p>写直达法： 执行写操作时，不仅把数据写入Cache中对应的块，还把数据写入下一级存储器 写回法： 拷回法，只把数据写回cache，Cache块被替换时写回下一级存储器</p>
+<ul>
+<li>写直达法： 执行写操作时，不仅把数据写入Cache中对应的块，还把数据写入下一级存储器</li>
+<li>写回法： 拷回法，只把数据写回cache，Cache块被替换时写回下一级存储器</li>
+</ul>
 
       
     </div>
@@ -629,7 +632,7 @@ function loopy() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://www.zhangshenghao.win/article/系统结构/计算机系统结构-层次存储.html" title="[计算机系统结构]指令系统">https://www.zhangshenghao.win/article/系统结构/计算机系统结构-层次存储.html</a>
+      <a href="https://www.zhangshenghao.win/article/系统结构/计算机系统结构-层次存储.html" title="[计算机系统结构]层次存储">https://www.zhangshenghao.win/article/系统结构/计算机系统结构-层次存储.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -645,9 +648,9 @@ function loopy() {
       
         <div class="post-tags">
           
-            <a href="/tags/课程/" rel="tag"># 课程</a>
-          
             <a href="/tags/系统结构/" rel="tag"># 系统结构</a>
+          
+            <a href="/tags/课程/" rel="tag"># 课程</a>
           
         </div>
       
@@ -746,7 +749,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

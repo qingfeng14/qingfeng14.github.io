@@ -4,9 +4,9 @@
   <subtitle>张盛豪的个人博客&lt;br/&gt;Coding  &amp;&amp; Reading</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.zhangshenghao.win/"/>
-  <updated>2017-06-15T07:32:35.000Z</updated>
-  <id>https://www.zhangshenghao.win/</id>
+  <link href="https://2young.2simple.top/"/>
+  <updated>2018-06-26T16:21:22.353Z</updated>
+  <id>https://2young.2simple.top/</id>
   
   <author>
     <name>青枫</name>
@@ -16,20 +16,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ownCloud挂载Google Drive</title>
-    <link href="https://www.zhangshenghao.win/article/ownCloud%E6%8C%82%E8%BD%BDGoogle-Drive.html"/>
-    <id>https://www.zhangshenghao.win/article/ownCloud挂载Google-Drive.html</id>
-    <published>2017-06-15T07:32:10.000Z</published>
-    <updated>2017-06-15T07:32:35.000Z</updated>
+    <title>面试准备</title>
+    <link href="https://2young.2simple.top/article/%E7%AE%97%E6%B3%95/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87.html"/>
+    <id>https://2young.2simple.top/article/算法/面试准备.html</id>
+    <published>2018-06-26T16:02:19.000Z</published>
+    <updated>2018-06-26T16:21:22.353Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;问题&quot;&gt;问题&lt;/h1&gt;
-&lt;ol start=&quot;400&quot; style=&quot;list-style-type: decimal&quot;&gt;
-&lt;li&gt;出现了错误。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;错误：invalid_scope&lt;/p&gt;
-&lt;p&gt;您无权访问部分内容。您的项目正尝试访问的内
+      &lt;h1 id=&quot;数据库&quot;&gt;数据库&lt;/h1&gt;
+&lt;h2 id=&quot;nosql&quot;&gt;NoSQL&lt;/h2&gt;
+&lt;h1 id=&quot;算法&quot;&gt;算法&lt;/h1&gt;
+&lt;h2 id=&quot;快速排序&quot;&gt;快速排序&lt;/h2&gt;
+
     
     </summary>
     
@@ -37,150 +36,147 @@
   </entry>
   
   <entry>
-    <title>系统结构第二次实验:设计实现 Tomasulo 调度算法</title>
-    <link href="https://www.zhangshenghao.win/article/Tomasulo%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95.html"/>
-    <id>https://www.zhangshenghao.win/article/Tomasulo调度算法.html</id>
-    <published>2017-06-06T16:00:00.000Z</published>
-    <updated>2017-06-13T15:03:45.000Z</updated>
+    <title>服务器被攻击后的调查取证恢复</title>
+    <link href="https://2young.2simple.top/article/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E6%94%BB%E5%87%BB%E5%90%8E%E7%9A%84%E8%B0%83%E6%9F%A5%E5%8F%96%E8%AF%81%E6%81%A2%E5%A4%8D.html"/>
+    <id>https://2young.2simple.top/article/服务器/服务器被攻击后的调查取证恢复.html</id>
+    <published>2018-06-26T13:15:57.000Z</published>
+    <updated>2018-07-13T14:29:25.469Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验原理&quot;&gt;实验原理&lt;/h1&gt;
-&lt;p&gt;Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>校园搜索引擎</title>
-    <link href="https://www.zhangshenghao.win/article/%E6%A0%A1%E5%9B%AD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.html"/>
-    <id>https://www.zhangshenghao.win/article/校园搜索引擎.html</id>
-    <published>2017-06-02T16:00:00.000Z</published>
-    <updated>2017-06-13T15:04:42.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;内容&quot;&gt;内容&lt;/h1&gt;
-&lt;p&gt;综合运用搜索引擎体系结构和核心算法方面的知识，基于开源资源搭建搜索引擎&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="搜索引擎" scheme="https://www.zhangshenghao.win/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-    
-      <category term="课程" scheme="https://www.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="搜索引擎" scheme="https://www.zhangshenghao.win/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-      <category term="实验" scheme="https://www.zhangshenghao.win/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ipv4 over Ipv6隧道协议实验客户端报告</title>
-    <link href="https://www.zhangshenghao.win/article/4over6%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.html"/>
-    <id>https://www.zhangshenghao.win/article/4over6实验报告.html</id>
-    <published>2017-05-22T16:00:00.000Z</published>
-    <updated>2017-06-13T15:12:28.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;实验目的&quot;&gt;实验目的&lt;/h1&gt;
+      &lt;h1 id=&quot;搬瓦工服务器异常信息&quot;&gt;搬瓦工服务器异常信息&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;掌握Android下应用程序开发环境的搭建和使用&lt;/li&gt;
-&lt;li&gt;掌握IPv4 over IPv6隧道的工作原理&lt;/li&gt;
+&lt;li&gt;Reason： Network abuse: Mass Mailing&lt;/li&gt;
+&lt;li&gt;Details: We have detected a large number of outgoi
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IPv4网络空间测绘报告</title>
+    <link href="https://2young.2simple.top/article/IPv4%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%B5%8B%E7%BB%98%E6%8A%A5%E5%91%8A.html"/>
+    <id>https://2young.2simple.top/article/IPv4网络空间测绘报告.html</id>
+    <published>2018-01-19T16:00:00.000Z</published>
+    <updated>2018-08-09T01:30:45.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;研究的背景&quot;&gt;研究的背景&lt;/h1&gt;
+&lt;h1 id=&quot;完成的功能实用的意义&quot;&gt;完成的功能,实用的意义&lt;/h1&gt;
+&lt;h1 id=&quot;数据集&quot;&gt;数据集&lt;/h1&gt;
+&lt;p&gt;在本次研究中我们主要进行了IPv4网络空间测绘和全球IPv4、IPv6网络空间发展现状分析。因此，我们主
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Centrally Banked Cryptocurrencies 书面翻译</title>
+    <link href="https://2young.2simple.top/article/RSCoin%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91.html"/>
+    <id>https://2young.2simple.top/article/RSCoin论文翻译.html</id>
+    <published>2018-01-14T12:19:00.000Z</published>
+    <updated>2018-01-14T13:09:42.677Z</updated>
+    
+    <summary type="html">
+    
+      英国央行法定数字货币RSCoin 论文翻译
+    
+    </summary>
+    
+    
+      <category term="区块链" scheme="https://2young.2simple.top/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="数字货币" scheme="https://2young.2simple.top/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>追问灵魂，勇担责任</title>
+    <link href="https://2young.2simple.top/article/%E6%96%87%E7%B4%A0%E8%AE%B2%E5%BA%A7%E6%8A%A5%E5%91%8A.html"/>
+    <id>https://2young.2simple.top/article/文素讲座报告.html</id>
+    <published>2018-01-10T16:00:00.000Z</published>
+    <updated>2018-01-21T18:14:15.214Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;所听讲座&quot;&gt;所听讲座&lt;/h1&gt;
+&lt;p&gt;在过去的四年里，我主要听取了以下8场文化素质教育讲座。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&quot;header&quot;&gt;
+&lt;th&gt;讲座题目&lt;/th&gt;
+&lt;th&gt;演讲人&lt;/th&gt;
+&lt;th&gt;讲座日期&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td&gt;如何培育中国的文化自信？&lt;/td&gt;
+&lt;td&gt;邹广文&lt;/td&gt;
+&lt;td&gt;2017/3/30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td&gt;从欧几里得到哥德尔&lt;/td&gt;
+&lt;td&gt;白峰杉&lt;/td&gt;
+&lt;td&gt;2016/11/8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td&gt;追问正义&lt;/td&gt;
+&lt;td&gt;万俊人&lt;/td&gt;
+&lt;td&gt;2016/5/17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td&gt;数学，现代物理与对撞机&lt;/td&gt;
+&lt;td&gt;丘成桐&lt;/td&gt;
+&lt;td&gt;2016/3/13&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td&gt;略谈中医的基本精神&lt;/td&gt;
+&lt;td&gt;刘力红&lt;/td&gt;
+&lt;td&gt;2015/12/12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td&gt;从中国视角看希腊精神的起源&lt;/td&gt;
+&lt;td&gt;阮炜&lt;/td&gt;
+&lt;td&gt;2015/11/5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td&gt;我国周边海洋形势及发展&lt;/td&gt;
+&lt;td&gt;徐贺云&lt;/td&gt;
+&lt;td&gt;2015/9/17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td&gt;回望所多玛：一个法治国/宪政邦的故事&lt;/td&gt;
+&lt;td&gt;冯象&lt;/td&gt;
+&lt;td&gt;2015/3/20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络管理实验三-网络测量</title>
+    <link href="https://2young.2simple.top/article/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%AE%9E%E9%AA%8C%E4%B8%89-%E7%BD%91%E7%BB%9C%E6%B5%8B%E9%87%8F.html"/>
+    <id>https://2young.2simple.top/article/计算机网络管理实验三-网络测量.html</id>
+    <published>2017-11-07T05:44:00.000Z</published>
+    <updated>2018-08-09T01:31:53.555Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;第三组： Group3 server3&lt;/li&gt;
+&lt;li&gt;telnet 203.91.121.9&lt;/li&gt;
+&lt;li&gt;cisco 1000&lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="计算机网络" scheme="https://www.zhangshenghao.win/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议</title>
-    <link href="https://www.zhangshenghao.win/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%A4%A7%E4%BD%9C%E4%B8%9A.html"/>
-    <id>https://www.zhangshenghao.win/article/密码学第三次大作业.html</id>
-    <published>2017-05-22T16:00:00.000Z</published>
-    <updated>2017-06-13T15:01:12.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;设计一个安全的没有中间人攻击的diffie-hellman密钥交换协议&quot;&gt;设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议&lt;/h1&gt;
-    
-    </summary>
-    
-    
-      <category term="课程" scheme="https://www.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="密码学" scheme="https://www.zhangshenghao.win/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>密码学实验2</title>
-    <link href="https://www.zhangshenghao.win/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%9E%E9%AA%8C2.html"/>
-    <id>https://www.zhangshenghao.win/article/密码学实验2.html</id>
-    <published>2017-05-08T17:26:08.000Z</published>
-    <updated>2017-06-13T15:05:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;接口函数&quot;&gt;接口函数&lt;/h1&gt;
-&lt;h2 id=&quot;aes&quot;&gt;AES:&lt;/h2&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*output,int *out_len, unsigned char *key,int keylen);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="课程" scheme="https://www.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="密码学" scheme="https://www.zhangshenghao.win/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数值分析实验</title>
-    <link href="https://www.zhangshenghao.win/article/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C.html"/>
-    <id>https://www.zhangshenghao.win/article/数值分析实验.html</id>
-    <published>2017-05-08T16:00:00.000Z</published>
-    <updated>2017-06-13T15:04:49.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;实验一-1.3&quot;&gt;实验一 1.3&lt;/h1&gt;
-&lt;h2 id=&quot;实验内容&quot;&gt;实验内容&lt;/h2&gt;
-&lt;p&gt;编程观察无穷级数&lt;span class=&quot;math display&quot;&gt;\[\sum_{n=1}^\infty\frac{1}{n}\]&lt;/span&gt;的求和运算.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数值分析" scheme="https://www.zhangshenghao.win/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="课程" scheme="https://www.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="实验" scheme="https://www.zhangshenghao.win/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-      <category term="数值分析" scheme="https://www.zhangshenghao.win/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lec19 保管员问题</title>
-    <link href="https://www.zhangshenghao.win/article/Lec19.html"/>
-    <id>https://www.zhangshenghao.win/article/Lec19.html</id>
-    <published>2017-05-06T16:00:00.000Z</published>
-    <updated>2017-06-13T15:04:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ol start=&quot;36&quot; style=&quot;list-style-type: decimal&quot;&gt;
-&lt;li&gt;保管员问题&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;有一材料保管员，他保管纸和笔若干。有A 、B 两组学生，A 组学生每人都备有纸，B 组学生每人都备有笔．任一学生只要能得到其他一种材料就可以写信。有一个可 以放一张纸或一支笔的小盒，当小盒中无物品时，保管员就可任意放一张纸或一支笔 供学生取用，每次允许一个学生从中取出自己所需的材料，当学生从盒中取走材料后 允许保管员再存放一件材料，请用信号量与P 、v 操作&lt;/p&gt;
+&lt;h1 id=&quot;任务一网络拓扑测量&quot;&gt;任务一，网络拓扑测量&lt;/h1&gt;
+&lt;h1 id=&quot;任务二双向延时&quot;
     
     </summary>
     
@@ -188,301 +184,275 @@
   </entry>
   
   <entry>
-    <title>链接结构分析实验</title>
-    <link href="https://www.zhangshenghao.win/article/%E9%93%BE%E6%8E%A5%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C.html"/>
-    <id>https://www.zhangshenghao.win/article/链接结构分析实验.html</id>
-    <published>2017-05-06T16:00:00.000Z</published>
-    <updated>2017-06-13T15:04:36.000Z</updated>
+    <title>计算机网络管理-课程设计选题辅导</title>
+    <link href="https://2young.2simple.top/article/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%80%89%E9%A2%98%E8%BE%85%E5%AF%BC.html"/>
+    <id>https://2young.2simple.top/article/计算机网络管理-课程设计选题辅导.html</id>
+    <published>2017-10-10T05:24:30.000Z</published>
+    <updated>2017-10-10T06:51:40.000Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验内容&quot;&gt;实验内容&lt;/h1&gt;
-&lt;p&gt;基于维基百科网站中各网页之间的链接关系图，计算该网站中各网页对应的PageRank值。&lt;/p&gt;
+      &lt;h1 id=&quot;课程选题辅导&quot;&gt;课程选题辅导&lt;/h1&gt;
+&lt;h2 id=&quot;ipv4-地址空间测绘&quot;&gt;IPV4 地址空间测绘&lt;/h2&gt;
+&lt;p&gt;多尺度，多维度，多状态，多视图&lt;/p&gt;
+&lt;p&gt;希尔伯特曲线， IPv4 地址&lt;/p&gt;
+&lt;p&gt;网络空间是几维的&lt;/p&gt;
+&lt;p&gt;可做的工作：&lt;/p
     
     </summary>
     
-      <category term="搜索引擎" scheme="https://www.zhangshenghao.win/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
     
-    
-      <category term="课程" scheme="https://www.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="搜索引擎" scheme="https://www.zhangshenghao.win/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-      <category term="实验" scheme="https://www.zhangshenghao.win/tags/%E5%AE%9E%E9%AA%8C/"/>
+      <category term="计算机网络" scheme="https://2young.2simple.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
-    <title>集成学习知识点</title>
-    <link href="https://www.zhangshenghao.win/article/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9.html"/>
-    <id>https://www.zhangshenghao.win/article/集成学习知识点.html</id>
-    <published>2017-05-06T06:29:55.000Z</published>
-    <updated>2017-06-13T15:04:31.000Z</updated>
+    <title>机考准备</title>
+    <link href="https://2young.2simple.top/article/%E6%9C%BA%E8%80%83%E5%87%86%E5%A4%87.html"/>
+    <id>https://2young.2simple.top/article/机考准备.html</id>
+    <published>2017-09-13T09:26:56.000Z</published>
+    <updated>2018-01-14T13:02:11.751Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;两个概念&quot;&gt;两个概念&lt;/h1&gt;
+      &lt;h2 id=&quot;二分法&quot;&gt;二分法&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="CCF" scheme="https://2young.2simple.top/categories/CCF/"/>
+    
+    
+      <category term="CCF" scheme="https://2young.2simple.top/tags/CCF/"/>
+    
+      <category term="算法" scheme="https://2young.2simple.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>司机之友---出租车行车记录分析报告</title>
+    <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%A4%A7%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A.html"/>
+    <id>https://2young.2simple.top/article/大规模数据处理大作业报告.html</id>
+    <published>2017-07-28T16:00:00.000Z</published>
+    <updated>2018-01-14T13:01:09.831Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;项目的目标完成的功能实用的意义&quot;&gt;项目的目标，完成的功能，实用的意义&lt;/h1&gt;
+&lt;p&gt;现代城市中人们的生活与交通息息相关，一个城市的交通情况总是让人津津乐道，而各种交通工具中，出租车更是每个城市的一面招牌。了解出租车的供求情况，可以提高城市出租车系统的效率。
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Massive-Data-Process-FinalProject</title>
+    <link href="https://2young.2simple.top/article/Massive-Data-Process-FinalProject.html"/>
+    <id>https://2young.2simple.top/article/Massive-Data-Process-FinalProject.html</id>
+    <published>2017-07-16T16:00:00.000Z</published>
+    <updated>2017-07-17T05:45:44.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;工作计划&quot;&gt;工作计划&lt;/h1&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;&lt;p&gt;数据清洗，对15年数据进行清洗，剔除不必要的列，剔除无效数据&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;tab
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data</title>
+    <link href="https://2young.2simple.top/article/Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data.html"/>
+    <id>https://2young.2simple.top/article/Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data.html</id>
+    <published>2017-07-09T16:00:00.000Z</published>
+    <updated>2017-07-17T06:02:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;实验目标&quot;&gt;实验目标&lt;/h1&gt;
+&lt;p&gt;使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.&lt;/p&gt;
+&lt;h1 id=&quot;实验步骤&quot;&gt;实验步骤&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;强学习器：高准确率&lt;/li&gt;
-&lt;li&gt;弱学习器：低准确率（比随机猜测略好）&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;数据预处理，将电影评论信息进
     
     </summary>
     
-      <category term="机器学习" scheme="https://www.zhangshenghao.win/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
-    
-      <category term="实验" scheme="https://www.zhangshenghao.win/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-      <category term="机器学习" scheme="https://www.zhangshenghao.win/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="集成学习" scheme="https://www.zhangshenghao.win/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="Bagging" scheme="https://www.zhangshenghao.win/tags/Bagging/"/>
-    
-      <category term="Boosting" scheme="https://www.zhangshenghao.win/tags/Boosting/"/>
     
   </entry>
   
   <entry>
-    <title>机器学习实验二-集成学习</title>
-    <link href="https://www.zhangshenghao.win/article/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C.html"/>
-    <id>https://www.zhangshenghao.win/article/机器学习/集成学习实验.html</id>
-    <published>2017-05-05T18:27:19.000Z</published>
-    <updated>2017-06-13T15:05:33.000Z</updated>
+    <title>FinalProject</title>
+    <link href="https://2young.2simple.top/article/FinalProject.html"/>
+    <id>https://2young.2simple.top/article/FinalProject.html</id>
+    <published>2017-07-09T14:32:00.000Z</published>
+    <updated>2017-07-23T03:58:56.000Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;数据集&quot;&gt;数据集&lt;/h1&gt;
-&lt;p&gt;本实验采用的数据集是 &lt;strong&gt;WEBSPAM-UK2006 数据集&lt;/strong&gt;, 数据集中包含1803个垃圾网站，4411个正常网站，每个网站有96个内容特征，有138个超链接标签。这138个超链接标签可以被分为五类：Degree-related features, PageRank-related features, TrustRank-related features, Truncated PageRank-related features, Supporter-related features&lt;/p&gt;
-&lt;p&gt;在本实验中，需要将数据集划分为4：1的训练集和测试集&lt;/p&gt;
+&lt;p&gt;芝加哥出租车数据&lt;/p&gt;
+&lt;h1 id=&quot;field&quot;&gt;field&lt;/h1&gt;
+&lt;h1 id=&quot;分析内容&quot;&gt;分析内容&lt;/h1&gt;
+&lt;p&gt;– 上下客地点分布图 - 打车最多的地点 - 下车地点 - 时间和位置 - 某个时间某个地区的打车
     
     </summary>
     
-      <category term="机器学习" scheme="https://www.zhangshenghao.win/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="实验" scheme="https://www.zhangshenghao.win/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-      <category term="机器学习" scheme="https://www.zhangshenghao.win/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="集成学习" scheme="https://www.zhangshenghao.win/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
-    <title>Lec17 Peterson算法</title>
-    <link href="https://www.zhangshenghao.win/article/Lec17.html"/>
-    <id>https://www.zhangshenghao.win/article/Lec17.html</id>
-    <published>2017-04-25T16:00:00.000Z</published>
-    <updated>2017-06-13T15:03:18.000Z</updated>
+    <title>Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus</title>
+    <link href="https://2young.2simple.top/article/Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus.html"/>
+    <id>https://2young.2simple.top/article/Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus.html</id>
+    <published>2017-07-04T16:00:00.000Z</published>
+    <updated>2017-07-17T05:26:41.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;1 在报告中通过枚举和分类方法或反证法说明Peterson算法的正确性。&lt;/p&gt;
+      &lt;h1 id=&quot;实验目标&quot;&gt;实验目标&lt;/h1&gt;
+&lt;p&gt;实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值&lt;/p&gt;
     
     </summary>
     
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="作业" scheme="https://www.zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
     
   </entry>
   
   <entry>
-    <title>实验 1 Cache 替换策略设计与分析</title>
-    <link href="https://www.zhangshenghao.win/article/CRC_report.html"/>
-    <id>https://www.zhangshenghao.win/article/CRC_report.html</id>
-    <published>2017-04-22T16:00:00.000Z</published>
-    <updated>2017-06-13T15:00:21.000Z</updated>
+    <title>Massive-Data-Process-Homework-4</title>
+    <link href="https://2young.2simple.top/article/Massive-Data-Process-Homework-4.html"/>
+    <id>https://2young.2simple.top/article/Massive-Data-Process-Homework-4.html</id>
+    <published>2017-07-04T03:46:16.000Z</published>
+    <updated>2017-07-04T15:37:26.000Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验目的&quot;&gt;实验目的&lt;/h1&gt;
+      &lt;p&gt;在Dryad论文中，有以下的查询语句，在上课的时候已经详细说明了如何将SQL语句转换成DAG1（被称为是Schema DAG，类似C++里面的class）,之后再将DAG1与具体的数据分布结合在一起，形成DAG2（被称为是Instance DAG，类似C++里面的Objec
+    
+    </summary>
+    
+      <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Lab1:A Simple Inverted Index</title>
+    <link href="https://2young.2simple.top/article/Massive-Data-Process-Lab1-A-Simple-Inverted-Index.html"/>
+    <id>https://2young.2simple.top/article/Massive-Data-Process-Lab1-A-Simple-Inverted-Index.html</id>
+    <published>2017-07-01T16:00:00.000Z</published>
+    <updated>2017-07-03T09:29:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;实验要求&quot;&gt;实验要求&lt;/h1&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以
+    
+    </summary>
+    
+      <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大规模数据处理-Spark</title>
+    <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-Spark.html"/>
+    <id>https://2young.2simple.top/article/大规模数据处理-Spark.html</id>
+    <published>2017-06-30T01:04:52.000Z</published>
+    <updated>2018-01-14T12:59:10.647Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;回顾&quot;&gt;回顾&lt;/h1&gt;
+&lt;p&gt;hardware-&amp;gt;OS-&amp;gt;App&lt;/p&gt;
+&lt;p&gt;硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT, consistent -&amp;gt; MPI,mapreduce,spark -&amp;gt; Ap
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大规模数据处理-分布式key/value对存储：BigTable、DHT</title>
+    <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8Fkey-value%E5%AF%B9%E5%AD%98%E5%82%A8.html"/>
+    <id>https://2young.2simple.top/article/大规模数据处理-分布式key-value对存储.html</id>
+    <published>2017-06-29T13:05:59.000Z</published>
+    <updated>2017-06-30T11:05:30.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;bigtable&quot;&gt;BigTable&lt;/h1&gt;
+&lt;p&gt;Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。&lt;/p&gt;
+&lt;p&gt;Bigtable是一个为管理大规模结构化数据而设计的分布式存储系
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Massive-Data-Process-Homework-3</title>
+    <link href="https://2young.2simple.top/article/Massive-Data-Process-Homework-3.html"/>
+    <id>https://2young.2simple.top/article/Massive-Data-Process-Homework-3.html</id>
+    <published>2017-06-28T16:00:00.000Z</published>
+    <updated>2017-06-30T15:37:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;key-value对存储&quot;&gt;Key-Value对存储&lt;/h1&gt;
+&lt;p&gt;在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mac下Hadoop安装配置问题 waiting for AM container to be allocated, launched and register with RM.</title>
+    <link href="https://2young.2simple.top/article/Mac%E4%B8%8BHadoop%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html"/>
+    <id>https://2young.2simple.top/article/Mac下Hadoop安装配置教程.html</id>
+    <published>2017-06-28T01:09:20.000Z</published>
+    <updated>2018-08-09T01:31:24.332Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;java-安装配置&quot;&gt;JAVA 安装配置&lt;/h1&gt;
+&lt;p&gt;java_home&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/d
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大规模数据处理-MapReduce</title>
+    <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-MapReduce.html"/>
+    <id>https://2young.2simple.top/article/大规模数据处理-MapReduce.html</id>
+    <published>2017-06-27T01:23:12.000Z</published>
+    <updated>2017-07-13T16:35:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;mpi&quot;&gt;MPI&lt;/h1&gt;
+&lt;p&gt;MPI编程：n台机器编号，0~n-1&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;深入理解各种不同的 Cache 替换策略&lt;/li&gt;
-&lt;li&gt;理解学习不同替换策略对程序运行性能的影响&lt;/li&gt;
-&lt;li&gt;动手实现自己的 Cache 替换策略&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;send(from. to, msg, sizeof(msg))&lt;/li&gt;
+&lt;li&gt;recv()&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;brodcast(from, Group
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>lec16_exe</title>
-    <link href="https://www.zhangshenghao.win/article/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lec16-exe.html"/>
-    <id>https://www.zhangshenghao.win/article/操作系统/lec16-exe.html</id>
-    <published>2017-04-22T15:52:11.000Z</published>
-    <updated>2017-05-30T06:01:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;请描述stride调度算法的目标思路和算法设计要求写出伪代码并分析stride调度算法只采用整数运算是如何避免stride计算溢出问题的&quot;&gt;请描述stride调度算法的目标，思路和算法设计（要求写出伪代码），并分析stride调度算法只采用整数运算是如何避免stride计算溢出问题的。&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="作业" scheme="https://www.zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lec15练习</title>
-    <link href="https://www.zhangshenghao.win/article/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec15%E7%BB%83%E4%B9%A0.html"/>
-    <id>https://www.zhangshenghao.win/article/操作系统/Lec15练习.html</id>
-    <published>2017-04-19T15:09:05.000Z</published>
-    <updated>2017-05-30T06:01:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;请证明短进程优先算法具有最小平均周转时间&quot;&gt;请证明短进程优先算法具有最小平均周转时间。&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="作业" scheme="https://www.zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图片搜索实验</title>
-    <link href="https://www.zhangshenghao.win/article/%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2%E5%AE%9E%E9%AA%8C.html"/>
-    <id>https://www.zhangshenghao.win/article/图片搜索实验.html</id>
-    <published>2017-04-19T06:57:55.000Z</published>
-    <updated>2017-06-13T15:05:12.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;基本任务&quot;&gt;基本任务&lt;/h1&gt;
-&lt;h2 id=&quot;查找资料跑通流程&quot;&gt;查找资料，跑通流程&lt;/h2&gt;
-&lt;h3 id=&quot;部署方法&quot;&gt;【部署方法】&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹&lt;/li&gt;
-&lt;li&gt;将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到&lt;code&gt;Tomcat_ROOT/bin/&lt;/code&gt;目录下） 此外，由于我在&lt;code&gt;ImageIndexer.java&lt;/code&gt;中修改了图片存放位置，因此一定要重新运行&lt;code&gt;ImageIndexer.java&lt;/code&gt;生成forIndex文件并拷贝过去才行（也可直接拷贝提交的forIndex文件）&lt;/li&gt;
-&lt;li&gt;将图片解压至&lt;code&gt;/Tomcat_ROOT/webapps/ROOT/pictures/&lt;/code&gt;下，&lt;/li&gt;
-&lt;li&gt;访问 &lt;code&gt;http://localhost:8080/ImageSearch/imagesearch.jsp&lt;/code&gt; 即可进行搜索显示&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="搜索引擎" scheme="https://www.zhangshenghao.win/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-    
-      <category term="课程" scheme="https://www.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="搜索引擎" scheme="https://www.zhangshenghao.win/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-      <category term="实验" scheme="https://www.zhangshenghao.win/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-      <category term="图片搜索" scheme="https://www.zhangshenghao.win/tags/%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lec13_Lec14</title>
-    <link href="https://www.zhangshenghao.win/article/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec13-Lec14.html"/>
-    <id>https://www.zhangshenghao.win/article/操作系统/Lec13-Lec14.html</id>
-    <published>2017-04-14T06:47:56.000Z</published>
-    <updated>2017-05-30T06:01:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;(spoc) 理解用户进程的生命周期。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="作业" scheme="https://www.zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安卓开发记录</title>
-    <link href="https://www.zhangshenghao.win/article/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95.html"/>
-    <id>https://www.zhangshenghao.win/article/安卓开发记录.html</id>
-    <published>2017-04-12T04:52:09.000Z</published>
-    <updated>2017-06-13T14:58:30.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;安卓中用户权限设置&quot;&gt;安卓中用户权限设置&lt;/h1&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://www.zhangshenghao.win/tags/Android/"/>
-    
-      <category term="4over6" scheme="https://www.zhangshenghao.win/tags/4over6/"/>
-    
-      <category term="网络" scheme="https://www.zhangshenghao.win/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统复习笔记</title>
-    <link href="https://www.zhangshenghao.win/article/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://www.zhangshenghao.win/article/操作系统/操作系统复习笔记.html</id>
-    <published>2017-04-05T07:13:25.000Z</published>
-    <updated>2017-04-11T17:31:26.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;关于x86启动后执行的第一条指令及其地址&quot;&gt;关于x86启动后执行的第一条指令及其地址&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://piazza.com/class/i5j09fnsl7k5x0?cid=770&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;piazza&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。&lt;/p&gt;
-&lt;p&gt;2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = selector&amp;lt;&amp;lt;4，但是，机器刚启动的时候，selector=F000, base=FFFF0000！直到跳转指令以后才变成normally~&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="课程" scheme="https://www.zhangshenghao.win/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="复习" scheme="https://www.zhangshenghao.win/tags/%E5%A4%8D%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lec12练习</title>
-    <link href="https://www.zhangshenghao.win/article/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec12%E7%BB%83%E4%B9%A0.html"/>
-    <id>https://www.zhangshenghao.win/article/操作系统/Lec12练习.html</id>
-    <published>2017-04-03T12:45:33.000Z</published>
-    <updated>2017-04-04T16:38:14.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1（不用回答）理解 孤儿进程和僵死进程的含义 http://www.cnblogs.com/xiehongfeng100/p/4619913.html http://www.cnblogs.com/Anker/p/3271773.html https://piazza.com/class/i5j09fnsl7k5x0?cid=753&lt;/p&gt;
-&lt;p&gt;孤儿进程：一个父进程退出、但其仍在运行的孤儿进程。孤儿进程将被init进程（进程号为1）所收养，并由init进程对它们完成状态收集工作。&lt;/p&gt;
-&lt;p&gt;僵尸进程：一个已经终止、但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="https://www.zhangshenghao.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="作业" scheme="https://www.zhangshenghao.win/tags/%E4%BD%9C%E4%B8%9A/"/>
     
   </entry>
   

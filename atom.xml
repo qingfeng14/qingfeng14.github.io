@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>青枫别苑</title>
-  <subtitle>张盛豪的个人博客&lt;br/&gt;Coding  &amp;&amp; Reading</subtitle>
+  <title>我的日志</title>
+  <subtitle>以梦为马，越骑越傻</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://2young.2simple.top/"/>
-  <updated>2018-06-26T16:21:22.353Z</updated>
-  <id>https://2young.2simple.top/</id>
+  <link href="https://www.2simple.top/"/>
+  <updated>2018-01-14T13:09:42.677Z</updated>
+  <id>https://www.2simple.top/</id>
   
   <author>
     <name>青枫</name>
@@ -16,67 +16,9 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>面试准备</title>
-    <link href="https://2young.2simple.top/article/%E7%AE%97%E6%B3%95/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87.html"/>
-    <id>https://2young.2simple.top/article/算法/面试准备.html</id>
-    <published>2018-06-26T16:02:19.000Z</published>
-    <updated>2018-06-26T16:21:22.353Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;数据库&quot;&gt;数据库&lt;/h1&gt;
-&lt;h2 id=&quot;nosql&quot;&gt;NoSQL&lt;/h2&gt;
-&lt;h1 id=&quot;算法&quot;&gt;算法&lt;/h1&gt;
-&lt;h2 id=&quot;快速排序&quot;&gt;快速排序&lt;/h2&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>服务器被攻击后的调查取证恢复</title>
-    <link href="https://2young.2simple.top/article/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E6%94%BB%E5%87%BB%E5%90%8E%E7%9A%84%E8%B0%83%E6%9F%A5%E5%8F%96%E8%AF%81%E6%81%A2%E5%A4%8D.html"/>
-    <id>https://2young.2simple.top/article/服务器/服务器被攻击后的调查取证恢复.html</id>
-    <published>2018-06-26T13:15:57.000Z</published>
-    <updated>2018-07-13T14:29:25.469Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;搬瓦工服务器异常信息&quot;&gt;搬瓦工服务器异常信息&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Reason： Network abuse: Mass Mailing&lt;/li&gt;
-&lt;li&gt;Details: We have detected a large number of outgoi
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>IPv4网络空间测绘报告</title>
-    <link href="https://2young.2simple.top/article/IPv4%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%B5%8B%E7%BB%98%E6%8A%A5%E5%91%8A.html"/>
-    <id>https://2young.2simple.top/article/IPv4网络空间测绘报告.html</id>
-    <published>2018-01-19T16:00:00.000Z</published>
-    <updated>2018-08-09T01:30:45.429Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;研究的背景&quot;&gt;研究的背景&lt;/h1&gt;
-&lt;h1 id=&quot;完成的功能实用的意义&quot;&gt;完成的功能,实用的意义&lt;/h1&gt;
-&lt;h1 id=&quot;数据集&quot;&gt;数据集&lt;/h1&gt;
-&lt;p&gt;在本次研究中我们主要进行了IPv4网络空间测绘和全球IPv4、IPv6网络空间发展现状分析。因此，我们主
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Centrally Banked Cryptocurrencies 书面翻译</title>
-    <link href="https://2young.2simple.top/article/RSCoin%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91.html"/>
-    <id>https://2young.2simple.top/article/RSCoin论文翻译.html</id>
+    <link href="https://www.2simple.top/article/RSCoin%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91.html"/>
+    <id>https://www.2simple.top/article/RSCoin论文翻译.html</id>
     <published>2018-01-14T12:19:00.000Z</published>
     <updated>2018-01-14T13:09:42.677Z</updated>
     
@@ -87,108 +29,18 @@
     </summary>
     
     
-      <category term="区块链" scheme="https://2young.2simple.top/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://www.2simple.top/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
-      <category term="数字货币" scheme="https://2young.2simple.top/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>追问灵魂，勇担责任</title>
-    <link href="https://2young.2simple.top/article/%E6%96%87%E7%B4%A0%E8%AE%B2%E5%BA%A7%E6%8A%A5%E5%91%8A.html"/>
-    <id>https://2young.2simple.top/article/文素讲座报告.html</id>
-    <published>2018-01-10T16:00:00.000Z</published>
-    <updated>2018-01-21T18:14:15.214Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;所听讲座&quot;&gt;所听讲座&lt;/h1&gt;
-&lt;p&gt;在过去的四年里，我主要听取了以下8场文化素质教育讲座。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&quot;header&quot;&gt;
-&lt;th&gt;讲座题目&lt;/th&gt;
-&lt;th&gt;演讲人&lt;/th&gt;
-&lt;th&gt;讲座日期&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&quot;odd&quot;&gt;
-&lt;td&gt;如何培育中国的文化自信？&lt;/td&gt;
-&lt;td&gt;邹广文&lt;/td&gt;
-&lt;td&gt;2017/3/30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;even&quot;&gt;
-&lt;td&gt;从欧几里得到哥德尔&lt;/td&gt;
-&lt;td&gt;白峰杉&lt;/td&gt;
-&lt;td&gt;2016/11/8&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;odd&quot;&gt;
-&lt;td&gt;追问正义&lt;/td&gt;
-&lt;td&gt;万俊人&lt;/td&gt;
-&lt;td&gt;2016/5/17&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;even&quot;&gt;
-&lt;td&gt;数学，现代物理与对撞机&lt;/td&gt;
-&lt;td&gt;丘成桐&lt;/td&gt;
-&lt;td&gt;2016/3/13&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;odd&quot;&gt;
-&lt;td&gt;略谈中医的基本精神&lt;/td&gt;
-&lt;td&gt;刘力红&lt;/td&gt;
-&lt;td&gt;2015/12/12&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;even&quot;&gt;
-&lt;td&gt;从中国视角看希腊精神的起源&lt;/td&gt;
-&lt;td&gt;阮炜&lt;/td&gt;
-&lt;td&gt;2015/11/5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;odd&quot;&gt;
-&lt;td&gt;我国周边海洋形势及发展&lt;/td&gt;
-&lt;td&gt;徐贺云&lt;/td&gt;
-&lt;td&gt;2015/9/17&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;even&quot;&gt;
-&lt;td&gt;回望所多玛：一个法治国/宪政邦的故事&lt;/td&gt;
-&lt;td&gt;冯象&lt;/td&gt;
-&lt;td&gt;2015/3/20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络管理实验三-网络测量</title>
-    <link href="https://2young.2simple.top/article/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%AE%9E%E9%AA%8C%E4%B8%89-%E7%BD%91%E7%BB%9C%E6%B5%8B%E9%87%8F.html"/>
-    <id>https://2young.2simple.top/article/计算机网络管理实验三-网络测量.html</id>
-    <published>2017-11-07T05:44:00.000Z</published>
-    <updated>2018-08-09T01:31:53.555Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;第三组： Group3 server3&lt;/li&gt;
-&lt;li&gt;telnet 203.91.121.9&lt;/li&gt;
-&lt;li&gt;cisco 1000&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;任务一网络拓扑测量&quot;&gt;任务一，网络拓扑测量&lt;/h1&gt;
-&lt;h1 id=&quot;任务二双向延时&quot;
-    
-    </summary>
-    
+      <category term="数字货币" scheme="https://www.2simple.top/tags/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81/"/>
     
   </entry>
   
   <entry>
     <title>计算机网络管理-课程设计选题辅导</title>
-    <link href="https://2young.2simple.top/article/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%80%89%E9%A2%98%E8%BE%85%E5%AF%BC.html"/>
-    <id>https://2young.2simple.top/article/计算机网络管理-课程设计选题辅导.html</id>
+    <link href="https://www.2simple.top/article/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%80%89%E9%A2%98%E8%BE%85%E5%AF%BC.html"/>
+    <id>https://www.2simple.top/article/计算机网络管理-课程设计选题辅导.html</id>
     <published>2017-10-10T05:24:30.000Z</published>
-    <updated>2017-10-10T06:51:40.000Z</updated>
+    <updated>2018-11-21T09:20:48.017Z</updated>
     
     <summary type="html">
     
@@ -202,72 +54,14 @@
     </summary>
     
     
-      <category term="计算机网络" scheme="https://2young.2simple.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机考准备</title>
-    <link href="https://2young.2simple.top/article/%E6%9C%BA%E8%80%83%E5%87%86%E5%A4%87.html"/>
-    <id>https://2young.2simple.top/article/机考准备.html</id>
-    <published>2017-09-13T09:26:56.000Z</published>
-    <updated>2018-01-14T13:02:11.751Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;二分法&quot;&gt;二分法&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="CCF" scheme="https://2young.2simple.top/categories/CCF/"/>
-    
-    
-      <category term="CCF" scheme="https://2young.2simple.top/tags/CCF/"/>
-    
-      <category term="算法" scheme="https://2young.2simple.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>司机之友---出租车行车记录分析报告</title>
-    <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%A4%A7%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A.html"/>
-    <id>https://2young.2simple.top/article/大规模数据处理大作业报告.html</id>
-    <published>2017-07-28T16:00:00.000Z</published>
-    <updated>2018-01-14T13:01:09.831Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;项目的目标完成的功能实用的意义&quot;&gt;项目的目标，完成的功能，实用的意义&lt;/h1&gt;
-&lt;p&gt;现代城市中人们的生活与交通息息相关，一个城市的交通情况总是让人津津乐道，而各种交通工具中，出租车更是每个城市的一面招牌。了解出租车的供求情况，可以提高城市出租车系统的效率。
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Massive-Data-Process-FinalProject</title>
-    <link href="https://2young.2simple.top/article/Massive-Data-Process-FinalProject.html"/>
-    <id>https://2young.2simple.top/article/Massive-Data-Process-FinalProject.html</id>
-    <published>2017-07-16T16:00:00.000Z</published>
-    <updated>2017-07-17T05:45:44.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;工作计划&quot;&gt;工作计划&lt;/h1&gt;
-&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
-&lt;li&gt;&lt;p&gt;数据清洗，对15年数据进行清洗，剔除不必要的列，剔除无效数据&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;tab
-    
-    </summary>
-    
+      <category term="计算机网络" scheme="https://www.2simple.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
     <title>Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data</title>
-    <link href="https://2young.2simple.top/article/Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data.html"/>
-    <id>https://2young.2simple.top/article/Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data.html</id>
+    <link href="https://www.2simple.top/article/Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data.html"/>
+    <id>https://www.2simple.top/article/Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data.html</id>
     <published>2017-07-09T16:00:00.000Z</published>
     <updated>2017-07-17T06:02:53.000Z</updated>
     
@@ -281,35 +75,15 @@
     
     </summary>
     
-      <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>FinalProject</title>
-    <link href="https://2young.2simple.top/article/FinalProject.html"/>
-    <id>https://2young.2simple.top/article/FinalProject.html</id>
-    <published>2017-07-09T14:32:00.000Z</published>
-    <updated>2017-07-23T03:58:56.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;数据集&quot;&gt;数据集&lt;/h1&gt;
-&lt;p&gt;芝加哥出租车数据&lt;/p&gt;
-&lt;h1 id=&quot;field&quot;&gt;field&lt;/h1&gt;
-&lt;h1 id=&quot;分析内容&quot;&gt;分析内容&lt;/h1&gt;
-&lt;p&gt;– 上下客地点分布图 - 打车最多的地点 - 下车地点 - 时间和位置 - 某个时间某个地区的打车
-    
-    </summary>
+      <category term="分布式处理" scheme="https://www.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
     
   </entry>
   
   <entry>
     <title>Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus</title>
-    <link href="https://2young.2simple.top/article/Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus.html"/>
-    <id>https://2young.2simple.top/article/Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus.html</id>
+    <link href="https://www.2simple.top/article/Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus.html"/>
+    <id>https://www.2simple.top/article/Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus.html</id>
     <published>2017-07-04T16:00:00.000Z</published>
     <updated>2017-07-17T05:26:41.000Z</updated>
     
@@ -320,15 +94,15 @@
     
     </summary>
     
-      <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
+      <category term="分布式处理" scheme="https://www.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
     
   </entry>
   
   <entry>
     <title>Massive-Data-Process-Homework-4</title>
-    <link href="https://2young.2simple.top/article/Massive-Data-Process-Homework-4.html"/>
-    <id>https://2young.2simple.top/article/Massive-Data-Process-Homework-4.html</id>
+    <link href="https://www.2simple.top/article/Massive-Data-Process-Homework-4.html"/>
+    <id>https://www.2simple.top/article/Massive-Data-Process-Homework-4.html</id>
     <published>2017-07-04T03:46:16.000Z</published>
     <updated>2017-07-04T15:37:26.000Z</updated>
     
@@ -338,15 +112,15 @@
     
     </summary>
     
-      <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
+      <category term="分布式处理" scheme="https://www.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
     
   </entry>
   
   <entry>
     <title>Lab1:A Simple Inverted Index</title>
-    <link href="https://2young.2simple.top/article/Massive-Data-Process-Lab1-A-Simple-Inverted-Index.html"/>
-    <id>https://2young.2simple.top/article/Massive-Data-Process-Lab1-A-Simple-Inverted-Index.html</id>
+    <link href="https://www.2simple.top/article/Massive-Data-Process-Lab1-A-Simple-Inverted-Index.html"/>
+    <id>https://www.2simple.top/article/Massive-Data-Process-Lab1-A-Simple-Inverted-Index.html</id>
     <published>2017-07-01T16:00:00.000Z</published>
     <updated>2017-07-03T09:29:01.000Z</updated>
     
@@ -358,15 +132,15 @@
     
     </summary>
     
-      <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
+      <category term="分布式处理" scheme="https://www.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
     
   </entry>
   
   <entry>
     <title>大规模数据处理-Spark</title>
-    <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-Spark.html"/>
-    <id>https://2young.2simple.top/article/大规模数据处理-Spark.html</id>
+    <link href="https://www.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-Spark.html"/>
+    <id>https://www.2simple.top/article/大规模数据处理-Spark.html</id>
     <published>2017-06-30T01:04:52.000Z</published>
     <updated>2018-01-14T12:59:10.647Z</updated>
     
@@ -383,10 +157,10 @@
   
   <entry>
     <title>大规模数据处理-分布式key/value对存储：BigTable、DHT</title>
-    <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8Fkey-value%E5%AF%B9%E5%AD%98%E5%82%A8.html"/>
-    <id>https://2young.2simple.top/article/大规模数据处理-分布式key-value对存储.html</id>
+    <link href="https://www.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8Fkey-value%E5%AF%B9%E5%AD%98%E5%82%A8.html"/>
+    <id>https://www.2simple.top/article/大规模数据处理-分布式key-value对存储.html</id>
     <published>2017-06-29T13:05:59.000Z</published>
-    <updated>2017-06-30T11:05:30.000Z</updated>
+    <updated>2018-11-21T09:23:29.786Z</updated>
     
     <summary type="html">
     
@@ -401,10 +175,10 @@
   
   <entry>
     <title>Massive-Data-Process-Homework-3</title>
-    <link href="https://2young.2simple.top/article/Massive-Data-Process-Homework-3.html"/>
-    <id>https://2young.2simple.top/article/Massive-Data-Process-Homework-3.html</id>
+    <link href="https://www.2simple.top/article/Massive-Data-Process-Homework-3.html"/>
+    <id>https://www.2simple.top/article/Massive-Data-Process-Homework-3.html</id>
     <published>2017-06-28T16:00:00.000Z</published>
-    <updated>2017-06-30T15:37:58.000Z</updated>
+    <updated>2018-11-21T09:19:49.710Z</updated>
     
     <summary type="html">
     
@@ -418,8 +192,8 @@
   
   <entry>
     <title>Mac下Hadoop安装配置问题 waiting for AM container to be allocated, launched and register with RM.</title>
-    <link href="https://2young.2simple.top/article/Mac%E4%B8%8BHadoop%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html"/>
-    <id>https://2young.2simple.top/article/Mac下Hadoop安装配置教程.html</id>
+    <link href="https://www.2simple.top/article/Mac%E4%B8%8BHadoop%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html"/>
+    <id>https://www.2simple.top/article/Mac下Hadoop安装配置教程.html</id>
     <published>2017-06-28T01:09:20.000Z</published>
     <updated>2018-08-09T01:31:24.332Z</updated>
     
@@ -436,8 +210,8 @@
   
   <entry>
     <title>大规模数据处理-MapReduce</title>
-    <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-MapReduce.html"/>
-    <id>https://2young.2simple.top/article/大规模数据处理-MapReduce.html</id>
+    <link href="https://www.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-MapReduce.html"/>
+    <id>https://www.2simple.top/article/大规模数据处理-MapReduce.html</id>
     <published>2017-06-27T01:23:12.000Z</published>
     <updated>2017-07-13T16:35:00.000Z</updated>
     
@@ -453,6 +227,221 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Massive Data Process Homework 2</title>
+    <link href="https://www.2simple.top/article/Massive-Data-Process-Homework-2.html"/>
+    <id>https://www.2simple.top/article/Massive-Data-Process-Homework-2.html</id>
+    <published>2017-06-26T16:00:00.000Z</published>
+    <updated>2017-06-28T12:05:18.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;仔细阅读MapReduce这篇论文，回答下面的问题。&lt;/p&gt;
+&lt;h1 id=&quot;分布式排序&quot;&gt;分布式排序&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在MapReduce执行的过程中，中间的shuffle过程是一个非常重要的过程。这个过程中其中一个使用的方法就是进行分布式的排序。依据你自己的理解，阐述分布式排序方法。只需要用伪代码写出在各个节点中的程序代码即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="分布式处理" scheme="https://www.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
+    
+    
+      <category term="MapReduce" scheme="https://www.2simple.top/tags/MapReduce/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谷歌文件系统论文学习</title>
+    <link href="https://www.2simple.top/article/%E8%B0%B7%E6%AD%8C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://www.2simple.top/article/谷歌文件系统论文学习.html</id>
+    <published>2017-06-26T13:23:19.000Z</published>
+    <updated>2017-06-26T14:33:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Google File System论文学习&lt;/p&gt;
+&lt;h1 id=&quot;摘要&quot;&gt;摘要&lt;/h1&gt;
+&lt;p&gt;我们设计并实现了Google GFS文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。GFS虽然运行在廉价的普遍硬件设备上，但是它依然了提供&lt;font color=&quot;red&quot;&gt;灾难冗余&lt;/font&gt;的能力，为大量客户机提供了&lt;font color=&quot;red&quot;&gt;高性能&lt;/font&gt;的服务。&lt;/p&gt;
+&lt;p&gt;虽然GFS的设计目标与许多传统的分布式文件系统有很多相同之处，但是，我们的设计还是以我们对自己的应用的负载情况和技术环境的分析为基础 的，不管现在还是将来，GFS和早期的分布式文件系统的设想都有明显的不同。所以我们重新审视了传统文件系统在设计上的折衷选择，衍生出了完全不同的设计 思路。&lt;/p&gt;
+&lt;p&gt;GFS完全满足了我们对存储的需求。GFS作为存储平台已经被广泛的部署在Google内部，存储我们的服务产生和处理的数据，同时还用于那些 需要大规模数据集的研究和开发工作。目前为止，最大的一个集群利用数千台机器的数千个硬盘，提供了数百TB的存储空间，同时为数百个客户机服务。&lt;/p&gt;
+&lt;p&gt;在本论文中，我们展示了能够支持分布式应用的文件系统接口的扩展，讨论我们设计的许多方面，最后列出了小规模性能测试以及真实生产系统中性能相关数据。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="谷歌文件系统" scheme="https://www.2simple.top/tags/%E8%B0%B7%E6%AD%8C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="大规模数据处理" scheme="https://www.2simple.top/tags/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大规模集群数据处理-分布式文件系统</title>
+    <link href="https://www.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.html"/>
+    <id>https://www.2simple.top/article/大规模数据处理-分布式文件系统.html</id>
+    <published>2017-06-26T01:03:35.000Z</published>
+    <updated>2017-06-26T15:01:27.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;课程简介&quot;&gt;课程简介&lt;/h1&gt;
+&lt;p&gt;课程主要内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hadoop
+&lt;ul&gt;
+&lt;li&gt;MapReduce&lt;/li&gt;
+&lt;li&gt;Spark&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;2-3人一组搭建实验环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;成绩构成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。 第二周到最后在教学实验室上课。&lt;/li&gt;
+&lt;li&gt;Lab1：10，倒排表&lt;/li&gt;
+&lt;li&gt;Lab2：20，PageRank&lt;/li&gt;
+&lt;li&gt;Lab3：20，聚类&lt;/li&gt;
+&lt;li&gt;Project：30， 自选题目，集中展示打分&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="基于大规模集群的海量数据处理技术" scheme="https://www.2simple.top/tags/%E5%9F%BA%E4%BA%8E%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%9B%86%E7%BE%A4%E7%9A%84%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Massive Data Process Homework 1</title>
+    <link href="https://www.2simple.top/article/Massive-Data-Process-Homework-1.html"/>
+    <id>https://www.2simple.top/article/Massive-Data-Process-Homework-1.html</id>
+    <published>2017-06-25T16:00:00.000Z</published>
+    <updated>2018-11-21T09:26:02.541Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;分布式文件系统the-google-file-system仔细阅读google-file-system这篇论文回答下面的问题&quot;&gt;分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;简述在分布式文件系统中维护数据块一致的步骤。&lt;/li&gt;
+&lt;li&gt;简述在分布式文件系统中的删除文件的过程。&lt;/li&gt;
+&lt;li&gt;在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="分布式处理" scheme="https://www.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
+    
+    
+      <category term="GFS" scheme="https://www.2simple.top/tags/GFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>系统结构第二次实验:设计实现 Tomasulo 调度算法</title>
+    <link href="https://www.2simple.top/article/Tomasulo%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95.html"/>
+    <id>https://www.2simple.top/article/Tomasulo调度算法.html</id>
+    <published>2017-06-06T16:00:00.000Z</published>
+    <updated>2018-11-21T09:27:10.928Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;实验原理&quot;&gt;实验原理&lt;/h1&gt;
+&lt;p&gt;Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>校园搜索引擎</title>
+    <link href="https://www.2simple.top/article/%E6%A0%A1%E5%9B%AD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.html"/>
+    <id>https://www.2simple.top/article/校园搜索引擎.html</id>
+    <published>2017-06-02T16:00:00.000Z</published>
+    <updated>2018-11-21T09:21:10.838Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;内容&quot;&gt;内容&lt;/h1&gt;
+&lt;p&gt;综合运用搜索引擎体系结构和核心算法方面的知识，基于开源资源搭建搜索引擎&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="搜索引擎" scheme="https://www.2simple.top/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+    
+      <category term="实验" scheme="https://www.2simple.top/tags/%E5%AE%9E%E9%AA%8C/"/>
+    
+      <category term="搜索引擎" scheme="https://www.2simple.top/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+      <category term="课程" scheme="https://www.2simple.top/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ipv4 over Ipv6隧道协议实验客户端报告</title>
+    <link href="https://www.2simple.top/article/4over6%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.html"/>
+    <id>https://www.2simple.top/article/4over6实验报告.html</id>
+    <published>2017-05-22T16:00:00.000Z</published>
+    <updated>2018-01-14T12:58:54.748Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;实验目的&quot;&gt;实验目的&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;掌握Android下应用程序开发环境的搭建和使用&lt;/li&gt;
+&lt;li&gt;掌握IPv4 over IPv6隧道的工作原理&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://www.2simple.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议</title>
+    <link href="https://www.2simple.top/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%A4%A7%E4%BD%9C%E4%B8%9A.html"/>
+    <id>https://www.2simple.top/article/密码学第三次大作业.html</id>
+    <published>2017-05-22T16:00:00.000Z</published>
+    <updated>2018-11-21T09:22:57.300Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;设计一个安全的没有中间人攻击的diffie-hellman密钥交换协议&quot;&gt;设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议&lt;/h1&gt;
+    
+    </summary>
+    
+    
+      <category term="课程" scheme="https://www.2simple.top/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="密码学" scheme="https://www.2simple.top/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码学实验2</title>
+    <link href="https://www.2simple.top/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%9E%E9%AA%8C2.html"/>
+    <id>https://www.2simple.top/article/密码学实验2.html</id>
+    <published>2017-05-08T17:26:08.000Z</published>
+    <updated>2017-06-13T15:05:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;接口函数&quot;&gt;接口函数&lt;/h1&gt;
+&lt;h2 id=&quot;aes&quot;&gt;AES:&lt;/h2&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*output,int *out_len, unsigned char *key,int keylen);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="课程" scheme="https://www.2simple.top/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+      <category term="密码学" scheme="https://www.2simple.top/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
   </entry>
   

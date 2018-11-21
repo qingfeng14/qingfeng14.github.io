@@ -112,7 +112,7 @@ function loopy() {
 
 
 
-  <link rel="alternate" href="/atom.xml" title="青枫别苑" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="我的日志" type="application/atom+xml" />
 
 
 
@@ -128,10 +128,10 @@ function loopy() {
 <meta name="keywords" content="终端,服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器配置相关问题">
-<meta property="og:url" content="https://2young.2simple.top/article/服务器/服务器配置.html">
-<meta property="og:site_name" content="青枫别苑">
+<meta property="og:url" content="https://www.2simple.top/article/服务器/服务器配置.html">
+<meta property="og:site_name" content="我的日志">
 <meta property="og:description" content="服务器配置相关记录 Apache的反向代理 首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。 如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_">
-<meta property="og:updated_time" content="2018-06-26T13:11:17.817Z">
+<meta property="og:updated_time" content="2018-11-21T09:14:51.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器配置相关问题">
 <meta name="twitter:description" content="服务器配置相关记录 Apache的反向代理 首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。 如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_">
@@ -162,13 +162,13 @@ function loopy() {
 
 
 
-  <link rel="canonical" href="https://2young.2simple.top/article/服务器/服务器配置.html"/>
+  <link rel="canonical" href="https://www.2simple.top/article/服务器/服务器配置.html"/>
 
 
 
 
 
-  <title> 服务器配置相关问题 | 青枫别苑 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 服务器配置相关问题 | 我的日志 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
    
 </head>
 
@@ -224,12 +224,12 @@ function loopy() {
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">青枫别苑</span>
+        <span class="site-title">我的日志</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description">张盛豪的个人博客<br/>Coding  && Reading</h1>
+        <h1 class="site-subtitle" itemprop="description">以梦为马，越骑越傻</h1>
       
   </div>
 
@@ -371,7 +371,7 @@ function loopy() {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/服务器/服务器配置.html">
+    <link itemprop="mainEntityOfPage" href="https://www.2simple.top/article/服务器/服务器配置.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="青枫">
@@ -380,7 +380,7 @@ function loopy() {
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青枫别苑">
+      <meta itemprop="name" content="我的日志">
     </span>
 
     
@@ -448,8 +448,8 @@ function loopy() {
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/article/服务器/服务器配置.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                <a href="/article/服务器/服务器配置.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/服务器/服务器配置.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -481,7 +481,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  844
+                  867
                 </span>
               
 
@@ -536,13 +536,13 @@ function loopy() {
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -new -key server.key &gt; server.csr</div></pre></td></tr></table></figure>
 <p>说明：这是用步骤1的密钥生成证书请求文件server.csr, 这一步提很多问题，一一输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Country Name (2 letter code) [AU]:CN ← 国家代号，中国输入CN </div><div class="line">State or Province Name (full name) [Some-State]:BeiJing ← 省的全名，拼音 </div><div class="line">Locality Name (eg, city) []:BeiJing ← 市的全名，拼音 </div><div class="line">Organization Name (eg, company) [Internet Widgits Pty Ltd]:MyCompany Corp. ← 公司英文名 </div><div class="line">Organizational Unit Name (eg, section) []: ← 可以不输入 </div><div class="line">Common Name (eg, YOUR name) []: ← 此时不输入 </div><div class="line">Email Address []:admin@mycompany.com ← 电子邮箱，可随意填</div><div class="line">Please enter the following ‘extra’ attributes </div><div class="line">to be sent with your certificate request </div><div class="line">A challenge password []: ← 可以不输入 </div><div class="line">An optional company name []: ← 可以不输入</div></pre></td></tr></table></figure></li>
-<li><p>步骤3: 生成证书</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -x509 -days 3650 -key server.key -in server.csr &gt; server.crt</div></pre></td></tr></table></figure>
+<li><p>步骤3: 生成证书 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -x509 -days 3650 -key server.key -in server.csr &gt; server.crt</div></pre></td></tr></table></figure></p>
 <p>说明：这是用步骤1,2的的密钥和证书请求生成证书server.crt，-days参数指明证书有效期，单位为天</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /etc/apache2/sites-available/default-ssl.conf  /etc/apache2/sites-enabled/001-ssl.conf</div></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln <span class="_">-s</span> /etc/apache2/sites-available/default-ssl.conf  /etc/apache2/sites-enabled/001-ssl.conf</div></pre></td></tr></table></figure></li>
 </ul>
 <h1 id="lets-encrypt">let’s encrypt</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Generating key (2048 bits): /etc/letsencrypt/keys/0001_key-certbot.pem</div><div class="line">Creating CSR: /etc/letsencrypt/csr/0001_csr-certbot.pem</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Generating key (2048 bits): /etc/letsencrypt/keys/0001_key-certbot.pem</div><div class="line">Creating CSR: /etc/letsencrypt/csr/0001_csr-certbot.pem</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 泛域名更新</span></div><div class="line">certbot certonly <span class="_">-d</span> *.2simple.top --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line">&lt;VirtualHost _default_:443&gt;</div><div class="line">        ServerAdmin zhangshenghao1995@163.com</div><div class="line"></div><div class="line">        DocumentRoot /var/www/html/qingfeng14.github.io/</div><div class="line"></div><div class="line">        ErrorLog $&#123;APACHE_LOG_DIR&#125;/error.log</div><div class="line">        CustomLog $&#123;APACHE_LOG_DIR&#125;/access.log combined</div><div class="line"></div><div class="line">        #   SSL Engine Switch:</div><div class="line">        #   Enable/Disable SSL for this virtual host.</div><div class="line">        SSLEngine on</div><div class="line"></div><div class="line">        #   A self-signed (snakeoil) certificate can be created by installing</div><div class="line">        #   the ssl-cert package. See</div><div class="line">        #   /usr/share/doc/apache2/README.Debian.gz for more info.</div><div class="line">        #   If both key and certificate are stored in the same file, only the</div><div class="line">        #   SSLCertificateFile directive is needed.</div><div class="line">        SSLCertificateFile  /etc/letsencrypt/live/zhangshenghao.win/fullchain.pem</div><div class="line">        SSLCertificateKeyFile /etc/letsencrypt/live/zhangshenghao.win/privkey.pem</div><div class="line"></div><div class="line">        &lt;FilesMatch &quot;\.(cgi|shtml|phtml|php)$&quot;&gt;</div><div class="line">                SSLOptions +StdEnvVars</div><div class="line">        &lt;/FilesMatch&gt;</div><div class="line">        &lt;Directory /usr/lib/cgi-bin&gt;</div><div class="line">                SSLOptions +StdEnvVars</div><div class="line">        &lt;/Directory&gt;</div><div class="line"></div><div class="line">        BrowserMatch &quot;MSIE [2-6]&quot; \</div><div class="line">                nokeepalive ssl-unclean-shutdown \</div><div class="line">                downgrade-1.0 force-response-1.0</div><div class="line">        # MSIE 7 and newer should be able to use keepalive</div><div class="line">        BrowserMatch &quot;MSIE [17-9]&quot; ssl-unclean-shutdown</div><div class="line"></div><div class="line">        ServerName zhangshenghao.win</div><div class="line">    &lt;/VirtualHost&gt;</div><div class="line"></div><div class="line">    &lt;VirtualHost _default_:443&gt;</div><div class="line">        ServerAdmin zhangshenghao1995@163.com</div><div class="line"></div><div class="line">        DocumentRoot /var/www/html/qingfeng14.github.io/</div><div class="line"></div><div class="line">        ErrorLog $&#123;APACHE_LOG_DIR&#125;/error.log</div><div class="line">        CustomLog $&#123;APACHE_LOG_DIR&#125;/access.log combined</div><div class="line"></div><div class="line">        #   SSL Engine Switch:</div><div class="line">        #   Enable/Disable SSL for this virtual host.</div><div class="line">        SSLEngine on</div><div class="line"></div><div class="line">        #   A self-signed (snakeoil) certificate can be created by installing</div><div class="line">        #   the ssl-cert package. See</div><div class="line">        #   /usr/share/doc/apache2/README.Debian.gz for more info.</div><div class="line">        #   If both key and certificate are stored in the same file, only the</div><div class="line">        #   SSLCertificateFile directive is needed.</div><div class="line">        SSLCertificateFile  /etc/letsencrypt/live/blog.zhangshenghao.win/fullchain.pem</div><div class="line">        SSLCertificateKeyFile /etc/letsencrypt/live/blog.zhangshenghao.win/privkey.pem</div><div class="line"></div><div class="line">        &lt;FilesMatch &quot;\.(cgi|shtml|phtml|php)$&quot;&gt;</div><div class="line">                SSLOptions +StdEnvVars</div><div class="line">        &lt;/FilesMatch&gt;</div><div class="line">        &lt;Directory /usr/lib/cgi-bin&gt;</div><div class="line">                SSLOptions +StdEnvVars</div><div class="line">        &lt;/Directory&gt;</div><div class="line"></div><div class="line">        BrowserMatch &quot;MSIE [2-6]&quot; \</div><div class="line">                nokeepalive ssl-unclean-shutdown \</div><div class="line">                downgrade-1.0 force-response-1.0</div><div class="line">        # MSIE 7 and newer should be able to use keepalive</div><div class="line">        BrowserMatch &quot;MSIE [17-9]&quot; ssl-unclean-shutdown</div><div class="line"></div><div class="line">        ServerName blog.zhangshenghao.win</div><div class="line">    &lt;/VirtualHost&gt;</div></pre></td></tr></table></figure>
 <h2 id="http-重定向至-http">http 重定向至 http</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">RewriteEngine On</div><div class="line">RewriteRule ^ https://%&#123;SERVER_NAME&#125;%&#123;REQUEST_URI&#125; [END,NE,R=permanent]</div></pre></td></tr></table></figure>
@@ -596,7 +596,7 @@ function loopy() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://2young.2simple.top/article/服务器/服务器配置.html" title="服务器配置相关问题">https://2young.2simple.top/article/服务器/服务器配置.html</a>
+      <a href="https://www.2simple.top/article/服务器/服务器配置.html" title="服务器配置相关问题">https://www.2simple.top/article/服务器/服务器配置.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -665,7 +665,12 @@ function loopy() {
           
   <div class="comments" id="comments">
     
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -713,7 +718,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -987,27 +992,37 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
   
 
+    <script type="text/javascript">
+      var disqus_shortname = 'qingfeng';
+      var disqus_identifier = 'article/服务器/服务器配置.html';
+
+      var disqus_title = "服务器配置相关问题";
 
 
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
 
-	
+      run_disqus_script('count.js');
 
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
 
-
-
-
-  
-    
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "d5c03ba471cf40c0b5831477b3e52b64",
-        target: "cloud-tie-wrapper"
-      };
     </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
+
+
+
 
 
 

@@ -13,5 +13,5 @@ Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /code/
 Disallow: /lib/
-Sitemap: https://www.zhangshenghao.win/sitemap.xml
-Sitemap: https://www.zhangshenghao.win/baidusitemap.xml
+Sitemap: https://www.2simple.top/sitemap.xml
+Sitemap: https://www.2simple.top/baidusitemap.xml

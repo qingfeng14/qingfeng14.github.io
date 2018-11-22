@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.2simple.top/"/>
-  <updated>2018-01-14T13:09:42.677Z</updated>
+  <updated>2018-11-22T07:45:01.624Z</updated>
   <id>https://www.2simple.top/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Golang 性能测试, 单元测试</title>
+    <link href="https://www.2simple.top/article/golang/golang%E6%80%A7%E8%83%BD&amp;%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html"/>
+    <id>https://www.2simple.top/article/golang/golang性能&amp;单元测试.html</id>
+    <published>2018-11-22T03:36:09.000Z</published>
+    <updated>2018-11-22T07:45:01.624Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;golang-测试总结&quot;&gt;Golang 测试总结&lt;/h1&gt;
+&lt;h2 id=&quot;go-test的初始化以及退出前的clear-testmain&quot;&gt;&lt;code&gt;go test&lt;/code&gt;的初始化以及退出前的clear — &lt;code&gt;TestMain&lt;/code&gt;&lt;/
+    
+    </summary>
+    
+      <category term="Golang" scheme="https://www.2simple.top/categories/Golang/"/>
+    
+    
+      <category term="Golang" scheme="https://www.2simple.top/tags/Golang/"/>
+    
+      <category term="Go" scheme="https://www.2simple.top/tags/Go/"/>
+    
+      <category term="test" scheme="https://www.2simple.top/tags/test/"/>
+    
+      <category term="bench" scheme="https://www.2simple.top/tags/bench/"/>
+    
+      <category term="memory" scheme="https://www.2simple.top/tags/memory/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo配置问题-Pandoc</title>
+    <link href="https://www.2simple.top/article/Hexo%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98-Pandoc.html"/>
+    <id>https://www.2simple.top/article/Hexo配置问题-Pandoc.html</id>
+    <published>2018-11-22T02:24:30.000Z</published>
+    <updated>2018-11-22T07:45:01.623Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;pandoc-的问题&quot;&gt;Pandoc 的问题&lt;/h1&gt;
+&lt;h2 id=&quot;error-spawn-pandoc-enoent&quot;&gt;Error: spawn pandoc ENOENT&lt;/h2&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="https://www.2simple.top/tags/Hexo/"/>
+    
+      <category term="Pandoc" scheme="https://www.2simple.top/tags/Pandoc/"/>
+    
+      <category term="Markdown" scheme="https://www.2simple.top/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>Centrally Banked Cryptocurrencies 书面翻译</title>
@@ -373,11 +426,11 @@
       <category term="搜索引擎" scheme="https://www.2simple.top/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
     
     
+      <category term="课程" scheme="https://www.2simple.top/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
       <category term="实验" scheme="https://www.2simple.top/tags/%E5%AE%9E%E9%AA%8C/"/>
     
       <category term="搜索引擎" scheme="https://www.2simple.top/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-      <category term="课程" scheme="https://www.2simple.top/tags/%E8%AF%BE%E7%A8%8B/"/>
     
   </entry>
   
@@ -400,48 +453,6 @@
     
     
       <category term="计算机网络" scheme="https://www.2simple.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议</title>
-    <link href="https://www.2simple.top/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%A4%A7%E4%BD%9C%E4%B8%9A.html"/>
-    <id>https://www.2simple.top/article/密码学第三次大作业.html</id>
-    <published>2017-05-22T16:00:00.000Z</published>
-    <updated>2018-11-21T09:22:57.300Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;设计一个安全的没有中间人攻击的diffie-hellman密钥交换协议&quot;&gt;设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议&lt;/h1&gt;
-    
-    </summary>
-    
-    
-      <category term="课程" scheme="https://www.2simple.top/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="密码学" scheme="https://www.2simple.top/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>密码学实验2</title>
-    <link href="https://www.2simple.top/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%9E%E9%AA%8C2.html"/>
-    <id>https://www.2simple.top/article/密码学实验2.html</id>
-    <published>2017-05-08T17:26:08.000Z</published>
-    <updated>2017-06-13T15:05:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;接口函数&quot;&gt;接口函数&lt;/h1&gt;
-&lt;h2 id=&quot;aes&quot;&gt;AES:&lt;/h2&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;*output,int *out_len, unsigned char *key,int keylen);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="课程" scheme="https://www.2simple.top/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-      <category term="密码学" scheme="https://www.2simple.top/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
   </entry>
   

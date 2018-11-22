@@ -131,7 +131,7 @@ function loopy() {
 <meta property="og:url" content="https://www.2simple.top/article/hello-world.html">
 <meta property="og:site_name" content="我的日志">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2017-04-11T17:54:50.000Z">
+<meta property="og:updated_time" content="2018-11-22T07:45:01.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Hexo">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
@@ -481,7 +481,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  625
+                  788
                 </span>
               
 
@@ -497,7 +497,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -564,7 +564,15 @@ function loopy() {
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if page.keywords and page.keywords.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for key in page.keywords %&#125;&#123;&#123; key &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif page.tags and page.tags.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for tag in page.tags %&#125;&#123;&#123; tag.name &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif theme.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; theme.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
 <h1 id="hexo-中设置访问密码">hexo 中设置访问密码</h1>
 <p>在<code>themes-&gt;next-&gt;layout-&gt;_partials-&gt;head.swig</code>中的meta标签之后添加js代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js&quot;&gt;&lt;/script&gt;  </div><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">loopy() </div><div class="line">function loopy() &#123; </div><div class="line">    if(&apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">        while(true) &#123;</div><div class="line">            var pass = prompt(&quot;输入正确密码才能查看!&quot;);</div><div class="line">            if(pass) &#123;</div><div class="line">                // 点击的确定</div><div class="line">                var ss = sha1(pass)</div><div class="line">                // alert(ss);</div><div class="line">                if(ss == &apos;&#123;&#123; page.password &#125;&#125;&apos;) &#123;</div><div class="line">                    alert(&quot;欢迎进入我的博客！Contact me at zhangshenghao1995@163.com&quot;);</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">                else &#123;</div><div class="line">                    alert(&quot;密码错误！&quot;);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            else if(pass == &quot;&quot;) &#123;</div><div class="line">                // 用户没有输入</div><div class="line">            &#125;</div><div class="line">            else &#123;</div><div class="line">                // 点击取消</div><div class="line">                history.back()</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125; </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js&quot;&gt;&lt;/script&gt;  </div><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt; </div><div class="line">loopy() </div><div class="line">function loopy() &#123; </div><div class="line">    if(&apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">        while(true) &#123;</div><div class="line">            var pass = prompt(&quot;输入正确密码才能查看!&quot;);</div><div class="line">            if(pass) &#123;</div><div class="line">                // 点击的确定</div><div class="line">                var ss = sha1(pass)</div><div class="line">                // alert(ss);</div><div class="line">                if(ss == &apos;&#123;&#123; page.password &#125;&#125;&apos;) &#123;</div><div class="line">                    alert(&quot;欢迎进入我的博客！Contact me at zhangshenghao1995@163.com&quot;);</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">                else &#123;</div><div class="line">                    alert(&quot;密码错误！&quot;);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            else if(pass == &quot;&quot;) &#123;</div><div class="line">                // 用户没有输入</div><div class="line">            &#125;</div><div class="line">            else &#123;</div><div class="line">                // 点击取消</div><div class="line">                history.back()</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h2 id="安装扩展包">安装扩展包</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install hexo-math --save</div></pre></td></tr></table></figure>
+<h2 id="pandoc-的问题">Pandoc 的问题</h2>
+<h3 id="error-spawn-pandoc-enoent">Error: spawn pandoc ENOENT</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">events.js:<span class="number">183</span></div><div class="line">      <span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></div><div class="line">      ^</div><div class="line"></div><div class="line"><span class="built_in">Error</span>: spawn pandoc ENOENT</div><div class="line">    at _errnoException (util.js:<span class="number">1022</span>:<span class="number">11</span>)</div><div class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="number">190</span>:<span class="number">19</span>)</div><div class="line">    at onErrorNT (internal/child_process.js:<span class="number">372</span>:<span class="number">16</span>)</div><div class="line">    at _combinedTickCallback (internal/process/next_tick.js:<span class="number">138</span>:<span class="number">11</span>)</div><div class="line">    at process._tickCallback (internal/process/next_tick.js:<span class="number">180</span>:<span class="number">9</span>)</div></pre></td></tr></table></figure>
+<p>解决方案: 安装 pandoc</p>
+<h3 id="error--smart-s-removed">Error: -smart/-S removed</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Error</span>: pandoc exited <span class="keyword">with</span> code <span class="number">2</span>: --smart/-S has been removed.  Use +smart or -smart extension instead.</div><div class="line">For example: pandoc -f markdown+smart -t markdown-smart.</div><div class="line">Try pandoc --help <span class="keyword">for</span> more information.</div><div class="line"></div><div class="line">    at ChildProcess.&lt;anonymous&gt; (<span class="regexp">/home/</span>arxan/go_project/src/blog_hexo/node_modules/hexo-renderer-pandoc/index.js:<span class="number">73</span>:<span class="number">20</span>)</div><div class="line">    at emitTwo (events.js:<span class="number">126</span>:<span class="number">13</span>)</div><div class="line">    at ChildProcess.emit (events.js:<span class="number">214</span>:<span class="number">7</span>)</div><div class="line">    at maybeClose (internal/child_process.js:<span class="number">925</span>:<span class="number">16</span>)</div><div class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="number">209</span>:<span class="number">5</span>)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -732,7 +740,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -743,7 +751,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -754,7 +762,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -844,7 +852,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#quick-start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-new-post"><span class="nav-number">1.0.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run-server"><span class="nav-number">1.0.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generate-static-files"><span class="nav-number">1.0.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deploy-to-remote-sites"><span class="nav-number">1.0.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#草稿"><span class="nav-number">1.0.5.</span> <span class="nav-text">草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathjax"><span class="nav-number">1.0.6.</span> <span class="nav-text">MathJax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为hexo-next博客添加关键词功能"><span class="nav-number">1.0.7.</span> <span class="nav-text">为Hexo Next博客添加关键词功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-中设置访问密码"><span class="nav-number">2.</span> <span class="nav-text">hexo 中设置访问密码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#quick-start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-new-post"><span class="nav-number">1.0.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run-server"><span class="nav-number">1.0.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generate-static-files"><span class="nav-number">1.0.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deploy-to-remote-sites"><span class="nav-number">1.0.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#草稿"><span class="nav-number">1.0.5.</span> <span class="nav-text">草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathjax"><span class="nav-number">1.0.6.</span> <span class="nav-text">MathJax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为hexo-next博客添加关键词功能"><span class="nav-number">1.0.7.</span> <span class="nav-text">为Hexo Next博客添加关键词功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-中设置访问密码"><span class="nav-number">2.</span> <span class="nav-text">hexo 中设置访问密码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装扩展包"><span class="nav-number">2.1.</span> <span class="nav-text">安装扩展包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pandoc-的问题"><span class="nav-number">2.2.</span> <span class="nav-text">Pandoc 的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#error-spawn-pandoc-enoent"><span class="nav-number">2.2.1.</span> <span class="nav-text">Error: spawn pandoc ENOENT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#error--smart-s-removed"><span class="nav-number">2.2.2.</span> <span class="nav-text">Error: -smart/-S removed</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -872,6 +880,10 @@ function loopy() {
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">青枫</span>
+</div>
+
+<div class="copyright" >
+   <a href="http://www.miitbeian.gov.cn/">京ICP备18050719号</a> 
 </div>
 
 
@@ -908,9 +920,6 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 <div class="theme-info">
  <a href="mailto:zhangshenghao1995@163.com?subject=用户意见" target="_blank" title="邮箱" rel="external nofollow">邮箱</a>
-
-
-
 </div>
 
         

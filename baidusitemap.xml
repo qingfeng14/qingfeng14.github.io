@@ -1,967 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
   <url>
     <loc>https://2young.2simple.top/article/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95.html</loc>
     <lastmod>2018-11-23T08:13:16.542Z</lastmod>
-    <data>
-        <display>
-        <title>操作系统-页面置换算法</title>
-        <pubTime>2017-03-25T02:27:05.000Z</pubTime>
-        
-        <tag>操作系统</tag>
-         
-        <tag>页面置换算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作系统" url="https://2young.2simple.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/linux-Mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BAIP%E5%9C%B0%E5%9D%80.html</loc>
     <lastmod>2018-11-23T08:13:16.541Z</lastmod>
-    <data>
-        <display>
-        <title>linux or Mac 命令行获取本机IP地址</title>
-        <pubTime>2018-10-23T07:53:51.000Z</pubTime>
-        
-        <tag>IP</tag>
-         
-        <tag>Linux</tag>
-         
-        <tag>Ubuntu</tag>
-         
-        <tag>Mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://2young.2simple.top/categories/Linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E9%93%BE%E6%8E%A5%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C.html</loc>
     <lastmod>2018-11-22T07:45:01.630Z</lastmod>
-    <data>
-        <display>
-        <title>链接结构分析实验</title>
-        <pubTime>2017-05-06T16:00:00.000Z</pubTime>
-        
-        <tag>课程</tag>
-         
-        <tag>实验</tag>
-         
-        <tag>搜索引擎</tag>
-         
-         
-           
-             
-              <breadCrumb title="搜索引擎" url="https://2young.2simple.top/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/hello-world.html</loc>
     <lastmod>2018-11-22T07:45:01.628Z</lastmod>
-    <data>
-        <display>
-        <title>Hello Hexo</title>
-        <pubTime>2017-03-14T02:48:48.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>教程</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="https://2young.2simple.top/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/golang/golang%E6%80%A7%E8%83%BD&%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html</loc>
     <lastmod>2018-11-22T07:45:01.624Z</lastmod>
-    <data>
-        <display>
-        <title>Golang 性能测试, 单元测试</title>
-        <pubTime>2018-11-22T03:36:09.000Z</pubTime>
-        
-        <tag>Golang</tag>
-         
-        <tag>Go</tag>
-         
-        <tag>test</tag>
-         
-        <tag>bench</tag>
-         
-        <tag>memory</tag>
-         
-         
-           
-             
-              <breadCrumb title="Golang" url="https://2young.2simple.top/categories/Golang/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Hexo%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98-Pandoc.html</loc>
     <lastmod>2018-11-22T07:45:01.623Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo配置问题-Pandoc</title>
-        <pubTime>2018-11-22T02:24:30.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Pandoc</tag>
-         
-        <tag>Markdown</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Tomasulo%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95.html</loc>
     <lastmod>2018-11-21T09:27:10.928Z</lastmod>
-    <data>
-        <display>
-        <title>系统结构第二次实验:设计实现 Tomasulo 调度算法</title>
-        <pubTime>2017-06-06T16:00:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Massive-Data-Process-Homework-1.html</loc>
     <lastmod>2018-11-21T09:26:02.541Z</lastmod>
-    <data>
-        <display>
-        <title>Massive Data Process Homework 1</title>
-        <pubTime>2017-06-25T16:00:00.000Z</pubTime>
-        
-        <tag>GFS</tag>
-         
-         
-           
-             
-              <breadCrumb title="分布式处理" url="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8Fkey-value%E5%AF%B9%E5%AD%98%E5%82%A8.html</loc>
     <lastmod>2018-11-21T09:23:29.786Z</lastmod>
-    <data>
-        <display>
-        <title>大规模数据处理-分布式key/value对存储：BigTable、DHT</title>
-        <pubTime>2017-06-29T13:05:59.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%A4%A7%E4%BD%9C%E4%B8%9A.html</loc>
     <lastmod>2018-11-21T09:22:57.300Z</lastmod>
-    <data>
-        <display>
-        <title>密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议</title>
-        <pubTime>2017-05-22T16:00:00.000Z</pubTime>
-        
-        <tag>课程</tag>
-         
-        <tag>密码学</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C.html</loc>
     <lastmod>2018-11-21T09:22:39.944Z</lastmod>
-    <data>
-        <display>
-        <title>数值分析实验</title>
-        <pubTime>2017-05-08T16:00:00.000Z</pubTime>
-        
-        <tag>课程</tag>
-         
-        <tag>实验</tag>
-         
-        <tag>数值分析</tag>
-         
-         
-           
-             
-              <breadCrumb title="数值分析" url="https://2young.2simple.top/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%A0%A1%E5%9B%AD%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.html</loc>
     <lastmod>2018-11-21T09:21:10.838Z</lastmod>
-    <data>
-        <display>
-        <title>校园搜索引擎</title>
-        <pubTime>2017-06-02T16:00:00.000Z</pubTime>
-        
-        <tag>课程</tag>
-         
-        <tag>实验</tag>
-         
-        <tag>搜索引擎</tag>
-         
-         
-           
-             
-              <breadCrumb title="搜索引擎" url="https://2young.2simple.top/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%80%89%E9%A2%98%E8%BE%85%E5%AF%BC.html</loc>
     <lastmod>2018-11-21T09:20:48.017Z</lastmod>
-    <data>
-        <display>
-        <title>计算机网络管理-课程设计选题辅导</title>
-        <pubTime>2017-10-10T05:24:30.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Massive-Data-Process-Homework-3.html</loc>
     <lastmod>2018-11-21T09:19:49.710Z</lastmod>
-    <data>
-        <display>
-        <title>Massive-Data-Process-Homework-3</title>
-        <pubTime>2017-06-28T16:00:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/CRC_report.html</loc>
     <lastmod>2018-11-21T09:18:15.552Z</lastmod>
-    <data>
-        <display>
-        <title>实验 1 Cache 替换策略设计与分析</title>
-        <pubTime>2017-04-22T16:00:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E7%BD%91%E7%BB%9C/IPv6%E5%8D%8F%E8%AE%AE%E8%BD%AC%E5%8F%91%E5%AE%9E%E9%AA%8C.html</loc>
     <lastmod>2018-11-21T09:17:00.009Z</lastmod>
-    <data>
-        <display>
-        <title>IPv6协议转发实验</title>
-        <pubTime>2017-03-16T07:51:39.000Z</pubTime>
-        
-        <tag>网络</tag>
-         
-        <tag>IPv6</tag>
-         
-        <tag>清华NetRiver实验</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="https://2young.2simple.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C.html</loc>
     <lastmod>2018-11-21T09:15:40.491Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习实验二-集成学习</title>
-        <pubTime>2017-05-05T18:27:19.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-        <tag>集成学习</tag>
-         
-        <tag>实验</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://2young.2simple.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8.html</loc>
     <lastmod>2018-11-21T09:15:23.478Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习实验-朴素贝叶斯分类器</title>
-        <pubTime>2017-03-18T15:01:28.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-        <tag>实验</tag>
-         
-        <tag>朴素贝叶斯</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://2young.2simple.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE.html</loc>
     <lastmod>2018-11-21T09:14:51.304Z</lastmod>
-    <data>
-        <display>
-        <title>服务器配置相关问题</title>
-        <pubTime>2017-03-31T15:14:15.000Z</pubTime>
-        
-        <tag>终端</tag>
-         
-        <tag>服务器</tag>
-         
-         
-           
-             
-              <breadCrumb title="服务器" url="https://2young.2simple.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Lec12%E7%BB%83%E4%B9%A0.html</loc>
     <lastmod>2018-11-21T09:13:33.547Z</lastmod>
-    <data>
-        <display>
-        <title>Lec12练习</title>
-        <pubTime>2017-04-03T12:45:33.000Z</pubTime>
-        
-        <tag>操作系统</tag>
-         
-        <tag>作业</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作系统" url="https://2young.2simple.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lec10-lec11.html</loc>
     <lastmod>2018-11-21T09:13:19.723Z</lastmod>
-    <data>
-        <display>
-        <title>lec10_lec11练习题</title>
-        <pubTime>2017-03-29T12:31:17.000Z</pubTime>
-        
-        <tag>操作系统</tag>
-         
-        <tag>作业</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作系统" url="https://2young.2simple.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7%E5%AE%9E%E9%AA%8C.html</loc>
     <lastmod>2018-11-21T09:10:53.727Z</lastmod>
-    <data>
-        <display>
-        <title>搜索引擎性能评价实验</title>
-        <pubTime>2017-03-17T17:13:13.000Z</pubTime>
-        
-        <tag>课程</tag>
-         
-        <tag>实验</tag>
-         
-        <tag>搜索引擎</tag>
-         
-         
-           
-             
-              <breadCrumb title="搜索引擎" url="https://2young.2simple.top/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Untitled.html</loc>
     <lastmod>2018-08-09T01:34:35.662Z</lastmod>
-    <data>
-        <display>
-        <title>SNMP知识点</title>
-        <pubTime>2017-05-06T06:29:55.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-        <tag>集成学习</tag>
-         
-        <tag>Bagging</tag>
-         
-        <tag>Boosting</tag>
-         
-        <tag>实验</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://2young.2simple.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Mac%E4%B8%8BHadoop%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html</loc>
     <lastmod>2018-08-09T01:31:24.332Z</lastmod>
-    <data>
-        <display>
-        <title>Mac下Hadoop安装配置问题 waiting for AM container to be allocated, launched and register with RM.</title>
-        <pubTime>2017-06-28T01:09:20.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/RSCoin%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91.html</loc>
     <lastmod>2018-01-14T13:09:42.677Z</lastmod>
-    <data>
-        <display>
-        <title>Centrally Banked Cryptocurrencies 书面翻译</title>
-        <pubTime>2018-01-14T12:19:00.000Z</pubTime>
-        
-        <tag>区块链</tag>
-         
-        <tag>数字货币</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-Spark.html</loc>
     <lastmod>2018-01-14T12:59:10.647Z</lastmod>
-    <data>
-        <display>
-        <title>大规模数据处理-Spark</title>
-        <pubTime>2017-06-30T01:04:52.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/4over6%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.html</loc>
     <lastmod>2018-01-14T12:58:54.748Z</lastmod>
-    <data>
-        <display>
-        <title>Ipv4 over Ipv6隧道协议实验客户端报告</title>
-        <pubTime>2017-05-22T16:00:00.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95.html</loc>
     <lastmod>2018-01-14T12:57:45.286Z</lastmod>
-    <data>
-        <display>
-        <title>安卓开发记录</title>
-        <pubTime>2017-04-12T04:52:09.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>4over6</tag>
-         
-        <tag>网络</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E5%9B%BE%E7%89%87%E6%90%9C%E7%B4%A2%E5%AE%9E%E9%AA%8C.html</loc>
     <lastmod>2017-12-29T16:14:10.994Z</lastmod>
-    <data>
-        <display>
-        <title>图片搜索实验</title>
-        <pubTime>2017-04-19T06:57:55.000Z</pubTime>
-        
-        <tag>课程</tag>
-         
-        <tag>实验</tag>
-         
-        <tag>搜索引擎</tag>
-         
-        <tag>图片搜索</tag>
-         
-         
-           
-             
-              <breadCrumb title="搜索引擎" url="https://2young.2simple.top/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/linux-Mac-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</loc>
     <lastmod>2017-09-15T14:43:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>Linux/Mac 常用命令</title>
-        <pubTime>2017-03-15T04:39:38.000Z</pubTime>
-        
-        <tag>记录</tag>
-         
-        <tag>终端</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux、Mac" url="https://2young.2simple.top/categories/Linux%E3%80%81Mac/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data.html</loc>
     <lastmod>2017-07-17T06:02:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data</title>
-        <pubTime>2017-07-09T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="分布式处理" url="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus.html</loc>
     <lastmod>2017-07-17T05:26:41.000Z</lastmod>
-    <data>
-        <display>
-        <title>Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus</title>
-        <pubTime>2017-07-04T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="分布式处理" url="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-MapReduce.html</loc>
     <lastmod>2017-07-13T16:35:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>大规模数据处理-MapReduce</title>
-        <pubTime>2017-06-27T01:23:12.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Massive-Data-Process-Homework-4.html</loc>
     <lastmod>2017-07-04T15:37:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>Massive-Data-Process-Homework-4</title>
-        <pubTime>2017-07-04T03:46:16.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="分布式处理" url="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Massive-Data-Process-Lab1-A-Simple-Inverted-Index.html</loc>
     <lastmod>2017-07-03T09:29:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>Lab1:A Simple Inverted Index</title>
-        <pubTime>2017-07-01T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="分布式处理" url="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/Massive-Data-Process-Homework-2.html</loc>
     <lastmod>2017-06-28T12:05:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>Massive Data Process Homework 2</title>
-        <pubTime>2017-06-26T16:00:00.000Z</pubTime>
-        
-        <tag>MapReduce</tag>
-         
-         
-           
-             
-              <breadCrumb title="分布式处理" url="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.html</loc>
     <lastmod>2017-06-26T15:01:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>大规模集群数据处理-分布式文件系统</title>
-        <pubTime>2017-06-26T01:03:35.000Z</pubTime>
-        
-        <tag>基于大规模集群的海量数据处理技术</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E8%B0%B7%E6%AD%8C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0.html</loc>
     <lastmod>2017-06-26T14:33:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>谷歌文件系统论文学习</title>
-        <pubTime>2017-06-26T13:23:19.000Z</pubTime>
-        
-        <tag>谷歌文件系统</tag>
-         
-        <tag>大规模数据处理</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E5%B1%82%E6%AC%A1%E5%AD%98%E5%82%A8.html</loc>
     <lastmod>2017-06-16T17:52:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>[计算机系统结构]层次存储</title>
-        <pubTime>2017-03-26T05:42:18.000Z</pubTime>
-        
-        <tag>系统结构</tag>
-         
-        <tag>课程</tag>
-         
-         
-           
-             
-              <breadCrumb title="系统结构" url="https://2young.2simple.top/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html</loc>
     <lastmod>2017-06-15T13:21:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>[计算机系统结构]指令系统</title>
-        <pubTime>2017-03-14T17:56:33.000Z</pubTime>
-        
-        <tag>系统结构</tag>
-         
-        <tag>课程</tag>
-         
-         
-           
-             
-              <breadCrumb title="系统结构" url="https://2young.2simple.top/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%9E%E9%AA%8C2.html</loc>
     <lastmod>2017-06-13T15:05:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>密码学实验2</title>
-        <pubTime>2017-05-08T17:26:08.000Z</pubTime>
-        
-        <tag>课程</tag>
-         
-        <tag>密码学</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9.html</loc>
     <lastmod>2017-06-13T15:04:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>集成学习知识点</title>
-        <pubTime>2017-05-06T06:29:55.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-        <tag>集成学习</tag>
-         
-        <tag>Bagging</tag>
-         
-        <tag>Boosting</tag>
-         
-        <tag>实验</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://2young.2simple.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90.html</loc>
     <lastmod>2017-05-30T05:58:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>数值分析</title>
-        <pubTime>2017-03-21T02:06:03.000Z</pubTime>
-        
-        <tag>课程</tag>
-         
-        <tag>数值分析</tag>
-         
-         
-           
-             
-              <breadCrumb title="数值分析" url="https://2young.2simple.top/categories/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
     <lastmod>2017-04-11T17:31:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>操作系统复习笔记</title>
-        <pubTime>2017-04-05T07:13:25.000Z</pubTime>
-        
-        <tag>操作系统</tag>
-         
-        <tag>课程</tag>
-         
-        <tag>复习</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作系统" url="https://2young.2simple.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7.html</loc>
     <lastmod>2017-03-29T10:56:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>[搜索引擎]性能评价</title>
-        <pubTime>2017-03-14T05:32:59.000Z</pubTime>
-        
-        <tag>课程</tag>
-         
-        <tag>搜索引擎</tag>
-         
-         
-           
-             
-              <breadCrumb title="搜索引擎" url="https://2young.2simple.top/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
+  </url>  <url>
     <loc>https://2young.2simple.top/article/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF.html</loc>
     <lastmod>2017-03-19T06:02:18.000Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习-朴素贝叶斯</title>
-        <pubTime>2017-03-18T16:55:11.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-        <tag>实验</tag>
-         
-        <tag>朴素贝叶斯</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="https://2young.2simple.top/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
+  </url>
 </urlset>

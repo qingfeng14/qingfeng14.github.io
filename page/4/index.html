@@ -483,7 +483,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  5,155
+                  5,153
                 </span>
               
 
@@ -519,8 +519,7 @@ function loopy() {
 
       
         
-          <h1 id="关于x86启动后执行的第一条指令及其地址">关于x86启动后执行的第一条指令及其地址</h1>
-<p><a href="https://piazza.com/class/i5j09fnsl7k5x0?cid=770" target="_blank" rel="noopener">piazza</a></p>
+          <h1 id="关于x86启动后执行的第一条指令及其地址"><a href="#关于x86启动后执行的第一条指令及其地址" class="headerlink" title="关于x86启动后执行的第一条指令及其地址"></a>关于x86启动后执行的第一条指令及其地址</h1><p><a href="https://piazza.com/class/i5j09fnsl7k5x0?cid=770" target="_blank" rel="noopener">piazza</a></p>
 <p>1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。</p>
 <p>2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = selector&lt;&lt;4，但是，机器刚启动的时候，selector=F000, base=FFFF0000！直到跳转指令以后才变成normally~</p>
           <!--noindex-->
@@ -720,7 +719,7 @@ function loopy() {
 
       
         
-          <p>1（不用回答）理解 孤儿进程和僵死进程的含义 http://www.cnblogs.com/xiehongfeng100/p/4619913.html http://www.cnblogs.com/Anker/p/3271773.html https://piazza.com/class/i5j09fnsl7k5x0?cid=753</p>
+          <p>1（不用回答）理解 孤儿进程和僵死进程的含义<br><a href="http://www.cnblogs.com/xiehongfeng100/p/4619913.html" target="_blank" rel="noopener">http://www.cnblogs.com/xiehongfeng100/p/4619913.html</a><br><a href="http://www.cnblogs.com/Anker/p/3271773.html" target="_blank" rel="noopener">http://www.cnblogs.com/Anker/p/3271773.html</a><br><a href="https://piazza.com/class/i5j09fnsl7k5x0?cid=753" target="_blank" rel="noopener">https://piazza.com/class/i5j09fnsl7k5x0?cid=753</a></p>
 <p>孤儿进程：一个父进程退出、但其仍在运行的孤儿进程。孤儿进程将被init进程（进程号为1）所收养，并由init进程对它们完成状态收集工作。</p>
 <p>僵尸进程：一个已经终止、但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。</p>
           <!--noindex-->
@@ -920,11 +919,9 @@ function loopy() {
 
       
         
-          <h1 id="服务器配置相关记录">服务器配置相关记录</h1>
-<h2 id="apache的反向代理">Apache的反向代理</h2>
-<p>首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。</p>
-<p>如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_proxy_http.so</p>
-<p>有的服务器该配置文件为, <code>/etc/apache2/apache2.conf</code>
+          <h1 id="服务器配置相关记录"><a href="#服务器配置相关记录" class="headerlink" title="服务器配置相关记录"></a>服务器配置相关记录</h1><h2 id="Apache的反向代理"><a href="#Apache的反向代理" class="headerlink" title="Apache的反向代理"></a>Apache的反向代理</h2><p>首先是库之类的环境配置，<br>如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。</p>
+<p>如果是安装好的，就在配置文件http.conf里启用相应的模块<br>LoadModule proxy_module modules/mod_proxy.so<br>LoadModule proxy_http_module modules/mod_proxy_http.so</p>
+<p>有的服务器该配置文件为, <code>/etc/apache2/apache2.conf</code><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/服务器/服务器配置.html#more" rel="contents">
@@ -1122,8 +1119,7 @@ function loopy() {
 
       
         
-          <h3 id="以lab3为例说明虚拟页与磁盘后备页面的对应关系是什么">1 以lab3为例，说明虚拟页与磁盘后备页面的对应关系是什么？</h3>
-<p>物理内存+磁盘空间 构成了虚拟存储通过虚拟页式存储机制提供给用户更大的逻辑空间，虚拟内存页有可能在物理内存中，也可能在磁盘后备页面中，这种调整是通过页面置换算法进行对应的换入换出的。
+          <h3 id="1-以lab3为例，说明虚拟页与磁盘后备页面的对应关系是什么？"><a href="#1-以lab3为例，说明虚拟页与磁盘后备页面的对应关系是什么？" class="headerlink" title="1 以lab3为例，说明虚拟页与磁盘后备页面的对应关系是什么？"></a>1 以lab3为例，说明虚拟页与磁盘后备页面的对应关系是什么？</h3><p>物理内存+磁盘空间 构成了虚拟存储通过虚拟页式存储机制提供给用户更大的逻辑空间，虚拟内存页有可能在物理内存中，也可能在磁盘后备页面中，这种调整是通过页面置换算法进行对应的换入换出的。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/操作系统/lec10-lec11.html#more" rel="contents">
@@ -1285,7 +1281,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,286
+                  1,283
                 </span>
               
 
@@ -1322,8 +1318,7 @@ function loopy() {
       
         
           <p>程序访问的局部性原理：时间局部性，空间局部性</p>
-<h2 id="存储系统的多级层次结构">存储系统的多级层次结构</h2>
-<p>CPU-&gt;M1-&gt;M2–。。。。。。.&gt;Mn</p>
+<h2 id="存储系统的多级层次结构"><a href="#存储系统的多级层次结构" class="headerlink" title="存储系统的多级层次结构"></a>存储系统的多级层次结构</h2><p>CPU-&gt;M1-&gt;M2–。。。。。。.&gt;Mn</p>
 <p>在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集</p>
 <p>CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据</p>
           <!--noindex-->
@@ -1487,7 +1482,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,868
+                  1,851
                 </span>
               
 
@@ -1523,8 +1518,7 @@ function loopy() {
 
       
         
-          <h1 id="lec9-练习题">Lec9 练习题</h1>
-<h3 id="物理页帧数量为3且初始时没有对应的虚拟页虚拟页访问序列为01201303103请问采用最优置换算法的缺页次数为4">1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）</h3>
+          <h1 id="Lec9-练习题"><a href="#Lec9-练习题" class="headerlink" title="Lec9 练习题"></a>Lec9 练习题</h1><h3 id="1-物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0-1-2-0-1-3-0-3-1-0-3，请问采用最优置换算法的缺页次数为（4）"><a href="#1-物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0-1-2-0-1-3-0-3-1-0-3，请问采用最优置换算法的缺页次数为（4）" class="headerlink" title="1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）"></a>1. 物理页帧数量为3，且初始时没有对应的虚拟页。虚拟页访问序列为0,1,2,0,1,3,0,3,1,0,3，请问采用最优置换算法的缺页次数为（4）</h3>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/操作系统/OS-lec9-exercise.html#more" rel="contents">
@@ -1686,7 +1680,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,524
+                  1,525
                 </span>
               
 
@@ -1722,7 +1716,7 @@ function loopy() {
 
       
         
-          <p>设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算<span class="math inline">\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\)</span>, 请给出一个合理、高效率的算法流程.</p>
+          <p>设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算$𝒙 = B^{-1} (2A+I)(C^{-1}+A)b$,<br>请给出一个合理、高效率的算法流程.</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/数值分析.html#more" rel="contents">
@@ -1884,7 +1878,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  274
+                  269
                 </span>
               
 
@@ -1920,8 +1914,7 @@ function loopy() {
 
       
         
-          <h1 id="朴素贝叶斯原理">朴素贝叶斯原理</h1>
-<p><a href="https://github.com/yourtion/DataminingGuideBook" target="_blank" rel="noopener">youryion数据挖掘指导</a></p>
+          <h1 id="朴素贝叶斯原理"><a href="#朴素贝叶斯原理" class="headerlink" title="朴素贝叶斯原理"></a>朴素贝叶斯原理</h1><p><a href="https://github.com/yourtion/DataminingGuideBook" target="_blank" rel="noopener">youryion数据挖掘指导</a></p>
 <p>朴素贝叶斯法属于一种分类方法，基于<font color="red">特征条件独立假设</font>学习<font color="red">输入输出的联合概率分布</font>，以此为模型，对于给定的输入x，利用贝叶斯定理求出<font color="red">后验概率最大的输出y。</font></p>
 <p>简单有效，是一种常用的机器学习方法.</p>
           <!--noindex-->
@@ -2085,7 +2078,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  4,190
+                  4,180
                 </span>
               
 
@@ -2101,7 +2094,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  16
+                  15
                 </span>
               
             </div>
@@ -2121,9 +2114,7 @@ function loopy() {
 
       
         
-          <h1 id="提示个人联系方式及代码简要说明运行方式在readme.md文件中">提示：个人联系方式及代码简要说明、运行方式在README.md文件中</h1>
-<h1 id="实验目的">实验目的</h1>
-<ul>
+          <h1 id="提示：个人联系方式及代码简要说明、运行方式在README-md文件中"><a href="#提示：个人联系方式及代码简要说明、运行方式在README-md文件中" class="headerlink" title="提示：个人联系方式及代码简要说明、运行方式在README.md文件中"></a>提示：个人联系方式及代码简要说明、运行方式在README.md文件中</h1><h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ul>
 <li>在真实数据集上实现朴素贝叶斯分类器，并验证其分类效果</li>
 <li>了解如何在测试数据集上实现一个机器学习算法</li>
 <li>了解如何评价分类效果</li>
@@ -2290,7 +2281,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2,437
+                  2,414
                 </span>
               
 
@@ -2326,13 +2317,12 @@ function loopy() {
 
       
         
-          <h1 id="实验步骤">实验步骤</h1>
-<ol style="list-style-type: decimal">
+          <h1 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h1><ol>
 <li>自由分组， 至多2人一组</li>
-<li>构建查询样例集合：利用网络资源(http://top.baidu.com/; http://top.sogou.com/等) 和个人使用经验构建查询样例集合，查询样例集合需覆盖不同查询热门程度（ 冷门/热门） 和各种类型的用户查询需求（ 导航类/信息类/事务类），样例集合的规模为10个查询，各类比例为2:5:3， 并根据个人经验，撰写每个查询样例的信息需求内容。</li>
-<li>构建Pooling：学生根据其构建的查询样例集合，抓取常用的三个中文搜索引擎(百度、360好搜、 搜狗)对这部分查询词的查询结果，每个搜索引擎抓取查询结果的前十位结果，并利用这些结果 构建Pooling。</li>
-<li>构建相关性标注集合：根据步骤2中撰写好的信息需求，对Pooling里的结果进行标注，标注为 “ 答案” 和“ 非答案” 两类即可。</li>
-<li>根据标注结果，依据<font color="red">MAP，P@10，MRR</font>等评价指标对各个搜索引擎的查询性能进行评价，并对 搜索引擎满足不同信息需求的情况加以比较，每人各自撰写实验报告。</li>
+<li>构建查询样例集合：利用网络资源(<a href="http://top.baidu.com/" target="_blank" rel="noopener">http://top.baidu.com/</a>; <a href="http://top.sogou.com/等" target="_blank" rel="noopener">http://top.sogou.com/等</a>)<br>和个人使用经验构建查询样例集合，查询样例集合需覆盖不同查询热门程度（ 冷门/热门） 和各种类型的用户查询需求（ 导航类/信息类/事务类），样例集合的规模为10个查询，各类比例为2:5:3， 并根据个人经验，撰写每个查询样例的信息需求内容。</li>
+<li>构建Pooling：学生根据其构建的查询样例集合，抓取常用的三个中文搜索引擎(百度、360好搜、<br>搜狗)对这部分查询词的查询结果，每个搜索引擎抓取查询结果的前十位结果，并利用这些结果<br>构建Pooling。</li>
+<li>构建相关性标注集合：根据步骤2中撰写好的信息需求，对Pooling里的结果进行标注，标注为<br>“ 答案” 和“ 非答案” 两类即可。</li>
+<li>根据标注结果，依据<font color="red">MAP，P@10，MRR</font>等评价指标对各个搜索引擎的查询性能进行评价，并对<br>搜索引擎满足不同信息需求的情况加以比较，每人各自撰写实验报告。</li>
 </ol>
           <!--noindex-->
           <div class="post-button text-center">

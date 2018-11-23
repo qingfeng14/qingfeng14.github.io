@@ -124,18 +124,18 @@ function loopy() {
 
 
 
-<meta name="description" content="接口函数 AES: 12void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char*output,int *out_len, unsigned char *key,int keylen);">
+<meta name="description" content="接口函数AES:12void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char*output,int *out_len, unsigned char *key,int keylen);">
 <meta name="keywords" content="课程,密码学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="密码学实验2">
 <meta property="og:url" content="https://2young.2simple.top/article/密码学实验2.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="接口函数 AES: 12void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char*output,int *out_len, unsigned char *key,int keylen);">
+<meta property="og:description" content="接口函数AES:12void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char*output,int *out_len, unsigned char *key,int keylen);">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-06-13T15:05:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="密码学实验2">
-<meta name="twitter:description" content="接口函数 AES: 12void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char*output,int *out_len, unsigned char *key,int keylen);">
+<meta name="twitter:description" content="接口函数AES:12void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char*output,int *out_len, unsigned char *key,int keylen);">
 
 
 
@@ -493,20 +493,13 @@ function loopy() {
       
 
       
-        <h1 id="接口函数">接口函数</h1>
-<h2 id="aes">AES:</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char</span><br><span class="line">*output,int *out_len, unsigned char *key,int keylen);</span><br></pre></td></tr></table></figure>
+        <h1 id="接口函数"><a href="#接口函数" class="headerlink" title="接口函数"></a>接口函数</h1><h2 id="AES"><a href="#AES" class="headerlink" title="AES:"></a>AES:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void Crypt_Enc_Block(unsigned char *input,int in_len,unsigned char</span><br><span class="line">*output,int *out_len, unsigned char *key,int keylen);</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>AES加密过程涉及4种操作：</p>
-<h2 id="字节替代subbytes">字节替代（SubBytes）</h2>
-<h2 id="行移位shiftrows">行移位（ShiftRows）</h2>
-<h2 id="列混淆mixcolumns">列混淆（MixColumns）</h2>
-<h2 id="轮密钥加addroundkey">轮密钥加（AddRoundKey）</h2>
-<h2 id="通用的序列密码rc4">通用的序列密码RC4</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void RC4(unsigned char *input,int in_len,unsigned char *output,int</span><br><span class="line">*out_len,unsigned char *key,int keylen);</span><br></pre></td></tr></table></figure>
+<h2 id="字节替代（SubBytes）"><a href="#字节替代（SubBytes）" class="headerlink" title="字节替代（SubBytes）"></a>字节替代（SubBytes）</h2><h2 id="行移位（ShiftRows）"><a href="#行移位（ShiftRows）" class="headerlink" title="行移位（ShiftRows）"></a>行移位（ShiftRows）</h2><h2 id="列混淆（MixColumns）"><a href="#列混淆（MixColumns）" class="headerlink" title="列混淆（MixColumns）"></a>列混淆（MixColumns）</h2><h2 id="轮密钥加（AddRoundKey）"><a href="#轮密钥加（AddRoundKey）" class="headerlink" title="轮密钥加（AddRoundKey）"></a>轮密钥加（AddRoundKey）</h2><h2 id="通用的序列密码RC4"><a href="#通用的序列密码RC4" class="headerlink" title="通用的序列密码RC4"></a>通用的序列密码RC4</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void RC4(unsigned char *input,int in_len,unsigned char *output,int</span><br><span class="line">*out_len,unsigned char *key,int keylen);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>RonRivest设计。密钥长度可变</li>
-<li>状态:256个bytes – State[256]=[0,1,2,…,255]</li>
+<li>状态:256个bytes<br>  – State[256]=[0,1,2,…,255]</li>
 <li>密钥:40至2048比特可变</li>
 <li>初始化算法和伪随机子密钥生成算法</li>
 </ul>
@@ -519,11 +512,9 @@ function loopy() {
 <li>临时向量T：长度也为256，每个单元也是一个字节。<font color="red">如果密钥的长度是256字节，就直接把密钥的值赋给T，否则，轮转地将密钥的每个字节赋给T；</font></li>
 <li>密钥K：长度为1-256字节，注意密钥的长度keylen与明文长度、密钥流的长度没有必然关系，通常密钥的长度取为16字节（128比特）。</li>
 </ul>
-<h3 id="rc4的原理分为三步">RC4的原理分为三步：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1、初始化S和T</span><br><span class="line">for i=0 to 255 do</span><br><span class="line">   S[i]=i;</span><br><span class="line">   T[i]=K[ i mod keylen ];</span><br><span class="line">2、初始排列S</span><br><span class="line">j=0;</span><br><span class="line">for i=0 to 255 do</span><br><span class="line">   j= ( j+S[i]+T[i])mod256;</span><br><span class="line">   swap(S[i],S[j]);</span><br><span class="line">3、产生密钥流</span><br><span class="line">i,j=0;</span><br><span class="line">for r=0 to len do  //r为明文长度，r字节</span><br><span class="line">   i=(i+1) mod 256;</span><br><span class="line">   j=(j+S[i])mod 256;</span><br><span class="line">   swap(S[i],S[j]);</span><br><span class="line">   t=(S[i]+S[j])mod 256;</span><br><span class="line">   k[r]=S[t];</span><br></pre></td></tr></table></figure>
-<h2 id="sm3">SM3:</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void SM3(unsigned char *InMessage,int MessageLen,unsigned char *OutDigest,</span><br><span class="line">int *DigestLen);</span><br></pre></td></tr></table></figure>
-<ol start="4" style="list-style-type: decimal">
+<h3 id="RC4的原理分为三步："><a href="#RC4的原理分为三步：" class="headerlink" title="RC4的原理分为三步："></a>RC4的原理分为三步：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1、初始化S和T</span><br><span class="line">for i=0 to 255 do</span><br><span class="line">   S[i]=i;</span><br><span class="line">   T[i]=K[ i mod keylen ];</span><br><span class="line">2、初始排列S</span><br><span class="line">j=0;</span><br><span class="line">for i=0 to 255 do</span><br><span class="line">   j= ( j+S[i]+T[i])mod256;</span><br><span class="line">   swap(S[i],S[j]);</span><br><span class="line">3、产生密钥流</span><br><span class="line">i,j=0;</span><br><span class="line">for r=0 to len do  //r为明文长度，r字节</span><br><span class="line">   i=(i+1) mod 256;</span><br><span class="line">   j=(j+S[i])mod 256;</span><br><span class="line">   swap(S[i],S[j]);</span><br><span class="line">   t=(S[i]+S[j])mod 256;</span><br><span class="line">   k[r]=S[t];</span><br></pre></td></tr></table></figure>
+<h2 id="SM3"><a href="#SM3" class="headerlink" title="SM3:"></a>SM3:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">void SM3(unsigned char *InMessage,int MessageLen,unsigned char *OutDigest,</span><br><span class="line">int *DigestLen);</span><br></pre></td></tr></table></figure>
+<ol start="4">
 <li>寻找SM3的高56比特的碰撞.（提交源程序和碰撞消息对）</li>
 </ol>
 
@@ -616,8 +607,8 @@ function loopy() {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/4over6实验报告.html" rel="prev" title="Ipv4 over Ipv6隧道协议实验客户端报告">
-                Ipv4 over Ipv6隧道协议实验客户端报告 <i class="fa fa-chevron-right"></i>
+              <a href="/article/密码学第三次大作业.html" rel="prev" title="密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议">
+                密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -807,7 +798,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#接口函数"><span class="nav-number">1.</span> <span class="nav-text">接口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#aes"><span class="nav-number">1.1.</span> <span class="nav-text">AES:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节替代subbytes"><span class="nav-number">1.2.</span> <span class="nav-text">字节替代（SubBytes）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行移位shiftrows"><span class="nav-number">1.3.</span> <span class="nav-text">行移位（ShiftRows）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列混淆mixcolumns"><span class="nav-number">1.4.</span> <span class="nav-text">列混淆（MixColumns）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轮密钥加addroundkey"><span class="nav-number">1.5.</span> <span class="nav-text">轮密钥加（AddRoundKey）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用的序列密码rc4"><span class="nav-number">1.6.</span> <span class="nav-text">通用的序列密码RC4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rc4的原理分为三步"><span class="nav-number">1.6.1.</span> <span class="nav-text">RC4的原理分为三步：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sm3"><span class="nav-number">1.7.</span> <span class="nav-text">SM3:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#接口函数"><span class="nav-number">1.</span> <span class="nav-text">接口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AES"><span class="nav-number">1.1.</span> <span class="nav-text">AES:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节替代（SubBytes）"><span class="nav-number">1.2.</span> <span class="nav-text">字节替代（SubBytes）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行移位（ShiftRows）"><span class="nav-number">1.3.</span> <span class="nav-text">行移位（ShiftRows）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列混淆（MixColumns）"><span class="nav-number">1.4.</span> <span class="nav-text">列混淆（MixColumns）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轮密钥加（AddRoundKey）"><span class="nav-number">1.5.</span> <span class="nav-text">轮密钥加（AddRoundKey）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用的序列密码RC4"><span class="nav-number">1.6.</span> <span class="nav-text">通用的序列密码RC4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RC4的原理分为三步："><span class="nav-number">1.6.1.</span> <span class="nav-text">RC4的原理分为三步：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SM3"><span class="nav-number">1.7.</span> <span class="nav-text">SM3:</span></a></li></ol></li></ol></div>
             
 
           </div>

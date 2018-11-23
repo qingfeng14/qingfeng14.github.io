@@ -124,13 +124,13 @@ function loopy() {
 
 
 
-<meta name="description" content="实验内容 基于维基百科网站中各网页之间的链接关系图，计算该网站中各网页对应的PageRank值。">
+<meta name="description" content="实验内容基于维基百科网站中各网页之间的链接关系图，计算该网站中各网页对应的PageRank值。">
 <meta name="keywords" content="课程,实验,搜索引擎">
 <meta property="og:type" content="article">
 <meta property="og:title" content="链接结构分析实验">
 <meta property="og:url" content="https://2young.2simple.top/article/链接结构分析实验.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="实验内容 基于维基百科网站中各网页之间的链接关系图，计算该网站中各网页对应的PageRank值。">
+<meta property="og:description" content="实验内容基于维基百科网站中各网页之间的链接关系图，计算该网站中各网页对应的PageRank值。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3e0g452A091T01290J0Z/Image%202017-05-21%20at%2011.03.25%20下午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/0L1J1b1U0Q3d2E2v3J1u/Image%202017-05-21%20at%2011.01.16%20下午.png">
@@ -141,7 +141,7 @@ function loopy() {
 <meta property="og:updated_time" content="2018-11-22T07:45:01.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="链接结构分析实验">
-<meta name="twitter:description" content="实验内容 基于维基百科网站中各网页之间的链接关系图，计算该网站中各网页对应的PageRank值。">
+<meta name="twitter:description" content="实验内容基于维基百科网站中各网页之间的链接关系图，计算该网站中各网页对应的PageRank值。">
 <meta name="twitter:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3e0g452A091T01290J0Z/Image%202017-05-21%20at%2011.03.25%20下午.png">
 
 
@@ -487,7 +487,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  675
+                  631
                 </span>
               
 
@@ -522,20 +522,15 @@ function loopy() {
       
 
       
-        <h1 id="实验内容">实验内容</h1>
-<p>基于维基百科网站中各网页之间的链接关系图，计算该网站中各网页对应的PageRank值。</p>
+        <h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><p>基于维基百科网站中各网页之间的链接关系图，计算该网站中各网页对应的PageRank值。</p>
 <a id="more"></a>
-<h1 id="数据格式">数据格式</h1>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head:node1,node2,…,noden\n</span><br><span class="line">源网页:目标网页1,目标网页2,…,目标网页n\n</span><br></pre></td></tr></table></figure>
-<h1 id="实现">实现</h1>
-<p>按照课件中的PageRank算法完成实现即可, 其中跳出参数aplha = 0.15, 迭代次数TN = 30</p>
+<h1 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head:node1,node2,…,noden\n</span><br><span class="line">源网页:目标网页1,目标网页2,…,目标网页n\n</span><br></pre></td></tr></table></figure>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>按照课件中的PageRank算法完成实现即可, 其中跳出参数aplha = 0.15, 迭代次数TN = 30</p>
 <p>链接结构文件在results.txt文件中</p>
-<h1 id="运行结果">运行结果</h1>
-<h2 id="pagerank算法结果分布情况pagerank得分与相应条目语义内容的分析">PageRank算法结果分布情况，PageRank得分与相应条目语义内容的分析</h2>
-<p>PageRank值前10的页面为</p>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><h2 id="PageRank算法结果分布情况，PageRank得分与相应条目语义内容的分析"><a href="#PageRank算法结果分布情况，PageRank得分与相应条目语义内容的分析" class="headerlink" title="PageRank算法结果分布情况，PageRank得分与相应条目语义内容的分析"></a>PageRank算法结果分布情况，PageRank得分与相应条目语义内容的分析</h2><p>PageRank值前10的页面为</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>网页名</th>
 <th>ID</th>
 <th>PageRank</th>
@@ -544,70 +539,70 @@ function loopy() {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>箭头</td>
 <td>25883781</td>
 <td>0.0222736998255</td>
 <td>5</td>
 <td>45</td>
 </tr>
-<tr class="even">
+<tr>
 <td>&lt;-</td>
 <td>27117327</td>
 <td>0.0172915137241</td>
 <td>2</td>
 <td>228676</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>维基数据</td>
 <td>26530938</td>
 <td>0.00480022230925</td>
 <td>14</td>
 <td>196429</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Unicode</td>
 <td>27003594</td>
 <td>0.00390634021739</td>
 <td>170</td>
 <td>945</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>符号</td>
 <td>27013210</td>
 <td>0.00383295720591</td>
 <td>78</td>
 <td>283</td>
 </tr>
-<tr class="even">
+<tr>
 <td>中国</td>
 <td>27116231</td>
 <td>0.00129406053337</td>
 <td>2287</td>
 <td>68798</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>美国</td>
 <td>27116867</td>
 <td>0.00115684939603</td>
 <td>1741</td>
 <td>70222</td>
 </tr>
-<tr class="even">
+<tr>
 <td>学名</td>
 <td>27108158</td>
 <td>0.00108490964783</td>
 <td>20</td>
 <td>68384</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>法国</td>
 <td>27114727</td>
 <td>0.000980044130108</td>
 <td>629</td>
 <td>54791</td>
 </tr>
-<tr class="even">
+<tr>
 <td>市镇</td>
 <td>27079331</td>
 <td>0.00097233210881</td>
@@ -616,36 +611,16 @@ function loopy() {
 </tr>
 </tbody>
 </table>
-<p>由结果可以发现箭头和&lt;-是两个页面结果奇地高，分析这两个页面可以发现，“箭头”和“&lt;-”两个页面的出度都比较小，而‘&lt;-’入度特别高，这在一定程度上使得其PageRank值偏高，而’箭头’页面的入度实际上并不高，但其PageRank值却是最高的，查询对应网页内容，发现’&lt;-’页面其实是维基百科的重定向页面，有大量页面指向该页面，因此其PageRank值会偏高</p>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3e0g452A091T01290J0Z/Image%202017-05-21%20at%2011.03.25%20下午.png" alt="&lt;-出度">
-<p class="caption">&lt;-出度</p>
-</div>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0L1J1b1U0Q3d2E2v3J1u/Image%202017-05-21%20at%2011.01.16%20下午.png" alt="箭头出度1">
-<p class="caption">箭头出度1</p>
-</div>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2Z3V1W3a0a1B143N2o0Q/Image%202017-05-21%20at%2011.00.16%20下午.png" alt="箭头出度2">
-<p class="caption">箭头出度2</p>
-</div>
+<p>由结果可以发现箭头和&lt;-是两个页面结果奇地高，分析这两个页面可以发现，“箭头”和“&lt;-”两个页面的出度都比较小，而‘&lt;-’入度特别高，这在一定程度上使得其PageRank值偏高，而’箭头’页面的入度实际上并不高，但其PageRank值却是最高的，查询对应网页内容，发现’&lt;-‘页面其实是维基百科的重定向页面，有大量页面指向该页面，因此其PageRank值会偏高</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3e0g452A091T01290J0Z/Image%202017-05-21%20at%2011.03.25%20下午.png" alt="&lt;-出度"></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0L1J1b1U0Q3d2E2v3J1u/Image%202017-05-21%20at%2011.01.16%20下午.png" alt="箭头出度1"></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2Z3V1W3a0a1B143N2o0Q/Image%202017-05-21%20at%2011.00.16%20下午.png" alt="箭头出度2"></p>
 <p>‘&lt;-’页面由于有很多页面指向，因此其PageRank值偏高是比较合理的，而“箭头”页面的入度实际上并不高，但是其PageRank值却是最高的，进一步分析“箭头页面”，查看“箭头”页面的出度，发现其5个出页面中有两个指向了自己，进一步查看‘&lt;-’页面的出度，发现其两个出度都是’25883781’,即“箭头页面”，由PageRank迭代过程中PageRank值更新过程（PageRank算法图所示），‘&lt;-’页面由于入度大故PageRank值较高，而该页面又全部指向了‘箭头’页面，由算法图中标记位置可知，“箭头”页面的PageRank值的确会特别高</p>
 <p>由此可以得出结论，计算PageRank时一定要注意数据的清洗，清除一些不必要的页面，PageRank值排名第2和3的页面实际的重要程度并不高，但是由于其是分类或者重定向页面而显得比较高，这实际上影响了其页面重要性的真实度。</p>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/461s0S053N0x1P3X3T1b/Image%202017-05-21%20at%2011.11.18%20下午.png" alt="PageRank算法图">
-<p class="caption">PageRank算法图</p>
-</div>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/233c403F2x3E3T2e0q0D/Image%202017-05-22%20at%2012.16.09%20上午.png" alt="算法结果分布情况">
-<p class="caption">算法结果分布情况</p>
-</div>
-<h2 id="维基百科语料库中入连接数出连接数分布情况">维基百科语料库中入连接数/出连接数分布情况</h2>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2b3W2a3N0l2P2u2H0L0A/Image%202017-05-21%20at%2011.45.49%20下午.png" alt="维基百科语料库中入连接数/出连接数分布情况">
-<p class="caption">维基百科语料库中入连接数/出连接数分布情况</p>
-</div>
-<h2 id="pagerank与入链接数的关联分析">PageRank与入链接数的关联分析</h2>
-<p>通过计算PageRank值和入连接数的相关系数，可知其相关性不大</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/461s0S053N0x1P3X3T1b/Image%202017-05-21%20at%2011.11.18%20下午.png" alt="PageRank算法图"></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/233c403F2x3E3T2e0q0D/Image%202017-05-22%20at%2012.16.09%20上午.png" alt="算法结果分布情况"></p>
+<h2 id="维基百科语料库中入连接数-出连接数分布情况"><a href="#维基百科语料库中入连接数-出连接数分布情况" class="headerlink" title="维基百科语料库中入连接数/出连接数分布情况"></a>维基百科语料库中入连接数/出连接数分布情况</h2><p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2b3W2a3N0l2P2u2H0L0A/Image%202017-05-21%20at%2011.45.49%20下午.png" alt="维基百科语料库中入连接数/出连接数分布情况"></p>
+<h2 id="PageRank与入链接数的关联分析"><a href="#PageRank与入链接数的关联分析" class="headerlink" title="PageRank与入链接数的关联分析"></a>PageRank与入链接数的关联分析</h2><p>通过计算PageRank值和入连接数的相关系数，可知其相关性不大</p>
 
       
     </div>
@@ -929,7 +904,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容"><span class="nav-number">1.</span> <span class="nav-text">实验内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据格式"><span class="nav-number">2.</span> <span class="nav-text">数据格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行结果"><span class="nav-number">4.</span> <span class="nav-text">运行结果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pagerank算法结果分布情况pagerank得分与相应条目语义内容的分析"><span class="nav-number">4.1.</span> <span class="nav-text">PageRank算法结果分布情况，PageRank得分与相应条目语义内容的分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#维基百科语料库中入连接数出连接数分布情况"><span class="nav-number">4.2.</span> <span class="nav-text">维基百科语料库中入连接数/出连接数分布情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pagerank与入链接数的关联分析"><span class="nav-number">4.3.</span> <span class="nav-text">PageRank与入链接数的关联分析</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容"><span class="nav-number">1.</span> <span class="nav-text">实验内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据格式"><span class="nav-number">2.</span> <span class="nav-text">数据格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行结果"><span class="nav-number">4.</span> <span class="nav-text">运行结果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PageRank算法结果分布情况，PageRank得分与相应条目语义内容的分析"><span class="nav-number">4.1.</span> <span class="nav-text">PageRank算法结果分布情况，PageRank得分与相应条目语义内容的分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#维基百科语料库中入连接数-出连接数分布情况"><span class="nav-number">4.2.</span> <span class="nav-text">维基百科语料库中入连接数/出连接数分布情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PageRank与入链接数的关联分析"><span class="nav-number">4.3.</span> <span class="nav-text">PageRank与入链接数的关联分析</span></a></li></ol></li></ol></div>
             
 
           </div>

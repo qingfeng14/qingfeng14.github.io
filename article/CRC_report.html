@@ -124,17 +124,17 @@ function loopy() {
 
 
 
-<meta name="description" content="实验目的  深入理解各种不同的 Cache 替换策略 理解学习不同替换策略对程序运行性能的影响 动手实现自己的 Cache 替换策略">
+<meta name="description" content="实验目的 深入理解各种不同的 Cache 替换策略 理解学习不同替换策略对程序运行性能的影响  动手实现自己的 Cache 替换策略">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实验 1 Cache 替换策略设计与分析">
 <meta property="og:url" content="https://2young.2simple.top/article/CRC_report.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="实验目的  深入理解各种不同的 Cache 替换策略 理解学习不同替换策略对程序运行性能的影响 动手实现自己的 Cache 替换策略">
+<meta property="og:description" content="实验目的 深入理解各种不同的 Cache 替换策略 理解学习不同替换策略对程序运行性能的影响  动手实现自己的 Cache 替换策略">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-21T09:18:15.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实验 1 Cache 替换策略设计与分析">
-<meta name="twitter:description" content="实验目的  深入理解各种不同的 Cache 替换策略 理解学习不同替换策略对程序运行性能的影响 动手实现自己的 Cache 替换策略">
+<meta name="twitter:description" content="实验目的 深入理解各种不同的 Cache 替换策略 理解学习不同替换策略对程序运行性能的影响  动手实现自己的 Cache 替换策略">
 
 
 
@@ -492,15 +492,13 @@ function loopy() {
       
 
       
-        <h1 id="实验目的">实验目的</h1>
-<ul>
+        <h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ul>
 <li>深入理解各种不同的 Cache 替换策略</li>
-<li>理解学习不同替换策略对程序运行性能的影响</li>
+<li>理解学习不同替换策略对程序运行性能的影响 </li>
 <li>动手实现自己的 Cache 替换策略</li>
 </ul>
 <a id="more"></a>
-<h1 id="实验要求">实验要求</h1>
-<ul>
+<h1 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h1><ul>
 <li>理解学习 LRU 及其它已经提出的 Cache 替换策略</li>
 <li>在提供的模拟器上实现自己设计的 Cache 替换策略</li>
 <li>通过 benchmark 测试比较不同的 Cache 替换策略</li>
@@ -508,8 +506,7 @@ function loopy() {
 <li>在实验报告中说明自己是怎样对不同的 Cache 替换策略进行测试的</li>
 <li>在实验报告中分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</li>
 </ul>
-<h1 id="已有替换策略分析">已有替换策略分析</h1>
-<p>常见的Cache替换策略有LRU，FIFO, LFU等，本次实验基于MK Qureshi于2007年的Adaptive insertion policies for high performance caching一文提出的LRU Insertion Policy算法进行的实现。</p>
+<h1 id="已有替换策略分析"><a href="#已有替换策略分析" class="headerlink" title="已有替换策略分析"></a>已有替换策略分析</h1><p>常见的Cache替换策略有LRU，FIFO, LFU等，本次实验基于MK Qureshi于2007年的Adaptive insertion policies for high performance caching一文提出的LRU Insertion Policy算法进行的实现。</p>
 <p>在该文中，作者指出，当程序重用工作集大于可用Cache时或者其存储访问具有低局部相关性时，Cache替换策略中最常用的LRU策略表现出十分低下的命中率。大量新替换入Cache的行对命中率的贡献为零，而原本可能命中的行则由于长期不被访问而替换出Cache。针对这种情况，该文提出了以下一些改进策略：</p>
 <ul>
 <li>LRU Insertion Policy (LIP) 。该策略将所有替换入Cache的行置于LRU端。相对于传统策略将所有替换入的行置于MRU端，LIP使一部分行得以驻留于Cache中，其驻留时间能比Cache本身容量更长。LIP策略能够很好地应对Thrashing，尤其对于循环访问内存的程序其性能近似于OPT策略。</li>
@@ -517,18 +514,14 @@ function loopy() {
 <li>Dynamic Insertion Policy (DIP) 能动态地在LRU和BIP间切换，选择其中命中率较高的策略执行后续指令。DIP对于LRU-friendly的程序块使用LRU策略，对于LRU-averse的程序块使用DIP策略，以求通用效率。对于1MB16路L2 Cache，DIP策略较LRU降低21%的失配率。</li>
 </ul>
 <p>LIP和BIP两种策略对于LRU-friendly（高局部性）的程序，性能均不佳。</p>
-<h1 id="我实现的替换策略">我实现的替换策略</h1>
-<p>考虑到实现难度，本次实验我实现了MK Qureshi提出的三个算法中的第一个LIP算法，具体的实现为：</p>
+<h1 id="我实现的替换策略"><a href="#我实现的替换策略" class="headerlink" title="我实现的替换策略"></a>我实现的替换策略</h1><p>考虑到实现难度，本次实验我实现了MK Qureshi提出的三个算法中的第一个LIP算法，具体的实现为：</p>
 <ul>
 <li>当访存命中时，将命中的Cache块放到对应栈的LRU端，其他块依次移位</li>
 <li>当Cache缺失时，替换策略与LRU一致，这时需要将新换入的Cache块放到对应栈的MRU端</li>
 </ul>
-<p>在实际的实验过程中发现，LIP算法并没有很明显的改进LRU算法，约有<span class="math inline">\(\frac{1}{3}\)</span>的测试样例中LIP算法表现更好，<span class="math inline">\(1/2\)</span>的测试样例中LRU算法表现更好，由此，我采用了一个稍大概率值使得其一部分情况下采用LRU算法，一部分情况下采用LIP算法，考虑到LRU算法在大多数情况下表现较好，这里的概率值设置得稍大一些，置为了30%,即对于新换入的Cache块，有30%的概率会被放置在LRU端，有70%的概率会被置于MRU端</p>
-<h2 id="具体实现">具体实现</h2>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个函数是根据实现的Cache替换策略函数                                         </span></span><br><span class="line">INT32  CACHE_REPLACEMENT_STATE::Get_LIP_Victim( UINT32 setIndex )&#123;</span><br><span class="line">    <span class="comment">// Get pointer to replacement state of current set</span></span><br><span class="line">    LINE_REPLACEMENT_STATE *replSet = repl[ setIndex ];</span><br><span class="line"></span><br><span class="line">    INT32   lipWay   = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Search for victim whose stack position is assoc-1</span></span><br><span class="line">    <span class="comment">// 被替换的块策略与LRU一致，选择栈底被替换出去</span></span><br><span class="line">    <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>( replSet[way].LRUstackposition == (assoc<span class="number">-1</span>) ) </span><br><span class="line">        &#123;</span><br><span class="line">            lipWay = way;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// return lru way</span></span><br><span class="line">    <span class="keyword">return</span> lipWay;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// This function implements the LIP update routine for the traditional        //</span></span><br><span class="line"><span class="comment">// LIP replacement policy. The arguments to the function are the physical     //</span></span><br><span class="line"><span class="comment">// way and set index.                                                         </span></span><br><span class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateLIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Determine current LRU stack position</span></span><br><span class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果hit</span></span><br><span class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></span><br><span class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></span><br><span class="line">    <span class="keyword">if</span> (cacheHit) &#123;</span><br><span class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </span><br><span class="line">            &#123;</span><br><span class="line">                repl[setIndex][way].LRUstackposition++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateBIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Determine current LRU stack position</span></span><br><span class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果hit</span></span><br><span class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></span><br><span class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></span><br><span class="line">    <span class="keyword">if</span> (cacheHit || (rand()%<span class="number">100</span> &lt; probability)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </span><br><span class="line">            &#123;</span><br><span class="line">                repl[setIndex][way].LRUstackposition++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="替换策略测试">替换策略测试</h1>
-<h2 id="测试方法">测试方法</h2>
-<p>本次实验中将29个测试程序分别采用LRU,LIP算法进行了测试，测试时的Cache设置为 <code>UL3:1024:64:16</code></p>
+<p>在实际的实验过程中发现，LIP算法并没有很明显的改进LRU算法，约有$\frac{1}{3}$的测试样例中LIP算法表现更好，$1/2$的测试样例中LRU算法表现更好，由此，我采用了一个稍大概率值使得其一部分情况下采用LRU算法，一部分情况下采用LIP算法，考虑到LRU算法在大多数情况下表现较好，这里的概率值设置得稍大一些，置为了30%,即对于新换入的Cache块，有30%的概率会被放置在LRU端，有70%的概率会被置于MRU端</p>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个函数是根据实现的Cache替换策略函数                                         </span></span><br><span class="line">INT32  CACHE_REPLACEMENT_STATE::Get_LIP_Victim( UINT32 setIndex )&#123;</span><br><span class="line">    <span class="comment">// Get pointer to replacement state of current set</span></span><br><span class="line">    LINE_REPLACEMENT_STATE *replSet = repl[ setIndex ];</span><br><span class="line"></span><br><span class="line">    INT32   lipWay   = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Search for victim whose stack position is assoc-1</span></span><br><span class="line">    <span class="comment">// 被替换的块策略与LRU一致，选择栈底被替换出去</span></span><br><span class="line">    <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>( replSet[way].LRUstackposition == (assoc<span class="number">-1</span>) ) </span><br><span class="line">        &#123;</span><br><span class="line">            lipWay = way;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// return lru way</span></span><br><span class="line">    <span class="keyword">return</span> lipWay;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// This function implements the LIP update routine for the traditional        //</span></span><br><span class="line"><span class="comment">// LIP replacement policy. The arguments to the function are the physical     //</span></span><br><span class="line"><span class="comment">// way and set index.                                                         </span></span><br><span class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateLIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Determine current LRU stack position</span></span><br><span class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果hit</span></span><br><span class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></span><br><span class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></span><br><span class="line">    <span class="keyword">if</span> (cacheHit) &#123;</span><br><span class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </span><br><span class="line">            &#123;</span><br><span class="line">                repl[setIndex][way].LRUstackposition++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateBIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Determine current LRU stack position</span></span><br><span class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果hit</span></span><br><span class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></span><br><span class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></span><br><span class="line">    <span class="keyword">if</span> (cacheHit || (rand()%<span class="number">100</span> &lt; probability)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </span><br><span class="line">            &#123;</span><br><span class="line">                repl[setIndex][way].LRUstackposition++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="替换策略测试"><a href="#替换策略测试" class="headerlink" title="替换策略测试"></a>替换策略测试</h1><h2 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h2><p>本次实验中将29个测试程序分别采用LRU,LIP算法进行了测试，测试时的Cache设置为 <code>UL3:1024:64:16</code></p>
 <p>即</p>
 <ul>
 <li>实验在第3级Cache上进行，统一存储指令和数据，</li>
@@ -537,786 +530,759 @@ function loopy() {
 <li>16路组相连</li>
 </ul>
 <p>在测试时我利用shell脚本自带的<code>time</code>命令输出其运行时间(取real time结果)以此代表程序运行时间，此外，我还采用了CPI,缺失率作为其评价指标</p>
-<h2 id="分析不同替换策略下程序的运行时间cache-命中率受到的影响">分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</h2>
-<h3 id="lru和lip算法比较">LRU和LIP算法比较</h3>
-<table style="width:96%;">
-<colgroup>
-<col width="8%">
-<col width="12%">
-<col width="8%">
-<col width="8%">
-<col width="12%">
-<col width="8%">
-<col width="8%">
-<col width="12%">
-<col width="8%">
-<col width="8%">
-</colgroup>
+<h2 id="分析不同替换策略下，程序的运行时间、Cache-命中率受到的影响"><a href="#分析不同替换策略下，程序的运行时间、Cache-命中率受到的影响" class="headerlink" title="分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响"></a>分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</h2><h3 id="LRU和LIP算法比较"><a href="#LRU和LIP算法比较" class="headerlink" title="LRU和LIP算法比较"></a>LRU和LIP算法比较</h3><table>
 <thead>
-<tr class="header">
-<th align="right"><strong>程序</strong></th>
-<th align="right"><strong>LRU_time</strong></th>
-<th align="right"><strong>LIP_time</strong></th>
-<th align="right"><strong>less_time</strong></th>
-<th align="right"><strong>LRU_CPI</strong></th>
-<th align="right"><strong>LIP_CPI</strong></th>
-<th align="right"><strong>Less_cpi</strong></th>
-<th align="right"><strong>LRU_miss</strong></th>
-<th align="right"><strong>LIP_miss</strong></th>
-<th align="right"><strong>less miss</strong></th>
+<tr>
+<th style="text-align:right"><strong>程序</strong></th>
+<th style="text-align:right"><strong>LRU_time</strong></th>
+<th style="text-align:right"><strong>LIP_time</strong></th>
+<th style="text-align:right"><strong>less_time</strong></th>
+<th style="text-align:right"><strong>LRU_CPI</strong></th>
+<th style="text-align:right"><strong>LIP_CPI</strong></th>
+<th style="text-align:right"><strong>Less_cpi</strong></th>
+<th style="text-align:right"><strong>LRU_miss</strong></th>
+<th style="text-align:right"><strong>LIP_miss</strong></th>
+<th style="text-align:right"><strong>less miss</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="right">perlbench</td>
-<td align="right">17.070</td>
-<td align="right">16.420</td>
-<td align="right">LIP</td>
-<td align="right">0.642823</td>
-<td align="right">0.669326</td>
-<td align="right">LRU</td>
-<td align="right">40.7952</td>
-<td align="right">44.9668</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">perlbench</td>
+<td style="text-align:right">17.070</td>
+<td style="text-align:right">16.420</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.642823</td>
+<td style="text-align:right">0.669326</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">40.7952</td>
+<td style="text-align:right">44.9668</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">bzip2</td>
-<td align="right">123.840</td>
-<td align="right">120.870</td>
-<td align="right">LIP</td>
-<td align="right">0.554642</td>
-<td align="right">0.571873</td>
-<td align="right">LRU</td>
-<td align="right">61.7369</td>
-<td align="right">55.3261</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">bzip2</td>
+<td style="text-align:right">123.840</td>
+<td style="text-align:right">120.870</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.554642</td>
+<td style="text-align:right">0.571873</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">61.7369</td>
+<td style="text-align:right">55.3261</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="odd">
-<td align="right">gcc</td>
-<td align="right">134.380</td>
-<td align="right">130.780</td>
-<td align="right">LIP</td>
-<td align="right">0.614864</td>
-<td align="right">0.575939</td>
-<td align="right">LIP</td>
-<td align="right">42.7521</td>
-<td align="right">38.5965</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">gcc</td>
+<td style="text-align:right">134.380</td>
+<td style="text-align:right">130.780</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.614864</td>
+<td style="text-align:right">0.575939</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">42.7521</td>
+<td style="text-align:right">38.5965</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="even">
-<td align="right">bwaves</td>
-<td align="right">118.230</td>
-<td align="right">117.520</td>
-<td align="right">LIP</td>
-<td align="right">0.253088</td>
-<td align="right">0.253088</td>
-<td align="right">=</td>
-<td align="right">99.6634</td>
-<td align="right">99.6634</td>
-<td align="right">=</td>
+<tr>
+<td style="text-align:right">bwaves</td>
+<td style="text-align:right">118.230</td>
+<td style="text-align:right">117.520</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.253088</td>
+<td style="text-align:right">0.253088</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">99.6634</td>
+<td style="text-align:right">99.6634</td>
+<td style="text-align:right">=</td>
 </tr>
-<tr class="odd">
-<td align="right">gamess</td>
-<td align="right">133.080</td>
-<td align="right">135.110</td>
-<td align="right">LRU</td>
-<td align="right">0.30022</td>
-<td align="right">0.312251</td>
-<td align="right">LRU</td>
-<td align="right">26.3204</td>
-<td align="right">92.0923</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">gamess</td>
+<td style="text-align:right">133.080</td>
+<td style="text-align:right">135.110</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.30022</td>
+<td style="text-align:right">0.312251</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">26.3204</td>
+<td style="text-align:right">92.0923</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">mcf</td>
-<td align="right">163.610</td>
-<td align="right">153.580</td>
-<td align="right">LIP</td>
-<td align="right">2.55358</td>
-<td align="right">2.04087</td>
-<td align="right">LIP</td>
-<td align="right">75.676</td>
-<td align="right">59.7033</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">mcf</td>
+<td style="text-align:right">163.610</td>
+<td style="text-align:right">153.580</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">2.55358</td>
+<td style="text-align:right">2.04087</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">75.676</td>
+<td style="text-align:right">59.7033</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="odd">
-<td align="right">milc</td>
-<td align="right">148.670</td>
-<td align="right">144.780</td>
-<td align="right">LIP</td>
-<td align="right">1.14939</td>
-<td align="right">1.1807</td>
-<td align="right">LRU</td>
-<td align="right">77.0164</td>
-<td align="right">79.3471</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">milc</td>
+<td style="text-align:right">148.670</td>
+<td style="text-align:right">144.780</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">1.14939</td>
+<td style="text-align:right">1.1807</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">77.0164</td>
+<td style="text-align:right">79.3471</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">zeusmp</td>
-<td align="right">148.800</td>
-<td align="right">133.400</td>
-<td align="right">LIP</td>
-<td align="right">0.451633</td>
-<td align="right">0.452046</td>
-<td align="right">LRU</td>
-<td align="right">80.81</td>
-<td align="right">82.492</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">zeusmp</td>
+<td style="text-align:right">148.800</td>
+<td style="text-align:right">133.400</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.451633</td>
+<td style="text-align:right">0.452046</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">80.81</td>
+<td style="text-align:right">82.492</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">gromacs</td>
-<td align="right">143.230</td>
-<td align="right">153.090</td>
-<td align="right">LRU</td>
-<td align="right">0.607769</td>
-<td align="right">0.664129</td>
-<td align="right">LRU</td>
-<td align="right">71.1979</td>
-<td align="right">89.1534</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">gromacs</td>
+<td style="text-align:right">143.230</td>
+<td style="text-align:right">153.090</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.607769</td>
+<td style="text-align:right">0.664129</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">71.1979</td>
+<td style="text-align:right">89.1534</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">cactusADM</td>
-<td align="right">133.370</td>
-<td align="right">130.880</td>
-<td align="right">LIP</td>
-<td align="right">0.44249</td>
-<td align="right">0.378492</td>
-<td align="right">LIP</td>
-<td align="right">76.1164</td>
-<td align="right">63.7024</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">cactusADM</td>
+<td style="text-align:right">133.370</td>
+<td style="text-align:right">130.880</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.44249</td>
+<td style="text-align:right">0.378492</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">76.1164</td>
+<td style="text-align:right">63.7024</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="odd">
-<td align="right">leslie3d</td>
-<td align="right">133.210</td>
-<td align="right">133.850</td>
-<td align="right">LRU</td>
-<td align="right">1.50626</td>
-<td align="right">1.4344</td>
-<td align="right">LIP</td>
-<td align="right">84.0284</td>
-<td align="right">79.7774</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">leslie3d</td>
+<td style="text-align:right">133.210</td>
+<td style="text-align:right">133.850</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">1.50626</td>
+<td style="text-align:right">1.4344</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">84.0284</td>
+<td style="text-align:right">79.7774</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="even">
-<td align="right">namd</td>
-<td align="right">112.000</td>
-<td align="right">111.370</td>
-<td align="right">LIP</td>
-<td align="right">0.273795</td>
-<td align="right">0.273797</td>
-<td align="right">LRU</td>
-<td align="right">66.2603</td>
-<td align="right">66.2661</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">namd</td>
+<td style="text-align:right">112.000</td>
+<td style="text-align:right">111.370</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.273795</td>
+<td style="text-align:right">0.273797</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">66.2603</td>
+<td style="text-align:right">66.2661</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">gobmk</td>
-<td align="right">127.020</td>
-<td align="right">127.540</td>
-<td align="right">LRU</td>
-<td align="right">0.383876</td>
-<td align="right">0.388093</td>
-<td align="right">LRU</td>
-<td align="right">14.919</td>
-<td align="right">15.5215</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">gobmk</td>
+<td style="text-align:right">127.020</td>
+<td style="text-align:right">127.540</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.383876</td>
+<td style="text-align:right">0.388093</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">14.919</td>
+<td style="text-align:right">15.5215</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">dealII</td>
-<td align="right">130.630</td>
-<td align="right">131.960</td>
-<td align="right">LRU</td>
-<td align="right">0.463916</td>
-<td align="right">0.446134</td>
-<td align="right">LIP</td>
-<td align="right">45.0892</td>
-<td align="right">47.2678</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">dealII</td>
+<td style="text-align:right">130.630</td>
+<td style="text-align:right">131.960</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.463916</td>
+<td style="text-align:right">0.446134</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">45.0892</td>
+<td style="text-align:right">47.2678</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">soplex</td>
-<td align="right">72.310</td>
-<td align="right">75.080</td>
-<td align="right">LRU</td>
-<td align="right">0.356909</td>
-<td align="right">0.431378</td>
-<td align="right">LRU</td>
-<td align="right">15.2011</td>
-<td align="right">35.9993</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">soplex</td>
+<td style="text-align:right">72.310</td>
+<td style="text-align:right">75.080</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.356909</td>
+<td style="text-align:right">0.431378</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">15.2011</td>
+<td style="text-align:right">35.9993</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">povray</td>
-<td align="right">134.860</td>
-<td align="right">134.040</td>
-<td align="right">LIP</td>
-<td align="right">0.360431</td>
-<td align="right">0.360387</td>
-<td align="right">LIP</td>
-<td align="right">39.9258</td>
-<td align="right">39.7901</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">povray</td>
+<td style="text-align:right">134.860</td>
+<td style="text-align:right">134.040</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.360431</td>
+<td style="text-align:right">0.360387</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">39.9258</td>
+<td style="text-align:right">39.7901</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="odd">
-<td align="right">calculix</td>
-<td align="right">130.460</td>
-<td align="right">127.370</td>
-<td align="right">LIP</td>
-<td align="right">0.321346</td>
-<td align="right">0.359601</td>
-<td align="right">LRU</td>
-<td align="right">34.05</td>
-<td align="right">53.1214</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">calculix</td>
+<td style="text-align:right">130.460</td>
+<td style="text-align:right">127.370</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.321346</td>
+<td style="text-align:right">0.359601</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">34.05</td>
+<td style="text-align:right">53.1214</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">hmmer</td>
-<td align="right">133.820</td>
-<td align="right">135.260</td>
-<td align="right">LRU</td>
-<td align="right">0.258513</td>
-<td align="right">0.258513</td>
-<td align="right">=</td>
-<td align="right">71.4736</td>
-<td align="right">71.4868</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">hmmer</td>
+<td style="text-align:right">133.820</td>
+<td style="text-align:right">135.260</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.258513</td>
+<td style="text-align:right">0.258513</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">71.4736</td>
+<td style="text-align:right">71.4868</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">sjeng</td>
-<td align="right">129.020</td>
-<td align="right">134.210</td>
-<td align="right">LRU</td>
-<td align="right">0.323006</td>
-<td align="right">0.322841</td>
-<td align="right">LIP</td>
-<td align="right">93.5415</td>
-<td align="right">93.3249</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">sjeng</td>
+<td style="text-align:right">129.020</td>
+<td style="text-align:right">134.210</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.323006</td>
+<td style="text-align:right">0.322841</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">93.5415</td>
+<td style="text-align:right">93.3249</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="even">
-<td align="right">GemsFDTD</td>
-<td align="right">153.820</td>
-<td align="right">171.260</td>
-<td align="right">LRU</td>
-<td align="right">0.368143</td>
-<td align="right">0.368143</td>
-<td align="right">=</td>
-<td align="right">84.1525</td>
-<td align="right">84.1525</td>
-<td align="right">=</td>
+<tr>
+<td style="text-align:right">GemsFDTD</td>
+<td style="text-align:right">153.820</td>
+<td style="text-align:right">171.260</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.368143</td>
+<td style="text-align:right">0.368143</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">84.1525</td>
+<td style="text-align:right">84.1525</td>
+<td style="text-align:right">=</td>
 </tr>
-<tr class="odd">
-<td align="right">libquantum</td>
-<td align="right">147.090</td>
-<td align="right">132.630</td>
-<td align="right">LIP</td>
-<td align="right">0.272749</td>
-<td align="right">0.272749</td>
-<td align="right">=</td>
-<td align="right">100.0</td>
-<td align="right">100.0</td>
-<td align="right">=</td>
+<tr>
+<td style="text-align:right">libquantum</td>
+<td style="text-align:right">147.090</td>
+<td style="text-align:right">132.630</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.272749</td>
+<td style="text-align:right">0.272749</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">100.0</td>
+<td style="text-align:right">100.0</td>
+<td style="text-align:right">=</td>
 </tr>
-<tr class="even">
-<td align="right">h264ref</td>
-<td align="right">137.550</td>
-<td align="right">129.450</td>
-<td align="right">LIP</td>
-<td align="right">0.28787</td>
-<td align="right">0.292871</td>
-<td align="right">LRU</td>
-<td align="right">70.0086</td>
-<td align="right">72.4714</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">h264ref</td>
+<td style="text-align:right">137.550</td>
+<td style="text-align:right">129.450</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.28787</td>
+<td style="text-align:right">0.292871</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">70.0086</td>
+<td style="text-align:right">72.4714</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">tonto</td>
-<td align="right">122.590</td>
-<td align="right">122.090</td>
-<td align="right">LIP</td>
-<td align="right">0.347856</td>
-<td align="right">0.34803</td>
-<td align="right">LRU</td>
-<td align="right">78.8694</td>
-<td align="right">79.2837</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">tonto</td>
+<td style="text-align:right">122.590</td>
+<td style="text-align:right">122.090</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.347856</td>
+<td style="text-align:right">0.34803</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">78.8694</td>
+<td style="text-align:right">79.2837</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">lbm</td>
-<td align="right">175.980</td>
-<td align="right">175.560</td>
-<td align="right">LIP</td>
-<td align="right">1.15379</td>
-<td align="right">1.15439</td>
-<td align="right">LRU</td>
-<td align="right">99.9725</td>
-<td align="right">99.7331</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">lbm</td>
+<td style="text-align:right">175.980</td>
+<td style="text-align:right">175.560</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">1.15379</td>
+<td style="text-align:right">1.15439</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">99.9725</td>
+<td style="text-align:right">99.7331</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="odd">
-<td align="right">omnetpp</td>
-<td align="right">156.400</td>
-<td align="right">150.580</td>
-<td align="right">LIP</td>
-<td align="right">0.41278</td>
-<td align="right">0.412729</td>
-<td align="right">LIP</td>
-<td align="right">59.4443</td>
-<td align="right">59.2859</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">omnetpp</td>
+<td style="text-align:right">156.400</td>
+<td style="text-align:right">150.580</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.41278</td>
+<td style="text-align:right">0.412729</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">59.4443</td>
+<td style="text-align:right">59.2859</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="even">
-<td align="right">astar</td>
-<td align="right">161.890</td>
-<td align="right">152.050</td>
-<td align="right">LIP</td>
-<td align="right">0.267647</td>
-<td align="right">0.267647</td>
-<td align="right">=</td>
-<td align="right">5.84718</td>
-<td align="right">5.84718</td>
-<td align="right">=</td>
+<tr>
+<td style="text-align:right">astar</td>
+<td style="text-align:right">161.890</td>
+<td style="text-align:right">152.050</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.267647</td>
+<td style="text-align:right">0.267647</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">5.84718</td>
+<td style="text-align:right">5.84718</td>
+<td style="text-align:right">=</td>
 </tr>
-<tr class="odd">
-<td align="right">sphinx3</td>
-<td align="right">148.620</td>
-<td align="right">145.960</td>
-<td align="right">LIP</td>
-<td align="right">0.445644</td>
-<td align="right">0.445645</td>
-<td align="right">LRU</td>
-<td align="right">97.156</td>
-<td align="right">97.1648</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">sphinx3</td>
+<td style="text-align:right">148.620</td>
+<td style="text-align:right">145.960</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.445644</td>
+<td style="text-align:right">0.445645</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">97.156</td>
+<td style="text-align:right">97.1648</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">xalancbmk</td>
-<td align="right">163.490</td>
-<td align="right">155.190</td>
-<td align="right">LIP</td>
-<td align="right">0.414993</td>
-<td align="right">0.411322</td>
-<td align="right">LIP</td>
-<td align="right">66.2759</td>
-<td align="right">63.1589</td>
-<td align="right">LIP</td>
+<tr>
+<td style="text-align:right">xalancbmk</td>
+<td style="text-align:right">163.490</td>
+<td style="text-align:right">155.190</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.414993</td>
+<td style="text-align:right">0.411322</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">66.2759</td>
+<td style="text-align:right">63.1589</td>
+<td style="text-align:right">LIP</td>
 </tr>
-<tr class="odd">
-<td align="right">specrand</td>
-<td align="right">90.180</td>
-<td align="right">89.100</td>
-<td align="right">LIP</td>
-<td align="right">0.336211</td>
-<td align="right">0.336348</td>
-<td align="right">LRU</td>
-<td align="right">95.9373</td>
-<td align="right">97.6647</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">specrand</td>
+<td style="text-align:right">90.180</td>
+<td style="text-align:right">89.100</td>
+<td style="text-align:right">LIP</td>
+<td style="text-align:right">0.336211</td>
+<td style="text-align:right">0.336348</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">95.9373</td>
+<td style="text-align:right">97.6647</td>
+<td style="text-align:right">LRU</td>
 </tr>
 </tbody>
 </table>
-<h3 id="lru和bip算法比较">LRU和BIP算法比较</h3>
-<table style="width:96%;">
-<colgroup>
-<col width="8%">
-<col width="12%">
-<col width="8%">
-<col width="8%">
-<col width="12%">
-<col width="8%">
-<col width="8%">
-<col width="12%">
-<col width="8%">
-<col width="8%">
-</colgroup>
+<h3 id="LRU和BIP算法比较"><a href="#LRU和BIP算法比较" class="headerlink" title="LRU和BIP算法比较"></a>LRU和BIP算法比较</h3><table>
 <thead>
-<tr class="header">
-<th align="right"><strong>程序</strong></th>
-<th align="right"><strong>LRU_time</strong></th>
-<th align="right"><strong>BIP_time</strong></th>
-<th align="right"><strong>less_time</strong></th>
-<th align="right"><strong>LRU_CPI</strong></th>
-<th align="right"><strong>BIP_CPI</strong></th>
-<th align="right"><strong>Less_cpi</strong></th>
-<th align="right"><strong>LRU_miss</strong></th>
-<th align="right"><strong>BIP_miss</strong></th>
-<th align="right"><strong>less miss</strong></th>
+<tr>
+<th style="text-align:right"><strong>程序</strong></th>
+<th style="text-align:right"><strong>LRU_time</strong></th>
+<th style="text-align:right"><strong>BIP_time</strong></th>
+<th style="text-align:right"><strong>less_time</strong></th>
+<th style="text-align:right"><strong>LRU_CPI</strong></th>
+<th style="text-align:right"><strong>BIP_CPI</strong></th>
+<th style="text-align:right"><strong>Less_cpi</strong></th>
+<th style="text-align:right"><strong>LRU_miss</strong></th>
+<th style="text-align:right"><strong>BIP_miss</strong></th>
+<th style="text-align:right"><strong>less miss</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="right">perlbench</td>
-<td align="right">17.070</td>
-<td align="right">17.490</td>
-<td align="right">LRU</td>
-<td align="right">0.642823</td>
-<td align="right">0.653642</td>
-<td align="right">LRU</td>
-<td align="right">40.7952</td>
-<td align="right">42.4235</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">perlbench</td>
+<td style="text-align:right">17.070</td>
+<td style="text-align:right">17.490</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.642823</td>
+<td style="text-align:right">0.653642</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">40.7952</td>
+<td style="text-align:right">42.4235</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">bzip2</td>
-<td align="right">123.840</td>
-<td align="right">144.210</td>
-<td align="right">LRU</td>
-<td align="right">0.554642</td>
-<td align="right">0.570891</td>
-<td align="right">LRU</td>
-<td align="right">61.7369</td>
-<td align="right">59.0281</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">bzip2</td>
+<td style="text-align:right">123.840</td>
+<td style="text-align:right">144.210</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.554642</td>
+<td style="text-align:right">0.570891</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">61.7369</td>
+<td style="text-align:right">59.0281</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="odd">
-<td align="right">gcc</td>
-<td align="right">134.380</td>
-<td align="right">167.270</td>
-<td align="right">LRU</td>
-<td align="right">0.614864</td>
-<td align="right">0.575685</td>
-<td align="right">BIP</td>
-<td align="right">42.7521</td>
-<td align="right">37.0908</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">gcc</td>
+<td style="text-align:right">134.380</td>
+<td style="text-align:right">167.270</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.614864</td>
+<td style="text-align:right">0.575685</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">42.7521</td>
+<td style="text-align:right">37.0908</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="even">
-<td align="right">bwaves</td>
-<td align="right">118.230</td>
-<td align="right">152.430</td>
-<td align="right">LRU</td>
-<td align="right">0.253088</td>
-<td align="right">0.253088</td>
-<td align="right">=</td>
-<td align="right">99.6634</td>
-<td align="right">99.6634</td>
-<td align="right">=</td>
+<tr>
+<td style="text-align:right">bwaves</td>
+<td style="text-align:right">118.230</td>
+<td style="text-align:right">152.430</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.253088</td>
+<td style="text-align:right">0.253088</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">99.6634</td>
+<td style="text-align:right">99.6634</td>
+<td style="text-align:right">=</td>
 </tr>
-<tr class="odd">
-<td align="right">gamess</td>
-<td align="right">133.080</td>
-<td align="right">159.270</td>
-<td align="right">LRU</td>
-<td align="right">0.30022</td>
-<td align="right">0.304011</td>
-<td align="right">LRU</td>
-<td align="right">26.3204</td>
-<td align="right">30.4442</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">gamess</td>
+<td style="text-align:right">133.080</td>
+<td style="text-align:right">159.270</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.30022</td>
+<td style="text-align:right">0.304011</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">26.3204</td>
+<td style="text-align:right">30.4442</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">mcf</td>
-<td align="right">163.610</td>
-<td align="right">182.510</td>
-<td align="right">LRU</td>
-<td align="right">2.55358</td>
-<td align="right">2.27179</td>
-<td align="right">BIP</td>
-<td align="right">75.676</td>
-<td align="right">67.9679</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">mcf</td>
+<td style="text-align:right">163.610</td>
+<td style="text-align:right">182.510</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">2.55358</td>
+<td style="text-align:right">2.27179</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">75.676</td>
+<td style="text-align:right">67.9679</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="odd">
-<td align="right">milc</td>
-<td align="right">148.670</td>
-<td align="right">137.590</td>
-<td align="right">BIP</td>
-<td align="right">1.14939</td>
-<td align="right">1.14853</td>
-<td align="right">BIP</td>
-<td align="right">77.0164</td>
-<td align="right">76.2688</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">milc</td>
+<td style="text-align:right">148.670</td>
+<td style="text-align:right">137.590</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">1.14939</td>
+<td style="text-align:right">1.14853</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">77.0164</td>
+<td style="text-align:right">76.2688</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="even">
-<td align="right">zeusmp</td>
-<td align="right">148.800</td>
-<td align="right">127.220</td>
-<td align="right">BIP</td>
-<td align="right">0.451633</td>
-<td align="right">0.451496</td>
-<td align="right">BIP</td>
-<td align="right">80.81</td>
-<td align="right">81.883</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">zeusmp</td>
+<td style="text-align:right">148.800</td>
+<td style="text-align:right">127.220</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">0.451633</td>
+<td style="text-align:right">0.451496</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">80.81</td>
+<td style="text-align:right">81.883</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">gromacs</td>
-<td align="right">143.230</td>
-<td align="right">148.100</td>
-<td align="right">LRU</td>
-<td align="right">0.607769</td>
-<td align="right">0.625808</td>
-<td align="right">LRU</td>
-<td align="right">71.1979</td>
-<td align="right">74.1585</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">gromacs</td>
+<td style="text-align:right">143.230</td>
+<td style="text-align:right">148.100</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.607769</td>
+<td style="text-align:right">0.625808</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">71.1979</td>
+<td style="text-align:right">74.1585</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">cactusADM</td>
-<td align="right">133.370</td>
-<td align="right">141.210</td>
-<td align="right">LRU</td>
-<td align="right">0.44249</td>
-<td align="right">0.368551</td>
-<td align="right">BIP</td>
-<td align="right">76.1164</td>
-<td align="right">62.9769</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">cactusADM</td>
+<td style="text-align:right">133.370</td>
+<td style="text-align:right">141.210</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.44249</td>
+<td style="text-align:right">0.368551</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">76.1164</td>
+<td style="text-align:right">62.9769</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="odd">
-<td align="right">leslie3d</td>
-<td align="right">133.210</td>
-<td align="right">147.700</td>
-<td align="right">LRU</td>
-<td align="right">1.50626</td>
-<td align="right">1.44446</td>
-<td align="right">BIP</td>
-<td align="right">84.0284</td>
-<td align="right">73.9532</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">leslie3d</td>
+<td style="text-align:right">133.210</td>
+<td style="text-align:right">147.700</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">1.50626</td>
+<td style="text-align:right">1.44446</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">84.0284</td>
+<td style="text-align:right">73.9532</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="even">
-<td align="right">namd</td>
-<td align="right">112.000</td>
-<td align="right">122.800</td>
-<td align="right">LRU</td>
-<td align="right">0.273795</td>
-<td align="right">0.273801</td>
-<td align="right">LRU</td>
-<td align="right">66.2603</td>
-<td align="right">66.2719</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">namd</td>
+<td style="text-align:right">112.000</td>
+<td style="text-align:right">122.800</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.273795</td>
+<td style="text-align:right">0.273801</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">66.2603</td>
+<td style="text-align:right">66.2719</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">gobmk</td>
-<td align="right">127.020</td>
-<td align="right">144.260</td>
-<td align="right">LRU</td>
-<td align="right">0.383876</td>
-<td align="right">0.384353</td>
-<td align="right">LRU</td>
-<td align="right">14.919</td>
-<td align="right">14.2733</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">gobmk</td>
+<td style="text-align:right">127.020</td>
+<td style="text-align:right">144.260</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.383876</td>
+<td style="text-align:right">0.384353</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">14.919</td>
+<td style="text-align:right">14.2733</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="even">
-<td align="right">dealII</td>
-<td align="right">130.630</td>
-<td align="right">143.810</td>
-<td align="right">LRU</td>
-<td align="right">0.463916</td>
-<td align="right">0.42624</td>
-<td align="right">BIP</td>
-<td align="right">45.0892</td>
-<td align="right">35.1431</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">dealII</td>
+<td style="text-align:right">130.630</td>
+<td style="text-align:right">143.810</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.463916</td>
+<td style="text-align:right">0.42624</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">45.0892</td>
+<td style="text-align:right">35.1431</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="odd">
-<td align="right">soplex</td>
-<td align="right">72.310</td>
-<td align="right">79.220</td>
-<td align="right">LRU</td>
-<td align="right">0.356909</td>
-<td align="right">0.366633</td>
-<td align="right">LRU</td>
-<td align="right">15.2011</td>
-<td align="right">17.9177</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">soplex</td>
+<td style="text-align:right">72.310</td>
+<td style="text-align:right">79.220</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.356909</td>
+<td style="text-align:right">0.366633</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">15.2011</td>
+<td style="text-align:right">17.9177</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">povray</td>
-<td align="right">134.860</td>
-<td align="right">165.980</td>
-<td align="right">LRU</td>
-<td align="right">0.360431</td>
-<td align="right">0.360417</td>
-<td align="right">BIP</td>
-<td align="right">39.9258</td>
-<td align="right">39.858</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">povray</td>
+<td style="text-align:right">134.860</td>
+<td style="text-align:right">165.980</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.360431</td>
+<td style="text-align:right">0.360417</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">39.9258</td>
+<td style="text-align:right">39.858</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="odd">
-<td align="right">calculix</td>
-<td align="right">130.460</td>
-<td align="right">145.710</td>
-<td align="right">LRU</td>
-<td align="right">0.321346</td>
-<td align="right">0.332007</td>
-<td align="right">LRU</td>
-<td align="right">34.05</td>
-<td align="right">39.1968</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">calculix</td>
+<td style="text-align:right">130.460</td>
+<td style="text-align:right">145.710</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.321346</td>
+<td style="text-align:right">0.332007</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">34.05</td>
+<td style="text-align:right">39.1968</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">hmmer</td>
-<td align="right">133.820</td>
-<td align="right">157.060</td>
-<td align="right">LRU</td>
-<td align="right">0.258513</td>
-<td align="right">0.258513</td>
-<td align="right">=</td>
-<td align="right">71.4736</td>
-<td align="right">71.4868</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">hmmer</td>
+<td style="text-align:right">133.820</td>
+<td style="text-align:right">157.060</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.258513</td>
+<td style="text-align:right">0.258513</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">71.4736</td>
+<td style="text-align:right">71.4868</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">sjeng</td>
-<td align="right">129.020</td>
-<td align="right">166.850</td>
-<td align="right">LRU</td>
-<td align="right">0.323006</td>
-<td align="right">0.322882</td>
-<td align="right">BIP</td>
-<td align="right">93.5415</td>
-<td align="right">93.359</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">sjeng</td>
+<td style="text-align:right">129.020</td>
+<td style="text-align:right">166.850</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.323006</td>
+<td style="text-align:right">0.322882</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">93.5415</td>
+<td style="text-align:right">93.359</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="even">
-<td align="right">GemsFDTD</td>
-<td align="right">153.820</td>
-<td align="right">169.420</td>
-<td align="right">LRU</td>
-<td align="right">0.368143</td>
-<td align="right">0.368143</td>
-<td align="right">=</td>
-<td align="right">84.1525</td>
-<td align="right">84.1525</td>
-<td align="right">=</td>
+<tr>
+<td style="text-align:right">GemsFDTD</td>
+<td style="text-align:right">153.820</td>
+<td style="text-align:right">169.420</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.368143</td>
+<td style="text-align:right">0.368143</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">84.1525</td>
+<td style="text-align:right">84.1525</td>
+<td style="text-align:right">=</td>
 </tr>
-<tr class="odd">
-<td align="right">libquantum</td>
-<td align="right">147.090</td>
-<td align="right">138.730</td>
-<td align="right">BIP</td>
-<td align="right">0.272749</td>
-<td align="right">0.272749</td>
-<td align="right">=</td>
-<td align="right">100.0</td>
-<td align="right">100.0</td>
-<td align="right">=</td>
+<tr>
+<td style="text-align:right">libquantum</td>
+<td style="text-align:right">147.090</td>
+<td style="text-align:right">138.730</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">0.272749</td>
+<td style="text-align:right">0.272749</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">100.0</td>
+<td style="text-align:right">100.0</td>
+<td style="text-align:right">=</td>
 </tr>
-<tr class="even">
-<td align="right">h264ref</td>
-<td align="right">137.550</td>
-<td align="right">138.360</td>
-<td align="right">LRU</td>
-<td align="right">0.28787</td>
-<td align="right">0.289044</td>
-<td align="right">LRU</td>
-<td align="right">70.0086</td>
-<td align="right">70.8777</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">h264ref</td>
+<td style="text-align:right">137.550</td>
+<td style="text-align:right">138.360</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.28787</td>
+<td style="text-align:right">0.289044</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">70.0086</td>
+<td style="text-align:right">70.8777</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">tonto</td>
-<td align="right">122.590</td>
-<td align="right">143.870</td>
-<td align="right">LRU</td>
-<td align="right">0.347856</td>
-<td align="right">0.347883</td>
-<td align="right">LRU</td>
-<td align="right">78.8694</td>
-<td align="right">78.898</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">tonto</td>
+<td style="text-align:right">122.590</td>
+<td style="text-align:right">143.870</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.347856</td>
+<td style="text-align:right">0.347883</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">78.8694</td>
+<td style="text-align:right">78.898</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">lbm</td>
-<td align="right">175.980</td>
-<td align="right">149.190</td>
-<td align="right">BIP</td>
-<td align="right">1.15379</td>
-<td align="right">1.15361</td>
-<td align="right">BIP</td>
-<td align="right">99.9725</td>
-<td align="right">99.9688</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">lbm</td>
+<td style="text-align:right">175.980</td>
+<td style="text-align:right">149.190</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">1.15379</td>
+<td style="text-align:right">1.15361</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">99.9725</td>
+<td style="text-align:right">99.9688</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="odd">
-<td align="right">omnetpp</td>
-<td align="right">156.400</td>
-<td align="right">161.910</td>
-<td align="right">LRU</td>
-<td align="right">0.41278</td>
-<td align="right">0.412755</td>
-<td align="right">BIP</td>
-<td align="right">59.4443</td>
-<td align="right">59.3624</td>
-<td align="right">BIP</td>
+<tr>
+<td style="text-align:right">omnetpp</td>
+<td style="text-align:right">156.400</td>
+<td style="text-align:right">161.910</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">0.41278</td>
+<td style="text-align:right">0.412755</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">59.4443</td>
+<td style="text-align:right">59.3624</td>
+<td style="text-align:right">BIP</td>
 </tr>
-<tr class="even">
-<td align="right">astar</td>
-<td align="right">161.890</td>
-<td align="right">156.370</td>
-<td align="right">BIP</td>
-<td align="right">0.267647</td>
-<td align="right">0.267647</td>
-<td align="right">=</td>
-<td align="right">5.84718</td>
-<td align="right">5.84718</td>
-<td align="right">=</td>
+<tr>
+<td style="text-align:right">astar</td>
+<td style="text-align:right">161.890</td>
+<td style="text-align:right">156.370</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">0.267647</td>
+<td style="text-align:right">0.267647</td>
+<td style="text-align:right">=</td>
+<td style="text-align:right">5.84718</td>
+<td style="text-align:right">5.84718</td>
+<td style="text-align:right">=</td>
 </tr>
-<tr class="odd">
-<td align="right">sphinx3</td>
-<td align="right">148.620</td>
-<td align="right">136.150</td>
-<td align="right">BIP</td>
-<td align="right">0.445644</td>
-<td align="right">0.44566</td>
-<td align="right">LRU</td>
-<td align="right">97.156</td>
-<td align="right">97.2443</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">sphinx3</td>
+<td style="text-align:right">148.620</td>
+<td style="text-align:right">136.150</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">0.445644</td>
+<td style="text-align:right">0.44566</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">97.156</td>
+<td style="text-align:right">97.2443</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="even">
-<td align="right">xalancbmk</td>
-<td align="right">163.490</td>
-<td align="right">142.850</td>
-<td align="right">BIP</td>
-<td align="right">0.414993</td>
-<td align="right">0.421033</td>
-<td align="right">LRU</td>
-<td align="right">66.2759</td>
-<td align="right">67.5348</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">xalancbmk</td>
+<td style="text-align:right">163.490</td>
+<td style="text-align:right">142.850</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">0.414993</td>
+<td style="text-align:right">0.421033</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">66.2759</td>
+<td style="text-align:right">67.5348</td>
+<td style="text-align:right">LRU</td>
 </tr>
-<tr class="odd">
-<td align="right">specrand</td>
-<td align="right">90.180</td>
-<td align="right">85.870</td>
-<td align="right">BIP</td>
-<td align="right">0.336211</td>
-<td align="right">0.336235</td>
-<td align="right">LRU</td>
-<td align="right">95.9373</td>
-<td align="right">96.1932</td>
-<td align="right">LRU</td>
+<tr>
+<td style="text-align:right">specrand</td>
+<td style="text-align:right">90.180</td>
+<td style="text-align:right">85.870</td>
+<td style="text-align:right">BIP</td>
+<td style="text-align:right">0.336211</td>
+<td style="text-align:right">0.336235</td>
+<td style="text-align:right">LRU</td>
+<td style="text-align:right">95.9373</td>
+<td style="text-align:right">96.1932</td>
+<td style="text-align:right">LRU</td>
 </tr>
 </tbody>
 </table>
-<h3 id="算法表现统计">算法表现统计</h3>
-<h4 id="lru与lip算法">LRU与LIP算法</h4>
-<ul>
-<li><p>CPI值: LRU算法15次更小, LIP算法9次更小</p></li>
-<li><p>运行时间:LRU算法9次更小, LIP算法20次更小</p></li>
-<li><p>缺失率: LRU算法15次更小, LIP算法10次更小</p></li>
+<h3 id="算法表现统计"><a href="#算法表现统计" class="headerlink" title="算法表现统计"></a>算法表现统计</h3><h4 id="LRU与LIP算法"><a href="#LRU与LIP算法" class="headerlink" title="LRU与LIP算法"></a>LRU与LIP算法</h4><ul>
+<li><p>CPI值:  LRU算法15次更小, LIP算法9次更小</p>
+</li>
+<li><p>运行时间:LRU算法9次更小, LIP算法20次更小</p>
+</li>
+<li><p>缺失率:  LRU算法15次更小, LIP算法10次更小</p>
+</li>
 </ul>
-<h4 id="lru与bip算法">LRU与BIP算法</h4>
-<ul>
-<li><p>CPI值: LRU算法13次更小, BIP算法11次更小</p></li>
-<li><p>运行时间:LRU算法21次更小, BIP算法8次更小</p></li>
-<li><p>缺失率: LRU算法13次更小, BIP算法12次更小</p></li>
+<h4 id="LRU与BIP算法"><a href="#LRU与BIP算法" class="headerlink" title="LRU与BIP算法"></a>LRU与BIP算法</h4><ul>
+<li><p>CPI值:  LRU算法13次更小, BIP算法11次更小</p>
+</li>
+<li><p>运行时间:LRU算法21次更小, BIP算法8次更小</p>
+</li>
+<li><p>缺失率:  LRU算法13次更小, BIP算法12次更小</p>
+</li>
 </ul>
-<h3 id="结果分析">结果分析</h3>
-<p>由统计结果分析，大概一半的测试程序中，LRU的算法的缺失率和CPI指标比LIP算法更优，但是仍然有不少测试样例显示LIP算法表现更好，而这些程序即是前文所说的局部相关性不是特别高的情况，而LIP算法的运行时间明显更优。</p>
+<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><p>由统计结果分析，大概一半的测试程序中，LRU的算法的缺失率和CPI指标比LIP算法更优，但是仍然有不少测试样例显示LIP算法表现更好，而这些程序即是前文所说的局部相关性不是特别高的情况，而LIP算法的运行时间明显更优。</p>
 <p>新加入的第三种策略（类似于BIP算法）在缺失率上的表现较LIP稍好一些（运行时间偏慢应该是因为在其中做了取随机数和取模的运算操作），其表现与LRU表现不分上下，可以看做是LRU算法和LIP算法的一个综合，可以看出不同的算法对程序局部性的适应度是有区别的，而测试程序的局部性好坏也极大地影响着其缺失率，在实际的操作中综合LIP和LRU算法应该是比较好的。根据测试结果推测，当概率值设置为50%时BIP算法表现可能会优于LRU算法</p>
 <p>由此可以分析，通常来说，程序的局部性更强时LRU算法表现会比较好，当程序的局部性表现有较大波动时，LIP一类改进算法会表现更好（即缺失率会降低），实际上，DIP算法的动态调节表现应该是最好的，不过出于实现难度本次实验没有进行实现。</p>
-<h1 id="附件">附件：</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## 算法文件</span><br><span class="line">replacement_state.cpp</span><br><span class="line">replacement_state.h</span><br><span class="line"></span><br><span class="line">## 实验数据</span><br><span class="line">results/</span><br><span class="line">├── get_time.py                 // 通过运行数据提取运行结果表格记录</span><br><span class="line">├── time_bip.txt                // 算法3的运行时间结果</span><br><span class="line">├── log_all.txt                 // 分别使用LRU算法和LIP算法运行29个测试程序的输出结果</span><br><span class="line">├── bip_log.txt                 // 算法3的运行记录</span><br><span class="line">├── name.txt</span><br><span class="line">├── run.sh                      // 运行脚本，在CRC/项目根目录下运行即可</span><br><span class="line">├── runs                        // 解压后的测试结果</span><br><span class="line">│   ├── LIP_GemsFDTD.stats</span><br><span class="line">│   ├── LIP_astar.stats</span><br><span class="line">│   ├── LIP_bwaves.stats</span><br><span class="line">│   ├── LIP_bzip2.stats</span><br><span class="line">|   ......</span><br><span class="line">|</span><br><span class="line">└── time_log.txt                // 每个程序的运行时间记录</span><br><span class="line">----</span><br></pre></td></tr></table></figure>
-<h1 id="参考文献">参考文献</h1>
-<p>[1] Moinuddin K. Qureshi , Aamer Jaleel , Yale N. Patt , Simon C. Steely , Joel Emer, Adaptive insertion policies for high performance caching, Proceedings of the 34th annual international symposium on Computer architecture(ISCA), June 09-13, 2007, San Diego, California, USA</p>
+<h1 id="附件："><a href="#附件：" class="headerlink" title="附件："></a>附件：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## 算法文件</span><br><span class="line">replacement_state.cpp</span><br><span class="line">replacement_state.h</span><br><span class="line"></span><br><span class="line">## 实验数据</span><br><span class="line">results/</span><br><span class="line">├── get_time.py                 // 通过运行数据提取运行结果表格记录</span><br><span class="line">├── time_bip.txt                // 算法3的运行时间结果</span><br><span class="line">├── log_all.txt                 // 分别使用LRU算法和LIP算法运行29个测试程序的输出结果</span><br><span class="line">├── bip_log.txt                 // 算法3的运行记录</span><br><span class="line">├── name.txt</span><br><span class="line">├── run.sh                      // 运行脚本，在CRC/项目根目录下运行即可</span><br><span class="line">├── runs                        // 解压后的测试结果</span><br><span class="line">│   ├── LIP_GemsFDTD.stats</span><br><span class="line">│   ├── LIP_astar.stats</span><br><span class="line">│   ├── LIP_bwaves.stats</span><br><span class="line">│   ├── LIP_bzip2.stats</span><br><span class="line">|   ......</span><br><span class="line">|</span><br><span class="line">└── time_log.txt                // 每个程序的运行时间记录</span><br><span class="line">----</span><br></pre></td></tr></table></figure>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1]  Moinuddin K. Qureshi , Aamer Jaleel , Yale N. Patt , Simon C. Steely , Joel Emer, Adaptive insertion policies for high performance caching, Proceedings of the 34th annual international symposium on Computer architecture(ISCA), June 09-13, 2007, San Diego, California, USA</p>
 
       
     </div>
@@ -1590,7 +1556,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验要求"><span class="nav-number">2.</span> <span class="nav-text">实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#已有替换策略分析"><span class="nav-number">3.</span> <span class="nav-text">已有替换策略分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我实现的替换策略"><span class="nav-number">4.</span> <span class="nav-text">我实现的替换策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体实现"><span class="nav-number">4.1.</span> <span class="nav-text">具体实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#替换策略测试"><span class="nav-number">5.</span> <span class="nav-text">替换策略测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试方法"><span class="nav-number">5.1.</span> <span class="nav-text">测试方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析不同替换策略下程序的运行时间cache-命中率受到的影响"><span class="nav-number">5.2.</span> <span class="nav-text">分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lru和lip算法比较"><span class="nav-number">5.2.1.</span> <span class="nav-text">LRU和LIP算法比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lru和bip算法比较"><span class="nav-number">5.2.2.</span> <span class="nav-text">LRU和BIP算法比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法表现统计"><span class="nav-number">5.2.3.</span> <span class="nav-text">算法表现统计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lru与lip算法"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">LRU与LIP算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lru与bip算法"><span class="nav-number">5.2.3.2.</span> <span class="nav-text">LRU与BIP算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">5.2.4.</span> <span class="nav-text">结果分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附件"><span class="nav-number">6.</span> <span class="nav-text">附件：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验要求"><span class="nav-number">2.</span> <span class="nav-text">实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#已有替换策略分析"><span class="nav-number">3.</span> <span class="nav-text">已有替换策略分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我实现的替换策略"><span class="nav-number">4.</span> <span class="nav-text">我实现的替换策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#具体实现"><span class="nav-number">4.1.</span> <span class="nav-text">具体实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#替换策略测试"><span class="nav-number">5.</span> <span class="nav-text">替换策略测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试方法"><span class="nav-number">5.1.</span> <span class="nav-text">测试方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析不同替换策略下，程序的运行时间、Cache-命中率受到的影响"><span class="nav-number">5.2.</span> <span class="nav-text">分析不同替换策略下，程序的运行时间、Cache 命中率受到的影响</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LRU和LIP算法比较"><span class="nav-number">5.2.1.</span> <span class="nav-text">LRU和LIP算法比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LRU和BIP算法比较"><span class="nav-number">5.2.2.</span> <span class="nav-text">LRU和BIP算法比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法表现统计"><span class="nav-number">5.2.3.</span> <span class="nav-text">算法表现统计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LRU与LIP算法"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">LRU与LIP算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LRU与BIP算法"><span class="nav-number">5.2.3.2.</span> <span class="nav-text">LRU与BIP算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">5.2.4.</span> <span class="nav-text">结果分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附件："><span class="nav-number">6.</span> <span class="nav-text">附件：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>

@@ -124,18 +124,18 @@ function loopy() {
 
 
 
-<meta name="description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
+<meta name="description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算$𝒙 = B^{-1} (2A+I)(C^{-1}+A)b$,请给出一个合理、高效率的算法流程.">
 <meta name="keywords" content="课程,数值分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数值分析">
 <meta property="og:url" content="https://2young.2simple.top/article/数值分析.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
+<meta property="og:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算$𝒙 = B^{-1} (2A+I)(C^{-1}+A)b$,请给出一个合理、高效率的算法流程.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-05-30T05:58:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数值分析">
-<meta name="twitter:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\), 请给出一个合理、高效率的算法流程.">
+<meta name="twitter:description" content="设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算$𝒙 = B^{-1} (2A+I)(C^{-1}+A)b$,请给出一个合理、高效率的算法流程.">
 
 
 
@@ -480,7 +480,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,524
+                  1,525
                 </span>
               
 
@@ -515,32 +515,28 @@ function loopy() {
       
 
       
-        <p>设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算<span class="math inline">\(𝒙 = B^{-1} (2A+I)(C^{-1}+A)b\)</span>, 请给出一个合理、高效率的算法流程.</p>
+        <p>设𝑨,𝑩,𝑪均为𝑛×𝑛矩阵，且𝑩、𝑪非奇异，𝒃是𝑛维向量，要计算$𝒙 = B^{-1} (2A+I)(C^{-1}+A)b$,<br>请给出一个合理、高效率的算法流程.</p>
 <a id="more"></a>
-<p><span class="math display">\[y1 = C^{-1}b\]</span> <span class="math display">\[y2 = y1 + Ab\]</span> <span class="math display">\[y_3 = 2(Ay_2) + y_2\]</span> <span class="math display">\[ x = B^{-1}y_3\]</span></p>
-<p>如果A的每个对角元的绝对值都比所在行的非对角元的绝对值的和要大,即 <span class="math display">\[|a_{ii}|&gt;sum{j!=i}|a_{ij}|\]</span> 对所有的i成立,那么称A是<font color="red">（行）严格对角占优阵</font>. 如果A’是行严格对角占优阵,那么称A是<font color="red">列严格对角占优阵</font>. 习惯上如果不指明哪种类型的话就认为是行对角占优.</p>
-<h1 id="矩阵特征值的几何意义">矩阵特征值的几何意义</h1>
-<p>矩阵乘法对应了一个<font color="red">变换</font>，是<font color="red">把任意一个向量变成另一个方向或长度都大多不同的新向量</font>。在这个变换的过程中，原向量主要发生<font color="red">旋转、伸缩</font>的变化。如果矩阵对某一个向量或某些向量只发生<font color="red">伸缩变换</font>，<font color="red">不对这些向量产生旋转的效果，那么这些向量就称为这个矩阵的特征向量</font>，<font color="red">伸缩的比例就是特征值</font>。</p>
+<p>$$y1 = C^{-1}b$$<br>$$y2 = y1 + Ab$$<br>$$y_3 = 2(Ay_2) + y_2$$<br>$$ x = B^{-1}y_3$$</p>
+<p>如果A的每个对角元的绝对值都比所在行的非对角元的绝对值的和要大,即<br>$$|a_{ii}|&gt;sum{j!=i}|a_{ij}|$$<br>对所有的i成立,那么称A是<font color="red">（行）严格对角占优阵</font>.<br>如果A’是行严格对角占优阵,那么称A是<font color="red">列严格对角占优阵</font>.<br>习惯上如果不指明哪种类型的话就认为是行对角占优.</p>
+<h1 id="矩阵特征值的几何意义"><a href="#矩阵特征值的几何意义" class="headerlink" title="矩阵特征值的几何意义"></a>矩阵特征值的几何意义</h1><p>矩阵乘法对应了一个<font color="red">变换</font>，是<font color="red">把任意一个向量变成另一个方向或长度都大多不同的新向量</font>。在这个变换的过程中，原向量主要发生<font color="red">旋转、伸缩</font>的变化。如果矩阵对某一个向量或某些向量只发生<font color="red">伸缩变换</font>，<font color="red">不对这些向量产生旋转的效果，那么这些向量就称为这个矩阵的特征向量</font>，<font color="red">伸缩的比例就是特征值</font>。</p>
 <p>实际上，上述的一段话既讲了矩阵变换特征值及特征向量的几何意义（图形变换）也讲了其物理含义。物理的含义就是运动的图景：特征向量在一个矩阵的作用下作伸缩运动，伸缩的幅度由特征值确定。特征值大于1，所有属于此特征值的特征向量身形暴长；特征值大于0小于1，特征向量身形猛缩；特征值小于0，特征向量缩过了界，反方向到0点那边去了。</p>
-<h1 id="特征值及特征向量定义">特征值及特征向量定义</h1>
-<p>定义 设A是n阶方阵，如果数λ和n维非零列向量x使关系式</p>
+<h1 id="特征值及特征向量定义"><a href="#特征值及特征向量定义" class="headerlink" title="特征值及特征向量定义"></a>特征值及特征向量定义</h1><p>定义 设A是n阶方阵，如果数λ和n维非零列向量x使关系式</p>
 <p>Ax=λx (1)</p>
 <p>成立，那么这样的数λ称为矩阵A特征值，非零向量x称为A的对应于特征值λ的特征向量．（1）式也可写成，</p>
 <p>( A-λE)X=0 (2)</p>
 <p>这是n个未知数n个方程的齐次线性方程组，它有非零解的充分必要条件是系数行列式</p>
 <p>|A-λE|=0 , (3)</p>
-<h1 id="特征值-来自维基百科的解释">特征值 来自维基百科的解释</h1>
-<p>在数学上，特别是线性代数中，对于一个给定的线性变换<span class="math inline">\(A\)</span>，它的特征向量（eigenvector，也译固有向量或本征向量）<span class="math inline">\(v\)</span> 经过这个线性变换之后，得到的新向量仍然与原来的<span class="math inline">\(v\)</span>保持在同一条直线上，但其长度或方向也许会改变。即</p>
-<p><span class="math display">\[ Av=\lambda v\]</span></p>
-<p><span class="math inline">\(\lambda\)</span> 为标量，即特征向量的长度在该线性变换下缩放的比例，称 <span class="math inline">\(\lambda\)</span> 为其特征值（本征值）。如果特征值为正，则表示<span class="math inline">\(v\)</span>在经过线性变换的作用后方向也不变；如果特征值为负，说明方向会反转；如果特征值为0，则是表示缩回零点。但无论怎样，仍在同一条直线上。图1给出了一个以著名油画《蒙娜丽莎》为题材的例子。在一定条件下（<font color="red">如其矩阵形式为实对称矩阵的线性变换）</font>，一个变换可以由其特征值和特征向量完全表述，<font color="red">也就是说：所有的特征向量组成了这向量空间的一组基底。</font>一个特征空间(eigenspace)是具有相同特征值的特征向量与一个同维数的零向量的集合，可以证明该集合是一个线性子空间，比如 <span class="math display">\[ E_{\lambda}=\{u \in V\mid Au=\lambda u\}\]</span> 即为线性变换 A中以λ为特征值的特征空间。</p>
+<h1 id="特征值-来自维基百科的解释"><a href="#特征值-来自维基百科的解释" class="headerlink" title="特征值  来自维基百科的解释"></a>特征值  来自维基百科的解释</h1><p>在数学上，特别是线性代数中，对于一个给定的线性变换$A$，它的特征向量（eigenvector，也译固有向量或本征向量）$v$ 经过这个线性变换之后，得到的新向量仍然与原来的$v$保持在同一条直线上，但其长度或方向也许会改变。即</p>
+<p>$$ Av=\lambda v$$</p>
+<p>$\lambda$ 为标量，即特征向量的长度在该线性变换下缩放的比例，称<br>$\lambda$  为其特征值（本征值）。如果特征值为正，则表示$v$在经过线性变换的作用后方向也不变；如果特征值为负，说明方向会反转；如果特征值为0，则是表示缩回零点。但无论怎样，仍在同一条直线上。图1给出了一个以著名油画《蒙娜丽莎》为题材的例子。在一定条件下（<font color="red">如其矩阵形式为实对称矩阵的线性变换）</font>，一个变换可以由其特征值和特征向量完全表述，<font color="red">也就是说：所有的特征向量组成了这向量空间的一组基底。</font>一个特征空间(eigenspace)是具有相同特征值的特征向量与一个同维数的零向量的集合，可以证明该集合是一个线性子空间，比如<br>$$ E_{\lambda}={u \in V\mid Au=\lambda u}$$ 即为线性变换<br>A中以λ\lambda  为特征值的特征空间。</p>
 <p>这些概念在纯数学和应用数学的众多领域中都有重要的应用。在线性代数和泛函分析之外，甚至在一些非线性的情况下，这些概念都是十分重要的。</p>
-<p><span class="math inline">\(\mathbf{A}\)</span>的特征向量<span class="math inline">\(\mathbf {x}\)</span> ，按照定义，是在变换 <span class="math inline">\(\mathbf{A}\)</span>的作用下会得到 <span class="math inline">\(\mathbf {x}\)</span> 自身的若干倍的非零向量。假设在 <span class="math inline">\(\mathbf{A}\)</span>的作用下 <span class="math inline">\(\mathbf {x}\)</span> 变成了自身的 <span class="math inline">\(\lambda\)</span> 倍，也就是 <span class="math inline">\(\mathbf{A} \mathbf{x} = \lambda \mathbf{x}\)</span> 在等式两边的左侧乘以单位矩阵I，得到 <span class="math display">\[\mathbf{IA} \mathbf{x} =\mathbf{I} \cdot \lambda \mathbf{x} \]</span></p>
-<p><span class="math inline">\(\mathbf{A}\mathbf{x} = (\lambda I)\mathbf{x}\)</span> 因此</p>
-<p><span class="math inline">\((\mathbf{A}-\lambda \mathbf{I}) \mathbf{x}=0\)</span> 根据线性方程组理论，为了使这个方程有非零解，矩阵</p>
-<p><span class="math inline">\(\mathbf{A}-\lambda \mathbf{I}\)</span>的行列式必须是零：</p>
-<p><span class="math display">\[\det(\mathbf{A}-\lambda \mathbf{I}) = 0\]</span> 按照行列式的展开定义，上面式子的左端是一个关于 <span class="math inline">\(\lambda\)</span> 的多项式，称为特征多项式。这个多项式的系数只和 <span class="math inline">\(\mathbf{A}\)</span>有关。在这个例子中，可以计算这个特征多项式： <span class="math display">\[\det\!\left(\begin{bmatrix}1 &amp; 0\\ -\frac{1}{2} &amp; 1\end{bmatrix} - \lambda\begin{bmatrix}1 &amp; 0\\ 0 &amp; 1\end{bmatrix} \right)=(1-\lambda)^2\]</span> 在这种情况下特征多项式的方程变成 <span class="math display">\[(1-\lambda)^2 = 0\]</span>它的唯一的解是： <span class="math inline">\(\lambda=1\)</span>。这就是矩阵 <span class="math inline">\(\mathbf{A}\)</span>的特征值。 找到特征值 <span class="math inline">\(\lambda=1\)</span>后，就可以找出 <span class="math display">\[(\mathbf{A}-\lambda \mathbf{I}) \mathbf{x}=0\]</span> 的非零解，也就是特征向量了。在例子中： <span class="math display">\[\begin{bmatrix}1-\lambda &amp; 0\\ -\frac{1}{2} &amp; 1-\lambda \end{bmatrix}\begin{bmatrix}x_1\\ x_2\end{bmatrix}=0\]</span> 将<span class="math inline">\(\lambda=1\)</span>代入，就有 <span class="math display">\[\begin{bmatrix}0 &amp; 0\\ -\frac{1}{2} &amp; 0 \end{bmatrix}\begin{bmatrix}x_1\\ x_2\end{bmatrix}=0\]</span> 解这个新矩阵方程，得到如下形式的解： <span class="math display">\[\mathbf{x} = \begin{bmatrix}0\\ c\end{bmatrix}\]</span> 这里的c是任意非零常量。因此，矩阵<span class="math inline">\(\mathbf{A}\)</span>的特征向量就是所有竖直方向的向量（比如图中红色箭头代表的向量）。</p>
-<h1 id="正定矩阵的判定">正定矩阵的判定</h1>
-<ul>
+<p>$\mathbf{A}$的特征向量$\mathbf {x}$ ，按照定义，是在变换<br>$\mathbf{A}$的作用下会得到<br>$\mathbf {x}$ 自身的若干倍的非零向量。假设在<br>$\mathbf{A}$的作用下<br>$\mathbf {x}$ 变成了自身的<br>$\lambda$ 倍，也就是<br>$\mathbf{A} \mathbf{x} = \lambda \mathbf{x}$<br>在等式两边的左侧乘以单位矩阵I，得到<br>$$\mathbf{IA} \mathbf{x} =\mathbf{I} \cdot \lambda \mathbf{x} $$</p>
+<p>$\mathbf{A}\mathbf{x} = (\lambda I)\mathbf{x}$<br>因此</p>
+<p>$(\mathbf{A}-\lambda \mathbf{I}) \mathbf{x}=0$<br>根据线性方程组理论，为了使这个方程有非零解，矩阵</p>
+<p>$\mathbf{A}-\lambda \mathbf{I}$的行列式必须是零：</p>
+<p>$$\det(\mathbf{A}-\lambda \mathbf{I}) = 0$$<br>按照行列式的展开定义，上面式子的左端是一个关于<br>$\lambda$ 的多项式，称为特征多项式。这个多项式的系数只和<br>$\mathbf{A}$有关。在这个例子中，可以计算这个特征多项式：<br>$$\det!\left(\begin{bmatrix}1 &amp; 0\ -\frac{1}{2} &amp; 1\end{bmatrix} - \lambda\begin{bmatrix}1 &amp; 0\ 0 &amp; 1\end{bmatrix} \right)=(1-\lambda)^2$$<br>在这种情况下特征多项式的方程变成<br>$$(1-\lambda)^2 = 0$$它的唯一的解是：<br>$\lambda=1$。这就是矩阵<br>$\mathbf{A}$的特征值。<br>找到特征值<br>$\lambda=1$后，就可以找出<br>$$(\mathbf{A}-\lambda \mathbf{I}) \mathbf{x}=0$$<br>的非零解，也就是特征向量了。在例子中：<br>$$\begin{bmatrix}1-\lambda &amp; 0\ -\frac{1}{2} &amp; 1-\lambda \end{bmatrix}\begin{bmatrix}x_1\ x_2\end{bmatrix}=0$$<br>将$\lambda=1$代入，就有<br>$$\begin{bmatrix}0 &amp; 0\ -\frac{1}{2} &amp; 0 \end{bmatrix}\begin{bmatrix}x_1\ x_2\end{bmatrix}=0$$<br>解这个新矩阵方程，得到如下形式的解：<br>$$\mathbf{x} = \begin{bmatrix}0\ c\end{bmatrix}$$<br>这里的c是任意非零常量。因此，矩阵$\mathbf{A}$的特征向量就是所有竖直方向的向量（比如图中红色箭头代表的向量）。</p>
+<h1 id="正定矩阵的判定"><a href="#正定矩阵的判定" class="headerlink" title="正定矩阵的判定"></a>正定矩阵的判定</h1><ul>
 <li>判定定理1：对称阵A为正定的充分必要条件是：A的特征值全为正。</li>
 <li>判定定理2：对称阵A为正定的充分必要条件是：A的各阶顺序主子式都为正。</li>
 <li>判定定理3：任意阵A为正定的充分必要条件是：A合同于单位阵。</li>
@@ -826,7 +822,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵特征值的几何意义"><span class="nav-number">1.</span> <span class="nav-text">矩阵特征值的几何意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征值及特征向量定义"><span class="nav-number">2.</span> <span class="nav-text">特征值及特征向量定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征值-来自维基百科的解释"><span class="nav-number">3.</span> <span class="nav-text">特征值 来自维基百科的解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正定矩阵的判定"><span class="nav-number">4.</span> <span class="nav-text">正定矩阵的判定</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵特征值的几何意义"><span class="nav-number">1.</span> <span class="nav-text">矩阵特征值的几何意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征值及特征向量定义"><span class="nav-number">2.</span> <span class="nav-text">特征值及特征向量定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征值-来自维基百科的解释"><span class="nav-number">3.</span> <span class="nav-text">特征值  来自维基百科的解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正定矩阵的判定"><span class="nav-number">4.</span> <span class="nav-text">正定矩阵的判定</span></a></li></ol></div>
             
 
           </div>

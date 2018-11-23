@@ -124,19 +124,19 @@ function loopy() {
 
 
 
-<meta name="description" content="两个概念  强学习器：高准确率 弱学习器：低准确率（比随机猜测略好）">
+<meta name="description" content="两个概念 强学习器：高准确率 弱学习器：低准确率（比随机猜测略好）">
 <meta name="keywords" content="机器学习,集成学习,Bagging,Boosting,实验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集成学习知识点">
 <meta property="og:url" content="https://2young.2simple.top/article/集成学习知识点.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="两个概念  强学习器：高准确率 弱学习器：低准确率（比随机猜测略好）">
+<meta property="og:description" content="两个概念 强学习器：高准确率 弱学习器：低准确率（比随机猜测略好）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/281I150R2S1P241t1F3j/Image%202017-05-06%20at%206.06.09%20下午.png">
 <meta property="og:updated_time" content="2017-06-13T15:04:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成学习知识点">
-<meta name="twitter:description" content="两个概念  强学习器：高准确率 弱学习器：低准确率（比随机猜测略好）">
+<meta name="twitter:description" content="两个概念 强学习器：高准确率 弱学习器：低准确率（比随机猜测略好）">
 <meta name="twitter:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/281I150R2S1P241t1F3j/Image%202017-05-06%20at%206.06.09%20下午.png">
 
 
@@ -482,7 +482,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  526
+                  515
                 </span>
               
 
@@ -517,33 +517,25 @@ function loopy() {
       
 
       
-        <h1 id="两个概念">两个概念</h1>
-<ul>
+        <h1 id="两个概念"><a href="#两个概念" class="headerlink" title="两个概念"></a>两个概念</h1><ul>
 <li>强学习器：高准确率</li>
 <li>弱学习器：低准确率（比随机猜测略好）</li>
 </ul>
 <a id="more"></a>
-<h1 id="基本思想">基本思想</h1>
-<ul>
+<h1 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h1><ul>
 <li>把几个弱分类器加权融合提升效果</li>
 <li>每个算法池中的算法有自己的权值</li>
 <li>当用于预测一个新的测例时，每个分类器给出自己的预测，总算法使用各自的权值加权得出结果</li>
 </ul>
-<h1 id="加权多数算法">加权多数算法</h1>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/281I150R2S1P241t1F3j/Image%202017-05-06%20at%206.06.09%20下午.png" alt="加权多数算法 权值为0或1">
-<p class="caption">加权多数算法 权值为0或1</p>
-</div>
+<h1 id="加权多数算法"><a href="#加权多数算法" class="headerlink" title="加权多数算法"></a>加权多数算法</h1><p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/281I150R2S1P241t1F3j/Image%202017-05-06%20at%206.06.09%20下午.png" alt="加权多数算法   权值为0或1"></p>
 <p>二值输出，权重为0/1</p>
 <p>算法流程，权值变化</p>
 <p>每次失败除2， 避免特别小（直接置为0）</p>
-<h1 id="bagging算法-bagging-bootstrap-aggregating">Bagging算法 Bagging = Bootstrap aggregating</h1>
-<p>如果只有一个弱分类器，如何进行集成学习</p>
-<h2 id="自举法采样">自举法采样</h2>
-<ul>
+<h1 id="Bagging算法-Bagging-Bootstrap-aggregating"><a href="#Bagging算法-Bagging-Bootstrap-aggregating" class="headerlink" title="Bagging算法   Bagging = Bootstrap aggregating"></a>Bagging算法   Bagging = Bootstrap aggregating</h1><p>如果只有一个弱分类器，如何进行集成学习</p>
+<h2 id="自举法采样"><a href="#自举法采样" class="headerlink" title="自举法采样"></a>自举法采样</h2><ul>
 <li>给定一个包含m个训练集的数据集D</li>
-<li>有放回采样取m个数据组成训练集<span class="math inline">\(D_i\)</span></li>
-<li><span class="math inline">\(D_i\)</span>可能存在重复，存在漏选</li>
+<li>有放回采样取m个数据组成训练集$D_i$</li>
+<li>$D_i$可能存在重复，存在漏选</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">For t = 1, 2, …, T Do</span><br><span class="line">create boostrap sample Dt from S</span><br><span class="line">    train a classifier Ht on Dt</span><br><span class="line">Classify new instance x∈X by majority vote of H t</span><br><span class="line">(equal weights)</span><br></pre></td></tr></table></figure>
 <p>可以预测连续输出</p>
@@ -551,25 +543,20 @@ function loopy() {
 <p>预测方法的稳定性问题</p>
 <p>不稳定的算法：训练集的小变化会造成假设的大变化</p>
 <p>如果扰动训练集可以造成预测器的显著变化那么Bagging算法可以提高其精度</p>
-<h2 id="特殊点">特殊点</h2>
-<ul>
+<h2 id="特殊点"><a href="#特殊点" class="headerlink" title="特殊点"></a>特殊点</h2><ul>
 <li>每个基础分类器在小数据集进行训练（只有63.2%的数据在所有的分数据集中）</li>
 <li>但是最终的模型中几乎包含了所有的训练集（平均每个会被&gt;50%的bootstrap包含）</li>
 </ul>
-<h1 id="小结">小结</h1>
-<ul>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul>
 <li>加权多数算法： 同样的数据集，不同的学习算法，生成多个模型，加权预测</li>
 <li>Bagging： 一个数据集，一个弱分类器， 生成多个训练集来训练多个模型，然后集成</li>
 </ul>
-<h1 id="boosting算法">Boosting算法</h1>
-<h2 id="基本思想-1">基本思想</h2>
-<ul>
+<h1 id="Boosting算法"><a href="#Boosting算法" class="headerlink" title="Boosting算法"></a>Boosting算法</h1><h2 id="基本思想-1"><a href="#基本思想-1" class="headerlink" title="基本思想"></a>基本思想</h2><ul>
 <li>从错误中学习</li>
 <li>给每个example一个权值，</li>
 </ul>
-<h1 id="adaboost">AdaBoost</h1>
-<ul>
-<li>get每一个样本一个等值权重<span class="math inline">\(\frac{1}{N}\)</span></li>
+<h1 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h1><ul>
+<li>get每一个样本一个等值权重$\frac{1}{N}$</li>
 <li>对1~T,训练生成Ct,计算器错误率</li>
 </ul>
 <p>实现参考</p>
@@ -862,7 +849,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#两个概念"><span class="nav-number">1.</span> <span class="nav-text">两个概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本思想"><span class="nav-number">2.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加权多数算法"><span class="nav-number">3.</span> <span class="nav-text">加权多数算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bagging算法-bagging-bootstrap-aggregating"><span class="nav-number">4.</span> <span class="nav-text">Bagging算法 Bagging = Bootstrap aggregating</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自举法采样"><span class="nav-number">4.1.</span> <span class="nav-text">自举法采样</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊点"><span class="nav-number">4.2.</span> <span class="nav-text">特殊点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#boosting算法"><span class="nav-number">6.</span> <span class="nav-text">Boosting算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想-1"><span class="nav-number">6.1.</span> <span class="nav-text">基本思想</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#adaboost"><span class="nav-number">7.</span> <span class="nav-text">AdaBoost</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#两个概念"><span class="nav-number">1.</span> <span class="nav-text">两个概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本思想"><span class="nav-number">2.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加权多数算法"><span class="nav-number">3.</span> <span class="nav-text">加权多数算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bagging算法-Bagging-Bootstrap-aggregating"><span class="nav-number">4.</span> <span class="nav-text">Bagging算法   Bagging = Bootstrap aggregating</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自举法采样"><span class="nav-number">4.1.</span> <span class="nav-text">自举法采样</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊点"><span class="nav-number">4.2.</span> <span class="nav-text">特殊点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Boosting算法"><span class="nav-number">6.</span> <span class="nav-text">Boosting算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想-1"><span class="nav-number">6.1.</span> <span class="nav-text">基本思想</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AdaBoost"><span class="nav-number">7.</span> <span class="nav-text">AdaBoost</span></a></li></ol></div>
             
 
           </div>

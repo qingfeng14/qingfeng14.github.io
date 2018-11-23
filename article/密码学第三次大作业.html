@@ -460,7 +460,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,845
+                  1,837
                 </span>
               
 
@@ -495,68 +495,57 @@ function loopy() {
       
 
       
-        <h1 id="设计一个安全的没有中间人攻击的diffie-hellman密钥交换协议">设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议</h1>
-<a id="more"></a>
-<h2 id="dh算法描述">DH算法描述</h2>
-<p>DH密钥交换算法是为了使两个用户能够安全地交换密钥的密钥交换协议。</p>
+        <h1 id="设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议"><a href="#设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议" class="headerlink" title="设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议"></a>设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议</h1><a id="more"></a>
+<h2 id="DH算法描述"><a href="#DH算法描述" class="headerlink" title="DH算法描述"></a>DH算法描述</h2><p>DH密钥交换算法是为了使两个用户能够安全地交换密钥的密钥交换协议。</p>
 <p>假定Alice和Bob期望在一个不安全的网络中协商一个共同的密钥，那么进行如下步骤：</p>
 <ul>
-<li>双方约定大素数<span class="math inline">\(q\)</span>和它的一个本原根<span class="math inline">\(g\)</span>, 其中<span class="math inline">\(g&lt;q\)</span>。</li>
-<li>Alice随机产生一个数(私钥) <span class="math inline">\(a\)</span>,<span class="math inline">\(a &lt; q\)</span>,并计算公钥<span class="math inline">\(Y_A = g^a \bmod q\)</span>, 发送给Bob。</li>
-<li>Bob随机产生一个数(私钥) <span class="math inline">\(b\)</span>,<span class="math inline">\(b&lt;q\)</span>, 并计算公钥<span class="math inline">\(Y_B= g^b \bmod q\)</span>，发送给Alice。</li>
-<li>此时， Alice手握Bob发过来的公钥<span class="math inline">\(Y_B\)</span>，结合自己产生私钥a计算会话密钥：<span class="math display">\[K = Y_B^a \bmod q = (g^b \bmod q)^a \bmod q = g^{ab} \bmod q\]</span></li>
-<li>Bob也拿到了Alice发来的公钥<span class="math inline">\(Y_A\)</span>，同时结合自己的私钥b，计算会话密钥：<span class="math display">\[K = Y_A^b \bmod q = (g^a \bmod q)^b \bmod q = g^{ab} \bmod q\]</span></li>
+<li>双方约定大素数$q$和它的一个本原根$g$, 其中$g&lt;q$。</li>
+<li>Alice随机产生一个数(私钥) $a$,$a &lt; q$,并计算公钥$Y_A = g^a \bmod q$, 发送给Bob。</li>
+<li>Bob随机产生一个数(私钥) $b$,$b&lt;q$, 并计算公钥$Y_B= g^b \bmod q$，发送给Alice。</li>
+<li>此时， Alice手握Bob发过来的公钥$Y_B$，结合自己产生私钥a计算会话密钥：$$K = Y_B^a \bmod q = (g^b \bmod q)^a \bmod q = g^{ab} \bmod q$$</li>
+<li>Bob也拿到了Alice发来的公钥$Y_A$，同时结合自己的私钥b，计算会话密钥：$$K = Y_A^b \bmod q = (g^a \bmod q)^b \bmod q = g^{ab} \bmod q$$</li>
 </ul>
 <p>这样Alice和Bob都得到了相同的会话密钥K，即通过DH算法完成了密钥交换。</p>
-<p>DH协议的安全性依赖于离散对数的安全性，其假定它假定当q足够大时，通过公共值<span class="math inline">\(g^a \bmod q\)</span>和<span class="math inline">\(g^b \bmod q\)</span>无法计算出共享的secret key，即<span class="math inline">\(K = g^{ab} \bmod q\)</span>。</p>
-<h2 id="dh算法的中间人攻击漏洞描述">DH算法的中间人攻击漏洞描述</h2>
-<p>D-H的密钥交换容易被中间人攻击。其攻击思路如下:</p>
+<p>DH协议的安全性依赖于离散对数的安全性，其假定它假定当q足够大时，通过公共值$g^a \bmod q$和$g^b \bmod q$无法计算出共享的secret key，即$K = g^{ab} \bmod q$。</p>
+<h2 id="DH算法的中间人攻击漏洞描述"><a href="#DH算法的中间人攻击漏洞描述" class="headerlink" title="DH算法的中间人攻击漏洞描述"></a>DH算法的中间人攻击漏洞描述</h2><p>D-H的密钥交换容易被中间人攻击。其攻击思路如下:</p>
 <ul>
-<li>Alice 发送公钥<span class="math inline">\(Y_A\)</span>给Bob, 中间人EVE截取该值，并选择了一个自己的私钥<span class="math inline">\(c\)</span>，计算出自己的公钥<span class="math inline">\(Y_C = g ^ c \bmod q\)</span>然后发送自己的公钥给Bob</li>
-<li>Bob向Alice传递自己的公钥<span class="math inline">\(Y_B\)</span>时，也被中间人EVE截获该值,EVE代替Bob发送它自己的公共值<span class="math inline">\(Y_C\)</span>给Alice</li>
-<li>此时，Alice收到中间人EVE的公钥，Alice和EVE计算出会话密钥<span class="math inline">\(K_1 = g^{ac} \bmod q\)</span>, Bob也收到中间人发送的公钥，Bob和EVE计算出会话密钥<span class="math inline">\(K_2 = g^{bc} \bmod q\)</span></li>
-<li>Alice和Bob都以为是和对方协商好了会话密钥，于是双方互相发送数据，Alice用<span class="math inline">\(K_1\)</span>加密数据之后发送给Bob，EVE截获该数据，用<span class="math inline">\(K_1\)</span>解密，即可查看Alice发送给Bob的数据，Eve还可对其进行修改，然后用<span class="math inline">\(K_2\)</span>加密发送给Bob，这时Bob收到的消息已经被中间人Eve窥探甚至篡改，但Bob对此毫不知情。</li>
+<li>Alice 发送公钥$Y_A$给Bob, 中间人EVE截取该值，并选择了一个自己的私钥$c$，计算出自己的公钥$Y_C = g ^ c \bmod q$然后发送自己的公钥给Bob</li>
+<li>Bob向Alice传递自己的公钥$Y_B$时，也被中间人EVE截获该值,EVE代替Bob发送它自己的公共值$Y_C$给Alice</li>
+<li>此时，Alice收到中间人EVE的公钥，Alice和EVE计算出会话密钥$K_1 = g^{ac} \bmod q$, Bob也收到中间人发送的公钥，Bob和EVE计算出会话密钥$K_2 = g^{bc} \bmod q$</li>
+<li>Alice和Bob都以为是和对方协商好了会话密钥，于是双方互相发送数据，Alice用$K_1$加密数据之后发送给Bob，EVE截获该数据，用$K_1$解密，即可查看Alice发送给Bob的数据，Eve还可对其进行修改，然后用$K_2$加密发送给Bob，这时Bob收到的消息已经被中间人Eve窥探甚至篡改，但Bob对此毫不知情。</li>
 </ul>
 <p>这就是中间人攻击的原理。</p>
-<h2 id="dh算法的防止中间人攻击的方法签名认证">DH算法的防止中间人攻击的方法—–签名认证</h2>
-<h3 id="dh算法易被攻击的原因">DH算法易被攻击的原因</h3>
-<p>D-H之所以容易被中间人攻击，是因为key在交换时并不对其参与者进行认证。可能的解决办法是使用数字签名，以及使用其它的协议变种。</p>
-<h3 id="dh-签名认证方案的具体描述">DH + 签名认证方案的具体描述</h3>
-<p>A与B都提供自己的公钥/密钥对和公钥的证书，A根据一些消息来计算一个签名，其中包括公共值<span class="math inline">\(g^a mod q\)</span>，B也做类似的运算。即使C仍然能够截取A与B之间的信息，但他并不能在没有A和B的密钥的情况下伪造签名，因此，这个增强的协议抵挡了中间人攻击。</p>
+<h2 id="DH算法的防止中间人攻击的方法—–签名认证"><a href="#DH算法的防止中间人攻击的方法—–签名认证" class="headerlink" title="DH算法的防止中间人攻击的方法—–签名认证"></a>DH算法的防止中间人攻击的方法—–签名认证</h2><h3 id="DH算法易被攻击的原因"><a href="#DH算法易被攻击的原因" class="headerlink" title="DH算法易被攻击的原因"></a>DH算法易被攻击的原因</h3><p>D-H之所以容易被中间人攻击，是因为key在交换时并不对其参与者进行认证。可能的解决办法是使用数字签名，以及使用其它的协议变种。</p>
+<h3 id="DH-签名认证方案的具体描述"><a href="#DH-签名认证方案的具体描述" class="headerlink" title="DH + 签名认证方案的具体描述"></a>DH + 签名认证方案的具体描述</h3><p>A与B都提供自己的公钥/密钥对和公钥的证书，A根据一些消息来计算一个签名，其中包括公共值$g^a mod q$，B也做类似的运算。即使C仍然能够截取A与B之间的信息，但他并不能在没有A和B的密钥的情况下伪造签名，因此，这个增强的协议抵挡了中间人攻击。</p>
 <p>具体实现为以下步骤：</p>
 <p>会话开始前准备工作：</p>
-<ol style="list-style-type: decimal">
-<li>首先通信双方在交换协议前每一方都有一个用于签名的非对称密钥对，这个用来做签名认证，密钥对的公钥需要在会话开始前共享，即会话前，Alice的签名非对称密钥对<span class="math inline">\((P_A, S_A)\)</span>, 其中公钥<span class="math inline">\(P_A\)</span>全局公开，Bob的签名非对称密钥对<span class="math inline">\((P_B, S_B)\)</span>,其中公钥<span class="math inline">\(P_B\)</span>全局公开</li>
-<li>双方约定大素数<span class="math inline">\(q\)</span>和它的一个本原根<span class="math inline">\(\alpha\)</span>, 其中<span class="math inline">\(\alpha&lt;q\)</span>，这些步骤在会话开始前共享能够降低会话完成的复杂性。</li>
+<ol>
+<li>首先通信双方在交换协议前每一方都有一个用于签名的非对称密钥对，这个用来做签名认证，密钥对的公钥需要在会话开始前共享，即会话前，Alice的签名非对称密钥对$(P_A, S_A)$, 其中公钥$P_A$全局公开，Bob的签名非对称密钥对$(P_B, S_B)$,其中公钥$P_B$全局公开</li>
+<li>双方约定大素数$q$和它的一个本原根$\alpha$, 其中$\alpha&lt;q$，这些步骤在会话开始前共享能够降低会话完成的复杂性。</li>
 </ol>
 <p>会话过程（注意：如果其中某一个步骤未完成，则整个协议交换过程停止）：</p>
-<ol style="list-style-type: decimal">
-<li>Alice随机产生一个数(私钥) <span class="math inline">\(x\)</span>,<span class="math inline">\(x &lt; q\)</span>,并计算公钥<span class="math inline">\(Y_A = \alpha^x \bmod q\)</span>, 发送给Bob。</li>
-<li>Bob随机产生一个数(私钥) <span class="math inline">\(y\)</span>,<span class="math inline">\(y&lt;q\)</span>, 并计算公钥<span class="math inline">\(Y_B= \alpha^y \bmod q\)</span></li>
-<li>Bob 会话密钥：<span class="math display">\[K = Y_A^y \bmod q = (\alpha^x \bmod q)^y \bmod q = \alpha^{xy} \bmod q\]</span></li>
-<li>Bob计算<span class="math inline">\((\alpha^y, \alpha^x)\)</span>的hash, 然后使用非对称私钥<span class="math inline">\(S_B\)</span>对该hash进行签名，然后使用会话密钥K对该签名进行加密，Bob将加密后的签名<span class="math inline">\(E_K(S_B(\alpha_y, \alpha^x))\)</span>及公钥<span class="math inline">\(\alpha^y\)</span>发送给Alice</li>
-<li>此时， Alice手握Bob发过来的公钥<span class="math inline">\(Y_B\)</span>，结合自己的私钥x计算会话密钥：<span class="math display">\[K = Y_B^x \bmod q = (\alpha^y \bmod q)^x \bmod q = \alpha^{xy} \bmod q\]</span></li>
-<li>Alice使用会话密钥K解密签名消息，再用Bob的签名公钥<span class="math inline">\(P_B\)</span>验证Bob的签名。</li>
-<li>Alice计算<span class="math inline">\((\alpha^x, \alpha^y)\)</span>的hash, 然后使用非对称私钥<span class="math inline">\(S_A\)</span>对该hash进行签名，然后使用会话密钥K对该签名进行加密，Alice将加密后的签名<span class="math inline">\(E_K(S_A(\alpha_x, \alpha^y))\)</span>发送给Bob。</li>
-<li>Bob利用会话密钥和Alice的公钥<span class="math inline">\(P_A\)</span>解密并验证Alice的签名</li>
+<ol>
+<li>Alice随机产生一个数(私钥) $x$,$x &lt; q$,并计算公钥$Y_A = \alpha^x \bmod q$, 发送给Bob。</li>
+<li>Bob随机产生一个数(私钥) $y$,$y&lt;q$, 并计算公钥$Y_B= \alpha^y \bmod q$</li>
+<li>Bob 会话密钥：$$K = Y_A^y \bmod q = (\alpha^x \bmod q)^y \bmod q = \alpha^{xy} \bmod q$$ </li>
+<li>Bob计算$(\alpha^y, \alpha^x)$的hash, 然后使用非对称私钥$S_B$对该hash进行签名，然后使用会话密钥K对该签名进行加密，Bob将加密后的签名$E_K(S_B(\alpha_y, \alpha^x))$及公钥$\alpha^y$发送给Alice</li>
+<li>此时， Alice手握Bob发过来的公钥$Y_B$，结合自己的私钥x计算会话密钥：$$K = Y_B^x \bmod q = (\alpha^y \bmod q)^x \bmod q = \alpha^{xy} \bmod q$$</li>
+<li>Alice使用会话密钥K解密签名消息，再用Bob的签名公钥$P_B$验证Bob的签名。</li>
+<li>Alice计算$(\alpha^x, \alpha^y)$的hash, 然后使用非对称私钥$S_A$对该hash进行签名，然后使用会话密钥K对该签名进行加密，Alice将加密后的签名$E_K(S_A(\alpha_x, \alpha^y))$发送给Bob。</li>
+<li>Bob利用会话密钥和Alice的公钥$P_A$解密并验证Alice的签名</li>
 </ol>
 <p>以上所有步骤顺利完成之后Alice与Bob相互认证，并且拥有了共享密钥，K,密钥K可由于加密进一步的通信，该算法的过程如下图所示</p>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/020w00100F3l2Y0w191V/Image%202017-06-05%20at%201.08.30%20下午.png" alt="签名认证的DH算法">
-<p class="caption">签名认证的DH算法</p>
-</div>
-<h3 id="dh-签名认证防中间人攻击的原理描述">DH + 签名认证防中间人攻击的原理描述</h3>
-<p>没有中间人攻击时的密钥交换过程</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/020w00100F3l2Y0w191V/Image%202017-06-05%20at%201.08.30%20下午.png" alt="签名认证的DH算法"></p>
+<h3 id="DH-签名认证防中间人攻击的原理描述"><a href="#DH-签名认证防中间人攻击的原理描述" class="headerlink" title="DH + 签名认证防中间人攻击的原理描述"></a>DH + 签名认证防中间人攻击的原理描述</h3><p>没有中间人攻击时的密钥交换过程</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alice -&gt; ax                 -&gt; Bob</span><br><span class="line">Alice &lt;- ay, EK(SB(ay, ax)) &lt;- Bob</span><br><span class="line">Alice -&gt; EK(SA(ax, ay))     -&gt; Bob</span><br></pre></td></tr></table></figure>
 <p>假设有一个中间人Eve从中截获消息并篡改消息</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Alice -&gt; ax                  -&gt; Eve -&gt; ab                  -&gt; Bob</span><br><span class="line">Alice &lt;- aa, EK1(SB(ay, ab)) &lt;- Eve &lt;- ay, EK2(SB(ay, ab)) &lt;- Bob</span><br></pre></td></tr></table></figure>
-<p>由上述描述可以发现，若中间人Eve想完成攻击，会在算法第4步，Bob将公钥<span class="math inline">\(\alpha^y\)</span>和加密后的签名发给Alice时，中间人Eve截获，虽然Eve可以解密并得到hash串，但是由于Eve没有Bob的用于签名的私钥<span class="math inline">\(A_B\)</span>,因此，Eve无法伪造出一条Bob的签名，那么第5步Alice收到消息后会发现签名验证失败，继而发现协议交换过程不安全，然后停止密钥交换过程，那么Eve的攻击就此失败，由此可见，签名认证的确可以有效防止中间人攻击。</p>
-<h1 id="参考文献">参考文献</h1>
-<ol style="list-style-type: decimal">
+<p>由上述描述可以发现，若中间人Eve想完成攻击，会在算法第4步，Bob将公钥$\alpha^y$和加密后的签名发给Alice时，中间人Eve截获，虽然Eve可以解密并得到hash串，但是由于Eve没有Bob的用于签名的私钥$A_B$,因此，Eve无法伪造出一条Bob的签名，那么第5步Alice收到消息后会发现签名验证失败，继而发现协议交换过程不安全，然后停止密钥交换过程，那么Eve的攻击就此失败，由此可见，签名认证的确可以有效防止中间人攻击。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
 <li>李必涛,徐赐文,王晓菲,贾杰,郭远,郑辉. 一种能够抵抗主动攻击的改进Diffie-Hellman密钥协商方案[J]. 中央民族大学学报(自然科学版),2008,(04):54-57.</li>
 <li>徐恒,陈恭亮,杨福祥. 密钥交换中中间人攻击的防范[J]. 信息安全与通信保密,2009,(02):90-92.</li>
-<li>Diffie–Hellman key exchange. (2017, March 22). In Wikipedia, The Free Encyclopedia. Retrieved June 2, 2017, from https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange</li>
-<li>Station-to-Station protocol. (2017, March 28). In Wikipedia, The Free Encyclopedia. Retrieved 15:50, June 6, 2017 , from https://en.wikipedia.org/wiki/Station-to-Station_protocol</li>
+<li>Diffie–Hellman key exchange. (2017, March 22). In Wikipedia, The Free Encyclopedia. Retrieved June 2, 2017, from <a href="https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange</a></li>
+<li>Station-to-Station protocol. (2017, March 28). In Wikipedia, The Free Encyclopedia. Retrieved<br>15:50, June 6, 2017<br>, from <a href="https://en.wikipedia.org/wiki/Station-to-Station_protocol" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Station-to-Station_protocol</a></li>
 <li>Blakewilson, S., &amp; Menezes, A. (1999). Unknown Key-Share Attacks on the Station-to-Station (STS) Protocol. International Workshop on Practice and Theory in Public Key Cryptography (Vol.1560, pp.154-170). Springer-Verlag.</li>
 <li>Diffie, W., Oorschot, P. C. V., &amp; Wiener, M. J. (1992). Authentication and authenticated key exchanges. Designs, Codes and Cryptography, 2(2), 107-125.</li>
 </ol>
@@ -640,8 +629,8 @@ function loopy() {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/4over6实验报告.html" rel="next" title="Ipv4 over Ipv6隧道协议实验客户端报告">
-                <i class="fa fa-chevron-left"></i> Ipv4 over Ipv6隧道协议实验客户端报告
+              <a href="/article/密码学实验2.html" rel="next" title="密码学实验2">
+                <i class="fa fa-chevron-left"></i> 密码学实验2
               </a>
             
           </div>
@@ -650,8 +639,8 @@ function loopy() {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/校园搜索引擎.html" rel="prev" title="校园搜索引擎">
-                校园搜索引擎 <i class="fa fa-chevron-right"></i>
+              <a href="/article/4over6实验报告.html" rel="prev" title="Ipv4 over Ipv6隧道协议实验客户端报告">
+                Ipv4 over Ipv6隧道协议实验客户端报告 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -841,7 +830,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计一个安全的没有中间人攻击的diffie-hellman密钥交换协议"><span class="nav-number">1.</span> <span class="nav-text">设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dh算法描述"><span class="nav-number">1.1.</span> <span class="nav-text">DH算法描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dh算法的中间人攻击漏洞描述"><span class="nav-number">1.2.</span> <span class="nav-text">DH算法的中间人攻击漏洞描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dh算法的防止中间人攻击的方法签名认证"><span class="nav-number">1.3.</span> <span class="nav-text">DH算法的防止中间人攻击的方法—–签名认证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dh算法易被攻击的原因"><span class="nav-number">1.3.1.</span> <span class="nav-text">DH算法易被攻击的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dh-签名认证方案的具体描述"><span class="nav-number">1.3.2.</span> <span class="nav-text">DH + 签名认证方案的具体描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dh-签名认证防中间人攻击的原理描述"><span class="nav-number">1.3.3.</span> <span class="nav-text">DH + 签名认证防中间人攻击的原理描述</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">2.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议"><span class="nav-number">1.</span> <span class="nav-text">设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DH算法描述"><span class="nav-number">1.1.</span> <span class="nav-text">DH算法描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DH算法的中间人攻击漏洞描述"><span class="nav-number">1.2.</span> <span class="nav-text">DH算法的中间人攻击漏洞描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DH算法的防止中间人攻击的方法—–签名认证"><span class="nav-number">1.3.</span> <span class="nav-text">DH算法的防止中间人攻击的方法—–签名认证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DH算法易被攻击的原因"><span class="nav-number">1.3.1.</span> <span class="nav-text">DH算法易被攻击的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DH-签名认证方案的具体描述"><span class="nav-number">1.3.2.</span> <span class="nav-text">DH + 签名认证方案的具体描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DH-签名认证防中间人攻击的原理描述"><span class="nav-number">1.3.3.</span> <span class="nav-text">DH + 签名认证防中间人攻击的原理描述</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">2.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>

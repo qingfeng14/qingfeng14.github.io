@@ -124,18 +124,18 @@ function loopy() {
 
 
 
-<meta name="description" content="实验要求  部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以找出这样的单词 设计一个Map-Reduce 算法在爬取的网络数据上计算其倒排索引表，最终的倒排索引表中不能包含在第一步中识别出的单词 至少进行两项扩展:  数据清洗：不区分大小写，标点符号不敏感等等 在倒排索引文件的基础上实现一个查询程序">
+<meta name="description" content="实验要求 部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以找出这样的单词 设计一个Map-Reduce 算法在爬取的网络数据上计算其倒排索引表，最终的倒排索引表中不能包含在第一步中识别出的单词 至少进行两项扩展: 数据清洗：不区分大小写，标点符号不敏感等等 在倒排索引文件的基础上实现一个查询程序，接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lab1:A Simple Inverted Index">
 <meta property="og:url" content="https://2young.2simple.top/article/Massive-Data-Process-Lab1-A-Simple-Inverted-Index.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="实验要求  部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以找出这样的单词 设计一个Map-Reduce 算法在爬取的网络数据上计算其倒排索引表，最终的倒排索引表中不能包含在第一步中识别出的单词 至少进行两项扩展:  数据清洗：不区分大小写，标点符号不敏感等等 在倒排索引文件的基础上实现一个查询程序">
+<meta property="og:description" content="实验要求 部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以找出这样的单词 设计一个Map-Reduce 算法在爬取的网络数据上计算其倒排索引表，最终的倒排索引表中不能包含在第一步中识别出的单词 至少进行两项扩展: 数据清洗：不区分大小写，标点符号不敏感等等 在倒排索引文件的基础上实现一个查询程序，接">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://d26dzxoao6i3hh.cloudfront.net/items/0S1c290j2d3j3e3R3i0M/Image%202017-07-03%20at%2012.37.45%20下午.png">
 <meta property="og:updated_time" content="2017-07-03T09:29:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lab1:A Simple Inverted Index">
-<meta name="twitter:description" content="实验要求  部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以找出这样的单词 设计一个Map-Reduce 算法在爬取的网络数据上计算其倒排索引表，最终的倒排索引表中不能包含在第一步中识别出的单词 至少进行两项扩展:  数据清洗：不区分大小写，标点符号不敏感等等 在倒排索引文件的基础上实现一个查询程序">
+<meta name="twitter:description" content="实验要求 部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以找出这样的单词 设计一个Map-Reduce 算法在爬取的网络数据上计算其倒排索引表，最终的倒排索引表中不能包含在第一步中识别出的单词 至少进行两项扩展: 数据清洗：不区分大小写，标点符号不敏感等等 在倒排索引文件的基础上实现一个查询程序，接">
 <meta name="twitter:image" content="https://d26dzxoao6i3hh.cloudfront.net/items/0S1c290j2d3j3e3R3i0M/Image%202017-07-03%20at%2012.37.45%20下午.png">
 
 
@@ -481,7 +481,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,754
+                  1,751
                 </span>
               
 
@@ -516,37 +516,27 @@ function loopy() {
       
 
       
-        <h1 id="实验要求">实验要求</h1>
-<ol style="list-style-type: decimal">
+        <h1 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h1><ol>
 <li>部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以找出这样的单词</li>
 <li>设计一个Map-Reduce 算法在爬取的网络数据上计算其倒排索引表，最终的倒排索引表中不能包含在第一步中识别出的单词</li>
-<li>至少进行两项扩展:
-<ul>
+<li>至少进行两项扩展:<ul>
 <li>数据清洗：不区分大小写，标点符号不敏感等等</li>
 <li>在倒排索引文件的基础上实现一个查询程序，接收用户指定的单词或短语，返回包含这些词语的文档的id</li>
 <li>实现一个完全倒排索引，记录单词所在文档id及在文档中的位置</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-<h1 id="实现">实现</h1>
-<h2 id="part-1-wordcount-统计高频噪声词">Part 1: WordCount 统计高频噪声词</h2>
-<p>直接使用Hadoop的示例WordCount代码运行即可（去除标点、大小写影响），最终单词共24418个，然后使用python对单词词频分布情况进行统计，统计结果如下:</p>
-<div class="figure">
-<img src="https://d26dzxoao6i3hh.cloudfront.net/items/0S1c290j2d3j3e3R3i0M/Image%202017-07-03%20at%2012.37.45%20下午.png" alt="Data Frequency Destribute">
-<p class="caption">Data Frequency Destribute</p>
-</div>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="Part-1-WordCount-统计高频噪声词"><a href="#Part-1-WordCount-统计高频噪声词" class="headerlink" title="Part 1: WordCount 统计高频噪声词"></a>Part 1: WordCount 统计高频噪声词</h2><p>直接使用Hadoop的示例WordCount代码运行即可（去除标点、大小写影响），最终单词共24418个，然后使用python对单词词频分布情况进行统计，统计结果如下:</p>
+<p><img src="https://d26dzxoao6i3hh.cloudfront.net/items/0S1c290j2d3j3e3R3i0M/Image%202017-07-03%20at%2012.37.45%20下午.png" alt="Data Frequency Destribute"></p>
 <p>词频数最高的2000个单词的分布情况如图1所示，据此判定噪声词为词频大于300的单词，使用python提取出这部分单词。</p>
-<h2 id="part-2倒排索引">Part 2:倒排索引</h2>
-<p>将Part 1中得到的高频词传到HDFS目录下，在MapReduce项目中以CacheFile的形式加载，如下：</p>
+<h2 id="Part-2-倒排索引"><a href="#Part-2-倒排索引" class="headerlink" title="Part 2:倒排索引"></a>Part 2:倒排索引</h2><p>将Part 1中得到的高频词传到HDFS目录下，在MapReduce项目中以CacheFile的形式加载，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String filename = <span class="string">"/user/alexzhangch/inverted_index/stop.txt"</span>;</span><br><span class="line">job.addCacheFile(<span class="keyword">new</span> Path(filename).toUri());</span><br></pre></td></tr></table></figure>
 <p>然后在Map阶段，将该高频词存入HashMap，构建倒排索引时，对每个单词，查询其是否在map中，不是高频词则记录下对应的结果。</p>
-<h2 id="part3-扩展">Part3: 扩展</h2>
-<h3 id="扩展一-数据清洗">扩展一： 数据清洗</h3>
-<p>A naive parser will group words by attributes which are not relevant to their meaning.Modify your parser to “scrub” words. You can define “scrub” however you wish; some suggestions include case-insensitivity, punctuation-insensitivity, etc. You will get extra karma for creating a language-independent scrubbing algorithm, but this is not required.</p>
+<h2 id="Part3-扩展"><a href="#Part3-扩展" class="headerlink" title="Part3: 扩展"></a>Part3: 扩展</h2><h3 id="扩展一：-数据清洗"><a href="#扩展一：-数据清洗" class="headerlink" title="扩展一： 数据清洗"></a>扩展一： 数据清洗</h3><p>A naive parser will group words by attributes which are not relevant to their meaning.Modify your parser to “scrub” words. You can define “scrub” however you wish; some suggestions include case-insensitivity, punctuation-insensitivity, etc. You will get extra karma for creating a language-independent scrubbing algorithm, but this is not required.</p>
 <p>实现方式：</p>
 <p>通过String类的replace方法将标点符号，特殊符号等替换，并忽略大小写，只保留单个单词，构建索引</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 把每一句文本分割为单词,根据如下的标点符号进行分割</span></span><br><span class="line">String cleanLine = value.toString().toLowerCase().replaceAll(<span class="string">"[_|&amp;$#&lt;&gt;\\^=\\[\\]\\*/\\\\,;,.\\-:()?!\"']"</span>, <span class="string">" "</span>);</span><br><span class="line">StringTokenizer itr = <span class="keyword">new</span> StringTokenizer(cleanLine);</span><br></pre></td></tr></table></figure>
-<h3 id="扩展二-完全倒排索引">扩展二： 完全倒排索引</h3>
-<p>Instead of creating an inverted file index (which maps words to their document ID), create a full inverted index (which maps words to their document ID + position in the document). How do you specify a word’s position in the document?</p>
+<h3 id="扩展二：-完全倒排索引"><a href="#扩展二：-完全倒排索引" class="headerlink" title="扩展二： 完全倒排索引"></a>扩展二： 完全倒排索引</h3><p>Instead of creating an inverted file index (which maps words to their document ID), create a full inverted index (which maps words to their document ID + position in the document). How do you specify a word’s position in the document?</p>
 <p>实现方式：</p>
 <p>使用的是TextInputFormat，每一条记录是输入文件中的某一行， key为该行在文档中的偏移字节数，value为改行的文本，而根据Hadoop的文档，一个MAP 实例处理一个文件，在MAP实例中会将文件一行一行拆开然后顺序调用map函数，因此可以在MAP class采用一个int整数记录行数，然后在处理每一行数据时记录单词在改行的位置，因此map阶段最终的value格式为</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filename-linenumber-offset</span><br></pre></td></tr></table></figure>
@@ -554,52 +544,53 @@ function loopy() {
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">map</span><span class="params">(LongWritable position, Text value, Context context</span></span></span><br><span class="line"><span class="function"><span class="params">)</span> <span class="keyword">throws</span> IOException, InterruptedException </span>&#123;</span><br><span class="line">    line_number += <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    Integer line_off = line_number;</span><br><span class="line"></span><br><span class="line">    String file_name = ((FileSplit) context.getInputSplit()).getPath().getName().toString();</span><br><span class="line">    <span class="comment">// 把每一句文本分割为单词,根据如下的标点符号进行分割</span></span><br><span class="line">    String cleanLine = value.toString().toLowerCase().replaceAll(<span class="string">"[_|&amp;$#&lt;&gt;\\^=\\[\\]\\*/\\\\,;,.\\-:()?!\"']"</span>, <span class="string">" "</span>);</span><br><span class="line"></span><br><span class="line">    StringTokenizer itr = <span class="keyword">new</span> StringTokenizer(cleanLine);</span><br><span class="line"></span><br><span class="line">    Integer count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (itr.hasMoreTokens()) &#123;</span><br><span class="line">        String word_ = itr.nextToken();</span><br><span class="line">        count += <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 非停用词</span></span><br><span class="line">        <span class="keyword">if</span>(stopWord.get(word_) == <span class="keyword">null</span>) &#123;</span><br><span class="line">            word.set(word_);</span><br><span class="line">            file.set(file_name + <span class="string">"-"</span> + line_off.toString() + <span class="string">"-"</span> + count.toString());</span><br><span class="line">            context.write(word, file);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>最终的倒排表结构如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">aaron   titusandronicus-2984-5, titusandronicus-2379-1, titusandronicus-919-1, titusandronicus-2531-1, titusandronicus-3069-1, titusandronicus-2394-1, titusandronicus-812-5, titusandronicus-1800-1, titusandronicus-2534-7, titusandronicus-3477-7, titusandronicus-924-2, titusandronicus-926-1, titusandronicus-912-1, titusandronicus-3492-1, titusandronicus-3053-1, titusandronicus-936-1, titusandronicus-2523-1, titusandronicus-2407-7, titusandronicus-2409-1, titusandronicus-2410-2, titusandronicus-808-2, titusandronicus-2410-7, titusandronicus-3499-4, titusandronicus-2412-4, titusandronicus-3073-1, titusandronicus-2519-4, titusandronicus-1113-1, titusandronicus-2540-1, titusandronicus-3048-1, titusandronicus-2415-1, titusandronicus-838-1, titusandronicus-48-1, titusandronicus-2422-1, titusandronicus-1440-1, titusandronicus-2548-6, titusandronicus-2517-2, titusandronicus-3116-1, titusandronicus-1784-2, titusandronicus-2426-1, titusandronicus-1089-1, titusandronicus-2358-1, titusandronicus-900-1, titusandronicus-2430-1, titusandronicus-3037-1, titusandronicus-2504-1, titusandronicus-1780-8, titusandronicus-1296-6, titusandronicus-3112-1, titusandronicus-2550-1, titusandronicus-3141-1, titusandronicus-3027-1, titusandronicus-797-1, titusandronicus-795-2, titusandronicus-183-4, titusandronicus-3025-5, titusandronicus-3732-5, titusandronicus-1351-2, titusandronicus-897-2, titusandronicus-3018-1, titusandronicus-854-1, titusandronicus-2438-1, titusandronicus-2387-1, titusandronicus-1348-1, titusandronicus-1853-1, titusandronicus-1772-1, titusandronicus-1770-2, titusandronicus-2490-1, titusandronicus-3081-1, titusandronicus-3744-1, titusandronicus-1334-1, titusandronicus-2833-6, titusandronicus-1824-5, titusandronicus-2312-5, titusandronicus-1389-4, titusandronicus-873-1, titusandronicus-2443-1, titusandronicus-1827-1, titusandronicus-2584-1, titusandronicus-2447-1, titusandronicus-1845-1, titusandronicus-1310-3, titusandronicus-1074-5, titusandronicus-1312-1, titusandronicus-657-6, titusandronicus-3762-5, titusandronicus-494-3, titusandronicus-2320-1, titusandronicus-2455-1, titusandronicus-1068-4, titusandronicus-891-1, titusandronicus-3086-1, titusandronicus-2457-2, titusandronicus-2459-1, titusandronicus-1837-2, titusandronicus-1053-1, titusandronicus-2465-1, titusandronicus-1051-2, titusandronicus-2575-2</span><br><span class="line">abaissiez   kinghenryv-4547-6</span><br><span class="line">abandon 3kinghenryvi-415-5, tamingoftheshrew-453-5, troilusandcressida-2712-3, twelfthnight-482-5, othello-2857-4, timonofathens-3580-8, asyoulikeit-4082-8, asyoulikeit-3493-3, asyoulikeit-3490-2, asyoulikeit-1001-3</span><br><span class="line">abash   troilusandcressida-791-5</span><br><span class="line">abate   kinghenryv-1622-1, kinghenryv-1621-1, kinghenryv-1621-4, kinghenryv-828-10, kinghenryv-3413-7, hamlet-4823-9, titusandronicus-137-6, loveslabourslost-3738-1, tamingoftheshrew-278-3, venusandadonis-792-6, kingrichardiii-5768-1, merchantofvenice-3738-3, glossary-151-2, glossary-3-1, midsummersnightsdream-2052-1, cymbeline-654-1, romeoandjuliet-3603-1</span><br><span class="line">abated  2kinghenryiv-358-5, kinglear-2302-3, coriolanus-3661-1</span><br></pre></td></tr></table></figure>
-<h1 id="实验总结及收获">实验总结及收获:</h1>
-<ol style="list-style-type: decimal">
+<h1 id="实验总结及收获"><a href="#实验总结及收获" class="headerlink" title="实验总结及收获:"></a>实验总结及收获:</h1><ol>
 <li>How long do you think this project would take you to finish?</li>
 </ol>
 <blockquote>
 <p>一天</p>
 </blockquote>
-<ol start="2" style="list-style-type: decimal">
+<ol start="2">
 <li>How much time did you actually spend on this project?</li>
 </ol>
 <blockquote>
 <p>两天</p>
 </blockquote>
-<ol start="3" style="list-style-type: decimal">
+<ol start="3">
 <li>Acknowledge any assistance you received from anyone except assigned course readings and the course staff.</li>
 </ol>
 <blockquote>
 <p>Hadoop中的输入数据划分格式等细节问题通过google获得，通过全局变量记录行号方式以获取a word’s position in the document的方式由计41 李永斌告知。</p>
 </blockquote>
-<ol start="4" style="list-style-type: decimal">
-<li>What test corpus did you load into HDFS? Where is it located (i.e. HDFS path)?</li>
+<ol start="4">
+<li>What test corpus did you load into HDFS? Where is it located (i.e. HDFS path)?</li>
 </ol>
 <blockquote>
 <p>课程提供的莎士比亚全集，位置： /user/alexzhangch/inverted_index/input</p>
 </blockquote>
-<ol start="5" style="list-style-type: decimal">
+<ol start="5">
 <li>What, if any, “noisy words” did you find as a result of your WordCount? By what criteria did you determine that they were “noisy”? Were you surprised by any of these words?</li>
 </ol>
 <blockquote>
 <p>噪声单词通过Word count 方式进行统计词频，然后使用python绘制对应的分布情况，然后结合对应的单词确定以词频数超过300为界限划分噪声词</p>
 </blockquote>
-<ol start="6" style="list-style-type: decimal">
+<ol start="6">
 <li><p>Which extensions did you do? Please also detail any interesting results you found.</p>
 <ul>
-<li>实现的扩展功能
-<ul>
+<li>实现的扩展功能<ul>
 <li>数据清洗，去除标点符号、特殊符号，不区分大小写等</li>
 <li>完全倒排索引，通过行号+在改行的出现位置作为单词的position</li>
-</ul></li>
-<li>interesting results
-<ul>
+</ul>
+</li>
+<li>interesting results<ul>
 <li>MAP阶段每一个输入文件由一个Map实例处理</li>
 <li>TextInputFormat输入时，key是改行的byte offset，不是行号，但是由于Map实例中会一行一行读取然后并行执行map函数，因此可以使用一个全局变量去记录当前map函数处理的行号，从而去定位单词在文档中的位置</li>
-</ul></li>
-</ul></li>
-<li><p>收获</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>收获</p>
+</li>
 </ol>
 <blockquote>
 <p>熟悉了Hadoop的MapReduce编程，对其实现机制有了更深入的理解，对MapReduce过程中的数据流通过程有了更多的认识，特别是输入数据的切分</p>
@@ -877,7 +868,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验要求"><span class="nav-number">1.</span> <span class="nav-text">实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#part-1-wordcount-统计高频噪声词"><span class="nav-number">2.1.</span> <span class="nav-text">Part 1: WordCount 统计高频噪声词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-2倒排索引"><span class="nav-number">2.2.</span> <span class="nav-text">Part 2:倒排索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part3-扩展"><span class="nav-number">2.3.</span> <span class="nav-text">Part3: 扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展一-数据清洗"><span class="nav-number">2.3.1.</span> <span class="nav-text">扩展一： 数据清洗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展二-完全倒排索引"><span class="nav-number">2.3.2.</span> <span class="nav-text">扩展二： 完全倒排索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验总结及收获"><span class="nav-number">3.</span> <span class="nav-text">实验总结及收获:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验要求"><span class="nav-number">1.</span> <span class="nav-text">实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-1-WordCount-统计高频噪声词"><span class="nav-number">2.1.</span> <span class="nav-text">Part 1: WordCount 统计高频噪声词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-2-倒排索引"><span class="nav-number">2.2.</span> <span class="nav-text">Part 2:倒排索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part3-扩展"><span class="nav-number">2.3.</span> <span class="nav-text">Part3: 扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展一：-数据清洗"><span class="nav-number">2.3.1.</span> <span class="nav-text">扩展一： 数据清洗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展二：-完全倒排索引"><span class="nav-number">2.3.2.</span> <span class="nav-text">扩展二： 完全倒排索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验总结及收获"><span class="nav-number">3.</span> <span class="nav-text">实验总结及收获:</span></a></li></ol></div>
             
 
           </div>

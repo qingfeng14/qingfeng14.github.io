@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://2young.2simple.top/"/>
-  <updated>2018-11-22T07:45:01.624Z</updated>
+  <updated>2018-11-23T08:29:55.011Z</updated>
   <id>https://2young.2simple.top/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Golang 性能测试, 单元测试</title>
-    <link href="https://2young.2simple.top/article/golang/golang%E6%80%A7%E8%83%BD&amp;%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html"/>
-    <id>https://2young.2simple.top/article/golang/golang性能&amp;单元测试.html</id>
+    <title>Golang 性能测试-单元测试</title>
+    <link href="https://2young.2simple.top/article/golang/golang%E6%80%A7%E8%83%BD-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html"/>
+    <id>https://2young.2simple.top/article/golang/golang性能-单元测试.html</id>
     <published>2018-11-22T03:36:09.000Z</published>
-    <updated>2018-11-22T07:45:01.624Z</updated>
+    <updated>2018-11-23T08:29:55.011Z</updated>
     
     <summary type="html">
     

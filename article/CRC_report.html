@@ -6,19 +6,19 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
-  <meta name="google-site-verification" content="NulX213KadbLZpcPLeskKULRWdztIKtoHsRG8-LgfWE" />
+  <meta name="google-site-verification" content="NulX213KadbLZpcPLeskKULRWdztIKtoHsRG8-LgfWE">
 
 
 
@@ -34,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -68,9 +68,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 <script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
 <script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
 
@@ -106,18 +106,18 @@ function loopy() {
 </script> 
 
 
-  <meta name="keywords" content="青枫，博客，Coding, 张盛豪, Golang, Web" />
+  <meta name="keywords" content="青枫，博客，Coding, 张盛豪, Golang, Web">
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="我的日志" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="我的日志" type="application/atom+xml">
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.png?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/favicon.png?v=5.1.0">
 
 
 
@@ -130,6 +130,7 @@ function loopy() {
 <meta property="og:url" content="https://2young.2simple.top/article/CRC_report.html">
 <meta property="og:site_name" content="我的日志">
 <meta property="og:description" content="实验目的  深入理解各种不同的 Cache 替换策略 理解学习不同替换策略对程序运行性能的影响 动手实现自己的 Cache 替换策略">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-21T09:18:15.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实验 1 Cache 替换策略设计与分析">
@@ -161,7 +162,7 @@ function loopy() {
 
 
 
-  <link rel="canonical" href="https://2young.2simple.top/article/CRC_report.html"/>
+  <link rel="canonical" href="https://2young.2simple.top/article/CRC_report.html">
 
 
 
@@ -171,7 +172,7 @@ function loopy() {
    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -215,13 +216,13 @@ function loopy() {
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">我的日志</span>
         <span class="logo-line-after"><i></i></span>
@@ -251,7 +252,7 @@ function loopy() {
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -261,7 +262,7 @@ function loopy() {
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -271,7 +272,7 @@ function loopy() {
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -281,7 +282,7 @@ function loopy() {
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -291,7 +292,7 @@ function loopy() {
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -301,7 +302,7 @@ function loopy() {
         <li class="menu-item menu-item-sitemap">
           <a href="/sitemap.xml" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
             
             站点地图
           </a>
@@ -314,7 +315,7 @@ function loopy() {
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -335,9 +336,7 @@ function loopy() {
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocapitalize="off" autocomplete="off" autocorrect="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -369,16 +368,16 @@ function loopy() {
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/CRC_report.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张盛豪">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="我的日志">
     </span>
 
@@ -458,7 +457,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2,385
+                  2,480
                 </span>
               
 
@@ -474,7 +473,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  10
+                  11
                 </span>
               
             </div>
@@ -526,7 +525,7 @@ function loopy() {
 </ul>
 <p>在实际的实验过程中发现，LIP算法并没有很明显的改进LRU算法，约有<span class="math inline">\(\frac{1}{3}\)</span>的测试样例中LIP算法表现更好，<span class="math inline">\(1/2\)</span>的测试样例中LRU算法表现更好，由此，我采用了一个稍大概率值使得其一部分情况下采用LRU算法，一部分情况下采用LIP算法，考虑到LRU算法在大多数情况下表现较好，这里的概率值设置得稍大一些，置为了30%,即对于新换入的Cache块，有30%的概率会被放置在LRU端，有70%的概率会被置于MRU端</p>
 <h2 id="具体实现">具体实现</h2>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这个函数是根据实现的Cache替换策略函数                                         </span></div><div class="line">INT32  CACHE_REPLACEMENT_STATE::Get_LIP_Victim( UINT32 setIndex )&#123;</div><div class="line">    <span class="comment">// Get pointer to replacement state of current set</span></div><div class="line">    LINE_REPLACEMENT_STATE *replSet = repl[ setIndex ];</div><div class="line"></div><div class="line">    INT32   lipWay   = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="comment">// Search for victim whose stack position is assoc-1</span></div><div class="line">    <span class="comment">// 被替换的块策略与LRU一致，选择栈底被替换出去</span></div><div class="line">    <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>( replSet[way].LRUstackposition == (assoc<span class="number">-1</span>) ) </div><div class="line">        &#123;</div><div class="line">            lipWay = way;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// return lru way</span></div><div class="line">    <span class="keyword">return</span> lipWay;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// This function implements the LIP update routine for the traditional        //</span></div><div class="line"><span class="comment">// LIP replacement policy. The arguments to the function are the physical     //</span></div><div class="line"><span class="comment">// way and set index.                                                         </span></div><div class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateLIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</div><div class="line">&#123;</div><div class="line">    <span class="comment">// Determine current LRU stack position</span></div><div class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</div><div class="line"></div><div class="line">    <span class="comment">// 如果hit</span></div><div class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></div><div class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></div><div class="line">    <span class="keyword">if</span> (cacheHit) &#123;</div><div class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </div><div class="line">            &#123;</div><div class="line">                repl[setIndex][way].LRUstackposition++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</div><div class="line">    &#125;   </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateBIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</div><div class="line">&#123;</div><div class="line">    <span class="comment">// Determine current LRU stack position</span></div><div class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</div><div class="line"></div><div class="line">    <span class="comment">// 如果hit</span></div><div class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></div><div class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></div><div class="line">    <span class="keyword">if</span> (cacheHit || (rand()%<span class="number">100</span> &lt; probability)) &#123;</div><div class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </div><div class="line">            &#123;</div><div class="line">                repl[setIndex][way].LRUstackposition++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></div><div class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个函数是根据实现的Cache替换策略函数                                         </span></span><br><span class="line">INT32  CACHE_REPLACEMENT_STATE::Get_LIP_Victim( UINT32 setIndex )&#123;</span><br><span class="line">    <span class="comment">// Get pointer to replacement state of current set</span></span><br><span class="line">    LINE_REPLACEMENT_STATE *replSet = repl[ setIndex ];</span><br><span class="line"></span><br><span class="line">    INT32   lipWay   = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Search for victim whose stack position is assoc-1</span></span><br><span class="line">    <span class="comment">// 被替换的块策略与LRU一致，选择栈底被替换出去</span></span><br><span class="line">    <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>( replSet[way].LRUstackposition == (assoc<span class="number">-1</span>) ) </span><br><span class="line">        &#123;</span><br><span class="line">            lipWay = way;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// return lru way</span></span><br><span class="line">    <span class="keyword">return</span> lipWay;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// This function implements the LIP update routine for the traditional        //</span></span><br><span class="line"><span class="comment">// LIP replacement policy. The arguments to the function are the physical     //</span></span><br><span class="line"><span class="comment">// way and set index.                                                         </span></span><br><span class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateLIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Determine current LRU stack position</span></span><br><span class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果hit</span></span><br><span class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></span><br><span class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></span><br><span class="line">    <span class="keyword">if</span> (cacheHit) &#123;</span><br><span class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </span><br><span class="line">            &#123;</span><br><span class="line">                repl[setIndex][way].LRUstackposition++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CACHE_REPLACEMENT_STATE::UpdateBIP( UINT32 setIndex, INT32 updateWayID, <span class="keyword">bool</span> cacheHit )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Determine current LRU stack position</span></span><br><span class="line">    UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果hit</span></span><br><span class="line">    <span class="comment">// Update the stack position of all lines before the current line</span></span><br><span class="line">    <span class="comment">// Update implies incremeting their stack positions by one</span></span><br><span class="line">    <span class="keyword">if</span> (cacheHit || (rand()%<span class="number">100</span> &lt; probability)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(UINT32 way=<span class="number">0</span>; way&lt;assoc; way++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>( repl[setIndex][way].LRUstackposition &lt; currLRUstackposition ) </span><br><span class="line">            &#123;</span><br><span class="line">                repl[setIndex][way].LRUstackposition++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Set the LRU stack position of new line to be zero</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// Cache缺失时, 把新换入的Cache的行置于LRU端</span></span><br><span class="line">        repl[ setIndex ][ updateWayID ].LRUstackposition = assoc - <span class="number">1</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="替换策略测试">替换策略测试</h1>
 <h2 id="测试方法">测试方法</h2>
 <p>本次实验中将29个测试程序分别采用LRU,LIP算法进行了测试，测试时的Cache设置为 <code>UL3:1024:64:16</code></p>
@@ -1315,7 +1314,7 @@ function loopy() {
 <p>新加入的第三种策略（类似于BIP算法）在缺失率上的表现较LIP稍好一些（运行时间偏慢应该是因为在其中做了取随机数和取模的运算操作），其表现与LRU表现不分上下，可以看做是LRU算法和LIP算法的一个综合，可以看出不同的算法对程序局部性的适应度是有区别的，而测试程序的局部性好坏也极大地影响着其缺失率，在实际的操作中综合LIP和LRU算法应该是比较好的。根据测试结果推测，当概率值设置为50%时BIP算法表现可能会优于LRU算法</p>
 <p>由此可以分析，通常来说，程序的局部性更强时LRU算法表现会比较好，当程序的局部性表现有较大波动时，LIP一类改进算法会表现更好（即缺失率会降低），实际上，DIP算法的动态调节表现应该是最好的，不过出于实现难度本次实验没有进行实现。</p>
 <h1 id="附件">附件：</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">## 算法文件</div><div class="line">replacement_state.cpp</div><div class="line">replacement_state.h</div><div class="line"></div><div class="line">## 实验数据</div><div class="line">results/</div><div class="line">├── get_time.py                 // 通过运行数据提取运行结果表格记录</div><div class="line">├── time_bip.txt                // 算法3的运行时间结果</div><div class="line">├── log_all.txt                 // 分别使用LRU算法和LIP算法运行29个测试程序的输出结果</div><div class="line">├── bip_log.txt                 // 算法3的运行记录</div><div class="line">├── name.txt</div><div class="line">├── run.sh                      // 运行脚本，在CRC/项目根目录下运行即可</div><div class="line">├── runs                        // 解压后的测试结果</div><div class="line">│   ├── LIP_GemsFDTD.stats</div><div class="line">│   ├── LIP_astar.stats</div><div class="line">│   ├── LIP_bwaves.stats</div><div class="line">│   ├── LIP_bzip2.stats</div><div class="line">|   ......</div><div class="line">|</div><div class="line">└── time_log.txt                // 每个程序的运行时间记录</div><div class="line">----</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">## 算法文件</span><br><span class="line">replacement_state.cpp</span><br><span class="line">replacement_state.h</span><br><span class="line"></span><br><span class="line">## 实验数据</span><br><span class="line">results/</span><br><span class="line">├── get_time.py                 // 通过运行数据提取运行结果表格记录</span><br><span class="line">├── time_bip.txt                // 算法3的运行时间结果</span><br><span class="line">├── log_all.txt                 // 分别使用LRU算法和LIP算法运行29个测试程序的输出结果</span><br><span class="line">├── bip_log.txt                 // 算法3的运行记录</span><br><span class="line">├── name.txt</span><br><span class="line">├── run.sh                      // 运行脚本，在CRC/项目根目录下运行即可</span><br><span class="line">├── runs                        // 解压后的测试结果</span><br><span class="line">│   ├── LIP_GemsFDTD.stats</span><br><span class="line">│   ├── LIP_astar.stats</span><br><span class="line">│   ├── LIP_bwaves.stats</span><br><span class="line">│   ├── LIP_bzip2.stats</span><br><span class="line">|   ......</span><br><span class="line">|</span><br><span class="line">└── time_log.txt                // 每个程序的运行时间记录</span><br><span class="line">----</span><br></pre></td></tr></table></figure>
 <h1 id="参考文献">参考文献</h1>
 <p>[1] Moinuddin K. Qureshi , Aamer Jaleel , Yale N. Patt , Simon C. Steely , Joel Emer, Adaptive insertion policies for high performance caching, Proceedings of the 34th annual international symposium on Computer architecture(ISCA), June 09-13, 2007, San Diego, California, USA</p>
 
@@ -1340,13 +1339,13 @@ function loopy() {
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat-pay.png" alt="张盛豪 WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat-pay.png" alt="张盛豪 WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/ali-pay.jpg" alt="张盛豪 Alipay"/>
+          <img id="alipay_qr" src="/uploads/ali-pay.jpg" alt="张盛豪 Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -1457,7 +1456,7 @@ function loopy() {
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -1467,10 +1466,8 @@ function loopy() {
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="张盛豪" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="张盛豪">
           <p class="site-author-name" itemprop="name">张盛豪</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -1613,7 +1610,7 @@ function loopy() {
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
   <span itemprop="copyrightYear">2018</span>
@@ -1623,7 +1620,7 @@ function loopy() {
   <span class="author" itemprop="copyrightHolder">张盛豪</span>
 </div>
 
-<div class="copyright" >
+<div class="copyright">
    <a href="http://www.miitbeian.gov.cn/">京ICP备18050719号</a> 
 </div>
 
@@ -1640,7 +1637,7 @@ function loopy() {
   </a>
 </div>
 
-<br/>
+<br>
 
 
 
@@ -2062,7 +2059,7 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
   });
 </script>
 
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

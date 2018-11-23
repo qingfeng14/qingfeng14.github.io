@@ -171,16 +171,16 @@
 
     
     <entry>
-      <title><![CDATA[集成学习知识点]]></title>
-      <url>%2Farticle%2F%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9.html</url>
-      <content type="text"><![CDATA[两个概念 强学习器：高准确率 弱学习器：低准确率（比随机猜测略好） 基本思想 把几个弱分类器加权融合提升效果 每个算法池中的算法有自己的权值 当用于预测一个新的测例时，每个分类器给出自己的预测，总算法使用各自的权值加权得出结果 加权多数算法 加权多数算法 权值为0或1 二值输出，权重为0/1 算法流程，权值变化 每次失败除2， 避免特别小（直接置为0） Bagging算法 Bagging = Bootstrap aggregating 如果只有一个弱分类器，如何进行集成学习 自举法采样 给定一个包含m个训练集的数据集D 有放回采样取m个数据组成训练集\(D_i\) \(D_i\)可能存在重复，存在漏选 12345For t = 1, 2, …, T Docreate boostrap sample Dt from S train a classifier Ht on DtClassify new instance x∈X by majority vote of H t(equal weights) 可以预测连续输出 Bagging算法对结果提示是不稳定的 预测方法的稳定性问题 不稳定的算法：训练集的小变化会造成假设的大变化 如果扰动训练集可以造成预测器的显著变化那么Bagging算法可以提高其精度 特殊点 每个基础分类器在小数据集进行训练（只有63.2%的数据在所有的分数据集中） 但是最终的模型中几乎包含了所有的训练集（平均每个会被&gt;50%的bootstrap包含） 小结 加权多数算法： 同样的数据集，不同的学习算法，生成多个模型，加权预测 Bagging： 一个数据集，一个弱分类器， 生成多个训练集来训练多个模型，然后集成 Boosting算法 基本思想 从错误中学习 给每个example一个权值， AdaBoost get每一个样本一个等值权重\(\frac{1}{N}\) 对1~T,训练生成Ct,计算器错误率 实现参考 adaboosting AdaBoost.M1]]></content>
+      <title><![CDATA[SNMP知识点]]></title>
+      <url>%2Farticle%2FUntitled.html</url>
+      <content type="text"><![CDATA[SNMP: 简单网络管理协议 协议层， 规程（传输过程），格式, 服务的请求和提供者，提供什么服务，获取操作的信息 变量参数的定义，安全（认证AAA, 认证授权计费） FTP协议:文件系统 网络时间同步 硬件：原子钟，GPS，运营商 软件：NTP(网络时间协议) SNMP概述 一种网络管理体系结构 系列通信协议 网络管理信息定义和标准 体系结构 抽象模型，组成关系模型 OSI 七层模型， TCP/IP四层 三网融合 ISO ITU国际电信联盟 ：TMU IETF：民间组织 IEEE：底层技术标准 WIFI]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[SNMP知识点]]></title>
-      <url>%2Farticle%2FUntitled.html</url>
-      <content type="text"><![CDATA[SNMP: 简单网络管理协议 协议层， 规程（传输过程），格式, 服务的请求和提供者，提供什么服务，获取操作的信息 变量参数的定义，安全（认证AAA, 认证授权计费） FTP协议:文件系统 网络时间同步 硬件：原子钟，GPS，运营商 软件：NTP(网络时间协议) SNMP概述 一种网络管理体系结构 系列通信协议 网络管理信息定义和标准 体系结构 抽象模型，组成关系模型 OSI 七层模型， TCP/IP四层 三网融合 ISO ITU国际电信联盟 ：TMU IETF：民间组织 IEEE：底层技术标准 WIFI]]></content>
+      <title><![CDATA[集成学习知识点]]></title>
+      <url>%2Farticle%2F%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9.html</url>
+      <content type="text"><![CDATA[两个概念 强学习器：高准确率 弱学习器：低准确率（比随机猜测略好） 基本思想 把几个弱分类器加权融合提升效果 每个算法池中的算法有自己的权值 当用于预测一个新的测例时，每个分类器给出自己的预测，总算法使用各自的权值加权得出结果 加权多数算法 加权多数算法 权值为0或1 二值输出，权重为0/1 算法流程，权值变化 每次失败除2， 避免特别小（直接置为0） Bagging算法 Bagging = Bootstrap aggregating 如果只有一个弱分类器，如何进行集成学习 自举法采样 给定一个包含m个训练集的数据集D 有放回采样取m个数据组成训练集\(D_i\) \(D_i\)可能存在重复，存在漏选 12345For t = 1, 2, …, T Docreate boostrap sample Dt from S train a classifier Ht on DtClassify new instance x∈X by majority vote of H t(equal weights) 可以预测连续输出 Bagging算法对结果提示是不稳定的 预测方法的稳定性问题 不稳定的算法：训练集的小变化会造成假设的大变化 如果扰动训练集可以造成预测器的显著变化那么Bagging算法可以提高其精度 特殊点 每个基础分类器在小数据集进行训练（只有63.2%的数据在所有的分数据集中） 但是最终的模型中几乎包含了所有的训练集（平均每个会被&gt;50%的bootstrap包含） 小结 加权多数算法： 同样的数据集，不同的学习算法，生成多个模型，加权预测 Bagging： 一个数据集，一个弱分类器， 生成多个训练集来训练多个模型，然后集成 Boosting算法 基本思想 从错误中学习 给每个example一个权值， AdaBoost get每一个样本一个等值权重\(\frac{1}{N}\) 对1~T,训练生成Ct,计算器错误率 实现参考 adaboosting AdaBoost.M1]]></content>
     </entry>
 
     

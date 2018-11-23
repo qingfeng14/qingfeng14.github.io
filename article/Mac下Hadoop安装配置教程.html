@@ -124,17 +124,17 @@ function loopy() {
 
 
 
-<meta name="description" content="JAVA  安装配置java_home 12$ /usr/libexec/java_home/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home 查看java虚拟机启动情况 1$ jps NameNode Web UI  http://localhost:50070/ ResourceManager at - http:/">
+<meta name="description" content="JAVA 安装配置 java_home 12$ /usr/libexec/java_home/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home 查看java虚拟机启动情况 1$ jps NameNode Web UI http://localhost:50070/ ResourceManager at - http://">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac下Hadoop安装配置问题 waiting for AM container to be allocated, launched and register with RM.">
 <meta property="og:url" content="https://2young.2simple.top/article/Mac下Hadoop安装配置教程.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="JAVA  安装配置java_home 12$ /usr/libexec/java_home/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home 查看java虚拟机启动情况 1$ jps NameNode Web UI  http://localhost:50070/ ResourceManager at - http:/">
+<meta property="og:description" content="JAVA 安装配置 java_home 12$ /usr/libexec/java_home/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home 查看java虚拟机启动情况 1$ jps NameNode Web UI http://localhost:50070/ ResourceManager at - http://">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-08-09T01:31:24.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac下Hadoop安装配置问题 waiting for AM container to be allocated, launched and register with RM.">
-<meta name="twitter:description" content="JAVA  安装配置java_home 12$ /usr/libexec/java_home/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home 查看java虚拟机启动情况 1$ jps NameNode Web UI  http://localhost:50070/ ResourceManager at - http:/">
+<meta name="twitter:description" content="JAVA 安装配置 java_home 12$ /usr/libexec/java_home/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home 查看java虚拟机启动情况 1$ jps NameNode Web UI http://localhost:50070/ ResourceManager at - http://">
 
 
 
@@ -492,39 +492,47 @@ function loopy() {
       
 
       
-        <h1 id="JAVA-安装配置"><a href="#JAVA-安装配置" class="headerlink" title="JAVA  安装配置"></a>JAVA  安装配置</h1><p>java_home</p>
+        <h1 id="java-安装配置">JAVA 安装配置</h1>
+<p>java_home</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/libexec/java_home</span><br><span class="line">/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home</span><br></pre></td></tr></table></figure>
 <p>查看java虚拟机启动情况</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ jps</span><br></pre></td></tr></table></figure>
-<p><a href="http://localhost:50070/" target="_blank" rel="noopener">NameNode Web UI</a>  <a href="http://localhost:50070/" target="_blank" rel="noopener">http://localhost:50070/</a></p>
-<p><a href="http://localhost:8088/" target="_blank" rel="noopener">ResourceManager</a> at - <a href="http://localhost:8088/" target="_blank" rel="noopener">http://localhost:8088/</a></p>
-<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><h2 id="ACCEPTED-waiting-for-AM-container-to-be-allocated-launched-and-register-with-RM"><a href="#ACCEPTED-waiting-for-AM-container-to-be-allocated-launched-and-register-with-RM" class="headerlink" title="ACCEPTED: waiting for AM container to be allocated, launched and register with RM."></a>ACCEPTED: waiting for AM container to be allocated, launched and register with RM.</h2><p><a href="https://community.hortonworks.com/questions/77454/tez-job-hang-waiting-for-am-container-to-be-alloca.html" target="_blank" rel="noopener">参考自</a></p>
+<p><a href="http://localhost:50070/" target="_blank" rel="noopener">NameNode Web UI</a> http://localhost:50070/</p>
+<p><a href="http://localhost:8088/" target="_blank" rel="noopener">ResourceManager</a> at - http://localhost:8088/</p>
+<h1 id="问题解决">问题解决</h1>
+<h2 id="accepted-waiting-for-am-container-to-be-allocated-launched-and-register-with-rm.">ACCEPTED: waiting for AM container to be allocated, launched and register with RM.</h2>
+<p><a href="https://community.hortonworks.com/questions/77454/tez-job-hang-waiting-for-am-container-to-be-alloca.html" target="_blank" rel="noopener">参考自</a></p>
 <blockquote>
 <p>This will happen when there are not enough resources (memory) to run the AppMaster container needed to control the Tez job. In YARN capacity-scheduler.xml there is a property</p>
 </blockquote>
 <blockquote>
-<p>yarn.scheduler.capacity.maximum-am-resource-percent<br>which controls the percentage of total cluster memory that can be used by AM containers. If you have several jobs running then each AM will consume the memory required for one container. If this exceeds the given % of total cluster memory the next AM to run will wait until there are free resources for it to run. You’ll need to increase yarn.scheduler.capacity.maximum-am-resource-percent to get the AM to run.</p>
+<p>yarn.scheduler.capacity.maximum-am-resource-percent which controls the percentage of total cluster memory that can be used by AM containers. If you have several jobs running then each AM will consume the memory required for one container. If this exceeds the given % of total cluster memory the next AM to run will wait until there are free resources for it to run. You’ll need to increase yarn.scheduler.capacity.maximum-am-resource-percent to get the AM to run.</p>
 </blockquote>
 <p>另一个可能的原因是:</p>
-<h2 id="Directory-tmp-hadoop-alexzhangch-nm-local-dir-error-used-space-above-threshold-of-90-0-removing-from-list-of-valid-directories"><a href="#Directory-tmp-hadoop-alexzhangch-nm-local-dir-error-used-space-above-threshold-of-90-0-removing-from-list-of-valid-directories" class="headerlink" title="Directory /tmp/hadoop-alexzhangch/nm-local-dir error, used space above threshold of 90.0%, removing from list of valid directories"></a>Directory /tmp/hadoop-alexzhangch/nm-local-dir error, used space above threshold of 90.0%, removing from list of valid directories</h2><p>即存储空间不够，释放足够的空间即可，保持10%的空闲空间</p>
+<h2 id="directory-tmphadoop-alexzhangchnm-local-dir-error-used-space-above-threshold-of-90.0-removing-from-list-of-valid-directories">Directory /tmp/hadoop-alexzhangch/nm-local-dir error, used space above threshold of 90.0%, removing from list of valid directories</h2>
+<p>即存储空间不够，释放足够的空间即可，保持10%的空闲空间</p>
 <p>或者重新设置该百分比</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn.nodemanager.disk-health-checker.max-disk-utilization-per-disk-percentage</span><br></pre></td></tr></table></figure>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<h1 id="问题">问题</h1>
+<ul>
 <li>iptables</li>
 <li>ulimit</li>
 <li>ssh</li>
 </ul>
-<h1 id="加速问题"><a href="#加速问题" class="headerlink" title="加速问题"></a>加速问题</h1><ul>
+<h1 id="加速问题">加速问题</h1>
+<ul>
 <li>maprod.map.tasks</li>
 <li>maprod.reduce.tasks</li>
 <li>Xmx = 2G : hadoop/env.sh</li>
 </ul>
-<h1 id="向HDFS传数据"><a href="#向HDFS传数据" class="headerlink" title="向HDFS传数据"></a>向HDFS传数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs dfs -put etc/hadoop input</span><br></pre></td></tr></table></figure>
+<h1 id="向hdfs传数据">向HDFS传数据</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs dfs -put etc/hadoop input</span><br></pre></td></tr></table></figure>
 <p>取回数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ bin/hdfs dfs -get output output</span><br><span class="line">$ cat output/*</span><br></pre></td></tr></table></figure>
 <p>或者直接输出</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs dfs -cat output/*</span><br></pre></td></tr></table></figure>
-<h1 id="WordCount-的运行"><a href="#WordCount-的运行" class="headerlink" title="WordCount 的运行"></a>WordCount 的运行</h1><p>创建目录</p>
+<h1 id="wordcount-的运行">WordCount 的运行</h1>
+<p>创建目录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hdfs dfs -mkdir /user/alexzhangch/inverted_index</span><br><span class="line"></span><br><span class="line">hdfs dfs -mkdir /user/alexzhangch/inverted_index/input</span><br></pre></td></tr></table></figure>
 <p>上传文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdfs dfs -put ../shakespeare/* /user/alexzhangch/inverted_index/input/</span><br></pre></td></tr></table></figure>
@@ -699,7 +707,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -710,7 +718,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -721,7 +729,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -811,7 +819,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JAVA-安装配置"><span class="nav-number">1.</span> <span class="nav-text">JAVA  安装配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题解决"><span class="nav-number">2.</span> <span class="nav-text">问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ACCEPTED-waiting-for-AM-container-to-be-allocated-launched-and-register-with-RM"><span class="nav-number">2.1.</span> <span class="nav-text">ACCEPTED: waiting for AM container to be allocated, launched and register with RM.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directory-tmp-hadoop-alexzhangch-nm-local-dir-error-used-space-above-threshold-of-90-0-removing-from-list-of-valid-directories"><span class="nav-number">2.2.</span> <span class="nav-text">Directory /tmp/hadoop-alexzhangch/nm-local-dir error, used space above threshold of 90.0%, removing from list of valid directories</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">3.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加速问题"><span class="nav-number">4.</span> <span class="nav-text">加速问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#向HDFS传数据"><span class="nav-number">5.</span> <span class="nav-text">向HDFS传数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WordCount-的运行"><span class="nav-number">6.</span> <span class="nav-text">WordCount 的运行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-安装配置"><span class="nav-number">1.</span> <span class="nav-text">JAVA 安装配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题解决"><span class="nav-number">2.</span> <span class="nav-text">问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#accepted-waiting-for-am-container-to-be-allocated-launched-and-register-with-rm."><span class="nav-number">2.1.</span> <span class="nav-text">ACCEPTED: waiting for AM container to be allocated, launched and register with RM.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#directory-tmphadoop-alexzhangchnm-local-dir-error-used-space-above-threshold-of-90.0-removing-from-list-of-valid-directories"><span class="nav-number">2.2.</span> <span class="nav-text">Directory /tmp/hadoop-alexzhangch/nm-local-dir error, used space above threshold of 90.0%, removing from list of valid directories</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">3.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加速问题"><span class="nav-number">4.</span> <span class="nav-text">加速问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#向hdfs传数据"><span class="nav-number">5.</span> <span class="nav-text">向HDFS传数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wordcount-的运行"><span class="nav-number">6.</span> <span class="nav-text">WordCount 的运行</span></a></li></ol></div>
             
 
           </div>

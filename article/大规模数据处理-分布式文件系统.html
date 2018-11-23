@@ -124,18 +124,18 @@ function loopy() {
 
 
 
-<meta name="description" content="课程简介课程主要内容：  Hadoop MapReduce Spark   2-3人一组搭建实验环境  成绩构成：  作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。第二周到最后在教学实验室上课。 Lab1：10，倒排表 Lab2：20，PageRank Lab3：20，聚类 Project：30， 自选题目，集中展示打分">
+<meta name="description" content="课程简介 课程主要内容：  Hadoop  MapReduce Spark  2-3人一组搭建实验环境  成绩构成：  作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。 第二周到最后在教学实验室上课。 Lab1：10，倒排表 Lab2：20，PageRank Lab3：20，聚类 Project：30， 自选题目，集中展示打分">
 <meta name="keywords" content="分布式文件系统,Google文件系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大规模集群数据处理-分布式文件系统">
 <meta property="og:url" content="https://2young.2simple.top/article/大规模数据处理-分布式文件系统.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="课程简介课程主要内容：  Hadoop MapReduce Spark   2-3人一组搭建实验环境  成绩构成：  作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。第二周到最后在教学实验室上课。 Lab1：10，倒排表 Lab2：20，PageRank Lab3：20，聚类 Project：30， 自选题目，集中展示打分">
+<meta property="og:description" content="课程简介 课程主要内容：  Hadoop  MapReduce Spark  2-3人一组搭建实验环境  成绩构成：  作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。 第二周到最后在教学实验室上课。 Lab1：10，倒排表 Lab2：20，PageRank Lab3：20，聚类 Project：30， 自选题目，集中展示打分">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-06-26T15:01:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大规模集群数据处理-分布式文件系统">
-<meta name="twitter:description" content="课程简介课程主要内容：  Hadoop MapReduce Spark   2-3人一组搭建实验环境  成绩构成：  作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。第二周到最后在教学实验室上课。 Lab1：10，倒排表 Lab2：20，PageRank Lab3：20，聚类 Project：30， 自选题目，集中展示打分">
+<meta name="twitter:description" content="课程简介 课程主要内容：  Hadoop  MapReduce Spark  2-3人一组搭建实验环境  成绩构成：  作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。 第二周到最后在教学实验室上课。 Lab1：10，倒排表 Lab2：20，PageRank Lab3：20，聚类 Project：30， 自选题目，集中展示打分">
 
 
 
@@ -458,7 +458,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,211
+                  1,190
                 </span>
               
 
@@ -474,7 +474,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -493,18 +493,19 @@ function loopy() {
       
 
       
-        <h1 id="课程简介"><a href="#课程简介" class="headerlink" title="课程简介"></a>课程简介</h1><p>课程主要内容：</p>
+        <h1 id="课程简介">课程简介</h1>
+<p>课程主要内容：</p>
 <ul>
-<li>Hadoop<ul>
+<li>Hadoop
+<ul>
 <li>MapReduce</li>
 <li>Spark</li>
-</ul>
-</li>
+</ul></li>
 <li>2-3人一组搭建实验环境</li>
 </ul>
 <p>成绩构成：</p>
 <ul>
-<li>作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。<br>第二周到最后在教学实验室上课。</li>
+<li>作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。 第二周到最后在教学实验室上课。</li>
 <li>Lab1：10，倒排表</li>
 <li>Lab2：20，PageRank</li>
 <li>Lab3：20，聚类</li>
@@ -512,15 +513,21 @@ function loopy() {
 </ul>
 <a id="more"></a>
 <p>课程关键词：时间、GFS、MapReduce + PageRank、KVS, BigTable &lt;- HBase、Spark, Clusteing、Hadoop、HDFS、MapReduce、Spark、HBase</p>
-<h1 id="分布式文件系统"><a href="#分布式文件系统" class="headerlink" title="分布式文件系统"></a>分布式文件系统</h1><h2 id="文件系统基础知识回顾"><a href="#文件系统基础知识回顾" class="headerlink" title="文件系统基础知识回顾"></a>文件系统基础知识回顾</h2><h3 id="文件系统的基本功能"><a href="#文件系统的基本功能" class="headerlink" title="文件系统的基本功能"></a>文件系统的基本功能</h3><p>文件系统是<font color="red">用户以及应用程序与底层的磁盘系统的接口</font>。文件系统给上层的应用提供了以<font color="red">目录树</font>为组织方式的名字空间，而底层则是以磁盘块数组为接口的磁盘</p>
+<h1 id="分布式文件系统">分布式文件系统</h1>
+<h2 id="文件系统基础知识回顾">文件系统基础知识回顾</h2>
+<h3 id="文件系统的基本功能">文件系统的基本功能</h3>
+<p>文件系统是<font color="red">用户以及应用程序与底层的磁盘系统的接口</font>。文件系统给上层的应用提供了以<font color="red">目录树</font>为组织方式的名字空间，而底层则是以磁盘块数组为接口的磁盘</p>
 <p>FS: 文件名 -》 地址， 即实现文件名到地址的转换</p>
-<p>目录树:支持增加，删除，遍历，读写，等功能   o/r/w/c</p>
+<p>目录树:支持增加，删除，遍历，读写，等功能 o/r/w/c</p>
 <p>磁盘数据块 512B</p>
 <p>磁盘顺序读写的速度100MB/s, 乱序读写：1MB/s</p>
-<h3 id="寻址与定位"><a href="#寻址与定位" class="headerlink" title="寻址与定位"></a>寻址与定位</h3><p>应用程序访问文件-》文件系统将文件名翻译为磁盘的具体位置-》磁盘转到对应磁道，定位磁头，完成读写</p>
-<h3 id="文件系统的组织"><a href="#文件系统的组织" class="headerlink" title="文件系统的组织"></a>文件系统的组织</h3><p>目录树的组织，目录操作，文件读写操作，文件系统元数据，文件系统数据库，文件系统数据块以及文件系统缓存，文件系统的安全策略。</p>
+<h3 id="寻址与定位">寻址与定位</h3>
+<p>应用程序访问文件-》文件系统将文件名翻译为磁盘的具体位置-》磁盘转到对应磁道，定位磁头，完成读写</p>
+<h3 id="文件系统的组织">文件系统的组织</h3>
+<p>目录树的组织，目录操作，文件读写操作，文件系统元数据，文件系统数据库，文件系统数据块以及文件系统缓存，文件系统的安全策略。</p>
 <p>虚拟文件系统</p>
-<h3 id="文件系统元数据"><a href="#文件系统元数据" class="headerlink" title="文件系统元数据"></a>文件系统元数据</h3><p>文件系统的元数据是对于<font color="red">数据的描述</font>，而不是数据的本身</p>
+<h3 id="文件系统元数据">文件系统元数据</h3>
+<p>文件系统的元数据是对于<font color="red">数据的描述</font>，而不是数据的本身</p>
 <p>文件系统的元数据能够反应<font color="red">文件的特征，并对数据的读写</font>具有重要意义</p>
 <p>文件系统中针对<font color="red">文件的典型元数据</font>：</p>
 <ul>
@@ -536,58 +543,58 @@ function loopy() {
 <li>文件系统的可用空间等相关信息</li>
 </ul>
 <p>文件系统数据块，磁盘一个簇512B,文件系统一般按照一块4096B（4KB）写入和读出数据</p>
-<h2 id="分布式文件系统-Google文件系统"><a href="#分布式文件系统-Google文件系统" class="headerlink" title="分布式文件系统 Google文件系统"></a>分布式文件系统 Google文件系统</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><ul>
+<h2 id="分布式文件系统-google文件系统">分布式文件系统 Google文件系统</h2>
+<h3 id="需求">需求</h3>
+<ul>
 <li>分布式写</li>
 <li>一次写多次读</li>
 <li>对吞吐率要求高，对延迟不敏感</li>
 </ul>
-<h2 id="基本设计"><a href="#基本设计" class="headerlink" title="基本设计"></a>基本设计</h2><ul>
+<h2 id="基本设计">基本设计</h2>
+<ul>
 <li>数据块：64MB</li>
 <li>可靠性：副本，3个节点以上</li>
 <li>系统设计简化：Matser单节点存储文件系统的元数据</li>
 <li>没有数据缓存</li>
 <li>追加Append操作</li>
 </ul>
-<h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><ul>
-<li>A file region is consistent if all clients will always see the same data, regardless of which replicas they read from. </li>
-<li>如果所有客户端，无论从哪个副本读取，读到的数据都一样，那么我们认为文 件region是“一致的”；</li>
-<li>A region is defined after a file data mutation if it is consistent and clients will see what the mutation writes in its entirety. </li>
-<li>如果对文件的数据修改之后，region是一致的，并且客户端能够看到写入操作全部的内容，那么这个region是“已定义 的”。</li>
-</ul>
+<h2 id="论文">论文</h2>
 <ul>
+<li>A file region is consistent if all clients will always see the same data, regardless of which replicas they read from.</li>
+<li>如果所有客户端，无论从哪个副本读取，读到的数据都一样，那么我们认为文 件region是“一致的”；</li>
+<li>A region is defined after a file data mutation if it is consistent and clients will see what the mutation writes in its entirety.</li>
+<li><p>如果对文件的数据修改之后，region是一致的，并且客户端能够看到写入操作全部的内容，那么这个region是“已定义 的”。</p></li>
 <li>当一个数据修改操作成功执行，并且没有受到同时执行的其它写入操作的干扰，那么影响的region就是已定义的（隐含了一致性）：所有的客户端读取的恰好是写入的内容。</li>
 <li>并行修改操作成功完成之后，region处于一致的、未定义的状态：所有的客户端读取到的是同样的数据，但是无法读到任何一次写入操作写入的数据。</li>
-<li>通常情况下，文件region内包含了来自多个修改操作的、混杂的数据片段。失败的修改操作导致一个region处于不一致状态（同时也是未定义 的）：不同的客户在不同的时间会看到不同的数据。后面我们将描述应用如何区分已定义和未定义的region。应用程序没有必要再去细分未定义region 的不同类型。</li>
+<li><p>通常情况下，文件region内包含了来自多个修改操作的、混杂的数据片段。失败的修改操作导致一个region处于不一致状态（同时也是未定义 的）：不同的客户在不同的时间会看到不同的数据。后面我们将描述应用如何区分已定义和未定义的region。应用程序没有必要再去细分未定义region 的不同类型。</p></li>
 </ul>
-<h3 id="Write操作和记录追加操作"><a href="#Write操作和记录追加操作" class="headerlink" title="Write操作和记录追加操作"></a>Write操作和记录追加操作</h3><p>定位机器，定位磁盘</p>
+<h3 id="write操作和记录追加操作">Write操作和记录追加操作</h3>
+<p>定位机器，定位磁盘</p>
 <p>string -》 | node -》 本地文件系统Data</p>
 <ul>
-<li>Reliability：Master 损坏 可靠性   —》 备份（Shadow）  chunkServer的备份？ Assumption，独立同分布</li>
+<li>Reliability：Master 损坏 可靠性 —》 备份（Shadow） chunkServer的备份？ Assumption，独立同分布</li>
 <li>Consistency： 一致性</li>
 <li>Performance； Load balance， scalability（增加机器优化性能）</li>
 </ul>
-<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><h3 id="ChunkServer"><a href="#ChunkServer" class="headerlink" title="ChunkServer"></a>ChunkServer</h3><p>容量负载均衡</p>
+<h2 id="performance">Performance</h2>
+<h3 id="chunkserver">ChunkServer</h3>
+<p>容量负载均衡</p>
 <ul>
 <li>Random</li>
 <li>分配给剩余空间最大的ChunkServer</li>
 </ul>
 <p>Hot Data</p>
-<h3 id="Master"><a href="#Master" class="headerlink" title="Master"></a>Master</h3><p>性能瓶颈</p>
-<p>内存，   掉电</p>
+<h3 id="master">Master</h3>
+<p>性能瓶颈</p>
+<p>内存， 掉电</p>
 <p>10TB -》 10MB</p>
 <p>Cache MetaDaba - 一致性</p>
-<p>10PB -&gt; 64MB块 块的元数据64B， $2^{32}-1 = 4G$ 40亿  10GB  带宽，延迟  DDR4 20GB/s, &lt;us</p>
-<p>磁盘： 顺序 100MB/s 乱序：1MB/s   延迟ms</p>
-<ul>
-<li>Dump</li>
-<li>log,操作记录</li>
-<li>SnapShot <- log="" -=""> SnapShot</-></li>
-<li>SplitBrain   Paxos,Raff,</li>
-</ul>
-<h2 id="一致性问题"><a href="#一致性问题" class="headerlink" title="一致性问题"></a>一致性问题</h2><p>操作排序</p>
+<p>10PB -&gt; 64MB块 块的元数据64B， <span class="math inline">\(2^{32}-1 = 4G\)</span> 40亿 10GB 带宽，延迟 DDR4 20GB/s, <us 磁盘：="" 顺序="" 100mb="" s="" 乱序：1mb="" 延迟ms="" -="" dump="" log,操作记录="" snapshot="" <-="" log=""> SnapShot - SplitBrain Paxos,Raff,</us></p>
+<h2 id="一致性问题">一致性问题</h2>
+<p>操作排序</p>
 <p>RSM</p>
 <p>确定性操作</p>
-<p>A1B1 A2B2  =&gt; A2B1</p>
+<p>A1B1 A2B2 =&gt; A2B1</p>
 
       
     </div>
@@ -755,7 +762,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -766,7 +773,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -777,7 +784,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -867,7 +874,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#课程简介"><span class="nav-number">1.</span> <span class="nav-text">课程简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分布式文件系统"><span class="nav-number">2.</span> <span class="nav-text">分布式文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统基础知识回顾"><span class="nav-number">2.1.</span> <span class="nav-text">文件系统基础知识回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统的基本功能"><span class="nav-number">2.1.1.</span> <span class="nav-text">文件系统的基本功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寻址与定位"><span class="nav-number">2.1.2.</span> <span class="nav-text">寻址与定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统的组织"><span class="nav-number">2.1.3.</span> <span class="nav-text">文件系统的组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统元数据"><span class="nav-number">2.1.4.</span> <span class="nav-text">文件系统元数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式文件系统-Google文件系统"><span class="nav-number">2.2.</span> <span class="nav-text">分布式文件系统 Google文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">2.2.1.</span> <span class="nav-text">需求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本设计"><span class="nav-number">2.3.</span> <span class="nav-text">基本设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#论文"><span class="nav-number">2.4.</span> <span class="nav-text">论文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Write操作和记录追加操作"><span class="nav-number">2.4.1.</span> <span class="nav-text">Write操作和记录追加操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Performance"><span class="nav-number">2.5.</span> <span class="nav-text">Performance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ChunkServer"><span class="nav-number">2.5.1.</span> <span class="nav-text">ChunkServer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Master"><span class="nav-number">2.5.2.</span> <span class="nav-text">Master</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一致性问题"><span class="nav-number">2.6.</span> <span class="nav-text">一致性问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#课程简介"><span class="nav-number">1.</span> <span class="nav-text">课程简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分布式文件系统"><span class="nav-number">2.</span> <span class="nav-text">分布式文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统基础知识回顾"><span class="nav-number">2.1.</span> <span class="nav-text">文件系统基础知识回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统的基本功能"><span class="nav-number">2.1.1.</span> <span class="nav-text">文件系统的基本功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寻址与定位"><span class="nav-number">2.1.2.</span> <span class="nav-text">寻址与定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统的组织"><span class="nav-number">2.1.3.</span> <span class="nav-text">文件系统的组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统元数据"><span class="nav-number">2.1.4.</span> <span class="nav-text">文件系统元数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式文件系统-google文件系统"><span class="nav-number">2.2.</span> <span class="nav-text">分布式文件系统 Google文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">2.2.1.</span> <span class="nav-text">需求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本设计"><span class="nav-number">2.3.</span> <span class="nav-text">基本设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#论文"><span class="nav-number">2.4.</span> <span class="nav-text">论文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#write操作和记录追加操作"><span class="nav-number">2.4.1.</span> <span class="nav-text">Write操作和记录追加操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#performance"><span class="nav-number">2.5.</span> <span class="nav-text">Performance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chunkserver"><span class="nav-number">2.5.1.</span> <span class="nav-text">ChunkServer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#master"><span class="nav-number">2.5.2.</span> <span class="nav-text">Master</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一致性问题"><span class="nav-number">2.6.</span> <span class="nav-text">一致性问题</span></a></li></ol></li></ol></div>
             
 
           </div>

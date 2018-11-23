@@ -124,17 +124,17 @@ function loopy() {
 
 
 
-<meta name="description" content="MPIMPI编程：n台机器编号，0~n-1    send(from. to, msg, sizeof(msg)) recv()     brodcast(from, Group, O o),   gather(Group, to)  没有出错处理 MapReduce123map (in_key, in_value) -&amp;gt; (out_key, intermediate_value) list">
+<meta name="description" content="MPI MPI编程：n台机器编号，0~n-1  send(from. to, msg, sizeof(msg)) recv()  brodcast(from, Group, O o),  gather(Group, to)  没有出错处理 MapReduce 123map (in_key, in_value) -&amp;gt; (out_key, intermediate_value) listredu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大规模数据处理-MapReduce">
 <meta property="og:url" content="https://2young.2simple.top/article/大规模数据处理-MapReduce.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="MPIMPI编程：n台机器编号，0~n-1    send(from. to, msg, sizeof(msg)) recv()     brodcast(from, Group, O o),   gather(Group, to)  没有出错处理 MapReduce123map (in_key, in_value) -&amp;gt; (out_key, intermediate_value) list">
+<meta property="og:description" content="MPI MPI编程：n台机器编号，0~n-1  send(from. to, msg, sizeof(msg)) recv()  brodcast(from, Group, O o),  gather(Group, to)  没有出错处理 MapReduce 123map (in_key, in_value) -&amp;gt; (out_key, intermediate_value) listredu">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-07-13T16:35:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大规模数据处理-MapReduce">
-<meta name="twitter:description" content="MPIMPI编程：n台机器编号，0~n-1    send(from. to, msg, sizeof(msg)) recv()     brodcast(from, Group, O o),   gather(Group, to)  没有出错处理 MapReduce123map (in_key, in_value) -&amp;gt; (out_key, intermediate_value) list">
+<meta name="twitter:description" content="MPI MPI编程：n台机器编号，0~n-1  send(from. to, msg, sizeof(msg)) recv()  brodcast(from, Group, O o),  gather(Group, to)  没有出错处理 MapReduce 123map (in_key, in_value) -&amp;gt; (out_key, intermediate_value) listredu">
 
 
 
@@ -492,29 +492,35 @@ function loopy() {
       
 
       
-        <h1 id="MPI"><a href="#MPI" class="headerlink" title="MPI"></a>MPI</h1><p>MPI编程：n台机器编号，0~n-1  </p>
+        <h1 id="mpi">MPI</h1>
+<p>MPI编程：n台机器编号，0~n-1</p>
 <ul>
 <li>send(from. to, msg, sizeof(msg))</li>
-<li>recv()    </li>
-<li>brodcast(from, Group, O o),  </li>
+<li>recv()<br>
+</li>
+<li>brodcast(from, Group, O o),<br>
+</li>
 <li>gather(Group, to)</li>
 </ul>
 <p>没有出错处理</p>
-<h1 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">map (in_key, in_value) -&gt; (out_key, intermediate_value) list</span><br><span class="line"></span><br><span class="line">reduce (out_key, intermediate_value list) -&gt; out_value list</span><br></pre></td></tr></table></figure>
+<h1 id="mapreduce">MapReduce</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">map (in_key, in_value) -&gt; (out_key, intermediate_value) list</span><br><span class="line"></span><br><span class="line">reduce (out_key, intermediate_value list) -&gt; out_value list</span><br></pre></td></tr></table></figure>
 <p>MAP -》 Shuffle</p>
 <p>YARN:</p>
 <ul>
 <li>ResourceManager: 监控作用，仅一个</li>
 <li>AppManager： 调度器</li>
 <li>APPMaster</li>
-<li>work： </li>
+<li>work：</li>
 </ul>
-<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><ol>
+<h1 id="作业">作业</h1>
+<ol style="list-style-type: decimal">
 <li>Distribute sort</li>
 <li>MxM</li>
 <li>期末考试题目</li>
 </ol>
-<h1 id="Key-Value-Store"><a href="#Key-Value-Store" class="headerlink" title="Key,Value Store"></a>Key,Value Store</h1><p>put(key, value)  </p>
+<h1 id="keyvalue-store">Key,Value Store</h1>
+<p>put(key, value)</p>
 <p>get(key)</p>
 <p>query(key_start, key_stop)</p>
 <p>数据结构：</p>
@@ -531,22 +537,24 @@ function loopy() {
 </ul>
 <p>get操作： 加载到内存，</p>
 <blockquote>
-<p>log+hash,sort,B+    flush   得到index</p>
+<p>log+hash,sort,B+ flush 得到index</p>
 </blockquote>
 <p>LSM tree</p>
 <p>单机 (key,value) store</p>
-<h1 id="分布式环境的-key-value-store"><a href="#分布式环境的-key-value-store" class="headerlink" title="分布式环境的(key, value) store"></a>分布式环境的(key, value) store</h1><p>K -&gt; node -&gt; 本机（key，value）</p>
+<h1 id="分布式环境的key-value-store">分布式环境的(key, value) store</h1>
+<p>K -&gt; node -&gt; 本机（key，value）</p>
 <ul>
-<li>hash(key) % N =&gt; node<ul>
+<li>hash(key) % N =&gt; node
+<ul>
 <li>load banlance?</li>
 <li>scability</li>
 <li>容错</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p>DHT</p>
-<p>distribute hash </p>
-<h1 id="K-means算法"><a href="#K-means算法" class="headerlink" title="K-means算法"></a>K-means算法</h1><p>选择k个初始点作为k个set的中心，对数据集中的每条数据计算其最近的set, 然后计算每个set的中心，进而计算新的k个set, 重复此算法</p>
+<p>distribute hash</p>
+<h1 id="k-means算法">K-means算法</h1>
+<p>选择k个初始点作为k个set的中心，对数据集中的每条数据计算其最近的set, 然后计算每个set的中心，进而计算新的k个set, 重复此算法</p>
 <p>但是这太复杂了，因此我们采用canopy算法。首先建立一系列重叠canopy，使得所有数据至少在一个canopy中，然后仿照k-means算法，不需要比较所有数据点，只需要比较其所在canopy的中心点即可。</p>
 
       
@@ -709,7 +717,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -720,7 +728,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -731,7 +739,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -821,7 +829,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MPI"><span class="nav-number">1.</span> <span class="nav-text">MPI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MapReduce"><span class="nav-number">2.</span> <span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业"><span class="nav-number">3.</span> <span class="nav-text">作业</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-Value-Store"><span class="nav-number">4.</span> <span class="nav-text">Key,Value Store</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分布式环境的-key-value-store"><span class="nav-number">5.</span> <span class="nav-text">分布式环境的(key, value) store</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#K-means算法"><span class="nav-number">6.</span> <span class="nav-text">K-means算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mpi"><span class="nav-number">1.</span> <span class="nav-text">MPI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mapreduce"><span class="nav-number">2.</span> <span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业"><span class="nav-number">3.</span> <span class="nav-text">作业</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#keyvalue-store"><span class="nav-number">4.</span> <span class="nav-text">Key,Value Store</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分布式环境的key-value-store"><span class="nav-number">5.</span> <span class="nav-text">分布式环境的(key, value) store</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#k-means算法"><span class="nav-number">6.</span> <span class="nav-text">K-means算法</span></a></li></ol></div>
             
 
           </div>

@@ -124,17 +124,17 @@ function loopy() {
 
 
 
-<meta name="description" content="BigTableBigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。 Bigtable是一个为管理大规模结构化数据而设计的分布式存储系统，可以扩展到PB级数据和上千台服务器。很多google的项目使用Bigtable存储数据，这些应用对Bigtable提出了不同的挑战，比如数据规模的要求、延迟的要求。Bigtable能满">
+<meta name="description" content="BigTable Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。 Bigtable是一个为管理大规模结构化数据而设计的分布式存储系统，可以扩展到PB级数据和上千台服务器。很多google的项目使用Bigtable存储数据，这些应用对Bigtable提出了不同的挑战，比如数据规模的要求、延迟的要求。Bigtable能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大规模数据处理-分布式key&#x2F;value对存储：BigTable、DHT">
 <meta property="og:url" content="https://2young.2simple.top/article/大规模数据处理-分布式key-value对存储.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="BigTableBigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。 Bigtable是一个为管理大规模结构化数据而设计的分布式存储系统，可以扩展到PB级数据和上千台服务器。很多google的项目使用Bigtable存储数据，这些应用对Bigtable提出了不同的挑战，比如数据规模的要求、延迟的要求。Bigtable能满">
+<meta property="og:description" content="BigTable Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。 Bigtable是一个为管理大规模结构化数据而设计的分布式存储系统，可以扩展到PB级数据和上千台服务器。很多google的项目使用Bigtable存储数据，这些应用对Bigtable提出了不同的挑战，比如数据规模的要求、延迟的要求。Bigtable能">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-21T09:23:29.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大规模数据处理-分布式key&#x2F;value对存储：BigTable、DHT">
-<meta name="twitter:description" content="BigTableBigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。 Bigtable是一个为管理大规模结构化数据而设计的分布式存储系统，可以扩展到PB级数据和上千台服务器。很多google的项目使用Bigtable存储数据，这些应用对Bigtable提出了不同的挑战，比如数据规模的要求、延迟的要求。Bigtable能满">
+<meta name="twitter:description" content="BigTable Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。 Bigtable是一个为管理大规模结构化数据而设计的分布式存储系统，可以扩展到PB级数据和上千台服务器。很多google的项目使用Bigtable存储数据，这些应用对Bigtable提出了不同的挑战，比如数据规模的要求、延迟的要求。Bigtable能">
 
 
 
@@ -492,32 +492,39 @@ function loopy() {
       
 
       
-        <h1 id="BigTable"><a href="#BigTable" class="headerlink" title="BigTable"></a>BigTable</h1><p>Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。</p>
+        <h1 id="bigtable">BigTable</h1>
+<p>Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。</p>
 <p>Bigtable是一个为管理大规模结构化数据而设计的分布式存储系统，可以扩展到PB级数据和上千台服务器。很多google的项目使用Bigtable存储数据，这些应用对Bigtable提出了不同的挑战，比如数据规模的要求、延迟的要求。Bigtable能满足这些多变的要求，为这些产品成功地提供了灵活、高性能的存储解决方案。</p>
 <p>Bigtable看起来像一个数据库，采用了很多数据库的实现策略。但是Bigtable并不支持完整的关系型数据模型；而是为客户端提供了一种简单的数据模型，客户端可以动态地控制数据的布局和格式，并且利用底层数据存储的局部性特征。Bigtable将数据统统看成无意义的字节串，客户端需要将结构化和非结构化数据串行化再存入Bigtable。数据的下标是行和列的名字，名字可以是任意的字符串。Bigtable将存储的数据都视为字符串，但是 Bigtable 本身不去解析这些字符串，应用程序通常会在把各种结构化或者半结构化的数据串行化到这些字符串里。通过仔细选择数据的模式，客户可 以控制数据的位置相关性。最后，可以通过 BigTable的模式参数来控制数据是存放在内存中、还是硬盘上。</p>
 <p>具有以下特性：适用性广泛、可扩展、高性能和高可用性</p>
-<h2 id="BigTable的数据模型"><a href="#BigTable的数据模型" class="headerlink" title="BigTable的数据模型"></a>BigTable的数据模型</h2><p>Bigtable 是一个<font color="red">稀疏的、分布式的、持久化存储</font>的多维度排序 Map。Map 的索引是行关键字、列关键字 以及时间戳;Map 中的每个 value 都是一个未经解析的 byte 数组。</p>
+<h2 id="bigtable的数据模型">BigTable的数据模型</h2>
+<p>Bigtable 是一个<font color="red">稀疏的、分布式的、持久化存储</font>的多维度排序 Map。Map 的索引是行关键字、列关键字 以及时间戳;Map 中的每个 value 都是一个未经解析的 byte 数组。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(row:string, column:string,time:int64)-&gt;string</span><br></pre></td></tr></table></figure>
 <p>BigTable 内部存储数据的文件是 Google SSTable 格式的。SSTable 是一个持久化的、排序的、不可更改的Map 结构，而 Map 是一个 key-value 映射的数据结构，key 和value 的值都是任意的 Byte 串。可以对 SSTable 进行如下的操作:查询与一个 key 值相关的value，或者遍历某个 key 值范围内的所有的 key-value 对。从内 部看，SSTable是一系列的数据块(通常每个块的大小是 64KB，这个大小是可以配置的)。<font color="red">SSTable使用块索引(通常存储在 SSTable 的最后)来定位数据块;在打开 SSTable 的时候，索引被加载到内存。每次查找都可以通过一次磁盘搜索完成:首先使用二分查找法在内存中的索引里找到数据块的位置,然后再从硬盘读取相应的数据块。也可以选择把整个 SSTable 都放在内存中，这样就不必访问硬盘了。</font></p>
 <p>SSTable的全称是Sorted Strings Table，是一种不可修改的有序的键值映射，提供了查询、遍历等功能。每个SSTable由一系列的块（block）组成，Bigtable将块默认设为64KB。在SSTable的尾部存储着块索引，在访问SSTable时，整个索引会被读入内存。BigTable论文没有提到SSTable的具体结构，LevelDb日知录之四： SSTable文件这篇文章对LevelDb的SSTable格式进行了介绍，因为LevelDB的作者JeffreyDean正是BigTable的设计师，所以极具参考价值。每一个片（tablet）在GFS里都是按照SSTable的格式存储的，每个片可能对应多个SSTable。</p>
-<h1 id="Bigtable集群"><a href="#Bigtable集群" class="headerlink" title="Bigtable集群"></a>Bigtable集群</h1><p>Bigtable集群包括三个主要部分：一个供客户端使用的库，一个主服务器（master server），许多片服务器（tablet server）。</p>
+<h1 id="bigtable集群">Bigtable集群</h1>
+<p>Bigtable集群包括三个主要部分：一个供客户端使用的库，一个主服务器（master server），许多片服务器（tablet server）。</p>
 <p>正如数据模型小节所说，Bigtable会将表（table）进行分片，片（tablet）的大小维持在100-200MB范围，一旦超出范围就将分裂成更小的片，或者合并成更大的片。每个片服务器负责一定量的片，处理对其片的读写请求，以及片的分裂或合并。片服务器可以根据负载随时添加和删除。这里片服务器并不真实存储数据，而相当于一个连接Bigtable和GFS的代理，客户端的一些数据操作都通过片服务器代理间接访问GFS。</p>
 <p>主服务器负责将片分配给片服务器，监控片服务器的添加和删除，平衡片服务器的负载，处理表和列族的创建等。注意，主服务器不存储任何片，不提供任何数据服务，也不提供片的定位信息。</p>
 <p>客户端需要读写数据时，直接与片服务器联系。因为客户端并不需要从主服务器获取片的位置信息，所以大多数客户端从来不需要访问主服务器，主服务器的负载一般很轻。</p>
-<h1 id="片服务器访问顺序"><a href="#片服务器访问顺序" class="headerlink" title="片服务器访问顺序"></a>片服务器访问顺序</h1><p>首先是第一层，Chubby file。这一层是一个Chubby文件，它保存着root tablet的位置。这个Chubby文件属于Chubby服务的一部分，一旦Chubby不可用，就意味着丢失了root tablet的位置，整个Bigtable也就不可用了。</p>
+<h1 id="片服务器访问顺序">片服务器访问顺序</h1>
+<p>首先是第一层，Chubby file。这一层是一个Chubby文件，它保存着root tablet的位置。这个Chubby文件属于Chubby服务的一部分，一旦Chubby不可用，就意味着丢失了root tablet的位置，整个Bigtable也就不可用了。</p>
 <p>第二层是root tablet。root tablet其实是元数据表（METADATA table）的第一个分片，它保存着元数据表其它片的位置。root tablet很特别，为了保证树的深度不变，root tablet从不分裂。</p>
 <p>第三层是其它的元数据片，它们和root tablet一起组成完整的元数据表。每个元数据片都包含了许多用户片的位置信息。</p>
 <p>可以看出整个定位系统其实只是两部分，一个Chubby文件，一个元数据表。注意元数据表虽然特殊，但也仍然服从前文的数据模型，每个分片也都是由专门的片服务器负责，这就是不需要主服务器提供位置信息的原因。客户端会缓存片的位置信息，如果在缓存里找不到一个片的位置信息，就需要查找这个三层结构了，包括访问一次Chubby服务，访问两次片服务器。</p>
-<h1 id="元数据表的结构"><a href="#元数据表的结构" class="headerlink" title="元数据表的结构"></a>元数据表的结构</h1><p>元数据表（METADATA table）是一张特殊的表，它被用于数据的定位以及一些元数据服务，不可谓不重要。但是Bigtable论文里只给出了少量线索，而对表的具体结构没有说明。这里我试图根据论文的一些线索，猜测一下表的结构。首先列出论文中的线索：</p>
-<p>The METADATA table stores the location of a tablet under a row key that is an encoding of the tablet’s table identifier and its end row.<br>Each METADATA row stores approximately 1KB of data in memory（因为访问量比较大，元数据表是放在内存里的，这个优化在论文的locality groups中提到）.This feature（将locality group放到内存中的特性） is useful for small pieces of data that are accessed frequently: we use it internally for the location column family in the METADATA table.<br>We also store secondary information in the METADATA table, including a log of all events pertaining to each tablet(such as when a server begins<br>serving it).<br>第一条线索，元数据表的行键是由片所属表名的id和片最后一行编码而成，所以每个片在元数据表中占据一条记录（一行），而且行键既包含了其所属表的信息也包含了其所拥有的行的范围。譬如采取最简单的编码方式，元数据表的行键等于strcat(表名，片最后一行的行键)。</p>
+<h1 id="元数据表的结构">元数据表的结构</h1>
+<p>元数据表（METADATA table）是一张特殊的表，它被用于数据的定位以及一些元数据服务，不可谓不重要。但是Bigtable论文里只给出了少量线索，而对表的具体结构没有说明。这里我试图根据论文的一些线索，猜测一下表的结构。首先列出论文中的线索：</p>
+<p>The METADATA table stores the location of a tablet under a row key that is an encoding of the tablet’s table identifier and its end row. Each METADATA row stores approximately 1KB of data in memory（因为访问量比较大，元数据表是放在内存里的，这个优化在论文的locality groups中提到）.This feature（将locality group放到内存中的特性） is useful for small pieces of data that are accessed frequently: we use it internally for the location column family in the METADATA table. We also store secondary information in the METADATA table, including a log of all events pertaining to each tablet(such as when a server begins serving it). 第一条线索，元数据表的行键是由片所属表名的id和片最后一行编码而成，所以每个片在元数据表中占据一条记录（一行），而且行键既包含了其所属表的信息也包含了其所拥有的行的范围。譬如采取最简单的编码方式，元数据表的行键等于strcat(表名，片最后一行的行键)。</p>
 <p>第二点线索，除了知道元数据表的地址部分是常驻内存以外，还可以发现元数据表有一个列族称为location，我们已经知道元数据表每一行代表一个片，那么为什么需要一个列族来存储地址呢？因为每个片都可能由多个SSTable文件组成，列族可以用来存储任意多个SSTable文件的位置。一个合理的假设就是每个SSTable文件的位置信息占据一列，列名为location:filename。当然不一定非得用列键存储完整文件名，更大的可能性是把SSTable文件名存在值里。获取了文件名就可以向GFS索要数据了。</p>
 <p>第三个线索告诉我们元数据表不止存储位置信息，也就是说列族不止location，这些数据暂时不是咱们关心的。</p>
-<h1 id="元数据表及恢复相关"><a href="#元数据表及恢复相关" class="headerlink" title="元数据表及恢复相关"></a>元数据表及恢复相关</h1><p>Bigtable的存储结构：</p>
-<p><font color="red">所有tablet的位置信息</font>存储在METADATA表中。查找一个tablet的位置需要通过一个3层的类似B+树的结构：<br>首层是Chubby中的一个文件，它储存METADATA的第一个tablet即root tablet的位置。<br>root tablet永远不会分裂，以保持3层结构。它保存后面的所有tablet的元信息，如位置、行key范围等（此句不确定，自己的猜测）。<br>METADATA的其它tablet负责保存用户tablet的元数据（位置、范围、日志等）。tablet的位置信息都在内存中。<br>client发起的一次成功的查找需要3次网络通信，而若缓存失效，则最多需要6次（前3次发现缓存失效）。<br>每个tablet会维持若干个memtable（猜测：每个列族一个memtable），对tablet的读写操作会先反映到memtable上。memtable会在某些条件触发时（猜测：体积或更新次数达到阈值）将内容写入GFS。<br>tablet在GFS中的基本存储单位是SSTable，它提供一种不可改且排序的key/value映射。每个SSTable由多个排序的block组成，SSTable的最后就是各block的索引，在SSTable打开时索引就在内存中，查找时先在内存中定位到block。<br>tablet内的各SSTable间为乱序，查找时需要依次查找每个SSTable，因此在SSTable数量达到阈值后要分裂。<br>master对tablet server的追踪：</p>
-<p>每个tablet server都会在Chubby的指定文件夹下持有一个唯一的文件并上锁。在失去锁后，若文件存在，则尝试重上锁；若文件不存在或上锁失败若干次，则放弃对tablet的管理并自杀。tablet server退出前也会释放锁。<br>在生命期中master会监视Chubby文件夹中的文件。若新增文件，则表明有新tablet server。若master获得了已有文件的锁，说明对应的tablet server错误，则master会删除此文件并将其管理的tablet标记为未分配。<br>master在运行中也会定期询问tablet server的状态，若无回应若报告失去锁，则视其为错误。</p>
+<h1 id="元数据表及恢复相关">元数据表及恢复相关</h1>
+<p>Bigtable的存储结构：</p>
+<p><font color="red">所有tablet的位置信息</font>存储在METADATA表中。查找一个tablet的位置需要通过一个3层的类似B+树的结构： 首层是Chubby中的一个文件，它储存METADATA的第一个tablet即root tablet的位置。 root tablet永远不会分裂，以保持3层结构。它保存后面的所有tablet的元信息，如位置、行key范围等（此句不确定，自己的猜测）。 METADATA的其它tablet负责保存用户tablet的元数据（位置、范围、日志等）。tablet的位置信息都在内存中。 client发起的一次成功的查找需要3次网络通信，而若缓存失效，则最多需要6次（前3次发现缓存失效）。 每个tablet会维持若干个memtable（猜测：每个列族一个memtable），对tablet的读写操作会先反映到memtable上。memtable会在某些条件触发时（猜测：体积或更新次数达到阈值）将内容写入GFS。 tablet在GFS中的基本存储单位是SSTable，它提供一种不可改且排序的key/value映射。每个SSTable由多个排序的block组成，SSTable的最后就是各block的索引，在SSTable打开时索引就在内存中，查找时先在内存中定位到block。 tablet内的各SSTable间为乱序，查找时需要依次查找每个SSTable，因此在SSTable数量达到阈值后要分裂。 master对tablet server的追踪：</p>
+<p>每个tablet server都会在Chubby的指定文件夹下持有一个唯一的文件并上锁。在失去锁后，若文件存在，则尝试重上锁；若文件不存在或上锁失败若干次，则放弃对tablet的管理并自杀。tablet server退出前也会释放锁。 在生命期中master会监视Chubby文件夹中的文件。若新增文件，则表明有新tablet server。若master获得了已有文件的锁，说明对应的tablet server错误，则master会删除此文件并将其管理的tablet标记为未分配。 master在运行中也会定期询问tablet server的状态，若无回应若报告失去锁，则视其为错误。</p>
 <p>每个数据片服务器都会管理一系列的数据片（通常，我们的每台数据片服务器都有大约数十个至上千个数据片）。数据片服务器会处理针对已加载数据片的读写请求，并且还会将已经增长过大的数据片拆分为多个较小的数据片。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="http://blog.csdn.net/opennaive/article/details/7532589" target="_blank" rel="noopener">谷歌技术”三宝”之BigTable</a></li>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a href="http://blog.csdn.net/opennaive/article/details/7532589" target="_blank" rel="noopener">谷歌技术“三宝”之BigTable</a></li>
 </ul>
 
       
@@ -680,7 +687,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -691,7 +698,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -702,7 +709,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -792,7 +799,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BigTable"><span class="nav-number">1.</span> <span class="nav-text">BigTable</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BigTable的数据模型"><span class="nav-number">1.1.</span> <span class="nav-text">BigTable的数据模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bigtable集群"><span class="nav-number">2.</span> <span class="nav-text">Bigtable集群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#片服务器访问顺序"><span class="nav-number">3.</span> <span class="nav-text">片服务器访问顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元数据表的结构"><span class="nav-number">4.</span> <span class="nav-text">元数据表的结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元数据表及恢复相关"><span class="nav-number">5.</span> <span class="nav-text">元数据表及恢复相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bigtable"><span class="nav-number">1.</span> <span class="nav-text">BigTable</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bigtable的数据模型"><span class="nav-number">1.1.</span> <span class="nav-text">BigTable的数据模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bigtable集群"><span class="nav-number">2.</span> <span class="nav-text">Bigtable集群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#片服务器访问顺序"><span class="nav-number">3.</span> <span class="nav-text">片服务器访问顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元数据表的结构"><span class="nav-number">4.</span> <span class="nav-text">元数据表的结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元数据表及恢复相关"><span class="nav-number">5.</span> <span class="nav-text">元数据表及恢复相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>

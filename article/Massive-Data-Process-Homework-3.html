@@ -124,17 +124,17 @@ function loopy() {
 
 
 
-<meta name="description" content="Key-Value对存储在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。  磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可） 简要描述系统恢复的流程。  磁盘中的元数据表中包含的">
+<meta name="description" content="Key-Value对存储 在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。  磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可） 简要描述系统恢复的流程。  磁盘中的元数据表中包含">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Massive-Data-Process-Homework-3">
 <meta property="og:url" content="https://2young.2simple.top/article/Massive-Data-Process-Homework-3.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="Key-Value对存储在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。  磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可） 简要描述系统恢复的流程。  磁盘中的元数据表中包含的">
+<meta property="og:description" content="Key-Value对存储 在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。  磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可） 简要描述系统恢复的流程。  磁盘中的元数据表中包含">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-21T09:19:49.710Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Massive-Data-Process-Homework-3">
-<meta name="twitter:description" content="Key-Value对存储在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。  磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可） 简要描述系统恢复的流程。  磁盘中的元数据表中包含的">
+<meta name="twitter:description" content="Key-Value对存储 在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。  磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可） 简要描述系统恢复的流程。  磁盘中的元数据表中包含">
 
 
 
@@ -457,7 +457,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,148
+                  1,140
                 </span>
               
 
@@ -492,25 +492,29 @@ function loopy() {
       
 
       
-        <h1 id="Key-Value对存储"><a href="#Key-Value对存储" class="headerlink" title="Key-Value对存储"></a>Key-Value对存储</h1><p>在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。</p>
-<ol>
+        <h1 id="key-value对存储">Key-Value对存储</h1>
+<p>在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。</p>
+<ol style="list-style-type: decimal">
 <li>磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可）</li>
 <li>简要描述系统恢复的流程。</li>
 </ol>
-<h2 id="磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可）"><a href="#磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可）" class="headerlink" title="磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可）"></a>磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可）</h2><ol>
+<h2 id="磁盘中的元数据表中包含的内容内存中的元数据表中包含的内容只需要描述必要的数据结构帮助恢复过程即可">磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可）</h2>
+<ol style="list-style-type: decimal">
 <li>磁盘中的元数据表包含的内容</li>
 </ol>
 <p>Tablet的位置信息及数据范围，数据片的所有事件的日志信息，SSTable文件列表信息，Redo Point</p>
 <p>其数据结构：</p>
-<p>encoding(table_id + end_row_key): tablet_location(SSTable file list), log </p>
-<ol start="2">
+<p>encoding(table_id + end_row_key): tablet_location(SSTable file list), log</p>
+<ol start="2" style="list-style-type: decimal">
 <li>内存中的元数据表包含的内容：</li>
 </ol>
 <p>内存中的元数据表是已经分配给对应tablet server 管理的Tablet位置信息，因此其value为：ip:port，即保存的Tablet的服务器的进程位置。</p>
-<h2 id="简要描述系统恢复的流程。"><a href="#简要描述系统恢复的流程。" class="headerlink" title="简要描述系统恢复的流程。"></a>简要描述系统恢复的流程。</h2><p>BigTable 使用 Chubby 跟踪记录 Tablet 服务器的状态。当一个 Tablet 服务器启动时，它在 Chubby 的一个指定目录下建立一个有唯一性名字的文件，并且获取该文件的独占锁。</p>
+<h2 id="简要描述系统恢复的流程">简要描述系统恢复的流程。</h2>
+<p>BigTable 使用 Chubby 跟踪记录 Tablet 服务器的状态。当一个 Tablet 服务器启动时，它在 Chubby 的一个指定目录下建立一个有唯一性名字的文件，并且获取该文件的独占锁。</p>
 <p>Master 服务器实时监控着这个目录(服务器目录)，Master 服务器通过轮询 Tablet 服务器文件锁的状态来检测何时 Tablet 服务器不再为 Tablet 提供服务。当Tablet Server宕机之后，Master尝试与之通信多次得不到响应，Master 服务器就会尝试获取该 Tablet 服务器文件的独占锁;如果 Master 服务器成功获取了独占锁，则Master服务器判断该Tablet Server宕机了，于是Master服务器删除该tablet server在chubby中的服务器文件，然后Master将该Tablet Server 管理的所有数据片置为未分配状态。</p>
-<p>随后，该宕机的Tablet Server管理的Tablet将被分散到多个Server上，每个服务器只会加载该服务器上很少量的数据片，这些server为了恢复原来tablet server上的修改，需要从commit log文件中读取log信息。在BigTable中，每个数据片服务器记录一个commit-log文件，在恢复时，这些服务器先向Master发出请求表明自己需要从该数据片服务器的提交日志文件中恢复数据片的修改操作时，Master首先将该提交日志文件按照关键字&lt;表、行名、日志序列号&gt;的顺序，对提交日志的条目进行排序。在排序输出中，某个特定数据片的所有修改操作信息都会连续存放在一起。因此，只需要一次磁盘寻道，然后再执行一次连续的读取操作，就可以读取日志文件并将不同的数据片的提交日志分发给对应的新分配数据片服务器，新分配的数据片服务器收到提交日志时redo该日志恢复数据片信息，至此，这些数据片可以开始提供服务了。</p>
-<h1 id="在DHT上实现Query"><a href="#在DHT上实现Query" class="headerlink" title="在DHT上实现Query"></a>在DHT上实现Query</h1><p>如果直接使用dht来实现key到host的对应，难点在于实现一个range query。一个range query可能需要涉及到所有的节点。有没有办法能够在仍然使用dht的情况下减少所涉及到的节点的数目?</p>
+<p>随后，该宕机的Tablet Server管理的Tablet将被分散到多个Server上，每个服务器只会加载该服务器上很少量的数据片，这些server为了恢复原来tablet server上的修改，需要从commit log文件中读取log信息。在BigTable中，每个数据片服务器记录一个commit-log文件，在恢复时，这些服务器先向Master发出请求表明自己需要从该数据片服务器的提交日志文件中恢复数据片的修改操作时，Master首先将该提交日志文件按照关键字<表、行名、日志序列号>的顺序，对提交日志的条目进行排序。在排序输出中，某个特定数据片的所有修改操作信息都会连续存放在一起。因此，只需要一次磁盘寻道，然后再执行一次连续的读取操作，就可以读取日志文件并将不同的数据片的提交日志分发给对应的新分配数据片服务器，新分配的数据片服务器收到提交日志时redo该日志恢复数据片信息，至此，这些数据片可以开始提供服务了。</表、行名、日志序列号></p>
+<h1 id="在dht上实现query">在DHT上实现Query</h1>
+<p>如果直接使用dht来实现key到host的对应，难点在于实现一个range query。一个range query可能需要涉及到所有的节点。有没有办法能够在仍然使用dht的情况下减少所涉及到的节点的数目?</p>
 <p>算法基于如下hash实现；</p>
 <ul>
 <li>假定hash(key)均匀的分布在一个环上</li>
@@ -522,8 +526,7 @@ function loopy() {
 <p>参考：</p>
 <ul>
 <li>Klemm, F., Girdzijauskas, S., Boudec, J. Y. L., &amp; Aberer, K. (2007). On routing in distributed hash tables. 113-122.</li>
-<li><a href="https://www.youtube.com/watch?v=WqQRQz_XYg4" target="_blank" rel="noopener">Routing in Distributed Hash Tables | Anne-Marie Kermarrec
-</a> <a href="https://www.youtube.com/watch?v=WqQRQz_XYg4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=WqQRQz_XYg4</a> </li>
+<li><a href="https://www.youtube.com/watch?v=WqQRQz_XYg4" target="_blank" rel="noopener">Routing in Distributed Hash Tables | Anne-Marie Kermarrec</a> https://www.youtube.com/watch?v=WqQRQz_XYg4</li>
 </ul>
 
       
@@ -686,7 +689,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -697,7 +700,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -708,7 +711,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -798,7 +801,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-Value对存储"><span class="nav-number">1.</span> <span class="nav-text">Key-Value对存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可）"><span class="nav-number">1.1.</span> <span class="nav-text">磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简要描述系统恢复的流程。"><span class="nav-number">1.2.</span> <span class="nav-text">简要描述系统恢复的流程。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在DHT上实现Query"><span class="nav-number">2.</span> <span class="nav-text">在DHT上实现Query</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#key-value对存储"><span class="nav-number">1.</span> <span class="nav-text">Key-Value对存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘中的元数据表中包含的内容内存中的元数据表中包含的内容只需要描述必要的数据结构帮助恢复过程即可"><span class="nav-number">1.1.</span> <span class="nav-text">磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容？（只需要描述必要的数据结构帮助恢复过程即可）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简要描述系统恢复的流程"><span class="nav-number">1.2.</span> <span class="nav-text">简要描述系统恢复的流程。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在dht上实现query"><span class="nav-number">2.</span> <span class="nav-text">在DHT上实现Query</span></a></li></ol></div>
             
 
           </div>

@@ -24,7 +24,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Golang-测试总结&quot;&gt;&lt;a href=&quot;#Golang-测试总结&quot; class=&quot;headerlink&quot; title=&quot;Golang 测试总结&quot;&gt;&lt;/a&gt;Golang 测试总结&lt;/h1&gt;&lt;h2 id=&quot;go-test的初始化以及退出前的clear-—-Test
+      &lt;h1 id=&quot;golang-测试总结&quot;&gt;Golang 测试总结&lt;/h1&gt;
+&lt;h2 id=&quot;go-test的初始化以及退出前的clear-testmain&quot;&gt;&lt;code&gt;go test&lt;/code&gt;的初始化以及退出前的clear — &lt;code&gt;TestMain&lt;/code&gt;&lt;/
     
     </summary>
     
@@ -52,7 +53,9 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Pandoc-的问题&quot;&gt;&lt;a href=&quot;#Pandoc-的问题&quot; class=&quot;headerlink&quot; title=&quot;Pandoc 的问题&quot;&gt;&lt;/a&gt;Pandoc 的问题&lt;/h1&gt;&lt;h2 id=&quot;Error-spawn-pandoc-ENOENT&quot;&gt;&lt;a hre
+      &lt;h1 id=&quot;pandoc-的问题&quot;&gt;Pandoc 的问题&lt;/h1&gt;
+&lt;h2 id=&quot;error-spawn-pandoc-enoent&quot;&gt;Error: spawn pandoc ENOENT&lt;/h2&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;
     
     </summary>
     
@@ -62,6 +65,33 @@
       <category term="Pandoc" scheme="https://2young.2simple.top/tags/Pandoc/"/>
     
       <category term="Markdown" scheme="https://2young.2simple.top/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux or Mac 命令行获取本机IP地址</title>
+    <link href="https://2young.2simple.top/article/linux-Mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BAIP%E5%9C%B0%E5%9D%80.html"/>
+    <id>https://2young.2simple.top/article/linux-Mac命令行获取本机IP地址.html</id>
+    <published>2018-10-23T07:53:51.000Z</published>
+    <updated>2018-11-23T08:13:16.541Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;linuxmac-获取本机的ip地址&quot;&gt;Linux/Mac 获取本机的IP地址&lt;/h1&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/s
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://2young.2simple.top/categories/Linux/"/>
+    
+    
+      <category term="IP" scheme="https://2young.2simple.top/tags/IP/"/>
+    
+      <category term="Linux" scheme="https://2young.2simple.top/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="https://2young.2simple.top/tags/Ubuntu/"/>
+    
+      <category term="Mac" scheme="https://2young.2simple.top/tags/Mac/"/>
     
   </entry>
   
@@ -94,7 +124,12 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;课程选题辅导&quot;&gt;&lt;a href=&quot;#课程选题辅导&quot; class=&quot;headerlink&quot; title=&quot;课程选题辅导&quot;&gt;&lt;/a&gt;课程选题辅导&lt;/h1&gt;&lt;h2 id=&quot;IPV4-地址空间测绘&quot;&gt;&lt;a href=&quot;#IPV4-地址空间测绘&quot; class=&quot;header
+      &lt;h1 id=&quot;课程选题辅导&quot;&gt;课程选题辅导&lt;/h1&gt;
+&lt;h2 id=&quot;ipv4-地址空间测绘&quot;&gt;IPV4 地址空间测绘&lt;/h2&gt;
+&lt;p&gt;多尺度，多维度，多状态，多视图&lt;/p&gt;
+&lt;p&gt;希尔伯特曲线， IPv4 地址&lt;/p&gt;
+&lt;p&gt;网络空间是几维的&lt;/p&gt;
+&lt;p&gt;可做的工作：&lt;/p
     
     </summary>
     
@@ -112,7 +147,11 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验目标&quot;&gt;&lt;a href=&quot;#实验目标&quot; class=&quot;headerlink&quot; title=&quot;实验目标&quot;&gt;&lt;/a&gt;实验目标&lt;/h1&gt;&lt;p&gt;使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.&lt;
+      &lt;h1 id=&quot;实验目标&quot;&gt;实验目标&lt;/h1&gt;
+&lt;p&gt;使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.&lt;/p&gt;
+&lt;h1 id=&quot;实验步骤&quot;&gt;实验步骤&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;数据预处理，将电影评论信息进
     
     </summary>
     
@@ -130,7 +169,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验目标&quot;&gt;&lt;a href=&quot;#实验目标&quot; class=&quot;headerlink&quot; title=&quot;实验目标&quot;&gt;&lt;/a&gt;实验目标&lt;/h1&gt;&lt;p&gt;实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值&lt;/p&gt;
+      &lt;h1 id=&quot;实验目标&quot;&gt;实验目标&lt;/h1&gt;
+&lt;p&gt;实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值&lt;/p&gt;
     
     </summary>
     
@@ -166,8 +206,9 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验要求&quot;&gt;&lt;a href=&quot;#实验要求&quot; class=&quot;headerlink&quot; title=&quot;实验要求&quot;&gt;&lt;/a&gt;实验要求&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，
+      &lt;h1 id=&quot;实验要求&quot;&gt;实验要求&lt;/h1&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以
     
     </summary>
     
@@ -185,8 +226,9 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;回顾&quot;&gt;&lt;a href=&quot;#回顾&quot; class=&quot;headerlink&quot; title=&quot;回顾&quot;&gt;&lt;/a&gt;回顾&lt;/h1&gt;&lt;p&gt;hardware-&amp;gt;OS-&amp;gt;App&lt;/p&gt;
-&lt;p&gt;硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT
+      &lt;h1 id=&quot;回顾&quot;&gt;回顾&lt;/h1&gt;
+&lt;p&gt;hardware-&amp;gt;OS-&amp;gt;App&lt;/p&gt;
+&lt;p&gt;硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT, consistent -&amp;gt; MPI,mapreduce,spark -&amp;gt; Ap
     
     </summary>
     
@@ -202,7 +244,9 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;BigTable&quot;&gt;&lt;a href=&quot;#BigTable&quot; class=&quot;headerlink&quot; title=&quot;BigTable&quot;&gt;&lt;/a&gt;BigTable&lt;/h1&gt;&lt;p&gt;Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数
+      &lt;h1 id=&quot;bigtable&quot;&gt;BigTable&lt;/h1&gt;
+&lt;p&gt;Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。&lt;/p&gt;
+&lt;p&gt;Bigtable是一个为管理大规模结构化数据而设计的分布式存储系
     
     </summary>
     
@@ -218,7 +262,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Key-Value对存储&quot;&gt;&lt;a href=&quot;#Key-Value对存储&quot; class=&quot;headerlink&quot; title=&quot;Key-Value对存储&quot;&gt;&lt;/a&gt;Key-Value对存储&lt;/h1&gt;&lt;p&gt;在BigTable系统中，如果有一个TabletServer
+      &lt;h1 id=&quot;key-value对存储&quot;&gt;Key-Value对存储&lt;/h1&gt;
+&lt;p&gt;在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-
     
     </summary>
     
@@ -234,8 +279,9 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;JAVA-安装配置&quot;&gt;&lt;a href=&quot;#JAVA-安装配置&quot; class=&quot;headerlink&quot; title=&quot;JAVA  安装配置&quot;&gt;&lt;/a&gt;JAVA  安装配置&lt;/h1&gt;&lt;p&gt;java_home&lt;/p&gt;
-&lt;figure class=&quot;highlight p
+      &lt;h1 id=&quot;java-安装配置&quot;&gt;JAVA 安装配置&lt;/h1&gt;
+&lt;p&gt;java_home&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/
     
     </summary>
     
@@ -251,9 +297,13 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;MPI&quot;&gt;&lt;a href=&quot;#MPI&quot; class=&quot;headerlink&quot; title=&quot;MPI&quot;&gt;&lt;/a&gt;MPI&lt;/h1&gt;&lt;p&gt;MPI编程：n台机器编号，0~n-1  &lt;/p&gt;
+      &lt;h1 id=&quot;mpi&quot;&gt;MPI&lt;/h1&gt;
+&lt;p&gt;MPI编程：n台机器编号，0~n-1&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;send(from. to, msg, sizeof(msg))
+&lt;li&gt;send(from. to, msg, sizeof(msg))&lt;/li&gt;
+&lt;li&gt;recv()&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;brodcast(from, Group
     
     </summary>
     
@@ -270,7 +320,8 @@
     <summary type="html">
     
       &lt;p&gt;仔细阅读MapReduce这篇论文，回答下面的问题。&lt;/p&gt;
-&lt;h1 id=&quot;分布式排序&quot;&gt;&lt;a href=&quot;#分布式排序&quot; class=&quot;headerlink&quot; title=&quot;分布式排序&quot;&gt;&lt;/a&gt;分布式排序&lt;/h1&gt;&lt;blockquote&gt;
+&lt;h1 id=&quot;分布式排序&quot;&gt;分布式排序&lt;/h1&gt;
+&lt;blockquote&gt;
 &lt;p&gt;在MapReduce执行的过程中，中间的shuffle过程是一个非常重要的过程。这个过程中其中一个使用的方法就是进行分布式的排序。依据你自己的理解，阐述分布式排序方法。只需要用伪代码写出在各个节点中的程序代码即可。&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -293,7 +344,8 @@
     <summary type="html">
     
       &lt;p&gt;Google File System论文学习&lt;/p&gt;
-&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;我们设计并实现了Google GFS文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。GFS虽然运行在廉价的普遍硬件设备上，但是它依然了提供&lt;font color=&quot;red&quot;&gt;灾难冗余&lt;/font&gt;的能力，为大量客户机提供了&lt;font color=&quot;red&quot;&gt;高性能&lt;/font&gt;的服务。&lt;/p&gt;
+&lt;h1 id=&quot;摘要&quot;&gt;摘要&lt;/h1&gt;
+&lt;p&gt;我们设计并实现了Google GFS文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。GFS虽然运行在廉价的普遍硬件设备上，但是它依然了提供&lt;font color=&quot;red&quot;&gt;灾难冗余&lt;/font&gt;的能力，为大量客户机提供了&lt;font color=&quot;red&quot;&gt;高性能&lt;/font&gt;的服务。&lt;/p&gt;
 &lt;p&gt;虽然GFS的设计目标与许多传统的分布式文件系统有很多相同之处，但是，我们的设计还是以我们对自己的应用的负载情况和技术环境的分析为基础 的，不管现在还是将来，GFS和早期的分布式文件系统的设想都有明显的不同。所以我们重新审视了传统文件系统在设计上的折衷选择，衍生出了完全不同的设计 思路。&lt;/p&gt;
 &lt;p&gt;GFS完全满足了我们对存储的需求。GFS作为存储平台已经被广泛的部署在Google内部，存储我们的服务产生和处理的数据，同时还用于那些 需要大规模数据集的研究和开发工作。目前为止，最大的一个集群利用数千台机器的数千个硬盘，提供了数百TB的存储空间，同时为数百个客户机服务。&lt;/p&gt;
 &lt;p&gt;在本论文中，我们展示了能够支持分布式应用的文件系统接口的扩展，讨论我们设计的许多方面，最后列出了小规模性能测试以及真实生产系统中性能相关数据。&lt;/p&gt;
@@ -316,18 +368,19 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;课程简介&quot;&gt;&lt;a href=&quot;#课程简介&quot; class=&quot;headerlink&quot; title=&quot;课程简介&quot;&gt;&lt;/a&gt;课程简介&lt;/h1&gt;&lt;p&gt;课程主要内容：&lt;/p&gt;
+      &lt;h1 id=&quot;课程简介&quot;&gt;课程简介&lt;/h1&gt;
+&lt;p&gt;课程主要内容：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Hadoop&lt;ul&gt;
+&lt;li&gt;Hadoop
+&lt;ul&gt;
 &lt;li&gt;MapReduce&lt;/li&gt;
 &lt;li&gt;Spark&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;2-3人一组搭建实验环境&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;成绩构成：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。&lt;br&gt;第二周到最后在教学实验室上课。&lt;/li&gt;
+&lt;li&gt;作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。 第二周到最后在教学实验室上课。&lt;/li&gt;
 &lt;li&gt;Lab1：10，倒排表&lt;/li&gt;
 &lt;li&gt;Lab2：20，PageRank&lt;/li&gt;
 &lt;li&gt;Lab3：20，聚类&lt;/li&gt;
@@ -350,7 +403,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;分布式文件系统（The-Google-File-System）仔细阅读Google-File-System这篇论文，回答下面的问题。&quot;&gt;&lt;a href=&quot;#分布式文件系统（The-Google-File-System）仔细阅读Google-File-System这篇论文，回答下面的问题。&quot; class=&quot;headerlink&quot; title=&quot;分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。&quot;&gt;&lt;/a&gt;分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。&lt;/h1&gt;&lt;ul&gt;
+      &lt;h1 id=&quot;分布式文件系统the-google-file-system仔细阅读google-file-system这篇论文回答下面的问题&quot;&gt;分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。&lt;/h1&gt;
+&lt;ul&gt;
 &lt;li&gt;简述在分布式文件系统中维护数据块一致的步骤。&lt;/li&gt;
 &lt;li&gt;简述在分布式文件系统中的删除文件的过程。&lt;/li&gt;
 &lt;li&gt;在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。&lt;/li&gt;
@@ -374,7 +428,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验原理&quot;&gt;&lt;a href=&quot;#实验原理&quot; class=&quot;headerlink&quot; title=&quot;实验原理&quot;&gt;&lt;/a&gt;实验原理&lt;/h1&gt;&lt;p&gt;Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。&lt;/p&gt;
+      &lt;h1 id=&quot;实验原理&quot;&gt;实验原理&lt;/h1&gt;
+&lt;p&gt;Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。&lt;/p&gt;
     
     </summary>
     
@@ -390,7 +445,8 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;p&gt;综合运用搜索引擎体系结构和核心算法方面的知识，基于开源资源搭建搜索引擎&lt;/p&gt;
+      &lt;h1 id=&quot;内容&quot;&gt;内容&lt;/h1&gt;
+&lt;p&gt;综合运用搜索引擎体系结构和核心算法方面的知识，基于开源资源搭建搜索引擎&lt;/p&gt;
     
     </summary>
     
@@ -402,27 +458,6 @@
       <category term="实验" scheme="https://2young.2simple.top/tags/%E5%AE%9E%E9%AA%8C/"/>
     
       <category term="搜索引擎" scheme="https://2young.2simple.top/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ipv4 over Ipv6隧道协议实验客户端报告</title>
-    <link href="https://2young.2simple.top/article/4over6%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.html"/>
-    <id>https://2young.2simple.top/article/4over6实验报告.html</id>
-    <published>2017-05-22T16:00:00.000Z</published>
-    <updated>2018-01-14T12:58:54.748Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;掌握Android下应用程序开发环境的搭建和使用&lt;/li&gt;
-&lt;li&gt;掌握IPv4 over IPv6隧道的工作原理&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="计算机网络" scheme="https://2young.2simple.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   

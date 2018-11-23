@@ -124,17 +124,17 @@ function loopy() {
 
 
 
-<meta name="description" content="实验目标实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值">
+<meta name="description" content="实验目标 实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus">
 <meta property="og:url" content="https://2young.2simple.top/article/Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="实验目标实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值">
+<meta property="og:description" content="实验目标 实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-07-17T05:26:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus">
-<meta name="twitter:description" content="实验目标实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值">
+<meta name="twitter:description" content="实验目标 实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值">
 
 
 
@@ -479,7 +479,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2,130
+                  2,128
                 </span>
               
 
@@ -514,87 +514,103 @@ function loopy() {
       
 
       
-        <h1 id="实验目标"><a href="#实验目标" class="headerlink" title="实验目标"></a>实验目标</h1><p>实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值</p>
+        <h1 id="实验目标">实验目标</h1>
+<p>实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值</p>
 <a id="more"></a>
-<h1 id="语料库"><a href="#语料库" class="headerlink" title="语料库"></a>语料库</h1><ul>
+<h1 id="语料库">语料库</h1>
+<ul>
 <li>Wikipedia提供的包含Wikipedia站点所有文章的xml文件，其中包括重定向以及消歧义页面</li>
 <li>Links to other wikipedia articles are of the form “[[Name of other article]]”.</li>
 </ul>
-<h1 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h1><ol>
+<h1 id="实验步骤">实验步骤</h1>
+<ol style="list-style-type: decimal">
 <li>graphBuiler: 构建链接关系图</li>
 <li>pageRankItr: 迭代计算页面的rank</li>
 <li>pageRankViewer: 将结果文件转换为text format, 并且按照page rank score排序</li>
 </ol>
-<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><ul>
+<h1 id="扩展">扩展</h1>
+<ul>
 <li>在实验中我们使用了TextInputFormat clas， 考虑是否有其他方式处理xml文档</li>
 <li>Implement variably weighted links. Explain your heuristic and convince us that its working.</li>
-<li>Run PageRank over the Nutch crawl or your InvertedIndexer over Wikipedia and then combine both<br>data sets into a rudimentary search engine.</li>
+<li>Run PageRank over the Nutch crawl or your InvertedIndexer over Wikipedia and then combine both data sets into a rudimentary search engine.</li>
 </ul>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="链接关系图的构建"><a href="#链接关系图的构建" class="headerlink" title="链接关系图的构建"></a>链接关系图的构建</h2><p>首先构建链接关系图，切割后的数据一行为一个Page。因此直接采用TextInputFormat即可。</p>
-<h3 id="map阶段"><a href="#map阶段" class="headerlink" title="map阶段"></a>map阶段</h3><p>一次读入一行数据，使用正则表达式从中解析出title以及outlink, 输出(title, outlink)</p>
+<h1 id="实现">实现</h1>
+<h2 id="链接关系图的构建">链接关系图的构建</h2>
+<p>首先构建链接关系图，切割后的数据一行为一个Page。因此直接采用TextInputFormat即可。</p>
+<h3 id="map阶段">map阶段</h3>
+<p>一次读入一行数据，使用正则表达式从中解析出title以及outlink, 输出(title, outlink)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Pattern LINKPATTERN = Pattern.compile(<span class="string">"\\[\\[(.+?)\\]\\]"</span>);</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Pattern TITLEPATTERN = Pattern.compile(<span class="string">"&lt;title&gt;(.+)&lt;/title&gt;"</span>);</span><br></pre></td></tr></table></figure>
-<p>为了后续处理方便，在连接图的构建过程中将空格，标点等字符转换为了<code>&#39;_&#39;</code>, outlink的格式多样，<code>&quot;[[outlink|others]]&quot;</code>，这类型的外链只保留’|’前的内容</p>
-<h3 id="reduce阶段"><a href="#reduce阶段" class="headerlink" title="reduce阶段"></a>reduce阶段</h3><p>同一个title链出的页面聚合在一起，outlink拼接即可，同时为了方便后续PageRank计算，输出时同时把PageRank初始值(1.0)输出,输出<code>(title, &quot;1.0\t&quot; + outlink list)</code>;</p>
+<p>为了后续处理方便，在连接图的构建过程中将空格，标点等字符转换为了<code>'_'</code>, outlink的格式多样，<code>&quot;[[outlink|others]]&quot;</code>，这类型的外链只保留’|’前的内容</p>
+<h3 id="reduce阶段">reduce阶段</h3>
+<p>同一个title链出的页面聚合在一起，outlink拼接即可，同时为了方便后续PageRank计算，输出时同时把PageRank初始值(1.0)输出,输出<code>(title, &quot;1.0\t&quot; + outlink list)</code>;</p>
 <p>最终得到的链接关系图约5.2G</p>
-<h2 id="PageRank计算"><a href="#PageRank计算" class="headerlink" title="PageRank计算"></a>PageRank计算</h2><h3 id="Map阶段："><a href="#Map阶段：" class="headerlink" title="Map阶段："></a>Map阶段：</h3><p>一行一行读入，输入格式为<code>(page, (cur_rank, url_list)</code></p>
+<h2 id="pagerank计算">PageRank计算</h2>
+<h3 id="map阶段-1">Map阶段：</h3>
+<p>一行一行读入，输入格式为<code>(page, (cur_rank, url_list)</code></p>
 <ul>
 <li>对<code>url_list</code>中的每一个link, 输出中间结果<code>(link, cur_rank/url_list.length)</code></li>
 <li>输出<code>(page, &quot;!&quot;)</code>标记当前页面是Wikipedia页面，供reduce阶段使用</li>
 <li>输出原始链接关系，供reduce阶段使用<code>(page, (cur_rank, url_list)</code></li>
 </ul>
-<h3 id="Reduce阶段："><a href="#Reduce阶段：" class="headerlink" title="Reduce阶段："></a>Reduce阶段：</h3><p>输入为<code>(page, (cur_rank, url_list)</code>, <code>(page, val), (page, &quot;!&quot;)</code>等多类型数据，其中val是指向该page的页面分给该页面的rank值，(page, “!”)标记了该页面存在于链接关系图中，记录rank时需要记录，否则不记录该页面的rank，这样使得最终的rank列表页面数与连接图页面数一致</p>
+<h3 id="reduce阶段-1">Reduce阶段：</h3>
+<p>输入为<code>(page, (cur_rank, url_list)</code>, <code>(page, val), (page, &quot;!&quot;)</code>等多类型数据，其中val是指向该page的页面分给该页面的rank值，(page, “!”)标记了该页面存在于链接关系图中，记录rank时需要记录，否则不记录该页面的rank，这样使得最终的rank列表页面数与连接图页面数一致</p>
 <ul>
-<li><p>将所有val相机，阻尼系数d = 0.85, 迭代计算PageRank值$$PR(u) = (1-d) + d*\sum_{v \in B(u)}PR(v)$$其中$PR(u)$表示页面u的PageRank值，v指向页面u, $B(u)$是连接到页面u的所有页面集合。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Text value: values) &#123;</span><br><span class="line">    String str = value.toString();</span><br><span class="line">    <span class="comment">// LOG.warn(key + " " + str + " " + pagerank);</span></span><br><span class="line">    <span class="keyword">if</span>(str.equals(<span class="string">"!"</span>)) &#123;</span><br><span class="line">        exist = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    String []k_v = str.split(<span class="string">"\t"</span>);</span><br><span class="line">    <span class="keyword">if</span>(k_v.length &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        out_link = k_v[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        pagerank += Double.parseDouble(k_v[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 页面不存在则丢弃</span></span><br><span class="line"><span class="keyword">if</span>(!exist) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">pagerank = pagerank * d + (<span class="number">1</span> - d);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>输出迭代结果<code>（page, (new_rank, url_list)）</code></p>
-</li>
-<li>一共迭代10轮</li>
+<li><p>将所有val相机，阻尼系数d = 0.85, 迭代计算PageRank值<span class="math display">\[PR(u) = (1-d) + d*\sum_{v \in B(u)}PR(v)\]</span>其中<span class="math inline">\(PR(u)\)</span>表示页面u的PageRank值，v指向页面u, <span class="math inline">\(B(u)\)</span>是连接到页面u的所有页面集合。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Text value: values) &#123;</span><br><span class="line">    String str = value.toString();</span><br><span class="line">    <span class="comment">// LOG.warn(key + " " + str + " " + pagerank);</span></span><br><span class="line">    <span class="keyword">if</span>(str.equals(<span class="string">"!"</span>)) &#123;</span><br><span class="line">        exist = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    String []k_v = str.split(<span class="string">"\t"</span>);</span><br><span class="line">    <span class="keyword">if</span>(k_v.length &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        out_link = k_v[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        pagerank += Double.parseDouble(k_v[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 页面不存在则丢弃</span></span><br><span class="line"><span class="keyword">if</span>(!exist) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">pagerank = pagerank * d + (<span class="number">1</span> - d);</span><br></pre></td></tr></table></figure></li>
+<li>输出迭代结果<code>（page, (new_rank, url_list)）</code></li>
+<li><p>一共迭代10轮</p></li>
 </ul>
-<h2 id="RankSort排序"><a href="#RankSort排序" class="headerlink" title="RankSort排序"></a>RankSort排序</h2><p>将结果安装PageRank值排序，map阶段输入<code>（page, (rank, url_list)）</code>， 输出格式为(rank, page)</p>
+<h2 id="ranksort排序">RankSort排序</h2>
+<p>将结果安装PageRank值排序，map阶段输入<code>（page, (rank, url_list)）</code>， 输出格式为(rank, page)</p>
 <p>即以rank值作为key, 利用MapReduce的shuffle阶段完成排序操作，默认排序是顺序排序，因此需要自定义排序规则实现倒序排序</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">FloatWritableComparator</span> <span class="keyword">extends</span> <span class="title">FloatWritable</span>.<span class="title">Comparator</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(WritableComparable a, WritableComparable b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="keyword">super</span>.compare(a, b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">byte</span>[] b1, <span class="keyword">int</span> s1, <span class="keyword">int</span> l1, <span class="keyword">byte</span>[] b2, <span class="keyword">int</span> s2, <span class="keyword">int</span> l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="keyword">super</span>.compare(b1, s1, l1, b2, s2, l2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="扩展-1"><a href="#扩展-1" class="headerlink" title="扩展"></a>扩展</h1><h2 id="Xml文档的处理"><a href="#Xml文档的处理" class="headerlink" title="Xml文档的处理"></a>Xml文档的处理</h2><h3 id="法1：XMLInputFormat"><a href="#法1：XMLInputFormat" class="headerlink" title="法1：XMLInputFormat"></a>法1：XMLInputFormat</h3><p>以XMLInputFormat形式读入输入文件，其方法是继承自TextInputFormat，然后处理好迭代多行的文本内容逻辑，以tag切分数据片，每切分一个完整的tag内容写入到Buffer中</p>
-<h3 id="法2：将XML文件转为SequenceFile"><a href="#法2：将XML文件转为SequenceFile" class="headerlink" title="法2：将XML文件转为SequenceFile"></a>法2：将XML文件转为SequenceFile</h3><p>SequenceFile是Hadoop API 提供的一种二进制文件，它将数据以&lt;key,value&gt;的形式序列化到文件中。这种二进制文件内部使用Hadoop 的标准的Writable 接口实现序列化和反序列化。</p>
+<h1 id="扩展-1">扩展</h1>
+<h2 id="xml文档的处理">Xml文档的处理</h2>
+<h3 id="法1xmlinputformat">法1：XMLInputFormat</h3>
+<p>以XMLInputFormat形式读入输入文件，其方法是继承自TextInputFormat，然后处理好迭代多行的文本内容逻辑，以tag切分数据片，每切分一个完整的tag内容写入到Buffer中</p>
+<h3 id="法2将xml文件转为sequencefile">法2：将XML文件转为SequenceFile</h3>
+<p>SequenceFile是Hadoop API 提供的一种二进制文件，它将数据以<key,value>的形式序列化到文件中。这种二进制文件内部使用Hadoop 的标准的Writable 接口实现序列化和反序列化。</key,value></p>
 <p>因此需要实现对xml文件的tag解析以及存储，最终将xml文件转换为SequenceFile</p>
-<h2 id="加权PageRank"><a href="#加权PageRank" class="headerlink" title="加权PageRank"></a>加权PageRank</h2><h3 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h3><p>在某一主题范围内，如果有许多网页链向某一网页或者有很多高影响的网页指向该页面，则该页面比较重要，在本加权PageRank算法中，页面的重要度取决于指向该页面的连接数以及该页面链出的页面数，即出入度影响页面的权重。其计算公式如下：<br>$$ PR(u)=(1-d)+d\sum_{v \in B(u)}PR(v)W_{(v,u)}^{in}W_{(v,u)}^{out} $$<br>其中，$W(v,u)^{out}$是指链接(v,u)的出链权重， $W(v,u)^{in}$是指链接(v,u)的入链权重，其计算公式如下:<br>$$W_{(v,u)}^{in}=\frac{I_u}{\sum_{p \in R(v)}I_p}$$<br>$$W_{(v,u)}^{out}=\frac{O_u}{\sum_{p \in R(v)}O_p}$$</p>
-<p>$I_u,I_p$分别是网页u,网页p的入链数，$O_u,O_p$分别是网页u,网页p的出链数。</p>
-<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><p>采用出入度加权算法之后，计算PageRank时需要将页面的出入度考虑在内，因此在构建连接关系图之后，计算PageRank之前，需要先统计每个页面的出入度。</p>
+<h2 id="加权pagerank">加权PageRank</h2>
+<h3 id="算法描述">算法描述</h3>
+<p>在某一主题范围内，如果有许多网页链向某一网页或者有很多高影响的网页指向该页面，则该页面比较重要，在本加权PageRank算法中，页面的重要度取决于指向该页面的连接数以及该页面链出的页面数，即出入度影响页面的权重。其计算公式如下： <span class="math display">\[ PR(u)=(1-d)+d\sum_{v \in B(u)}PR(v)W_{(v,u)}^{in}W_{(v,u)}^{out} \]</span> 其中，<span class="math inline">\(W(v,u)^{out}\)</span>是指链接(v,u)的出链权重， <span class="math inline">\(W(v,u)^{in}\)</span>是指链接(v,u)的入链权重，其计算公式如下: <span class="math display">\[W_{(v,u)}^{in}=\frac{I_u}{\sum_{p \in R(v)}I_p}\]</span> <span class="math display">\[W_{(v,u)}^{out}=\frac{O_u}{\sum_{p \in R(v)}O_p}\]</span></p>
+<p><span class="math inline">\(I_u,I_p\)</span>分别是网页u,网页p的入链数，<span class="math inline">\(O_u,O_p\)</span>分别是网页u,网页p的出链数。</p>
+<h3 id="实现-1">实现</h3>
+<p>采用出入度加权算法之后，计算PageRank时需要将页面的出入度考虑在内，因此在构建连接关系图之后，计算PageRank之前，需要先统计每个页面的出入度。</p>
 <p>这里分两步完成</p>
 <ul>
-<li><p>链接关系倒排：</p>
+<li>链接关系倒排：
 <ul>
 <li><p>MAP阶段：输入(url, url_list), 输出<code>(url, &quot;!\t&quot; + url_list.length)</code>，即输出其出度，否则对<code>u in url_list</code>, 输出(u, url), 即输出倒排链接关系对</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 没有出度</span></span><br><span class="line"><span class="keyword">if</span>(k_v.length &lt; <span class="number">3</span> || k_v[<span class="number">2</span>].length() == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// LOG.warn("map1 " + page + " !\t0");</span></span><br><span class="line">    context.write(<span class="keyword">new</span> Text(page), <span class="keyword">new</span> Text(<span class="string">"!\t0"</span>));</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">String out_link = k_v[<span class="number">2</span>];</span><br><span class="line">out_link = out_link.replaceAll(<span class="string">"@"</span>, <span class="string">"_"</span>);</span><br><span class="line">String []all_out_link = out_link.split(<span class="string">","</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> out_degree = all_out_link.length;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String link: all_out_link) &#123;</span><br><span class="line">    context.write(<span class="keyword">new</span> Text(link), <span class="keyword">new</span> Text(page));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">context.write(<span class="keyword">new</span> Text(page), <span class="keyword">new</span> Text(<span class="string">"!\t"</span> + out_degree));</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Reduce阶段：统计页面的出入度，<code>(page, &quot;!\t&quot; + num)</code>格式的得出page的outdegree, 对<code>（page, parentPage）</code>得出其链接关系，据此统计其入度即可，最后输出<code>（outlink, (indegree, outdegree, parentPage)）</code>或者<code>(parentPage, (indegree, outdegree, &quot;!&quot;, num))</code></p>
-</li>
-</ul>
-</li>
-<li>统计出入度，还原链接关系图：<ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 没有出度</span></span><br><span class="line"><span class="keyword">if</span>(k_v.length &lt; <span class="number">3</span> || k_v[<span class="number">2</span>].length() == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// LOG.warn("map1 " + page + " !\t0");</span></span><br><span class="line">    context.write(<span class="keyword">new</span> Text(page), <span class="keyword">new</span> Text(<span class="string">"!\t0"</span>));</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">String out_link = k_v[<span class="number">2</span>];</span><br><span class="line">out_link = out_link.replaceAll(<span class="string">"@"</span>, <span class="string">"_"</span>);</span><br><span class="line">String []all_out_link = out_link.split(<span class="string">","</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> out_degree = all_out_link.length;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String link: all_out_link) &#123;</span><br><span class="line">    context.write(<span class="keyword">new</span> Text(link), <span class="keyword">new</span> Text(page));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">context.write(<span class="keyword">new</span> Text(page), <span class="keyword">new</span> Text(<span class="string">"!\t"</span> + out_degree));</span><br></pre></td></tr></table></figure></li>
+<li>Reduce阶段：统计页面的出入度，<code>(page, &quot;!\t&quot; + num)</code>格式的得出page的outdegree, 对<code>（page, parentPage）</code>得出其链接关系，据此统计其入度即可，最后输出<code>（outlink, (indegree, outdegree, parentPage)）</code>或者<code>(parentPage, (indegree, outdegree, &quot;!&quot;, num))</code></li>
+</ul></li>
+<li>统计出入度，还原链接关系图：
+<ul>
 <li>Map阶段: 输入格式为前一步的reduce输出，根据读入的数据，输出<code>(parent, (&quot;!&quot;, indegree@outdegree))</code>或者<code>(parent, outlink@indegree@outdegree)</code></li>
 <li>Reduce阶段：将同key下的链接串起来输出，还原链接关系即可</li>
-</ul>
-</li>
+</ul></li>
 <li><p>PageRank计算： 考虑出入度之后，PageRank计算也需要更新，在PageRank的map阶段，输入<code>（URL， (rank, url_list)）</code>, 对 <code>u in url_list</code>, 输出<code>(u, rank/url_list.length * indegree(u)/sum(degree) * outdegree(u)/sum(degree))</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; all_out_link.length; ++i) &#123;</span><br><span class="line">    String []link_arr = all_out_link[i].split(<span class="string">"@"</span>);</span><br><span class="line">    sum_indegree += Integer.parseInt(link_arr[<span class="number">1</span>]);</span><br><span class="line">    sum_outdegree += Integer.parseInt(link_arr[<span class="number">2</span>]);</span><br><span class="line">    in_degree[i] = Integer.parseInt(link_arr[<span class="number">1</span>]);</span><br><span class="line">    out_degree[i] = Integer.parseInt(link_arr[<span class="number">2</span>]);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; all_out_link.length; ++i) &#123;</span><br><span class="line">    Double my_rank = avg_rank * ((<span class="keyword">double</span>)in_degree[i]/sum_indegree) *((<span class="keyword">double</span>)out_degree[i]/sum_outdegree);</span><br><span class="line">    context.write(<span class="keyword">new</span> Text(all_out_link[i]), <span class="keyword">new</span> Text(my_rank.toString()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; all_out_link.length; ++i) &#123;</span><br><span class="line">    String []link_arr = all_out_link[i].split(<span class="string">"@"</span>);</span><br><span class="line">    sum_indegree += Integer.parseInt(link_arr[<span class="number">1</span>]);</span><br><span class="line">    sum_outdegree += Integer.parseInt(link_arr[<span class="number">2</span>]);</span><br><span class="line">    in_degree[i] = Integer.parseInt(link_arr[<span class="number">1</span>]);</span><br><span class="line">    out_degree[i] = Integer.parseInt(link_arr[<span class="number">2</span>]);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; all_out_link.length; ++i) &#123;</span><br><span class="line">    Double my_rank = avg_rank * ((<span class="keyword">double</span>)in_degree[i]/sum_indegree) *((<span class="keyword">double</span>)out_degree[i]/sum_outdegree);</span><br><span class="line">    context.write(<span class="keyword">new</span> Text(all_out_link[i]), <span class="keyword">new</span> Text(my_rank.toString()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="计算结果"><a href="#计算结果" class="headerlink" title="计算结果"></a>计算结果</h1><p>非加权PageRank结果</p>
+<h1 id="计算结果">计算结果</h1>
+<p>非加权PageRank结果</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">9529.62 Wikipedia:Persondata</span><br><span class="line">7545.4595   United_States</span><br><span class="line">5987.736    Category:Living_people</span><br><span class="line">3621.945    Wikipedia:Deletion_review</span><br><span class="line">2773.274    Wikipedia:Templates_for_discussion/Log/2010_September_10</span><br><span class="line">2383.2075   England</span><br><span class="line">2267.7446   United_Kingdom</span><br><span class="line">2217.742    Race_and_ethnicity_in_the_United_States_Census</span><br><span class="line">2140.0762   Canada</span><br><span class="line">2091.2627   Template:Orphaned_non-free_revisions</span><br><span class="line">1902.5581   Germany</span><br><span class="line">1872.2252   India</span><br><span class="line">1855.1145   France</span><br><span class="line">1819.9362   Animal</span><br><span class="line">1607.0189   Help:Reverting</span><br><span class="line">1603.3832   Australia</span><br><span class="line">1553.8312   World_War_II</span><br><span class="line">1449.9705   Japan</span><br><span class="line">1348.8551   Category:Unprintworthy_redirects</span><br><span class="line">1299.4221   London</span><br></pre></td></tr></table></figure>
 <p>出入度加权PageRank结果</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1380.1716   Template:Orphaned_non-free_revisions@30019@7</span><br><span class="line">947.3123    Wikipedia:File_Upload_Wizard@8722@43</span><br><span class="line">733.5275    Wikipedia:Templates_for_discussion/Log/2010_September_10@41951@163</span><br><span class="line">536.2137    United_States@573674@1360</span><br><span class="line">415.73993   Wikipedia:FurMe@25192@55</span><br><span class="line">412.24493   Protein_Data_Bank@4511@74</span><br><span class="line">340.89578   Help:Reverting@48182@69</span><br><span class="line">322.3545    Wikipedia:Deletion_review@752655@34</span><br><span class="line">280.8142    Wikipedia:High-risk_templates@4194@23</span><br><span class="line">205.92093   Category:Fb_team_templates@584@14</span><br><span class="line">193.67151   England@207733@1647</span><br><span class="line">193.24915   India@132738@1290</span><br><span class="line">188.27377   Category:Radio_station_logos@5344@4</span><br><span class="line">167.8264    Germany@164873@1189</span><br><span class="line">154.31766   Wikipedia:Non-free_content/templates@15982@323</span><br><span class="line">153.8296    Category:Film_poster_images@13650@15</span><br><span class="line">151.34845   France@180649@1849</span><br><span class="line">135.47894   Russia@74494@1848</span><br><span class="line">134.8195    Category:Albums_by_artist@13822@54</span><br><span class="line">134.0424    Wikipedia:Persondata@897003@78</span><br></pre></td></tr></table></figure>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
-<li>实现的扩展：<ul>
+<h1 id="总结">总结</h1>
+<ul>
+<li>实现的扩展：
+<ul>
 <li>MapReduce下XML输入文件的处理</li>
 <li>基于出入度的加权PageRank算法</li>
-</ul>
-</li>
+</ul></li>
 <li>学会了MapReduce下PageRank的计算方法，并进一步掌握了加权PageRank算法，对页面的链接关系、主题相关度等对页面价值评价影响有了更深入的认识</li>
 <li>未加权的PageRank值前10中有不少是语言名，这是因为这些页面的入度非常高（几乎每个Wikipedia页面都有语言选择的超链接），而考虑出入度加权之后，前10中非语言类页面则更多了，可以直观感受到出入度加权之后的PageRank值更加合理</li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="http://blog.csdn.net/doegoo/article/details/50401080" target="_blank" rel="noopener">MapReduce-XML处理-定制InputFormat及定制RecordReader</a> <a href="http://blog.csdn.net/doegoo/article/details/50401080" target="_blank" rel="noopener">http://blog.csdn.net/doegoo/article/details/50401080</a></li>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a href="http://blog.csdn.net/doegoo/article/details/50401080" target="_blank" rel="noopener">MapReduce-XML处理-定制InputFormat及定制RecordReader</a> http://blog.csdn.net/doegoo/article/details/50401080</li>
 <li>Wadkar, S., &amp; Siddalingaiah, M. (2014). Pro Apache Hadoop. Apress. Chapter 7</li>
 <li>Desikan, K. (2015). Weighted page rank algorithm based on in-out weight of webpages. Indian Journal of Science &amp; Technology, 8(34).</li>
 </ul>
@@ -759,7 +775,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -770,7 +786,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -781,7 +797,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -871,7 +887,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目标"><span class="nav-number">1.</span> <span class="nav-text">实验目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语料库"><span class="nav-number">2.</span> <span class="nav-text">语料库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验步骤"><span class="nav-number">3.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展"><span class="nav-number">4.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">5.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接关系图的构建"><span class="nav-number">5.1.</span> <span class="nav-text">链接关系图的构建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map阶段"><span class="nav-number">5.1.1.</span> <span class="nav-text">map阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce阶段"><span class="nav-number">5.1.2.</span> <span class="nav-text">reduce阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PageRank计算"><span class="nav-number">5.2.</span> <span class="nav-text">PageRank计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map阶段："><span class="nav-number">5.2.1.</span> <span class="nav-text">Map阶段：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduce阶段："><span class="nav-number">5.2.2.</span> <span class="nav-text">Reduce阶段：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RankSort排序"><span class="nav-number">5.3.</span> <span class="nav-text">RankSort排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展-1"><span class="nav-number">6.</span> <span class="nav-text">扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Xml文档的处理"><span class="nav-number">6.1.</span> <span class="nav-text">Xml文档的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#法1：XMLInputFormat"><span class="nav-number">6.1.1.</span> <span class="nav-text">法1：XMLInputFormat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#法2：将XML文件转为SequenceFile"><span class="nav-number">6.1.2.</span> <span class="nav-text">法2：将XML文件转为SequenceFile</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加权PageRank"><span class="nav-number">6.2.</span> <span class="nav-text">加权PageRank</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法描述"><span class="nav-number">6.2.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-1"><span class="nav-number">6.2.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算结果"><span class="nav-number">7.</span> <span class="nav-text">计算结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目标"><span class="nav-number">1.</span> <span class="nav-text">实验目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语料库"><span class="nav-number">2.</span> <span class="nav-text">语料库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验步骤"><span class="nav-number">3.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展"><span class="nav-number">4.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">5.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接关系图的构建"><span class="nav-number">5.1.</span> <span class="nav-text">链接关系图的构建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map阶段"><span class="nav-number">5.1.1.</span> <span class="nav-text">map阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce阶段"><span class="nav-number">5.1.2.</span> <span class="nav-text">reduce阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pagerank计算"><span class="nav-number">5.2.</span> <span class="nav-text">PageRank计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map阶段-1"><span class="nav-number">5.2.1.</span> <span class="nav-text">Map阶段：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce阶段-1"><span class="nav-number">5.2.2.</span> <span class="nav-text">Reduce阶段：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ranksort排序"><span class="nav-number">5.3.</span> <span class="nav-text">RankSort排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展-1"><span class="nav-number">6.</span> <span class="nav-text">扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xml文档的处理"><span class="nav-number">6.1.</span> <span class="nav-text">Xml文档的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#法1xmlinputformat"><span class="nav-number">6.1.1.</span> <span class="nav-text">法1：XMLInputFormat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#法2将xml文件转为sequencefile"><span class="nav-number">6.1.2.</span> <span class="nav-text">法2：将XML文件转为SequenceFile</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加权pagerank"><span class="nav-number">6.2.</span> <span class="nav-text">加权PageRank</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法描述"><span class="nav-number">6.2.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-1"><span class="nav-number">6.2.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算结果"><span class="nav-number">7.</span> <span class="nav-text">计算结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>

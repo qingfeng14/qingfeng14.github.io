@@ -370,6 +370,186 @@ function loopy() {
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/大规模数据处理-分布式key-value对存储.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张盛豪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的日志">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/article/大规模数据处理-分布式key-value对存储.html" itemprop="url">
+                  大规模数据处理-分布式key/value对存储：BigTable、DHT
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T21:05:59+08:00">
+                2017-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/article/大规模数据处理-分布式key-value对存储.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/大规模数据处理-分布式key-value对存储.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/article/大规模数据处理-分布式key-value对存储.html" class="leancloud_visitors" data-flag-title="大规模数据处理-分布式key/value对存储：BigTable、DHT">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,827
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          BigTable
+Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。
+Bigtable是一个为管理大规模结构化数据而设计的分布式存储系统，可以扩展到PB级数据和上千台服务器。很多google的项目使用Bigtable存储
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/article/大规模数据处理-分布式key-value对存储.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/Massive-Data-Process-Homework-3.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -461,7 +641,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,148
+                  1,140
                 </span>
               
 
@@ -498,9 +678,10 @@ function loopy() {
       
         
           
-          Key-Value对存储在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。
+          Key-Value对存储
+在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-Value对的形式。
 
-磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内容
+磁盘中的元数据表中包含的内容，内存中的元数据表中包含的内
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -678,11 +859,12 @@ function loopy() {
       
         
           
-          JAVA  安装配置java_home
+          JAVA 安装配置
+java_home
 12$ /usr/libexec/java_home/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home
 查看java虚拟机启动情况
 1$ jps
-NameNode Web UI  h
+NameNode Web UI ht
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -860,15 +1042,19 @@ NameNode Web UI  h
       
         
           
-          MPIMPI编程：n台机器编号，0~n-1  
+          MPI
+MPI编程：n台机器编号，0~n-1
 
 send(from. to, msg, sizeof(msg))
-recv()    
-brodcast(from, Group, O o),  
+recv()
+
+brodcast(from, Group, O o),
+
 gather(Group, to)
 
 没有出错处理
-MapReduce123map (in_key, 
+MapReduce
+123map (in_key, in_v
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1031,7 +1217,7 @@ MapReduce123map (in_key,
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,218
+                  1,216
                 </span>
               
 
@@ -1068,7 +1254,8 @@ MapReduce123map (in_key,
       
         
           <p>仔细阅读MapReduce这篇论文，回答下面的问题。</p>
-<h1 id="分布式排序"><a href="#分布式排序" class="headerlink" title="分布式排序"></a>分布式排序</h1><blockquote>
+<h1 id="分布式排序">分布式排序</h1>
+<blockquote>
 <p>在MapReduce执行的过程中，中间的shuffle过程是一个非常重要的过程。这个过程中其中一个使用的方法就是进行分布式的排序。依据你自己的理解，阐述分布式排序方法。只需要用伪代码写出在各个节点中的程序代码即可。</p>
 </blockquote>
           <!--noindex-->
@@ -1247,7 +1434,8 @@ MapReduce123map (in_key,
       
         
           <p>Google File System论文学习</p>
-<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>我们设计并实现了Google GFS文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。GFS虽然运行在廉价的普遍硬件设备上，但是它依然了提供<font color="red">灾难冗余</font>的能力，为大量客户机提供了<font color="red">高性能</font>的服务。</p>
+<h1 id="摘要">摘要</h1>
+<p>我们设计并实现了Google GFS文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。GFS虽然运行在廉价的普遍硬件设备上，但是它依然了提供<font color="red">灾难冗余</font>的能力，为大量客户机提供了<font color="red">高性能</font>的服务。</p>
 <p>虽然GFS的设计目标与许多传统的分布式文件系统有很多相同之处，但是，我们的设计还是以我们对自己的应用的负载情况和技术环境的分析为基础 的，不管现在还是将来，GFS和早期的分布式文件系统的设想都有明显的不同。所以我们重新审视了传统文件系统在设计上的折衷选择，衍生出了完全不同的设计 思路。</p>
 <p>GFS完全满足了我们对存储的需求。GFS作为存储平台已经被广泛的部署在Google内部，存储我们的服务产生和处理的数据，同时还用于那些 需要大规模数据集的研究和开发工作。目前为止，最大的一个集群利用数千台机器的数千个硬盘，提供了数百TB的存储空间，同时为数百个客户机服务。</p>
 <p>在本论文中，我们展示了能够支持分布式应用的文件系统接口的扩展，讨论我们设计的许多方面，最后列出了小规模性能测试以及真实生产系统中性能相关数据。</p>
@@ -1390,7 +1578,7 @@ MapReduce123map (in_key,
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,211
+                  1,190
                 </span>
               
 
@@ -1406,7 +1594,7 @@ MapReduce123map (in_key,
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -1426,18 +1614,19 @@ MapReduce123map (in_key,
 
       
         
-          <h1 id="课程简介"><a href="#课程简介" class="headerlink" title="课程简介"></a>课程简介</h1><p>课程主要内容：</p>
+          <h1 id="课程简介">课程简介</h1>
+<p>课程主要内容：</p>
 <ul>
-<li>Hadoop<ul>
+<li>Hadoop
+<ul>
 <li>MapReduce</li>
 <li>Spark</li>
-</ul>
-</li>
+</ul></li>
 <li>2-3人一组搭建实验环境</li>
 </ul>
 <p>成绩构成：</p>
 <ul>
-<li>作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。<br>第二周到最后在教学实验室上课。</li>
+<li>作业占20分，实验1：10分，实验2：20分，实验3：20分，最后项目：30分。 第二周到最后在教学实验室上课。</li>
 <li>Lab1：10，倒排表</li>
 <li>Lab2：20，PageRank</li>
 <li>Lab3：20，聚类</li>
@@ -1604,7 +1793,7 @@ MapReduce123map (in_key,
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2,826
+                  2,836
                 </span>
               
 
@@ -1640,7 +1829,8 @@ MapReduce123map (in_key,
 
       
         
-          <h1 id="分布式文件系统（The-Google-File-System）仔细阅读Google-File-System这篇论文，回答下面的问题。"><a href="#分布式文件系统（The-Google-File-System）仔细阅读Google-File-System这篇论文，回答下面的问题。" class="headerlink" title="分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。"></a>分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。</h1><ul>
+          <h1 id="分布式文件系统the-google-file-system仔细阅读google-file-system这篇论文回答下面的问题">分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。</h1>
+<ul>
 <li>简述在分布式文件系统中维护数据块一致的步骤。</li>
 <li>简述在分布式文件系统中的删除文件的过程。</li>
 <li>在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。</li>
@@ -1784,7 +1974,7 @@ MapReduce123map (in_key,
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  4,001
+                  4,027
                 </span>
               
 
@@ -1820,7 +2010,8 @@ MapReduce123map (in_key,
 
       
         
-          <h1 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h1><p>Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。</p>
+          <h1 id="实验原理">实验原理</h1>
+<p>Tomasulo 算法以硬件方式实现了寄存器重命名，允许指令乱序执行，这是提高流水线的吞吐率和效率的一种有效方式。该算法首先出现在 IBM360/91 处理机的浮点处理部件中，后广泛应用于现代处理器设计中。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/Tomasulo调度算法.html#more" rel="contents">
@@ -1982,7 +2173,7 @@ MapReduce123map (in_key,
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  3,917
+                  3,959
                 </span>
               
 
@@ -2018,189 +2209,11 @@ MapReduce123map (in_key,
 
       
         
-          <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>综合运用搜索引擎体系结构和核心算法方面的知识，基于开源资源搭建搜索引擎</p>
+          <h1 id="内容">内容</h1>
+<p>综合运用搜索引擎体系结构和核心算法方面的知识，基于开源资源搭建搜索引擎</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/校园搜索引擎.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/4over6实验报告.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张盛豪">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的日志">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/article/4over6实验报告.html" itemprop="url">
-                  Ipv4 over Ipv6隧道协议实验客户端报告
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T00:00:00+08:00">
-                2017-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/article/4over6实验报告.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/4over6实验报告.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/article/4over6实验报告.html" class="leancloud_visitors" data-flag-title="Ipv4 over Ipv6隧道协议实验客户端报告">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  4,004
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  16
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ul>
-<li>掌握Android下应用程序开发环境的搭建和使用</li>
-<li>掌握IPv4 over IPv6隧道的工作原理</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/article/4over6实验报告.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2284,7 +2297,7 @@ MapReduce123map (in_key,
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2295,7 +2308,7 @@ MapReduce123map (in_key,
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2306,7 +2319,7 @@ MapReduce123map (in_key,
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -124,18 +124,18 @@ function loopy() {
 
 
 
-<meta name="description" content="数据集 本实验采用的数据集是 WEBSPAM-UK2006 数据集, 数据集中包含1803个垃圾网站，4411个正常网站，每个网站有96个内容特征，有138个超链接标签。这138个超链接标签可以被分为五类：Degree-related features, PageRank-related features, TrustRank-related features, Truncated PageRan">
+<meta name="description" content="数据集本实验采用的数据集是 WEBSPAM-UK2006 数据集, 数据集中包含1803个垃圾网站，4411个正常网站，每个网站有96个内容特征，有138个超链接标签。这138个超链接标签可以被分为五类：Degree-related features, PageRank-related features, TrustRank-related features, Truncated PageRank">
 <meta name="keywords" content="机器学习,集成学习,实验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习实验二-集成学习">
 <meta property="og:url" content="https://2young.2simple.top/article/机器学习/集成学习实验.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="数据集 本实验采用的数据集是 WEBSPAM-UK2006 数据集, 数据集中包含1803个垃圾网站，4411个正常网站，每个网站有96个内容特征，有138个超链接标签。这138个超链接标签可以被分为五类：Degree-related features, PageRank-related features, TrustRank-related features, Truncated PageRan">
+<meta property="og:description" content="数据集本实验采用的数据集是 WEBSPAM-UK2006 数据集, 数据集中包含1803个垃圾网站，4411个正常网站，每个网站有96个内容特征，有138个超链接标签。这138个超链接标签可以被分为五类：Degree-related features, PageRank-related features, TrustRank-related features, Truncated PageRank">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-21T09:15:40.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习实验二-集成学习">
-<meta name="twitter:description" content="数据集 本实验采用的数据集是 WEBSPAM-UK2006 数据集, 数据集中包含1803个垃圾网站，4411个正常网站，每个网站有96个内容特征，有138个超链接标签。这138个超链接标签可以被分为五类：Degree-related features, PageRank-related features, TrustRank-related features, Truncated PageRan">
+<meta name="twitter:description" content="数据集本实验采用的数据集是 WEBSPAM-UK2006 数据集, 数据集中包含1803个垃圾网站，4411个正常网站，每个网站有96个内容特征，有138个超链接标签。这138个超链接标签可以被分为五类：Degree-related features, PageRank-related features, TrustRank-related features, Truncated PageRank">
 
 
 
@@ -515,26 +515,22 @@ function loopy() {
       
 
       
-        <h1 id="数据集">数据集</h1>
-<p>本实验采用的数据集是 <strong>WEBSPAM-UK2006 数据集</strong>, 数据集中包含1803个垃圾网站，4411个正常网站，每个网站有96个内容特征，有138个超链接标签。这138个超链接标签可以被分为五类：Degree-related features, PageRank-related features, TrustRank-related features, Truncated PageRank-related features, Supporter-related features</p>
+        <h1 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h1><p>本实验采用的数据集是 <strong>WEBSPAM-UK2006 数据集</strong>, 数据集中包含1803个垃圾网站，4411个正常网站，每个网站有96个内容特征，有138个超链接标签。这138个超链接标签可以被分为五类：Degree-related features, PageRank-related features, TrustRank-related features, Truncated PageRank-related features, Supporter-related features</p>
 <p>在本实验中，需要将数据集划分为4：1的训练集和测试集</p>
 <a id="more"></a>
-<h1 id="实验任务">实验任务</h1>
-<ul>
+<h1 id="实验任务"><a href="#实验任务" class="headerlink" title="实验任务"></a>实验任务</h1><ul>
 <li>比较由不同的基本分类器组成的不同的集成学习算法的性能</li>
 <li>至少需要包含Bagging 算法和 AdaBoost.M1算法</li>
 <li>至少需要使用SVM和Decision Tree两种基本分类器算法</li>
 <li>至少需要完成的算法组合为：Bagging + DTree, Bagging + SVM, AdaBoost.M1 + DTree, AdaBoost.M1 + SVM.</li>
 </ul>
-<h1 id="扩展任务">扩展任务</h1>
-<ul>
+<h1 id="扩展任务"><a href="#扩展任务" class="headerlink" title="扩展任务"></a>扩展任务</h1><ul>
 <li>尝试其他的基本分类器（K-NN, Naive Bayes…）</li>
 <li>分析不同的特征的影响（比如可以只使用内容特征，或者只使用链接特征，或者进行特征组合）</li>
 <li>考虑特征缩放（归一化）来提高性能</li>
 <li>数据集是不平衡的，如何克服</li>
 </ul>
-<h1 id="实验设计">实验设计</h1>
-<p>基础分类器选取了SVM，Dtree, 和KNN</p>
+<h1 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h1><p>基础分类器选取了SVM，Dtree, 和KNN</p>
 <p>基础分类器采用了sklearn的包，由于KNN算法无法设置训练样本的权中，因此进行了如下组合：</p>
 <ul>
 <li>Bagging + DTree</li>
@@ -543,11 +539,10 @@ function loopy() {
 <li>AdaBoost.M1 + DTree</li>
 <li>AdaBoost.M1 + SVM.</li>
 </ul>
-<h1 id="实验结果">实验结果</h1>
-<p>针对Bagging和AdaBoost.M1集成学习算法 分别使用SVM,Dtree,KNN等基本分类器进行组合后，并且设置了不同的训练集大小，迭代次数（分类器个数），测试后的总体结果如下：</p>
+<h1 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h1><p>针对Bagging和AdaBoost.M1集成学习算法 分别使用SVM,Dtree,KNN等基本分类器进行组合后，并且设置了不同的训练集大小，迭代次数（分类器个数），测试后的总体结果如下：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><strong>集成算法</strong></th>
 <th><strong>基础算法</strong></th>
 <th><strong>迭代次数</strong></th>
@@ -556,175 +551,175 @@ function loopy() {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>1</td>
 <td>994</td>
 <td>0.886565</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>1</td>
 <td>994</td>
 <td>0.824618</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>1</td>
 <td>994</td>
 <td>0.849558</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>1</td>
 <td>994</td>
 <td>0.884956</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>1</td>
 <td>994</td>
 <td>0.847949</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>21</td>
 <td>994</td>
 <td>0.881738</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>994</td>
 <td>0.913113</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>21</td>
 <td>994</td>
 <td>0.881738</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>21</td>
 <td>994</td>
 <td>0.862430</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>994</td>
 <td>0.881738</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>41</td>
 <td>994</td>
 <td>0.913113</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>41</td>
 <td>994</td>
 <td>0.900241</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>41</td>
 <td>994</td>
 <td>0.884151</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>41</td>
 <td>994</td>
 <td>0.896219</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>41</td>
 <td>994</td>
 <td>0.901046</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>21</td>
 <td>1988</td>
 <td>0.895414</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>1988</td>
 <td>0.902655</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>21</td>
 <td>1988</td>
 <td>0.885760</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>21</td>
 <td>1988</td>
 <td>0.873693</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>1988</td>
 <td>0.881738</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>21</td>
 <td>3976</td>
 <td>0.895414</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>3976</td>
 <td>0.901046</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>21</td>
 <td>3976</td>
 <td>0.897828</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>21</td>
 <td>3976</td>
 <td>0.901850</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>21</td>
@@ -734,45 +729,43 @@ function loopy() {
 </tbody>
 </table>
 <p>由上表可以得出结论：对于本数据集，Bagging算法和AdaBoost算法的算法性能大致相同，组合基础算法时，KNN+性能最差，Dtree+性能最好，不过在迭代次数较少时SVM的性能较好，迭代次数增加、训练集增加时Dtree+的准确率上升较快</p>
-<h1 id="分析和讨论">分析和讨论</h1>
-<h2 id="数据预处理问题">数据预处理问题</h2>
-<p>在不对数据进行归一化处理的时候，SVM的Bagging算法表现极差，只能达到</p>
+<h1 id="分析和讨论"><a href="#分析和讨论" class="headerlink" title="分析和讨论"></a>分析和讨论</h1><h2 id="数据预处理问题"><a href="#数据预处理问题" class="headerlink" title="数据预处理问题"></a>数据预处理问题</h2><p>在不对数据进行归一化处理的时候，SVM的Bagging算法表现极差，只能达到</p>
 <p>对于SVM,Dtree, KNN三个基础分类器，进行特征归一化与否的分类效果如下所示：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><strong>是否归一化</strong></th>
 <th><strong>分类器</strong></th>
 <th><strong>准确率</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>否</td>
 <td>SVM</td>
 <td>0.735318</td>
 </tr>
-<tr class="even">
+<tr>
 <td>否</td>
 <td>DTree</td>
 <td>0.875302</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>否</td>
 <td>KNN</td>
 <td>0.781979</td>
 </tr>
-<tr class="even">
+<tr>
 <td>是</td>
 <td>SVM</td>
 <td>0.914722</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>是</td>
 <td>DTree</td>
 <td>0.876106</td>
 </tr>
-<tr class="even">
+<tr>
 <td>是</td>
 <td>KNN</td>
 <td>0.899437</td>
@@ -780,10 +773,9 @@ function loopy() {
 </tbody>
 </table>
 <p>可以得出结论:归一化操作对SVM,KNN等算法而言及其重要，这是因为这类分类器是利用两点间的距离计算两点间的差异，当各个特征的维度差异较大时对其分类效果影响较大，因此需要进行归一化，而这些也直接影响了集成学习算法的准确率，如下表所示</p>
-<h3 id="不进行归一化处理">不进行归一化处理</h3>
-<table>
+<h3 id="不进行归一化处理"><a href="#不进行归一化处理" class="headerlink" title="不进行归一化处理"></a>不进行归一化处理</h3><table>
 <thead>
-<tr class="header">
+<tr>
 <th><strong>集成算法</strong></th>
 <th><strong>基础算法</strong></th>
 <th><strong>迭代次数</strong></th>
@@ -792,28 +784,28 @@ function loopy() {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>21</td>
 <td>994</td>
 <td>0.714401</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>994</td>
 <td>0.896219</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>21</td>
 <td>994</td>
 <td>0.764280</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>21</td>
@@ -823,10 +815,9 @@ function loopy() {
 </tbody>
 </table>
 <p>（不归一化处理时，SVM在训练集上做测试时几乎会是完全正确，即出现了过拟合，这时AdaBoost算法无法进行下去，故无数据）</p>
-<h3 id="进行归一化处理">进行归一化处理</h3>
-<table>
+<h3 id="进行归一化处理"><a href="#进行归一化处理" class="headerlink" title="进行归一化处理"></a>进行归一化处理</h3><table>
 <thead>
-<tr class="header">
+<tr>
 <th><strong>集成算法</strong></th>
 <th><strong>基础算法</strong></th>
 <th><strong>迭代次数</strong></th>
@@ -835,35 +826,35 @@ function loopy() {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>21</td>
 <td>994</td>
 <td>0.905873</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>994</td>
 <td>0.907482</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>21</td>
 <td>994</td>
 <td>0.893001</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>21</td>
 <td>994</td>
 <td>0.872888</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>21</td>
@@ -874,15 +865,13 @@ function loopy() {
 </table>
 <p>可以发现，在不进行归一化处理时，对于基于SVM和KNN两种基本算法的Bagging和AdaBoost集成学习算法表现均较差，而进行了归一化处理之后，其算法准确率则大幅提高（注意，单个算法的准确率较高是因为训练时采用了全训练集，而集成学习的训练集只采用了20%的训练集，因此可能稍有偏差）而DTree的结果并无比较大的差异</p>
 <p>由这个对比可以感受到特征归一化对部分分类器的重要性</p>
-<h2 id="svm的参数设置">SVM的参数设置</h2>
-<p>在实验过程中发现使用SVM算法 + AdaBoost.M1算法时会出现每轮迭代时会出现分类效果越来越差的情况，通过打印预测结果发现，其对训练集的预测会循环出现全0和全1，即这一轮迭代会将每一个测试数据分类为sapm,下一轮迭代时会将每一个测试数据分类为normal, 这样会导致最终的训练结果准确率为69%，反复调试发现是<code>sklearn.svm.SVC</code>参数设置问题</p>
+<h2 id="SVM的参数设置"><a href="#SVM的参数设置" class="headerlink" title="SVM的参数设置"></a>SVM的参数设置</h2><p>在实验过程中发现使用SVM算法 + AdaBoost.M1算法时会出现每轮迭代时会出现分类效果越来越差的情况，通过打印预测结果发现，其对训练集的预测会循环出现全0和全1，即这一轮迭代会将每一个测试数据分类为sapm,下一轮迭代时会将每一个测试数据分类为normal, 这样会导致最终的训练结果准确率为69%，反复调试发现是<code>sklearn.svm.SVC</code>参数设置问题</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sklearn.svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,</span><br><span class="line">                      decision_function_shape=&apos;ovr&apos;, degree=3, gamma=&apos;auto&apos;,</span><br><span class="line">                      kernel=&apos;rbf&apos;,</span><br><span class="line">                      max_iter=-1, probability=False, random_state=None,</span><br><span class="line">                      shrinking=True,</span><br><span class="line">                      tol=0.001, verbose=False)</span><br></pre></td></tr></table></figure>
 <p>SVC的参数C代表了其惩罚参数，相当于惩罚松弛变量，松弛变量接近0时，即对误分类的惩罚增大，趋向于对训练集全分对的情况，这样对训练集测试时准确率很高，但泛化能力弱。默认为1时，训练时加上了各样本参数时则会对其训练效果产生极大影响，最终导致分类错误率增加，将其设置为300之后则效果变好。</p>
-<h2 id="算法表现差异分析">算法表现差异分析</h2>
-<p>将上述测试结果按照准确率进行排序结果如下：</p>
+<h2 id="算法表现差异分析"><a href="#算法表现差异分析" class="headerlink" title="算法表现差异分析"></a>算法表现差异分析</h2><p>将上述测试结果按照准确率进行排序结果如下：</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>集成算法</th>
 <th>基础算法</th>
 <th>迭代次数</th>
@@ -891,175 +880,175 @@ function loopy() {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>1</td>
 <td>994</td>
 <td>0.824618</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>1</td>
 <td>994</td>
 <td>0.847949</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>1</td>
 <td>994</td>
 <td>0.849558</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>21</td>
 <td>994</td>
 <td>0.86243</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>21</td>
 <td>1988</td>
 <td>0.873693</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>21</td>
 <td>994</td>
 <td>0.881738</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>21</td>
 <td>994</td>
 <td>0.881738</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>994</td>
 <td>0.881738</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>1988</td>
 <td>0.881738</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>41</td>
 <td>994</td>
 <td>0.884151</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>1</td>
 <td>994</td>
 <td>0.884956</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>21</td>
 <td>1988</td>
 <td>0.88576</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>1</td>
 <td>994</td>
 <td>0.886565</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>21</td>
 <td>1988</td>
 <td>0.895414</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>21</td>
 <td>3976</td>
 <td>0.895414</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>41</td>
 <td>994</td>
 <td>0.896219</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>KNN</td>
 <td>21</td>
 <td>3976</td>
 <td>0.897828</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>41</td>
 <td>994</td>
 <td>0.900241</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>41</td>
 <td>994</td>
 <td>0.901046</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>3976</td>
 <td>0.901046</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AdaBoost.M1</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>3976</td>
 <td>0.901046</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AdaBoost.M1</td>
 <td>SVM</td>
 <td>21</td>
 <td>3976</td>
 <td>0.90185</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>1988</td>
 <td>0.902655</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bagging</td>
 <td>Decision Tree</td>
 <td>21</td>
 <td>994</td>
 <td>0.913113</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Bagging</td>
 <td>SVM</td>
 <td>41</td>
@@ -1069,40 +1058,31 @@ function loopy() {
 </tbody>
 </table>
 <p>可以发现，综合表现最好的是Bagging + Dtree算法，平均来看，Bagging集成方法优于AdaBoost算法，这与经验相悖，分析可能的原因是：实验时未考虑各特征的权重问题，每个特征的计算方法不同，归一化时并没有考虑这一点，这些可能使得当AdaBoost算法专注于那些分错的样本时其实违背了数据的特征规律。</p>
-<h2 id="bagging算法和adaboost算法有什么区别">Bagging算法和AdaBoost算法有什么区别</h2>
-<h3 id="bagging">Bagging</h3>
-<h4 id="算法流程">算法流程：</h4>
-<p>给定一个大小为n的训练集D，Bagging算法从中均匀、有放回地选出T个大小为n1的子集Di，作为新的训练集。在这m个训练集上使用分类、回归等算法，则可得到m个模型，再通过取平均值、取多数票等方法，即可得到Bagging的结果</p>
-<h4 id="算法特点">算法特点：</h4>
-<p>Bagging要求基分类器的学习算法不稳定，也就是当数据发生小变化时，训练的分类器会产生很大不同，依次来增加基分类器的多样性，使得分类系统更加稳定，泛化能力更强。</p>
-<h3 id="adaboost">AdaBoost</h3>
-<h4 id="算法流程-1">算法流程</h4>
-<p>AdaBoost方法是一种迭代算法，在每一轮中加入一个新的弱分类器，直到达到某个预定的足够小的错误率。 每一个训练样本都被赋予一个权重，表明它被某个分类器选入训练集的概率。 如果某个样本点已经被准确地分类，那么在构造下一个训练集中，它被选中的概率就被降低； 相反，如果某个样本点没有被准确地分类，那么它的权重就得到提高。 通过这样的方式，AdaBoost方法能“聚焦于”那些较难分（更富信息）的样本上。</p>
-<p>在具体实现上，最初令每个样本的权重都相等， 对于第k次迭代操作，我们就根据这些权重来选取样本点，进而训练分类器Ck。 然后就根据这个分类器，来提高被它分错的的样本的权重，并降低被正确分类的样本权重。 然后，权重更新过的样本集被用于训练下一个分类器Ck[2]。整个训练过程如此迭代地进行下去。</p>
-<h4 id="算法特点-1">算法特点</h4>
-<ul>
+<h2 id="Bagging算法和AdaBoost算法有什么区别"><a href="#Bagging算法和AdaBoost算法有什么区别" class="headerlink" title="Bagging算法和AdaBoost算法有什么区别"></a>Bagging算法和AdaBoost算法有什么区别</h2><h3 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h3><h4 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h4><p>给定一个大小为n的训练集D，Bagging算法从中均匀、有放回地选出T个大小为n1的子集Di，作为新的训练集。在这m个训练集上使用分类、回归等算法，则可得到m个模型，再通过取平均值、取多数票等方法，即可得到Bagging的结果</p>
+<h4 id="算法特点："><a href="#算法特点：" class="headerlink" title="算法特点："></a>算法特点：</h4><p>Bagging要求基分类器的学习算法不稳定，也就是当数据发生小变化时，训练的分类器会产生很大不同，依次来增加基分类器的多样性，使得分类系统更加稳定，泛化能力更强。</p>
+<h3 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h3><h4 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h4><p>AdaBoost方法是一种迭代算法，在每一轮中加入一个新的弱分类器，直到达到某个预定的足够小的错误率。<br>每一个训练样本都被赋予一个权重，表明它被某个分类器选入训练集的概率。<br>如果某个样本点已经被准确地分类，那么在构造下一个训练集中，它被选中的概率就被降低；<br>相反，如果某个样本点没有被准确地分类，那么它的权重就得到提高。<br>通过这样的方式，AdaBoost方法能“聚焦于”那些较难分（更富信息）的样本上。</p>
+<p>在具体实现上，最初令每个样本的权重都相等，<br>对于第k次迭代操作，我们就根据这些权重来选取样本点，进而训练分类器Ck。<br>然后就根据这个分类器，来提高被它分错的的样本的权重，并降低被正确分类的样本权重。<br>然后，权重更新过的样本集被用于训练下一个分类器Ck[2]。整个训练过程如此迭代地进行下去。</p>
+<h4 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h4><ul>
 <li>具有较低的泛化误差（low generalization）</li>
 <li>不容易出现overfiting(过拟合)现象</li>
 </ul>
-<h3 id="算法差异">算法差异</h3>
-<p>Bagging算法的训练集是从原数据集中有放回的抽样得到的（原数据集的一部分），每个基分类器是相互独立的，并列的。因为每个基分类器训练方法独立且相同，所以最后分类器等权重投票。</p>
+<h3 id="算法差异"><a href="#算法差异" class="headerlink" title="算法差异"></a>算法差异</h3><p>Bagging算法的训练集是从原数据集中有放回的抽样得到的（原数据集的一部分），每个基分类器是相互独立的，并列的。因为每个基分类器训练方法独立且相同，所以最后分类器等权重投票。</p>
 <p>而在Boosting算法中，基分类器是依次训练的，因为分错的点在接下来的训练时会更加的被侧重，也就是说，每个基分类器的训练都是建立在之前基分类器的表现基础之上的。最后分类器加权投票。</p>
 <p>通常来说，基分类器不稳定时，Bagging算法的表现会比较好，大多数情况下AdaBoost算法表现较好，但是也容易出现过拟合的情况，比如说本次实验中（【SVM的参数设置】一节所述），当基分类器为SVM时，若C参数设置为1时，则会出现最终分类准确率仅为69%的情况</p>
-<h2 id="什么样的组合最好为什么">什么样的组合最好，为什么</h2>
-<p>进行相应的参数调整之后，各个算法组合之间的差异并不是特别大，不过Bagging + Dtree的稳定性应该是最高的，其效果也最好，实际上Bagging + SVM的效果也比较好，此次测试SVM效果劣于Dtree可能是SVC的参数设置不够好</p>
-<h1 id="代码说明">代码说明：</h1>
-<ul>
+<h2 id="什么样的组合最好，为什么"><a href="#什么样的组合最好，为什么" class="headerlink" title="什么样的组合最好，为什么"></a>什么样的组合最好，为什么</h2><p>进行相应的参数调整之后，各个算法组合之间的差异并不是特别大，不过Bagging + Dtree的稳定性应该是最高的，其效果也最好，实际上Bagging + SVM的效果也比较好，此次测试SVM效果劣于Dtree可能是SVC的参数设置不够好</p>
+<h1 id="代码说明："><a href="#代码说明：" class="headerlink" title="代码说明："></a>代码说明：</h1><ul>
 <li>ContentNewLinkAllSample.csv : 原始数据</li>
-<li>README.md : 说明文档</li>
+<li>README.md   : 说明文档</li>
 <li>base_cls.py : 基础分类器的分类效果测试, python base_cls.py即可运行</li>
 <li>ensemble.py : 集成学习算法</li>
-<li>main.py : 测试程序</li>
-<li>share.py : 一些配置函数</li>
+<li>main.py     : 测试程序</li>
+<li>share.py    : 一些配置函数</li>
 </ul>
-<h1 id="参考资料">参考资料</h1>
-<ol style="list-style-type: decimal">
-<li><p>曾刚,李宏.一个基于现实世界的大型Web参照数据集——UK2006 Datasets的初步研究[J].企业技术开发（学术版）,2009,28(5):16-17,31.</p></li>
-<li><p><a href="http://scikit-learn.org/stable/auto_examples/svm/plot_weighted_samples.html" target="_blank" rel="noopener">SVM: Weighted samples</a> http://scikit-learn.org/stable/auto_examples/svm/plot_weighted_samples.html</p></li>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<li><p>曾刚,李宏.一个基于现实世界的大型Web参照数据集——UK2006 Datasets的初步研究[J].企业技术开发（学术版）,2009,28(5):16-17,31.</p>
+</li>
+<li><p><a href="http://scikit-learn.org/stable/auto_examples/svm/plot_weighted_samples.html" target="_blank" rel="noopener">SVM: Weighted samples</a> <a href="http://scikit-learn.org/stable/auto_examples/svm/plot_weighted_samples.html" target="_blank" rel="noopener">http://scikit-learn.org/stable/auto_examples/svm/plot_weighted_samples.html</a></p>
+</li>
 </ol>
 
       
@@ -1275,7 +1255,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1387,7 +1367,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集"><span class="nav-number">1.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验任务"><span class="nav-number">2.</span> <span class="nav-text">实验任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展任务"><span class="nav-number">3.</span> <span class="nav-text">扩展任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验设计"><span class="nav-number">4.</span> <span class="nav-text">实验设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验结果"><span class="nav-number">5.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析和讨论"><span class="nav-number">6.</span> <span class="nav-text">分析和讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理问题"><span class="nav-number">6.1.</span> <span class="nav-text">数据预处理问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不进行归一化处理"><span class="nav-number">6.1.1.</span> <span class="nav-text">不进行归一化处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进行归一化处理"><span class="nav-number">6.1.2.</span> <span class="nav-text">进行归一化处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#svm的参数设置"><span class="nav-number">6.2.</span> <span class="nav-text">SVM的参数设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法表现差异分析"><span class="nav-number">6.3.</span> <span class="nav-text">算法表现差异分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bagging算法和adaboost算法有什么区别"><span class="nav-number">6.4.</span> <span class="nav-text">Bagging算法和AdaBoost算法有什么区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bagging"><span class="nav-number">6.4.1.</span> <span class="nav-text">Bagging</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法流程"><span class="nav-number">6.4.1.1.</span> <span class="nav-text">算法流程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法特点"><span class="nav-number">6.4.1.2.</span> <span class="nav-text">算法特点：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adaboost"><span class="nav-number">6.4.2.</span> <span class="nav-text">AdaBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法流程-1"><span class="nav-number">6.4.2.1.</span> <span class="nav-text">算法流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法特点-1"><span class="nav-number">6.4.2.2.</span> <span class="nav-text">算法特点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法差异"><span class="nav-number">6.4.3.</span> <span class="nav-text">算法差异</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么样的组合最好为什么"><span class="nav-number">6.5.</span> <span class="nav-text">什么样的组合最好，为什么</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码说明"><span class="nav-number">7.</span> <span class="nav-text">代码说明：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据集"><span class="nav-number">1.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验任务"><span class="nav-number">2.</span> <span class="nav-text">实验任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展任务"><span class="nav-number">3.</span> <span class="nav-text">扩展任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验设计"><span class="nav-number">4.</span> <span class="nav-text">实验设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验结果"><span class="nav-number">5.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析和讨论"><span class="nav-number">6.</span> <span class="nav-text">分析和讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理问题"><span class="nav-number">6.1.</span> <span class="nav-text">数据预处理问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不进行归一化处理"><span class="nav-number">6.1.1.</span> <span class="nav-text">不进行归一化处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进行归一化处理"><span class="nav-number">6.1.2.</span> <span class="nav-text">进行归一化处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM的参数设置"><span class="nav-number">6.2.</span> <span class="nav-text">SVM的参数设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法表现差异分析"><span class="nav-number">6.3.</span> <span class="nav-text">算法表现差异分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bagging算法和AdaBoost算法有什么区别"><span class="nav-number">6.4.</span> <span class="nav-text">Bagging算法和AdaBoost算法有什么区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bagging"><span class="nav-number">6.4.1.</span> <span class="nav-text">Bagging</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法流程："><span class="nav-number">6.4.1.1.</span> <span class="nav-text">算法流程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法特点："><span class="nav-number">6.4.1.2.</span> <span class="nav-text">算法特点：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AdaBoost"><span class="nav-number">6.4.2.</span> <span class="nav-text">AdaBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法流程"><span class="nav-number">6.4.2.1.</span> <span class="nav-text">算法流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法特点"><span class="nav-number">6.4.2.2.</span> <span class="nav-text">算法特点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法差异"><span class="nav-number">6.4.3.</span> <span class="nav-text">算法差异</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么样的组合最好，为什么"><span class="nav-number">6.5.</span> <span class="nav-text">什么样的组合最好，为什么</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码说明："><span class="nav-number">7.</span> <span class="nav-text">代码说明：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>

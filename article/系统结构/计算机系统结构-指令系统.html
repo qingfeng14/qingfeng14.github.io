@@ -482,7 +482,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  724
+                  705
                 </span>
               
 
@@ -498,7 +498,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3
+                  2
                 </span>
               
             </div>
@@ -518,74 +518,53 @@ function loopy() {
 
       
         <p>指令系统，寻址方式，内存映射，大端小端，哈夫曼编码，单地址指令，两地址指令</p>
-<p>寄存器寻址、立即值寻址、偏移寻址、寄存器间接寻址、索引寻址、直接寻址或绝对对寻址、存储器间接寻址、自增寻址、自减寻址、缩放寻址、 <a id="more"></a></p>
-<h1 id="寻址技术">寻址技术</h1>
-<h2 id="编址方式">编址方式</h2>
-<p>编址方式: 对各种存储设备进行编码的方法</p>
+<p>寄存器寻址、立即值寻址、偏移寻址、寄存器间接寻址、索引寻址、直接寻址或绝对对寻址、存储器间接寻址、自增寻址、自减寻址、缩放寻址、<br><a id="more"></a></p>
+<h1 id="寻址技术"><a href="#寻址技术" class="headerlink" title="寻址技术"></a>寻址技术</h1><h2 id="编址方式"><a href="#编址方式" class="headerlink" title="编址方式"></a>编址方式</h2><p>编址方式: 对各种存储设备进行编码的方法</p>
 <p>编址单位: 字编址，字节编址，位编址，块编址</p>
-<h2 id="寻址方式">寻址方式</h2>
-<p>寻址方式：指令系统中如何形成所要访问的数据的地址。</p>
-<p>寻址方式可以指明指令中的操作数是一个常数、一个寄存器操作数或者是一个存储器操作数。 对于存储器操作数来说，由寻址方式确定的存储器地址称为有效地址。</p>
+<h2 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h2><p>寻址方式：指令系统中如何形成所要访问的数据的地址。 </p>
+<p>寻址方式可以指明指令中的操作数是一个常数、一个寄存器操作数或者是一个存储器操作数。<br>对于存储器操作数来说，由寻址方式确定的存储器地址称为有效地址。</p>
 <ul>
 <li>&lt;-：赋值操作</li>
 <li>Mem：存储器</li>
 <li>Regs：寄存器组</li>
-<li>方括号：表示内容
-<ul>
+<li>方括号：表示内容<ul>
 <li>Mem[ ]：存储器的内容</li>
 <li>Regs[ ]：寄存器的内容</li>
 <li>Mem[Regs[R1]]：以寄存器R1中的内容作为地址的存储器单元中的内容</li>
-</ul></li>
 </ul>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1Z0T1c3j0W1Y172K3j0F/Image%202017-06-15%20at%209.00.06%20下午.png" alt="张晨曦 计算机系统结构教程 操作数寻址方式">
-<p class="caption">张晨曦 计算机系统结构教程 操作数寻址方式</p>
-</div>
-<h2 id="定位方式">定位方式</h2>
-<p>程序的主存物理地址方式什么时候确定，采用什么方法实现</p>
-<h3 id="主要的定位方式">主要的定位方式：</h3>
-<ul>
+</li>
+</ul>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1Z0T1c3j0W1Y172K3j0F/Image%202017-06-15%20at%209.00.06%20下午.png" alt="张晨曦 计算机系统结构教程 操作数寻址方式"></p>
+<h2 id="定位方式"><a href="#定位方式" class="headerlink" title="定位方式"></a>定位方式</h2><p>程序的主存物理地址方式什么时候确定，采用什么方法实现</p>
+<h3 id="主要的定位方式："><a href="#主要的定位方式：" class="headerlink" title="主要的定位方式："></a>主要的定位方式：</h3><ul>
 <li>直接定位方式：程序装入主存储器之前，指令和数据的主存物理地址就已经确定了</li>
 <li>静态定位：程序装入主存过程中进行地址变换</li>
 <li>动态定位：程序执行过程中，访问到对应指令或数据才进行地址变换</li>
 </ul>
-<h1 id="指令格式的优化设计">指令格式的优化设计</h1>
-<p>目标： 节省程序的存储空间，指令格式尽量规整，便于译码</p>
-<h2 id="指令组成">指令组成</h2>
-<p>操作码和地址码</p>
+<h1 id="指令格式的优化设计"><a href="#指令格式的优化设计" class="headerlink" title="指令格式的优化设计"></a>指令格式的优化设计</h1><p>目标： 节省程序的存储空间，指令格式尽量规整，便于译码</p>
+<h2 id="指令组成"><a href="#指令组成" class="headerlink" title="指令组成"></a>指令组成</h2><p>操作码和地址码</p>
 <p>地址码包含：</p>
 <ul>
 <li>地址：地址码，立即数，寄存器</li>
 <li>地址的附加信息：偏移量，块长度</li>
 <li>寻址方式</li>
 </ul>
-<h2 id="操作码的优化设计节省程序存储空间">操作码的优化设计：节省程序存储空间</h2>
-<p>优化方式:固定长度、Huffman编码、扩展编码</p>
-<h3 id="固定长度操作码">固定长度操作码</h3>
-<p>规整，译码简单，</p>
+<h2 id="操作码的优化设计：节省程序存储空间"><a href="#操作码的优化设计：节省程序存储空间" class="headerlink" title="操作码的优化设计：节省程序存储空间"></a>操作码的优化设计：节省程序存储空间</h2><p>优化方式:固定长度、Huffman编码、扩展编码</p>
+<h3 id="固定长度操作码"><a href="#固定长度操作码" class="headerlink" title="固定长度操作码"></a>固定长度操作码</h3><p>规整，译码简单， </p>
 <p>但浪费信息量</p>
-<h3 id="huffman编码">Huffman编码</h3>
-<p>操作码的最短平均长度 <span class="math display">\[H = -\sum_{i=1}^np_i * \log_2p_i\]</span> 其中<span class="math inline">\(p_i\)</span>表示第<span class="math inline">\(i\)</span>种操作码在程序中出现的频率</p>
-<h2 id="地址码的优化设计">地址码的优化设计</h2>
-<h2 id="指令格式优化设计">指令格式优化设计</h2>
-<h1 id="计算机系统的性能评价">计算机系统的性能评价</h1>
-<h2 id="时钟频率">时钟频率</h2>
-<h2 id="指令执行速度">指令执行速度</h2>
-<blockquote>
+<h3 id="Huffman编码"><a href="#Huffman编码" class="headerlink" title="Huffman编码"></a>Huffman编码</h3><p>操作码的最短平均长度 $$H = -\sum_{i=1}^np_i * \log_2p_i$$ 其中$p_i$表示第$i$种操作码在程序中出现的频率</p>
+<h2 id="地址码的优化设计"><a href="#地址码的优化设计" class="headerlink" title="地址码的优化设计"></a>地址码的优化设计</h2><h2 id="指令格式优化设计"><a href="#指令格式优化设计" class="headerlink" title="指令格式优化设计"></a>指令格式优化设计</h2><h1 id="计算机系统的性能评价"><a href="#计算机系统的性能评价" class="headerlink" title="计算机系统的性能评价"></a>计算机系统的性能评价</h1><h2 id="时钟频率"><a href="#时钟频率" class="headerlink" title="时钟频率"></a>时钟频率</h2><h2 id="指令执行速度"><a href="#指令执行速度" class="headerlink" title="指令执行速度"></a>指令执行速度</h2><blockquote>
 <p>一种经典的表示运算速度的方法</p>
 </blockquote>
 <p>MIPS(Million Instructions Per Second), GIPS, TIPS</p>
-<p><span class="math display">\[MIPS = \frac{指令条数}{执行时间\times 10^6} = \frac{Fz}{CPI} = IPC \times Fz\]</span></p>
-<p>其中:</p>
+<p>$$MIPS = \frac{指令条数}{执行时间\times 10^6} = \frac{Fz}{CPI} = IPC \times Fz$$</p>
+<p>其中: </p>
 <ul>
 <li>Fz为处理机的工作主频</li>
 <li>CPI(Cycles Per Instruction)为<font color="red">每条指令所需的平均时钟周期数</font></li>
 <li>IPC(Instruction Per Cycle)为每个时钟周期平均执行的指令条数</li>
 </ul>
-<h2 id="平均速度">平均速度</h2>
-<h2 id="核心程序法">核心程序法</h2>
-<h2 id="峰值速度">峰值速度</h2>
-
+<h2 id="平均速度"><a href="#平均速度" class="headerlink" title="平均速度"></a>平均速度</h2><h2 id="核心程序法"><a href="#核心程序法" class="headerlink" title="核心程序法"></a>核心程序法</h2><h2 id="峰值速度"><a href="#峰值速度" class="headerlink" title="峰值速度"></a>峰值速度</h2>
       
     </div>
 
@@ -754,7 +733,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -866,7 +845,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#寻址技术"><span class="nav-number">1.</span> <span class="nav-text">寻址技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编址方式"><span class="nav-number">1.1.</span> <span class="nav-text">编址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寻址方式"><span class="nav-number">1.2.</span> <span class="nav-text">寻址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定位方式"><span class="nav-number">1.3.</span> <span class="nav-text">定位方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要的定位方式"><span class="nav-number">1.3.1.</span> <span class="nav-text">主要的定位方式：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令格式的优化设计"><span class="nav-number">2.</span> <span class="nav-text">指令格式的优化设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指令组成"><span class="nav-number">2.1.</span> <span class="nav-text">指令组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作码的优化设计节省程序存储空间"><span class="nav-number">2.2.</span> <span class="nav-text">操作码的优化设计：节省程序存储空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#固定长度操作码"><span class="nav-number">2.2.1.</span> <span class="nav-text">固定长度操作码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#huffman编码"><span class="nav-number">2.2.2.</span> <span class="nav-text">Huffman编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地址码的优化设计"><span class="nav-number">2.3.</span> <span class="nav-text">地址码的优化设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令格式优化设计"><span class="nav-number">2.4.</span> <span class="nav-text">指令格式优化设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机系统的性能评价"><span class="nav-number">3.</span> <span class="nav-text">计算机系统的性能评价</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟频率"><span class="nav-number">3.1.</span> <span class="nav-text">时钟频率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令执行速度"><span class="nav-number">3.2.</span> <span class="nav-text">指令执行速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平均速度"><span class="nav-number">3.3.</span> <span class="nav-text">平均速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心程序法"><span class="nav-number">3.4.</span> <span class="nav-text">核心程序法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#峰值速度"><span class="nav-number">3.5.</span> <span class="nav-text">峰值速度</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#寻址技术"><span class="nav-number">1.</span> <span class="nav-text">寻址技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编址方式"><span class="nav-number">1.1.</span> <span class="nav-text">编址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寻址方式"><span class="nav-number">1.2.</span> <span class="nav-text">寻址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定位方式"><span class="nav-number">1.3.</span> <span class="nav-text">定位方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要的定位方式："><span class="nav-number">1.3.1.</span> <span class="nav-text">主要的定位方式：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令格式的优化设计"><span class="nav-number">2.</span> <span class="nav-text">指令格式的优化设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指令组成"><span class="nav-number">2.1.</span> <span class="nav-text">指令组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作码的优化设计：节省程序存储空间"><span class="nav-number">2.2.</span> <span class="nav-text">操作码的优化设计：节省程序存储空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#固定长度操作码"><span class="nav-number">2.2.1.</span> <span class="nav-text">固定长度操作码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Huffman编码"><span class="nav-number">2.2.2.</span> <span class="nav-text">Huffman编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地址码的优化设计"><span class="nav-number">2.3.</span> <span class="nav-text">地址码的优化设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令格式优化设计"><span class="nav-number">2.4.</span> <span class="nav-text">指令格式优化设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机系统的性能评价"><span class="nav-number">3.</span> <span class="nav-text">计算机系统的性能评价</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟频率"><span class="nav-number">3.1.</span> <span class="nav-text">时钟频率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令执行速度"><span class="nav-number">3.2.</span> <span class="nav-text">指令执行速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平均速度"><span class="nav-number">3.3.</span> <span class="nav-text">平均速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心程序法"><span class="nav-number">3.4.</span> <span class="nav-text">核心程序法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#峰值速度"><span class="nav-number">3.5.</span> <span class="nav-text">峰值速度</span></a></li></ol></li></ol></div>
             
 
           </div>

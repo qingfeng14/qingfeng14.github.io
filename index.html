@@ -520,16 +520,14 @@ function loopy() {
       
         
           
-          Golang 测试总结
-go test的初始化以及退出前的clear — TestMain
-程序的初始化工作可以通过init()函数完成,Go的init有以下特点:
+          Golang 测试总结go test的初始化以及退出前的clear — TestMain程序的初始化工作可以通过init()函数完成,Go的init有以下特点:
 
 先于main函数执行
 自动调用
 导入其他包时先执行import包的init函数,多次导入时只导入一次
 同一个包可以有多个init
 
-
+测试
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -707,9 +705,7 @@ go test的初始化以及退出前的clear — TestMain
       
         
           
-          Pandoc 的问题
-Error: spawn pandoc ENOENT
-12345678910events.js:183      throw er; // Unhandled 'error' event      ^Error: spawn pandoc ENOENT    at _errno
+          Pandoc 的问题Error: spawn pandoc ENOENT12345678910events.js:183      throw er; // Unhandled 'error' event      ^Error: spawn pandoc ENOENT    at _errnoEx
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -759,7 +755,7 @@ Error: spawn pandoc ENOENT
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/linux-Mac命令行获取本机IP地址.html">
+    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/golang/golang在编译时使用ldflags动态设置变量的值.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张盛豪">
@@ -781,8 +777,208 @@ Error: spawn pandoc ENOENT
             
               
                 
-                <a class="post-title-link" href="/article/linux-Mac命令行获取本机IP地址.html" itemprop="url">
-                  linux or Mac 命令行获取本机IP地址
+                <a class="post-title-link" href="/article/golang/golang在编译时使用ldflags动态设置变量的值.html" itemprop="url">
+                  golang在编译测试时使用ldflags动态设置包中变量的值
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-12T17:21:18+08:00">
+                2018-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Golang/" itemprop="url" rel="index">
+                    <span itemprop="name">Golang</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/article/golang/golang在编译时使用ldflags动态设置变量的值.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/golang/golang在编译时使用ldflags动态设置变量的值.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/article/golang/golang在编译时使用ldflags动态设置变量的值.html" class="leancloud_visitors" data-flag-title="golang在编译测试时使用ldflags动态设置包中变量的值">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  588
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          How to set package variable using -ldflags -X in Golang build123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/article/golang/golang在编译时使用ldflags动态设置变量的值.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/Linux-Mac命令行获取本机IP地址.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张盛豪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的日志">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/article/Linux-Mac命令行获取本机IP地址.html" itemprop="url">
+                  Linux or Mac 命令行获取本机IP地址
                 </a>
               
             
@@ -839,8 +1035,8 @@ Error: spawn pandoc ENOENT
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/article/linux-Mac命令行获取本机IP地址.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/linux-Mac命令行获取本机IP地址.html" itemprop="commentCount"></span>
+                <a href="/article/Linux-Mac命令行获取本机IP地址.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/Linux-Mac命令行获取本机IP地址.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -848,7 +1044,7 @@ Error: spawn pandoc ENOENT
 
           
           
-             <span id="/article/linux-Mac命令行获取本机IP地址.html" class="leancloud_visitors" data-flag-title="linux or Mac 命令行获取本机IP地址">
+             <span id="/article/Linux-Mac命令行获取本机IP地址.html" class="leancloud_visitors" data-flag-title="Linux or Mac 命令行获取本机IP地址">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -909,16 +1105,14 @@ Error: spawn pandoc ENOENT
       
         
           
-          Linux/Mac 获取本机的IP地址
-1ifconfig | grep -A 1 'eth0' | tail -n 1 | awk '&#123;print $2&#125;'
+          Linux/Mac 获取本机的IP地址1ifconfig | grep -A 1 'eth0' | tail -n 1 | awk '&#123;print $2&#125;'
 其中eth0需要替换为对应的网卡.
-Linux/Mac 获取本机的公网IP
-通过访问公网IP检测的网站即可.
-12cur
+Linux/Mac 获取本机的公网IP通过访问公网IP检测的网站即可.
+12curl 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/article/linux-Mac命令行获取本机IP地址.html#more" rel="contents">
+            <a class="btn" href="/article/Linux-Mac命令行获取本机IP地址.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1268,9 +1462,7 @@ Linux/Mac 获取本机的公网IP
       
         
           
-          课程选题辅导
-IPV4 地址空间测绘
-多尺度，多维度，多状态，多视图
+          课程选题辅导IPV4 地址空间测绘多尺度，多维度，多状态，多视图
 希尔伯特曲线， IPv4 地址
 网络空间是几维的
 可做的工作：
@@ -1279,8 +1471,7 @@ IPV4 地址空间测绘
 设计可视化的方法，网络空间地图的绘制方法，反应更多的信息
 
 网络空间万物分类
-
-网络空间万
+网络空间万物： 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1443,7 +1634,7 @@ IPV4 地址空间测绘
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,533
+                  1,532
                 </span>
               
 
@@ -1480,13 +1671,11 @@ IPV4 地址空间测绘
       
         
           
-          实验目标
-使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.
+          实验目标使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.
 实验步骤
-
 数据预处理，将电影评论信息进行整合，一个电影输出一行 movieid, rating list
 Canopy Selection
-Mark Data se
+Mark Data set 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1649,7 +1838,7 @@ Mark Data se
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2,128
+                  2,130
                 </span>
               
 
@@ -1685,8 +1874,7 @@ Mark Data se
 
       
         
-          <h1 id="实验目标">实验目标</h1>
-<p>实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值</p>
+          <h1 id="实验目标"><a href="#实验目标" class="headerlink" title="实验目标"></a>实验目标</h1><p>实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/Massive-Data-Process-Lab2-PageRank-on-the-Wikipedia-Corpus.html#more" rel="contents">
@@ -1848,7 +2036,7 @@ Mark Data se
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  395
+                  396
                 </span>
               
 
@@ -2048,7 +2236,7 @@ Mark Data se
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,754
+                  1,751
                 </span>
               
 
@@ -2086,196 +2274,13 @@ Mark Data se
         
           
           实验要求
-
 部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以找出这样的单词
 设计一个Map-Reduce 算法在爬取的网络数据上计算其倒排索引表，最终的倒排索引表中不能包含在第一步中识别出的单词
-至少
+至少进
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/Massive-Data-Process-Lab1-A-Simple-Inverted-Index.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/大规模数据处理-Spark.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张盛豪">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的日志">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/article/大规模数据处理-Spark.html" itemprop="url">
-                  大规模数据处理-Spark
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T09:04:52+08:00">
-                2017-06-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/article/大规模数据处理-Spark.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/大规模数据处理-Spark.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/article/大规模数据处理-Spark.html" class="leancloud_visitors" data-flag-title="大规模数据处理-Spark">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  192
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          回顾
-hardware-&gt;OS-&gt;App
-硬件集群，网络互连-&gt;DFS,Schechuler,Monitor,FT, consistent -&gt; MPI,mapreduce,spark -&gt; App
-Master 服务器：Master的crash容灾
-printf: 自
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/article/大规模数据处理-Spark.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2359,7 +2364,7 @@ printf: 自
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

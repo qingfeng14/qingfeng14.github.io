@@ -124,13 +124,13 @@ function loopy() {
 
 
 
-<meta name="description" content="实验目的  掌握Android下应用程序开发环境的搭建和使用 掌握IPv4 over IPv6隧道的工作原理">
+<meta name="description" content="实验目的 掌握Android下应用程序开发环境的搭建和使用 掌握IPv4 over IPv6隧道的工作原理">
 <meta name="keywords" content="4over6,VPN,计算机网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ipv4 over Ipv6隧道协议实验客户端报告">
 <meta property="og:url" content="https://2young.2simple.top/article/4over6实验报告.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="实验目的  掌握Android下应用程序开发环境的搭建和使用 掌握IPv4 over IPv6隧道的工作原理">
+<meta property="og:description" content="实验目的 掌握Android下应用程序开发环境的搭建和使用 掌握IPv4 over IPv6隧道的工作原理">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/122w2Z0a3S2p0X0J0J0k/Image%202017-06-13%20at%206.16.41%20下午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/1D361n3e2p1w1A3E2s0X/Image%202017-06-13%20at%208.04.59%20下午.png">
@@ -141,7 +141,7 @@ function loopy() {
 <meta property="og:updated_time" content="2018-01-14T12:58:54.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ipv4 over Ipv6隧道协议实验客户端报告">
-<meta name="twitter:description" content="实验目的  掌握Android下应用程序开发环境的搭建和使用 掌握IPv4 over IPv6隧道的工作原理">
+<meta name="twitter:description" content="实验目的 掌握Android下应用程序开发环境的搭建和使用 掌握IPv4 over IPv6隧道的工作原理">
 <meta name="twitter:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/122w2Z0a3S2p0X0J0J0k/Image%202017-06-13%20at%206.16.41%20下午.png">
 
 
@@ -465,7 +465,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  4,037
+                  4,004
                 </span>
               
 
@@ -500,30 +500,25 @@ function loopy() {
       
 
       
-        <h1 id="实验目的">实验目的</h1>
-<ul>
+        <h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ul>
 <li>掌握Android下应用程序开发环境的搭建和使用</li>
 <li>掌握IPv4 over IPv6隧道的工作原理</li>
 </ul>
 <a id="more"></a>
-<h1 id="客户端实验要求">客户端实验要求</h1>
-<p>在安卓设备上实现一个4over6隧道系统的客户端程序</p>
+<h1 id="客户端实验要求"><a href="#客户端实验要求" class="headerlink" title="客户端实验要求"></a>客户端实验要求</h1><p>在安卓设备上实现一个4over6隧道系统的客户端程序</p>
 <ul>
 <li>实现安卓界面程序，显示隧道报文收发状态(java语言)；</li>
 <li>启用安卓VPN服务(java语言)；</li>
 <li>实现底层通信程序，对4over6隧道系统控制消息和数据消息的处理(C语言)。</li>
 </ul>
-<h1 id="实验内容">实验内容</h1>
-<h2 id="前台是java语言的显示界面">前台是java语言的显示界面</h2>
-<ul>
+<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><h2 id="前台是java语言的显示界面"><a href="#前台是java语言的显示界面" class="headerlink" title="前台是java语言的显示界面"></a>前台是java语言的显示界面</h2><ul>
 <li>进行网络检测并获取上联物理接口IPV6地址；</li>
 <li>启动后台线程；</li>
 <li>开启定时器刷新界面；</li>
 <li>界面显示网络状态；</li>
 <li>开启安卓VPN服务。</li>
 </ul>
-<h2 id="后台是c语言客户端与4over6隧道服务器之间的数据交互">后台是C语言客户端与4over6隧道服务器之间的数据交互</h2>
-<ul>
+<h2 id="后台是C语言客户端与4over6隧道服务器之间的数据交互"><a href="#后台是C语言客户端与4over6隧道服务器之间的数据交互" class="headerlink" title="后台是C语言客户端与4over6隧道服务器之间的数据交互"></a>后台是C语言客户端与4over6隧道服务器之间的数据交互</h2><ul>
 <li>连接服务器；</li>
 <li>获取下联虚接口IPV4地址并通过管道传到前台；</li>
 <li>获取前台传送到后台的虚接口描述符；</li>
@@ -532,29 +527,14 @@ function loopy() {
 <li>通过IPV6套接字与4over6隧道服务器进行数据交互；</li>
 <li>实现保活机制，定时给服务器发送keeplive消息。</li>
 </ul>
-<h1 id="实验原理">实验原理</h1>
-<h2 id="面向android终端的隧道原理">面向Android终端的隧道原理</h2>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/122w2Z0a3S2p0X0J0J0k/Image%202017-06-13%20at%206.16.41%20下午.png" alt="4over6隧道原理">
-<p class="caption">4over6隧道原理</p>
-</div>
+<h1 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h1><h2 id="面向Android终端的隧道原理"><a href="#面向Android终端的隧道原理" class="headerlink" title="面向Android终端的隧道原理"></a>面向Android终端的隧道原理</h2><p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/122w2Z0a3S2p0X0J0J0k/Image%202017-06-13%20at%206.16.41%20下午.png" alt="4over6隧道原理"></p>
 <p>在4over6隧道中，客户端首先向过渡网关请求分配IPv4内网地址；过渡网关分配IPv4内网地址，并提供对应的IPv6网络地址；接着，安卓客户端发送4over6报文，过渡网关接受报文并进行分析，得到源地址和目的地址，将IPv4地址转化为公网地址，发送到公网之中；当过渡网关收到公网的IPv4报文之后，根据记录好的映射关系，重新封装成4over6报文，发给对应的内网用户，完成数据的转发和接受。</p>
 <p>本实验中分别完成了过渡网关和客户端的功能，本报告主要阐述客户端的相关实现。</p>
 <p>客户端用户处于IPV6网络环境，通过过渡网关完成IPV4网络的访问，过渡网关横跨IPV4和IPV6,提供地址转换和数据包的分发。</p>
-<h2 id="vpn-service-原理">VPN Service 原理</h2>
-<p>在客户端实现过程中，使用了VPNService API, 打开VPN服务后，Android系统通过iptables使用NAT将所有数据包转发到TUN虚拟网络设备，通过<code>mInterface.getFd();</code>可以获取到虚接口描述符，从而通过读虚接口获取系统的IP数据包，再将IPV4数据包封装经IPV6 socket转发给服务器端即可；服务器端根据网络请求信息完成访问，并将结果通过IPV6 socket发回，后台解析取出IPV4数据包，写入虚接口以实现数据接收。</p>
-<h1 id="具体实现">具体实现</h1>
-<p>客户端实现主要分前台和后台，前台是Java实现的Android客户端显示界面，后台主要是C++ 实现的客户端与服务器端的数据交互。前后台通过读写管道以及JNI函数调用实现交互。总体流程如下：</p>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1D361n3e2p1w1A3E2s0X/Image%202017-06-13%20at%208.04.59%20下午.png" alt="总体流程图">
-<p class="caption">总体流程图</p>
-</div>
-<h2 id="前端实现内容">前端实现内容</h2>
-<h3 id="前端流程及完成的工作">前端流程及完成的工作</h3>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0N1H1j1Z0W0N2V1T0e0B/Image%202017-06-13%20at%208.09.09%20下午.png" alt="前端详细流程">
-<p class="caption">前端详细流程</p>
-</div>
+<h2 id="VPN-Service-原理"><a href="#VPN-Service-原理" class="headerlink" title="VPN Service 原理"></a>VPN Service 原理</h2><p>在客户端实现过程中，使用了VPNService API, 打开VPN服务后，Android系统通过iptables使用NAT将所有数据包转发到TUN虚拟网络设备，通过<code>mInterface.getFd();</code>可以获取到虚接口描述符，从而通过读虚接口获取系统的IP数据包，再将IPV4数据包封装经IPV6 socket转发给服务器端即可；服务器端根据网络请求信息完成访问，并将结果通过IPV6 socket发回，后台解析取出IPV4数据包，写入虚接口以实现数据接收。</p>
+<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><p>客户端实现主要分前台和后台，前台是Java实现的Android客户端显示界面，后台主要是C++ 实现的客户端与服务器端的数据交互。前后台通过读写管道以及JNI函数调用实现交互。总体流程如下：</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1D361n3e2p1w1A3E2s0X/Image%202017-06-13%20at%208.04.59%20下午.png" alt="总体流程图"></p>
+<h2 id="前端实现内容"><a href="#前端实现内容" class="headerlink" title="前端实现内容"></a>前端实现内容</h2><h3 id="前端流程及完成的工作"><a href="#前端流程及完成的工作" class="headerlink" title="前端流程及完成的工作"></a>前端流程及完成的工作</h3><p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0N1H1j1Z0W0N2V1T0e0B/Image%202017-06-13%20at%208.09.09%20下午.png" alt="前端详细流程"></p>
 <p>前台流程如上图所示, 主要完成以下操作</p>
 <ul>
 <li>开启定时器之前，创建一个读取IP信息管道的全局标志位flag，默认置0；</li>
@@ -569,111 +549,92 @@ function loopy() {
 <li>显示到界面；</li>
 <li>界面显示的信息有运行时长、上传和下载速度、上传总流量和包数、下载总流量和包数、下联虚接口V4地址、上联物理接口IPV6地址。</li>
 </ul>
-<h3 id="具体实现-1">具体实现</h3>
-<h4 id="界面">界面</h4>
-<p>主界面采用了ScrollView嵌套LinearLayout的布局方式，界面中中有2个输入框，以及一个Button,分别用于输入服务器端的IPV6地址，端口号, 以及点击按钮链接VPN。且有一个文本框用于显示当前IPV6地址（若无，提示无IPV6网络访问权限）链接VPN之后，IPV6地址和端口输入框消失，显示一个TextView（用于显示运行时长、上传和下载速度、上传总流量和包数、下载总流量和包数、下联虚接口V4地址、上联物理接口IPV6地址等信息）和断开连接按钮。</p>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/033l0T2m0W2i3N2x3O2D/S70613-203748.jpg" alt="未连接界面">
-<p class="caption">未连接界面</p>
-</div>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1s0C1p091s3b0O201r3R/S70613-204410.jpg" alt="连接VPN后界面">
-<p class="caption">连接VPN后界面</p>
-</div>
-<h4 id="ui主线程">UI主线程</h4>
-<ul>
+<h3 id="具体实现-1"><a href="#具体实现-1" class="headerlink" title="具体实现"></a>具体实现</h3><h4 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h4><p>主界面采用了ScrollView嵌套LinearLayout的布局方式，界面中中有2个输入框，以及一个Button,分别用于输入服务器端的IPV6地址，端口号, 以及点击按钮链接VPN。且有一个文本框用于显示当前IPV6地址（若无，提示无IPV6网络访问权限）链接VPN之后，IPV6地址和端口输入框消失，显示一个TextView（用于显示运行时长、上传和下载速度、上传总流量和包数、下载总流量和包数、下联虚接口V4地址、上联物理接口IPV6地址等信息）和断开连接按钮。</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/033l0T2m0W2i3N2x3O2D/S70613-203748.jpg" alt="未连接界面"></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1s0C1p091s3b0O201r3R/S70613-204410.jpg" alt="连接VPN后界面"></p>
+<h4 id="UI主线程"><a href="#UI主线程" class="headerlink" title="UI主线程"></a>UI主线程</h4><ul>
 <li><p>客户端开启后，即检查当前网络环境是否支持IPV6访问，若不可访问IPV6网络则用户点击【链接VPN】按钮无效。检查代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> String <span class="title">getIPv6Address</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(! isWIFIConnected(context)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">final</span> Enumeration&lt;NetworkInterface&gt; e = NetworkInterface.getNetworkInterfaces();</span><br><span class="line">        <span class="keyword">while</span> (e.hasMoreElements()) &#123;</span><br><span class="line">            <span class="keyword">final</span> NetworkInterface networkInterface = e.nextElement();</span><br><span class="line">            <span class="keyword">for</span> (Enumeration&lt;InetAddress&gt; enumAddress = networkInterface.getInetAddresses();</span><br><span class="line">                 enumAddress.hasMoreElements(); ) &#123;</span><br><span class="line">                InetAddress inetAddress = enumAddress.nextElement();</span><br><span class="line">                <span class="keyword">if</span> (!inetAddress.isLoopbackAddress() &amp;&amp; !inetAddress.isLinkLocalAddress()) &#123;</span><br><span class="line">                    <span class="keyword">return</span> inetAddress.getHostAddress();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SocketException e) &#123;</span><br><span class="line">        Log.e(<span class="string">"NET"</span>, <span class="string">"无法获取IPV6地址"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>为【链接VPN】按钮注册监听服务，若可访问IPV6网络（即有IPV6地址），则用户点击按钮后，启动VPN服务，并将用户填入的服务器IPV6地址和端口号通过Intent传入</li>
-<li><p>启动VPN服务后，主界面定时刷新，通过JNI java调用C函数方式读取流量收发信息并显示在主界面。</p></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> String <span class="title">getIPv6Address</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(! isWIFIConnected(context)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">final</span> Enumeration&lt;NetworkInterface&gt; e = NetworkInterface.getNetworkInterfaces();</span><br><span class="line">        <span class="keyword">while</span> (e.hasMoreElements()) &#123;</span><br><span class="line">            <span class="keyword">final</span> NetworkInterface networkInterface = e.nextElement();</span><br><span class="line">            <span class="keyword">for</span> (Enumeration&lt;InetAddress&gt; enumAddress = networkInterface.getInetAddresses();</span><br><span class="line">                 enumAddress.hasMoreElements(); ) &#123;</span><br><span class="line">                InetAddress inetAddress = enumAddress.nextElement();</span><br><span class="line">                <span class="keyword">if</span> (!inetAddress.isLoopbackAddress() &amp;&amp; !inetAddress.isLinkLocalAddress()) &#123;</span><br><span class="line">                    <span class="keyword">return</span> inetAddress.getHostAddress();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SocketException e) &#123;</span><br><span class="line">        Log.e(<span class="string">"NET"</span>, <span class="string">"无法获取IPV6地址"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为【链接VPN】按钮注册监听服务，若可访问IPV6网络（即有IPV6地址），则用户点击按钮后，启动VPN服务，并将用户填入的服务器IPV6地址和端口号通过Intent传入</p>
+</li>
+<li>启动VPN服务后，主界面定时刷新，通过JNI java调用C函数方式读取流量收发信息并显示在主界面。</li>
 </ul>
-<h4 id="vpnservice">VPNService</h4>
-<p>继承一个VpnService的类，启动后，先读取MainActivite中传入的Intent，获取服务器端的IPV6地址和端口号, 通过JNI java调用C函数的方式将该数据传给C后台，C后台自动与服务器端建立IPV6 Socket, 然后VPNService 循环查询C后台是否获取到服务器发回的101数据信息，得到C后台传入的IP地址，DNS，路由，以及IPV6 Socket标识信息，据此初始化VPN服务并启动，获取到TUN虚接口的文件描述符后，通过JNI函数调用传给C后台，至此前端的任务完成。</p>
+<h4 id="VPNService"><a href="#VPNService" class="headerlink" title="VPNService"></a>VPNService</h4><p>继承一个VpnService的类，启动后，先读取MainActivite中传入的Intent，获取服务器端的IPV6地址和端口号, 通过JNI java调用C函数的方式将该数据传给C后台，C后台自动与服务器端建立IPV6 Socket, 然后VPNService 循环查询C后台是否获取到服务器发回的101数据信息，得到C后台传入的IP地址，DNS，路由，以及IPV6 Socket标识信息，据此初始化VPN服务并启动，获取到TUN虚接口的文件描述符后，通过JNI函数调用传给C后台，至此前端的任务完成。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 开始读取管道，首先读取IP信息管道，判断是否有后台传送来的IP等信息</span></span><br><span class="line"><span class="comment">// 3. 假如没有，下次循环继续读取；</span></span><br><span class="line"><span class="keyword">while</span>(!isGet_ip()) &#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 4. 有IP信息，就启用安卓VPN服务</span></span><br><span class="line">String ip_response = ip_info();</span><br><span class="line">Log.e(TAG, <span class="string">"GET IP "</span> + ip_response);</span><br><span class="line">String[] parameterArray = ip_response.split(<span class="string">" "</span>);</span><br><span class="line"><span class="keyword">if</span> (parameterArray.length &lt;= <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Wrong IP response"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从服务器端读到的IP数据</span></span><br><span class="line">ipv4Addr = parameterArray[<span class="number">0</span>];</span><br><span class="line">router = parameterArray[<span class="number">1</span>];</span><br><span class="line">dns1 = parameterArray[<span class="number">2</span>];</span><br><span class="line">dns2 = parameterArray[<span class="number">3</span>];</span><br><span class="line">dns3 = parameterArray[<span class="number">4</span>];</span><br><span class="line"><span class="comment">// sockrt 描述符</span></span><br><span class="line">String sockfd = parameterArray[<span class="number">5</span>];</span><br><span class="line">Builder builder = <span class="keyword">new</span> Builder();</span><br><span class="line">builder.setMtu(<span class="number">1500</span>);</span><br><span class="line">builder.addAddress(ipv4Addr, <span class="number">32</span>);</span><br><span class="line">builder.addRoute(router, <span class="number">0</span>); <span class="comment">// router is "0.0.0.0" by default</span></span><br><span class="line">builder.addDnsServer(dns1);</span><br><span class="line">builder.addDnsServer(dns2);</span><br><span class="line">builder.addDnsServer(dns3);</span><br><span class="line">builder.setSession(<span class="string">"Top Vpn"</span>);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    mInterface = builder.establish();</span><br><span class="line">&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">    Log.e(TAG,<span class="string">"Fatal error: "</span> + e.toString());</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 5. 把获取到的安卓虚接口描述符写入管道传到后台</span></span><br><span class="line"><span class="keyword">int</span> fd = c</span><br><span class="line">send_fd(fd, PIPE_DIR);</span><br><span class="line"><span class="keyword">if</span> (!protect(Integer.parseInt(sockfd))) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Cannot protect the mTunnel"</span>);</span><br><span class="line">&#125;</span><br><span class="line">start = <span class="keyword">true</span>;</span><br><span class="line">Log.e(TAG, <span class="string">"configure: end"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="后台实现内容">后台实现内容</h2>
-<h3 id="后台实现流程及内容">后台实现流程及内容</h3>
-<ol style="list-style-type: decimal">
+<h2 id="后台实现内容"><a href="#后台实现内容" class="headerlink" title="后台实现内容"></a>后台实现内容</h2><h3 id="后台实现流程及内容"><a href="#后台实现流程及内容" class="headerlink" title="后台实现流程及内容"></a>后台实现流程及内容</h3><ol>
 <li>创建IPV6套接字；</li>
 <li>连接4over6隧道服务器；</li>
-<li>开启定时器线程（间隔1秒）：
-<ol style="list-style-type: decimal">
+<li>开启定时器线程（间隔1秒）：<ol>
 <li>读写虚接口的流量信息写入管道；</li>
 <li>获取上次收到心跳包距离当前时间的秒数S；</li>
 <li>假如S大于60，说明连接超时，就关闭套接字；</li>
 <li>S小于60就每隔20秒给服务器发送一次心跳包。</li>
-</ol></li>
+</ol>
+</li>
 <li>发送消息类型为100的IP请求消息；</li>
-<li>while循环中接收服务器发送来的消息，并对消息类型进行判断；
-<ol style="list-style-type: decimal">
-<li>101类型(IP响应)：
-<ol style="list-style-type: decimal">
+<li>while循环中接收服务器发送来的消息，并对消息类型进行判断；<ol>
+<li>101类型(IP响应)：<ol>
 <li>取出数据段，解析出IP地址，路由，DNS；</li>
 <li>把解析到的IP地址，路由，DNS写入管道；</li>
 <li>从管道读取前台传送来的虚接口文件描述符；</li>
-</ol></li>
-<li>创建读取虚接口线程：
-<ol style="list-style-type: decimal">
+</ol>
+</li>
+<li>创建读取虚接口线程：<ol>
 <li>持续读取虚接口；</li>
 <li>记录读取的长度和次数；</li>
 <li>封装102(上网请求)类型的报头；</li>
 <li>通过IPV6套接字发送给4over6隧道服务器。</li>
-</ol></li>
-<li>103类型(上网应答)：
-<ol style="list-style-type: decimal">
+</ol>
+</li>
+<li>103类型(上网应答)：<ol>
 <li>取出数据部分；</li>
 <li>写入虚接口；</li>
 <li>存下写入长度和写入次数。</li>
-</ol></li>
-<li>104类型(心跳包)：
-<ol style="list-style-type: decimal">
-<li>记录当前时间到一个全局变量。</li>
-</ol></li>
-</ol></li>
 </ol>
-<div class="figure">
-<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2s3q3K3O2N2g0g332v2F/Image%202017-06-13%20at%209.17.29%20下午.png" alt="后台实现流程">
-<p class="caption">后台实现流程</p>
-</div>
-<h3 id="具体实现-2">具体实现</h3>
-<h4 id="与服务器建立socket连接">与服务器建立Socket连接</h4>
-<p>后台使用C++ Socket编程实现，用户点击【连接VPN】按钮之后即启动MyVPNService服务，同时调用C后台的<code>start_VPN</code>函数，该函数是后台主函数，MyVPNService服务通过<code>public native int send_addr_port(String addr, int port);</code>函数向C后台传递服务器端IPV6地址和端口，后台检测到取得IPV6地址信息后即完成与服务器的Socket连接及绑定。</p>
+</li>
+<li>104类型(心跳包)：<ol>
+<li>记录当前时间到一个全局变量。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2s3q3K3O2N2g0g332v2F/Image%202017-06-13%20at%209.17.29%20下午.png" alt="后台实现流程"></p>
+<h3 id="具体实现-2"><a href="#具体实现-2" class="headerlink" title="具体实现"></a>具体实现</h3><h4 id="与服务器建立Socket连接"><a href="#与服务器建立Socket连接" class="headerlink" title="与服务器建立Socket连接"></a>与服务器建立Socket连接</h4><p>后台使用C++ Socket编程实现，用户点击【连接VPN】按钮之后即启动MyVPNService服务，同时调用C后台的<code>start_VPN</code>函数，该函数是后台主函数，MyVPNService服务通过<code>public native int send_addr_port(String addr, int port);</code>函数向C后台传递服务器端IPV6地址和端口，后台检测到取得IPV6地址信息后即完成与服务器的Socket连接及绑定。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((sockfd = socket(AF_INET6, SOCK_STREAM, <span class="number">0</span>)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    LOGE(<span class="string">"can't create socket"</span>);</span><br><span class="line">&#125;</span><br><span class="line">server.sin6_family = AF_INET6;</span><br><span class="line">server.sin6_port = htons(SERVER_PORT);</span><br><span class="line">Inet_pton(AF_INET6, SERVER_IPV6, &amp;server.sin6_addr);</span><br><span class="line"><span class="keyword">int</span> temp;</span><br><span class="line"><span class="keyword">if</span> ((temp  = connect(sockfd, (<span class="keyword">struct</span> sockaddr *) &amp;server, <span class="keyword">sizeof</span>(server)) )== <span class="number">-1</span>)&#123;</span><br><span class="line">    __android_log_print(ANDROID_LOG_ERROR, TAG, <span class="string">"can't access server %s"</span>, strerror(errno));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>后台主线程中新建了3个线程<code>manage_data</code>, <code>readTun</code>以及<code>send_heart</code>, 分别用于处理数据请求，读取虚接口并发送102上网请求, 以及发送定时心跳包</p>
-<h4 id="manage_data线程">manage_data线程</h4>
-<p>在实验中我们重新定义了Message结构体，每次从socket读取数据时均先读取<code>Msg_Hdr</code>, 然后根据length字段长度读取相应的data字段</p>
+<h4 id="manage-data线程"><a href="#manage-data线程" class="headerlink" title="manage_data线程"></a>manage_data线程</h4><p>在实验中我们重新定义了Message结构体，每次从socket读取数据时均先读取<code>Msg_Hdr</code>, 然后根据length字段长度读取相应的data字段</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> Msg_Hdr &#123;</span><br><span class="line">    <span class="keyword">uint32_t</span> length; <span class="comment">// payload 长度,不包括type, 注意协议切割</span></span><br><span class="line">    <span class="keyword">char</span> type; <span class="comment">//</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Msg&#123;</span><br><span class="line">    <span class="keyword">struct</span> Msg_Hdr hdr;</span><br><span class="line">    <span class="keyword">char</span> data[MAX_MESSAGE_LENGTH];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>只要与服务器socket连接保持，则<code>manage_data</code>线程循环运行，在<code>manage_data</code>线程中主要完成以下操作:</p>
 <ul>
 <li>判断心跳包是否超时，超时则修改对应状态，并关闭socket,通知java前端VPN已断开连接</li>
 <li>从socket中读取信息结构体的Msg_Hdr部分数据，根据读取到的type和length字段决定是否继续读取data</li>
 <li><p>根据type字段做对应的处理</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">n = read(fd, &amp;msg, needbs);</span><br><span class="line"><span class="keyword">if</span>(n &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    LOGE(<span class="string">"read sockfd %d error: %s \n"</span>,fd,strerror(errno));</span><br><span class="line">    kill_myself();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">0</span>) &#123;</span><br><span class="line">    LOGE(<span class="string">"recv 0 byte from server, close sockfd %d \n"</span>,fd);</span><br><span class="line">    kill_myself();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(n == needbs)&#123;</span><br><span class="line">    process_payload:</span><br><span class="line">    <span class="keyword">char</span>* ipv4_payload = msg.data;</span><br><span class="line">    <span class="keyword">if</span>(msg.hdr.type != <span class="number">100</span> &amp;&amp; msg.hdr.type != <span class="number">104</span>) &#123;</span><br><span class="line">        n = read(fd, ipv4_payload, msg.hdr.length);</span><br><span class="line">        <span class="keyword">if</span>(n != msg.hdr.length) &#123;</span><br><span class="line">            LOGE(<span class="string">"read payload error, need %d byte, read x byte\n"</span>,msg.hdr.length);</span><br><span class="line">            <span class="keyword">if</span>(n &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">                LOGE(<span class="string">"读取data出错，关闭"</span>);</span><br><span class="line">                kill_myself();</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(n &lt; msg.hdr.length)</span><br><span class="line">            n += read(fd, ipv4_payload + n, msg.hdr.length-n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span>(msg.hdr.type)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">101</span>:</span><br><span class="line">            LOGE(<span class="string">"get 101"</span>);</span><br><span class="line">            recv_ipv4_addr(&amp;msg);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">103</span>:</span><br><span class="line">            LOGE(<span class="string">"get 103"</span>);</span><br><span class="line">            recv_ipv4_packet(&amp;msg);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">104</span>:</span><br><span class="line">            <span class="comment">// 心跳包,记录接收时间</span></span><br><span class="line">            s = time(<span class="literal">NULL</span>);</span><br><span class="line">            LOGE(<span class="string">"%s %ld"</span>, <span class="string">"收到心跳包104"</span>, s);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;<span class="comment">// 读到长度小于头长度说明可能出错(也有可能粘包,继续读取)</span></span><br><span class="line">    <span class="keyword">while</span> (n &lt; needbs)</span><br><span class="line">        n += read(fd, ((<span class="keyword">char</span>*)&amp;msg) + n , needbs-n);</span><br><span class="line">    <span class="keyword">goto</span> process_payload;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">n = read(fd, &amp;msg, needbs);</span><br><span class="line"><span class="keyword">if</span>(n &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    LOGE(<span class="string">"read sockfd %d error: %s \n"</span>,fd,strerror(errno));</span><br><span class="line">    kill_myself();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">0</span>) &#123;</span><br><span class="line">    LOGE(<span class="string">"recv 0 byte from server, close sockfd %d \n"</span>,fd);</span><br><span class="line">    kill_myself();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(n == needbs)&#123;</span><br><span class="line">    process_payload:</span><br><span class="line">    <span class="keyword">char</span>* ipv4_payload = msg.data;</span><br><span class="line">    <span class="keyword">if</span>(msg.hdr.type != <span class="number">100</span> &amp;&amp; msg.hdr.type != <span class="number">104</span>) &#123;</span><br><span class="line">        n = read(fd, ipv4_payload, msg.hdr.length);</span><br><span class="line">        <span class="keyword">if</span>(n != msg.hdr.length) &#123;</span><br><span class="line">            LOGE(<span class="string">"read payload error, need %d byte, read x byte\n"</span>,msg.hdr.length);</span><br><span class="line">            <span class="keyword">if</span>(n &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">                LOGE(<span class="string">"读取data出错，关闭"</span>);</span><br><span class="line">                kill_myself();</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(n &lt; msg.hdr.length)</span><br><span class="line">            n += read(fd, ipv4_payload + n, msg.hdr.length-n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span>(msg.hdr.type)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">101</span>:</span><br><span class="line">            LOGE(<span class="string">"get 101"</span>);</span><br><span class="line">            recv_ipv4_addr(&amp;msg);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">103</span>:</span><br><span class="line">            LOGE(<span class="string">"get 103"</span>);</span><br><span class="line">            recv_ipv4_packet(&amp;msg);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">104</span>:</span><br><span class="line">            <span class="comment">// 心跳包,记录接收时间</span></span><br><span class="line">            s = time(<span class="literal">NULL</span>);</span><br><span class="line">            LOGE(<span class="string">"%s %ld"</span>, <span class="string">"收到心跳包104"</span>, s);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;<span class="comment">// 读到长度小于头长度说明可能出错(也有可能粘包,继续读取)</span></span><br><span class="line">    <span class="keyword">while</span> (n &lt; needbs)</span><br><span class="line">        n += read(fd, ((<span class="keyword">char</span>*)&amp;msg) + n , needbs-n);</span><br><span class="line">    <span class="keyword">goto</span> process_payload;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>读取到103上网回应包<code>recv_ipv4_packet</code>:当收到103数据包，就代表收到了服务器转发的数据，这时候直接将其data字段写入tun虚接口之中即可，并更新统计信息。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">write_tun</span><span class="params">(<span class="keyword">char</span>* payload, <span class="keyword">uint32_t</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 写虚接口，收到信息，写入虚接口</span></span><br><span class="line">    byte_in += len + <span class="number">8</span>;</span><br><span class="line">    packet_in += <span class="number">1</span>;</span><br><span class="line">    total_byte += len + <span class="number">8</span>;</span><br><span class="line">    total_packet += <span class="number">1</span>;</span><br><span class="line">    Write_nByte(tun_des, payload, len);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">recv_ipv4_packet</span><span class="params">(Msg* msg)</span> </span>&#123;</span><br><span class="line">    write_tun(msg-&gt;data, msg-&gt;hdr.length);</span><br><span class="line">    debugPacket_recv(msg, msg-&gt;hdr.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>收到104心跳包时，更新收到心跳包的实际即可</p></li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">write_tun</span><span class="params">(<span class="keyword">char</span>* payload, <span class="keyword">uint32_t</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 写虚接口，收到信息，写入虚接口</span></span><br><span class="line">    byte_in += len + <span class="number">8</span>;</span><br><span class="line">    packet_in += <span class="number">1</span>;</span><br><span class="line">    total_byte += len + <span class="number">8</span>;</span><br><span class="line">    total_packet += <span class="number">1</span>;</span><br><span class="line">    Write_nByte(tun_des, payload, len);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">recv_ipv4_packet</span><span class="params">(Msg* msg)</span> </span>&#123;</span><br><span class="line">    write_tun(msg-&gt;data, msg-&gt;hdr.length);</span><br><span class="line">    debugPacket_recv(msg, msg-&gt;hdr.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>收到104心跳包时，更新收到心跳包的实际即可</p>
+</li>
 </ul>
-<h1 id="实验结果及分析">实验结果及分析</h1>
-<p>实验测试阶段，我们使用魅族和华为安卓手机进行了测试，网络环境为宿舍的Tsinghua无线网（可访问IPV6）以及实验室的DIVI网络， 开始VPN后，可以正常连接，测试了多种网络传输对象和环境：</p>
+<h1 id="实验结果及分析"><a href="#实验结果及分析" class="headerlink" title="实验结果及分析"></a>实验结果及分析</h1><p>实验测试阶段，我们使用魅族和华为安卓手机进行了测试，网络环境为宿舍的Tsinghua无线网（可访问IPV6）以及实验室的DIVI网络， 开始VPN后，可以正常连接，测试了多种网络传输对象和环境：</p>
 <ul>
 <li>浏览器打开网页，网页加载速度流畅</li>
 <li>斗鱼直播，视频播放流畅</li>
 <li>微信，qq文字消息，表情包消息等发送接收正常</li>
 </ul>
 <p>经过测试可以验证实现基本正确，且我们也测试过其稳定性，在IPV6网络稳定条件下，VPN服务不会异常中断，且手动断开VPN后可重新点击连接VPN按钮正常连接。</p>
-<h1 id="遇到的问题">遇到的问题</h1>
-<h2 id="连接vpn之后无法与服务器之间进行通信">连接VPN之后无法与服务器之间进行通信</h2>
-<p>C后台请求到IPV4地址信息之后，前端建立好VPN服务之后读取虚接口向服务器发送数据流量信息时服务器收不到相应的数据包，经过检查发现在VPN的建立过程中未对C后台Socket数据进行保护，导致后台与服务端之间的ipv6 socket链接也转发到了VPN的虚接口，这样就导致102的上网请求数据包无法发送给服务器，修改方案是利用VPNService类里的protect方法保护自己的socket。</p>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="连接VPN之后无法与服务器之间进行通信"><a href="#连接VPN之后无法与服务器之间进行通信" class="headerlink" title="连接VPN之后无法与服务器之间进行通信"></a>连接VPN之后无法与服务器之间进行通信</h2><p>C后台请求到IPV4地址信息之后，前端建立好VPN服务之后读取虚接口向服务器发送数据流量信息时服务器收不到相应的数据包，经过检查发现在VPN的建立过程中未对C后台Socket数据进行保护，导致后台与服务端之间的ipv6 socket链接也转发到了VPN的虚接口，这样就导致102的上网请求数据包无法发送给服务器，修改方案是利用VPNService类里的protect方法保护自己的socket。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!protect(Integer.parseInt(sockfd))) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Cannot protect the mTunnel"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如上所示，其中<code>socketfd</code>即为C后台与服务端链接时的Socket，通过JNI或者管道方式从C后台读取即可。</p>
-<h2 id="数据包读取不完整">数据包读取不完整</h2>
-<p>在一开始的实现中有时候会发现会读取到非预设类型的报文，也就是说这些报文是读取不完整的，在传输过程中被截断或者读取时未读取完整，导致数据混乱，查阅相关资料后与服务器端一同重新定义Message结构体（见【manage_data线程】一节），并且在读取数据包时确保每次读取<code>sizeof(Msg_Hdr)</code>个字节或者<code>msg_hdr.length</code>个字节data字段，从而避免粘包现象。</p>
+<h2 id="数据包读取不完整"><a href="#数据包读取不完整" class="headerlink" title="数据包读取不完整"></a>数据包读取不完整</h2><p>在一开始的实现中有时候会发现会读取到非预设类型的报文，也就是说这些报文是读取不完整的，在传输过程中被截断或者读取时未读取完整，导致数据混乱，查阅相关资料后与服务器端一同重新定义Message结构体（见【manage_data线程】一节），并且在读取数据包时确保每次读取<code>sizeof(Msg_Hdr)</code>个字节或者<code>msg_hdr.length</code>个字节data字段，从而避免粘包现象。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">size_t</span> needbs = <span class="keyword">sizeof</span>(<span class="keyword">struct</span> Msg_Hdr);</span><br><span class="line">n = read(fd, &amp;msg, needbs);</span><br><span class="line"><span class="keyword">if</span>(n &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    LOGE(<span class="string">"read sockfd %d error: %s \n"</span>,fd,strerror(errno));</span><br><span class="line">    kill_myself();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">0</span>) &#123;</span><br><span class="line">    LOGE(<span class="string">"recv 0 byte from server, close sockfd %d \n"</span>,fd);</span><br><span class="line">    kill_myself();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(n == needbs)&#123;</span><br><span class="line">    process_payload:</span><br><span class="line">    <span class="keyword">if</span>(msg.hdr.type != <span class="number">100</span> &amp;&amp; msg.hdr.type != <span class="number">104</span>) &#123;</span><br><span class="line">        n = read(fd, ipv4_payload, msg.hdr.length);</span><br><span class="line">        <span class="keyword">if</span>(n != msg.hdr.length) &#123;</span><br><span class="line">            <span class="comment">/*做出对应处理*/</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(n &lt; msg.hdr.length)</span><br><span class="line">            n += read(fd, ipv4_payload + n, msg.hdr.length-n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 处理读取到的数据</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;<span class="comment">// 读到长度小于头长度说明可能出错(也有可能粘包,继续读取)</span></span><br><span class="line">    <span class="keyword">while</span> (n &lt; needbs)</span><br><span class="line">        n += read(fd, ((<span class="keyword">char</span>*)&amp;msg) + n , needbs-n);</span><br><span class="line">    <span class="keyword">goto</span> process_payload;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="异常退出问题">异常退出问题</h2>
-<p>在测试时发现有时候应用程序会突然崩掉，直接被系统kill掉，输出调试信息后发现总是会报如下错误</p>
+<h2 id="异常退出问题"><a href="#异常退出问题" class="headerlink" title="异常退出问题"></a>异常退出问题</h2><p>在测试时发现有时候应用程序会突然崩掉，直接被系统kill掉，输出调试信息后发现总是会报如下错误</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">05</span>-<span class="number">10</span> <span class="number">19</span>:<span class="number">28</span>:<span class="number">45.915</span> <span class="number">24188</span>-<span class="number">24188</span>/com.example.ipv4_over_ipv6 A/libc: Fatal signal <span class="number">5</span> (SIGTRAP), code <span class="number">1</span> in tid <span class="number">24188</span> (.ipv4_over_ipv6)</span><br></pre></td></tr></table></figure>
 <p>Google之后发现是因为通过JNI方式调用的C后台的部分函数忘记了return, 而编译app时并不会检查出这种错误，而运行时检测出该问题之后则会直接kill整个程序，解决方法是添加对应的返回值语句即可。</p>
-<h1 id="实验心得体会">实验心得体会</h1>
-<p>在这次实验中，我们掌握了Android下应用程序开发环境的搭建和使用，理解了IPV4 over IPv6的原理，掌握了Android下VPN的原理及实现，掌握了JNI调用原理，并实现了一个测试通过，效果良好，性能稳定的客户端。除此之外，我们对于原理课上所讲的IPV4 over IPv6又有了更深的理解和体会，对IPV6数据包和IPV4数据包的格式和特点有了更深入的认识，加深了对socket的理解，特别是对数据包的读取粘包问题的处理，让我们对网络包的传输有了更深入的认识。</p>
+<h1 id="实验心得体会"><a href="#实验心得体会" class="headerlink" title="实验心得体会"></a>实验心得体会</h1><p>在这次实验中，我们掌握了Android下应用程序开发环境的搭建和使用，理解了IPV4 over IPv6的原理，掌握了Android下VPN的原理及实现，掌握了JNI调用原理，并实现了一个测试通过，效果良好，性能稳定的客户端。除此之外，我们对于原理课上所讲的IPV4 over IPv6又有了更深的理解和体会，对IPV6数据包和IPV4数据包的格式和特点有了更深入的认识，加深了对socket的理解，特别是对数据包的读取粘包问题的处理，让我们对网络包的传输有了更深入的认识。</p>
 <p>感谢老师和助教的悉心指导。</p>
 
       
@@ -753,8 +714,8 @@ function loopy() {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/密码学实验2.html" rel="next" title="密码学实验2">
-                <i class="fa fa-chevron-left"></i> 密码学实验2
+              <a href="/article/密码学第三次大作业.html" rel="next" title="密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议">
+                <i class="fa fa-chevron-left"></i> 密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议
               </a>
             
           </div>
@@ -763,8 +724,8 @@ function loopy() {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/密码学第三次大作业.html" rel="prev" title="密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议">
-                密码学:设计一个安全的（没有中间人攻击）的Diffie-Hellman密钥交换协议 <i class="fa fa-chevron-right"></i>
+              <a href="/article/校园搜索引擎.html" rel="prev" title="校园搜索引擎">
+                校园搜索引擎 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -842,7 +803,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -954,7 +915,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#客户端实验要求"><span class="nav-number">2.</span> <span class="nav-text">客户端实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容"><span class="nav-number">3.</span> <span class="nav-text">实验内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前台是java语言的显示界面"><span class="nav-number">3.1.</span> <span class="nav-text">前台是java语言的显示界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台是c语言客户端与4over6隧道服务器之间的数据交互"><span class="nav-number">3.2.</span> <span class="nav-text">后台是C语言客户端与4over6隧道服务器之间的数据交互</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验原理"><span class="nav-number">4.</span> <span class="nav-text">实验原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向android终端的隧道原理"><span class="nav-number">4.1.</span> <span class="nav-text">面向Android终端的隧道原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vpn-service-原理"><span class="nav-number">4.2.</span> <span class="nav-text">VPN Service 原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体实现"><span class="nav-number">5.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端实现内容"><span class="nav-number">5.1.</span> <span class="nav-text">前端实现内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端流程及完成的工作"><span class="nav-number">5.1.1.</span> <span class="nav-text">前端流程及完成的工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体实现-1"><span class="nav-number">5.1.2.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#界面"><span class="nav-number">5.1.2.1.</span> <span class="nav-text">界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ui主线程"><span class="nav-number">5.1.2.2.</span> <span class="nav-text">UI主线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vpnservice"><span class="nav-number">5.1.2.3.</span> <span class="nav-text">VPNService</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台实现内容"><span class="nav-number">5.2.</span> <span class="nav-text">后台实现内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#后台实现流程及内容"><span class="nav-number">5.2.1.</span> <span class="nav-text">后台实现流程及内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体实现-2"><span class="nav-number">5.2.2.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#与服务器建立socket连接"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">与服务器建立Socket连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manage_data线程"><span class="nav-number">5.2.2.2.</span> <span class="nav-text">manage_data线程</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验结果及分析"><span class="nav-number">6.</span> <span class="nav-text">实验结果及分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">7.</span> <span class="nav-text">遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接vpn之后无法与服务器之间进行通信"><span class="nav-number">7.1.</span> <span class="nav-text">连接VPN之后无法与服务器之间进行通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据包读取不完整"><span class="nav-number">7.2.</span> <span class="nav-text">数据包读取不完整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常退出问题"><span class="nav-number">7.3.</span> <span class="nav-text">异常退出问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验心得体会"><span class="nav-number">8.</span> <span class="nav-text">实验心得体会</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#客户端实验要求"><span class="nav-number">2.</span> <span class="nav-text">客户端实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容"><span class="nav-number">3.</span> <span class="nav-text">实验内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前台是java语言的显示界面"><span class="nav-number">3.1.</span> <span class="nav-text">前台是java语言的显示界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台是C语言客户端与4over6隧道服务器之间的数据交互"><span class="nav-number">3.2.</span> <span class="nav-text">后台是C语言客户端与4over6隧道服务器之间的数据交互</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验原理"><span class="nav-number">4.</span> <span class="nav-text">实验原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向Android终端的隧道原理"><span class="nav-number">4.1.</span> <span class="nav-text">面向Android终端的隧道原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPN-Service-原理"><span class="nav-number">4.2.</span> <span class="nav-text">VPN Service 原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体实现"><span class="nav-number">5.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端实现内容"><span class="nav-number">5.1.</span> <span class="nav-text">前端实现内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端流程及完成的工作"><span class="nav-number">5.1.1.</span> <span class="nav-text">前端流程及完成的工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体实现-1"><span class="nav-number">5.1.2.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#界面"><span class="nav-number">5.1.2.1.</span> <span class="nav-text">界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI主线程"><span class="nav-number">5.1.2.2.</span> <span class="nav-text">UI主线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VPNService"><span class="nav-number">5.1.2.3.</span> <span class="nav-text">VPNService</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台实现内容"><span class="nav-number">5.2.</span> <span class="nav-text">后台实现内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#后台实现流程及内容"><span class="nav-number">5.2.1.</span> <span class="nav-text">后台实现流程及内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体实现-2"><span class="nav-number">5.2.2.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#与服务器建立Socket连接"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">与服务器建立Socket连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manage-data线程"><span class="nav-number">5.2.2.2.</span> <span class="nav-text">manage_data线程</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验结果及分析"><span class="nav-number">6.</span> <span class="nav-text">实验结果及分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">7.</span> <span class="nav-text">遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接VPN之后无法与服务器之间进行通信"><span class="nav-number">7.1.</span> <span class="nav-text">连接VPN之后无法与服务器之间进行通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据包读取不完整"><span class="nav-number">7.2.</span> <span class="nav-text">数据包读取不完整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常退出问题"><span class="nav-number">7.3.</span> <span class="nav-text">异常退出问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验心得体会"><span class="nav-number">8.</span> <span class="nav-text">实验心得体会</span></a></li></ol></div>
             
 
           </div>

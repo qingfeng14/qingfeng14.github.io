@@ -132,7 +132,7 @@ function loopy() {
 <meta property="og:description" content="在Dryad论文中，有以下的查询语句，在上课的时候已经详细说明了如何将SQL语句转换成DAG1（被称为是Schema DAG，类似C++里面的class）,之后再将DAG1与具体的数据分布结合在一起，形成DAG2（被称为是Instance DAG，类似C++里面的Object）。课堂中的查询语句是： 12345678910111213select distinct p.objIDfrom phot">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://d26dzxoao6i3hh.cloudfront.net/items/3y20161P2o0V1B0z2d0c/新文档%202017-07-04%20-%20第1页.jpg">
-<meta property="og:image" content="https://d26dzxoao6i3hh.cloudfront.net/items/1u3I1t0s0m1R0o1P0k2M/新文档%202017-07-04%20(1)%20-%20第1页.jpg">
+<meta property="og:image" content="https://d26dzxoao6i3hh.cloudfront.net/items/1u3I1t0s0m1R0o1P0k2M/新文档%202017-07-04%20(1">
 <meta property="og:updated_time" content="2017-07-04T15:37:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Massive-Data-Process-Homework-4">
@@ -482,7 +482,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  395
+                  396
                 </span>
               
 
@@ -519,21 +519,15 @@ function loopy() {
       
         <p>在Dryad论文中，有以下的查询语句，在上课的时候已经详细说明了如何将SQL语句转换成DAG1（被称为是Schema DAG，类似C++里面的class）,之后再将DAG1与具体的数据分布结合在一起，形成DAG2（被称为是Instance DAG，类似C++里面的Object）。课堂中的查询语句是：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> p.objID</span><br><span class="line"><span class="keyword">from</span> photoObjAll p</span><br><span class="line"><span class="keyword">join</span> neighbors n — <span class="keyword">call</span> this <span class="keyword">join</span> “X”</span><br><span class="line"><span class="keyword">on</span> p.objID = n.objID</span><br><span class="line"><span class="keyword">and</span> n.objID &lt; n.neighborObjID</span><br><span class="line"><span class="keyword">and</span> p.mode = <span class="number">1</span></span><br><span class="line"><span class="keyword">join</span> photoObjAll l — <span class="keyword">call</span> this <span class="keyword">join</span> “Y”</span><br><span class="line"><span class="keyword">on</span> l.objid = n.neighborObjID</span><br><span class="line"><span class="keyword">and</span> l.mode = <span class="number">1</span></span><br><span class="line"><span class="keyword">and</span> <span class="keyword">abs</span>((p.u-p.g)-(l.u-l.g))&lt;<span class="number">0.05</span></span><br><span class="line"><span class="keyword">and</span> <span class="keyword">abs</span>((p.g-p.r)-(l.g-l.r))&lt;<span class="number">0.05</span></span><br><span class="line"><span class="keyword">and</span> <span class="keyword">abs</span>((p.r-p.i)-(l.r-l.i))&lt;<span class="number">0.05</span></span><br><span class="line"><span class="keyword">and</span> <span class="keyword">abs</span>((p.i-p.z)-(l.i-l.z))&lt;<span class="number">0.05</span></span><br></pre></td></tr></table></figure>
-<ol style="list-style-type: decimal">
+<ol>
 <li>参考Spark的编程接口，如果需要达到同样的目的，Spark程序如何编写？</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var p = spark.textFile(photoObjAll)</span><br><span class="line">var n = spark.textFile(neighbors)</span><br><span class="line">var x_join = p.join(n) <span class="comment">// objID, (p, n)</span></span><br><span class="line">x_join = x_join.filter(p.objID &lt; n.neighborObjID).filter(p.mode == <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">sort(x_join, neighborObjID)</span><br><span class="line"></span><br><span class="line">x_join = x_join.<span class="built_in">map</span>(objID =&gt; neighborObjID).reduceByKey(neighborObjID)</span><br><span class="line">var l = spark.textFile(photoObjAll)</span><br><span class="line">y_join = x_join.join(l) <span class="comment">// id, (p, l)</span></span><br><span class="line">y_join.filter(l.mode == <span class="number">1</span> &amp;&amp; <span class="built_in">abs</span>((p.u-p.g)-(l.u-l.g))&lt;<span class="number">0.05</span> &amp;&amp; <span class="built_in">abs</span>((p.g-p.r)-(l.g-l.r))&lt;<span class="number">0.05</span> &amp;&amp; <span class="built_in">abs</span>((p.r-p.i)-(l.r-l.i))&lt;<span class="number">0.05</span> &amp;&amp; <span class="built_in">abs</span>((p.i-p.z)-(l.i-l.z))&lt;<span class="number">0.05</span>)</span><br></pre></td></tr></table></figure>
-<ol start="2" style="list-style-type: decimal">
+<ol start="2">
 <li>如果有四台服务器执行上述的程序，绘制其Schema DAG以及Instance DAG。假设数据通过哈希的方法分布到4台服务器上。不需要考虑服务器出错的情况。</li>
 </ol>
-<div class="figure">
-<img src="https://d26dzxoao6i3hh.cloudfront.net/items/3y20161P2o0V1B0z2d0c/新文档%202017-07-04%20-%20第1页.jpg" alt="Schema DAG">
-<p class="caption">Schema DAG</p>
-</div>
-<div class="figure">
-<img src="https://d26dzxoao6i3hh.cloudfront.net/items/1u3I1t0s0m1R0o1P0k2M/新文档%202017-07-04%20(1)%20-%20第1页.jpg" alt="Instance DAG">
-<p class="caption">Instance DAG</p>
-</div>
+<p><img src="https://d26dzxoao6i3hh.cloudfront.net/items/3y20161P2o0V1B0z2d0c/新文档%202017-07-04%20-%20第1页.jpg" alt="Schema DAG"></p>
+<p><img src="https://d26dzxoao6i3hh.cloudfront.net/items/1u3I1t0s0m1R0o1P0k2M/新文档%202017-07-04%20(1" alt="Instance DAG">%20-%20第1页.jpg)</p>
 
       
     </div>
@@ -686,7 +680,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

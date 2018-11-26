@@ -71,13 +71,6 @@
     </url>
 
     <url>
-        <loc>https://2young.2simple.top/categories/Linux/</loc>
-        <lastmod>2018-11-23T08:13:16.541Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://2young.2simple.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
         <lastmod>2018-11-23T08:13:16.542Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -85,8 +78,15 @@
     </url>
 
     <url>
+        <loc>https://2young.2simple.top/categories/Linux/</loc>
+        <lastmod>2018-11-26T10:14:21.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://2young.2simple.top/categories/Golang/</loc>
-        <lastmod>2018-11-23T08:29:55.011Z</lastmod>
+        <lastmod>2018-11-26T10:14:21.237Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

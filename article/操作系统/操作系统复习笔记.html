@@ -124,20 +124,20 @@ function loopy() {
 
 
 
-<meta name="description" content="关于x86启动后执行的第一条指令及其地址 piazza 1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。 2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = se">
+<meta name="description" content="关于x86启动后执行的第一条指令及其地址piazza 1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。 2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = sel">
 <meta name="keywords" content="操作系统,课程,复习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统复习笔记">
 <meta property="og:url" content="https://2young.2simple.top/article/操作系统/操作系统复习笔记.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="关于x86启动后执行的第一条指令及其地址 piazza 1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。 2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = se">
+<meta property="og:description" content="关于x86启动后执行的第一条指令及其地址piazza 1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。 2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = sel">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/1Y1s3A2p1f1u1n0l2D2c/Image%202017-04-05%20at%208.33.32%20下午.png">
 <meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/2F061T0g091x3M0Q1q0T/Image%202017-04-05%20at%208.35.16%20下午.png">
 <meta property="og:updated_time" content="2017-04-11T17:31:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统复习笔记">
-<meta name="twitter:description" content="关于x86启动后执行的第一条指令及其地址 piazza 1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。 2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = se">
+<meta name="twitter:description" content="关于x86启动后执行的第一条指令及其地址piazza 1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。 2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = sel">
 <meta name="twitter:image" content="https://d3uepj124s5rcx.cloudfront.net/items/1Y1s3A2p1f1u1n0l2D2c/Image%202017-04-05%20at%208.33.32%20下午.png">
 
 
@@ -483,7 +483,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  5,155
+                  5,153
                 </span>
               
 
@@ -518,101 +518,86 @@ function loopy() {
       
 
       
-        <h1 id="关于x86启动后执行的第一条指令及其地址">关于x86启动后执行的第一条指令及其地址</h1>
-<p><a href="https://piazza.com/class/i5j09fnsl7k5x0?cid=770" target="_blank" rel="noopener">piazza</a></p>
+        <h1 id="关于x86启动后执行的第一条指令及其地址"><a href="#关于x86启动后执行的第一条指令及其地址" class="headerlink" title="关于x86启动后执行的第一条指令及其地址"></a>关于x86启动后执行的第一条指令及其地址</h1><p><a href="https://piazza.com/class/i5j09fnsl7k5x0?cid=770" target="_blank" rel="noopener">piazza</a></p>
 <p>1、实模式下，地址为base+eip。第一条指令的地址是FFFFFFF0H = base(FFFF0000H) + EIP(0000FFF0H)。</p>
 <p>2、争端出自于CS。可看看上面我高亮的normally和however部分。简单来讲就是，CS分为两部分，一部分为可见selector，另一部分为隐含base，实模式的一般情况下base = selector&lt;&lt;4，但是，机器刚启动的时候，selector=F000, base=FFFF0000！直到跳转指令以后才变成normally~</p>
 <a id="more"></a>
-<h2 id="例题thu-os-2015-mid-term-2">例题：THU OS 2015 mid term 2</h2>
-<ol style="list-style-type: decimal">
-<li><p>(启动)对于x86机器,加电后处于实模式下,并且cs寄存器的段选择子部分为0xf000, 隐藏的基址部分为0xffff0000,eip寄存器为0xfff0,则此时待执行的指令的物理地址为( 0xfffffff0)</p></li>
-<li><p>(16位实模式)执行完第一条 jmp指令后,cs寄存器的段选择子部分变为0xf000,eip变为 0xe05b,则此时待执行指令的物理地址为()</p></li>
-</ol>
+<h2 id="例题：THU-OS-2015-mid-term-2"><a href="#例题：THU-OS-2015-mid-term-2" class="headerlink" title="例题：THU OS 2015 mid term 2"></a>例题：THU OS 2015 mid term 2</h2><p>1) (启动)对于x86机器,加电后处于实模式下,并且cs寄存器的段选择子部分为0xf000, 隐藏的基址部分为0xffff0000,eip寄存器为0xfff0,则此时待执行的指令的物理地址为( 0xfffffff0) </p>
+<p>2) (16位实模式)执行完第一条 jmp指令后,cs寄存器的段选择子部分变为0xf000,eip变为 0xe05b,则此时待执行指令的物理地址为()</p>
 <p>3） (进入32位保护模式)BIOS会将ucore bootloader 加载到网络地址0x7c00,且设置cs为0x0, eip为0x7c00。在boodoader中,使用 gdt加载了如下全局描述符表,然后进入32位保护模 式。此时为了正常工作。应该用 jmp将cs设置为(=3.1=),将ds/es/fs/gs/ss设置为(=3.2=) 此时若ep为0x7c6d,则实际被执行指令的物理地址为(一33二)</p>
-<h1 id="进程挂起相关">进程挂起相关</h1>
-<p>另一种解决方案是交换。包括把内存中某个进程的一部分或全部移到磁盘中。当内存中<font color="red">没有处于就绪状态的进程时</font>，操作系统就把被阻塞的进程换出到磁盘中的”挂起队列“（suspend queue），即暂时保存从内存中”驱逐“出来的被挂器的进程队列。操作系统在此之后取出<font color="red">挂起队列中的另一个进程，或者接受一个新进程的请求，将其纳入内存运行。</font></p>
+<h1 id="进程挂起相关"><a href="#进程挂起相关" class="headerlink" title="进程挂起相关"></a>进程挂起相关</h1><p>另一种解决方案是交换。包括把内存中某个进程的一部分或全部移到磁盘中。当内存中<font color="red">没有处于就绪状态的进程时</font>，操作系统就把被阻塞的进程换出到磁盘中的”挂起队列“（suspend queue），即暂时保存从内存中”驱逐“出来的被挂器的进程队列。操作系统在此之后取出<font color="red">挂起队列中的另一个进程，或者接受一个新进程的请求，将其纳入内存运行。</font></p>
 <p>“交换”（swapping）是一个I/O操作，因而可能使问题更恶化。但是由于磁盘I/O一般是系统中最快的I/O（相对于磁带或者打印机I/O），所以交换通常会提高性能。</p>
 <ul>
-<li><p>阻塞-&gt;阻塞/挂起：如果<font color="red">没有就绪进程</font>，则至少一个阻塞进程被换出，为另一个没有阻塞的进程让出空间。如果操作系统确定当前正在运行的进程，或者就绪进程为了维护基本的性能要求而<font color="red">需要更多的内存空间</font>，那么，即使有可用的就绪态进程也可能出现这种转换。</p></li>
-<li><p>阻塞挂起-&gt;就绪挂起：如果等待的事件发生了，则处于阻塞/挂起状态的进程可转换到就绪/挂起态。注意，这要求<font color="red">操作系统必须能够得到挂起进程的状态信息</font>。</p></li>
-<li><p>就绪/挂起-&gt;就绪：<font color="red">如果内存中没有就绪态进程，操作系统需要调入一个进程继续执行</font>。此外，当处于就绪/挂起状态的进程比处于就绪态的任何进程的优先级都要高时，也可以进行这种转换。这种情况的产生是由于<font color="red">操作系统设计者规定，调入高优先级的进程比减少交换量更重要。</font></p></li>
-<li><p>就绪-&gt;就绪/挂起：通常，操作系统更倾向于挂起阻塞态进程而不是就绪态进程，因为就绪态进程可以立即执行，而阻塞态进程占用了内存空间但不能执行。但如果释放内存以得到足够空间的唯一方法是挂起一个就绪态进程，那么这种转换也是必需的。并且，<font color="red">如果操作系统确信高优先级的阻塞态进程很快就会就绪，那么它可能选择挂起一个低优先级的就绪态进程，而不是一个高优先级的阻塞态进程。</font></p></li>
+<li><p>阻塞-&gt;阻塞/挂起：如果<font color="red">没有就绪进程</font>，则至少一个阻塞进程被换出，为另一个没有阻塞的进程让出空间。如果操作系统确定当前正在运行的进程，或者就绪进程为了维护基本的性能要求而<font color="red">需要更多的内存空间</font>，那么，即使有可用的就绪态进程也可能出现这种转换。</p>
+</li>
+<li><p>阻塞挂起-&gt;就绪挂起：如果等待的事件发生了，则处于阻塞/挂起状态的进程可转换到就绪/挂起态。注意，这要求<font color="red">操作系统必须能够得到挂起进程的状态信息</font>。</p>
+</li>
+<li><p>就绪/挂起-&gt;就绪：<font color="red">如果内存中没有就绪态进程，操作系统需要调入一个进程继续执行</font>。此外，当处于就绪/挂起状态的进程比处于就绪态的任何进程的优先级都要高时，也可以进行这种转换。这种情况的产生是由于<font color="red">操作系统设计者规定，调入高优先级的进程比减少交换量更重要。</font></p>
+</li>
+<li><p>就绪-&gt;就绪/挂起：通常，操作系统更倾向于挂起阻塞态进程而不是就绪态进程，因为就绪态进程可以立即执行，而阻塞态进程占用了内存空间但不能执行。但如果释放内存以得到足够空间的唯一方法是挂起一个就绪态进程，那么这种转换也是必需的。并且，<font color="red">如果操作系统确信高优先级的阻塞态进程很快就会就绪，那么它可能选择挂起一个低优先级的就绪态进程，而不是一个高优先级的阻塞态进程。</font></p>
+</li>
 </ul>
-<p><font color="red"> 通俗的说，就是挂起不挂起，不光要考虑为进程让出空间，不光要考虑是否就绪，还要考虑进程的优先级。</font></p>
+<font color="red"> 通俗的说，就是挂起不挂起，不光要考虑为进程让出空间，不光要考虑是否就绪，还要考虑进程的优先级。</font>
+
 <ul>
-<li><p>新建-&gt;就绪挂起及新建-&gt;就绪：当创建一个新进程时，该进程或者加入就绪队列，或者加入就绪/挂起队列。不论哪种情况，操作系统都必须建立一些表管理进程，并为进程分配地址空间。<font color="red">操作系统可能更倾向于在初期执行这些辅助工作，这使得它可以维护大量的未阻塞的进程</font>。通过这一策略，内存中经常会没有足够的足够的空间分配给新进程。因此使用了（新建-&gt;就绪/挂起）转换。另一方面，我们可以证明创建进程时适时（just-in-time）原理，即尽可能推迟创建进程以减少操作系统的开销，并在系统被阻塞态进程阻塞时允许操作系统执行进程创建任务。</p></li>
-<li><p>阻塞/挂起-&gt;阻塞：这种转化在设计中比较少见，如果一个进程没有准备好执行，并且不在内存中，调入它又有什么意义？但是考虑到下面的情况：<font color="red">一个进程终止，释放了一些内存空间，阻塞/挂起队列中有一个进程优先级比就绪/挂起队列中任何进程的优先级都要高，并且操作系统有理由相信阻塞进程的事件很快就会发射管，这时，把阻塞进程而不是就绪进程调入内存是合理的。</font></p></li>
-<li><p>运行-&gt;就绪/挂起：通常当分配给一个运行进程的时间期满时，它将转换到就绪态。但是，<font color="red">如果由于位于阻塞/挂起队列中具有较高优先级的进程变得不再被阻塞，操作系统抢占这个进程，也可以直接把这个运行进程转换到就绪/挂起队列中，并释放一些内存空间。</font></p></li>
-<li><p>各种状态/退出：在典型情况下，一个进程在运行时终止，或者是因为它已经完成，或者是因为出现了一些错误条件。但是，<font color="red">在某些操作系统中，一个进程可以被创建它的进程终止，或者当父进程终止时终止。如果允许这样，则进程在任何状态时都可以转换到退出态。</font></p></li>
+<li><p>新建-&gt;就绪挂起及新建-&gt;就绪：当创建一个新进程时，该进程或者加入就绪队列，或者加入就绪/挂起队列。不论哪种情况，操作系统都必须建立一些表管理进程，并为进程分配地址空间。<font color="red">操作系统可能更倾向于在初期执行这些辅助工作，这使得它可以维护大量的未阻塞的进程</font>。通过这一策略，内存中经常会没有足够的足够的空间分配给新进程。因此使用了（新建-&gt;就绪/挂起）转换。另一方面，我们可以证明创建进程时适时（just-in-time）原理，即尽可能推迟创建进程以减少操作系统的开销，并在系统被阻塞态进程阻塞时允许操作系统执行进程创建任务。</p>
+</li>
+<li><p>阻塞/挂起-&gt;阻塞：这种转化在设计中比较少见，如果一个进程没有准备好执行，并且不在内存中，调入它又有什么意义？但是考虑到下面的情况：<font color="red">一个进程终止，释放了一些内存空间，阻塞/挂起队列中有一个进程优先级比就绪/挂起队列中任何进程的优先级都要高，并且操作系统有理由相信阻塞进程的事件很快就会发射管，这时，把阻塞进程而不是就绪进程调入内存是合理的。</font></p>
+</li>
+<li><p>运行-&gt;就绪/挂起：通常当分配给一个运行进程的时间期满时，它将转换到就绪态。但是，<font color="red">如果由于位于阻塞/挂起队列中具有较高优先级的进程变得不再被阻塞，操作系统抢占这个进程，也可以直接把这个运行进程转换到就绪/挂起队列中，并释放一些内存空间。</font></p>
+</li>
+<li><p>各种状态/退出：在典型情况下，一个进程在运行时终止，或者是因为它已经完成，或者是因为出现了一些错误条件。但是，<font color="red">在某些操作系统中，一个进程可以被创建它的进程终止，或者当父进程终止时终止。如果允许这样，则进程在任何状态时都可以转换到退出态。</font></p>
+</li>
 </ul>
-<h1 id="cow机制">COW机制</h1>
-<p>COW机制简单来说就是fork的时候，子进程和父进程共用相同的内存，只有在修改的时候，拷贝原有内存当做一份私有的，在私有的基础上修改。</p>
+<h1 id="COW机制"><a href="#COW机制" class="headerlink" title="COW机制"></a>COW机制</h1><p>COW机制简单来说就是fork的时候，子进程和父进程共用相同的内存，只有在修改的时候，拷贝原有内存当做一份私有的，在私有的基础上修改。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. fork的时候，进行如下处理。</span><br><span class="line">    1. VM_SHARE = 0，且页表P=1，将父进程的页表中的PTE_W记为0，这样这份内存只读不写。</span><br><span class="line">        如果考虑换入换出，应该注意，该页不能被换出，不然页表会不一致，所以我采取的办法是将该页设置为不可换出。</span><br><span class="line">    2. VM_SHARE = 0，且页表P=0，那么我们将页换入，然后按1和3做，或者也可以直接拷贝，并写入硬盘（比较麻烦）。</span><br><span class="line">    3. VM_SHARE = 1，不用cow机制。</span><br><span class="line">    段机制在这里不是特别好处理，我认为vma的管理就可以一定程度上取代段机制。</span><br><span class="line">2. 访问的时候如果发现pagefault，查看error_code和对应vmm的权限，如果发现</span><br><span class="line">    页存在，写出错，vmm可以写，那么我们进行处理。</span><br><span class="line">        1. VM_SHARE = 1，也就是说这块内存都是共享的，那么我们不应该对这块内存使用cow。</span><br><span class="line">        2. VM_SHARE = 0，新建对应的页表。</span><br><span class="line">    页存在，写出错，vmm不可以写，那就是错误异常了。</span><br><span class="line">    页不存在，写出错，vmm可以写</span><br><span class="line">        那么我们应该先把这一页换进来，再进行上面处理。</span><br></pre></td></tr></table></figure>
-<h1 id="page_fault">Page_fault</h1>
-<div class="figure">
-<img src="https://d3uepj124s5rcx.cloudfront.net/items/1Y1s3A2p1f1u1n0l2D2c/Image%202017-04-05%20at%208.33.32%20下午.png" alt="Page_fault">
-<p class="caption">Page_fault</p>
-</div>
-<div class="figure">
-<img src="https://d3uepj124s5rcx.cloudfront.net/items/2F061T0g091x3M0Q1q0T/Image%202017-04-05%20at%208.35.16%20下午.png" alt="page_fault">
-<p class="caption">page_fault</p>
-</div>
-<h1 id="造成page_fault的情况">造成page_fault的情况</h1>
-<h2 id="造成page-fault有两种情况">造成page fault有两种情况</h2>
-<ul>
+<h1 id="Page-fault"><a href="#Page-fault" class="headerlink" title="Page_fault"></a>Page_fault</h1><p><img src="https://d3uepj124s5rcx.cloudfront.net/items/1Y1s3A2p1f1u1n0l2D2c/Image%202017-04-05%20at%208.33.32%20下午.png" alt="Page_fault"></p>
+<p><img src="https://d3uepj124s5rcx.cloudfront.net/items/2F061T0g091x3M0Q1q0T/Image%202017-04-05%20at%208.35.16%20下午.png" alt="page_fault"></p>
+<h1 id="造成page-fault的情况"><a href="#造成page-fault的情况" class="headerlink" title="造成page_fault的情况"></a>造成page_fault的情况</h1><h2 id="造成page-fault有两种情况"><a href="#造成page-fault有两种情况" class="headerlink" title="造成page fault有两种情况"></a>造成page fault有两种情况</h2><ul>
 <li>线性地址转换无效；</li>
 <li>线性地址转换有效，但权限不合法。</li>
 </ul>
-<h2 id="线性地址转换无效的原因">线性地址转换无效的原因</h2>
-<ul>
+<h2 id="线性地址转换无效的原因"><a href="#线性地址转换无效的原因" class="headerlink" title="线性地址转换无效的原因"></a>线性地址转换无效的原因</h2><ul>
 <li>页表项的P位为0，或保留位reserved为1。</li>
 </ul>
-<h2 id="error-code的p位">error code的P位</h2>
-<ul>
+<h2 id="error-code的P位"><a href="#error-code的P位" class="headerlink" title="error code的P位"></a>error code的P位</h2><ul>
 <li>如果页表项的P位为0，则error code的P位为0。</li>
 </ul>
-<p>error code的P位 - P位为0时，表示page-fault缺页（准确来说，是entry的P位为0）。 - P位为1时，则不是因为缺页，而是因为page-level protection violation，即我们应该检测后面的标志位。</p>
+<p>error code的P位</p>
+<ul>
+<li>P位为0时，表示page-fault缺页（准确来说，是entry的P位为0）。</li>
+<li>P位为1时，则不是因为缺页，而是因为page-level protection violation，即我们应该检测后面的标志位。</li>
+</ul>
 <p>ucore的do_pgfault中</p>
 <ul>
 <li>P为0的处理，即case 0和case 2，作为缺页处理，没问题。</li>
-<li>P为1时，这时应该检测后面的标志位。先看case 1，ucore直接failed，也就是说，非缺页的读操作产生的page fault，ucore不做处理（后面的U/S、RSVD或I/D的错误），可以理解，没问题。再看看case 3，ucore先检测虚地址管理vma的写位，如果vma有写的权限，而发生了page fault，那么可能是entry没有写权限，因此可以尝试在entry添加上写权限。问题在于，如果不是因为entry的写权限造成的page fault的呢？此时ucore将陷入死循环！ 简单总结</li>
+<li>P为1时，这时应该检测后面的标志位。先看case 1，ucore直接failed，也就是说，非缺页的读操作产生的page fault，ucore不做处理（后面的U/S、RSVD或I/D的错误），可以理解，没问题。再看看case 3，ucore先检测虚地址管理vma的写位，如果vma有写的权限，而发生了page fault，那么可能是entry没有写权限，因此可以尝试在entry添加上写权限。问题在于，如果不是因为entry的写权限造成的page fault的呢？此时ucore将陷入死循环！<br>简单总结</li>
 </ul>
 <p>ucore的page fault处理P=1,W/R=1的情况时，只处理了因为entry缺少写权限的情况，而没有考虑entry有写权限而由其它权限造成的异常，该处理可能导致ucore陷入死循环。赞同高思达同学对此处的质疑。</p>
-<h2 id="缺页中断">缺页中断</h2>
-<p>①页表项全为0——虚拟地址与物理地址未建立映射关系或已被撤销。 ②物理页面不在内存中——需要进行换页机制。 ③访问权限不够——输出错误信息，并退出。</p>
-<h1 id="孤儿进程与僵尸进程">孤儿进程与僵尸进程</h1>
-<p>我们知道在unix/linux中，正常情况下，<font color="red">子进程是通过父进程创建的，子进程再创建新的进程</font>。子进程的结束和父进程的运行是一个<font color="red">异步过程</font>,即父进程永远无法预测子进程到底什么时候结束。 当一个 进程完成它的工作终止之后，<font color="red">它的父进程需要调用wait()或者waitpid()系统调用取得子进程的终止状态。</font></p>
+<h2 id="缺页中断"><a href="#缺页中断" class="headerlink" title="缺页中断"></a>缺页中断</h2><p>①页表项全为0——虚拟地址与物理地址未建立映射关系或已被撤销。<br>②物理页面不在内存中——需要进行换页机制。<br>③访问权限不够——输出错误信息，并退出。  </p>
+<h1 id="孤儿进程与僵尸进程"><a href="#孤儿进程与僵尸进程" class="headerlink" title="孤儿进程与僵尸进程"></a>孤儿进程与僵尸进程</h1><p>我们知道在unix/linux中，正常情况下，<font color="red">子进程是通过父进程创建的，子进程再创建新的进程</font>。子进程的结束和父进程的运行是一个<font color="red">异步过程</font>,即父进程永远无法预测子进程到底什么时候结束。 当一个 进程完成它的工作终止之后，<font color="red">它的父进程需要调用wait()或者waitpid()系统调用取得子进程的终止状态。</font></p>
 <p>孤儿进程：一个父进程退出，而它的一个或多个子进程还在运行，那么那些子进程将成为孤儿进程。孤儿进程将被init进程(进程号为1)所收养，并由init进程对它们完成状态收集工作。</p>
 <p>僵尸进程：一个进程使用fork创建子进程，如果子进程退出，而父进程并没有调用wait或waitpid获取子进程的状态信息，那么子进程的进程描述符仍然保存在系统中。这种进程称之为僵死进程。</p>
 <p>子进程通过exit()退出时，父进程既没有结束，也没有通过wait()等待子进程结束，则子进程成为“僵尸进程(zombie)</p>
 <p>unix提供了一种机制可以保证只要父进程想知道子进程结束时的状态信息， 就可以得到。这种机制就是: 在每个进程退出的时候,内核释放该进程所有的资源,包括打开的文件,占用的内存等。 <font color="red">但是仍然为其保留一定的信息</font>(包括进程号the process ID,退出状态the termination status of the process,运行时间the amount of CPU time taken by the process等)。<font color="red">直到父进程通过wait / waitpid来取时才释放</font>。 但这样就导致了问题，如果进程不调用wait / waitpid的话， 那么保留的那段信息就不会释放，其进程号就会一直被占用，但是系统所能使用的进程号是有限的，如果大量的产生僵死进程，将因为没有可用的进程号而导致系统不能产生新的进程. <font color="red">此即为僵尸进程的危害</font>，应当避免。</p>
-<p><font color="red">孤儿进程是没有父进程的进程，孤儿进程这个重任就落到了init进程身上</font>，init进程就好像是一个民政局，专门负责处理孤儿进程的善后工作。<font color="red">每当出现一个孤儿进程的时候，内核就把孤 儿进程的父进程设置为init</font>，而init进程会循环地wait()它的已经退出的子进程。这样，当一个孤儿进程凄凉地结束了其生命周期的时候，init进程就会代表党和政府出面处理它的一切善后工作。因此孤儿进程并不会有什么危害。</p>
-<p>任何一个子进程(init除外)在exit()之后，并非马上就消失掉，而是留下一个称为僵尸进程(Zombie)的数据结构，等待父进程处理。这是每个 子进程在结束时都要经过的阶段。如果子进程在exit()之后，父进程没有来得及处理，这时用ps命令就能看到子进程的状态是“Z”。如果父进程能及时 处理，可能用ps命令就来不及看到子进程的僵尸状态，<font color="red">但这并不等于子进程不经过僵尸状态。</font> <font color="red">如果父进程在子进程结束之前退出，则子进程将由init接管</font>。init将会以父进程的身份对僵尸状态的子进程进行处理。</p>
-<p>设置僵死状态的目的是<font color="red">维护子进程的信息，以便父进程在以后某个时候获取</font>。这些信息包括了子进程的进程ID、终止状态以及资源利用信息（CPU时间、内存使用量等等）。如果一个进程终止（使其所有子进程变成孤儿进程），而该进程有子进程处于僵死状态，<font color="red">那么它的所有僵死子进程的父进程ID将被重置为1（init进程）。</font>继承这些子进程的init进程将清理它们（也就是init进程将wait它们，从而除去它们的僵死状态）。</p>
-<h1 id="belady现象">Belady现象</h1>
-<p>Clock算法有Belady现象</p>
-<p>123412512345</p>
-<p><a href="https://piazza.com/class/i5j09fnsl7k5x0?cid=214" target="_blank" rel="noopener">实例</a></p>
-<h1 id="x86寄存器">X86寄存器</h1>
-<h2 id="通用寄存器">通用寄存器</h2>
-<h2 id="段寄存器-cs代码段-ds数据段">段寄存器 CS(代码段) DS(数据段)</h2>
-<h2 id="指令寄存器-和标志寄存器">指令寄存器 和标志寄存器</h2>
-<p>EIP：指令寄存器， EIP的低16位即8086的ip， 储存的是下一条要执行的指令的内存地址，在分段地址转换中，表示指令的<font color="red">段内便宜地址</font></p>
-<p>EFLAGS: 标志寄存器， 中断允许标志位<em>（IF）</em>, CLI（禁止中断）、STI两个命令控制， CF,PF，ZF等等寄存器</p>
-<h1 id="用户态或内核态下的中断处理有什么区别在trapframe中有什么体现">用户态或内核态下的中断处理有什么区别？在trapframe中有什么体现</h1>
-<p>用户态进入中断时，由于涉及到从用户态进入内核态，需要从用户栈切换到内核栈，因此需要多保存ss（堆栈段）和esp（栈顶）两个寄存器，先在栈中压入这两个值。再压入error code，cs，eip，flags。</p>
+<font color="red">孤儿进程是没有父进程的进程，孤儿进程这个重任就落到了init进程身上</font>，init进程就好像是一个民政局，专门负责处理孤儿进程的善后工作。<font color="red">每当出现一个孤儿进程的时候，内核就把孤 儿进程的父进程设置为init</font>，而init进程会循环地wait()它的已经退出的子进程。这样，当一个孤儿进程凄凉地结束了其生命周期的时候，init进程就会代表党和政府出面处理它的一切善后工作。因此孤儿进程并不会有什么危害。<br><br>任何一个子进程(init除外)在exit()之后，并非马上就消失掉，而是留下一个称为僵尸进程(Zombie)的数据结构，等待父进程处理。这是每个 子进程在结束时都要经过的阶段。如果子进程在exit()之后，父进程没有来得及处理，这时用ps命令就能看到子进程的状态是“Z”。如果父进程能及时 处理，可能用ps命令就来不及看到子进程的僵尸状态，<font color="red">但这并不等于子进程不经过僵尸状态。</font>  <font color="red">如果父进程在子进程结束之前退出，则子进程将由init接管</font>。init将会以父进程的身份对僵尸状态的子进程进行处理。<br><br>设置僵死状态的目的是<font color="red">维护子进程的信息，以便父进程在以后某个时候获取</font>。这些信息包括了子进程的进程ID、终止状态以及资源利用信息（CPU时间、内存使用量等等）。如果一个进程终止（使其所有子进程变成孤儿进程），而该进程有子进程处于僵死状态，<font color="red">那么它的所有僵死子进程的父进程ID将被重置为1（init进程）。</font>继承这些子进程的init进程将清理它们（也就是init进程将wait它们，从而除去它们的僵死状态）。<br><br># Belady现象<br><br>Clock算法有Belady现象<br><br>123412512345<br><br><a href="https://piazza.com/class/i5j09fnsl7k5x0?cid=214" target="_blank" rel="noopener">实例</a><br><br><br># X86寄存器<br><br>## 通用寄存器<br>## 段寄存器 CS(代码段) DS(数据段)<br>## 指令寄存器 和标志寄存器<br>EIP：指令寄存器， EIP的低16位即8086的ip， 储存的是下一条要执行的指令的内存地址，在分段地址转换中，表示指令的<font color="red">段内便宜地址</font>
+
+<p>EFLAGS: 标志寄存器， 中断允许标志位<em>（IF）</em>, CLI（禁止中断）、STI两个命令控制，<br>CF,PF，ZF等等寄存器</p>
+<h1 id="用户态或内核态下的中断处理有什么区别？在trapframe中有什么体现"><a href="#用户态或内核态下的中断处理有什么区别？在trapframe中有什么体现" class="headerlink" title="用户态或内核态下的中断处理有什么区别？在trapframe中有什么体现"></a>用户态或内核态下的中断处理有什么区别？在trapframe中有什么体现</h1><p>用户态进入中断时，由于涉及到从用户态进入内核态，需要从用户栈切换到内核栈，因此需要多保存ss（堆栈段）和esp（栈顶）两个寄存器，先在栈中压入这两个值。再压入error code，cs，eip，flags。</p>
 <p>而内核态进入中断时，不需要设计栈的切换，因此只需要压入error code，cs，eip，flags。</p>
 <p>在trapframe数据结构中：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">struct trapframe &#123;</span><br><span class="line">    struct pushregs tf_regs;</span><br><span class="line">    uint16_t tf_gs;</span><br><span class="line">    uint16_t tf_padding0;</span><br><span class="line">    uint16_t tf_fs;</span><br><span class="line">    uint16_t tf_padding1;</span><br><span class="line">    uint16_t tf_es;</span><br><span class="line">    uint16_t tf_padding2;</span><br><span class="line">    uint16_t tf_ds;</span><br><span class="line">    uint16_t tf_padding3;</span><br><span class="line">    uint32_t tf_trapno;</span><br><span class="line">    /* below here defined by x86 hardware */</span><br><span class="line">    uint32_t tf_err;</span><br><span class="line">    uintptr_t tf_eip;</span><br><span class="line">    uint16_t tf_cs;</span><br><span class="line">    uint16_t tf_padding4;</span><br><span class="line">    uint32_t tf_eflags;</span><br><span class="line">    /* below here only when crossing rings, such as from user to kernel */</span><br><span class="line">    uintptr_t tf_esp;</span><br><span class="line">    uint16_t tf_ss;</span><br><span class="line">    uint16_t tf_padding5;</span><br><span class="line">&#125; __attribute__((packed));</span><br></pre></td></tr></table></figure>
 <p>注释的那一行“below here only hwn crossing rings”，就表示ss和esp只需要在切换特权级（即从用户态到内核态）时需要保存。</p>
-<h1 id="x86特权级">x86特权级</h1>
-<p><a href="http://blog.csdn.net/tianhuadihuo/article/details/6845287" target="_blank" rel="noopener">linux操作系统CPL、DPL、RPL说明</a></p>
-<p>Linux操作系统中特权级有3种：CPL,DPL和RPL，每个都是有4个等级。 我对他们的关系理解是这样：一般来说，CPL代表当前代码段的权限，如果它想要去访问一个段或门，首先要看看对方的权限如何，也就是检查对方的DPL，如果满足当前的权限比要访问的权限高，则有可能允许去访问，有些情况我们还要检查 选择子的权限，即RPL,因为我们通过选择子:偏移量的方式去访问一个段，这算是一个访问请求动作，因此 称为请求访问权限RPL(Requst Privilege Level)。当请求权限也满足条件，那么访问就被允许了。</p>
-<p>CPL(Current Privilege Level) CPL是当前执行的任务的特权等级，它存储在CS和SS的第0位和第1位上。(两位表示0~3四个等级) 通常情况下，CPL等于代码所在段的特权等级，当程序转移到不同的代码段时，处理器将改变CPL。 注意:在遇到一致代码段时，情况特殊，一致代码段的特点是：可以被等级相同或者更低特权级的代码访问，当处理器访问一个与当前代码段CPL特权级不同的一致代码段时，CPL不会改变。</p>
-<p>DPL(Descriptor Privilege Level) 表示门或者段的特权级，存储在门（中断描述符IDT）或者段的描述符（GDT）的DPL字段中。正如上面说的那样，当当前代码段试图访问一个段或者门时，其DPL将会和当前特权级CPL以及段或门的选择子比较，根据段或者门的类型不同，DPL的含义不同：</p>
-<p>1.数据段的DPL：规定了访问此段的最低权限。比如一个数据段的DPL是1，那么只有运行在CPL为0或1的程序才可能访问它。为什么说可能呢？因为还有一个比较的因素是RPL。访问数据段要满足有效特权级别（上述）高于数据段的DPL. 2.非一致代码段的DPL(不使用调用门的情况)：DPL规定访问此段的特权，只有CPL与之相等才有可能访问。 3.调用门的DPL，规定了程序或任务访问该门的最低权限。与数据段同。 4.一致代码段和通过调用门访问的非一致代码段，DPL规定访问此段的最高权限。 比如一个段的DPL为2，那么CPL为0或者1的程序都无法访问。 5. TSS的DPL，同数据段。</p>
-<p>RPL（Rquest Privilege Level） RPL是通过选择子的低两位来表现出来的(这么说来，CS和SS也是存放选择子的，同时CPL存放在CS和SS的低两位上，那么对CS和SS来说，选择子的RPL=当前段的CPL)。处理器通过检查RPL和CPL来确认一个访问是否合法。即提出访问的段除了有足够的特权级CPL，如果RPL不够也是不行的(有些情况会忽略RPL检查)。</p>
-<p>为什么要有RPL？ 操作系统往往通过设置RPL的方法来避免低特权级的应用程序访问高特权级的内层数据。 例子情景：调用者调用操作系统的某过程去访问一个段。 当操作系统(被调用过程)从应用程序(调用者)接受一个选择子时，会把选择子的RPL设置称调用者的权限等级，于是操作系统用这个选择子去访问相应的段时(这时CPL为操作系统的等级,因为正在运行操作系统的代码)，处理器会使用调用者的特权级去进行特权级检查，而不是正在实施访问动作的操作系统的特权级(CPL)，这样操作系统就不用以自己的身份去访问(就防止了应用去访问需要高权限的内层数据,除非应用程序本身的权限就足够高)。 那么RPL的作用就比较明显了：因为同一时刻只能有一个CPL，而当低权限的应用去调用拥有至高权限的操作系统的功能来访问一个目标段时，进入操作系统代码段时CPL变成了操作系统的CPL，如果没有RPL，那么权限检查的时候就会用CPL，而这个CPL权限比应用程序高，也就可能去访问需要高权限才能访问的数据，这就不安全了。所以引入RPL，让它去代表访问权限，因此在检查CPL的同时，也会检查RPL.一般来说如果RPL的数字比CPL大(权限比CPL的低)，那么RPL会起决定性作用。</p>
+<h1 id="x86特权级"><a href="#x86特权级" class="headerlink" title="x86特权级"></a>x86特权级</h1><p><a href="http://blog.csdn.net/tianhuadihuo/article/details/6845287" target="_blank" rel="noopener">linux操作系统CPL、DPL、RPL说明</a></p>
+<p>Linux操作系统中特权级有3种：CPL,DPL和RPL，每个都是有4个等级。<br>我对他们的关系理解是这样：一般来说，CPL代表当前代码段的权限，如果它想要去访问一个段或门，首先要看看对方的权限如何，也就是检查对方的DPL，如果满足当前的权限比要访问的权限高，则有可能允许去访问，有些情况我们还要检查<br>选择子的权限，即RPL,因为我们通过选择子:偏移量的方式去访问一个段，这算是一个访问请求动作，因此<br>称为请求访问权限RPL(Requst Privilege Level)。当请求权限也满足条件，那么访问就被允许了。</p>
+<p>CPL(Current Privilege Level)<br>CPL是当前执行的任务的特权等级，它存储在CS和SS的第0位和第1位上。(两位表示0~3四个等级)<br>通常情况下，CPL等于代码所在段的特权等级，当程序转移到不同的代码段时，处理器将改变CPL。<br>注意:在遇到一致代码段时，情况特殊，一致代码段的特点是：可以被等级相同或者更低特权级的代码访问，当处理器访问一个与当前代码段CPL特权级不同的一致代码段时，CPL不会改变。</p>
+<p>DPL(Descriptor Privilege Level)<br>表示门或者段的特权级，存储在门（中断描述符IDT）或者段的描述符（GDT）的DPL字段中。正如上面说的那样，当当前代码段试图访问一个段或者门时，其DPL将会和当前特权级CPL以及段或门的选择子比较，根据段或者门的类型不同，DPL的含义不同：</p>
+<p>1.数据段的DPL：规定了访问此段的最低权限。比如一个数据段的DPL是1，那么只有运行在CPL为0或1的程序才可能访问它。为什么说可能呢？因为还有一个比较的因素是RPL。访问数据段要满足有效特权级别（上述）高于数据段的DPL.<br>2.非一致代码段的DPL(不使用调用门的情况)：DPL规定访问此段的特权，只有CPL与之相等才有可能访问。<br>3.调用门的DPL，规定了程序或任务访问该门的最低权限。与数据段同。<br>4.一致代码段和通过调用门访问的非一致代码段，DPL规定访问此段的最高权限。<br> 比如一个段的DPL为2，那么CPL为0或者1的程序都无法访问。</p>
+<ol start="5">
+<li>TSS的DPL，同数据段。</li>
+</ol>
+<p>RPL（Rquest Privilege Level）<br>RPL是通过选择子的低两位来表现出来的(这么说来，CS和SS也是存放选择子的，同时CPL存放在CS和SS的低两位上，那么对CS和SS来说，选择子的RPL=当前段的CPL)。处理器通过检查RPL和CPL来确认一个访问是否合法。即提出访问的段除了有足够的特权级CPL，如果RPL不够也是不行的(有些情况会忽略RPL检查)。</p>
+<p>为什么要有RPL？<br>操作系统往往通过设置RPL的方法来避免低特权级的应用程序访问高特权级的内层数据。<br>例子情景：调用者调用操作系统的某过程去访问一个段。<br>当操作系统(被调用过程)从应用程序(调用者)接受一个选择子时，会把选择子的RPL设置称调用者的权限等级，于是操作系统用这个选择子去访问相应的段时(这时CPL为操作系统的等级,因为正在运行操作系统的代码)，处理器会使用调用者的特权级去进行特权级检查，而不是正在实施访问动作的操作系统的特权级(CPL)，这样操作系统就不用以自己的身份去访问(就防止了应用去访问需要高权限的内层数据,除非应用程序本身的权限就足够高)。<br>那么RPL的作用就比较明显了：因为同一时刻只能有一个CPL，而当低权限的应用去调用拥有至高权限的操作系统的功能来访问一个目标段时，进入操作系统代码段时CPL变成了操作系统的CPL，如果没有RPL，那么权限检查的时候就会用CPL，而这个CPL权限比应用程序高，也就可能去访问需要高权限才能访问的数据，这就不安全了。所以引入RPL，让它去代表访问权限，因此在检查CPL的同时，也会检查RPL.一般来说如果RPL的数字比CPL大(权限比CPL的低)，那么RPL会起决定性作用。</p>
 
       
     </div>
@@ -784,7 +769,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -896,7 +881,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于x86启动后执行的第一条指令及其地址"><span class="nav-number">1.</span> <span class="nav-text">关于x86启动后执行的第一条指令及其地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例题thu-os-2015-mid-term-2"><span class="nav-number">1.1.</span> <span class="nav-text">例题：THU OS 2015 mid term 2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程挂起相关"><span class="nav-number">2.</span> <span class="nav-text">进程挂起相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cow机制"><span class="nav-number">3.</span> <span class="nav-text">COW机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#page_fault"><span class="nav-number">4.</span> <span class="nav-text">Page_fault</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#造成page_fault的情况"><span class="nav-number">5.</span> <span class="nav-text">造成page_fault的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#造成page-fault有两种情况"><span class="nav-number">5.1.</span> <span class="nav-text">造成page fault有两种情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性地址转换无效的原因"><span class="nav-number">5.2.</span> <span class="nav-text">线性地址转换无效的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error-code的p位"><span class="nav-number">5.3.</span> <span class="nav-text">error code的P位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺页中断"><span class="nav-number">5.4.</span> <span class="nav-text">缺页中断</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#孤儿进程与僵尸进程"><span class="nav-number">6.</span> <span class="nav-text">孤儿进程与僵尸进程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#belady现象"><span class="nav-number">7.</span> <span class="nav-text">Belady现象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x86寄存器"><span class="nav-number">8.</span> <span class="nav-text">X86寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通用寄存器"><span class="nav-number">8.1.</span> <span class="nav-text">通用寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#段寄存器-cs代码段-ds数据段"><span class="nav-number">8.2.</span> <span class="nav-text">段寄存器 CS(代码段) DS(数据段)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令寄存器-和标志寄存器"><span class="nav-number">8.3.</span> <span class="nav-text">指令寄存器 和标志寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户态或内核态下的中断处理有什么区别在trapframe中有什么体现"><span class="nav-number">9.</span> <span class="nav-text">用户态或内核态下的中断处理有什么区别？在trapframe中有什么体现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x86特权级"><span class="nav-number">10.</span> <span class="nav-text">x86特权级</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于x86启动后执行的第一条指令及其地址"><span class="nav-number">1.</span> <span class="nav-text">关于x86启动后执行的第一条指令及其地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例题：THU-OS-2015-mid-term-2"><span class="nav-number">1.1.</span> <span class="nav-text">例题：THU OS 2015 mid term 2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程挂起相关"><span class="nav-number">2.</span> <span class="nav-text">进程挂起相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#COW机制"><span class="nav-number">3.</span> <span class="nav-text">COW机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Page-fault"><span class="nav-number">4.</span> <span class="nav-text">Page_fault</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#造成page-fault的情况"><span class="nav-number">5.</span> <span class="nav-text">造成page_fault的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#造成page-fault有两种情况"><span class="nav-number">5.1.</span> <span class="nav-text">造成page fault有两种情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性地址转换无效的原因"><span class="nav-number">5.2.</span> <span class="nav-text">线性地址转换无效的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error-code的P位"><span class="nav-number">5.3.</span> <span class="nav-text">error code的P位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺页中断"><span class="nav-number">5.4.</span> <span class="nav-text">缺页中断</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#孤儿进程与僵尸进程"><span class="nav-number">6.</span> <span class="nav-text">孤儿进程与僵尸进程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户态或内核态下的中断处理有什么区别？在trapframe中有什么体现"><span class="nav-number">7.</span> <span class="nav-text">用户态或内核态下的中断处理有什么区别？在trapframe中有什么体现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#x86特权级"><span class="nav-number">8.</span> <span class="nav-text">x86特权级</span></a></li></ol></div>
             
 
           </div>

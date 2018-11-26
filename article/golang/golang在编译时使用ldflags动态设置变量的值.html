@@ -106,7 +106,7 @@ function loopy() {
 </script> 
 
 
-  <meta name="keywords" content="GFS,">
+  <meta name="keywords" content="Golang,Go,">
 
 
 
@@ -124,20 +124,18 @@ function loopy() {
 
 
 
-<meta name="description" content="分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。 简述在分布式文件系统中维护数据块一致的步骤。 简述在分布式文件系统中的删除文件的过程。 在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。">
-<meta name="keywords" content="GFS">
+<meta name="description" content="How to set package variable using -ldflags -X in Golang build123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the string variable in importpath named name to value">
+<meta name="keywords" content="Golang,Go">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Massive Data Process Homework 1">
-<meta property="og:url" content="https://2young.2simple.top/article/Massive-Data-Process-Homework-1.html">
+<meta property="og:title" content="golang在编译测试时使用ldflags动态设置包中变量的值">
+<meta property="og:url" content="https://2young.2simple.top/article/golang/golang在编译时使用ldflags动态设置变量的值.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。 简述在分布式文件系统中维护数据块一致的步骤。 简述在分布式文件系统中的删除文件的过程。 在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。">
+<meta property="og:description" content="How to set package variable using -ldflags -X in Golang build123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the string variable in importpath named name to value">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://d26dzxoao6i3hh.cloudfront.net/items/290l0X2m43453J372d2j/Image%202017-06-27%20at%201.43.19%20上午.png">
-<meta property="og:updated_time" content="2018-11-21T09:26:02.541Z">
+<meta property="og:updated_time" content="2018-11-26T10:14:21.237Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Massive Data Process Homework 1">
-<meta name="twitter:description" content="分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。 简述在分布式文件系统中维护数据块一致的步骤。 简述在分布式文件系统中的删除文件的过程。 在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。">
-<meta name="twitter:image" content="https://d26dzxoao6i3hh.cloudfront.net/items/290l0X2m43453J372d2j/Image%202017-06-27%20at%201.43.19%20上午.png">
+<meta name="twitter:title" content="golang在编译测试时使用ldflags动态设置包中变量的值">
+<meta name="twitter:description" content="How to set package variable using -ldflags -X in Golang build123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the string variable in importpath named name to value">
 
 
 
@@ -165,13 +163,13 @@ function loopy() {
 
 
 
-  <link rel="canonical" href="https://2young.2simple.top/article/Massive-Data-Process-Homework-1.html">
+  <link rel="canonical" href="https://2young.2simple.top/article/golang/golang在编译时使用ldflags动态设置变量的值.html">
 
 
 
 
 
-  <title> Massive Data Process Homework 1 | 我的日志 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> golang在编译测试时使用ldflags动态设置包中变量的值 | 我的日志 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
    
 </head>
 
@@ -372,7 +370,7 @@ function loopy() {
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/Massive-Data-Process-Homework-1.html">
+    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/golang/golang在编译时使用ldflags动态设置变量的值.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张盛豪">
@@ -393,7 +391,7 @@ function loopy() {
             
             
               
-                Massive Data Process Homework 1
+                golang在编译测试时使用ldflags动态设置包中变量的值
               
             
           </h2>
@@ -408,8 +406,8 @@ function loopy() {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T00:00:00+08:00">
-                2017-06-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-12T17:21:18+08:00">
+                2018-11-12
               </time>
             
 
@@ -431,8 +429,8 @@ function loopy() {
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/分布式处理/" itemprop="url" rel="index">
-                    <span itemprop="name">分布式处理</span>
+                  <a href="/categories/Golang/" itemprop="url" rel="index">
+                    <span itemprop="name">Golang</span>
                   </a>
                 </span>
 
@@ -449,8 +447,8 @@ function loopy() {
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/article/Massive-Data-Process-Homework-1.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/Massive-Data-Process-Homework-1.html" itemprop="commentCount"></span>
+                <a href="/article/golang/golang在编译时使用ldflags动态设置变量的值.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/golang/golang在编译时使用ldflags动态设置变量的值.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -458,7 +456,7 @@ function loopy() {
 
           
           
-             <span id="/article/Massive-Data-Process-Homework-1.html" class="leancloud_visitors" data-flag-title="Massive Data Process Homework 1">
+             <span id="/article/golang/golang在编译时使用ldflags动态设置变量的值.html" class="leancloud_visitors" data-flag-title="golang在编译测试时使用ldflags动态设置包中变量的值">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -482,7 +480,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2,826
+                  588
                 </span>
               
 
@@ -498,7 +496,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  10
+                  3
                 </span>
               
             </div>
@@ -517,47 +515,24 @@ function loopy() {
       
 
       
-        <h1 id="分布式文件系统（The-Google-File-System）仔细阅读Google-File-System这篇论文，回答下面的问题。"><a href="#分布式文件系统（The-Google-File-System）仔细阅读Google-File-System这篇论文，回答下面的问题。" class="headerlink" title="分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。"></a>分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。</h1><ul>
-<li>简述在分布式文件系统中维护数据块一致的步骤。</li>
-<li>简述在分布式文件系统中的删除文件的过程。</li>
-<li>在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。</li>
+        <h1 id="How-to-set-package-variable-using-ldflags-X-in-Golang-build"><a href="#How-to-set-package-variable-using-ldflags-X-in-Golang-build" class="headerlink" title="How to set package variable using -ldflags -X in Golang build"></a>How to set package variable using -ldflags -X in Golang build</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">go tool link [flags] main.a</span><br><span class="line"></span><br><span class="line"><span class="comment"># Flags</span></span><br><span class="line">-X importpath.name=value</span><br><span class="line">  Set the value of the string variable <span class="keyword">in</span> importpath named name to value.</span><br><span class="line">  This is only effective <span class="keyword">if</span> the variable is declared <span class="keyword">in</span> the <span class="built_in">source</span> code either uninitialized</span><br><span class="line">  or initialized to a constant string expression. -X will not work <span class="keyword">if</span> the initializer makes</span><br><span class="line">  a <span class="keyword">function</span> call or refers to other variables.</span><br><span class="line">  Note that before Go 1.5 this option took two separate arguments.</span><br></pre></td></tr></table></figure>
+<h2 id="Including-build-information-in-the-executable"><a href="#Including-build-information-in-the-executable" class="headerlink" title="Including build information in the executable"></a>Including build information in the executable</h2><p>The gc toolchain linker, cmd/link, provides a <code>-X</code> option that may be used to record arbitrary information in a Go string variable at link time. The format is <code>-X importpath.name=val</code>. Here importpath is the name used in an import statement for the package (or main for the main package), name is the name of the string variable defined in the package, and val is the string you want to set that variable to. When using the go tool, use its <code>-ldflags</code> option to pass the <code>-X</code> option to the linker.</p>
+<p>Let’s suppose this file is part of the package company/buildinfo:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> buildinfo</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> BuildTime <span class="keyword">string</span></span><br></pre></td></tr></table></figure>
+<p>You can build the program using this package using <code>go build -ldflags=&quot;-X &#39;company/buildinfo.BuildTime=$(date)&#39;&quot;</code> to record the build time in the string. (The use of $(date) assumes you are using a <code>Unix-style</code> shell.)</p>
+<p>The string variable <code>must exist</code>, it must be a <code>variable</code>, not a <code>constant</code>, and its value must not be initialized by a function call. There is <code>no warning</code> for using the wrong name in the -X option. You can often find the name to use by running go tool nm on the program, but that will <code>fail</code> if the package name has any <code>non-ASCII</code> characters, or a <code>&quot;</code> or <code>%</code> character.</p>
+<h2 id="golang在编译、测试、安装时使用-ldflags-X动态设置包中变量的值"><a href="#golang在编译、测试、安装时使用-ldflags-X动态设置包中变量的值" class="headerlink" title="golang在编译、测试、安装时使用-ldflags -X动态设置包中变量的值"></a>golang在编译、测试、安装时使用<code>-ldflags -X</code>动态设置包中变量的值</h2><p><code>go install/build/test</code> 时可以通过命令行参数设置 <code>package</code>的变量， 其格式为<code>-X importpath.name=val</code>, 其中<code>importpath</code>是变量所在包的的路径， <code>name</code>是包中定义的变量， val 是需要在编译时设置的变量的值<code>(string)</code>， 注意<code>name</code>表示的变量只能是<code>variable</code>，不能是<code>constant</code>, 且不能通过函数调用的方式初始化，其类型只能是<code>string</code>， 不可是<code>int, bool</code>等.</p>
+<p>该方法在<code>go install, go build, go test</code>时均可以使用.</p>
+<p>Example:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> gotest</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"testing"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time <span class="keyword">string</span></span><br><span class="line"><span class="keyword">var</span> version <span class="keyword">string</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestBuild</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">  t.Log(time)</span><br><span class="line">  t.Log(version)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用如下命令测试，其中<code>date</code>有空格，故而使用引号</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go <span class="built_in">test</span>  -ldflags=<span class="string">"-X 'gotest.time=`date`' -X gotest.version=1.0.1"</span> gotest -v</span><br></pre></td></tr></table></figure>
+<p>其输出如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">=== RUN   TestBuild</span><br><span class="line">--- PASS: TestBuild (0.00s)</span><br><span class="line">        build_test.go:9: Mon 5 Nov 18:06:13 CST 2018</span><br><span class="line">        build_test.go:10: 1.0.1</span><br><span class="line">PASS</span><br><span class="line">ok      gotest        0.001s</span><br></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://github.com/golang/go/wiki/GcToolchainTricks" target="_blank" rel="noopener">GcToolchainTricks</a></li>
+<li><a href="https://stackoverflow.com/questions/47509272/how-to-set-package-variable-using-ldflags-x-in-golang-build" target="_blank" rel="noopener">How to set package variable using -ldflags -X in Golang build</a></li>
 </ul>
-<a id="more"></a>
-<h2 id="简述在分布式文件系统中维护数据块一致的步骤。"><a href="#简述在分布式文件系统中维护数据块一致的步骤。" class="headerlink" title="简述在分布式文件系统中维护数据块一致的步骤。"></a>简述在分布式文件系统中维护数据块一致的步骤。</h2><p>分布式文件系统中通过以下措施维护数据块一致性：</p>
-<ul>
-<li>在所有副本上按相同的顺序执行一个块上的修改操作 </li>
-<li>使用版本号来检测并复制过期文件，这种过期可能是由于块服务器宕机而造成了部分修改丢失引起的。过期的副本不会再涉及修改操作，主节点也不会将该副本返回给客户端。它们会尽快的进行垃圾回收操作。</li>
-</ul>
-<p>而这种措施的实现是由于分布式文件系统完成修改操作时遵循了lease mechanism，通过该机制来确保多个副本间变更顺序的一致性。Master节点为Chunk的一个副本建立一个租约，我们把这个副本叫做Primary Chunk。Primary Chunk对Chunk的所有更改操作进行序列化。所有的副本都遵从这个序列进行修改操作。因此，修改操作全局的顺序首先由Master节点选择的租约的顺序决定，然后由租约中主Chunk分配的序列号决定。通过这样的方式，在完成修改操作时所有的Chunk节点及其副本是经过了同一个修改序列进行的，因此当修改操作完成时数据块是一致的。</p>
-<ol>
-<li>初始数据一致</li>
-<li>修改操作都是一致的</li>
-<li>操作顺序是一致的</li>
-</ol>
-<h2 id="简述在分布式文件系统中的删除文件的过程"><a href="#简述在分布式文件系统中的删除文件的过程" class="headerlink" title="简述在分布式文件系统中的删除文件的过程"></a>简述在分布式文件系统中的删除文件的过程</h2><p>分布式文件系统中通过垃圾回收机制实现”慢删除文件操作”, 当一个文件被应用程序删除时，Master 将该删除操作以log方式记录下来，并且把文件名修改为包含删除时间戳的、隐藏的文件名，Master节点进行定期的常规文件系统命名空间扫描时，会删除已经被隐藏的超过3天的文件(时间间隔可自定义)， 在隐藏文件被删除前仍然可以通过特殊的名字进行读取，也可以通过重命名为普通文件名而实现撤销删除操作的功能。当隐藏文件从命名空间中删除之后，它在内存中的元数据也会被清除。</p>
-<p>在对Chunk Server的命名空间做类似的扫描时，Master标识出孤儿Chunk块（比如：任何文件都无法访问到的块），并将那些块的元数据清除。在Chunk服务器与Master节点进行定期的心跳信息交换时，报告其拥有的Chunk子集的信息，Master回复Chunk服务器哪些块在Master节点保存的元数据中已经不存在了，Chunk服务器将释放并删除这些块的副本。</p>
-<p>也就是说在分布式文件系统中，删除文件时，先在Master节点中删除对应的元数据信息，然后Chunk 服务器再通过Master和Chunk服务器之间的心跳信息收发待删除数据块信息，实现垃圾回收，最终删除文件。</p>
-<h2 id="在分布式文件系统中，Append操作为什么被认为是defined-interspersed-with-inconsistent，并发写为什么会出现undefined的情况。"><a href="#在分布式文件系统中，Append操作为什么被认为是defined-interspersed-with-inconsistent，并发写为什么会出现undefined的情况。" class="headerlink" title="在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。"></a>在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。</h2><h3 id="分布式文件系统的写操作流程解析"><a href="#分布式文件系统的写操作流程解析" class="headerlink" title="分布式文件系统的写操作流程解析"></a>分布式文件系统的写操作流程解析</h3><p>图1是写操作的控制流和数据流：</p>
-<p><img src="https://d26dzxoao6i3hh.cloudfront.net/items/290l0X2m43453J372d2j/Image%202017-06-27%20at%201.43.19%20上午.png" alt="写操作控制流和数据流"></p>
-<p>分布式系统中的数据修改详细步骤如下：</p>
-<ol>
-<li>客户端询问Master哪个块服务器持有这个块的当前租约，以及这个块的其它副本位置。如果没有一个租约，则Master选择一个副本并授予一个租约。</li>
-<li>Master回复客户端primary的标识，以及其它（secondary）副本的位置。客户端缓存这些数据用于以后的修改操作。只有当primary不可达或者接收到primary不再持有租约时才需要再一次请求主节点。</li>
-<li>客户端将数据推送到所有的副本。一个客户端能够以任意顺序进行推送。每个块服务器将数据保存在内部的LRU缓存中，直到数据被使用或者过期被替换掉。通过对数据流和控制流的分流，我们能够通过基于网络拓扑来调度数据流，不管哪个块服务器为primary，以此提高性能。</li>
-<li>一旦所有的副本都确认接收到了数据，客户端将向primary发送一个写请求。这个请求确定了之前的数据被推送到了所有副本。Primary为接收到的所有修改操作分配连续的序列号，这些操作可能来自多个客户端，序列号提供了严格的序列化，应用按序列号顺序执行修改操作，进而改变自己的状态。</li>
-<li>Primary将写请求发送到所有的secondary副本上。每个secondary副本按照primary分配的相同的序列号顺序执行这些修改操作。</li>
-<li>Secondary副本回复primary，表示它们已经完成了所有的操作。</li>
-<li>Primary回复客户端。任意副本上的任意错误都将报告给客户端。在一些错误情况下，写操作可能在primary和一些secondary副本上执行成功。（如果失败发生在primary，它将不会分片一个序列号，并且不会被传递。）客户端的请求被视为已经失败，这个修改的区域停留在不一致的状态上。我们的客户端代码通过重试失败的修改操作来处理这种错误。在从头开始重复执行之前，它将在3-7步骤上做几次尝试。</li>
-</ol>
-<h3 id="分布式文件系统的并发写"><a href="#分布式文件系统的并发写" class="headerlink" title="分布式文件系统的并发写"></a>分布式文件系统的并发写</h3><p>当一个应用的写操作数据很大以至于跨越了多个数据块时，分布式文件系统会将该写操作分割为多个写操作，这些操作都遵循1.3.1节所描述的控制流，但是可能会被其它客户端上的请求打断或覆盖，即并发写时多个客户端先后发出的写操作的文件共享部分可能最终会包含多个客户端的交叉碎片，即undefined，但是由于lease机制的保障所有副本都是执行的同一个写操作序列，孤儿所有的副本都是完全相同的，即consistent but undefined</p>
-<h3 id="分布式文文件系统的Append操作"><a href="#分布式文文件系统的Append操作" class="headerlink" title="分布式文文件系统的Append操作"></a>分布式文文件系统的Append操作</h3><p>分布式文件系统中还存在另一种写操作append record，append只在文件的尾部以record为单位（为了避免内部碎片，record一般不会很大）写入数据。append是原子性 的，GFS保证将数据顺序地写到文件尾部至少一次。append record的流程和图2类似，只是在primary有点区别，GFS必须保证一个record存储在一个chunk内，所以当primary判断当前 chunk无足够空间时，就通知所有副本将chunk填充，然后汇报失败，client会申请创建新chunk并重新执行一次append record操作。如果该chunk大小合适，primary会将数据写到数据块的尾部，然后通知其它副本将数据写到一样的偏移。任何副本append失 败，各个副本会处于不一致状态（完成或未完成），这时primary必然是成功写入的（不然就没有4以后的操作了）。客户端重试append record操作时，因为primary的chunk长度已经变化了，primary就必须在新的偏移写入数据，而其它副本也是照做。这就导致上一个失败 的偏移位置，各个副本处于不一致状态，应用必须自己区分record正确与否，我称这为无效数据区。</p>
-<p>记录追加操作是修改操作中的一种，在一个记录追加操作中，客户端只需要指定数据，GFS将数据至少一次的原子性的追加到文件。该操作遵循1.3.1节中所示控制流程，只在primary上有一些额外的逻辑。客户端把数据推送到文件最后一个块的所有的副本上，然后将向primary发送它的请求。Primary会检查这次追加操作是否使块的大小超过了最大尺寸（64MB）。如果超过，它将把这个块填充满，通知所有的secondary副本进行相同的操作，并回复客户端表明这个操作将在下一个块上重新执行。（记录追加操作的数据大小严格控制在最大尺寸的1/4以内，以确保最坏情况下碎片的数量在一个可接受范围。）通常情况下，如果记录不超过最大尺寸，primary将数据追加到它的副本上，然后通知secondary把数据写到与primary相同的位置上，最后回复客户端操作成功。</p>
-<p>如果在任意一个副本上的记录追加失败，客户端将重试这个操作。因此，在同一个块的副本上可能包含不同的数据，包括同一个记录的全部或部分的重复数据。GFS不保证写入的数据在字节上完全相同，它只保证作为一个原子单元至少被写入一次。这个特性能够通过简单的观察得到：如果操作执行成功，数据肯定被写入到了某些块副本的相同位置。此外，在这之后，所有副本至少都达到了记录尾部的长度，因此，即使一个不同的副本成为了primary，以后的任何记录也都将被放置在更大的偏移位置或者是一个不同的块上。在我们的一致性保障方面，记录追加操作成功的写入数据的区域是被定义的（因此是一致的），反之，介于中间状态的区域是不一致的（因此是undefined的）。</p>
-<p>由上述分析可知，在Append操作中，分布式文件系统确保至少有一个记录追加操作被至少一次地原子性追加到文件，从而确保其defined，但是，如果在Primary Chunk中追加成功，而副本追加失败时，客户端会重试追加操作，而之前的部分追加操作会被应用程序通过某种机制使之失效（即不影响其明确性），不同的副本可能失败情况不一致，因此最终各个副本中数据可能局部不一致，故而Append操作是defined interspersed with inconsistent的</p>
-<ol>
-<li>write(offset, **)</li>
-<li>Append(data): 不关心数据位置</li>
-</ol>
 
       
     </div>
@@ -607,7 +582,7 @@ function loopy() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://2young.2simple.top/article/Massive-Data-Process-Homework-1.html" title="Massive Data Process Homework 1">https://2young.2simple.top/article/Massive-Data-Process-Homework-1.html</a>
+      <a href="https://2young.2simple.top/article/golang/golang在编译时使用ldflags动态设置变量的值.html" title="golang在编译测试时使用ldflags动态设置包中变量的值">https://2young.2simple.top/article/golang/golang在编译时使用ldflags动态设置变量的值.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -623,7 +598,9 @@ function loopy() {
       
         <div class="post-tags">
           
-            <a href="/tags/GFS/" rel="tag"># GFS</a>
+            <a href="/tags/Golang/" rel="tag"># Golang</a>
+          
+            <a href="/tags/Go/" rel="tag"># Go</a>
           
         </div>
       
@@ -636,8 +613,8 @@ function loopy() {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/Tomasulo调度算法.html" rel="next" title="系统结构第二次实验:设计实现 Tomasulo 调度算法">
-                <i class="fa fa-chevron-left"></i> 系统结构第二次实验:设计实现 Tomasulo 调度算法
+              <a href="/article/Linux-Mac命令行获取本机IP地址.html" rel="next" title="Linux or Mac 命令行获取本机IP地址">
+                <i class="fa fa-chevron-left"></i> Linux or Mac 命令行获取本机IP地址
               </a>
             
           </div>
@@ -646,8 +623,8 @@ function loopy() {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/大规模数据处理-分布式文件系统.html" rel="prev" title="大规模集群数据处理-分布式文件系统">
-                大规模集群数据处理-分布式文件系统 <i class="fa fa-chevron-right"></i>
+              <a href="/article/Hexo配置问题-Pandoc.html" rel="prev" title="Hexo配置问题-Pandoc">
+                Hexo配置问题-Pandoc <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -837,7 +814,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分布式文件系统（The-Google-File-System）仔细阅读Google-File-System这篇论文，回答下面的问题。"><span class="nav-number">1.</span> <span class="nav-text">分布式文件系统（The Google File System）仔细阅读Google File System这篇论文，回答下面的问题。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简述在分布式文件系统中维护数据块一致的步骤。"><span class="nav-number">1.1.</span> <span class="nav-text">简述在分布式文件系统中维护数据块一致的步骤。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述在分布式文件系统中的删除文件的过程"><span class="nav-number">1.2.</span> <span class="nav-text">简述在分布式文件系统中的删除文件的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在分布式文件系统中，Append操作为什么被认为是defined-interspersed-with-inconsistent，并发写为什么会出现undefined的情况。"><span class="nav-number">1.3.</span> <span class="nav-text">在分布式文件系统中，Append操作为什么被认为是defined interspersed with inconsistent，并发写为什么会出现undefined的情况。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式文件系统的写操作流程解析"><span class="nav-number">1.3.1.</span> <span class="nav-text">分布式文件系统的写操作流程解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式文件系统的并发写"><span class="nav-number">1.3.2.</span> <span class="nav-text">分布式文件系统的并发写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式文文件系统的Append操作"><span class="nav-number">1.3.3.</span> <span class="nav-text">分布式文文件系统的Append操作</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-set-package-variable-using-ldflags-X-in-Golang-build"><span class="nav-number">1.</span> <span class="nav-text">How to set package variable using -ldflags -X in Golang build</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Including-build-information-in-the-executable"><span class="nav-number">1.1.</span> <span class="nav-text">Including build information in the executable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#golang在编译、测试、安装时使用-ldflags-X动态设置包中变量的值"><span class="nav-number">1.2.</span> <span class="nav-text">golang在编译、测试、安装时使用-ldflags -X动态设置包中变量的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.3.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1007,9 +984,9 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
     <script type="text/javascript">
       var disqus_shortname = 'qingfeng';
-      var disqus_identifier = 'article/Massive-Data-Process-Homework-1.html';
+      var disqus_identifier = 'article/golang/golang在编译时使用ldflags动态设置变量的值.html';
 
-      var disqus_title = "Massive Data Process Homework 1";
+      var disqus_title = "golang在编译测试时使用ldflags动态设置包中变量的值";
 
 
       function run_disqus_script(disqus_script) {

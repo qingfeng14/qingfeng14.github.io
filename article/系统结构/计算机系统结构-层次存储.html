@@ -124,18 +124,20 @@ function loopy() {
 
 
 
-<meta name="description" content="程序访问的局部性原理：时间局部性，空间局部性 存储系统的多级层次结构 CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
+<meta name="description" content="程序访问的局部性原理：时间局部性，空间局部性 存储系统的多级层次结构CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
 <meta name="keywords" content="系统结构,课程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[计算机系统结构]层次存储">
 <meta property="og:url" content="https://2young.2simple.top/article/系统结构/计算机系统结构-层次存储.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="程序访问的局部性原理：时间局部性，空间局部性 存储系统的多级层次结构 CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
+<meta property="og:description" content="程序访问的局部性原理：时间局部性，空间局部性 存储系统的多级层次结构CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://netclass.csu.edu.cn/NCourse/hep077/architecture/chapter4/lecture2/htm/lecture2_8.htm">
 <meta property="og:updated_time" content="2017-06-16T17:52:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[计算机系统结构]层次存储">
-<meta name="twitter:description" content="程序访问的局部性原理：时间局部性，空间局部性 存储系统的多级层次结构 CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
+<meta name="twitter:description" content="程序访问的局部性原理：时间局部性，空间局部性 存储系统的多级层次结构CPU-&amp;gt;M1-&amp;gt;M2–。。。。。。.&amp;gt;Mn 在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集 CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据">
+<meta name="twitter:image" content="http://netclass.csu.edu.cn/NCourse/hep077/architecture/chapter4/lecture2/htm/lecture2_8.htm">
 
 
 
@@ -480,7 +482,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,286
+                  1,283
                 </span>
               
 
@@ -516,68 +518,47 @@ function loopy() {
 
       
         <p>程序访问的局部性原理：时间局部性，空间局部性</p>
-<h2 id="存储系统的多级层次结构">存储系统的多级层次结构</h2>
-<p>CPU-&gt;M1-&gt;M2–。。。。。。.&gt;Mn</p>
+<h2 id="存储系统的多级层次结构"><a href="#存储系统的多级层次结构" class="headerlink" title="存储系统的多级层次结构"></a>存储系统的多级层次结构</h2><p>CPU-&gt;M1-&gt;M2–。。。。。。.&gt;Mn</p>
 <p>在存储层次中，各存储器中一般满足包含关系,即任何一层存储器中的内容都是其下一层存储（离CPU更远一级）中内容的子集</p>
 <p>CPU与M1一般以字为单位传递，M1以外一般以块/页为单位传递数据</p>
 <a id="more"></a>
-<h2 id="存储系统性能参数">存储系统性能参数</h2>
-<h3 id="存储容量s">存储容量S</h3>
-<p>一般来说，整个存储系统的存储容量即为最后一级存储器的容量，eg:cache + 主存的存储系统容量为主存容量</p>
-<h3 id="存储系统的平均每位价格c">存储系统的平均每位价格C</h3>
-<h3 id="命中率h">命中率H</h3>
-<p>CPU 访问该存储系统时，在M1中找到所需信息的概率</p>
-<h3 id="平均访存时间t_a">平均访存时间<span class="math inline">\(T_A\)</span></h3>
-<p>命中时间 不命中开销：访一级时间 + 数据传送时间</p>
-<h2 id="三级存储系统cache-主存-磁盘">三级存储系统：Cache + 主存 + 磁盘</h2>
-<ul>
+<h2 id="存储系统性能参数"><a href="#存储系统性能参数" class="headerlink" title="存储系统性能参数"></a>存储系统性能参数</h2><h3 id="存储容量S"><a href="#存储容量S" class="headerlink" title="存储容量S"></a>存储容量S</h3><p>一般来说，整个存储系统的存储容量即为最后一级存储器的容量，eg:cache + 主存的存储系统容量为主存容量</p>
+<h3 id="存储系统的平均每位价格C"><a href="#存储系统的平均每位价格C" class="headerlink" title="存储系统的平均每位价格C"></a>存储系统的平均每位价格C</h3><h3 id="命中率H"><a href="#命中率H" class="headerlink" title="命中率H"></a>命中率H</h3><p>CPU 访问该存储系统时，在M1中找到所需信息的概率</p>
+<h3 id="平均访存时间-T-A"><a href="#平均访存时间-T-A" class="headerlink" title="平均访存时间$T_A$"></a>平均访存时间$T_A$</h3><p>命中时间<br>不命中开销：访一级时间 + 数据传送时间</p>
+<h2 id="三级存储系统：Cache-主存-磁盘"><a href="#三级存储系统：Cache-主存-磁盘" class="headerlink" title="三级存储系统：Cache + 主存 + 磁盘"></a>三级存储系统：Cache + 主存 + 磁盘</h2><ul>
 <li>cache-主存层次：为了弥补主存速度的不足，一般是硬件完成的，对应用程序员和系统程序员是透明的</li>
 <li>主存-辅存层次：为了弥补主存容量的不足，常被用于实现虚拟存储器，向编程人员提供用不完的程序空间，主要由软件完成</li>
 </ul>
-<h2 id="存储层次的四个问题">存储层次的四个问题</h2>
-<ul>
+<h2 id="存储层次的四个问题"><a href="#存储层次的四个问题" class="headerlink" title="存储层次的四个问题"></a>存储层次的四个问题</h2><ul>
 <li>映像规则</li>
 <li>查找算法</li>
 <li>替换算法</li>
 <li>写策略</li>
 </ul>
-<h1 id="cache">Cache</h1>
-<h2 id="cache-基本结构及原理">cache 基本结构及原理</h2>
-<p>cache是按块管理的，cache和主存均被分成大小相同的块，信息以块为单位调入cache中</p>
-<p>主存地址： 块地址（块号） | 块内偏移</p>
-<p>主存地址寄存器–》主存-Cache地址转换部件</p>
+<h1 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h1><h2 id="cache-基本结构及原理"><a href="#cache-基本结构及原理" class="headerlink" title="cache 基本结构及原理"></a>cache 基本结构及原理</h2><p>cache是按块管理的，cache和主存均被分成大小相同的块，信息以块为单位调入cache中</p>
+<p>主存地址：     块地址（块号）  | 块内偏移</p>
+<p>主存地址寄存器–》主存-Cache地址转换部件      </p>
 <p>–》 命中，Cache块地址，根据偏移在Cache存储体中查到对应的数据指令送给CPU</p>
 <p>-》 未命中，访主存储器，调入Cache（是否需要替换），送给CPU，或者直接送给CPU提高效率</p>
-<h2 id="cache-映像规则">Cache 映像规则</h2>
-<h3 id="全相联映射">全相联映射</h3>
-<p>主存中的人意块可以放到Cache中的任意一个位置 ### 直接映射 主存中每一块只能放到Cache中的唯一一个位置，对应关系依次循环分配 主存的第i块（块地址为i）映射到Cache的第j块 <span class="math display">\[j = i mod M\]</span> M为Cache的快数， 若<span class="math inline">\(M = 2^m\)</span>，则j实际上是i的低m位（注意是块地址的低m位），可用这m位去进行选择（索引）</p>
-<h3 id="组相连映像">组相连映像</h3>
-<p>Cache被分为若干组，每个组由若干块组成，主存中每一个块可以放到Cache中唯一一个组的任意一个位置。组的选择通常采用<font color="red">位选择方法</font></p>
-<p>对于主存中的第i个块，若它映射到Cache中的组号为j，则 <span class="math display">\[j = i mdo G\]</span> G为Cache的组数，当<span class="math inline">\(G=2^g\)</span>时，k为块号i的低g位，这里的低g位称为索引</p>
+<h2 id="Cache-映像规则"><a href="#Cache-映像规则" class="headerlink" title="Cache 映像规则"></a>Cache 映像规则</h2><h3 id="全相联映射"><a href="#全相联映射" class="headerlink" title="全相联映射"></a>全相联映射</h3><p>主存中的人意块可以放到Cache中的任意一个位置</p>
+<h3 id="直接映射"><a href="#直接映射" class="headerlink" title="直接映射"></a>直接映射</h3><p>主存中每一块只能放到Cache中的唯一一个位置，对应关系依次循环分配<br>主存的第i块（块地址为i）映射到Cache的第j块<br>$$j = i mod M$$<br>M为Cache的快数， 若$M = 2^m$，则j实际上是i的低m位（注意是块地址的低m位），可用这m位去进行选择（索引）</p>
+<h3 id="组相连映像"><a href="#组相连映像" class="headerlink" title="组相连映像"></a>组相连映像</h3><p>Cache被分为若干组，每个组由若干块组成，主存中每一个块可以放到Cache中唯一一个组的任意一个位置。组的选择通常采用<font color="red">位选择方法</font></p>
+<p>对于主存中的第i个块，若它映射到Cache中的组号为j，则<br>$$j = i mdo G$$<br>G为Cache的组数，当$G=2^g$时，k为块号i的低g位，这里的低g位称为索引</p>
 <p>如果每组有n 个块，则称该映像规则为n路组相联</p>
 <p>n值越大，Cache的空间利用率就越高，块冲突的概率就越低</p>
-<h2 id="查找方法">查找方法</h2>
-<p>Cache中设置有一个目录表，每一个Cache块在该表中均有唯一的一项，用于指出当前该块存放的信息是哪个主存块的（一般有多个主存块映射到该Cache块，它实际上记录了该主存块的块地址的高位部分，称为标识），每个主存块能唯一地由其标识来确定</p>
+<h2 id="查找方法"><a href="#查找方法" class="headerlink" title="查找方法"></a>查找方法</h2><p>Cache中设置有一个目录表，每一个Cache块在该表中均有唯一的一项，用于指出当前该块存放的信息是哪个主存块的（一般有多个主存块映射到该Cache块，它实际上记录了该主存块的块地址的高位部分，称为标识），每个主存块能唯一地由其标识来确定</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主存地址：  标识 | 索引 | 块内偏移</span><br><span class="line">		  ____块地址__</span><br></pre></td></tr></table></figure>
-<h1 id="经典的cpu性能公式">经典的CPU性能公式</h1>
-<p>现在我们可以用指令数、CPI和时钟周期时间来写出基本的性能公式：</p>
+<h1 id="经典的CPU性能公式"><a href="#经典的CPU性能公式" class="headerlink" title="经典的CPU性能公式"></a>经典的CPU性能公式</h1><p>现在我们可以用指令数、CPI和时钟周期时间来写出基本的性能公式：</p>
 <p>CPU时间=指令数×CPI×时钟周期时间</p>
 <p>CPI（clock cycles per instruction）：每条指令的时钟周期数，表示执行某个程序或者程序片段时每条指令所需的时钟周期平均数。</p>
 <p>指令数（instruction count）：执行某程序所需的总指令数量。</p>
 <p>或</p>
 <p>CPU时间=指令数×CPI/时钟频率</p>
 <p>永远记住，唯一能够被完全可靠测量的计算机性能指标是时间。例如，对指令集减少指令数目的改进可能降低时钟周期时间或提高CPI，从而抵消了改进的效果。类似地，CPI与执行的指令类型相关，执行指令数最少的代码其执行速度未必是最快的。</p>
-<h1 id="写分配法">写分配法</h1>
-<div class="figure">
-<embed src="http://netclass.csu.edu.cn/NCourse/hep077/architecture/chapter4/lecture2/htm/lecture2_8.htm">
-<p class="caption">张晨曦</p>
-</div>
-<ol style="list-style-type: decimal">
-<li><p>按写分配法：写失效时，先把所写单元所在的块调入 Cache，然后再进行写入。这与读失效类似。这种方法也称为写时取方法。</p></li>
-<li><p>不按写分配法：写失效时，直接写入下一级存储器而不将相应的块调入 Cache。这种方法也称为绕写法。</p></li>
-</ol>
-<h1 id="写策略">写策略</h1>
-<p>写Cache时何时更新主存中的内容</p>
+<h1 id="写分配法"><a href="#写分配法" class="headerlink" title="写分配法"></a>写分配法</h1><p><img src="http://netclass.csu.edu.cn/NCourse/hep077/architecture/chapter4/lecture2/htm/lecture2_8.htm" alt="张晨曦"></p>
+<p>(1) 按写分配法：写失效时，先把所写单元所在的块调入 Cache，然后再进行写入。这与读失效类似。这种方法也称为写时取方法。</p>
+<p>(2) 不按写分配法：写失效时，直接写入下一级存储器而不将相应的块调入 Cache。这种方法也称为绕写法。</p>
+<h1 id="写策略"><a href="#写策略" class="headerlink" title="写策略"></a>写策略</h1><p>写Cache时何时更新主存中的内容</p>
 <ul>
 <li>写直达法： 执行写操作时，不仅把数据写入Cache中对应的块，还把数据写入下一级存储器</li>
 <li>写回法： 拷回法，只把数据写回cache，Cache块被替换时写回下一级存储器</li>
@@ -751,7 +732,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -863,7 +844,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储系统的多级层次结构"><span class="nav-number">1.</span> <span class="nav-text">存储系统的多级层次结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储系统性能参数"><span class="nav-number">2.</span> <span class="nav-text">存储系统性能参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#存储容量s"><span class="nav-number">2.1.</span> <span class="nav-text">存储容量S</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储系统的平均每位价格c"><span class="nav-number">2.2.</span> <span class="nav-text">存储系统的平均每位价格C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命中率h"><span class="nav-number">2.3.</span> <span class="nav-text">命中率H</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均访存时间t_a"><span class="nav-number">2.4.</span> <span class="nav-text">平均访存时间\(T_A\)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三级存储系统cache-主存-磁盘"><span class="nav-number">3.</span> <span class="nav-text">三级存储系统：Cache + 主存 + 磁盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储层次的四个问题"><span class="nav-number">4.</span> <span class="nav-text">存储层次的四个问题</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#cache"><span class="nav-number"></span> <span class="nav-text">Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cache-基本结构及原理"><span class="nav-number">1.</span> <span class="nav-text">cache 基本结构及原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cache-映像规则"><span class="nav-number">2.</span> <span class="nav-text">Cache 映像规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全相联映射"><span class="nav-number">2.1.</span> <span class="nav-text">全相联映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组相连映像"><span class="nav-number">2.2.</span> <span class="nav-text">组相连映像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找方法"><span class="nav-number">3.</span> <span class="nav-text">查找方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经典的cpu性能公式"><span class="nav-number"></span> <span class="nav-text">经典的CPU性能公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写分配法"><span class="nav-number"></span> <span class="nav-text">写分配法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写策略"><span class="nav-number"></span> <span class="nav-text">写策略</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储系统的多级层次结构"><span class="nav-number">1.</span> <span class="nav-text">存储系统的多级层次结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储系统性能参数"><span class="nav-number">2.</span> <span class="nav-text">存储系统性能参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#存储容量S"><span class="nav-number">2.1.</span> <span class="nav-text">存储容量S</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储系统的平均每位价格C"><span class="nav-number">2.2.</span> <span class="nav-text">存储系统的平均每位价格C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命中率H"><span class="nav-number">2.3.</span> <span class="nav-text">命中率H</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均访存时间-T-A"><span class="nav-number">2.4.</span> <span class="nav-text">平均访存时间$T_A$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三级存储系统：Cache-主存-磁盘"><span class="nav-number">3.</span> <span class="nav-text">三级存储系统：Cache + 主存 + 磁盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储层次的四个问题"><span class="nav-number">4.</span> <span class="nav-text">存储层次的四个问题</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Cache"><span class="nav-number"></span> <span class="nav-text">Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cache-基本结构及原理"><span class="nav-number">1.</span> <span class="nav-text">cache 基本结构及原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache-映像规则"><span class="nav-number">2.</span> <span class="nav-text">Cache 映像规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全相联映射"><span class="nav-number">2.1.</span> <span class="nav-text">全相联映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接映射"><span class="nav-number">2.2.</span> <span class="nav-text">直接映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组相连映像"><span class="nav-number">2.3.</span> <span class="nav-text">组相连映像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找方法"><span class="nav-number">3.</span> <span class="nav-text">查找方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经典的CPU性能公式"><span class="nav-number"></span> <span class="nav-text">经典的CPU性能公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写分配法"><span class="nav-number"></span> <span class="nav-text">写分配法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写策略"><span class="nav-number"></span> <span class="nav-text">写策略</span></a></li></div>
             
 
           </div>

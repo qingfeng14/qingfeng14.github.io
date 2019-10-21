@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="Android,4over6,网络,">
@@ -203,6 +170,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -493,39 +466,53 @@ function loopy() {
       
 
       
-        <h1 id="安卓中用户权限设置"><a href="#安卓中用户权限设置" class="headerlink" title="安卓中用户权限设置"></a>安卓中用户权限设置</h1><a id="more"></a>
-<p>位置：<code>AndroidManifest.xml</code>  在package之后， Application 之前</p>
+        <h1 id="安卓中用户权限设置">安卓中用户权限设置</h1>
+<a id="more"></a>
+<p>位置：<code>AndroidManifest.xml</code> 在package之后， Application 之前</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--用户权限--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_WIFI_STATE"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--VPN 权限--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.BIND_VPN_SERVICE"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="Android中Intent机制"><a href="#Android中Intent机制" class="headerlink" title="Android中Intent机制"></a>Android中Intent机制</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
-<li>启动 Activity：<br>Activity 表示应用中的一个屏幕。通过将 Intent 传递给 startActivity()，您可以启动新的 Activity 实例。Intent 描述了要启动的 Activity，并携带了任何必要的数据。 如果您希望在 Activity 完成后收到结果，请调用 startActivityForResult()。在 Activity 的 onActivityResult() 回调中，您的 Activity 将结果作为单独的 Intent 对象接收。如需了解详细信息，请参阅 Activity 指南。</li>
-<li>启动服务：<br>Service 是一个不使用用户界面而在后台执行操作的组件。通过将 Intent 传递给 startService()，您可以启动服务执行一次性操作（例如，下载文件）。Intent 描述了要启动的服务，并携带了任何必要的数据。 如果服务旨在使用客户端-服务器接口，则通过将 Intent 传递给 bindService()，您可以从其他组件绑定到此服务。如需了解详细信息，请参阅服务指南。</li>
-<li>传递广播：<br>广播是任何应用均可接收的消息。系统将针对系统事件（例如：系统启动或设备开始充电时）传递各种广播。通过将 Intent 传递给 sendBroadcast()、sendOrderedBroadcast() 或 sendStickyBroadcast()，您可以将广播传递给其他应用。</li>
+<h1 id="android中intent机制">Android中Intent机制</h1>
+<h2 id="作用">作用</h2>
+<ul>
+<li>启动 Activity： Activity 表示应用中的一个屏幕。通过将 Intent 传递给 startActivity()，您可以启动新的 Activity 实例。Intent 描述了要启动的 Activity，并携带了任何必要的数据。 如果您希望在 Activity 完成后收到结果，请调用 startActivityForResult()。在 Activity 的 onActivityResult() 回调中，您的 Activity 将结果作为单独的 Intent 对象接收。如需了解详细信息，请参阅 Activity 指南。</li>
+<li>启动服务： Service 是一个不使用用户界面而在后台执行操作的组件。通过将 Intent 传递给 startService()，您可以启动服务执行一次性操作（例如，下载文件）。Intent 描述了要启动的服务，并携带了任何必要的数据。 如果服务旨在使用客户端-服务器接口，则通过将 Intent 传递给 bindService()，您可以从其他组件绑定到此服务。如需了解详细信息，请参阅服务指南。</li>
+<li>传递广播： 广播是任何应用均可接收的消息。系统将针对系统事件（例如：系统启动或设备开始充电时）传递各种广播。通过将 Intent 传递给 sendBroadcast()、sendOrderedBroadcast() 或 sendStickyBroadcast()，您可以将广播传递给其他应用。</li>
 </ul>
-<h2 id="Intent-结构"><a href="#Intent-结构" class="headerlink" title="Intent 结构"></a>Intent 结构</h2><ul>
+<h2 id="intent-结构">Intent 结构</h2>
+<ul>
 <li>action – 想要实施的动作，例: ACTION_VIEW, ACTION_EDIT, ACTION_MAIN, etc.</li>
 <li>data – 具体的数据，一般由以Uri表示，例：通讯录中的某条记录，会以Uri来表示</li>
 <li>category – 为实施的动作添加的额外信息，即Intent组件的种类信息，一个Intent对象可以有任意个category，例：CATEGORY_LAUNCHER 意味着，它应该在启动器中作为顶级应用而存在</li>
-<li>type – 显示指定Intent的数据类型（MIME类型 - 多用途互联网邮件扩展，Multipurpose Internet Mail Extensions），例：一个组件是可以显示图片数据的而不能播放声音文件。很多情况下，data类型可在URI中找到，比如content:开头的URI，表明数据由设备上的content provider提供。但是通过设置这个属性，可以强制采用显式指定的类型而不再进行推导<br>MIME类型有两种：单个记录格式、多个记录格式</li>
+<li>type – 显示指定Intent的数据类型（MIME类型 - 多用途互联网邮件扩展，Multipurpose Internet Mail Extensions），例：一个组件是可以显示图片数据的而不能播放声音文件。很多情况下，data类型可在URI中找到，比如content:开头的URI，表明数据由设备上的content provider提供。但是通过设置这个属性，可以强制采用显式指定的类型而不再进行推导 MIME类型有两种：单个记录格式、多个记录格式</li>
 <li>component – 指定Intent的目标组件的类名称。通常 Android会根据Intent 中包含的其它属性的信息，比如action、data/type、category进行查找，最终找到一个与之匹配的目标组件。但是，如果 component这个属性有指定的话，将直接使用它指定的组件，而不再执行上述查找过程。指定了这个属性以后，Intent的其它所有属性都是可选的，例如：Intent it = new Intent(Activity.Main.this, Activity2.class); startActivity(it);</li>
 <li>extras – 附加信息，例如：it.putExtras(bundle) - 使用Bundle来传递数据；</li>
 </ul>
-<h1 id="Service机制"><a href="#Service机制" class="headerlink" title="Service机制"></a>Service机制</h1><p>启动服务时依次执行onCreate，onStartCommand，onStart；如果在系统显示调用stopService和stopSelf之前终止服务，service再次重启，onStartCommand会被调用，重启服务时依次执行onStartCommand，onStart。无论何时，都会先调用onStartCommand()，在调用onStart()。  </p>
-<h2 id="onStartCommand返回值"><a href="#onStartCommand返回值" class="headerlink" title="onStartCommand返回值"></a>onStartCommand返回值</h2><p>onStartComand使用时，返回的是一个(int)整形。<br>这个整形可以有四个返回值：</p>
+<h1 id="service机制">Service机制</h1>
+<p>启动服务时依次执行onCreate，onStartCommand，onStart；如果在系统显示调用stopService和stopSelf之前终止服务，service再次重启，onStartCommand会被调用，重启服务时依次执行onStartCommand，onStart。无论何时，都会先调用onStartCommand()，在调用onStart()。</p>
+<h2 id="onstartcommand返回值">onStartCommand返回值</h2>
+<p>onStartComand使用时，返回的是一个(int)整形。<br>
+这个整形可以有四个返回值：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start_sticky、start_no_sticky、START_REDELIVER_INTENT、START_STICKY_COMPATIBILITY</span><br></pre></td></tr></table></figure>
-<p>它们的含义分别是：  </p>
+<p>它们的含义分别是：</p>
 <ul>
-<li>START_STICKY：如果service进程被kill掉，保留service的状态为开始状态，但不保留递送的intent对象。随后系统会尝试重新创建service，由于服务状态为开始状态，所以创建服务后一定会调用onStartCommand(Intent,int,int)方法。如果在此期间没有任何启动命令被传递到service，那么参数Intent将为null。  </li>
-<li>START_NOT_STICKY：“非粘性的”。使用这个返回值时，如果在执行完onStartCommand后，服务被异常kill掉，系统不会自动重启该服务  </li>
-<li>START_REDELIVER_INTENT：重传Intent。使用这个返回值时，如果在执行完onStartCommand后，服务被异常kill掉，系统会自动重启该服务，并将Intent的值传入。   </li>
-<li>START_STICKY_COMPATIBILITY：START_STICKY的兼容版本，但不保证服务被kill后一定能重启。  </li>
+<li>START_STICKY：如果service进程被kill掉，保留service的状态为开始状态，但不保留递送的intent对象。随后系统会尝试重新创建service，由于服务状态为开始状态，所以创建服务后一定会调用onStartCommand(Intent,int,int)方法。如果在此期间没有任何启动命令被传递到service，那么参数Intent将为null。<br>
+</li>
+<li>START_NOT_STICKY：“非粘性的”。使用这个返回值时，如果在执行完onStartCommand后，服务被异常kill掉，系统不会自动重启该服务<br>
+</li>
+<li>START_REDELIVER_INTENT：重传Intent。使用这个返回值时，如果在执行完onStartCommand后，服务被异常kill掉，系统会自动重启该服务，并将Intent的值传入。<br>
+</li>
+<li>START_STICKY_COMPATIBILITY：START_STICKY的兼容版本，但不保证服务被kill后一定能重启。</li>
 </ul>
-<p>onStartComand参数flags含义  </p>
-<p>flags表示启动服务的方式：  </p>
-<p>Additional data about this start request. Currently either 0, START_FLAG_REDELIVERY, or START_FLAG_RETRY.  </p>
-<p>START_FLAG_REDELIVERY：如果你实现onStartCommand()来安排异步工作或者在另一个线程中工作, 那么你可能需要使用START_FLAG_REDELIVERY来让系统重新发送一个intent。这样如果你的服务在处理它的时候被Kill掉, Intent不会丢失.<br>START_FLAG_RETRY：表示服务之前被设为START_STICKY，则会被传入这个标记。</p>
-<h1 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h1><h2 id="隐藏（GONE）"><a href="#隐藏（GONE）" class="headerlink" title="隐藏（GONE）"></a>隐藏（GONE）</h2><p>XML文件：android:visibility=”gone”</p>
+<p>onStartComand参数flags含义</p>
+<p>flags表示启动服务的方式：</p>
+<p>Additional data about this start request. Currently either 0, START_FLAG_REDELIVERY, or START_FLAG_RETRY.</p>
+<p>START_FLAG_REDELIVERY：如果你实现onStartCommand()来安排异步工作或者在另一个线程中工作, 那么你可能需要使用START_FLAG_REDELIVERY来让系统重新发送一个intent。这样如果你的服务在处理它的时候被Kill掉, Intent不会丢失.<br>
+START_FLAG_RETRY：表示服务之前被设为START_STICKY，则会被传入这个标记。</p>
+<h1 id="显示">显示</h1>
+<h2 id="隐藏gone">隐藏（GONE）</h2>
+<p>XML文件：android:visibility=“gone”</p>
 <p>Java代码：view.setVisibility(View.GONE);</p>
-<h1 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h1><p>A/libc: Fatal signal 5 (SIGTRAP), code 1 in tid 24188</p>
+<h1 id="错误">错误</h1>
+<p>A/libc: Fatal signal 5 (SIGTRAP), code 1 in tid 24188</p>
 <p>JNI 中 c 函数未返回</p>
 
       
@@ -698,7 +685,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -709,7 +696,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -720,7 +707,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -810,7 +797,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安卓中用户权限设置"><span class="nav-number">1.</span> <span class="nav-text">安卓中用户权限设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android中Intent机制"><span class="nav-number">2.</span> <span class="nav-text">Android中Intent机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">2.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Intent-结构"><span class="nav-number">2.2.</span> <span class="nav-text">Intent 结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Service机制"><span class="nav-number">3.</span> <span class="nav-text">Service机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#onStartCommand返回值"><span class="nav-number">3.1.</span> <span class="nav-text">onStartCommand返回值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示"><span class="nav-number">4.</span> <span class="nav-text">显示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏（GONE）"><span class="nav-number">4.1.</span> <span class="nav-text">隐藏（GONE）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误"><span class="nav-number">5.</span> <span class="nav-text">错误</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安卓中用户权限设置"><span class="nav-number">1.</span> <span class="nav-text">安卓中用户权限设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android中intent机制"><span class="nav-number">2.</span> <span class="nav-text">Android中Intent机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">2.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intent-结构"><span class="nav-number">2.2.</span> <span class="nav-text">Intent 结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#service机制"><span class="nav-number">3.</span> <span class="nav-text">Service机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#onstartcommand返回值"><span class="nav-number">3.1.</span> <span class="nav-text">onStartCommand返回值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示"><span class="nav-number">4.</span> <span class="nav-text">显示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏gone"><span class="nav-number">4.1.</span> <span class="nav-text">隐藏（GONE）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误"><span class="nav-number">5.</span> <span class="nav-text">错误</span></a></li></ol></div>
             
 
           </div>
@@ -833,7 +820,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -847,7 +834,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1146,6 +1133,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1270,31 +1279,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

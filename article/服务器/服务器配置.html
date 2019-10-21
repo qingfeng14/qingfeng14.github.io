@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="终端,服务器,">
@@ -124,18 +91,18 @@ function loopy() {
 
 
 
-<meta name="description" content="服务器配置相关记录Apache的反向代理首先是库之类的环境配置，如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。 如果是安装好的，就在配置文件http.conf里启用相应的模块LoadModule proxy_module modules/mod_proxy.soLoadModule proxy_http_module modules/mod_proxy">
+<meta name="description" content="服务器配置相关记录 Apache的反向代理 首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。 如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_">
 <meta name="keywords" content="终端,服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器配置相关问题">
 <meta property="og:url" content="https://2young.2simple.top/article/服务器/服务器配置.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="服务器配置相关记录Apache的反向代理首先是库之类的环境配置，如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。 如果是安装好的，就在配置文件http.conf里启用相应的模块LoadModule proxy_module modules/mod_proxy.soLoadModule proxy_http_module modules/mod_proxy">
+<meta property="og:description" content="服务器配置相关记录 Apache的反向代理 首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。 如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-21T09:14:51.304Z">
+<meta property="og:updated_time" content="2019-02-14T01:32:58.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器配置相关问题">
-<meta name="twitter:description" content="服务器配置相关记录Apache的反向代理首先是库之类的环境配置，如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。 如果是安装好的，就在配置文件http.conf里启用相应的模块LoadModule proxy_module modules/mod_proxy.soLoadModule proxy_http_module modules/mod_proxy">
+<meta name="twitter:description" content="服务器配置相关记录 Apache的反向代理 首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。 如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_">
 
 
 
@@ -203,6 +170,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -480,7 +453,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  982
+                  979
                 </span>
               
 
@@ -515,41 +488,38 @@ function loopy() {
       
 
       
-        <h1 id="服务器配置相关记录"><a href="#服务器配置相关记录" class="headerlink" title="服务器配置相关记录"></a>服务器配置相关记录</h1><h2 id="Apache的反向代理"><a href="#Apache的反向代理" class="headerlink" title="Apache的反向代理"></a>Apache的反向代理</h2><p>首先是库之类的环境配置，<br>如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。</p>
-<p>如果是安装好的，就在配置文件http.conf里启用相应的模块<br>LoadModule proxy_module modules/mod_proxy.so<br>LoadModule proxy_http_module modules/mod_proxy_http.so</p>
-<p>有的服务器该配置文件为, <code>/etc/apache2/apache2.conf</code><br><a id="more"></a></p>
+        <h1 id="服务器配置相关记录">服务器配置相关记录</h1>
+<h2 id="apache的反向代理">Apache的反向代理</h2>
+<p>首先是库之类的环境配置， 如果是编译的，./configure附加–enable-proxy参数，把代理模块编译进来。</p>
+<p>如果是安装好的，就在配置文件http.conf里启用相应的模块 LoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_proxy_http.so</p>
+<p>有的服务器该配置文件为, <code>/etc/apache2/apache2.conf</code> <a id="more"></a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so</span><br><span class="line">LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAlias wordpress.zhangshenghao.win</span><br><span class="line">    ServerName wordpress.zhangshenghao.win</span><br><span class="line">    ProxyPassReverse / http://pi.zhangshenghao.win/wordpress/</span><br><span class="line">    ProxyPass / http://pi.zhangshenghao.win/wordpress/</span><br><span class="line">    </span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAlias blog.zhangshenghao.win</span><br><span class="line">    ServerName blog.zhangshenghao.win</span><br><span class="line">    ProxyPassReverse / http://pi.zhangshenghao.win/qingfeng14.github.io/</span><br><span class="line">    ProxyPass / http://pi.zhangshenghao.win/qingfeng14.github.io/</span><br><span class="line">    </span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAlias code.zhangshenghao.win</span><br><span class="line">    ServerName code.zhangshenghao.win</span><br><span class="line">    # ProxyPassReverse / http://pi.zhangshenghao.win/wordpress/</span><br><span class="line">    DocumentRoot /Users/alexzhangch/Downloads/FTP_SERVER/</span><br><span class="line">    </span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;Directory &quot;/Users/alexzhangch/Downloads/FTP_SERVER/&quot;&gt;</span><br><span class="line">    Options FollowSymLinks Multiviews</span><br><span class="line">    MultiviewsMatch Any</span><br><span class="line">    AllowOverride None</span><br><span class="line">    Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAlias wordpress.zhangshenghao.win</span><br><span class="line">    ServerName wordpress.zhangshenghao.win</span><br><span class="line">    ProxyPassReverse / http://pi.zhangshenghao.win/wordpress/</span><br><span class="line">    ProxyPass / http://pi.zhangshenghao.win/wordpress/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAlias blog.zhangshenghao.win</span><br><span class="line">    ServerName blog.zhangshenghao.win</span><br><span class="line">    ProxyPassReverse / http://pi.zhangshenghao.win/qingfeng14.github.io/</span><br><span class="line">    ProxyPass / http://pi.zhangshenghao.win/qingfeng14.github.io/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAlias code.zhangshenghao.win</span><br><span class="line">    ServerName code.zhangshenghao.win</span><br><span class="line">    # ProxyPassReverse / http://pi.zhangshenghao.win/wordpress/</span><br><span class="line">    DocumentRoot /Users/alexzhangch/Downloads/FTP_SERVER/    </span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;Directory &quot;/Users/alexzhangch/Downloads/FTP_SERVER/&quot;&gt;</span><br><span class="line">    Options FollowSymLinks Multiviews</span><br><span class="line">    MultiviewsMatch Any</span><br><span class="line">    AllowOverride None</span><br><span class="line">    Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
 <p>服务器重启</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
-<h1 id="开启HTTPS-代理"><a href="#开启HTTPS-代理" class="headerlink" title="开启HTTPS 代理"></a>开启HTTPS 代理</h1><p><a href="http://www.cnblogs.com/best-jobs/p/3298258.html" target="_blank" rel="noopener">开启HTTPS步骤</a><br><a href="http://blog.csdn.net/newjueqi/article/details/9789659" target="_blank" rel="noopener">更全</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
+<h1 id="开启https-代理">开启HTTPS 代理</h1>
+<p><a href="http://www.cnblogs.com/best-jobs/p/3298258.html" target="_blank" rel="noopener">开启HTTPS步骤</a> <a href="http://blog.csdn.net/newjueqi/article/details/9789659" target="_blank" rel="noopener">更全</a></p>
 <ul>
 <li><p>步骤1：生成密钥</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa 1024 &gt; server.key</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<pre><code>说明：这是用128位rsa算法生成密钥，得到server.key文件
-</code></pre><ul>
+<p>说明：这是用128位rsa算法生成密钥，得到server.key文件</p></li>
 <li><p>步骤2: 生成证书请求文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -key server.key &gt; server.csr</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<pre><code>说明：这是用步骤1的密钥生成证书请求文件server.csr, 这一步提很多问题，一一输入
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Country Name (2 letter code) [AU]:CN ← 国家代号，中国输入CN </span><br><span class="line">State or Province Name (full name) [Some-State]:BeiJing ← 省的全名，拼音 </span><br><span class="line">Locality Name (eg, city) []:BeiJing ← 市的全名，拼音 </span><br><span class="line">Organization Name (eg, company) [Internet Widgits Pty Ltd]:MyCompany Corp. ← 公司英文名 </span><br><span class="line">Organizational Unit Name (eg, section) []: ← 可以不输入 </span><br><span class="line">Common Name (eg, YOUR name) []: ← 此时不输入 </span><br><span class="line">Email Address []:admin@mycompany.com ← 电子邮箱，可随意填</span><br><span class="line">Please enter the following ‘extra’ attributes </span><br><span class="line">to be sent with your certificate request </span><br><span class="line">A challenge password []: ← 可以不输入 </span><br><span class="line">An optional company name []: ← 可以不输入</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>步骤3: 生成证书</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -x509 -days 3650 -key server.key -in server.csr &gt; server.crt</span><br></pre></td></tr></table></figure>
+<p>说明：这是用步骤1的密钥生成证书请求文件server.csr, 这一步提很多问题，一一输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Country Name (2 letter code) [AU]:CN ← 国家代号，中国输入CN </span><br><span class="line">State or Province Name (full name) [Some-State]:BeiJing ← 省的全名，拼音 </span><br><span class="line">Locality Name (eg, city) []:BeiJing ← 市的全名，拼音 </span><br><span class="line">Organization Name (eg, company) [Internet Widgits Pty Ltd]:MyCompany Corp. ← 公司英文名 </span><br><span class="line">Organizational Unit Name (eg, section) []: ← 可以不输入 </span><br><span class="line">Common Name (eg, YOUR name) []: ← 此时不输入 </span><br><span class="line">Email Address []:admin@mycompany.com ← 电子邮箱，可随意填</span><br><span class="line">Please enter the following ‘extra’ attributes </span><br><span class="line">to be sent with your certificate request </span><br><span class="line">A challenge password []: ← 可以不输入 </span><br><span class="line">An optional company name []: ← 可以不输入</span><br></pre></td></tr></table></figure></li>
+<li><p>步骤3: 生成证书 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -x509 -days 3650 -key server.key -<span class="keyword">in</span> server.csr &gt; server.crt</span><br></pre></td></tr></table></figure></p>
 <p>说明：这是用步骤1,2的的密钥和证书请求生成证书server.crt，-days参数指明证书有效期，单位为天</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="_">-s</span> /etc/apache2/sites-available/default-ssl.conf  /etc/apache2/sites-enabled/001-ssl.conf</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /etc/apache2/sites-available/default-ssl.conf  /etc/apache2/sites-enabled/001-ssl.conf</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="let’s-encrypt"><a href="#let’s-encrypt" class="headerlink" title="let’s encrypt"></a>let’s encrypt</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Generating key (2048 bits): /etc/letsencrypt/keys/0001_key-certbot.pem</span><br><span class="line">Creating CSR: /etc/letsencrypt/csr/0001_csr-certbot.pem</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 泛域名更新</span></span><br><span class="line">certbot certonly <span class="_">-d</span> *.2simple.top --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory</span><br></pre></td></tr></table></figure>
+<h1 id="lets-encrypt">let’s encrypt</h1>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Generating key (2048 bits): /etc/letsencrypt/keys/0001_key-certbot.pem</span><br><span class="line">Creating CSR: /etc/letsencrypt/csr/0001_csr-certbot.pem</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 泛域名更新</span></span><br><span class="line">certbot certonly -d *.2simple.top --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost _default_:443&gt;</span><br><span class="line">        ServerAdmin zhangshenghao1995@163.com</span><br><span class="line"></span><br><span class="line">        DocumentRoot /var/www/html/qingfeng14.github.io/</span><br><span class="line"></span><br><span class="line">        ErrorLog $&#123;APACHE_LOG_DIR&#125;/error.log</span><br><span class="line">        CustomLog $&#123;APACHE_LOG_DIR&#125;/access.log combined</span><br><span class="line"></span><br><span class="line">        #   SSL Engine Switch:</span><br><span class="line">        #   Enable/Disable SSL for this virtual host.</span><br><span class="line">        SSLEngine on</span><br><span class="line"></span><br><span class="line">        #   A self-signed (snakeoil) certificate can be created by installing</span><br><span class="line">        #   the ssl-cert package. See</span><br><span class="line">        #   /usr/share/doc/apache2/README.Debian.gz for more info.</span><br><span class="line">        #   If both key and certificate are stored in the same file, only the</span><br><span class="line">        #   SSLCertificateFile directive is needed.</span><br><span class="line">        SSLCertificateFile  /etc/letsencrypt/live/zhangshenghao.win/fullchain.pem</span><br><span class="line">        SSLCertificateKeyFile /etc/letsencrypt/live/zhangshenghao.win/privkey.pem</span><br><span class="line"></span><br><span class="line">        &lt;FilesMatch &quot;\.(cgi|shtml|phtml|php)$&quot;&gt;</span><br><span class="line">                SSLOptions +StdEnvVars</span><br><span class="line">        &lt;/FilesMatch&gt;</span><br><span class="line">        &lt;Directory /usr/lib/cgi-bin&gt;</span><br><span class="line">                SSLOptions +StdEnvVars</span><br><span class="line">        &lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">        BrowserMatch &quot;MSIE [2-6]&quot; \</span><br><span class="line">                nokeepalive ssl-unclean-shutdown \</span><br><span class="line">                downgrade-1.0 force-response-1.0</span><br><span class="line">        # MSIE 7 and newer should be able to use keepalive</span><br><span class="line">        BrowserMatch &quot;MSIE [17-9]&quot; ssl-unclean-shutdown</span><br><span class="line"></span><br><span class="line">        ServerName zhangshenghao.win</span><br><span class="line">    &lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">    &lt;VirtualHost _default_:443&gt;</span><br><span class="line">        ServerAdmin zhangshenghao1995@163.com</span><br><span class="line"></span><br><span class="line">        DocumentRoot /var/www/html/qingfeng14.github.io/</span><br><span class="line"></span><br><span class="line">        ErrorLog $&#123;APACHE_LOG_DIR&#125;/error.log</span><br><span class="line">        CustomLog $&#123;APACHE_LOG_DIR&#125;/access.log combined</span><br><span class="line"></span><br><span class="line">        #   SSL Engine Switch:</span><br><span class="line">        #   Enable/Disable SSL for this virtual host.</span><br><span class="line">        SSLEngine on</span><br><span class="line"></span><br><span class="line">        #   A self-signed (snakeoil) certificate can be created by installing</span><br><span class="line">        #   the ssl-cert package. See</span><br><span class="line">        #   /usr/share/doc/apache2/README.Debian.gz for more info.</span><br><span class="line">        #   If both key and certificate are stored in the same file, only the</span><br><span class="line">        #   SSLCertificateFile directive is needed.</span><br><span class="line">        SSLCertificateFile  /etc/letsencrypt/live/blog.zhangshenghao.win/fullchain.pem</span><br><span class="line">        SSLCertificateKeyFile /etc/letsencrypt/live/blog.zhangshenghao.win/privkey.pem</span><br><span class="line"></span><br><span class="line">        &lt;FilesMatch &quot;\.(cgi|shtml|phtml|php)$&quot;&gt;</span><br><span class="line">                SSLOptions +StdEnvVars</span><br><span class="line">        &lt;/FilesMatch&gt;</span><br><span class="line">        &lt;Directory /usr/lib/cgi-bin&gt;</span><br><span class="line">                SSLOptions +StdEnvVars</span><br><span class="line">        &lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">        BrowserMatch &quot;MSIE [2-6]&quot; \</span><br><span class="line">                nokeepalive ssl-unclean-shutdown \</span><br><span class="line">                downgrade-1.0 force-response-1.0</span><br><span class="line">        # MSIE 7 and newer should be able to use keepalive</span><br><span class="line">        BrowserMatch &quot;MSIE [17-9]&quot; ssl-unclean-shutdown</span><br><span class="line"></span><br><span class="line">        ServerName blog.zhangshenghao.win</span><br><span class="line">    &lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="http-重定向至-http"><a href="#http-重定向至-http" class="headerlink" title="http 重定向至 http"></a>http 重定向至 http</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine On</span><br><span class="line">RewriteRule ^ https://%&#123;SERVER_NAME&#125;%&#123;REQUEST_URI&#125; [END,NE,R=permanent]</span><br></pre></td></tr></table></figure>
-<h1 id="squid-代理服务器"><a href="#squid-代理服务器" class="headerlink" title="squid 代理服务器"></a>squid 代理服务器</h1>
+<h2 id="http-重定向至-https">http 重定向至 https</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine On</span><br><span class="line">RewriteRule ^ https://%&#123;SERVER_NAME&#125;%&#123;REQUEST_URI&#125; [END,NE,R=permanent]</span><br></pre></td></tr></table></figure>
+<h2 id="squid-代理服务器">squid 代理服务器</h2>
+
       
     </div>
 
@@ -718,7 +688,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -729,7 +699,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -740,7 +710,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -830,7 +800,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器配置相关记录"><span class="nav-number">1.</span> <span class="nav-text">服务器配置相关记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache的反向代理"><span class="nav-number">1.1.</span> <span class="nav-text">Apache的反向代理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开启HTTPS-代理"><span class="nav-number">2.</span> <span class="nav-text">开启HTTPS 代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#let’s-encrypt"><span class="nav-number">3.</span> <span class="nav-text">let’s encrypt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http-重定向至-http"><span class="nav-number">3.1.</span> <span class="nav-text">http 重定向至 http</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#squid-代理服务器"><span class="nav-number">4.</span> <span class="nav-text">squid 代理服务器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器配置相关记录"><span class="nav-number">1.</span> <span class="nav-text">服务器配置相关记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#apache的反向代理"><span class="nav-number">1.1.</span> <span class="nav-text">Apache的反向代理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开启https-代理"><span class="nav-number">2.</span> <span class="nav-text">开启HTTPS 代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lets-encrypt"><span class="nav-number">3.</span> <span class="nav-text">let’s encrypt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http-重定向至-https"><span class="nav-number">3.1.</span> <span class="nav-text">http 重定向至 https</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#squid-代理服务器"><span class="nav-number">3.2.</span> <span class="nav-text">squid 代理服务器</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -853,7 +823,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -867,7 +837,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1166,6 +1136,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1290,31 +1282,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

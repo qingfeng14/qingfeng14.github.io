@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="IP,Linux,Ubuntu,Mac,">
@@ -124,18 +91,18 @@ function loopy() {
 
 
 
-<meta name="description" content="Linux/Mac 获取本机的IP地址1ifconfig | grep -A 1 &apos;eth0&apos; | tail -n 1 | awk &apos;&amp;#123;print $2&amp;#125;&apos; 其中eth0需要替换为对应的网卡. Linux/Mac 获取本机的公网IP通过访问公网IP检测的网站即可. 12curl ifconfig.mecurl httpbin.org/ip">
+<meta name="description" content="Linux/Mac 获取本机的IP地址 1234# Ubuntuifconfig | grep -A 1 &apos;eth0&apos; | tail -n 1 | awk &apos;&amp;#123;print $2&amp;#125;&apos;# Macifconfig | grep -A 1 &apos;en0&apos; | tail -n 1 | awk &apos;&amp;#123;print $2&amp;#125;&apos; 其中eth0需要替换为对应的网卡. Linux/Mac">
 <meta name="keywords" content="IP,Linux,Ubuntu,Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux or Mac 命令行获取本机IP地址">
 <meta property="og:url" content="https://2young.2simple.top/article/Linux-Mac命令行获取本机IP地址.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="Linux/Mac 获取本机的IP地址1ifconfig | grep -A 1 &apos;eth0&apos; | tail -n 1 | awk &apos;&amp;#123;print $2&amp;#125;&apos; 其中eth0需要替换为对应的网卡. Linux/Mac 获取本机的公网IP通过访问公网IP检测的网站即可. 12curl ifconfig.mecurl httpbin.org/ip">
+<meta property="og:description" content="Linux/Mac 获取本机的IP地址 1234# Ubuntuifconfig | grep -A 1 &apos;eth0&apos; | tail -n 1 | awk &apos;&amp;#123;print $2&amp;#125;&apos;# Macifconfig | grep -A 1 &apos;en0&apos; | tail -n 1 | awk &apos;&amp;#123;print $2&amp;#125;&apos; 其中eth0需要替换为对应的网卡. Linux/Mac">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-26T10:14:21.237Z">
+<meta property="og:updated_time" content="2019-02-14T01:31:50.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux or Mac 命令行获取本机IP地址">
-<meta name="twitter:description" content="Linux/Mac 获取本机的IP地址1ifconfig | grep -A 1 &apos;eth0&apos; | tail -n 1 | awk &apos;&amp;#123;print $2&amp;#125;&apos; 其中eth0需要替换为对应的网卡. Linux/Mac 获取本机的公网IP通过访问公网IP检测的网站即可. 12curl ifconfig.mecurl httpbin.org/ip">
+<meta name="twitter:description" content="Linux/Mac 获取本机的IP地址 1234# Ubuntuifconfig | grep -A 1 &apos;eth0&apos; | tail -n 1 | awk &apos;&amp;#123;print $2&amp;#125;&apos;# Macifconfig | grep -A 1 &apos;en0&apos; | tail -n 1 | awk &apos;&amp;#123;print $2&amp;#125;&apos; 其中eth0需要替换为对应的网卡. Linux/Mac">
 
 
 
@@ -203,6 +170,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -480,7 +453,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  68
+                  84
                 </span>
               
 
@@ -515,9 +488,11 @@ function loopy() {
       
 
       
-        <h1 id="Linux-Mac-获取本机的IP地址"><a href="#Linux-Mac-获取本机的IP地址" class="headerlink" title="Linux/Mac 获取本机的IP地址"></a>Linux/Mac 获取本机的IP地址</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig | grep -A 1 <span class="string">'eth0'</span> | tail -n 1 | awk <span class="string">'&#123;print $2&#125;'</span></span><br></pre></td></tr></table></figure>
+        <h1 id="linuxmac-获取本机的ip地址">Linux/Mac 获取本机的IP地址</h1>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Ubuntu</span></span><br><span class="line">ifconfig | grep -A 1 <span class="string">'eth0'</span> | tail -n 1 | awk <span class="string">'&#123;print $2&#125;'</span></span><br><span class="line"><span class="comment"># Mac</span></span><br><span class="line">ifconfig | grep -A 1 <span class="string">'en0'</span> | tail -n 1 | awk <span class="string">'&#123;print $2&#125;'</span></span><br></pre></td></tr></table></figure>
 <p>其中<code>eth0</code>需要替换为对应的网卡.</p>
-<h2 id="Linux-Mac-获取本机的公网IP"><a href="#Linux-Mac-获取本机的公网IP" class="headerlink" title="Linux/Mac 获取本机的公网IP"></a>Linux/Mac 获取本机的公网IP</h2><p>通过访问公网IP检测的网站即可.</p>
+<h2 id="linuxmac-获取本机的公网ip">Linux/Mac 获取本机的公网IP</h2>
+<p>通过访问公网IP检测的网站即可.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl ifconfig.me</span><br><span class="line">curl httpbin.org/ip</span><br></pre></td></tr></table></figure>
 
       
@@ -692,7 +667,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -703,7 +678,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -714,7 +689,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -804,7 +779,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-Mac-获取本机的IP地址"><span class="nav-number">1.</span> <span class="nav-text">Linux/Mac 获取本机的IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-Mac-获取本机的公网IP"><span class="nav-number">1.1.</span> <span class="nav-text">Linux/Mac 获取本机的公网IP</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linuxmac-获取本机的ip地址"><span class="nav-number">1.</span> <span class="nav-text">Linux/Mac 获取本机的IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linuxmac-获取本机的公网ip"><span class="nav-number">1.1.</span> <span class="nav-text">Linux/Mac 获取本机的公网IP</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -827,7 +802,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -841,7 +816,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1140,6 +1115,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1264,31 +1261,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="青枫，博客，Coding, 张盛豪, Golang, Web">
@@ -124,17 +91,17 @@ function loopy() {
 
 
 
-<meta name="description" content="实验目标使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合. 实验步骤 数据预处理，将电影评论信息进行整合，一个电影输出一行 movieid, rating list Canopy Selection Mark Data set by Canopy K-means Iteration Viewer  具体实现Data Prep原">
+<meta name="description" content="实验目标 使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合. 实验步骤  数据预处理，将电影评论信息进行整合，一个电影输出一行 movieid, rating list Canopy Selection Mark Data set by Canopy K-means Iteration Viewer  具体实现 Data Pr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data">
 <meta property="og:url" content="https://2young.2simple.top/article/Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="实验目标使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合. 实验步骤 数据预处理，将电影评论信息进行整合，一个电影输出一行 movieid, rating list Canopy Selection Mark Data set by Canopy K-means Iteration Viewer  具体实现Data Prep原">
+<meta property="og:description" content="实验目标 使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合. 实验步骤  数据预处理，将电影评论信息进行整合，一个电影输出一行 movieid, rating list Canopy Selection Mark Data set by Canopy K-means Iteration Viewer  具体实现 Data Pr">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-07-17T06:02:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Massive-Data-Process-Lab3-K-means-Clustering-of-Netflix-Data">
-<meta name="twitter:description" content="实验目标使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合. 实验步骤 数据预处理，将电影评论信息进行整合，一个电影输出一行 movieid, rating list Canopy Selection Mark Data set by Canopy K-means Iteration Viewer  具体实现Data Prep原">
+<meta name="twitter:description" content="实验目标 使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合. 实验步骤  数据预处理，将电影评论信息进行整合，一个电影输出一行 movieid, rating list Canopy Selection Mark Data set by Canopy K-means Iteration Viewer  具体实现 Data Pr">
 
 
 
@@ -202,6 +169,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -479,7 +452,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,532
+                  1,533
                 </span>
               
 
@@ -514,61 +487,66 @@ function loopy() {
       
 
       
-        <h1 id="实验目标"><a href="#实验目标" class="headerlink" title="实验目标"></a>实验目标</h1><p>使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.</p>
-<h1 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h1><ul>
+        <h1 id="实验目标">实验目标</h1>
+<p>使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.</p>
+<h1 id="实验步骤">实验步骤</h1>
+<ul>
 <li>数据预处理，将电影评论信息进行整合，一个电影输出一行 movieid, rating list</li>
 <li>Canopy Selection</li>
 <li>Mark Data set by Canopy</li>
 <li>K-means Iteration</li>
 <li>Viewer</li>
 </ul>
-<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><h2 id="Data-Prep"><a href="#Data-Prep" class="headerlink" title="Data Prep"></a>Data Prep</h2><p>原始数据是一个Movie的信息一个文件，为了处理，需要将其转换为一个Movie 一行的形式</p>
+<h1 id="具体实现">具体实现</h1>
+<h2 id="data-prep">Data Prep</h2>
+<p>原始数据是一个Movie的信息一个文件，为了处理，需要将其转换为一个Movie 一行的形式</p>
 <p>Map阶段：</p>
 <p>输入文件是大量小文件，因此直接采用<code>WholeFileInputFormat</code>， 即Map的输入value为整个文件的内容，从中解析出MovieID, 以及对应的用户评论列表即可，注意这里需要对用户评论列表按照userID进行排序，以提高后面几步计算距离时的效率</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">String content = <span class="keyword">new</span> String(value.getBytes(),<span class="number">0</span>, value.getLength());</span><br><span class="line">String [] lines = content.split(<span class="string">"\n"</span>);</span><br><span class="line">Text movie = <span class="keyword">new</span> Text(lines[<span class="number">0</span>].replace(<span class="string">":"</span>, <span class="string">""</span>));</span><br><span class="line">List&lt;RatingPair&gt; user_list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">StringBuffer rating_list = <span class="keyword">new</span> StringBuffer();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; lines.length; ++i) &#123;</span><br><span class="line">    String []info = lines[i].split(<span class="string">","</span>);</span><br><span class="line">    user_list.add(<span class="keyword">new</span> RatingPair(info[<span class="number">0</span>], info[<span class="number">1</span>]));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 按用户id排序</span></span><br><span class="line">Collections.sort(user_list);</span><br></pre></td></tr></table></figure>
 <p>不需要reduce函数。</p>
-<h2 id="Canopy-Selection"><a href="#Canopy-Selection" class="headerlink" title="Canopy Selection"></a>Canopy Selection</h2><p>在这个步骤中，使用Simple Distance 来选择Canopy Centers, 该距离函数是两个电影的相同用户评论数.由于在第一步中已经对用户评论列表进行了按用户ID排序，因此只需要按顺序比对userID，找到超过阈值之后即可返回对应的结果。</p>
+<h2 id="canopy-selection">Canopy Selection</h2>
+<p>在这个步骤中，使用Simple Distance 来选择Canopy Centers, 该距离函数是两个电影的相同用户评论数.由于在第一步中已经对用户评论列表进行了按用户ID排序，因此只需要按顺序比对userID，找到超过阈值之后即可返回对应的结果。</p>
 <p>具体实现是MAP阶段，各个分节点先处理本地的数据，从中找出Canopy Centers,然后各个节点的Canopy Centers 传入Reduce，reduce从中用同样的算法计算出Canopy Centers,因此这里需要设置reduce num为1</p>
 <ul>
 <li><p>SimpleDistance:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">distance</span><span class="params">(Canopy o1, Canopy o2, <span class="keyword">int</span> threshold)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; o1.rating.size() &amp;&amp; j &lt; o2.rating.size();) &#123;</span><br><span class="line">        <span class="keyword">if</span>(o1.rating.get(i).userid &lt; o2.rating.get(j).userid) &#123;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(o2.rating.get(j).userid.equals(o1.rating.get(i).userid)) &#123;</span><br><span class="line">            <span class="keyword">if</span>(++count &gt; threshold) &#123;</span><br><span class="line">                <span class="comment">// LOG.warn( o1.id + " " +  o2.id + " " + count);</span></span><br><span class="line">                <span class="keyword">return</span> count;</span><br><span class="line">            &#125;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ++j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// LOG.warn( o1.id + " " +  o2.id + " " + count);</span></span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">distance</span><span class="params">(Canopy o1, Canopy o2, <span class="keyword">int</span> threshold)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; o1.rating.size() &amp;&amp; j &lt; o2.rating.size();) &#123;</span><br><span class="line">        <span class="keyword">if</span>(o1.rating.get(i).userid &lt; o2.rating.get(j).userid) &#123;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(o2.rating.get(j).userid.equals(o1.rating.get(i).userid)) &#123;</span><br><span class="line">            <span class="keyword">if</span>(++count &gt; threshold) &#123;</span><br><span class="line">                <span class="comment">// LOG.warn( o1.id + " " +  o2.id + " " + count);</span></span><br><span class="line">                <span class="keyword">return</span> count;</span><br><span class="line">            &#125;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ++j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// LOG.warn( o1.id + " " +  o2.id + " " + count);</span></span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li><p>Canopy Select算法：</p>
-<p>从point list中随机选取一个点p ，计算该点与当前所有的Canopy Center的距离，如果p与某个Center相同用户数大于阈值8（距离小于T1），则该点属于该Canopy， 如果p与所有的Canopy Center点的相同用户数都小于8，则该p置为一个新的Canopy Center，加入CanopyList.</p>
-</li>
+<p>从point list中随机选取一个点p ，计算该点与当前所有的Canopy Center的距离，如果p与某个Center相同用户数大于阈值8（距离小于T1），则该点属于该Canopy， 如果p与所有的Canopy Center点的相同用户数都小于8，则该p置为一个新的Canopy Center，加入CanopyList.</p></li>
 <li><p>Canopy Selection具体实现：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Text value: values) &#123;</span><br><span class="line">    count += <span class="number">1</span>;</span><br><span class="line">    Canopy curr = <span class="keyword">new</span> Canopy(value.toString());</span><br><span class="line">    <span class="keyword">boolean</span> newCanopy = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(Canopy p: <span class="keyword">this</span>.canopyList) &#123;</span><br><span class="line">        <span class="keyword">if</span>(Canopy.inCanopy(p, curr, threshold)) &#123;</span><br><span class="line">            newCanopy = <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(newCanopy) &#123;</span><br><span class="line">        <span class="keyword">this</span>.canopyList.add(curr);</span><br><span class="line">        context.write(<span class="keyword">new</span> Text(curr.id), <span class="keyword">new</span> Text(curr.rating.toString()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Text value: values) &#123;</span><br><span class="line">    count += <span class="number">1</span>;</span><br><span class="line">    Canopy curr = <span class="keyword">new</span> Canopy(value.toString());</span><br><span class="line">    <span class="keyword">boolean</span> newCanopy = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(Canopy p: <span class="keyword">this</span>.canopyList) &#123;</span><br><span class="line">        <span class="keyword">if</span>(Canopy.inCanopy(p, curr, threshold)) &#123;</span><br><span class="line">            newCanopy = <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(newCanopy) &#123;</span><br><span class="line">        <span class="keyword">this</span>.canopyList.add(curr);</span><br><span class="line">        context.write(<span class="keyword">new</span> Text(curr.id), <span class="keyword">new</span> Text(curr.rating.toString()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="Mark-Data-Set-by-Canopy"><a href="#Mark-Data-Set-by-Canopy" class="headerlink" title="Mark Data Set by Canopy"></a>Mark Data Set by Canopy</h2><p>这一步需要对每条数据标记其属于的Canopy，在MAP阶段，首先需要load 第二步中得到的Canopy Center的信息，然后对所有的电影数据，计算其与各个Canopy center的距离，若相同用户排列数超过2个，则该条电影数据属于该Canopy Center，最终输出<code>(movieid, rating_list + canopy_list)</code> 即可。</p>
+<h2 id="mark-data-set-by-canopy">Mark Data Set by Canopy</h2>
+<p>这一步需要对每条数据标记其属于的Canopy，在MAP阶段，首先需要load 第二步中得到的Canopy Center的信息，然后对所有的电影数据，计算其与各个Canopy center的距离，若相同用户排列数超过2个，则该条电影数据属于该Canopy Center，最终输出<code>(movieid, rating_list + canopy_list)</code> 即可。</p>
 <p>不需要reduce函数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本Canopy</span></span><br><span class="line">Canopy canopy = <span class="keyword">new</span> Canopy(value.toString());</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; canopies.size(); ++i) &#123;</span><br><span class="line">    <span class="comment">// 遍历中心点</span></span><br><span class="line">    <span class="keyword">if</span>(Canopy.distance(canopy, canopies.get(i), <span class="number">2</span>) &gt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="comment">// 在该Canopy中</span></span><br><span class="line">        canopyList.add(canopies.get(i).id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">context.write(<span class="keyword">new</span> Text(canopy.id), <span class="keyword">new</span> Text(canopy.rating.toString() + <span class="string">"\t"</span> + canopyList.toString()));</span><br></pre></td></tr></table></figure>
-<h2 id="K-means-Iteration"><a href="#K-means-Iteration" class="headerlink" title="K-means Iteration"></a>K-means Iteration</h2><h3 id="Map-Step"><a href="#Map-Step" class="headerlink" title="Map Step"></a>Map Step</h3><p>map 阶段的输入为每个Movie的<code>movieid, rating_list, canopy_list</code>, 需要在setup阶段先将第二步中选出的Canopy Center点的数据load入内存，在map函数中每接收一个Movie数据，就计算其与所属的Canopy的距离，并选择距离最近的作为其新的中心maxid，输出为<code>（maxid, movieinfo）</code>,此处的距离是余弦距离，其计算方式为$$similarity = \frac{A<em>B}{|A|</em>|B|} = \frac{\sum_{i = 1}^{n}Arate(user(i))<em>Brate(user(i)))}{|A|</em>|B|}$$ </p>
+<h2 id="k-means-iteration">K-means Iteration</h2>
+<h3 id="map-step">Map Step</h3>
+<p>map 阶段的输入为每个Movie的<code>movieid, rating_list, canopy_list</code>, 需要在setup阶段先将第二步中选出的Canopy Center点的数据load入内存，在map函数中每接收一个Movie数据，就计算其与所属的Canopy的距离，并选择距离最近的作为其新的中心maxid，输出为<code>（maxid, movieinfo）</code>,此处的距离是余弦距离，其计算方式为<span class="math display">\[similarity = \frac{A*B}{\|A\|*\|B\|} = \frac{\sum_{i = 1}^{n}Arate(user(i))*Brate(user(i)))}{\|A\|*\|B\|}\]</span></p>
 <p>出于计算效率考虑，这里使用余弦相似度的平方作为其距离，数值越大，point越接近。</p>
-<h3 id="Reduce-Step"><a href="#Reduce-Step" class="headerlink" title="Reduce Step"></a>Reduce Step</h3><p>reduce 阶段需要计算新的Canopy Center， 输入为（Canopyid, pointlist）, 首先遍历属于CanopyID这个集合的所有电影的评论数据，统计每个用户的评论数以及评论总分，然后根据用户的评论数进行排序，选择评论数前1000个用户，计算其平均评分，这些ratinglist作为新的Canopy id对应的数据。输出<code>(canopyID, rating_list)</code></p>
+<h3 id="reduce-step">Reduce Step</h3>
+<p>reduce 阶段需要计算新的Canopy Center， 输入为（Canopyid, pointlist）, 首先遍历属于CanopyID这个集合的所有电影的评论数据，统计每个用户的评论数以及评论总分，然后根据用户的评论数进行排序，选择评论数前1000个用户，计算其平均评分，这些ratinglist作为新的Canopy id对应的数据。输出<code>(canopyID, rating_list)</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 将map.entrySet()转换成list, 按照Value 排序</span></span><br><span class="line">List&lt;Map.Entry&lt;Integer, Integer&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;Map.Entry&lt;Integer, Integer&gt;&gt;(userMovieCounts.entrySet());</span><br><span class="line"><span class="comment">// 通过比较器来实现排序</span></span><br><span class="line">Collections.sort(list, <span class="keyword">new</span> Comparator&lt;Map.Entry&lt;Integer, Integer&gt;&gt;() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Map.Entry&lt;Integer, Integer&gt; o1, Map.Entry&lt;Integer, Integer&gt; o2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 降序排序</span></span><br><span class="line">        <span class="keyword">return</span> -o1.getValue().compareTo(o2.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// StringBuffer ratinglist = new StringBuffer();</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">List&lt;DataPrep.RatingPair&gt; ratingList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; mapping : list) &#123;</span><br><span class="line">    <span class="comment">// System.out.println(mapping.getKey() + ":" + mapping.getValue());</span></span><br><span class="line">    <span class="keyword">if</span>(counter &gt; <span class="number">1000</span>) <span class="keyword">break</span>;</span><br><span class="line">    <span class="comment">// LOG.error(mapping.getKey() + " " + mapping.getValue());</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> rateCount = mapping.getValue();</span><br><span class="line">    Integer averageRate = ratingSum.get(mapping.getKey()) / rateCount;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(averageRate &gt; <span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">        ratingList.add(<span class="keyword">new</span> DataPrep.RatingPair(mapping.getKey().toString(), averageRate.toString()));</span><br><span class="line">        <span class="comment">// ratinglist.append(mapping.getKey() + "," + averageRate);</span></span><br><span class="line">    &#125;</span><br><span class="line">    counter += <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Viewer"><a href="#Viewer" class="headerlink" title="Viewer"></a>Viewer</h2><p>输出最终的聚类结果，导入Title文件，map阶段同K-means Iteration的MAP函数，但是在输出时将Movieid 转换为对应的Title，输出最终的聚类结果。</p>
+<h2 id="viewer">Viewer</h2>
+<p>输出最终的聚类结果，导入Title文件，map阶段同K-means Iteration的MAP函数，但是在输出时将Movieid 转换为对应的Title，输出最终的聚类结果。</p>
 <p>结果示意:</p>
 <ul>
 <li><p>哈利波特：Harry Potter</p>
 <ul>
-<li>out5New 5轮 1000：  （4，3，1）</li>
+<li>out5New 5轮 1000： （4，3，1）</li>
 <li>out10Times: 10轮 1000： （4，1，1，2）</li>
 <li></li>
-</ul>
-</li>
-<li><p>Star Wars</p>
+</ul></li>
+<li>Star Wars
 <ul>
 <li>out5News: 4+2+1+1+1</li>
-<li>out10Times: (5+2+1+1)  </li>
+<li>out10Times: (5+2+1+1)</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h1 id="Write-Up"><a href="#Write-Up" class="headerlink" title="Write Up"></a>Write Up</h1><ul>
+<h1 id="write-up">Write Up</h1>
+<ul>
 <li>聚类数： 318</li>
 <li><p>分类结果示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10011   &#123;5046=Iron Maiden: Visions of the Beast, 6316=New England Metal Hardcore Festival 2003, 7538=Iron Maiden: The Early Days, 7653=CKY: Infiltrate, 10011=Lamb of God: Killadelphia&#125;</span><br><span class="line">1028    &#123;1028=The Educational Archives: Vol. 1: Sex &amp; Drugs, 4376=ABBA: The Definitive Collection, 4549=ABBA: Gold: Greatest Hits, 5987=Gates of Heaven, 10896=Errol Morris&apos; First Person: The Complete Series, 10969=Jail Bait, 12449=Bad Girls Go to Hell/ Another Day Another Man, 12691=Vernon, 14696=ABBA: The Winner Takes It All, 14703=ABBA: Super Troupers&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10011   &#123;5046=Iron Maiden: Visions of the Beast, 6316=New England Metal Hardcore Festival 2003, 7538=Iron Maiden: The Early Days, 7653=CKY: Infiltrate, 10011=Lamb of God: Killadelphia&#125;</span><br><span class="line">1028    &#123;1028=The Educational Archives: Vol. 1: Sex &amp; Drugs, 4376=ABBA: The Definitive Collection, 4549=ABBA: Gold: Greatest Hits, 5987=Gates of Heaven, 10896=Errol Morris&apos; First Person: The Complete Series, 10969=Jail Bait, 12449=Bad Girls Go to Hell/ Another Day Another Man, 12691=Vernon, 14696=ABBA: The Winner Takes It All, 14703=ABBA: Super Troupers&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>本次实验实现了Kmeans算法和Canopy算法，通过本次实验，我对Hadoop 的MapReduce编程模式理解更加深入了，也对聚类算法有了更多的认识。</p>
 
@@ -732,7 +710,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -743,7 +721,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -754,7 +732,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -844,7 +822,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目标"><span class="nav-number">1.</span> <span class="nav-text">实验目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验步骤"><span class="nav-number">2.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体实现"><span class="nav-number">3.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Prep"><span class="nav-number">3.1.</span> <span class="nav-text">Data Prep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canopy-Selection"><span class="nav-number">3.2.</span> <span class="nav-text">Canopy Selection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mark-Data-Set-by-Canopy"><span class="nav-number">3.3.</span> <span class="nav-text">Mark Data Set by Canopy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-means-Iteration"><span class="nav-number">3.4.</span> <span class="nav-text">K-means Iteration</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map-Step"><span class="nav-number">3.4.1.</span> <span class="nav-text">Map Step</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduce-Step"><span class="nav-number">3.4.2.</span> <span class="nav-text">Reduce Step</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Viewer"><span class="nav-number">3.5.</span> <span class="nav-text">Viewer</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Write-Up"><span class="nav-number">4.</span> <span class="nav-text">Write Up</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目标"><span class="nav-number">1.</span> <span class="nav-text">实验目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验步骤"><span class="nav-number">2.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体实现"><span class="nav-number">3.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#data-prep"><span class="nav-number">3.1.</span> <span class="nav-text">Data Prep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canopy-selection"><span class="nav-number">3.2.</span> <span class="nav-text">Canopy Selection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mark-data-set-by-canopy"><span class="nav-number">3.3.</span> <span class="nav-text">Mark Data Set by Canopy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k-means-iteration"><span class="nav-number">3.4.</span> <span class="nav-text">K-means Iteration</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map-step"><span class="nav-number">3.4.1.</span> <span class="nav-text">Map Step</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce-step"><span class="nav-number">3.4.2.</span> <span class="nav-text">Reduce Step</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewer"><span class="nav-number">3.5.</span> <span class="nav-text">Viewer</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#write-up"><span class="nav-number">4.</span> <span class="nav-text">Write Up</span></a></li></ol></div>
             
 
           </div>
@@ -867,7 +845,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -881,7 +859,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1180,6 +1158,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1304,31 +1304,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

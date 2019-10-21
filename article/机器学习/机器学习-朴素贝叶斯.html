@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="机器学习,实验,朴素贝叶斯,">
@@ -124,23 +91,22 @@ function loopy() {
 
 
 
-<meta name="description" content="朴素贝叶斯原理youryion数据挖掘指导 朴素贝叶斯法属于一种分类方法，基于特征条件独立假设学习输入输出的联合概率分布，以此为模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。 简单有效，是一种常用的机器学习方法.">
+<meta name="description" content="朴素贝叶斯原理 youryion数据挖掘指导 朴素贝叶斯法属于一种分类方法，基于特征条件独立假设学习输入输出的联合概率分布，以此为模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。 简单有效，是一种常用的机器学习方法.">
 <meta name="keywords" content="机器学习,实验,朴素贝叶斯">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-朴素贝叶斯">
 <meta property="og:url" content="https://2young.2simple.top/article/机器学习/机器学习-朴素贝叶斯.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="朴素贝叶斯原理youryion数据挖掘指导 朴素贝叶斯法属于一种分类方法，基于特征条件独立假设学习输入输出的联合概率分布，以此为模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。 简单有效，是一种常用的机器学习方法.">
+<meta property="og:description" content="朴素贝叶斯原理 youryion数据挖掘指导 朴素贝叶斯法属于一种分类方法，基于特征条件独立假设学习输入输出的联合概率分布，以此为模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。 简单有效，是一种常用的机器学习方法.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3H2A1k1M0B0G0e1Y2z0J/Image%202017-03-19%20at%201.16.18%20下午.png">
 <meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/1e1r1i0J2l2T1V332H2C/Image%202017-03-19%20at%201.36.53%20下午.png">
 <meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3B1d3L1A2D42390u3c2g/Image%202017-03-19%20at%201.38.11%20下午.png">
-<meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/2I3E2O0P2k2O2B1L2I3P/Image%202017-03-19%20at%201.39.01%20下午.png?v=ed93793c">
 <meta property="og:image" content="https://d3uepj124s5rcx.cloudfront.net/items/2E3p06433b2e241u0i1d/Image%202017-03-19%20at%201.41.19%20下午.png">
 <meta property="og:updated_time" content="2017-03-19T06:02:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-朴素贝叶斯">
-<meta name="twitter:description" content="朴素贝叶斯原理youryion数据挖掘指导 朴素贝叶斯法属于一种分类方法，基于特征条件独立假设学习输入输出的联合概率分布，以此为模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。 简单有效，是一种常用的机器学习方法.">
+<meta name="twitter:description" content="朴素贝叶斯原理 youryion数据挖掘指导 朴素贝叶斯法属于一种分类方法，基于特征条件独立假设学习输入输出的联合概率分布，以此为模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。 简单有效，是一种常用的机器学习方法.">
 <meta name="twitter:image" content="https://d3uepj124s5rcx.cloudfront.net/items/3H2A1k1M0B0G0e1Y2z0J/Image%202017-03-19%20at%201.16.18%20下午.png">
 
 
@@ -209,6 +175,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -486,7 +458,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  269
+                  274
                 </span>
               
 
@@ -521,29 +493,46 @@ function loopy() {
       
 
       
-        <h1 id="朴素贝叶斯原理"><a href="#朴素贝叶斯原理" class="headerlink" title="朴素贝叶斯原理"></a>朴素贝叶斯原理</h1><p><a href="https://github.com/yourtion/DataminingGuideBook" target="_blank" rel="noopener">youryion数据挖掘指导</a></p>
+        <h1 id="朴素贝叶斯原理">朴素贝叶斯原理</h1>
+<p><a href="https://github.com/yourtion/DataminingGuideBook" target="_blank" rel="noopener">youryion数据挖掘指导</a></p>
 <p>朴素贝叶斯法属于一种分类方法，基于<font color="red">特征条件独立假设</font>学习<font color="red">输入输出的联合概率分布</font>，以此为模型，对于给定的输入x，利用贝叶斯定理求出<font color="red">后验概率最大的输出y。</font></p>
 <p>简单有效，是一种常用的机器学习方法.</p>
 <a id="more"></a>
 <ul>
-<li>设输入空间 $X \subseteq R^n$为n维向量的集合</li>
-<li>输出空间为类标记集合 $Y=c_1, c_2,\cdots,c_k$</li>
+<li>设输入空间 <span class="math inline">\(X \subseteq R^n\)</span>为n维向量的集合</li>
+<li>输出空间为类标记集合 <span class="math inline">\(Y=c_1, c_2,\cdots,c_k\)</span></li>
 <li>X是定义在<font color="red">输入空间</font>上的随机变量</li>
 <li>Y是定义在输出空间上的随机变量</li>
 <li>P(X,Y)是X和Y的联合概率分布</li>
-<li>$T = (x_1, y_1), (x_2, y_2), \cdots, (x_N, y_N)$是由P(X,Y)<font color="red">独立同分布</font>产生的训练集</li>
+<li><span class="math inline">\(T = (x_1, y_1), (x_2, y_2), \cdots, (x_N, y_N)\)</span>是由P(X,Y)<font color="red">独立同分布</font>产生的训练集</li>
 </ul>
-<h1 id="贝叶斯法则"><a href="#贝叶斯法则" class="headerlink" title="贝叶斯法则"></a>贝叶斯法则</h1><p>条件概率</p>
+<h1 id="贝叶斯法则">贝叶斯法则</h1>
+<p>条件概率</p>
 <p>条件概率表示为P（A|B），读作“在B条件下A的概率”。</p>
-<p>若只有两个事件A，B，那么 $$P(A|B) = \frac{P(AB)}{P(B)}$$</p>
-<p><img src="https://d3uepj124s5rcx.cloudfront.net/items/3H2A1k1M0B0G0e1Y2z0J/Image%202017-03-19%20at%201.16.18%20下午.png" alt="贝叶斯法则"></p>
-<p><img src="https://d3uepj124s5rcx.cloudfront.net/items/1e1r1i0J2l2T1V332H2C/Image%202017-03-19%20at%201.36.53%20下午.png" alt=""></p>
+<p>若只有两个事件A，B，那么 <span class="math display">\[P(A|B) = \frac{P(AB)}{P(B)}\]</span></p>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/3H2A1k1M0B0G0e1Y2z0J/Image%202017-03-19%20at%201.16.18%20下午.png" alt="贝叶斯法则">
+<p class="caption">贝叶斯法则</p>
+</div>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/1e1r1i0J2l2T1V332H2C/Image%202017-03-19%20at%201.36.53%20下午.png">
+
+</div>
 <p>引入独立性假设</p>
-<p><img src="https://d3uepj124s5rcx.cloudfront.net/items/3B1d3L1A2D42390u3c2g/Image%202017-03-19%20at%201.38.11%20下午.png" alt=""></p>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/3B1d3L1A2D42390u3c2g/Image%202017-03-19%20at%201.38.11%20下午.png">
+
+</div>
 <p>得到朴素贝叶斯分类器</p>
-<p><img src="https://d3uepj124s5rcx.cloudfront.net/items/2I3E2O0P2k2O2B1L2I3P/Image%202017-03-19%20at%201.39.01%20下午.png?v=ed93793c" alt=""></p>
+<div class="figure">
+<embed src="https://d3uepj124s5rcx.cloudfront.net/items/2I3E2O0P2k2O2B1L2I3P/Image%202017-03-19%20at%201.39.01%20下午.png?v=ed93793c">
+
+</div>
 <p>拉普拉斯平滑</p>
-<p><img src="https://d3uepj124s5rcx.cloudfront.net/items/2E3p06433b2e241u0i1d/Image%202017-03-19%20at%201.41.19%20下午.png" alt=""></p>
+<div class="figure">
+<img src="https://d3uepj124s5rcx.cloudfront.net/items/2E3p06433b2e241u0i1d/Image%202017-03-19%20at%201.41.19%20下午.png">
+
+</div>
 
       
     </div>
@@ -715,7 +704,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -726,7 +715,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -737,7 +726,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -850,7 +839,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -864,7 +853,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1163,6 +1152,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1287,31 +1298,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

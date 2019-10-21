@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="Hexo,Pandoc,Markdown,">
@@ -124,18 +91,18 @@ function loopy() {
 
 
 
-<meta name="description" content="Pandoc 的问题Error: spawn pandoc ENOENT12345678910events.js:183      throw er; // Unhandled &apos;error&apos; event      ^Error: spawn pandoc ENOENT    at _errnoException (util.js:1022:11)    at Process.ChildProce">
+<meta name="description" content="Pandoc 的问题 Error: spawn pandoc ENOENT 12345678910events.js:183      throw er; // Unhandled &apos;error&apos; event      ^Error: spawn pandoc ENOENT    at _errnoException (util.js:1022:11)    at Process.ChildPro">
 <meta name="keywords" content="Hexo,Pandoc,Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo配置问题-Pandoc">
 <meta property="og:url" content="https://2young.2simple.top/article/Hexo配置问题-Pandoc.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="Pandoc 的问题Error: spawn pandoc ENOENT12345678910events.js:183      throw er; // Unhandled &apos;error&apos; event      ^Error: spawn pandoc ENOENT    at _errnoException (util.js:1022:11)    at Process.ChildProce">
+<meta property="og:description" content="Pandoc 的问题 Error: spawn pandoc ENOENT 12345678910events.js:183      throw er; // Unhandled &apos;error&apos; event      ^Error: spawn pandoc ENOENT    at _errnoException (util.js:1022:11)    at Process.ChildPro">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-22T07:45:01.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo配置问题-Pandoc">
-<meta name="twitter:description" content="Pandoc 的问题Error: spawn pandoc ENOENT12345678910events.js:183      throw er; // Unhandled &apos;error&apos; event      ^Error: spawn pandoc ENOENT    at _errnoException (util.js:1022:11)    at Process.ChildProce">
+<meta name="twitter:description" content="Pandoc 的问题 Error: spawn pandoc ENOENT 12345678910events.js:183      throw er; // Unhandled &apos;error&apos; event      ^Error: spawn pandoc ENOENT    at _errnoException (util.js:1022:11)    at Process.ChildPro">
 
 
 
@@ -203,6 +170,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -493,15 +466,19 @@ function loopy() {
       
 
       
-        <h1 id="Pandoc-的问题"><a href="#Pandoc-的问题" class="headerlink" title="Pandoc 的问题"></a>Pandoc 的问题</h1><h2 id="Error-spawn-pandoc-ENOENT"><a href="#Error-spawn-pandoc-ENOENT" class="headerlink" title="Error: spawn pandoc ENOENT"></a>Error: spawn pandoc ENOENT</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">events.js:<span class="number">183</span></span><br><span class="line">      <span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></span><br><span class="line">      ^</span><br><span class="line"></span><br><span class="line"><span class="built_in">Error</span>: spawn pandoc ENOENT</span><br><span class="line">    at _errnoException (util.js:<span class="number">1022</span>:<span class="number">11</span>)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="number">190</span>:<span class="number">19</span>)</span><br><span class="line">    at onErrorNT (internal/child_process.js:<span class="number">372</span>:<span class="number">16</span>)</span><br><span class="line">    at _combinedTickCallback (internal/process/next_tick.js:<span class="number">138</span>:<span class="number">11</span>)</span><br><span class="line">    at process._tickCallback (internal/process/next_tick.js:<span class="number">180</span>:<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+        <h1 id="pandoc-的问题">Pandoc 的问题</h1>
+<h2 id="error-spawn-pandoc-enoent">Error: spawn pandoc ENOENT</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">events.js:<span class="number">183</span></span><br><span class="line">      <span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></span><br><span class="line">      ^</span><br><span class="line"></span><br><span class="line"><span class="built_in">Error</span>: spawn pandoc ENOENT</span><br><span class="line">    at _errnoException (util.js:<span class="number">1022</span>:<span class="number">11</span>)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="number">190</span>:<span class="number">19</span>)</span><br><span class="line">    at onErrorNT (internal/child_process.js:<span class="number">372</span>:<span class="number">16</span>)</span><br><span class="line">    at _combinedTickCallback (internal/process/next_tick.js:<span class="number">138</span>:<span class="number">11</span>)</span><br><span class="line">    at process._tickCallback (internal/process/next_tick.js:<span class="number">180</span>:<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
 <p>解决方案: 应该是未找到pandoc的原因,解决方案是设置相关PATH, 或者安装pandoc</p>
-<h3 id="Error-pandoc-exited-with-code-2-–smart-S-has-been-removed-Use-smart-or-smart-extension-instead"><a href="#Error-pandoc-exited-with-code-2-–smart-S-has-been-removed-Use-smart-or-smart-extension-instead" class="headerlink" title="Error: pandoc exited with code 2: –smart/-S has been removed.  Use +smart or -smart extension instead."></a>Error: pandoc exited with code 2: –smart/-S has been removed.  Use +smart or -smart extension instead.</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Error</span>: pandoc exited <span class="keyword">with</span> code <span class="number">2</span>: --smart/-S has been removed.  Use +smart or -smart extension instead.</span><br><span class="line">For example: pandoc -f markdown+smart -t markdown-smart.</span><br><span class="line">Try pandoc --help <span class="keyword">for</span> more information.</span><br><span class="line"></span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (<span class="regexp">/home/</span>arxan/go_project/src/blog_hexo/node_modules/hexo-renderer-pandoc/index.js:<span class="number">73</span>:<span class="number">20</span>)</span><br><span class="line">    at emitTwo (events.js:<span class="number">126</span>:<span class="number">13</span>)</span><br><span class="line">    at ChildProcess.emit (events.js:<span class="number">214</span>:<span class="number">7</span>)</span><br><span class="line">    at maybeClose (internal/child_process.js:<span class="number">925</span>:<span class="number">16</span>)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="number">209</span>:<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="error-pandoc-exited-with-code-2-smart-s-has-been-removed.-use-smart-or--smart-extension-instead.">Error: pandoc exited with code 2: –smart/-S has been removed. Use +smart or -smart extension instead.</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Error</span>: pandoc exited <span class="keyword">with</span> code <span class="number">2</span>: --smart/-S has been removed.  Use +smart or -smart extension instead.</span><br><span class="line">For example: pandoc -f markdown+smart -t markdown-smart.</span><br><span class="line">Try pandoc --help <span class="keyword">for</span> more information.</span><br><span class="line"></span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (<span class="regexp">/home/</span>arxan/go_project/src/blog_hexo/node_modules/hexo-renderer-pandoc/index.js:<span class="number">73</span>:<span class="number">20</span>)</span><br><span class="line">    at emitTwo (events.js:<span class="number">126</span>:<span class="number">13</span>)</span><br><span class="line">    at ChildProcess.emit (events.js:<span class="number">214</span>:<span class="number">7</span>)</span><br><span class="line">    at maybeClose (internal/child_process.js:<span class="number">925</span>:<span class="number">16</span>)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="number">209</span>:<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 <p>Pandoc 2.0 移除了 –smart/-S 参数, 需要修改为 <code>pandoc -f markdown+smart -t markdown-smart.</code> 或者重新安装1.x版本的<code>pandoc</code></p>
-<p>修改<a href="mailto:`hexo-renderer-pandoc@0.1.1" target="_blank" rel="noopener">`hexo-renderer-pandoc@0.1.1</a>`参数的方法为:</p>
-<p>进入<code>node_modules/hexo-renderer-pandoc/index.js</code> line43, change </p>
+<p>修改<code>hexo-renderer-pandoc@0.1.1</code>参数的方法为:</p>
+<p>进入<code>node_modules/hexo-renderer-pandoc/index.js</code> line43, change</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> args = [ <span class="string">'-f'</span>, <span class="string">'markdown'</span>, <span class="string">'-t'</span>, <span class="string">'html'</span>, math, <span class="string">'--smart'</span>]</span><br></pre></td></tr></table></figure>
-<p>to </p>
+<p>to</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> args = [ <span class="string">'-f'</span>, <span class="string">'markdown+smart'</span>, <span class="string">'-t'</span>, <span class="string">'html'</span>, math]</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -672,7 +649,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -683,7 +660,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -694,7 +671,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -784,7 +761,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandoc-的问题"><span class="nav-number">1.</span> <span class="nav-text">Pandoc 的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-spawn-pandoc-ENOENT"><span class="nav-number">1.1.</span> <span class="nav-text">Error: spawn pandoc ENOENT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Error-pandoc-exited-with-code-2-–smart-S-has-been-removed-Use-smart-or-smart-extension-instead"><span class="nav-number">1.1.1.</span> <span class="nav-text">Error: pandoc exited with code 2: –smart/-S has been removed.  Use +smart or -smart extension instead.</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandoc-的问题"><span class="nav-number">1.</span> <span class="nav-text">Pandoc 的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#error-spawn-pandoc-enoent"><span class="nav-number">1.1.</span> <span class="nav-text">Error: spawn pandoc ENOENT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#error-pandoc-exited-with-code-2-smart-s-has-been-removed.-use-smart-or--smart-extension-instead."><span class="nav-number">1.1.1.</span> <span class="nav-text">Error: pandoc exited with code 2: –smart/-S has been removed. Use +smart or -smart extension instead.</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -807,7 +784,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -821,7 +798,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1120,6 +1097,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1244,31 +1243,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

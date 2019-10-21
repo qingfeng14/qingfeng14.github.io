@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="Golang,Go,">
@@ -124,18 +91,18 @@ function loopy() {
 
 
 
-<meta name="description" content="How to set package variable using -ldflags -X in Golang build123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the string variable in importpath named name to value">
+<meta name="description" content="How to set package variable using -ldflags -X in Golang build 123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the string variable in importpath named name to valu">
 <meta name="keywords" content="Golang,Go">
 <meta property="og:type" content="article">
 <meta property="og:title" content="golang在编译测试时使用ldflags动态设置包中变量的值">
 <meta property="og:url" content="https://2young.2simple.top/article/golang/golang在编译时使用ldflags动态设置变量的值.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="How to set package variable using -ldflags -X in Golang build123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the string variable in importpath named name to value">
+<meta property="og:description" content="How to set package variable using -ldflags -X in Golang build 123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the string variable in importpath named name to valu">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-26T10:14:21.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="golang在编译测试时使用ldflags动态设置包中变量的值">
-<meta name="twitter:description" content="How to set package variable using -ldflags -X in Golang build123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the string variable in importpath named name to value">
+<meta name="twitter:description" content="How to set package variable using -ldflags -X in Golang build 123456789go tool link [flags] main.a# Flags-X importpath.name=value  Set the value of the string variable in importpath named name to valu">
 
 
 
@@ -203,6 +170,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -515,13 +488,16 @@ function loopy() {
       
 
       
-        <h1 id="How-to-set-package-variable-using-ldflags-X-in-Golang-build"><a href="#How-to-set-package-variable-using-ldflags-X-in-Golang-build" class="headerlink" title="How to set package variable using -ldflags -X in Golang build"></a>How to set package variable using -ldflags -X in Golang build</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">go tool link [flags] main.a</span><br><span class="line"></span><br><span class="line"><span class="comment"># Flags</span></span><br><span class="line">-X importpath.name=value</span><br><span class="line">  Set the value of the string variable <span class="keyword">in</span> importpath named name to value.</span><br><span class="line">  This is only effective <span class="keyword">if</span> the variable is declared <span class="keyword">in</span> the <span class="built_in">source</span> code either uninitialized</span><br><span class="line">  or initialized to a constant string expression. -X will not work <span class="keyword">if</span> the initializer makes</span><br><span class="line">  a <span class="keyword">function</span> call or refers to other variables.</span><br><span class="line">  Note that before Go 1.5 this option took two separate arguments.</span><br></pre></td></tr></table></figure>
-<h2 id="Including-build-information-in-the-executable"><a href="#Including-build-information-in-the-executable" class="headerlink" title="Including build information in the executable"></a>Including build information in the executable</h2><p>The gc toolchain linker, cmd/link, provides a <code>-X</code> option that may be used to record arbitrary information in a Go string variable at link time. The format is <code>-X importpath.name=val</code>. Here importpath is the name used in an import statement for the package (or main for the main package), name is the name of the string variable defined in the package, and val is the string you want to set that variable to. When using the go tool, use its <code>-ldflags</code> option to pass the <code>-X</code> option to the linker.</p>
+        <h1 id="how-to-set-package-variable-using--ldflags--x-in-golang-build">How to set package variable using -ldflags -X in Golang build</h1>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">go tool link [flags] main.a</span><br><span class="line"></span><br><span class="line"><span class="comment"># Flags</span></span><br><span class="line">-X importpath.name=value</span><br><span class="line">  Set the value of the string variable <span class="keyword">in</span> importpath named name to value.</span><br><span class="line">  This is only effective <span class="keyword">if</span> the variable is declared <span class="keyword">in</span> the <span class="built_in">source</span> code either uninitialized</span><br><span class="line">  or initialized to a constant string expression. -X will not work <span class="keyword">if</span> the initializer makes</span><br><span class="line">  a <span class="keyword">function</span> call or refers to other variables.</span><br><span class="line">  Note that before Go 1.5 this option took two separate arguments.</span><br></pre></td></tr></table></figure>
+<h2 id="including-build-information-in-the-executable">Including build information in the executable</h2>
+<p>The gc toolchain linker, cmd/link, provides a <code>-X</code> option that may be used to record arbitrary information in a Go string variable at link time. The format is <code>-X importpath.name=val</code>. Here importpath is the name used in an import statement for the package (or main for the main package), name is the name of the string variable defined in the package, and val is the string you want to set that variable to. When using the go tool, use its <code>-ldflags</code> option to pass the <code>-X</code> option to the linker.</p>
 <p>Let’s suppose this file is part of the package company/buildinfo:</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> buildinfo</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> BuildTime <span class="keyword">string</span></span><br></pre></td></tr></table></figure>
-<p>You can build the program using this package using <code>go build -ldflags=&quot;-X &#39;company/buildinfo.BuildTime=$(date)&#39;&quot;</code> to record the build time in the string. (The use of $(date) assumes you are using a <code>Unix-style</code> shell.)</p>
+<p>You can build the program using this package using <code>go build -ldflags=&quot;-X 'company/buildinfo.BuildTime=$(date)'&quot;</code> to record the build time in the string. (The use of $(date) assumes you are using a <code>Unix-style</code> shell.)</p>
 <p>The string variable <code>must exist</code>, it must be a <code>variable</code>, not a <code>constant</code>, and its value must not be initialized by a function call. There is <code>no warning</code> for using the wrong name in the -X option. You can often find the name to use by running go tool nm on the program, but that will <code>fail</code> if the package name has any <code>non-ASCII</code> characters, or a <code>&quot;</code> or <code>%</code> character.</p>
-<h2 id="golang在编译、测试、安装时使用-ldflags-X动态设置包中变量的值"><a href="#golang在编译、测试、安装时使用-ldflags-X动态设置包中变量的值" class="headerlink" title="golang在编译、测试、安装时使用-ldflags -X动态设置包中变量的值"></a>golang在编译、测试、安装时使用<code>-ldflags -X</code>动态设置包中变量的值</h2><p><code>go install/build/test</code> 时可以通过命令行参数设置 <code>package</code>的变量， 其格式为<code>-X importpath.name=val</code>, 其中<code>importpath</code>是变量所在包的的路径， <code>name</code>是包中定义的变量， val 是需要在编译时设置的变量的值<code>(string)</code>， 注意<code>name</code>表示的变量只能是<code>variable</code>，不能是<code>constant</code>, 且不能通过函数调用的方式初始化，其类型只能是<code>string</code>， 不可是<code>int, bool</code>等.</p>
+<h2 id="golang在编译测试安装时使用-ldflags--x动态设置包中变量的值">golang在编译、测试、安装时使用<code>-ldflags -X</code>动态设置包中变量的值</h2>
+<p><code>go install/build/test</code> 时可以通过命令行参数设置 <code>package</code>的变量， 其格式为<code>-X importpath.name=val</code>, 其中<code>importpath</code>是变量所在包的的路径， <code>name</code>是包中定义的变量， val 是需要在编译时设置的变量的值<code>(string)</code>， 注意<code>name</code>表示的变量只能是<code>variable</code>，不能是<code>constant</code>, 且不能通过函数调用的方式初始化，其类型只能是<code>string</code>， 不可是<code>int, bool</code>等.</p>
 <p>该方法在<code>go install, go build, go test</code>时均可以使用.</p>
 <p>Example:</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> gotest</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"testing"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time <span class="keyword">string</span></span><br><span class="line"><span class="keyword">var</span> version <span class="keyword">string</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestBuild</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">  t.Log(time)</span><br><span class="line">  t.Log(version)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -529,7 +505,8 @@ function loopy() {
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go <span class="built_in">test</span>  -ldflags=<span class="string">"-X 'gotest.time=`date`' -X gotest.version=1.0.1"</span> gotest -v</span><br></pre></td></tr></table></figure>
 <p>其输出如下：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">=== RUN   TestBuild</span><br><span class="line">--- PASS: TestBuild (0.00s)</span><br><span class="line">        build_test.go:9: Mon 5 Nov 18:06:13 CST 2018</span><br><span class="line">        build_test.go:10: 1.0.1</span><br><span class="line">PASS</span><br><span class="line">ok      gotest        0.001s</span><br></pre></td></tr></table></figure>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<h2 id="reference">Reference</h2>
+<ul>
 <li><a href="https://github.com/golang/go/wiki/GcToolchainTricks" target="_blank" rel="noopener">GcToolchainTricks</a></li>
 <li><a href="https://stackoverflow.com/questions/47509272/how-to-set-package-variable-using-ldflags-x-in-golang-build" target="_blank" rel="noopener">How to set package variable using -ldflags -X in Golang build</a></li>
 </ul>
@@ -702,7 +679,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -713,7 +690,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -724,7 +701,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -814,7 +791,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-set-package-variable-using-ldflags-X-in-Golang-build"><span class="nav-number">1.</span> <span class="nav-text">How to set package variable using -ldflags -X in Golang build</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Including-build-information-in-the-executable"><span class="nav-number">1.1.</span> <span class="nav-text">Including build information in the executable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#golang在编译、测试、安装时使用-ldflags-X动态设置包中变量的值"><span class="nav-number">1.2.</span> <span class="nav-text">golang在编译、测试、安装时使用-ldflags -X动态设置包中变量的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.3.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#how-to-set-package-variable-using--ldflags--x-in-golang-build"><span class="nav-number">1.</span> <span class="nav-text">How to set package variable using -ldflags -X in Golang build</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#including-build-information-in-the-executable"><span class="nav-number">1.1.</span> <span class="nav-text">Including build information in the executable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#golang在编译测试安装时使用-ldflags--x动态设置包中变量的值"><span class="nav-number">1.2.</span> <span class="nav-text">golang在编译、测试、安装时使用-ldflags -X动态设置包中变量的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">1.3.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -837,7 +814,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -851,7 +828,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1150,6 +1127,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1274,31 +1273,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

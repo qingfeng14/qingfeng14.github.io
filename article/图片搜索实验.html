@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="搜索引擎,Lucene,MyEclipse,BM25,">
@@ -124,13 +91,13 @@ function loopy() {
 
 
 
-<meta name="description" content="基本任务查找资料，跑通流程【部署方法】 使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹 将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到Tomcat_ROOT/bin/目录下）  此外，由于我在ImageIndexer.java中修改了图片存放位置，因此一定要重新运行ImageIndexer.java生">
+<meta name="description" content="基本任务 查找资料，跑通流程 【部署方法】  使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹 将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到Tomcat_ROOT/bin/目录下） 此外，由于我在ImageIndexer.java中修改了图片存放位置，因此一定要重新运行ImageIndexer.jav">
 <meta name="keywords" content="搜索引擎,Lucene,MyEclipse,BM25">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图片搜索实验">
 <meta property="og:url" content="https://2young.2simple.top/article/图片搜索实验.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="基本任务查找资料，跑通流程【部署方法】 使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹 将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到Tomcat_ROOT/bin/目录下）  此外，由于我在ImageIndexer.java中修改了图片存放位置，因此一定要重新运行ImageIndexer.java生">
+<meta property="og:description" content="基本任务 查找资料，跑通流程 【部署方法】  使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹 将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到Tomcat_ROOT/bin/目录下） 此外，由于我在ImageIndexer.java中修改了图片存放位置，因此一定要重新运行ImageIndexer.jav">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/432O083r3y473z0b2a0V/Image%202017-04-29%20at%202.27.09%20上午.png">
 <meta property="og:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/3J46260C1Z3b2F19072L/Image%202017-04-29%20at%201.19.26%20上午.png">
@@ -141,7 +108,7 @@ function loopy() {
 <meta property="og:updated_time" content="2017-12-29T16:14:10.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片搜索实验">
-<meta name="twitter:description" content="基本任务查找资料，跑通流程【部署方法】 使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹 将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到Tomcat_ROOT/bin/目录下）  此外，由于我在ImageIndexer.java中修改了图片存放位置，因此一定要重新运行ImageIndexer.java生">
+<meta name="twitter:description" content="基本任务 查找资料，跑通流程 【部署方法】  使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹 将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到Tomcat_ROOT/bin/目录下） 此外，由于我在ImageIndexer.java中修改了图片存放位置，因此一定要重新运行ImageIndexer.jav">
 <meta name="twitter:image" content="https://d2ppvlu71ri8gs.cloudfront.net/items/432O083r3y473z0b2a0V/Image%202017-04-29%20at%202.27.09%20上午.png">
 
 
@@ -210,6 +177,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -487,7 +460,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  3,780
+                  3,850
                 </span>
               
 
@@ -522,42 +495,56 @@ function loopy() {
       
 
       
-        <h1 id="基本任务"><a href="#基本任务" class="headerlink" title="基本任务"></a>基本任务</h1><h2 id="查找资料，跑通流程"><a href="#查找资料，跑通流程" class="headerlink" title="查找资料，跑通流程"></a>查找资料，跑通流程</h2><h3 id="【部署方法】"><a href="#【部署方法】" class="headerlink" title="【部署方法】"></a>【部署方法】</h3><ul>
+        <h1 id="基本任务">基本任务</h1>
+<h2 id="查找资料跑通流程">查找资料，跑通流程</h2>
+<h3 id="部署方法">【部署方法】</h3>
+<ul>
 <li>使用MyEclipse导入该工程，运行ImageIndexer建立索引生成forIndex文件夹</li>
-<li>将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到<code>Tomcat_ROOT/bin/</code>目录下）  此外，由于我在<code>ImageIndexer.java</code>中修改了图片存放位置，因此一定要重新运行<code>ImageIndexer.java</code>生成forIndex文件并拷贝过去才行（也可直接拷贝提交的forIndex文件）</li>
-<li>将图片解压至<code>/Tomcat_ROOT/webapps/ROOT/pictures/</code>下， </li>
+<li>将forIndex文件夹拷贝到Tomcat的安装目录下（取决于具体运行环境，有的可能需要拷贝到<code>Tomcat_ROOT/bin/</code>目录下） 此外，由于我在<code>ImageIndexer.java</code>中修改了图片存放位置，因此一定要重新运行<code>ImageIndexer.java</code>生成forIndex文件并拷贝过去才行（也可直接拷贝提交的forIndex文件）</li>
+<li>将图片解压至<code>/Tomcat_ROOT/webapps/ROOT/pictures/</code>下，</li>
 <li>访问 <code>http://localhost:8080/ImageSearch/imagesearch.jsp</code> 即可进行搜索显示</li>
 </ul>
 <a id="more"></a>
-<h2 id="根据ImageIndexer中对Sogou图片分类目录的索引，对Sogou图片搜索热门查询对应图片建立索引"><a href="#根据ImageIndexer中对Sogou图片分类目录的索引，对Sogou图片搜索热门查询对应图片建立索引" class="headerlink" title="根据ImageIndexer中对Sogou图片分类目录的索引，对Sogou图片搜索热门查询对应图片建立索引"></a>根据ImageIndexer中对Sogou图片分类目录的索引，对Sogou图片搜索热门查询对应图片建立索引</h2><p>首先运行 <code>Encode_gbk_to_utf8.java</code>将gbk编码的threeMonth.xml转换为utf-8编码格式，</p>
+<h2 id="根据imageindexer中对sogou图片分类目录的索引对sogou图片搜索热门查询对应图片建立索引">根据ImageIndexer中对Sogou图片分类目录的索引，对Sogou图片搜索热门查询对应图片建立索引</h2>
+<p>首先运行 <code>Encode_gbk_to_utf8.java</code>将gbk编码的threeMonth.xml转换为utf-8编码格式，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;pic id=&quot;278535&quot; query=&quot;西藏&quot; total_click=&quot;6977&quot; click=&quot;14&quot; pic_url=&quot;http://travel.bjhotel.cn/tour/Article/UploadFiles/200803/2008030608595904.jpg&quot; page_url=&quot;http://travel.bjhotel.cn/tour/Article/fsyj/xz&quot; locate=&quot;pictures/threeMonth/西藏/274863.jpg&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/432O083r3y473z0b2a0V/Image%202017-04-29%20at%202.27.09%20上午.png" alt="索引结果"></p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/432O083r3y473z0b2a0V/Image%202017-04-29%20at%202.27.09%20上午.png" alt="索引结果">
+<p class="caption">索引结果</p>
+</div>
 <p>threeMonth.xml中对每个搜索词的描述有<code>query，click，total_click，page_url</code>等， 本次索引的field采取query(点击频度暂未找到合适的方法考虑到评分系统内，因此并未考虑该参数)</p>
-<p>由于threeMonth图片集太大，而索引文件中本身有<code>pic_url</code>，因此,我直接采用的是将pic_url作为其picPath,同时将<code>imageshow.jsp</code>中的图片路径改为相对路径，确保图片正确显示（sougou图片集的ImageIndexer.java中需要在路径前加’/‘）</p>
+<p>由于threeMonth图片集太大，而索引文件中本身有<code>pic_url</code>，因此,我直接采用的是将pic_url作为其picPath,同时将<code>imageshow.jsp</code>中的图片路径改为相对路径，确保图片正确显示（sougou图片集的ImageIndexer.java中需要在路径前加’/’）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NamedNodeMap map=node.getAttributes();</span><br><span class="line">Node locate=map.getNamedItem(&quot;locate&quot;);</span><br><span class="line">Node url = map.getNamedItem(&quot;pic_url&quot;);</span><br><span class="line">// Node bigClass=map.getNamedItem(&quot;bigClass&quot;);</span><br><span class="line">// Node smallClass=map.getNamedItem(&quot;smallClass&quot;);</span><br><span class="line">Node query=map.getNamedItem(&quot;query&quot;);</span><br><span class="line">String absString=query.getNodeValue();</span><br><span class="line">Document document  =   new  Document();</span><br><span class="line">// 采用网页链接作为图片地址</span><br><span class="line">Field PicPathField  =   new  Field( &quot;picPath&quot; ,url.getNodeValue(),Field.Store.YES, Field.Index.NO);</span><br><span class="line">Field abstractField  =   new  Field( &quot;abstract&quot; ,absString,Field.Store.YES, Field.Index.ANALYZED);</span><br></pre></td></tr></table></figure>
 <p>运行结果</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">process 0</span><br><span class="line">process 10000</span><br><span class="line">process 20000</span><br><span class="line">process 30000</span><br><span class="line">process 40000</span><br><span class="line">process 50000</span><br><span class="line">process 60000</span><br><span class="line">process 70000</span><br><span class="line">process 80000</span><br><span class="line">process 90000</span><br><span class="line">process 100000</span><br><span class="line">process 110000</span><br><span class="line">process 120000</span><br><span class="line">process 130000</span><br><span class="line">process 140000</span><br><span class="line">process 150000</span><br><span class="line">process 160000</span><br><span class="line">process 170000</span><br><span class="line">process 180000</span><br><span class="line">process 190000</span><br><span class="line">process 200000</span><br><span class="line">process 210000</span><br><span class="line">process 220000</span><br><span class="line">process 230000</span><br><span class="line">process 240000</span><br><span class="line">process 250000</span><br><span class="line">process 260000</span><br><span class="line">process 270000</span><br><span class="line">process 280000</span><br><span class="line">process 290000</span><br><span class="line">process 300000</span><br><span class="line">process 310000</span><br><span class="line">process 320000</span><br><span class="line">process 330000</span><br><span class="line">process 340000</span><br><span class="line">average length = 4.73518</span><br><span class="line">total 340518 documents</span><br></pre></td></tr></table></figure>
-<h2 id="根据Simple实现的Lucene评分核心类，了解Lucene评分架构，在SimpleScorer-java中实现BM25模型算法（实现很简单）"><a href="#根据Simple实现的Lucene评分核心类，了解Lucene评分架构，在SimpleScorer-java中实现BM25模型算法（实现很简单）" class="headerlink" title="根据Simple实现的Lucene评分核心类，了解Lucene评分架构，在SimpleScorer.java中实现BM25模型算法（实现很简单）"></a>根据Simple实现的Lucene评分核心类，了解Lucene评分架构，在SimpleScorer.java中实现BM25模型算法（实现很简单）</h2><p>给定一个查询 Q,包含了关键词 $q_1, …, q_n$, 利用<a href="https://en.wikipedia.org/wiki/Okapi_BM25" target="_blank" rel="noopener">BM25算法</a>计算出的文档D的得分为:</p>
-<p>$${\text{score}}(D,Q)=\sum <em>{i=1}^{n}{\text{IDF}}(q</em>{i})\cdot {\frac {f(q_{i},D)\cdot (k_{1}+1)}{f(q_{i},D)+k_{1}\cdot \left(1-b+b\cdot {\frac {|D|}{\text{avgdl}}}\right)}}$$</p>
+<h2 id="根据simple实现的lucene评分核心类了解lucene评分架构在simplescorer.java中实现bm25模型算法实现很简单">根据Simple实现的Lucene评分核心类，了解Lucene评分架构，在SimpleScorer.java中实现BM25模型算法（实现很简单）</h2>
+<p>给定一个查询 Q,包含了关键词 <span class="math inline">\(q_1, ..., q_n\)</span>, 利用<a href="https://en.wikipedia.org/wiki/Okapi_BM25" target="_blank" rel="noopener">BM25算法</a>计算出的文档D的得分为:</p>
+<p><span class="math display">\[{\text{score}}(D,Q)=\sum _{i=1}^{n}{\text{IDF}}(q_{i})\cdot {\frac {f(q_{i},D)\cdot (k_{1}+1)}{f(q_{i},D)+k_{1}\cdot \left(1-b+b\cdot {\frac {|D|}{\text{avgdl}}}\right)}}\]</span></p>
 <p>其中：</p>
 <ul>
-<li>$f(q_i, D)$ 表示关键词$q_i$在文档D中的频率</li>
-<li>|D| 是文档D的长度 </li>
+<li><span class="math inline">\(f(q_i, D)\)</span> 表示关键词<span class="math inline">\(q_i\)</span>在文档D中的频率</li>
+<li>|D| 是文档D的长度</li>
 <li>avgdl 是平均文档长度</li>
-<li>$k_1$ 和 b 是调节因子, 通常$k_1 \in [1.2,2.0]$ , b = 0.75 （本实验中$k_i  = 2.0$）</li>
-<li>$IDF(q_i)$ 是查询词$q_i$的IDF (inverse document frequency) 权重，是根据每个关键词在所有文档中出现的次数多少对该关键词的一个调整,其计算方式为：$$\text{IDF}(q_i) = \log \frac{N - n(q_i) + 0.5}{n(q_i) + 0.5}$$ 其中N代表文档总数，$n(q_i)$是包含该关键词的文档个数</li>
+<li><span class="math inline">\(k_1\)</span> 和 b 是调节因子, 通常<span class="math inline">\(k_1 \in [1.2,2.0]\)</span> , b = 0.75 （本实验中<span class="math inline">\(k_i = 2.0\)</span>）</li>
+<li><span class="math inline">\(IDF(q_i)\)</span> 是查询词<span class="math inline">\(q_i\)</span>的IDF (inverse document frequency) 权重，是根据每个关键词在所有文档中出现的次数多少对该关键词的一个调整,其计算方式为：<span class="math display">\[\text{IDF}(q_i) = \log \frac{N - n(q_i) + 0.5}{n(q_i) + 0.5}\]</span> 其中N代表文档总数，<span class="math inline">\(n(q_i)\)</span>是包含该关键词的文档个数</li>
 </ul>
 <p>查阅Lucene可知，norm的计算为<code>lengthNorm = 1.0 / Math.sqrt(numTerms)</code></p>
 <p>具体实现为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文档termDocs中关键词qi的频率</span></span><br><span class="line"><span class="keyword">float</span> f_qi_D = <span class="keyword">this</span>.termDocs.freq();</span><br><span class="line"><span class="comment">// doc对应的文档长度计算， norms[i] = 1/sqrt(length[i])</span></span><br><span class="line"><span class="keyword">float</span> norm = Similarity.decodeNorm(<span class="keyword">this</span>.norms[doc]);</span><br><span class="line"><span class="comment">// 文档termDocs的长度</span></span><br><span class="line"><span class="keyword">float</span> length = <span class="number">1</span> / (norm * norm);</span><br><span class="line"></span><br><span class="line"><span class="comment">// BM25算法</span></span><br><span class="line"><span class="keyword">return</span> idf * f_qi_D * (<span class="keyword">this</span>.K1 + <span class="number">1</span>)/ (f_qi_D + <span class="keyword">this</span>.K1 *(<span class="number">1</span> - <span class="keyword">this</span>.b + <span class="keyword">this</span>.b * length/<span class="keyword">this</span>.avgLength));</span><br></pre></td></tr></table></figure>
-<h2 id="利用Lucene提供的评分核心类实现VSM模型，并与BM25进行对比"><a href="#利用Lucene提供的评分核心类实现VSM模型，并与BM25进行对比" class="headerlink" title="利用Lucene提供的评分核心类实现VSM模型，并与BM25进行对比"></a>利用Lucene提供的评分核心类实现VSM模型，并与BM25进行对比</h2><p>原始评分算法即为VSM。</p>
+<h2 id="利用lucene提供的评分核心类实现vsm模型并与bm25进行对比">利用Lucene提供的评分核心类实现VSM模型，并与BM25进行对比</h2>
+<p>原始评分算法即为VSM。</p>
 <p>BM25和VSM算法的搜索结果没有明显差异，score值是明显不同的（这里的score值是开启了多关键词查询之后的结果）</p>
-<h3 id="BM25算法"><a href="#BM25算法" class="headerlink" title="BM25算法"></a>BM25算法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">=========下面是普通merge的结果==========</span><br><span class="line">doc=15007 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/0.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15008 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/10.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15009 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/11.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15010 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/12.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15011 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/13.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15012 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/14.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15013 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/15.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15014 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/16.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15015 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/17.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15016 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/18.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br></pre></td></tr></table></figure>
-<h3 id="VSM算法"><a href="#VSM算法" class="headerlink" title="VSM算法"></a>VSM算法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">=========下面是普通merge的结果==========</span><br><span class="line">doc=15007 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/0.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15008 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/10.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15009 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/11.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15010 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/12.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15011 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/13.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15012 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/14.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15013 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/15.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15014 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/16.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15015 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/17.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15016 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/18.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br></pre></td></tr></table></figure>
-<h1 id="扩展任务"><a href="#扩展任务" class="headerlink" title="扩展任务"></a>扩展任务</h1><h2 id="基于语料库所提供的图片所在网页内容，对图片描述文本进行扩充，实现基于图片描述文本的图像检索"><a href="#基于语料库所提供的图片所在网页内容，对图片描述文本进行扩充，实现基于图片描述文本的图像检索" class="headerlink" title="基于语料库所提供的图片所在网页内容，对图片描述文本进行扩充，实现基于图片描述文本的图像检索"></a>基于语料库所提供的图片所在网页内容，对图片描述文本进行扩充，实现基于图片描述文本的图像检索</h2><h2 id="基于BM25模型实现对于查询词的分词检索（参考Lucene的MultiTermQuery对应的核心评分类实现，也可参考网上的开源代码，最终大作业时需要）"><a href="#基于BM25模型实现对于查询词的分词检索（参考Lucene的MultiTermQuery对应的核心评分类实现，也可参考网上的开源代码，最终大作业时需要）" class="headerlink" title="基于BM25模型实现对于查询词的分词检索（参考Lucene的MultiTermQuery对应的核心评分类实现，也可参考网上的开源代码，最终大作业时需要）"></a>基于BM25模型实现对于查询词的分词检索（参考Lucene的MultiTermQuery对应的核心评分类实现，也可参考网上的开源代码，最终大作业时需要）</h2><p>分词工具采用IKAnalyzer, 具体实现参考了<a href="http://blog.sina.com.cn/s/blog_7663527601012vdg.html" target="_blank" rel="noopener">IKAnalyzer中文分词器 </a>[<a href="http://blog.sina.com.cn/s/blog_7663527601012vdg.html]一文。" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_7663527601012vdg.html]一文。</a></p>
+<h3 id="bm25算法">BM25算法</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">=========下面是普通merge的结果==========</span><br><span class="line">doc=15007 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/0.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15008 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/10.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15009 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/11.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15010 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/12.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15011 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/13.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15012 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/14.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15013 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/15.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15014 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/16.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15015 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/17.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15016 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/18.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br></pre></td></tr></table></figure>
+<h3 id="vsm算法">VSM算法</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">=========下面是普通merge的结果==========</span><br><span class="line">doc=15007 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/0.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15008 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/10.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15009 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/11.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15010 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/12.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15011 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/13.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15012 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/14.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15013 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/15.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15014 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/16.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15015 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/17.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15016 score=5.85986 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/18.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br></pre></td></tr></table></figure>
+<h1 id="扩展任务">扩展任务</h1>
+<h2 id="基于语料库所提供的图片所在网页内容对图片描述文本进行扩充实现基于图片描述文本的图像检索">基于语料库所提供的图片所在网页内容，对图片描述文本进行扩充，实现基于图片描述文本的图像检索</h2>
+<h2 id="基于bm25模型实现对于查询词的分词检索参考lucene的multitermquery对应的核心评分类实现也可参考网上的开源代码最终大作业时需要">基于BM25模型实现对于查询词的分词检索（参考Lucene的MultiTermQuery对应的核心评分类实现，也可参考网上的开源代码，最终大作业时需要）</h2>
+<p>分词工具采用IKAnalyzer, 具体实现参考了<a href="http://blog.sina.com.cn/s/blog_7663527601012vdg.html" target="_blank" rel="noopener">IKAnalyzer中文分词器</a>[http://blog.sina.com.cn/s/blog_7663527601012vdg.html]一文。</p>
 <p>一开始的实现是直接将查询词使用IKAnalyzer进行分词，然后将每个关键词分别作为搜索词去查询，然后将查询结果merge起来，按照得分高低排序。如下所示：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//基于Lucene实现</span></span><br><span class="line">Analyzer analyzer = <span class="keyword">new</span> IKAnalyzer(<span class="keyword">true</span>);<span class="comment">//true智能切分</span></span><br><span class="line">StringReader reader = <span class="keyword">new</span> StringReader(queryString);</span><br><span class="line">TokenStream ts = analyzer.tokenStream(<span class="string">""</span>, reader);</span><br><span class="line">CharTermAttribute term = ts.getAttribute(CharTermAttribute.class);</span><br><span class="line">List&lt;String&gt; key_word = <span class="keyword">new</span> ArrayList&lt;String&gt;();  </span><br><span class="line"><span class="keyword">while</span>(ts.incrementToken())&#123;</span><br><span class="line">    <span class="comment">// System.out.print(term.toString()+"|");</span></span><br><span class="line">    key_word.add(term.toString());</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(key_word);</span><br><span class="line"></span><br><span class="line">TopDocs[] resultsArray = <span class="keyword">new</span> TopDocs[key_word.size()];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; key_word.size(); ++j) &#123;</span><br><span class="line">    <span class="comment">// 针对每个搜索词去查询</span></span><br><span class="line">    resultsArray[j] = search.searchQuery(key_word.get(j), <span class="string">"abstract"</span>, <span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// TopDocs results=search.searchQuery(queryString, "abstract", 100);</span></span><br><span class="line">TopDocs results = TopDocs.merge(<span class="keyword">null</span>, <span class="number">100</span>, resultsArray);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"=========下面是普通merge的结果=========="</span>);</span><br><span class="line"><span class="keyword">if</span> (results != <span class="keyword">null</span>) &#123;</span><br><span class="line">    ScoreDoc[] hits = showList(results.scoreDocs, page);</span><br><span class="line">    <span class="keyword">if</span> (hits != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// tags = new String[hits.length];</span></span><br><span class="line">        <span class="comment">// paths = new String[hits.length];</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; hits.length &amp;&amp; i &lt; PAGE_RESULT; i++) &#123;</span><br><span class="line">            Document doc = search.getDoc(hits[i].doc);</span><br><span class="line">            System.out.println(<span class="string">"doc="</span> + hits[i].doc + <span class="string">" score="</span></span><br><span class="line">                    + hits[i].score + <span class="string">" picPath= "</span></span><br><span class="line">                    + doc.get(<span class="string">"picPath"</span>)+ <span class="string">" tag= "</span>+doc.get(<span class="string">"abstract"</span>));</span><br><span class="line">            <span class="comment">// tags[i] = doc.get("abstract");</span></span><br><span class="line">            <span class="comment">// paths[i] = picDir + doc.get("picPath");</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"page null"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"result null"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是在实际操作中发现，这样的查询操作是由问题的，表现极差，无法达到搜索者预期的多次查询需求，于是通过进一步的搜索和查询相关资料，最后决定采用 MultiFieldQueryParser的方式进行多关键词查询。实现参考<a href="http://www.jianshu.com/p/055ddb99819d" target="_blank" rel="noopener">博客- 关键词高亮（lucene笔记)</a> <a href="http://www.jianshu.com/p/055ddb99819d" target="_blank" rel="noopener">http://www.jianshu.com/p/055ddb99819d</a></p>
+<p>但是在实际操作中发现，这样的查询操作是由问题的，表现极差，无法达到搜索者预期的多次查询需求，于是通过进一步的搜索和查询相关资料，最后决定采用 MultiFieldQueryParser的方式进行多关键词查询。实现参考<a href="http://www.jianshu.com/p/055ddb99819d" target="_blank" rel="noopener">博客- 关键词高亮（lucene笔记)</a> http://www.jianshu.com/p/055ddb99819d</p>
 <p>该函数可以实现多个关键词在不同的field中进行查询的功能，同时可以设定多个关键词之间的关系：<code>and, not, or</code>, 这里我们采用或的逻辑关系，同时设置field为‘abstract’，具体实现如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//待查找字符串对应的字段</span></span><br><span class="line">String [] to_query = &#123;queryString&#125;;</span><br><span class="line">String [] fields = &#123;<span class="string">"abstract"</span>&#125;;</span><br><span class="line"><span class="comment">//Occur.MUST表示对应字段必须有查询值， Occur.MUST_NOT 表示对应字段必须没有查询值， Occur.SHOULD(结果“或”)</span></span><br><span class="line">Occur[] occ=&#123;Occur.SHOULD&#125;;</span><br><span class="line">Query query = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    query = MultiFieldQueryParser.parse(Version.LUCENE_35, to_query,fields,occ,analyzer);</span><br><span class="line">    System.out.println(query);</span><br><span class="line">&#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">    <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">results = search.searchQuery(query, <span class="string">"abstract"</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"============\n=========下面是MultiFieldQueryParser的结果=========="</span>);</span><br><span class="line"><span class="keyword">if</span> (results != <span class="keyword">null</span>) &#123;</span><br><span class="line">    ScoreDoc[] hits = showList(results.scoreDocs, page);</span><br><span class="line">    <span class="keyword">if</span> (hits != <span class="keyword">null</span>) &#123;</span><br><span class="line">        tags = <span class="keyword">new</span> String[hits.length];</span><br><span class="line">        paths = <span class="keyword">new</span> String[hits.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; hits.length &amp;&amp; i &lt; PAGE_RESULT; i++) &#123;</span><br><span class="line">            Document doc = search.getDoc(hits[i].doc);</span><br><span class="line">            System.out.println(<span class="string">"doc="</span> + hits[i].doc + <span class="string">" score="</span></span><br><span class="line">                    + hits[i].score + <span class="string">" picPath= "</span></span><br><span class="line">                    + doc.get(<span class="string">"picPath"</span>)+ <span class="string">" tag= "</span>+doc.get(<span class="string">"abstract"</span>));</span><br><span class="line">            tags[i] = doc.get(<span class="string">"abstract"</span>);</span><br><span class="line">            paths[i] = picDir + doc.get(<span class="string">"picPath"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"page null"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"result null"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>实现结果对比：</p>
@@ -565,16 +552,32 @@ function loopy() {
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[港台, 女星]</span><br><span class="line">org.apache.lucene.search.TopDocs@23506dfb</span><br><span class="line">org.apache.lucene.search.TopDocs@75648bd9</span><br><span class="line">=========下面是普通merge的结果==========</span><br><span class="line">doc=15007 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/0.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15008 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/10.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15009 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/11.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15010 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/12.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15011 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/13.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15012 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/14.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15013 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/15.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15014 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/16.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15015 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/17.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15016 score=8.551983 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/18.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">(abstract:港台 abstract:女星)</span><br><span class="line">org.apache.lucene.search.TopDocs@292b2c95</span><br><span class="line">============</span><br><span class="line">=========下面是MultiFieldQueryParser的结果==========</span><br><span class="line">doc=42133 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/0.jpg tag= 性感女星 港台女星 阿雅</span><br><span class="line">doc=42134 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/10.jpg tag= 性感女星 港台女星 阿雅</span><br><span class="line">doc=42135 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/11.jpg tag= 性感女星 港台女星 阿雅</span><br><span class="line">doc=42136 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/12.jpg tag= 性感女星 港台女星 阿雅</span><br><span class="line">doc=42137 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/13.jpg tag= 性感女星 港台女星 阿雅</span><br><span class="line">doc=42138 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/14.jpg tag= 性感女星 港台女星 阿雅</span><br><span class="line">doc=42139 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/15.jpg tag= 性感女星 港台女星 阿雅</span><br><span class="line">doc=42140 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/16.jpg tag= 性感女星 港台女星 阿雅</span><br><span class="line">doc=42141 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/17.jpg tag= 性感女星 港台女星 阿雅</span><br><span class="line">doc=42142 score=20.643898 picPath= pictures/sogou/性感女星/港台女星/阿雅/18.jpg tag= 性感女星 港台女星 阿雅</span><br></pre></td></tr></table></figure>
 <p>MultiFieldQueryParser查询方式的搜索结果如下：</p>
 <p>多关键词查询的靠前结果同时满足两个关键词</p>
-<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3J46260C1Z3b2F19072L/Image%202017-04-29%20at%201.19.26%20上午.png" alt="港台 女星  第一页"></p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3J46260C1Z3b2F19072L/Image%202017-04-29%20at%201.19.26%20上午.png" alt="港台 女星 第一页">
+<p class="caption">港台 女星 第一页</p>
+</div>
 <p>从第6页开始出现了港台美女等相关搜索结果，能够实现关键词或的查询</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">=========下面是MultiFieldQueryParser的结果==========</span><br><span class="line">doc=42163 score=17.694769 picPath= pictures/sogou/性感女星/港台女星/安雅/2.jpg tag= 性感女星 港台女星 安雅</span><br><span class="line">doc=42164 score=17.694769 picPath= pictures/sogou/性感女星/港台女星/安雅/3.jpg tag= 性感女星 港台女星 安雅</span><br><span class="line">doc=42165 score=17.694769 picPath= pictures/sogou/性感女星/港台女星/安雅/4.jpg tag= 性感女星 港台女星 安雅</span><br><span class="line">doc=42166 score=17.694769 picPath= pictures/sogou/性感女星/港台女星/安雅/5.jpg tag= 性感女星 港台女星 安雅</span><br><span class="line">doc=42167 score=17.694769 picPath= pictures/sogou/性感女星/港台女星/安雅/6.jpg tag= 性感女星 港台女星 安雅</span><br><span class="line">doc=42168 score=17.694769 picPath= pictures/sogou/性感女星/港台女星/安雅/7.jpg tag= 性感女星 港台女星 安雅</span><br><span class="line">doc=42169 score=17.694769 picPath= pictures/sogou/性感女星/港台女星/安雅/8.jpg tag= 性感女星 港台女星 安雅</span><br><span class="line">doc=42170 score=17.694769 picPath= pictures/sogou/性感女星/港台女星/安雅/9.jpg tag= 性感女星 港台女星 安雅</span><br><span class="line">doc=15007 score=15.022858 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/0.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br><span class="line">doc=15008 score=15.022858 picPath= pictures/sogou/精美壁纸/人物壁纸/港台美女/10.jpg tag= 精美壁纸 人物壁纸 港台美女</span><br></pre></td></tr></table></figure>
-<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1m0P3Y3I3R2N0V461C3V/Image%202017-04-29%20at%201.43.23%20上午.png" alt="港台 女星 第6页"></p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1m0P3Y3I3R2N0V461C3V/Image%202017-04-29%20at%201.43.23%20上午.png" alt="港台 女星 第6页">
+<p class="caption">港台 女星 第6页</p>
+</div>
 <p>由此可以验证该多关键词查询实现是合理有效的。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>注意：在进行多关键词查询时需要修改ImageIndexer中的analyzer，将其设置为智能分词，不然会出现一些奇怪的查询结果：</p>
-<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2g3j2D1r0Y1O1b043q08/Image%202017-04-29%20at%201.37.56%20上午.png" alt="搜索港台美女时第一页出现的是港台男星"></p>
+<h3 id="注意">注意</h3>
+<p>注意：在进行多关键词查询时需要修改ImageIndexer中的analyzer，将其设置为智能分词，不然会出现一些奇怪的查询结果：</p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2g3j2D1r0Y1O1b043q08/Image%202017-04-29%20at%201.37.56%20上午.png" alt="搜索港台美女时第一页出现的是港台男星">
+<p class="caption">搜索港台美女时第一页出现的是港台男星</p>
+</div>
 <p>将ImageIndexer的analyzer设置为智能分词即 <code>analyzer = new IKAnalyzer(true);</code>之后的搜索结果</p>
-<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2g1O3u2B0a2n2d3c1T2h/Image%202017-04-29%20at%201.39.53%20上午.png" alt="修改后港台美女搜索结果第一页正常"></p>
-<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2g3j2D1r0Y1O1b043q08/Image%202017-04-29%20at%201.37.56%20上午.png" alt="第三页开始出现相关搜索结果 港台男星"></p>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2g1O3u2B0a2n2d3c1T2h/Image%202017-04-29%20at%201.39.53%20上午.png" alt="修改后港台美女搜索结果第一页正常">
+<p class="caption">修改后港台美女搜索结果第一页正常</p>
+</div>
+<div class="figure">
+<img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2g3j2D1r0Y1O1b043q08/Image%202017-04-29%20at%201.37.56%20上午.png" alt="第三页开始出现相关搜索结果 港台男星">
+<p class="caption">第三页开始出现相关搜索结果 港台男星</p>
+</div>
 
       
     </div>
@@ -748,7 +751,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -759,7 +762,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -770,7 +773,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -860,7 +863,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本任务"><span class="nav-number">1.</span> <span class="nav-text">基本任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查找资料，跑通流程"><span class="nav-number">1.1.</span> <span class="nav-text">查找资料，跑通流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#【部署方法】"><span class="nav-number">1.1.1.</span> <span class="nav-text">【部署方法】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据ImageIndexer中对Sogou图片分类目录的索引，对Sogou图片搜索热门查询对应图片建立索引"><span class="nav-number">1.2.</span> <span class="nav-text">根据ImageIndexer中对Sogou图片分类目录的索引，对Sogou图片搜索热门查询对应图片建立索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据Simple实现的Lucene评分核心类，了解Lucene评分架构，在SimpleScorer-java中实现BM25模型算法（实现很简单）"><span class="nav-number">1.3.</span> <span class="nav-text">根据Simple实现的Lucene评分核心类，了解Lucene评分架构，在SimpleScorer.java中实现BM25模型算法（实现很简单）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用Lucene提供的评分核心类实现VSM模型，并与BM25进行对比"><span class="nav-number">1.4.</span> <span class="nav-text">利用Lucene提供的评分核心类实现VSM模型，并与BM25进行对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BM25算法"><span class="nav-number">1.4.1.</span> <span class="nav-text">BM25算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VSM算法"><span class="nav-number">1.4.2.</span> <span class="nav-text">VSM算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展任务"><span class="nav-number">2.</span> <span class="nav-text">扩展任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于语料库所提供的图片所在网页内容，对图片描述文本进行扩充，实现基于图片描述文本的图像检索"><span class="nav-number">2.1.</span> <span class="nav-text">基于语料库所提供的图片所在网页内容，对图片描述文本进行扩充，实现基于图片描述文本的图像检索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于BM25模型实现对于查询词的分词检索（参考Lucene的MultiTermQuery对应的核心评分类实现，也可参考网上的开源代码，最终大作业时需要）"><span class="nav-number">2.2.</span> <span class="nav-text">基于BM25模型实现对于查询词的分词检索（参考Lucene的MultiTermQuery对应的核心评分类实现，也可参考网上的开源代码，最终大作业时需要）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">2.2.1.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本任务"><span class="nav-number">1.</span> <span class="nav-text">基本任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查找资料跑通流程"><span class="nav-number">1.1.</span> <span class="nav-text">查找资料，跑通流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#部署方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">【部署方法】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据imageindexer中对sogou图片分类目录的索引对sogou图片搜索热门查询对应图片建立索引"><span class="nav-number">1.2.</span> <span class="nav-text">根据ImageIndexer中对Sogou图片分类目录的索引，对Sogou图片搜索热门查询对应图片建立索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据simple实现的lucene评分核心类了解lucene评分架构在simplescorer.java中实现bm25模型算法实现很简单"><span class="nav-number">1.3.</span> <span class="nav-text">根据Simple实现的Lucene评分核心类，了解Lucene评分架构，在SimpleScorer.java中实现BM25模型算法（实现很简单）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用lucene提供的评分核心类实现vsm模型并与bm25进行对比"><span class="nav-number">1.4.</span> <span class="nav-text">利用Lucene提供的评分核心类实现VSM模型，并与BM25进行对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bm25算法"><span class="nav-number">1.4.1.</span> <span class="nav-text">BM25算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vsm算法"><span class="nav-number">1.4.2.</span> <span class="nav-text">VSM算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展任务"><span class="nav-number">2.</span> <span class="nav-text">扩展任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于语料库所提供的图片所在网页内容对图片描述文本进行扩充实现基于图片描述文本的图像检索"><span class="nav-number">2.1.</span> <span class="nav-text">基于语料库所提供的图片所在网页内容，对图片描述文本进行扩充，实现基于图片描述文本的图像检索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于bm25模型实现对于查询词的分词检索参考lucene的multitermquery对应的核心评分类实现也可参考网上的开源代码最终大作业时需要"><span class="nav-number">2.2.</span> <span class="nav-text">基于BM25模型实现对于查询词的分词检索（参考Lucene的MultiTermQuery对应的核心评分类实现，也可参考网上的开源代码，最终大作业时需要）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">2.2.1.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -883,7 +886,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -897,7 +900,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1196,6 +1199,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1320,31 +1345,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

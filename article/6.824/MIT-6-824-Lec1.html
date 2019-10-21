@@ -71,42 +71,9 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
-  <meta name="keywords" content="Golang,Go,test,bench,memory,">
+  <meta name="keywords" content="MIT,6.824,Lec1,MapReduce,">
 
 
 
@@ -124,18 +91,18 @@ function loopy() {
 
 
 
-<meta name="description" content="Golang 测试总结 go test的初始化以及退出前的clear — TestMain 程序的初始化工作可以通过init()函数完成,Go的init有以下特点:  先于main函数执行 自动调用 导入其他包时先执行import包的init函数,多次导入时只导入一次 同一个包可以有多个init  测试程序中有时候可能需要完成一些setup 或者 teardown操作, go 1.4 之后加入了T">
-<meta name="keywords" content="Golang,Go,test,bench,memory">
+<meta name="description" content="LEC 1: Introduction Preparation: Read MapReduce (2004) Assigned: Lab 1: MapReduce First day of classes 6.824 2018 Lecture 1: Introduction 6.824: Distributed Systems Engineering What is a distributed s">
+<meta name="keywords" content="MIT,6.824,Lec1,MapReduce">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Golang 性能测试, 单元测试">
-<meta property="og:url" content="https://2young.2simple.top/article/golang/golang性能&单元测试.html">
+<meta property="og:title" content="MIT-6.824-Lec1">
+<meta property="og:url" content="https://2young.2simple.top/article/6.824/MIT-6-824-Lec1.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="Golang 测试总结 go test的初始化以及退出前的clear — TestMain 程序的初始化工作可以通过init()函数完成,Go的init有以下特点:  先于main函数执行 自动调用 导入其他包时先执行import包的init函数,多次导入时只导入一次 同一个包可以有多个init  测试程序中有时候可能需要完成一些setup 或者 teardown操作, go 1.4 之后加入了T">
+<meta property="og:description" content="LEC 1: Introduction Preparation: Read MapReduce (2004) Assigned: Lab 1: MapReduce First day of classes 6.824 2018 Lecture 1: Introduction 6.824: Distributed Systems Engineering What is a distributed s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T07:45:01.624Z">
+<meta property="og:updated_time" content="2019-01-09T14:42:26.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Golang 性能测试, 单元测试">
-<meta name="twitter:description" content="Golang 测试总结 go test的初始化以及退出前的clear — TestMain 程序的初始化工作可以通过init()函数完成,Go的init有以下特点:  先于main函数执行 自动调用 导入其他包时先执行import包的init函数,多次导入时只导入一次 同一个包可以有多个init  测试程序中有时候可能需要完成一些setup 或者 teardown操作, go 1.4 之后加入了T">
+<meta name="twitter:title" content="MIT-6.824-Lec1">
+<meta name="twitter:description" content="LEC 1: Introduction Preparation: Read MapReduce (2004) Assigned: Lab 1: MapReduce First day of classes 6.824 2018 Lecture 1: Introduction 6.824: Distributed Systems Engineering What is a distributed s">
 
 
 
@@ -163,13 +130,13 @@ function loopy() {
 
 
 
-  <link rel="canonical" href="https://2young.2simple.top/article/golang/golang性能&单元测试.html">
+  <link rel="canonical" href="https://2young.2simple.top/article/6.824/MIT-6-824-Lec1.html">
 
 
 
 
 
-  <title> Golang 性能测试, 单元测试 | 我的日志 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> MIT-6.824-Lec1 | 我的日志 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
    
 </head>
 
@@ -203,6 +170,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -370,7 +343,7 @@ function loopy() {
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/golang/golang性能&单元测试.html">
+    <link itemprop="mainEntityOfPage" href="https://2young.2simple.top/article/6.824/MIT-6-824-Lec1.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张盛豪">
@@ -391,7 +364,7 @@ function loopy() {
             
             
               
-                Golang 性能测试, 单元测试
+                MIT-6.824-Lec1
               
             
           </h2>
@@ -406,8 +379,8 @@ function loopy() {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-22T11:36:09+08:00">
-                2018-11-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-09T20:54:25+08:00">
+                2019-01-09
               </time>
             
 
@@ -429,8 +402,19 @@ function loopy() {
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Golang/" itemprop="url" rel="index">
-                    <span itemprop="name">Golang</span>
+                  <a href="/categories/MIT/" itemprop="url" rel="index">
+                    <span itemprop="name">MIT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/MIT/分布式/" itemprop="url" rel="index">
+                    <span itemprop="name">分布式</span>
                   </a>
                 </span>
 
@@ -447,8 +431,8 @@ function loopy() {
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/article/golang/golang性能&单元测试.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/golang/golang性能&单元测试.html" itemprop="commentCount"></span>
+                <a href="/article/6.824/MIT-6-824-Lec1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="article/6.824/MIT-6-824-Lec1.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -456,7 +440,7 @@ function loopy() {
 
           
           
-             <span id="/article/golang/golang性能&单元测试.html" class="leancloud_visitors" data-flag-title="Golang 性能测试, 单元测试">
+             <span id="/article/6.824/MIT-6-824-Lec1.html" class="leancloud_visitors" data-flag-title="MIT-6.824-Lec1">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -480,7 +464,7 @@ function loopy() {
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  409
+                  2,026
                 </span>
               
 
@@ -496,7 +480,7 @@ function loopy() {
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  13
                 </span>
               
             </div>
@@ -515,28 +499,60 @@ function loopy() {
       
 
       
-        <h1 id="golang-测试总结">Golang 测试总结</h1>
-<h2 id="go-test的初始化以及退出前的clear-testmain"><code>go test</code>的初始化以及退出前的clear — <code>TestMain</code></h2>
-<p>程序的初始化工作可以通过<code>init()</code>函数完成,Go的<code>init</code>有以下特点:</p>
+        <p>LEC 1: Introduction Preparation: <a href="https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf" target="_blank" rel="noopener">Read MapReduce (2004)</a> Assigned: Lab 1: MapReduce First day of classes</p>
+<h1 id="lecture-1-introduction">6.824 2018 Lecture 1: Introduction</h1>
+<p>6.824: Distributed Systems Engineering</p>
+<h2 id="what-is-a-distributed-system">What is a distributed system?</h2>
 <ul>
-<li>先于main函数执行</li>
-<li>自动调用</li>
-<li>导入其他包时先执行import包的init函数,多次导入时只导入一次</li>
-<li>同一个包可以有多个<code>init</code></li>
+<li>multiple cooperating computers</li>
+<li>storage for big web sites, MapReduce, peer-to-peer sharing, &amp;c</li>
+<li>lots of critical infrastructure is distributed</li>
 </ul>
-<p>测试程序中有时候可能需要完成一些setup 或者 teardown操作, go 1.4 之后加入了<code>TestMain</code>方法帮助我们完成这个任务. 当包含<code>TestMain</code>函数时, go test会执行该函数而不是直接运行测试.</p>
-<p>It is sometimes necessary for a test program to do extra setup or teardown before or after testing. It is also sometimes necessary for a test to control which code runs on the main thread. To support these and other cases, if a test file contains a function:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestMain</span><span class="params">(m *testing.M)</span></span></span><br></pre></td></tr></table></figure>
-<p>then the generated test will call TestMain(m) instead of running the tests directly. TestMain runs in the main goroutine and can do whatever setup and teardown is necessary around a call to m.Run. It should then call os.Exit with the result of m.Run. When TestMain is called, flag.Parse has not been run. If TestMain depends on command-line flags, including those of the testing package, it should call flag.Parse explicitly.</p>
-<p>A simple implementation of TestMain is:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestMain</span><span class="params">(m *testing.M)</span></span> &#123;</span><br><span class="line">    setup()</span><br><span class="line">    code := m.Run()</span><br><span class="line">    shutdown()</span><br><span class="line">    os.Exit(code)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="go-coverage-test-覆盖率测试">Go Coverage test 覆盖率测试</h2>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PKGS=`go list github.com/xxx/xxx/... | grep -v /vendor`</span><br><span class="line">go <span class="built_in">test</span> -cover -p 1 -timeout=20m <span class="variable">$PKGS</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 测试所有包的覆盖率</span></span><br><span class="line">go <span class="built_in">test</span> -cover -timeout=20m -coverpkg=tracing/... tracing/tests <span class="comment"># -coverprofile=c.out</span></span><br><span class="line"><span class="comment"># 测试特定包的覆盖率</span></span><br><span class="line">go <span class="built_in">test</span> -cover -timeout=20m -coverpkg=tracing/util tracing/tests -coverprofile=c.out</span><br><span class="line"><span class="comment"># 查看覆盖率报告</span></span><br><span class="line">go tool cover -html=c.out -o=tag.html</span><br></pre></td></tr></table></figure>
-<h2 id="reference">Reference</h2>
+<h2 id="why-distributed">Why distributed?</h2>
 <ul>
-<li><a href="http://cs-guy.com/blog/2015/01/test-main/" target="_blank" rel="noopener">TestMain—What is it Good For?</a></li>
+<li>to organize physically separate entities</li>
+<li>to achieve security via isolation</li>
+<li>to tolerate faults via replication</li>
+<li>to scale up throughput via parallel CPUs/mem/disk/net</li>
 </ul>
+<p>But: complex: many concurrent parts must cope with partial failure tricky to realize performance potential</p>
+<p>Why take this course? interesting – hard problems, powerful solutions used by real systems – driven by the rise of big Web sites active research area – lots of progress + big unsolved problems hands-on – you’ll build serious systems in the labs</p>
+<p>COURSE STRUCTURE</p>
+<p>http://pdos.csail.mit.edu/6.824</p>
+<p>Course staff: Malte Schwarzkopf, lecturer Robert Morris, lecturer Deepti Raghavan, TA Edward Park, TA Erik Nguyen, TA Anish Athalye, TA</p>
+<p>Course components: lectures readings two exams labs final project (optional) TA office hours piazza for announcements and lab help</p>
+<p>Lectures: big ideas, paper discussion, and labs</p>
+<p>Readings: research papers, some classic, some new the papers illustrate key ideas and important details many lectures focus on the papers please read papers before class! each paper has a short question for you to answer and you must send us a question you have about the paper submit question&amp;answer by midnight the night before</p>
+<p>Exams: Mid-term exam in class Final exam during finals week</p>
+<p>Lab goals: deeper understanding of some important techniques experience with distributed programming first lab is due a week from Friday one per week after that for a while</p>
+<p>Lab 1: MapReduce Lab 2: replication for fault-tolerance using Raft Lab 3: fault-tolerant key/value store Lab 4: sharded key/value store</p>
+<p>Optional final project at the end, in groups of 2 or 3. The final project substitutes for Lab 4. You think of a project and clear it with us. Code, short write-up, short demo on last day.</p>
+<p>Lab grades depend on how many test cases you pass we give you the tests, so you know whether you’ll do well careful: if it often passes, but sometimes fails, chances are it will fail when we run it</p>
+<p>Debugging the labs can be time-consuming start early come to TA office hours ask questions on Piazza</p>
+<p>MAIN TOPICS</p>
+<p>This is a course about infrastructure, to be used by applications. About abstractions that hide distribution from applications. Three big kinds of abstraction: Storage. Communication. Computation. [diagram: users, application servers, storage servers]</p>
+<p>A couple of topics come up repeatedly.</p>
+<p>Topic: implementation RPC, threads, concurrency control.</p>
+<p>Topic: performance The dream: scalable throughput. Nx servers -&gt; Nx total throughput via parallel CPU, disk, net. So handling more load only requires buying more computers. Scaling gets harder as N grows: Load im-balance, stragglers. Non-parallelizable code: initialization, interaction. Bottlenecks from shared resources, e.g. network. Note that some performance problems aren’t easily attacked by scaling e.g. decreasing response time for a single user request might require programmer effort rather than just more computers</p>
+<p>Topic: fault tolerance 1000s of servers, complex net -&gt; always something broken We’d like to hide these failures from the application. We often want: Availability – app can make progress despite failures Durability – app will come back to life when failures are repaired Big idea: replicated servers. If one server crashes, client can proceed using the other(s).</p>
+<p>Topic: consistency General-purpose infrastructure needs well-defined behavior. E.g. “Get(k) yields the value from the most recent Put(k,v).” Achieving good behavior is hard! “Replica” servers are hard to keep identical. Clients may crash midway through multi-step update. Servers crash at awkward moments, e.g. after executing but before replying. Network may make live servers look dead; risk of “split brain”. Consistency and performance are enemies. Consistency requires communication, e.g. to get latest Put(). “Strong consistency” often leads to slow systems. High performance often imposes “weak consistency” on applications. People have pursued many design points in this spectrum.</p>
+<p>CASE STUDY: MapReduce</p>
+<p>Let’s talk about MapReduce (MR) as a case study MR is a good illustration of 6.824’s main topics and is the focus of Lab 1</p>
+<p>MapReduce overview context: multi-hour computations on multi-terabyte data-sets e.g. analysis of graph structure of crawled web pages only practical with 1000s of computers often not developed by distributed systems experts distribution can be very painful, e.g. coping with failure overall goal: non-specialist programmers can easily split data processing over many servers with reasonable efficiency. programmer defines Map and Reduce functions sequential code; often fairly simple MR runs the functions on 1000s of machines with huge inputs and hides details of distribution</p>
+<p>Abstract view of MapReduce input is divided into M files [diagram: maps generate rows of K-V pairs, reduces consume columns] Input1 -&gt; Map -&gt; a,1 b,1 c,1 Input2 -&gt; Map -&gt; b,1 Input3 -&gt; Map -&gt; a,1 c,1 | | | | | -&gt; Reduce -&gt; c,2 | —–&gt; Reduce -&gt; b,2 ———&gt; Reduce -&gt; a,2 MR calls Map() for each input file, produces set of k2,v2 “intermediate” data each Map() call is a “task” MR gathers all intermediate v2’s for a given k2, and passes them to a Reduce call final output is set of <k2,v3> pairs from Reduce() stored in R output files [diagram: MapReduce API – map(k1, v1) -&gt; list(k2, v2) reduce(k2, list(v2) -&gt; list(k2, v3)]</k2,v3></p>
+<p>Example: word count input is thousands of text files Map(k, v) split v into words for each word w emit(w, “1”) Reduce(k, v) emit(len(v))</p>
+<p>MapReduce hides many painful details: starting s/w on servers tracking which tasks are done data movement recovering from failures</p>
+<p>MapReduce scales well: N computers gets you Nx throughput. Assuming M and R are &gt;= N (i.e., lots of input files and map output keys). Maps()s can run in parallel, since they don’t interact. Same for Reduce()s. The only interaction is via the “shuffle” in between maps and reduces. So you can get more throughput by buying more computers. Rather than special-purpose efficient parallelizations of each application. Computers are cheaper than programmers!</p>
+<p>What will likely limit the performance? We care since that’s the thing to optimize. CPU? memory? disk? network? In 2004 authors were limited by “network cross-section bandwidth”. [diagram: servers, tree of network switches] Note all data goes over network, during Map-&gt;Reduce shuffle. Paper’s root switch: 100 to 200 gigabits/second 1800 machines, so 55 megabits/second/machine. Small, e.g. much less than disk (~50-100 MB/s at the time) or RAM speed. So they cared about minimizing movement of data over the network. (Datacenter networks are much faster today.)</p>
+<p>More details (paper’s Figure 1): master: gives tasks to workers; remembers where intermediate output is M Map tasks, R Reduce tasks input stored in GFS, 3 copies of each Map input file all computers run both GFS and MR workers many more input tasks than workers master gives a Map task to each worker hands out new tasks as old ones finish Map worker hashes intermediate keys into R partitions, on local disk Q: What’s a good data structure for implementing this? no Reduce calls until all Maps are finished master tells Reducers to fetch intermediate data partitions from Map workers Reduce workers write final output to GFS (one file per Reduce task)</p>
+<p>How does detailed design reduce effect of slow network? Map input is read from GFS replica on local disk, not over network. Intermediate data goes over network just once. Map worker writes to local disk, not GFS. Intermediate data partitioned into files holding many keys. Q: Why not stream the records to the reducer (via TCP) as they are being produced by the mappers?</p>
+<p>How do they get good load balance? Critical to scaling – bad for N-1 servers to wait for 1 to finish. But some tasks likely take longer than others. [diagram: packing variable-length tasks into workers] Solution: many more tasks than workers. Master hands out new tasks to workers who finish previous tasks. So no task is so big it dominates completion time (hopefully). So faster servers do more work than slower ones, finish abt the same time.</p>
+<p>What about fault tolerance? I.e. what if a server crashes during a MR job? Hiding failures is a huge part of ease of programming! Q: Why not re-start the whole job from the beginning? MR re-runs just the failed Map()s and Reduce()s. MR requires them to be pure functions: they don’t keep state across calls, they don’t read or write files other than expected MR inputs/outputs, there’s no hidden communication among tasks. So re-execution yields the same output. The requirement for pure functions is a major limitation of MR compared to other parallel programming schemes. But it’s critical to MR’s simplicity.</p>
+<p>Details of worker crash recovery: * Map worker crashes: master sees worker no longer responds to pings crashed worker’s intermediate Map output is lost but is likely needed by every Reduce task! master re-runs, spreads tasks over other GFS replicas of input. some Reduce workers may already have read failed worker’s intermediate data. here we depend on functional and deterministic Map()! master need not re-run Map if Reduces have fetched all intermediate data though then a Reduce crash would then force re-execution of failed Map * Reduce worker crashes. finshed tasks are OK – stored in GFS, with replicas. master re-starts worker’s unfinished tasks on other workers. * Reduce worker crashes in the middle of writing its output. GFS has atomic rename that prevents output from being visible until complete. so it’s safe for the master to re-run the Reduce tasks somewhere else.</p>
+<p>Other failures/problems: * What if the master gives two workers the same Map() task? perhaps the master incorrectly thinks one worker died. it will tell Reduce workers about only one of them. * What if the master gives two workers the same Reduce() task? they will both try to write the same output file on GFS! atomic GFS rename prevents mixing; one complete file will be visible. * What if a single worker is very slow – a “straggler”? perhaps due to flakey hardware. master starts a second copy of last few tasks. * What if a worker computes incorrect output, due to broken h/w or s/w? too bad! MR assumes “fail-stop” CPUs and software. * What if the master crashes? recover from check-point, or give up on job</p>
+<p>For what applications <em>doesn’t</em> MapReduce work well? Not everything fits the map/shuffle/reduce pattern. Small data, since overheads are high. E.g. not web site back-end. Small updates to big data, e.g. add a few documents to a big index Unpredictable reads (neither Map nor Reduce can choose input) Multiple shuffles, e.g. page-rank (can use multiple MR but not very efficient) More flexible systems allow these, but more complex model.</p>
+<p>How might a real-world web company use MapReduce? “CatBook”, a new company running a social network for cats; needs to: 1) build a search index, so people can find other peoples’ cats 2) analyze popularity of different cats, to decide advertising value 3) detect dogs and remove their profiles Can use MapReduce for all these purposes! - run large batch jobs over all profiles every night 1) build inverted index: map(profile text) -&gt; (word, cat_id) reduce(word, list(cat_id) -&gt; list(word, list(cat_id)) 2) count profile visits: map(web logs) -&gt; (cat_id, “1”) reduce(cat_id, list(“1”)) -&gt; list(cat_id, count) 3) filter profiles: map(profile image) -&gt; img analysis -&gt; (cat_id, “dog!”) reduce(cat_id, list(“dog!”)) -&gt; list(cat_id)</p>
+<p>Conclusion MapReduce single-handedly made big cluster computation popular. - Not the most efficient or flexible. + Scales well. + Easy to program – failures and data movement are hidden. These were good trade-offs in practice. We’ll see some more advanced successors later in the course. Have fun with the lab!</p>
 
       
     </div>
@@ -586,7 +602,7 @@ function loopy() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://2young.2simple.top/article/golang/golang性能&单元测试.html" title="Golang 性能测试, 单元测试">https://2young.2simple.top/article/golang/golang性能&单元测试.html</a>
+      <a href="https://2young.2simple.top/article/6.824/MIT-6-824-Lec1.html" title="MIT-6.824-Lec1">https://2young.2simple.top/article/6.824/MIT-6-824-Lec1.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -602,15 +618,9 @@ function loopy() {
       
         <div class="post-tags">
           
-            <a href="/tags/Golang/" rel="tag"># Golang</a>
+            <a href="/tags/分布式/" rel="tag"># 分布式</a>
           
-            <a href="/tags/Go/" rel="tag"># Go</a>
-          
-            <a href="/tags/test/" rel="tag"># test</a>
-          
-            <a href="/tags/bench/" rel="tag"># bench</a>
-          
-            <a href="/tags/memory/" rel="tag"># memory</a>
+            <a href="/tags/6-824/" rel="tag"># 6.824</a>
           
         </div>
       
@@ -623,8 +633,8 @@ function loopy() {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/Hexo配置问题-Pandoc.html" rel="next" title="Hexo配置问题-Pandoc">
-                <i class="fa fa-chevron-left"></i> Hexo配置问题-Pandoc
+              <a href="/article/Docker配置需认证的MongoDB.html" rel="next" title="Docker配置MongoDB - Auth">
+                <i class="fa fa-chevron-left"></i> Docker配置MongoDB - Auth
               </a>
             
           </div>
@@ -632,6 +642,10 @@ function loopy() {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/6.824/Google-File-System.html" rel="prev" title="Google-File-System">
+                Google-File-System <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -708,7 +722,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -719,7 +733,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -730,7 +744,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -820,7 +834,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#golang-测试总结"><span class="nav-number">1.</span> <span class="nav-text">Golang 测试总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#go-test的初始化以及退出前的clear-testmain"><span class="nav-number">1.1.</span> <span class="nav-text">go test的初始化以及退出前的clear — TestMain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go-coverage-test-覆盖率测试"><span class="nav-number">1.2.</span> <span class="nav-text">Go Coverage test 覆盖率测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">1.3.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-1-introduction"><span class="nav-number">1.</span> <span class="nav-text">6.824 2018 Lecture 1: Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#what-is-a-distributed-system"><span class="nav-number">1.1.</span> <span class="nav-text">What is a distributed system?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#why-distributed"><span class="nav-number">1.2.</span> <span class="nav-text">Why distributed?</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -843,22 +857,22 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">张盛豪</span>
 </div>
 
-<div class="copyright">
-   <a href="http://www.miitbeian.gov.cn/">京ICP备18050719号</a> 
-</div>
 
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
 </div>
 
+<div class="powered-by">
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+</div>
 
 <div class="theme-info">
   主题 -
@@ -890,6 +904,11 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
  <a href="mailto:zhangshenghao1995@163.com?subject=用户意见" target="_blank" title="邮箱" rel="external nofollow">邮箱</a>
 </div>
 
+		 	
+
+<div style="width:300px;margin:0 auto; padding:0 0;">
+	<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011102001136" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/uploads/beian.png" style="float:left;"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11011102001136号</p></a>
+</div>
         
 
         
@@ -985,9 +1004,9 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
     <script type="text/javascript">
       var disqus_shortname = 'qingfeng';
-      var disqus_identifier = 'article/golang/golang性能&单元测试.html';
+      var disqus_identifier = 'article/6.824/MIT-6-824-Lec1.html';
 
-      var disqus_title = "Golang 性能测试, 单元测试";
+      var disqus_title = "MIT-6.824-Lec1";
 
 
       function run_disqus_script(disqus_script) {
@@ -1151,6 +1170,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1275,31 +1316,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

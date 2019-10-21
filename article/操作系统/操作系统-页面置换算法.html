@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="操作系统,页面置换算法,">
@@ -124,18 +91,18 @@ function loopy() {
 
 
 
-<meta name="description" content="置换算法的功能和目标功能当出现缺页异常，需调入新页面而内存已满时，置换算法选择被置换的物理页面 设计目标 尽可能减少页面的调入调出次数 把未来不再访问或短期内不访问的页面调出">
+<meta name="description" content="置换算法的功能和目标 功能 当出现缺页异常，需调入新页面而内存已满时，置换算法选择被置换的物理页面 设计目标  尽可能减少页面的调入调出次数 把未来不再访问或短期内不访问的页面调出">
 <meta name="keywords" content="操作系统,页面置换算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统-页面置换算法">
 <meta property="og:url" content="https://2young.2simple.top/article/操作系统/操作系统-页面置换算法.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="置换算法的功能和目标功能当出现缺页异常，需调入新页面而内存已满时，置换算法选择被置换的物理页面 设计目标 尽可能减少页面的调入调出次数 把未来不再访问或短期内不访问的页面调出">
+<meta property="og:description" content="置换算法的功能和目标 功能 当出现缺页异常，需调入新页面而内存已满时，置换算法选择被置换的物理页面 设计目标  尽可能减少页面的调入调出次数 把未来不再访问或短期内不访问的页面调出">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-23T08:13:16.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-页面置换算法">
-<meta name="twitter:description" content="置换算法的功能和目标功能当出现缺页异常，需调入新页面而内存已满时，置换算法选择被置换的物理页面 设计目标 尽可能减少页面的调入调出次数 把未来不再访问或短期内不访问的页面调出">
+<meta name="twitter:description" content="置换算法的功能和目标 功能 当出现缺页异常，需调入新页面而内存已满时，置换算法选择被置换的物理页面 设计目标  尽可能减少页面的调入调出次数 把未来不再访问或短期内不访问的页面调出">
 
 
 
@@ -203,6 +170,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -515,90 +488,88 @@ function loopy() {
       
 
       
-        <h1 id="置换算法的功能和目标"><a href="#置换算法的功能和目标" class="headerlink" title="置换算法的功能和目标"></a>置换算法的功能和目标</h1><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>当出现<font color="red">缺页异常</font>，需调入新页面而内存已满时，<font color="red">置换算法选择被置换的物理页面</font></p>
-<h2 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h2><ul>
+        <h1 id="置换算法的功能和目标">置换算法的功能和目标</h1>
+<h2 id="功能">功能</h2>
+<p>当出现<font color="red">缺页异常</font>，需调入新页面而内存已满时，<font color="red">置换算法选择被置换的物理页面</font></p>
+<h2 id="设计目标">设计目标</h2>
+<ul>
 <li>尽可能减少页面的调入调出次数</li>
 <li>把未来不再访问或短期内不访问的页面调出</li>
 </ul>
 <a id="more"></a>
-<h2 id="页面锁定-frame-locking"><a href="#页面锁定-frame-locking" class="headerlink" title="页面锁定(frame locking)"></a>页面锁定(frame locking)</h2><ul>
+<h2 id="页面锁定frame-locking">页面锁定(frame locking)</h2>
+<ul>
 <li>描述必须<font color="red">常驻内存</font>的逻辑页面</li>
 <li>操作系统的<font color="red">关键部分</font></li>
 <li>要求<font color="red">响应速度</font>的代码和数据</li>
 <li>页表中的<font color="red">锁定标志位</font>(lock bit)</li>
 </ul>
-<h2 id="置换算法的评价方法"><a href="#置换算法的评价方法" class="headerlink" title="置换算法的评价方法"></a>置换算法的评价方法</h2><ul>
+<h2 id="置换算法的评价方法">置换算法的评价方法</h2>
+<ul>
 <li>记录进程访问内存的页面轨迹</li>
 <li>评价：模拟页面置换算法，记录缺页的次数，更少的缺页意味着更好的性能</li>
 </ul>
-<h1 id="页面置换算法分类"><a href="#页面置换算法分类" class="headerlink" title="页面置换算法分类"></a>页面置换算法分类</h1><ul>
-<li>局部页面置换算法：着眼于当前进程  最优算法，先进先出算法，最近最久未使用算法，时钟算法，最不常用算法</li>
-<li>全局页面置换算法：着眼于所有可换出的物理页面  工作集算法，缺页率算法</li>
+<h1 id="页面置换算法分类">页面置换算法分类</h1>
+<ul>
+<li>局部页面置换算法：着眼于当前进程 最优算法，先进先出算法，最近最久未使用算法，时钟算法，最不常用算法</li>
+<li>全局页面置换算法：着眼于所有可换出的物理页面 工作集算法，缺页率算法</li>
 </ul>
-<h1 id="局部页面置换算法"><a href="#局部页面置换算法" class="headerlink" title="局部页面置换算法"></a>局部页面置换算法</h1><h2 id="最优页面置换算法-OPT"><a href="#最优页面置换算法-OPT" class="headerlink" title="最优页面置换算法 OPT"></a>最优页面置换算法 OPT</h2><ul>
+<h1 id="局部页面置换算法">局部页面置换算法</h1>
+<h2 id="最优页面置换算法-opt">最优页面置换算法 OPT</h2>
+<ul>
 <li>置换未来最长时间不访问的页面</li>
 <li>实际系统中无法实现</li>
 </ul>
-<h2 id="FIFO算法"><a href="#FIFO算法" class="headerlink" title="FIFO算法"></a>FIFO算法</h2><ul>
+<h2 id="fifo算法">FIFO算法</h2>
+<ul>
 <li>思路： 选择在内存中滞留时间最长的页面进行置换</li>
-<li>实现：<ul>
+<li>实现：</li>
 <li>维护一个记录所有位于内存中的逻辑页面链表</li>
 <li>链表元素按驻留内存时间排序，链首最长，链尾最短</li>
 <li>出现缺页时，选择链首进行置换</li>
-</ul>
-</li>
-<li>特征：<ul>
+<li>特征：</li>
 <li>实现简单</li>
 <li>性能较差</li>
 <li>Belady现象</li>
 </ul>
-</li>
-</ul>
-<h2 id="时钟置换算法"><a href="#时钟置换算法" class="headerlink" title="时钟置换算法"></a>时钟置换算法</h2><ul>
+<h2 id="时钟置换算法">时钟置换算法</h2>
+<ul>
 <li>思路：对页面的访问情况进行大致统计</li>
-<li>实现：<ul>
+<li>实现：</li>
 <li>在页表项增加访问位，</li>
 <li>各页面组织成环形链表</li>
 <li>指针指向最先调入的页面</li>
-</ul>
-</li>
-<li>算法：<ul>
+<li>算法：</li>
 <li>访问页面时，在页表项记录页面访问情况</li>
 <li>缺页时，从指针处开始顺序查找未被访问的页面进行置换</li>
-</ul>
-</li>
 <li>特征：是LRU和FIFO的折中</li>
 </ul>
 <p><strong>【Note】:访问位的标记是硬件自动完成的</strong></p>
 <ul>
-<li>具体流程<ul>
+<li>具体流程</li>
 <li>页面装入内存时，访问位初始化为0</li>
 <li>访问页面（读/写)时，访问位置1</li>
-<li>缺页时，从指针当前位置顺序检查环形链表<ul>
+<li>缺页时，从指针当前位置顺序检查环形链表
+<ul>
 <li>访问位为0，则置换该页</li>
 <li>访问位为1，则访问位置0，并指针移动到下一个页面，</li>
 <li>直到找到可置换的页面</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="全局页面置换算法"><a href="#全局页面置换算法" class="headerlink" title="全局页面置换算法"></a>全局页面置换算法</h1><h2 id="工作集页置换算法"><a href="#工作集页置换算法" class="headerlink" title="工作集页置换算法"></a>工作集页置换算法</h2><ul>
-<li>工作集 $W(t, \Delta)$<ul>
+<h1 id="全局页面置换算法">全局页面置换算法</h1>
+<h2 id="工作集页置换算法">工作集页置换算法</h2>
+<ul>
+<li>工作集 <span class="math inline">\(W(t, \Delta)\)</span></li>
 <li>t是当前的执行时刻</li>
-<li>$\Delta$ 是工作集窗口，即一个定长的页面访问时间窗口</li>
-<li>$W(t,\Delta)$表示在当前时刻t前的$\Delta$时间窗口中的所有访问页面所组成的集合</li>
-<li>$|W(t,\Delta)|$指工作集的大小，即页面数目</li>
-</ul>
-</li>
+<li><span class="math inline">\(\Delta\)</span> 是工作集窗口，即一个定长的页面访问时间窗口</li>
+<li><span class="math inline">\(W(t,\Delta)\)</span>表示在当前时刻t前的<span class="math inline">\(\Delta\)</span>时间窗口中的所有访问页面所组成的集合</li>
+<li><span class="math inline">\(|W(t,\Delta)|\)</span>指工作集的大小，即页面数目</li>
 <li>工作集页置换算法思路：换出不在工作集中的页面</li>
-<li>窗口大小$\tau$:当前时刻前$\tau$个内存访问的页引用是工作集，$\tau$被称为窗口大小</li>
-<li>实现方法：<ul>
+<li>窗口大小<span class="math inline">\(\tau\)</span>:当前时刻前<span class="math inline">\(\tau\)</span>个内存访问的页引用是工作集，<span class="math inline">\(\tau\)</span>被称为窗口大小</li>
+<li>实现方法：</li>
 <li>访存链表：维护窗口内的访存页面链表</li>
 <li>访存时，换出不在工作集的页面，更新访存链表</li>
-<li>缺页时，换出页面，更新访存链表 </li>
-</ul>
-</li>
+<li>缺页时，换出页面，更新访存链表</li>
 </ul>
 
       
@@ -769,7 +740,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -780,7 +751,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -791,7 +762,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -881,7 +852,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#置换算法的功能和目标"><span class="nav-number">1.</span> <span class="nav-text">置换算法的功能和目标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能"><span class="nav-number">1.1.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计目标"><span class="nav-number">1.2.</span> <span class="nav-text">设计目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面锁定-frame-locking"><span class="nav-number">1.3.</span> <span class="nav-text">页面锁定(frame locking)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置换算法的评价方法"><span class="nav-number">1.4.</span> <span class="nav-text">置换算法的评价方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#页面置换算法分类"><span class="nav-number">2.</span> <span class="nav-text">页面置换算法分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部页面置换算法"><span class="nav-number">3.</span> <span class="nav-text">局部页面置换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最优页面置换算法-OPT"><span class="nav-number">3.1.</span> <span class="nav-text">最优页面置换算法 OPT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIFO算法"><span class="nav-number">3.2.</span> <span class="nav-text">FIFO算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟置换算法"><span class="nav-number">3.3.</span> <span class="nav-text">时钟置换算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全局页面置换算法"><span class="nav-number">4.</span> <span class="nav-text">全局页面置换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作集页置换算法"><span class="nav-number">4.1.</span> <span class="nav-text">工作集页置换算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#置换算法的功能和目标"><span class="nav-number">1.</span> <span class="nav-text">置换算法的功能和目标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能"><span class="nav-number">1.1.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计目标"><span class="nav-number">1.2.</span> <span class="nav-text">设计目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面锁定frame-locking"><span class="nav-number">1.3.</span> <span class="nav-text">页面锁定(frame locking)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置换算法的评价方法"><span class="nav-number">1.4.</span> <span class="nav-text">置换算法的评价方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#页面置换算法分类"><span class="nav-number">2.</span> <span class="nav-text">页面置换算法分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部页面置换算法"><span class="nav-number">3.</span> <span class="nav-text">局部页面置换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最优页面置换算法-opt"><span class="nav-number">3.1.</span> <span class="nav-text">最优页面置换算法 OPT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fifo算法"><span class="nav-number">3.2.</span> <span class="nav-text">FIFO算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟置换算法"><span class="nav-number">3.3.</span> <span class="nav-text">时钟置换算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全局页面置换算法"><span class="nav-number">4.</span> <span class="nav-text">全局页面置换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作集页置换算法"><span class="nav-number">4.1.</span> <span class="nav-text">工作集页置换算法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -904,7 +875,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -918,7 +889,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1217,6 +1188,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1341,31 +1334,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

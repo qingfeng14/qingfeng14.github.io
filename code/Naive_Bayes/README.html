@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="青枫，博客，Coding, 张盛豪, Golang, Web">
@@ -124,17 +91,17 @@ function loopy() {
 
 
 
-<meta name="description" content="个人联系方式 姓名: 张盛豪 邮箱: zhangshenghao1995@163.com 电话: 18401653285  代码运行方法:1python main.py 即可完成如下测试:  测试数据集规模对分类效果的影响 测试随机选取训练集的训练效果(重复5次) 测试拉普拉斯平滑的效果 测试年龄不同离散粒度对分类效果的影响 测试工作时间不同离散颗粒度对分类效果的影响 测试投资收益、损失离散度对分">
+<meta name="description" content="个人联系方式  姓名: 张盛豪 邮箱: zhangshenghao1995@163.com 电话: 18401653285  代码运行方法: 1python main.py 即可完成如下测试:  测试数据集规模对分类效果的影响 测试随机选取训练集的训练效果(重复5次) 测试拉普拉斯平滑的效果 测试年龄不同离散粒度对分类效果的影响 测试工作时间不同离散颗粒度对分类效果的影响 测试投资收益、损失离散度">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我的日志">
 <meta property="og:url" content="https://2young.2simple.top/code/Naive_Bayes/README.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="个人联系方式 姓名: 张盛豪 邮箱: zhangshenghao1995@163.com 电话: 18401653285  代码运行方法:1python main.py 即可完成如下测试:  测试数据集规模对分类效果的影响 测试随机选取训练集的训练效果(重复5次) 测试拉普拉斯平滑的效果 测试年龄不同离散粒度对分类效果的影响 测试工作时间不同离散颗粒度对分类效果的影响 测试投资收益、损失离散度对分">
+<meta property="og:description" content="个人联系方式  姓名: 张盛豪 邮箱: zhangshenghao1995@163.com 电话: 18401653285  代码运行方法: 1python main.py 即可完成如下测试:  测试数据集规模对分类效果的影响 测试随机选取训练集的训练效果(重复5次) 测试拉普拉斯平滑的效果 测试年龄不同离散粒度对分类效果的影响 测试工作时间不同离散颗粒度对分类效果的影响 测试投资收益、损失离散度">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-08-09T01:31:39.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的日志">
-<meta name="twitter:description" content="个人联系方式 姓名: 张盛豪 邮箱: zhangshenghao1995@163.com 电话: 18401653285  代码运行方法:1python main.py 即可完成如下测试:  测试数据集规模对分类效果的影响 测试随机选取训练集的训练效果(重复5次) 测试拉普拉斯平滑的效果 测试年龄不同离散粒度对分类效果的影响 测试工作时间不同离散颗粒度对分类效果的影响 测试投资收益、损失离散度对分">
+<meta name="twitter:description" content="个人联系方式  姓名: 张盛豪 邮箱: zhangshenghao1995@163.com 电话: 18401653285  代码运行方法: 1python main.py 即可完成如下测试:  测试数据集规模对分类效果的影响 测试随机选取训练集的训练效果(重复5次) 测试拉普拉斯平滑的效果 测试年龄不同离散粒度对分类效果的影响 测试工作时间不同离散颗粒度对分类效果的影响 测试投资收益、损失离散度">
 
 
 
@@ -208,6 +175,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -376,12 +349,14 @@ function loopy() {
 
     
     
-      <h1 id="个人联系方式"><a href="#个人联系方式" class="headerlink" title="个人联系方式"></a>个人联系方式</h1><ul>
+      <h1 id="个人联系方式">个人联系方式</h1>
+<ul>
 <li>姓名: 张盛豪</li>
-<li>邮箱: <a href="mailto:zhangshenghao1995@163.com" target="_blank" rel="noopener">zhangshenghao1995@163.com</a></li>
+<li>邮箱: zhangshenghao1995@163.com</li>
 <li>电话: 18401653285</li>
 </ul>
-<h1 id="代码运行方法"><a href="#代码运行方法" class="headerlink" title="代码运行方法:"></a>代码运行方法:</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python main.py</span><br></pre></td></tr></table></figure>
+<h1 id="代码运行方法">代码运行方法:</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python main.py</span><br></pre></td></tr></table></figure>
 <p>即可完成如下测试:</p>
 <ul>
 <li>测试数据集规模对分类效果的影响</li>
@@ -394,22 +369,23 @@ function loopy() {
 <li>测试选取不同的特征值对分类效果的影响</li>
 <li>测试在训练集中加入不同比例测试集数据对分类效果的影响</li>
 </ul>
-<h1 id="代码说明"><a href="#代码说明" class="headerlink" title="代码说明:"></a>代码说明:</h1><ul>
+<h1 id="代码说明">代码说明:</h1>
+<ul>
 <li>main.py:程序入口</li>
 <li>config.py:配置文件,通过这个文件中的变量可以设置数据, 特征值离散处理方式,是否拉普拉斯平滑等</li>
-<li>Naive_Bayes.py:贝叶斯分类器主题部分,<ul>
+<li>Naive_Bayes.py:贝叶斯分类器主题部分,
+<ul>
 <li>NBC.init:分类器的初始化及训练先验概率和条件概率</li>
 <li>NBC.test:测试训练出的模型的分类效果</li>
 <li>get_cols_name:获取选取的特征值</li>
 <li>pring_cols:打印训练和测试基于的特征值名称</li>
 <li>begin:进行训练和测试的统一入口</li>
-</ul>
-</li>
-<li>pretreatment.py:数据预处理模块。<ul>
+</ul></li>
+<li>pretreatment.py:数据预处理模块。
+<ul>
 <li>treat:给入原始训练集,测试集文件名,训练集比例,测试集比例, 忽略的特征值id,输出处理后的训练数据和测试数据</li>
 <li>do_split:根据config.py中的各参数设定,对每一行数据进行离散,变换等处理</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 
     
@@ -465,7 +441,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -476,7 +452,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -487,7 +463,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -584,7 +560,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -598,7 +574,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -893,6 +869,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1017,31 +1015,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

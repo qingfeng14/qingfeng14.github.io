@@ -71,39 +71,6 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-<script src="https://cdn.bootcss.com/js-sha1/0.4.1/sha1.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-
-<script type="text/javascript"> 
-loopy() 
-function loopy() { 
-    if(''){
-        while(true) {
-            var pass = prompt("输入正确密码才能查看!");
-            if(pass) {
-                // 点击的确定
-                var ss = sha1(pass)
-                // alert(ss);
-                if(ss == '') {
-                    alert("Welcome! Contact me at zhangshenghao1995@163.com");
-                    break;
-                }
-                else {
-                    alert("密码错误！");
-                }
-            }
-            else if(pass == "") {
-                // 用户没有输入
-            }
-            else {
-                // 点击取消
-                // history.go(-1)
-
-            }
-        }
-    }
-} 
-</script> 
 
 
   <meta name="keywords" content="青枫，博客，Coding, 张盛豪, Golang, Web">
@@ -124,17 +91,17 @@ function loopy() {
 
 
 
-<meta name="description" content="回顾hardware-&amp;gt;OS-&amp;gt;App 硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT, consistent -&amp;gt; MPI,mapreduce,spark -&amp;gt; App Master 服务器：Master的crash容灾 printf: 自己动手写CPU,intel 手册 MPI,mapreduce,spark DataBase: WebT">
+<meta name="description" content="回顾 hardware-&amp;gt;OS-&amp;gt;App 硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT, consistent -&amp;gt; MPI,mapreduce,spark -&amp;gt; App Master 服务器：Master的crash容灾 printf: 自己动手写CPU,intel 手册 MPI,mapreduce,spark DataBase: Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大规模数据处理-Spark">
 <meta property="og:url" content="https://2young.2simple.top/article/大规模数据处理-Spark.html">
 <meta property="og:site_name" content="我的日志">
-<meta property="og:description" content="回顾hardware-&amp;gt;OS-&amp;gt;App 硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT, consistent -&amp;gt; MPI,mapreduce,spark -&amp;gt; App Master 服务器：Master的crash容灾 printf: 自己动手写CPU,intel 手册 MPI,mapreduce,spark DataBase: WebT">
+<meta property="og:description" content="回顾 hardware-&amp;gt;OS-&amp;gt;App 硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT, consistent -&amp;gt; MPI,mapreduce,spark -&amp;gt; App Master 服务器：Master的crash容灾 printf: 自己动手写CPU,intel 手册 MPI,mapreduce,spark DataBase: Web">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-01-14T12:59:10.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大规模数据处理-Spark">
-<meta name="twitter:description" content="回顾hardware-&amp;gt;OS-&amp;gt;App 硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT, consistent -&amp;gt; MPI,mapreduce,spark -&amp;gt; App Master 服务器：Master的crash容灾 printf: 自己动手写CPU,intel 手册 MPI,mapreduce,spark DataBase: WebT">
+<meta name="twitter:description" content="回顾 hardware-&amp;gt;OS-&amp;gt;App 硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT, consistent -&amp;gt; MPI,mapreduce,spark -&amp;gt; App Master 服务器：Master的crash容灾 printf: 自己动手写CPU,intel 手册 MPI,mapreduce,spark DataBase: Web">
 
 
 
@@ -202,6 +169,12 @@ function loopy() {
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="//s5.cnzz.com/z_stat.php?id=1276171070&web_id=1276171070" language="JavaScript"></script>
+  </div>
 
 
 
@@ -492,7 +465,8 @@ function loopy() {
       
 
       
-        <h1 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h1><p>hardware-&gt;OS-&gt;App</p>
+        <h1 id="回顾">回顾</h1>
+<p>hardware-&gt;OS-&gt;App</p>
 <p>硬件集群，网络互连-&gt;DFS,Schechuler,Monitor,FT, consistent -&gt; MPI,mapreduce,spark -&gt; App</p>
 <p>Master 服务器：Master的crash容灾</p>
 <p>printf: 自己动手写CPU,intel 手册</p>
@@ -503,27 +477,31 @@ function loopy() {
 <p>table: sort, 按照id</p>
 <p>sort-&gt;join</p>
 <p>SQL-&gt;compile|EEngine|DBMS-&gt;Storage、LsmTree</p>
-<h1 id="分布式数据库"><a href="#分布式数据库" class="headerlink" title="分布式数据库"></a>分布式数据库</h1><p>P： id, mode, data<br>N: id, neighborid</p>
+<h1 id="分布式数据库">分布式数据库</h1>
+<p>P： id, mode, data N: id, neighborid</p>
 <p>PN =&gt; P1,N1 、 P2,N2、、、</p>
 <p>p.id = n.id 放于一个节点（hash)</p>
 <p>sort -&gt; merge（p.objid = n.objid) 根据n.objid hash然后发送给对应节点查询数据</p>
 <p>CRC</p>
 <p>Hive =&gt;Sql =&gt;Spark=&gt;Dryad</p>
-<h2 id="Spark特性"><a href="#Spark特性" class="headerlink" title="Spark特性"></a>Spark特性</h2><ul>
+<h2 id="spark特性">Spark特性</h2>
+<ul>
 <li>set operation</li>
 <li>parall</li>
 <li>action</li>
 </ul>
 <p>libpacp</p>
-<h1 id="Dryad"><a href="#Dryad" class="headerlink" title="Dryad"></a>Dryad</h1><ul>
-<li>Jobs are expressed as a Directed Acyclic Graph (DAG): dataflow   </li>
+<h1 id="dryad">Dryad</h1>
+<ul>
+<li>Jobs are expressed as a Directed Acyclic Graph (DAG): dataflow<br>
+</li>
 <li>Vertices are computations.</li>
 <li>Edges are communication channels.</li>
 <li>Each vertex can have several input and output channels.</li>
 <li>Each vertex runs one or more times.</li>
 <li>Stop when all vertices have completed their execution at least once.</li>
 </ul>
-<p><a href="http://shiyanjun.cn/archives/744.html" target="_blank" rel="noopener">Sprak 论文Resilient Distributed Datasets: A Fault-Tolerant Abstraction for<br>In-Memory Cluster Computing</a></p>
+<p><a href="http://shiyanjun.cn/archives/744.html" target="_blank" rel="noopener">Sprak 论文Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing</a></p>
 
       
     </div>
@@ -685,7 +663,7 @@ function loopy() {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -696,7 +674,7 @@ function loopy() {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -707,7 +685,7 @@ function loopy() {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -797,7 +775,7 @@ function loopy() {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#回顾"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分布式数据库"><span class="nav-number">2.</span> <span class="nav-text">分布式数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark特性"><span class="nav-number">2.1.</span> <span class="nav-text">Spark特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dryad"><span class="nav-number">3.</span> <span class="nav-text">Dryad</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#回顾"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分布式数据库"><span class="nav-number">2.</span> <span class="nav-text">分布式数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#spark特性"><span class="nav-number">2.1.</span> <span class="nav-text">Spark特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dryad"><span class="nav-number">3.</span> <span class="nav-text">Dryad</span></a></li></ol></div>
             
 
           </div>
@@ -820,7 +798,7 @@ function loopy() {
         <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -834,7 +812,7 @@ function loopy() {
 </div>
 
 <div class="powered-by">
-   <a href="http://www.miitbeian.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
+   <a href="http://www.beian.miit.gov.cn/" style="color:#939393;">京ICP备18050719号</a> 
 </div>
 
 <div class="theme-info">
@@ -1133,6 +1111,28 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
 
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -1257,31 +1257,44 @@ Contact Me @  <a href="https://www.zhihu.com/people/alex-zhangch/activities" tar
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+
+  
+
+
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
     }
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
 </script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-  
-
-
-  
-
-
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>

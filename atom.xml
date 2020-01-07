@@ -27,7 +27,7 @@
     
       
       
-        &lt;h1 id=&quot;Lec1-Introduction&quot;&gt;&lt;a href=&quot;#Lec1-Introduction&quot; class=&quot;headerlink&quot; title=&quot;Lec1 Introduction&quot;&gt;&lt;/a&gt;Lec1 Introduction&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;h
+        &lt;!-- build time:Wed Jan 08 2020 01:13:58 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;lec1-introduction&quot;&gt;Lec1 Introduction&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://nil.csail.
       
     
     </summary>
@@ -55,7 +55,7 @@
     
       
       
-        &lt;h1 id=&quot;Google-File-System精要&quot;&gt;&lt;a href=&quot;#Google-File-System精要&quot; class=&quot;headerlink&quot; title=&quot;Google File System精要&quot;&gt;&lt;/a&gt;Google File System精要&lt;/h1&gt;&lt;
+        &lt;!-- build time:Wed Jan 08 2020 01:13:58 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;google-file-system精要&quot;&gt;Google File System精要&lt;/h1&gt;&lt;h2 id=&quot;摘要&quot;&gt;摘要&lt;/h2&gt;&lt;p&gt;G
       
     
     </summary>
@@ -79,7 +79,7 @@
     
       
       
-        &lt;h1 id=&quot;Docker-相关命令记录&quot;&gt;&lt;a href=&quot;#Docker-相关命令记录&quot; class=&quot;headerlink&quot; title=&quot;Docker 相关命令记录&quot;&gt;&lt;/a&gt;Docker 相关命令记录&lt;/h1&gt;&lt;h2 id=&quot;安装MongoDB并配置用户名密码&quot;&gt;&lt;a
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;docker-相关命令记录&quot;&gt;Docker 相关命令记录&lt;/h1&gt;&lt;h2 id=&quot;安装mongodb并配置用户名密码&quot;&gt;安装MongoDB并
       
     
     </summary>
@@ -103,7 +103,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Golang-测试总结&quot;&gt;&lt;a href=&quot;#Golang-测试总结&quot; class=&quot;headerlink&quot; title=&quot;Golang 测试总结&quot;&gt;&lt;/a&gt;Golang 测试总结&lt;/h1&gt;&lt;h2 id=&quot;go-test的初始化以及退出前的clear-—-TestMain&quot;&gt;&lt;a href=&quot;#go-test的初始化以及退出前的clear-—-TestMain&quot; class=&quot;headerlink&quot; title=&quot;go test的初始化以及退出前的clear — TestMain&quot;&gt;&lt;/a&gt;&lt;code&gt;go test&lt;/code&gt;的初始化以及退出前的clear — &lt;code&gt;TestMain&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;程序的初始化工作可以通过&lt;code&gt;init()&lt;/code&gt;函数完成,Go的&lt;code&gt;init&lt;/code&gt;有以下特点:&lt;/p&gt;
+      &lt;!-- build time:Wed Jan 08 2020 01:13:58 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;golang-测试总结&quot;&gt;Golang 测试总结&lt;/h1&gt;&lt;h2 id=&quot;go-test的初始化以及退出前的clear-----testmain&quot;&gt;&lt;code&gt;go test&lt;/code&gt;的初始化以及退出前的clear --- &lt;code&gt;TestMain&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;程序的初始化工作可以通过&lt;code&gt;init()&lt;/code&gt;函数完成,Go的&lt;code&gt;init&lt;/code&gt;有以下特点:&lt;/p&gt;
     
     </summary>
     
@@ -134,7 +134,7 @@
     
       
       
-        &lt;h1 id=&quot;Pandoc-的问题&quot;&gt;&lt;a href=&quot;#Pandoc-的问题&quot; class=&quot;headerlink&quot; title=&quot;Pandoc 的问题&quot;&gt;&lt;/a&gt;Pandoc 的问题&lt;/h1&gt;&lt;h2 id=&quot;Error-spawn-pandoc-ENOENT&quot;&gt;&lt;a hre
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;pandoc-的问题&quot;&gt;Pandoc 的问题&lt;/h1&gt;&lt;h2 id=&quot;error-spawn-pandoc-enoent&quot;&gt;Error: s
       
     
     </summary>
@@ -158,7 +158,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;How-to-set-package-variable-using-ldflags-X-in-Golang-build-–-go如何在编译时用ldflags设置变量&quot;&gt;&lt;a href=&quot;#How-to-set-package-variable-using-ldflags-X-in-Golang-build-–-go如何在编译时用ldflags设置变量&quot; class=&quot;headerlink&quot; title=&quot;How to set package variable using -ldflags -X in Golang build – go如何在编译时用ldflags设置变量&quot;&gt;&lt;/a&gt;How to set package variable using -ldflags -X in Golang build – go如何在编译时用ldflags设置变量&lt;/h1&gt;&lt;p&gt;如何在编译、安装、测试时动态设置变量，(增加版本号, 编译时间, &lt;code&gt;Git Commit Hash&lt;/code&gt;等)&lt;/p&gt;
+      &lt;!-- build time:Wed Jan 08 2020 01:13:58 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;how-to-set-package-variable-using--ldflags--x-in-golang-build----go如何在编译时用ldflags设置变量&quot;&gt;How to set package variable using -ldflags -X in Golang build -- go如何在编译时用ldflags设置变量&lt;/h1&gt;&lt;p&gt;如何在编译、安装、测试时动态设置变量，(增加版本号, 编译时间, &lt;code&gt;Git Commit Hash&lt;/code&gt;等)&lt;/p&gt;
     
     </summary>
     
@@ -185,7 +185,7 @@
     
       
       
-        &lt;h1 id=&quot;Linux-Mac-获取本机的IP地址&quot;&gt;&lt;a href=&quot;#Linux-Mac-获取本机的IP地址&quot; class=&quot;headerlink&quot; title=&quot;Linux/Mac 获取本机的IP地址&quot;&gt;&lt;/a&gt;Linux/Mac 获取本机的IP地址&lt;/h1&gt;&lt;figu
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;linuxmac-获取本机的ip地址&quot;&gt;Linux/Mac 获取本机的IP地址&lt;/h1&gt;&lt;figure class=&quot;highlight s
       
     
     </summary>
@@ -236,7 +236,7 @@
     
       
       
-        &lt;h1 id=&quot;课程选题辅导&quot;&gt;&lt;a href=&quot;#课程选题辅导&quot; class=&quot;headerlink&quot; title=&quot;课程选题辅导&quot;&gt;&lt;/a&gt;课程选题辅导&lt;/h1&gt;&lt;h2 id=&quot;IPV4-地址空间测绘&quot;&gt;&lt;a href=&quot;#IPV4-地址空间测绘&quot; class=&quot;header
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;课程选题辅导&quot;&gt;课程选题辅导&lt;/h1&gt;&lt;h2 id=&quot;ipv4-地址空间测绘&quot;&gt;IPV4 地址空间测绘&lt;/h2&gt;&lt;p&gt;多尺度，多维度，多状态
       
     
     </summary>
@@ -258,7 +258,7 @@
     
       
       
-        &lt;h1 id=&quot;实验目标&quot;&gt;&lt;a href=&quot;#实验目标&quot; class=&quot;headerlink&quot; title=&quot;实验目标&quot;&gt;&lt;/a&gt;实验目标&lt;/h1&gt;&lt;p&gt;使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.&lt;
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;实验目标&quot;&gt;实验目标&lt;/h1&gt;&lt;p&gt;使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出40
       
     
     </summary>
@@ -278,7 +278,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验目标&quot;&gt;&lt;a href=&quot;#实验目标&quot; class=&quot;headerlink&quot; title=&quot;实验目标&quot;&gt;&lt;/a&gt;实验目标&lt;/h1&gt;&lt;p&gt;实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值&lt;/p&gt;
+      &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;实验目标&quot;&gt;实验目标&lt;/h1&gt;&lt;p&gt;实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值&lt;/p&gt;
     
     </summary>
     
@@ -299,7 +299,7 @@
     
       
       
-        &lt;p&gt;在Dryad论文中，有以下的查询语句，在上课的时候已经详细说明了如何将SQL语句转换成DAG1（被称为是Schema DAG，类似C++里面的class）,之后再将DAG1与具体的数据分布结合在一起，形成DAG2（被称为是Instance DAG，类似C++里面的Objec
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;p&gt;在Dryad论文中，有以下的查询语句，在上课的时候已经详细说明了如何将SQL语句转换成DAG1（被称为是Schema DAG，类似C++里面的clas
       
     
     </summary>
@@ -321,7 +321,7 @@
     
       
       
-        &lt;h1 id=&quot;实验要求&quot;&gt;&lt;a href=&quot;#实验要求&quot; class=&quot;headerlink&quot; title=&quot;实验要求&quot;&gt;&lt;/a&gt;实验要求&lt;/h1&gt;&lt;ol&gt;&lt;li&gt;部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;实验要求&quot;&gt;实验要求&lt;/h1&gt;&lt;ol style=&quot;list-style-type:decimal&quot;&gt;&lt;li&gt;部分单词出现特别频繁以致于其在
       
     
     </summary>
@@ -343,7 +343,7 @@
     
       
       
-        &lt;h1 id=&quot;回顾&quot;&gt;&lt;a href=&quot;#回顾&quot; class=&quot;headerlink&quot; title=&quot;回顾&quot;&gt;&lt;/a&gt;回顾&lt;/h1&gt;&lt;p&gt;hardware-&amp;gt;OS-&amp;gt;App&lt;/p&gt;&lt;p&gt;硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT,
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;回顾&quot;&gt;回顾&lt;/h1&gt;&lt;p&gt;hardware-&amp;gt;OS-&amp;gt;App&lt;/p&gt;&lt;p&gt;硬件集群，网络互连-&amp;gt;DFS,Schechul
       
     
     </summary>
@@ -363,7 +363,7 @@
     
       
       
-        &lt;h1 id=&quot;BigTable&quot;&gt;&lt;a href=&quot;#BigTable&quot; class=&quot;headerlink&quot; title=&quot;BigTable&quot;&gt;&lt;/a&gt;BigTable&lt;/h1&gt;&lt;p&gt;Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;bigtable&quot;&gt;BigTable&lt;/h1&gt;&lt;p&gt;Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布
       
     
     </summary>
@@ -383,7 +383,7 @@
     
       
       
-        &lt;h1 id=&quot;Key-Value对存储&quot;&gt;&lt;a href=&quot;#Key-Value对存储&quot; class=&quot;headerlink&quot; title=&quot;Key-Value对存储&quot;&gt;&lt;/a&gt;Key-Value对存储&lt;/h1&gt;&lt;p&gt;在BigTable系统中，如果有一个TabletServer
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;key-value对存储&quot;&gt;Key-Value对存储&lt;/h1&gt;&lt;p&gt;在BigTable系统中，如果有一个TabletServer出现了错误，
       
     
     </summary>
@@ -403,7 +403,7 @@
     
       
       
-        &lt;h1 id=&quot;JAVA-安装配置&quot;&gt;&lt;a href=&quot;#JAVA-安装配置&quot; class=&quot;headerlink&quot; title=&quot;JAVA  安装配置&quot;&gt;&lt;/a&gt;JAVA 安装配置&lt;/h1&gt;&lt;p&gt;java_home&lt;/p&gt;&lt;figure class=&quot;highlight pla
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;java-安装配置&quot;&gt;JAVA 安装配置&lt;/h1&gt;&lt;p&gt;java_home&lt;/p&gt;&lt;figure class=&quot;highlight plai
       
     
     </summary>
@@ -423,7 +423,7 @@
     
       
       
-        &lt;h1 id=&quot;MPI&quot;&gt;&lt;a href=&quot;#MPI&quot; class=&quot;headerlink&quot; title=&quot;MPI&quot;&gt;&lt;/a&gt;MPI&lt;/h1&gt;&lt;p&gt;MPI编程：n台机器编号，0~n-1&lt;/p&gt;&lt;ul&gt;&lt;li&gt;send(from. to, msg, sizeof(msg))&lt;/li
+        &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;h1 id=&quot;mpi&quot;&gt;MPI&lt;/h1&gt;&lt;p&gt;MPI编程：n台机器编号，0~n-1&lt;/p&gt;&lt;ul&gt;&lt;li&gt;send(from. to, msg, size
       
     
     </summary>
@@ -441,7 +441,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;仔细阅读MapReduce这篇论文，回答下面的问题。&lt;/p&gt;&lt;h1 id=&quot;分布式排序&quot;&gt;&lt;a href=&quot;#分布式排序&quot; class=&quot;headerlink&quot; title=&quot;分布式排序&quot;&gt;&lt;/a&gt;分布式排序&lt;/h1&gt;&lt;blockquote&gt;&lt;p&gt;在MapReduce执行的过程中，中间的shuffle过程是一个非常重要的过程。这个过程中其中一个使用的方法就是进行分布式的排序。依据你自己的理解，阐述分布式排序方法。只需要用伪代码写出在各个节点中的程序代码即可。&lt;/p&gt;&lt;/blockquote&gt;
+      &lt;!-- build time:Wed Jan 08 2020 01:13:57 GMT+0800 (中国标准时间) --&gt;&lt;p&gt;仔细阅读MapReduce这篇论文，回答下面的问题。&lt;/p&gt;&lt;h1 id=&quot;分布式排序&quot;&gt;分布式排序&lt;/h1&gt;&lt;blockquote&gt;&lt;p&gt;在MapReduce执行的过程中，中间的shuffle过程是一个非常重要的过程。这个过程中其中一个使用的方法就是进行分布式的排序。依据你自己的理解，阐述分布式排序方法。只需要用伪代码写出在各个节点中的程序代码即可。&lt;/p&gt;&lt;/blockquote&gt;
     
     </summary>
     
@@ -462,7 +462,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Google File System论文学习&lt;/p&gt;&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;我们设计并实现了Google GFS文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。GFS虽然运行在廉价的普遍硬件设备上，但是它依然了提供&lt;font color=&quot;red&quot;&gt;灾难冗余&lt;/font&gt;的能力，为大量客户机提供了&lt;font color=&quot;red&quot;&gt;高性能&lt;/font&gt;的服务。&lt;/p&gt;&lt;p&gt;虽然GFS的设计目标与许多传统的分布式文件系统有很多相同之处，但是，我们的设计还是以我们对自己的应用的负载情况和技术环境的分析为基础 的，不管现在还是将来，GFS和早期的分布式文件系统的设想都有明显的不同。所以我们重新审视了传统文件系统在设计上的折衷选择，衍生出了完全不同的设计 思路。&lt;/p&gt;&lt;p&gt;GFS完全满足了我们对存储的需求。GFS作为存储平台已经被广泛的部署在Google内部，存储我们的服务产生和处理的数据，同时还用于那些 需要大规模数据集的研究和开发工作。目前为止，最大的一个集群利用数千台机器的数千个硬盘，提供了数百TB的存储空间，同时为数百个客户机服务。&lt;/p&gt;&lt;p&gt;在本论文中，我们展示了能够支持分布式应用的文件系统接口的扩展，讨论我们设计的许多方面，最后列出了小规模性能测试以及真实生产系统中性能相关数据。&lt;/p&gt;
+      &lt;!-- build time:Wed Jan 08 2020 01:13:58 GMT+0800 (中国标准时间) --&gt;&lt;p&gt;Google File System论文学习&lt;/p&gt;&lt;h1 id=&quot;摘要&quot;&gt;摘要&lt;/h1&gt;&lt;p&gt;我们设计并实现了Google GFS文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。GFS虽然运行在廉价的普遍硬件设备上，但是它依然了提供&lt;font color=&quot;red&quot;&gt;灾难冗余&lt;/font&gt;的能力，为大量客户机提供了&lt;font color=&quot;red&quot;&gt;高性能&lt;/font&gt;的服务。&lt;/p&gt;&lt;p&gt;虽然GFS的设计目标与许多传统的分布式文件系统有很多相同之处，但是，我们的设计还是以我们对自己的应用的负载情况和技术环境的分析为基础 的，不管现在还是将来，GFS和早期的分布式文件系统的设想都有明显的不同。所以我们重新审视了传统文件系统在设计上的折衷选择，衍生出了完全不同的设计 思路。&lt;/p&gt;&lt;p&gt;GFS完全满足了我们对存储的需求。GFS作为存储平台已经被广泛的部署在Google内部，存储我们的服务产生和处理的数据，同时还用于那些 需要大规模数据集的研究和开发工作。目前为止，最大的一个集群利用数千台机器的数千个硬盘，提供了数百TB的存储空间，同时为数百个客户机服务。&lt;/p&gt;&lt;p&gt;在本论文中，我们展示了能够支持分布式应用的文件系统接口的扩展，讨论我们设计的许多方面，最后列出了小规模性能测试以及真实生产系统中性能相关数据。&lt;/p&gt;
     
     </summary>
     

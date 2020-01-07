@@ -5,12 +5,8 @@ Allow: /categories/
 Allow: /tags/
 Allow: /about/ 
 Allow: /article/
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /code/
-Disallow: /lib/
 Sitemap: https://2young.2simple.top/sitemap.xml
 Sitemap: https://2young.2simple.top/baidusitemap.xml

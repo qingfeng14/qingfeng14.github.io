@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>我的日志</title>
+  
   <subtitle>以梦为马，越骑越傻</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://2young.2simple.top/"/>
-  <updated>2019-10-21T15:26:07.879Z</updated>
+  <updated>2020-01-04T02:00:07.713Z</updated>
   <id>https://2young.2simple.top/</id>
   
   <author>
@@ -13,45 +14,24 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Google-File-System</title>
-    <link href="https://2young.2simple.top/article/6.824/Google-File-System.html"/>
-    <id>https://2young.2simple.top/article/6.824/Google-File-System.html</id>
-    <published>2019-01-09T14:43:03.000Z</published>
-    <updated>2019-10-21T15:26:07.879Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;google-file-system精要&quot;&gt;Google File System精要&lt;/h1&gt;
-&lt;h2 id=&quot;摘要&quot;&gt;摘要&lt;/h2&gt;
-&lt;p&gt;GFS:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;可扩展的分布式文件系统，用于大规模分布式数据密集型应用。&lt;/li&gt;
-&lt;li&gt;即使运行在
-    
-    </summary>
-    
-      <category term="分布式" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
-    
-    
-      <category term="分布式" scheme="https://2young.2simple.top/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
-    
-  </entry>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>MIT-6.824-Lec1</title>
     <link href="https://2young.2simple.top/article/6.824/MIT-6-824-Lec1.html"/>
     <id>https://2young.2simple.top/article/6.824/MIT-6-824-Lec1.html</id>
-    <published>2019-01-09T12:54:25.000Z</published>
-    <updated>2019-01-09T14:42:26.209Z</updated>
+    <published>2019-02-09T12:54:25.000Z</published>
+    <updated>2020-01-04T02:00:07.713Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;LEC 1: Introduction Preparation: &lt;a href=&quot;https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Read MapR
+      
+      
+        &lt;h1 id=&quot;Lec1-Introduction&quot;&gt;&lt;a href=&quot;#Lec1-Introduction&quot; class=&quot;headerlink&quot; title=&quot;Lec1 Introduction&quot;&gt;&lt;/a&gt;Lec1 Introduction&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;h
+      
     
     </summary>
+    
     
       <category term="MIT" scheme="https://2young.2simple.top/categories/MIT/"/>
     
@@ -65,19 +45,45 @@
   </entry>
   
   <entry>
-    <title>Docker配置MongoDB - Auth</title>
-    <link href="https://2young.2simple.top/article/Docker%E9%85%8D%E7%BD%AE%E9%9C%80%E8%AE%A4%E8%AF%81%E7%9A%84MongoDB.html"/>
-    <id>https://2young.2simple.top/article/Docker配置需认证的MongoDB.html</id>
-    <published>2018-11-29T06:45:57.000Z</published>
-    <updated>2018-11-30T02:35:11.569Z</updated>
+    <title>Google-File-System</title>
+    <link href="https://2young.2simple.top/article/6.824/Google-File-System.html"/>
+    <id>https://2young.2simple.top/article/6.824/Google-File-System.html</id>
+    <published>2019-01-09T14:43:03.000Z</published>
+    <updated>2019-10-21T15:26:07.880Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;docker-相关命令记录&quot;&gt;Docker 相关命令记录&lt;/h1&gt;
-&lt;h2 id=&quot;安装mongodb并配置用户名密码&quot;&gt;安装MongoDB并配置用户名密码&lt;/h2&gt;
-&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td clas
+      
+      
+        &lt;h1 id=&quot;Google-File-System精要&quot;&gt;&lt;a href=&quot;#Google-File-System精要&quot; class=&quot;headerlink&quot; title=&quot;Google File System精要&quot;&gt;&lt;/a&gt;Google File System精要&lt;/h1&gt;&lt;
+      
     
     </summary>
+    
+    
+      <category term="分布式" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+    
+      <category term="分布式" scheme="https://2young.2simple.top/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker配置MongoDB - Auth</title>
+    <link href="https://2young.2simple.top/article/Docker%E9%85%8D%E7%BD%AE%E9%9C%80%E8%AE%A4%E8%AF%81%E7%9A%84MongoDB.html"/>
+    <id>https://2young.2simple.top/article/Docker%E9%85%8D%E7%BD%AE%E9%9C%80%E8%AE%A4%E8%AF%81%E7%9A%84MongoDB.html</id>
+    <published>2018-11-29T06:45:57.000Z</published>
+    <updated>2018-11-30T02:35:11.570Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Docker-相关命令记录&quot;&gt;&lt;a href=&quot;#Docker-相关命令记录&quot; class=&quot;headerlink&quot; title=&quot;Docker 相关命令记录&quot;&gt;&lt;/a&gt;Docker 相关命令记录&lt;/h1&gt;&lt;h2 id=&quot;安装MongoDB并配置用户名密码&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
     
       <category term="Docker" scheme="https://2young.2simple.top/categories/Docker/"/>
     
@@ -91,16 +97,16 @@
   <entry>
     <title>Golang 性能测试-单元测试</title>
     <link href="https://2young.2simple.top/article/golang/golang%E6%80%A7%E8%83%BD-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html"/>
-    <id>https://2young.2simple.top/article/golang/golang性能-单元测试.html</id>
+    <id>https://2young.2simple.top/article/golang/golang%E6%80%A7%E8%83%BD-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html</id>
     <published>2018-11-22T03:36:09.000Z</published>
-    <updated>2019-10-21T15:26:17.438Z</updated>
+    <updated>2020-01-04T02:12:44.199Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;golang-测试总结&quot;&gt;Golang 测试总结&lt;/h1&gt;
-&lt;h2 id=&quot;go-test的初始化以及退出前的clear-testmain&quot;&gt;&lt;code&gt;go test&lt;/code&gt;的初始化以及退出前的clear — &lt;code&gt;TestMain&lt;/code&gt;&lt;/
+      &lt;h1 id=&quot;Golang-测试总结&quot;&gt;&lt;a href=&quot;#Golang-测试总结&quot; class=&quot;headerlink&quot; title=&quot;Golang 测试总结&quot;&gt;&lt;/a&gt;Golang 测试总结&lt;/h1&gt;&lt;h2 id=&quot;go-test的初始化以及退出前的clear-—-TestMain&quot;&gt;&lt;a href=&quot;#go-test的初始化以及退出前的clear-—-TestMain&quot; class=&quot;headerlink&quot; title=&quot;go test的初始化以及退出前的clear — TestMain&quot;&gt;&lt;/a&gt;&lt;code&gt;go test&lt;/code&gt;的初始化以及退出前的clear — &lt;code&gt;TestMain&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;程序的初始化工作可以通过&lt;code&gt;init()&lt;/code&gt;函数完成,Go的&lt;code&gt;init&lt;/code&gt;有以下特点:&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Golang" scheme="https://2young.2simple.top/categories/Golang/"/>
     
@@ -120,17 +126,19 @@
   <entry>
     <title>Hexo配置问题-Pandoc</title>
     <link href="https://2young.2simple.top/article/Hexo%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98-Pandoc.html"/>
-    <id>https://2young.2simple.top/article/Hexo配置问题-Pandoc.html</id>
+    <id>https://2young.2simple.top/article/Hexo%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98-Pandoc.html</id>
     <published>2018-11-22T02:24:30.000Z</published>
-    <updated>2018-11-22T07:45:01.623Z</updated>
+    <updated>2018-11-22T07:45:01.624Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;pandoc-的问题&quot;&gt;Pandoc 的问题&lt;/h1&gt;
-&lt;h2 id=&quot;error-spawn-pandoc-enoent&quot;&gt;Error: spawn pandoc ENOENT&lt;/h2&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;
+      
+      
+        &lt;h1 id=&quot;Pandoc-的问题&quot;&gt;&lt;a href=&quot;#Pandoc-的问题&quot; class=&quot;headerlink&quot; title=&quot;Pandoc 的问题&quot;&gt;&lt;/a&gt;Pandoc 的问题&lt;/h1&gt;&lt;h2 id=&quot;Error-spawn-pandoc-ENOENT&quot;&gt;&lt;a hre
+      
     
     </summary>
+    
     
     
       <category term="Hexo" scheme="https://2young.2simple.top/tags/Hexo/"/>
@@ -144,16 +152,16 @@
   <entry>
     <title>golang在编译测试时使用ldflags动态设置包中变量的值</title>
     <link href="https://2young.2simple.top/article/golang/golang%E5%9C%A8%E7%BC%96%E8%AF%91%E6%97%B6%E4%BD%BF%E7%94%A8ldflags%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC.html"/>
-    <id>https://2young.2simple.top/article/golang/golang在编译时使用ldflags动态设置变量的值.html</id>
+    <id>https://2young.2simple.top/article/golang/golang%E5%9C%A8%E7%BC%96%E8%AF%91%E6%97%B6%E4%BD%BF%E7%94%A8ldflags%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC.html</id>
     <published>2018-11-12T09:21:18.000Z</published>
-    <updated>2018-11-26T10:14:21.237Z</updated>
+    <updated>2020-01-04T02:12:33.180Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;how-to-set-package-variable-using--ldflags--x-in-golang-build&quot;&gt;How to set package variable using -ldflags -X in Golang build&lt;/h1&gt;
-&lt;f
+      &lt;h1 id=&quot;How-to-set-package-variable-using-ldflags-X-in-Golang-build-–-go如何在编译时用ldflags设置变量&quot;&gt;&lt;a href=&quot;#How-to-set-package-variable-using-ldflags-X-in-Golang-build-–-go如何在编译时用ldflags设置变量&quot; class=&quot;headerlink&quot; title=&quot;How to set package variable using -ldflags -X in Golang build – go如何在编译时用ldflags设置变量&quot;&gt;&lt;/a&gt;How to set package variable using -ldflags -X in Golang build – go如何在编译时用ldflags设置变量&lt;/h1&gt;&lt;p&gt;如何在编译、安装、测试时动态设置变量，(增加版本号, 编译时间, &lt;code&gt;Git Commit Hash&lt;/code&gt;等)&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Golang" scheme="https://2young.2simple.top/categories/Golang/"/>
     
@@ -162,21 +170,26 @@
     
       <category term="Go" scheme="https://2young.2simple.top/tags/Go/"/>
     
+      <category term="ldflags" scheme="https://2young.2simple.top/tags/ldflags/"/>
+    
   </entry>
   
   <entry>
     <title>Linux or Mac 命令行获取本机IP地址</title>
     <link href="https://2young.2simple.top/article/Linux-Mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BAIP%E5%9C%B0%E5%9D%80.html"/>
-    <id>https://2young.2simple.top/article/Linux-Mac命令行获取本机IP地址.html</id>
+    <id>https://2young.2simple.top/article/Linux-Mac%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BAIP%E5%9C%B0%E5%9D%80.html</id>
     <published>2018-10-23T07:53:51.000Z</published>
     <updated>2019-02-14T01:31:50.306Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;linuxmac-获取本机的ip地址&quot;&gt;Linux/Mac 获取本机的IP地址&lt;/h1&gt;
-&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/s
+      
+      
+        &lt;h1 id=&quot;Linux-Mac-获取本机的IP地址&quot;&gt;&lt;a href=&quot;#Linux-Mac-获取本机的IP地址&quot; class=&quot;headerlink&quot; title=&quot;Linux/Mac 获取本机的IP地址&quot;&gt;&lt;/a&gt;Linux/Mac 获取本机的IP地址&lt;/h1&gt;&lt;figu
+      
     
     </summary>
+    
     
       <category term="Linux" scheme="https://2young.2simple.top/categories/Linux/"/>
     
@@ -194,7 +207,7 @@
   <entry>
     <title>Centrally Banked Cryptocurrencies 书面翻译</title>
     <link href="https://2young.2simple.top/article/RSCoin%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91.html"/>
-    <id>https://2young.2simple.top/article/RSCoin论文翻译.html</id>
+    <id>https://2young.2simple.top/article/RSCoin%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91.html</id>
     <published>2018-01-14T12:19:00.000Z</published>
     <updated>2018-01-14T13:09:42.677Z</updated>
     
@@ -203,6 +216,7 @@
       英国央行法定数字货币RSCoin 论文翻译
     
     </summary>
+    
     
     
       <category term="区块链" scheme="https://2young.2simple.top/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
@@ -214,20 +228,19 @@
   <entry>
     <title>计算机网络管理-课程设计选题辅导</title>
     <link href="https://2young.2simple.top/article/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%80%89%E9%A2%98%E8%BE%85%E5%AF%BC.html"/>
-    <id>https://2young.2simple.top/article/计算机网络管理-课程设计选题辅导.html</id>
+    <id>https://2young.2simple.top/article/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E9%80%89%E9%A2%98%E8%BE%85%E5%AF%BC.html</id>
     <published>2017-10-10T05:24:30.000Z</published>
     <updated>2018-11-21T09:20:48.017Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;课程选题辅导&quot;&gt;课程选题辅导&lt;/h1&gt;
-&lt;h2 id=&quot;ipv4-地址空间测绘&quot;&gt;IPV4 地址空间测绘&lt;/h2&gt;
-&lt;p&gt;多尺度，多维度，多状态，多视图&lt;/p&gt;
-&lt;p&gt;希尔伯特曲线， IPv4 地址&lt;/p&gt;
-&lt;p&gt;网络空间是几维的&lt;/p&gt;
-&lt;p&gt;可做的工作：&lt;/p
+      
+      
+        &lt;h1 id=&quot;课程选题辅导&quot;&gt;&lt;a href=&quot;#课程选题辅导&quot; class=&quot;headerlink&quot; title=&quot;课程选题辅导&quot;&gt;&lt;/a&gt;课程选题辅导&lt;/h1&gt;&lt;h2 id=&quot;IPV4-地址空间测绘&quot;&gt;&lt;a href=&quot;#IPV4-地址空间测绘&quot; class=&quot;header
+      
     
     </summary>
+    
     
     
       <category term="计算机网络" scheme="https://2young.2simple.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
@@ -243,13 +256,13 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验目标&quot;&gt;实验目标&lt;/h1&gt;
-&lt;p&gt;使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.&lt;/p&gt;
-&lt;h1 id=&quot;实验步骤&quot;&gt;实验步骤&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;数据预处理，将电影评论信息进
+      
+      
+        &lt;h1 id=&quot;实验目标&quot;&gt;&lt;a href=&quot;#实验目标&quot; class=&quot;headerlink&quot; title=&quot;实验目标&quot;&gt;&lt;/a&gt;实验目标&lt;/h1&gt;&lt;p&gt;使用K-means聚类方法对Netflix电影进行聚类.输入电影集合以及每部电影的用户评价列表，输出400个相关电影集合.&lt;
+      
     
     </summary>
+    
     
       <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
@@ -265,10 +278,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验目标&quot;&gt;实验目标&lt;/h1&gt;
-&lt;p&gt;实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值&lt;/p&gt;
+      &lt;h1 id=&quot;实验目标&quot;&gt;&lt;a href=&quot;#实验目标&quot; class=&quot;headerlink&quot; title=&quot;实验目标&quot;&gt;&lt;/a&gt;实验目标&lt;/h1&gt;&lt;p&gt;实现PageRank，将Wikipedia转换为链接图，然后对其进行PageRank，运行多次直到结果收敛，返回所有文章的PageRank值&lt;/p&gt;
     
     </summary>
+    
     
       <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
@@ -284,9 +297,13 @@
     
     <summary type="html">
     
-      &lt;p&gt;在Dryad论文中，有以下的查询语句，在上课的时候已经详细说明了如何将SQL语句转换成DAG1（被称为是Schema DAG，类似C++里面的class）,之后再将DAG1与具体的数据分布结合在一起，形成DAG2（被称为是Instance DAG，类似C++里面的Objec
+      
+      
+        &lt;p&gt;在Dryad论文中，有以下的查询语句，在上课的时候已经详细说明了如何将SQL语句转换成DAG1（被称为是Schema DAG，类似C++里面的class）,之后再将DAG1与具体的数据分布结合在一起，形成DAG2（被称为是Instance DAG，类似C++里面的Objec
+      
     
     </summary>
+    
     
       <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
@@ -302,11 +319,13 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;实验要求&quot;&gt;实验要求&lt;/h1&gt;
-&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
-&lt;li&gt;部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需要对莎士比亚全集文档进行单词统计以
+      
+      
+        &lt;h1 id=&quot;实验要求&quot;&gt;&lt;a href=&quot;#实验要求&quot; class=&quot;headerlink&quot; title=&quot;实验要求&quot;&gt;&lt;/a&gt;实验要求&lt;/h1&gt;&lt;ol&gt;&lt;li&gt;部分单词出现特别频繁以致于其在倒排表中的是一个噪声：会影响文档的其他更有代表性的单词的特征，在本实验的第一部分，需
+      
     
     </summary>
+    
     
       <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
@@ -316,17 +335,19 @@
   <entry>
     <title>大规模数据处理-Spark</title>
     <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-Spark.html"/>
-    <id>https://2young.2simple.top/article/大规模数据处理-Spark.html</id>
+    <id>https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-Spark.html</id>
     <published>2017-06-30T01:04:52.000Z</published>
-    <updated>2018-01-14T12:59:10.647Z</updated>
+    <updated>2018-01-14T12:59:10.648Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;回顾&quot;&gt;回顾&lt;/h1&gt;
-&lt;p&gt;hardware-&amp;gt;OS-&amp;gt;App&lt;/p&gt;
-&lt;p&gt;硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT, consistent -&amp;gt; MPI,mapreduce,spark -&amp;gt; Ap
+      
+      
+        &lt;h1 id=&quot;回顾&quot;&gt;&lt;a href=&quot;#回顾&quot; class=&quot;headerlink&quot; title=&quot;回顾&quot;&gt;&lt;/a&gt;回顾&lt;/h1&gt;&lt;p&gt;hardware-&amp;gt;OS-&amp;gt;App&lt;/p&gt;&lt;p&gt;硬件集群，网络互连-&amp;gt;DFS,Schechuler,Monitor,FT,
+      
     
     </summary>
+    
     
     
   </entry>
@@ -334,17 +355,19 @@
   <entry>
     <title>大规模数据处理-分布式key/value对存储：BigTable、DHT</title>
     <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8Fkey-value%E5%AF%B9%E5%AD%98%E5%82%A8.html"/>
-    <id>https://2young.2simple.top/article/大规模数据处理-分布式key-value对存储.html</id>
+    <id>https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8Fkey-value%E5%AF%B9%E5%AD%98%E5%82%A8.html</id>
     <published>2017-06-29T13:05:59.000Z</published>
-    <updated>2018-11-21T09:23:29.786Z</updated>
+    <updated>2018-11-21T09:23:29.787Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;bigtable&quot;&gt;BigTable&lt;/h1&gt;
-&lt;p&gt;Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数千台普通服 务器上的 PB 级的数据。&lt;/p&gt;
-&lt;p&gt;Bigtable是一个为管理大规模结构化数据而设计的分布式存储系
+      
+      
+        &lt;h1 id=&quot;BigTable&quot;&gt;&lt;a href=&quot;#BigTable&quot; class=&quot;headerlink&quot; title=&quot;BigTable&quot;&gt;&lt;/a&gt;BigTable&lt;/h1&gt;&lt;p&gt;Bigtable 是一个分布式的结构化数据存储系统，它被设计用来处理海量数据:通常是分布在数
+      
     
     </summary>
+    
     
     
   </entry>
@@ -354,14 +377,17 @@
     <link href="https://2young.2simple.top/article/Massive-Data-Process-Homework-3.html"/>
     <id>https://2young.2simple.top/article/Massive-Data-Process-Homework-3.html</id>
     <published>2017-06-28T16:00:00.000Z</published>
-    <updated>2018-11-21T09:19:49.710Z</updated>
+    <updated>2018-11-21T09:19:49.711Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;key-value对存储&quot;&gt;Key-Value对存储&lt;/h1&gt;
-&lt;p&gt;在BigTable系统中，如果有一个TabletServer出现了错误，不能继续进行工作，这样对应的Tablet将不能够提供服务。在系统中，数据表格中的数据形式就是URLContent的Key-
+      
+      
+        &lt;h1 id=&quot;Key-Value对存储&quot;&gt;&lt;a href=&quot;#Key-Value对存储&quot; class=&quot;headerlink&quot; title=&quot;Key-Value对存储&quot;&gt;&lt;/a&gt;Key-Value对存储&lt;/h1&gt;&lt;p&gt;在BigTable系统中，如果有一个TabletServer
+      
     
     </summary>
+    
     
     
   </entry>
@@ -369,17 +395,19 @@
   <entry>
     <title>Mac下Hadoop安装配置问题 waiting for AM container to be allocated, launched and register with RM.</title>
     <link href="https://2young.2simple.top/article/Mac%E4%B8%8BHadoop%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html"/>
-    <id>https://2young.2simple.top/article/Mac下Hadoop安装配置教程.html</id>
+    <id>https://2young.2simple.top/article/Mac%E4%B8%8BHadoop%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html</id>
     <published>2017-06-28T01:09:20.000Z</published>
     <updated>2018-08-09T01:31:24.332Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;java-安装配置&quot;&gt;JAVA 安装配置&lt;/h1&gt;
-&lt;p&gt;java_home&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/
+      
+      
+        &lt;h1 id=&quot;JAVA-安装配置&quot;&gt;&lt;a href=&quot;#JAVA-安装配置&quot; class=&quot;headerlink&quot; title=&quot;JAVA  安装配置&quot;&gt;&lt;/a&gt;JAVA 安装配置&lt;/h1&gt;&lt;p&gt;java_home&lt;/p&gt;&lt;figure class=&quot;highlight pla
+      
     
     </summary>
+    
     
     
   </entry>
@@ -387,21 +415,19 @@
   <entry>
     <title>大规模数据处理-MapReduce</title>
     <link href="https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-MapReduce.html"/>
-    <id>https://2young.2simple.top/article/大规模数据处理-MapReduce.html</id>
+    <id>https://2young.2simple.top/article/%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-MapReduce.html</id>
     <published>2017-06-27T01:23:12.000Z</published>
     <updated>2017-07-13T16:35:00.000Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;mpi&quot;&gt;MPI&lt;/h1&gt;
-&lt;p&gt;MPI编程：n台机器编号，0~n-1&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;send(from. to, msg, sizeof(msg))&lt;/li&gt;
-&lt;li&gt;recv()&lt;br&gt;
-&lt;/li&gt;
-&lt;li&gt;brodcast(from, Group
+      
+      
+        &lt;h1 id=&quot;MPI&quot;&gt;&lt;a href=&quot;#MPI&quot; class=&quot;headerlink&quot; title=&quot;MPI&quot;&gt;&lt;/a&gt;MPI&lt;/h1&gt;&lt;p&gt;MPI编程：n台机器编号，0~n-1&lt;/p&gt;&lt;ul&gt;&lt;li&gt;send(from. to, msg, sizeof(msg))&lt;/li
+      
     
     </summary>
+    
     
     
   </entry>
@@ -415,13 +441,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;仔细阅读MapReduce这篇论文，回答下面的问题。&lt;/p&gt;
-&lt;h1 id=&quot;分布式排序&quot;&gt;分布式排序&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在MapReduce执行的过程中，中间的shuffle过程是一个非常重要的过程。这个过程中其中一个使用的方法就是进行分布式的排序。依据你自己的理解，阐述分布式排序方法。只需要用伪代码写出在各个节点中的程序代码即可。&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;p&gt;仔细阅读MapReduce这篇论文，回答下面的问题。&lt;/p&gt;&lt;h1 id=&quot;分布式排序&quot;&gt;&lt;a href=&quot;#分布式排序&quot; class=&quot;headerlink&quot; title=&quot;分布式排序&quot;&gt;&lt;/a&gt;分布式排序&lt;/h1&gt;&lt;blockquote&gt;&lt;p&gt;在MapReduce执行的过程中，中间的shuffle过程是一个非常重要的过程。这个过程中其中一个使用的方法就是进行分布式的排序。依据你自己的理解，阐述分布式排序方法。只需要用伪代码写出在各个节点中的程序代码即可。&lt;/p&gt;&lt;/blockquote&gt;
     
     </summary>
+    
     
       <category term="分布式处理" scheme="https://2young.2simple.top/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86/"/>
     
@@ -433,20 +456,16 @@
   <entry>
     <title>谷歌文件系统论文学习</title>
     <link href="https://2young.2simple.top/article/%E8%B0%B7%E6%AD%8C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0.html"/>
-    <id>https://2young.2simple.top/article/谷歌文件系统论文学习.html</id>
+    <id>https://2young.2simple.top/article/%E8%B0%B7%E6%AD%8C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0.html</id>
     <published>2017-06-26T13:23:19.000Z</published>
     <updated>2017-06-26T14:33:53.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Google File System论文学习&lt;/p&gt;
-&lt;h1 id=&quot;摘要&quot;&gt;摘要&lt;/h1&gt;
-&lt;p&gt;我们设计并实现了Google GFS文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。GFS虽然运行在廉价的普遍硬件设备上，但是它依然了提供&lt;font color=&quot;red&quot;&gt;灾难冗余&lt;/font&gt;的能力，为大量客户机提供了&lt;font color=&quot;red&quot;&gt;高性能&lt;/font&gt;的服务。&lt;/p&gt;
-&lt;p&gt;虽然GFS的设计目标与许多传统的分布式文件系统有很多相同之处，但是，我们的设计还是以我们对自己的应用的负载情况和技术环境的分析为基础 的，不管现在还是将来，GFS和早期的分布式文件系统的设想都有明显的不同。所以我们重新审视了传统文件系统在设计上的折衷选择，衍生出了完全不同的设计 思路。&lt;/p&gt;
-&lt;p&gt;GFS完全满足了我们对存储的需求。GFS作为存储平台已经被广泛的部署在Google内部，存储我们的服务产生和处理的数据，同时还用于那些 需要大规模数据集的研究和开发工作。目前为止，最大的一个集群利用数千台机器的数千个硬盘，提供了数百TB的存储空间，同时为数百个客户机服务。&lt;/p&gt;
-&lt;p&gt;在本论文中，我们展示了能够支持分布式应用的文件系统接口的扩展，讨论我们设计的许多方面，最后列出了小规模性能测试以及真实生产系统中性能相关数据。&lt;/p&gt;
+      &lt;p&gt;Google File System论文学习&lt;/p&gt;&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;我们设计并实现了Google GFS文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。GFS虽然运行在廉价的普遍硬件设备上，但是它依然了提供&lt;font color=&quot;red&quot;&gt;灾难冗余&lt;/font&gt;的能力，为大量客户机提供了&lt;font color=&quot;red&quot;&gt;高性能&lt;/font&gt;的服务。&lt;/p&gt;&lt;p&gt;虽然GFS的设计目标与许多传统的分布式文件系统有很多相同之处，但是，我们的设计还是以我们对自己的应用的负载情况和技术环境的分析为基础 的，不管现在还是将来，GFS和早期的分布式文件系统的设想都有明显的不同。所以我们重新审视了传统文件系统在设计上的折衷选择，衍生出了完全不同的设计 思路。&lt;/p&gt;&lt;p&gt;GFS完全满足了我们对存储的需求。GFS作为存储平台已经被广泛的部署在Google内部，存储我们的服务产生和处理的数据，同时还用于那些 需要大规模数据集的研究和开发工作。目前为止，最大的一个集群利用数千台机器的数千个硬盘，提供了数百TB的存储空间，同时为数百个客户机服务。&lt;/p&gt;&lt;p&gt;在本论文中，我们展示了能够支持分布式应用的文件系统接口的扩展，讨论我们设计的许多方面，最后列出了小规模性能测试以及真实生产系统中性能相关数据。&lt;/p&gt;
     
     </summary>
+    
     
     
       <category term="谷歌文件系统" scheme="https://2young.2simple.top/tags/%E8%B0%B7%E6%AD%8C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"/>
